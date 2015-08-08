@@ -1,16 +1,18 @@
 {
   "name": "emp-doc",
   "main": "./lib/emp-doc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "EMP API 文档集合",
   "keywords": [
-    "EMP", "API", "Document"
+    "EMP",
+    "API",
+    "Document"
   ],
   "maintainers": [
-  {
-    "name": "Ju Chao",
-    "email": "ju.chao@rytong.com"
-  }
+    {
+      "name": "Ju Chao",
+      "email": "ju.chao@rytong.com"
+    }
   ],
   "bugs": {
     "url": "https://github.com/RYTong/emp-doc/issues"
