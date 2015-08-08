@@ -1,0 +1,99 @@
+﻿<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;}
+            .label{left:20px;height:20px;width:280px;font-size:13px;color:#0000FF;}
+            .label1{font-size:15px;font-weight:bold;}
+            .father{left:20px;width:280px;height:30px;font-size:15px;}
+            .positionFixed{position:fixed;}
+            .positionToplevel{position:toplevel;top:32px;}
+            .background_color{background-color:#FFFF00;}
+            .background_image{background-image:url(bg_img.png);}
+            .filter1{filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            .filter2{filter:progid(alpha=’0.5’); background-color: #FFFF00;}
+            .textColor{color:#ff0000;}
+            .fontWeight{font-weight:bold;}
+            .fontSize{font-size:23px;}
+            .fontStyle{font-style:italic;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .close_but{width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"/>
+        <script type="text/x-lua">
+            ryt = RYTL:new{};
+            function close()
+                ryt:back();
+            end;
+        </script>
+    </head>
+    <body>
+        <!-- positon:fixed 这是body第一个控件 -->
+        <input type="radio" name="radio1" class="father,positionFixed">position:fixed,body第一个控件</input>
+        <!-- positon:toplevel -->
+        <input type="radio" name="radio1" class="father,positionToplevel">position:toplevel,不随页面滚动</input>
+        <!-- display -->
+        <input type="radio" name="radio1" class="father,display2">display=block显示</input>
+        <label>下方有display=none的radio,不显示不占位</label>
+        <input type="radio" name="radio1" class="father,display1">display=none不显示不占位</input>   
+        <!-- visibility -->
+        <input type="radio" name="radio1" class="father,visibility1">visibility=visible,显示</input>
+        <label>下方有visibility=hidden的radio,不显示占位</label>
+        <input type="radio" name="radio1" class="father,visibility2">visibility=hidden,不显示占位</input>
+        <!-- hide -->
+        <input type="radio" name="radio1" hide="false" class="father">hide=false,显示</input>
+        <label>下方有hide=true的radio,不显示不占位</label> 
+        <input type="radio" name="radio1" hide="true" class="father">hide=true,不显示不占位</input>
+        <!-- hide display -->
+        <input type="radio" name="radio1" hide="true" class="father,display2">display=block,hide=true,应显示</input>
+        <label>下方有display=none,hide=false的radio</label>
+        <input type="radio" name="radio1" hide="false" class="father,display1">display=none,hide=false,不显示不占位</input>
+         <!-- hide visibility -->
+        <input type="radio" name="radio1" class="father,visibility1" hide="true">visibility=visible,hide=true,显示</input>
+        <label>下方有visibility=hidden,hide=false的radio</label>
+        <input type="radio" name="radio1" class="father,visibility2" hide="false">visibility=hidden,hide=false,不显示占位</input> 
+        <!-- display visibility -->
+        <input type="radio" name="radio1" class="father,display1,visibility1">visibility=visible,display=none,显示</input>
+        <label>下方有visibility=hidden,display=block的radio</label>
+        <input type="radio" name="radio1" class="father,display2,visibility2">visibility=hidden,display=block,不显示占位</input> 
+        <label class="label1">以下为新的一组radio:</label>
+        <!-- background-color -->      
+        <input type="radio" name="radio2" class="father,background_color">背景色background-color</input>
+        <!-- background-image -->     
+        <input type="radio" name="radio2" class="father,background_image">背景图background-image</input>
+        <!-- filter -->        
+        <input type="radio" name="radio2" class="father,filter1">filter渐变色</input>
+        <input type="radio" name="radio2" class="father,filter2">filter(alpha=0.5)</input>
+        <!-- color -->  
+        <input type="radio" name="radio2" class="father,textColor">字体颜色color</input>
+        <!-- font-weight -->
+        <input type="radio" name="radio2" class="father,fontWeight">font-weight:bold</input>
+        <!-- font-size --> 
+        <input type="radio" name="radio2" class="father,fontSize">font-size:23px</input> 
+        <!-- font-style --> 
+        <input type="radio" name="radio2" class="father,fontStyle">fontStyle:italic</input>
+        <!-- fontStyle fontWeight-->
+        <input type="radio" name="radio2" class="father,fontWeight,fontStyle">bold+italic,加粗斜体</input>
+        <!-- textColor fontSize fontStyle fontWeight -->
+        <input type="radio" name="radio2" class="father,textColor,fontSize,fontWeight,fontStyle">color,fontSize,bold,italic</input>
+        <!-- enable -->
+        <input type="radio" name="radio2" enable="true" class="father">enable=true,控件可用</input>
+        <input type="radio" name="radio2" enable="false" class="father">enable=false,控件不可用</input>
+        <!-- checked -->
+        <input type="radio" name="radio2" class="father" checked="checked">checked="checked"</input>
+        <label class="label1">以下为新的一组radio:</label>
+        <!-- enable=false checked-->
+        <input type="radio" class="father" enable="false" checked="checked">enable=false+checked</input>
+        <!-- value text -->
+        <input type="radio" class="father" value="radio"></input>
+        <input type="radio" class="father">text文字</input>
+        <input type="radio" class="father" value="radio">设置value属性,显示的是标签间的text</input>
+ 
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+        <!-- positon:fixed 这是body最后一个控件 -->
+        <input type="radio" class="father,positionFixed">position:fixed,body最后一个控件</input>
+    </body>
+</content>

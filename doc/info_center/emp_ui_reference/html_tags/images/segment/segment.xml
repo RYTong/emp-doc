@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;width:320px;}
+            .segment2{left:10px;width:150px;height:80px;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .fontSize {font-size:13px;}
+            .fontWeight{font-weight:bold;}
+            .fontStyle{font-style:italic};
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+            .label1{left:10px;width:300px;height:30px;font-weight:bold;}
+            .label2{left:10px;width:300px;height:30px;font-size:15px;}
+            .button{left:10px;width:300px;height:30px;font-size:13px;background-color:#f122f0;}
+            .positionFixed{position:fixed;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                ryt:back();
+                end;
+                
+                function onclick()
+                local test_ctrl = document:getElementsByName("segment10");
+                if test_ctrl and #test_ctrl > 0 then
+                local checked1 = test_ctrl[1]:getPropertyByName("checked");
+                local checked2 = test_ctrl[2]:getPropertyByName("checked");
+                local checked3 = test_ctrl[3]:getPropertyByName("checked");
+                if checked1 == "true" then
+                window:alert("第一个被选中(onclick)");
+                elseif checked2 == "true" then
+                window:alert("第二个被选中(onclick)");
+                elseif checked3 == "true" then
+                window:alert("第三个被选中(onclick)");
+                end;
+                end;
+                end;
+                
+                function onclick1()
+                window:alert("第一个被选中(onclick1)");
+                end;
+                function onclick2()
+                window:alert("第二个被选中(onclick2)");
+                end;
+                function onclick3()
+                window:alert("第三个被选中(onclick3)");
+                end;
+                
+                function onclickfalse()
+                window:alert("enable=false,能点击，错误");
+                end;
+                
+                function changechecked()
+                local test_ctrl = document:getElementsByName("segment9");
+                if test_ctrl and #test_ctrl > 0 then
+                local checked1 = test_ctrl[1]:getPropertyByName("checked");
+                local checked2 = test_ctrl[2]:getPropertyByName("checked");
+                local checked3 = test_ctrl[3]:getPropertyByName("checked");
+                if checked1 == "true" then
+                test_ctrl[1]:setPropertyByName('checked','false');
+                test_ctrl[2]:setPropertyByName('checked','false');
+                test_ctrl[3]:setPropertyByName('checked','true');
+                window:alert("第三个被选中");
+                elseif checked2 == "true" then
+                test_ctrl[1]:setPropertyByName('checked','true');
+                test_ctrl[2]:setPropertyByName('checked','false');
+                test_ctrl[3]:setPropertyByName('checked','false');
+                window:alert("第一个被选中");
+                elseif checked3 == "true" then
+                test_ctrl[1]:setPropertyByName('checked','false');
+                test_ctrl[2]:setPropertyByName('checked','true');
+                test_ctrl[3]:setPropertyByName('checked','false');
+                window:alert("第二个被选中");
+                end;
+                end;
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed -->
+        <input type="segment" name="segment1" class='positionFixed' value="segg1" >search</input>
+        <input type="segment" name="segment1" value="segg2" >find</input>
+        <input type="segment" name="segment1" value="segg3" >look</input>
+        <!-- size -->
+        <label class='label1'>size 测试</label>
+        <label class='label2'>默认size</label>
+        <input type="segment" name="segment1"  value="seg1" >search</input>
+        <input type="segment" name="segment1"  value="seg2" >find</input>
+        <input type="segment" name="segment1"  value="seg3" >look</input>
+        <label class='label2'>修改size</label>
+        <input type="segment" name="segment2"  class="segment2" value="seg1" >search</input>
+        <input type="segment" name="segment2"  value="seg2" >find</input>
+        <input type="segment" name="segment2"  value="seg3" >look</input>
+        <label class='label2'>说明：后面都采用默认size.</label>
+        
+        <!-- hide -->
+        <label class='label1'> hide 测试</label>
+        <label class='label2'>hide = 'true',不显示</label>
+        <input type="segment" hide='true' name="segment3"  value="seg1" >search</input>
+        <input type="segment" name="segment3"  value="seg2" >find</input>
+        <input type="segment" name="segment3"  value="seg3" >look</input>
+        <label class='label2'>hide = 'false',显示</label>
+        <input type="segment" hide='false' name="segment4" value="seg1" >search</input>
+        <input type="segment" name="segment4"  value="seg2" >find</input>
+        <input type="segment" name="segment4"  value="seg3" >look</input>
+        
+        <!-- diaplay -->
+        <label class='label1'> display 测试</label>
+        <label class='label2'>diplay='none',不显示,不占位</label>
+        <input type="segment" name="segment5"  class="display1" value="seg1" >search</input>
+        <input type="segment" name="segment5"  value="seg2" >find</input>
+        <input type="segment" name="segment5"  value="seg3" >look</input>
+        <label class='label2'>diplay='block',显示</label>
+        <input type="segment" name="segment6"  class="display2" value="seg1" >search</input>
+        <input type="segment" name="segment6" value="seg2" >find</input>
+        <input type="segment" name="segment6" value="seg3" >look</input>
+        <!-- visibility -->
+        <label class='label1'> visibility 测试</label>
+        <label class='label2'>visibility='hidden',不显示,占位</label>
+        <input type="segment" name="segment7"  class="visibility2" value="seg1" >search</input>
+        <input type="segment" name="segment7"  value="seg2" >find</input>
+        <input type="segment" name="segment7"  value="seg3" >look</input>
+        <label class='label2'>visibility='visible',显示</label>
+        <input type="segment" name="segment8"  class="visibility1" value="seg1" >search</input>
+        <input type="segment" name="segment8"  value="find" >seg2</input>
+        <input type="segment" name="segment8"  value="look" >seg3</input>
+        
+        <!-- checked -->
+        <label class='label1'> checked 测试</label>
+        <input type='button' value='点击通过改变checked改变下面segment选中状态' name='btn2' class='button' onclick='changechecked()'>yes</input>
+        <label class='label2'>segment第三个为选中</label>
+        <input type="segment" name="segment9" value="seg1" >search</input>
+        <input type="segment" name="segment9" value="seg2" >find</input>
+        <input type="segment" name="segment9" checked="checked" value="seg3" >look</input>
+        
+        <!-- onclick事件 -->
+        <label class='label1'> onclick 测试</label>
+        <label class='label2'> 文档实例1:onclick实现</label>
+        <input type="segment" name="segment10" value="seg1" onclick="onclick()" >search</input>
+        <input type="segment" name="segment10" value="seg2" onclick="onclick()">find</input>
+        <input type="segment" name="segment10" value="seg3" onclick="onclick()" >look</input>
+        <label class='label2'> 文档实例2:onclick实现</label>
+        <input type="segment" name="segment11" value="seg1" onclick="onclick1()" >search</input>
+        <input type="segment" name="segment11" value="seg2" onclick="onclick2()">find</input>
+        <input type="segment" name="segment11" value="seg3" onclick="onclick3()" >look</input>
+        <!-- enable -->
+        <label class='label1'> enbale 测试</label>
+        <label class='label2'> enbale='false' 不能点击</label>
+        <input type="segment" enable='false' name="segment12" value="search" onclick="onclickfalse()" >search</input>
+        <input type="segment" name="segment12" value="find" onclick="onclickfalse()">find</input>
+        <input type="segment" name="segment12" value="look" onclick="onclickfalse()" >look</input>
+        
+        <!--  font-weight font-size font-style-->
+        <label class='label1'> font-weight font-size font-style测试</label>
+        <label class='label2'> size=13px,正常</label>
+        <input type="segment" name="segment13"  class="fontSize" value="seg1" >search</input>
+        <input type="segment" name="segment13"  value="seg2" >find</input>
+        <input type="segment" name="segment13"  value="seg3" >look</input>
+        <label class='label2'> size=13px,粗体</label>
+        <input type="segment" name="segment14"  class="fontSize,fontWeight" value="search" >search</input>
+        <input type="segment" name="segment14"  value="find" >find</input>
+        <input type="segment" name="segment14"  value="look" >look</input>
+        <label class='label2'> size=13px,斜体</label>
+        <input type="segment" name="segment15"  class="fontSize,fontStyle" value="seg1" >search</input>
+        <input type="segment" name="segment15"  value="seg2" >find</input>
+        <input type="segment" name="segment15"  value="seg3" >look</input>
+        
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+    </body>
+</content>

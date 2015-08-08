@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .view1 {top:60px;left: 20px; height: 200px; width: 280px;}
+            .view2 {top:330px;left: 20px; height: 200px; width: 280px;}
+            .button {top:300px;left:20px;font-size:15px;color:#FF0000;width:280px;height:40px;background-color:#FFFFFF;}
+            .button1 {top:30px;left:20px;font-size:15px;color:#FF0000;width:280px;height:40px;background-color:#FFFFFF;}
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                ryt:back();
+                end;
+                
+                function doSetInnerHtml()
+                local comm = document:getElementsByName("webview1");
+                local content =  [[<div class='div2' name='testDiv'>
+                <label class='label2'>测试控件</label><br/>
+                <label class='label2'>报文1</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>测试控件</label><br/>
+                <label class='label2'>报文1</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>测试控件</label><br/>
+                <label class='label2'>报文1</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>测试控件</label><br/>
+                <label class='label2'>报文1</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                </div>]];
+                comm[1]:setInnerHTML(content);
+                end;
+                
+                
+                
+                function doSetInnerHtml1()
+                local comm = document:getElementsByName("webview");
+                local content = [[<div class='div2' name='testDiv'>
+                <label class='label2'>报文2</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>报文2</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>报文2</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>报文2</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>报文2</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                <label class='label2'>报文2</label><br/>
+                <label class='label2'>更新html 成功！</label><br/>
+                </div>]];
+                comm[1]:setInnerHTML(content);
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <label>的webView1(有url)</label><br/>
+        <input type='button' name='showDiv' class='button1' value='setInnerHtml设置webview1内容' onclick='doSetInnerHtml1()'/><br/>
+        <div class="view1" name="webview" type="webview" url="http://www.baidu.com" value="123"></div><br/>        <label>webView2(无url)</label><br/>
+        <input type='button' name='showDiv' class='button' value='setInnerHtml设置webview2内容' onclick='doSetInnerHtml()'/><br/>
+        <div class="view2" name="webview1" type="webview" value="456"></div>
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+    </body>
+</content>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;width:320px;}
+            .father{width:300px;height:30px;left:10px;font-size:15px;background-color:#CCCCCC;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .background_color {background-color:#FFFF00;}
+            .background_image {background-image:url(animation.png);}
+            .textColor {color:#ff0000;}
+            .filter1 {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            .filter0 {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’0’,alpha=’0.5’);}
+            .positionFixed{position:fixed;}
+            .positionToplevel{position:toplevel;top:200px;left:10px;background-color:#ff0000;}
+            .fontWeight{font-weight:bold;background-color:#CCCCCC;}
+            .numberlines{background-color:#CCCCCC;}
+            .fontSize{font-size:30px;}
+            .fontStyle{font-style:italic;}
+            .textAlignLeft{text-align:left;}
+            .textAlignCenter{text-align:center;}
+            .textAlignRight{text-align:right;}
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                ryt:back();
+                end;
+                
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed -->
+        <label class='father,positionFixed' > positon:fixed body第一个控件 </label>
+        <!-- loop -->
+        <label class="father" loop="false">loop="false" 无跑马灯效果</label>
+        <label class="father" loop="true">loop="true" 跑马灯效果</label>
+        <!-- numlines -->
+        <label class="numberlines" numlines="3">显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。</label>
+        <!-- hide -->
+        <label hide='false' class='father' > hide=false，下方有hide=true的label </label>
+        <label hide='true' class='father' > hide=true的label,不应该显示出来 </label>
+        <label hide='false' class='father' > hide=false，上方有hide=true的label </label>
+        
+        <!-- diaplay -->
+        <label class='father,display2' > display=block，下方有display=none的label </label>
+        <label class='father,display1' > display=none，不应该显示出来 </label>
+        <label class='father,display2' > display=block，上方有display=none的label </label>
+        <!-- visibility -->
+        <label class='father,visibility1' loop="true"> visibility:visible下方有visibility=hidden的label </label>
+        <label class='father,visibility2' > visibility:hidden 不应该显示 </label>
+        <label class='father,visibility1' loop="true"> visibility:visible上方有visibility=hidden的label </label>
+        
+        <!-- positon:toplevel -->
+        <label class='father,positionToplevel' > positon:toplevel 不随页面滚动 </label>
+        
+        <!-- background-color -->
+        <label class='father,background_color' > 背景色 ：background-color </label>
+        <!-- color -->
+        <label class='father,textColor' > 字体颜色：color </label>
+        <!-- filter -->
+        <label class='father,filter1'> 渐变色：filter 从左至右渐变</label>
+        <label class='father,filter0'> 渐变色：filter 从上到下渐变</label>
+        <!-- font-weight -->
+        <label class='father,fontWeight' > font-weight:bold </label>
+        <!-- font-style -->
+        <label class='father,fontStyle' > font-style:italic iOS7中文不斜体 </label>
+        <!-- font-size -->
+        <label class='father,fontSize' > font-size:30px </label>
+        <!-- text-align -->
+        <label class='father,textAlignLeft'> text-align:left </label>
+        <label class='father,textAlignCenter'> text-align:center </label>
+        <label class='father,textAlignRight'> text-align:right </label>
+        
+        <!-- 不指定样式下的label布局测试 -->
+        <label> 不指定控件样式的情况</label><br/>
+        <label> 不指定控件样式且长度超过一行显示的情况</label><br/>
+        <label class="background_color">short text  </label>
+        <label>  another short text</label>
+        
+
+        <!-- 组合测试 -->
+        <!-- font-style  font-weight-->
+        <label class='fontWeight,fontStyle,father'> bold+italic 加粗并倾斜显示 </label>
+        <!-- hide display -->
+        <label hide='true' class='father,display2'> display=block hide=true 样式>属性应显示 </label>
+        <label hide='false' class='father,display1' > display=none hide=false 样式>属性不显示 </label>
+        <label hide='true' class='father,display2'> display=block hide=true 样式>属性应显示 </label>
+        <!-- hide visibility -->
+        <label hide='true' class='father,visibility1'> visibility:visible hide=true 样式>属性应显示</label>
+        <label hide='false' class='father,visibility2' > visibility:hidden hide=false 样式>属性占位不显示 </label>
+        <label hide='true' class='father,visibility1'> visibility:visible hide=true 样式>属性应显示</label>
+        <!-- display visibility -->
+        <label class='father,display1,visibility1'> visibility:visible display=none 应显示</label>
+        <label class='father,display2,visibility2' > visibility:hidden display=block 占位不显示 </label>
+        <label class='father,display1,visibility1'> visibility:visible display=none 应显示</label>
+        
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+        <!-- positon:fixed -->
+        <label class='father,positionFixed' > positon:fixed body最后一个控件 </label>
+    </body>
+</content>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;}
+            .father{width:280px;height:30px;left:20px;font-size: 15px;}
+            .positionFixed{position:fixed;}
+            .positionToplevel{position:toplevel;top:32px;}
+            .background_color{background-color:#FFFF00;}
+            .background_image{background-image:url(bg_img.png);}
+            .filter1{filter:progid(startColorStr='#FFFF00',endColorStr='#FF0000',gradientType='1',alpha='0.5');}
+            .filter2{filter:progid(alpha='0.5'); background-color: #FFFF00;}
+            .textColor{color:#ff0000;}
+            .fontWeight{font-weight:bold;}
+            .fontSize{font-size:25px;}
+            .fontStyle{font-style:italic;}
+            .textAlignLeft{text-align:left;}
+            .textAlignCenter{text-align:center;}
+            .textAlignRight{text-align:right;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .borderOne{border:#FF0000;}
+            .borderTwo{border:10px #FF0000;}
+            .borderThree{border:10px solid #FF0000;}
+            .borderRadiusFour{border-radius: 35px 20px 0px 10px;}
+            .borderRadiusOne{border-radius:10px;}
+            .label{left:20px;font-size:12px;color:#0000FF;width:280px;}
+            .height_40{height:40px;}
+            .close_but{width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"/>
+        <script type="text/x-lua">
+            ryt = RYTL:new{};
+            function close()
+                ryt:back();
+            end;
+
+            function alert(eventName)
+                window:alert("这是".. eventName .."事件！");
+            end;
+        </script>
+    </head>
+    <body>
+        <!-- positon:fixed 这是body的第一个控件 -->
+        <input type="text" class="father,positionFixed" value="position:fixed,body第一个控件"/>
+        <!-- positon:toplevel -->
+        <input type="text" class="father,positionToplevel" value="position:toplevel,不随页面滚动"/>
+        <!-- display -->
+        <input type="text" class="father,display2" value="display=block 显示"/>
+        <label>下方有display=none的input:</label>
+        <input type="text" class="father,display1" value="display=none,不显示不占位"/>
+        <!-- visibility -->
+        <input type="text" class="father,visibility1" value="visibility:visible,显示"/>
+        <label>下方有visibility=hidden的input:</label>
+        <input type="text" class="father,visibility2" value="visibility:hidden,不显示占位"/>
+        <!-- hide -->
+        <input type="text" hide="false" class="father" value="hide=false 显示"/>
+        <label>下方有hide=true的input:</label>
+        <input type="text" hide="true" class="father" value="hide=true,不显示不占位"/>
+        <!-- hide display -->
+        <input type="text" hide="true" class="father,display2" value="display=block hide=true,应显示"/>
+        <label>下方有display=none hide=false的input:</label>
+        <input type="text" hide="false" class="father,display1" value="display=none hide=false,不显示不占位"/>
+        <!-- hide visibility -->
+        <input type="text" class="father,visibility1" hide="true" value="visibility:visible hide=true,应显示"/>
+        <label>下方有visibility:hidden hide=false的input:</label>
+        <input type="text" class="father,visibility2" hide="false" value="visibility:hidden hide=false,占位不显示"/>
+        <!-- display visibility -->
+        <input type="text" class="father,display1,visibility1" value="visibility:visible display=none 应显示"/>
+        <label>下方有visibility:hidden display=block的input:</label>
+        <input type="text" class="father,display2,visibility2" value="visibility:hidden display=block 占位不显示"/>
+        <!-- background-color -->
+        <input type="text" class="father,background_color" value="背景色:background-color"/> 
+        <!-- background-image -->
+        <input type="text" class="father,background_image" value="背景图:background-image"/>
+        <!-- filter -->
+        <input type="text" class="father,filter1" value="渐变色:filter"/>
+        <input type="text" class="father,filter2" value="透明度0.5:filter"/>
+        <!-- color -->
+        <input type="text" class="father,textColor" value="字体颜色:color"/>
+        <!-- font-weight -->
+        <input type="text" class="father,fontWeight" value="font-weight:bold"/>
+        <!-- font-size -->
+        <input type="text" class="father,fontSize" value="font-size:25px"/>
+        <!-- font-style -->
+        <input type="text" class="father,fontStyle" value="fontStyle:italic"/>
+        <!-- fontStyle fontWeight-->
+        <input type="text" class="father,fontWeight,fontStyle" value="bold+italic 加粗斜体"/>
+        <!-- text-align -->
+        <input type="text" class="father,textAlignLeft" value="text-align:left"/>
+        <input type="text" class="father,textAlignCenter" value="text-align:center"/>
+        <input type="text" class="father,textAlignRight" value="text-align:right"/>
+        <!-- border属性-->
+        <input type="text" class="father" border="1" value="border=1 有边框"/>
+        <input type="text" class="father" border="0" value="border=0 无边框"/>
+        <input type="text" class="father" value="默认有边框"/>
+        <!-- border样式 -->
+        <input type="text" class="father,borderOne" value="border:#FF0000"/>
+		<input type="text" class="father,height_40,borderTwo" value="border:10px #FF0000"/>
+        <input type="text" class="father,height_40,borderThree" value="border:10px solid #FF0000"/>
+        <!-- border-radius -->
+        <input type="text" class="father,borderRadiusFour" value="border-radius:35px 20px 0px 10px"/>
+        <input type="text" class="father,borderRadiusOne" value="border-radius:10px"/>
+        <!-- border-radius background-color-->
+        <input type="text" class="father,borderRadiusFour,background_color" value="background-color+borderRadiusFour"/>
+        <input type="text" class="father,borderRadiusOne,background_color" value="background-color+borderRadiusOne"/>
+        <!-- border-radius background-image-->
+        <input type="text" class="father,borderRadiusFour,background_image" value="background-image+borderRadiusFour"/>
+        <input type="text" class="father,borderRadiusOne,background_image" value="background-image+borderRadiusOne"/>
+        <!-- filter border-radius-->
+        <input type="text" class="filter1,borderRadiusFour,father" value="filter渐变,borderRadiusFour"/>
+        <input type="text" class="filter2,borderRadiusFour,father" value="filter透明度,borderRadiusFour"/>
+        <!-- border-radius text-align-->
+        <input type="text" class="textAlignLeft,background_color,borderRadiusFour,father" value="左对齐,borderRadiusFour"/>
+        <input type="text" class="textAlignCenter,background_color,borderRadiusFour,father" value="居中,borderRadiusFour"/>
+        <input type="text" class="textAlignRight,background_color,borderRadiusFour,father" value="右对齐,borderRadiusFour"/>
+        <!-- enable -->
+        <input type="text" enable="false" class="father" value="enable=false,控件不可用"/>
+        <!-- hold -->
+        <input type="text" hold="hold:输入提示文字" class="father"/>
+        <!-- style -->
+        <input type="text" class="father" hold="只能输入整数" style="-wap-input-format:'N'"/>
+        <input type="text" class="father" hold="只能输入实数" style="-wap-input-format:'n'"/>
+        <input type="text" class="father" hold="只能输入电话号码" style="-wap-input-format:'phone'"/>
+        <!-- 日期控件 -->
+        <input type="text" class="father" style="-wap-input-format:'date'"/>
+        <!-- 日期控件 fontStyle fontWeight -->
+        <label>日期控件fontStyle+fontWeight:</label>
+        <input type="text" class="father,fontWeight,fontStyle" style="-wap-input-format:'date'"/>
+        <!-- 日期控件 textColor fontSize text-align -->
+        <label>日期控件textColor+fontSize+text-align:</label>
+        <input type="text" class="father,textColor,fontSize,textAlignRight" style="-wap-input-format:'date'"/>
+        <!-- 日期控件 showFormat -->
+        <label>日期控件showformat:</label>
+        <input type="text" class="father" style="-wap-input-format:'date'" showFormat="w-E-yyyy-MM-d"/>
+        <input type="text" class="father" style="-wap-input-format:'date'" showFormat="W/EEEE/yy/MMM/dd"/>
+        <!-- 日期控件 filter border-radius -->
+        <label>日期控件filter+border-radius:</label>
+        <input type="text" class="father,filter1,borderRadiusFour" style="-wap-input-format:'date'"/>
+        <!-- 事件响应测试 -->
+        <input type="text" class="father" value="onfocus事件测试" onfocus="alert('onfocus')"/>
+        <input type="text" class="father" value="onchange事件测试" onchange="alert('onchange')"/>
+        <input type="text" class="father" value="onblur事件测试" onblur="alert('onblur')"/>
+        <input type="text" class="father" value="事件响应组合测试" onfocus="alert('onfocus')" onchange="alert('onchange')" onblur="alert('onblur')"/>
+
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/>
+        <br/>
+        <!-- positon:fixed 这是body最后一个控件 -->
+        <input type="text" class="father,positionFixed" value="positon:fixed,body最后一个控件"/>
+    </body>
+</content>

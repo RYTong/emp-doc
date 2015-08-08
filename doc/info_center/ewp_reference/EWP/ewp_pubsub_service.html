@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_pubsub_service</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_pubsub_service</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+    EWP PubSub服务。需要开启exmpp选项才能使用该模块的API。.
+
+
+<h2><a name="description">Description</a></h2>
+    EWP PubSub服务。需要开启exmpp选项才能使用该模块的API。
+  
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-first">first()</a></h3>
+<p><tt>first() = {First::string(), Index::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-item">item()</a></h3>
+<p><tt>item() = {ItemId::string(), ItemProps::[<a href="#type-item_prop">item_prop()</a>]}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-item_prop">item_prop()</a></h3>
+<p><tt>item_prop() = {Key::string(), Val::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-node_affiliation">node_affiliation()</a></h3>
+<p><tt>node_affiliation() = {<a href="#type-node_name">node_name()</a>, Affiliation::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-node_config">node_config()</a></h3>
+<p><tt>node_config() = {Key::string(), Value::string(), <a href="#type-optional_val">optional_val()</a>}</tt>
+<ul class="definitions"><li><tt><a name="type-optional_val">optional_val()</a> = {option, string()}</tt></li></ul></p>
+
+
+<h3 class="typedecl"><a name="type-node_name">node_name()</a></h3>
+<p><tt>node_name() = string()</tt></p>
+
+
+<h3 class="typedecl"><a name="type-node_option">node_option()</a></h3>
+<p><tt>node_option() = {Key::string(), Value::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-node_title">node_title()</a></h3>
+<p><tt>node_title() = string()</tt></p>
+
+
+<h3 class="typedecl"><a name="type-set">set()</a></h3>
+<p><tt>set() = {Count::string(), <a href="#type-first">first()</a>, Last::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-user_affiliation">user_affiliation()</a></h3>
+<p><tt>user_affiliation() = {BareJid::string(), Affiliation::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-user_resource">user_resource()</a></h3>
+<p><tt>user_resource() = string()</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#bare_jid-1">bare_jid/1</a></td><td>
+   根据指定用户生成bare jid。.</td></tr>
+<tr><td valign="top"><a href="#connect-2">connect/2</a></td><td>
+   根据指定用户名和密码建立连接并登录。.</td></tr>
+<tr><td valign="top"><a href="#create_collection-3">create_collection/3</a></td><td>
+   在公共根节点下创建名为NodeName的collection节点。.</td></tr>
+<tr><td valign="top"><a href="#create_collection-4">create_collection/4</a></td><td>
+   根据指定选项创建名为NodeName的collection节点。配置项为：
+     "title" 节点标题。
+     "collection" 节点的父节点。
+     "access_model" 节点访问模式。"whitelist"或者"open"。.</td></tr>
+<tr><td valign="top"><a href="#create_leaf-3">create_leaf/3</a></td><td>
+   在公共根节点下创建名为NodeName的leaf节点。.</td></tr>
+<tr><td valign="top"><a href="#create_leaf-4">create_leaf/4</a></td><td>
+   根据指定选项创建名为NodeName的leaf节点。配置项为：
+     "title" 节点标题。
+     "collection" 节点的父节点。
+     "access_model" 节点访问模式。"whitelist"或者"open"。
+     "max_payload_size" 单个发布项的最大字节数，可配置的最大值为60000。
+     "max_items" 该节点最多可持久化的发布项个数，可配置的最大值为10。.</td></tr>
+<tr><td valign="top"><a href="#delete_node-3">delete_node/3</a></td><td>
+   删除指定节点。如果删除的节点类型为collection，那么其子节点不会被删除。.</td></tr>
+<tr><td valign="top"><a href="#disconnect-2">disconnect/2</a></td><td>
+   断开指定用户连接。.</td></tr>
+<tr><td valign="top"><a href="#get_affiliations-2">get_affiliations/2</a></td><td>
+   获取指定用户与所有节点的关系。.</td></tr>
+<tr><td valign="top"><a href="#get_affiliations-3">get_affiliations/3</a></td><td>
+   根据指定的关系类型，获取指定用户与所有节点的关系。可指定的类型为：
+       "publisher" 发布用户关系类型
+       "member" 订阅用户关系类型
+       "owner" 节点拥有者关系类型
+       "outcast" 拒绝访问关系类型.</td></tr>
+<tr><td valign="top"><a href="#get_node_affiliations-3">get_node_affiliations/3</a></td><td>
+   获取指定节点与所有用户的关系。.</td></tr>
+<tr><td valign="top"><a href="#get_node_affiliations-4">get_node_affiliations/4</a></td><td>
+   根据指定关系类型，获取指定节点与所有用户的关系。.</td></tr>
+<tr><td valign="top"><a href="#get_node_config-3">get_node_config/3</a></td><td>
+   获取指定节点配置.</td></tr>
+<tr><td valign="top"><a href="#get_node_config-4">get_node_config/4</a></td><td>
+   获取指定节点配置的指定配置项.</td></tr>
+<tr><td valign="top"><a href="#get_nodes-2">get_nodes/2</a></td><td>
+   获取公共根节点下的子节点。.</td></tr>
+<tr><td valign="top"><a href="#get_nodes-3">get_nodes/3</a></td><td>
+   获取指定节点下的子节点。.</td></tr>
+<tr><td valign="top"><a href="#publish_item-4">publish_item/4</a></td><td>
+   创建发布项。.</td></tr>
+<tr><td valign="top"><a href="#publish_item-5">publish_item/5</a></td><td>
+   根据指定item id创建发布项。.</td></tr>
+<tr><td valign="top"><a href="#remove_node_affiliations-4">remove_node_affiliations/4</a></td><td>
+   移除指定节点与指定用户的关系。.</td></tr>
+<tr><td valign="top"><a href="#retract_item-4">retract_item/4</a></td><td>
+   删除指定的发布项。.</td></tr>
+<tr><td valign="top"><a href="#retrieve_items-3">retrieve_items/3</a></td><td>
+   获取所有发布项。.</td></tr>
+<tr><td valign="top"><a href="#retrieve_items-4">retrieve_items/4</a></td><td>
+   根据指定的item id，获取所有指定的发布项。.</td></tr>
+<tr><td valign="top"><a href="#retrieve_items_set-4">retrieve_items_set/4</a></td><td>
+   根据xep-0059协议获取指定数量的发布项。.</td></tr>
+<tr><td valign="top"><a href="#retrieve_items_set-5">retrieve_items_set/5</a></td><td>
+   根据xep-0059协议获取指定数量的发布项。.</td></tr>
+<tr><td valign="top"><a href="#retrieve_most_recent_items-4">retrieve_most_recent_items/4</a></td><td>
+   获取最近发布的指定数量的发布项。.</td></tr>
+<tr><td valign="top"><a href="#set_node_affiliations-4">set_node_affiliations/4</a></td><td>
+   设置指定节点的用户关系。当设置的jid与节点不存在关系时会建立所设置的关系。.</td></tr>
+<tr><td valign="top"><a href="#set_node_config-4">set_node_config/4</a></td><td>
+   修改指定节点配置.</td></tr>
+<tr><td valign="top"><a href="#start-0">start/0</a></td><td>
+   启动pubsub服务。.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="bare_jid-1">bare_jid/1</a></h3>
+<div class="spec">
+<p><tt>bare_jid(User::string()) -&gt; string()</tt><br></p>
+</div><p>
+   根据指定用户生成bare jid。
+ </p>
+
+<h3 class="function"><a name="connect-2">connect/2</a></h3>
+<div class="spec">
+<p><tt>connect(User::string(), Passwd::string()) -&gt; {ok, <a href="#type-user_resource">user_resource()</a>}</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定用户名和密码建立连接并登录。
+ </p>
+
+<h3 class="function"><a name="create_collection-3">create_collection/3</a></h3>
+<div class="spec">
+<p><tt>create_collection(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   在公共根节点下创建名为NodeName的collection节点。
+ </p>
+
+<h3 class="function"><a name="create_collection-4">create_collection/4</a></h3>
+<div class="spec">
+<p><tt>create_collection(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Options::[<a href="#type-node_option">node_option()</a>]) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定选项创建名为NodeName的collection节点。配置项为：
+     "title" 节点标题。
+     "collection" 节点的父节点。
+     "access_model" 节点访问模式。"whitelist"或者"open"。</p>
+
+<h3 class="function"><a name="create_leaf-3">create_leaf/3</a></h3>
+<div class="spec">
+<p><tt>create_leaf(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   在公共根节点下创建名为NodeName的leaf节点。
+ </p>
+
+<h3 class="function"><a name="create_leaf-4">create_leaf/4</a></h3>
+<div class="spec">
+<p><tt>create_leaf(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Options::[<a href="#type-node_option">node_option()</a>]) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定选项创建名为NodeName的leaf节点。配置项为：
+     "title" 节点标题。
+     "collection" 节点的父节点。
+     "access_model" 节点访问模式。"whitelist"或者"open"。
+     "max_payload_size" 单个发布项的最大字节数，可配置的最大值为60000。
+     "max_items" 该节点最多可持久化的发布项个数，可配置的最大值为10。
+ </p>
+
+<h3 class="function"><a name="delete_node-3">delete_node/3</a></h3>
+<div class="spec">
+<p><tt>delete_node(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   删除指定节点。如果删除的节点类型为collection，那么其子节点不会被删除。
+ </p>
+
+<h3 class="function"><a name="disconnect-2">disconnect/2</a></h3>
+<div class="spec">
+<p><tt>disconnect(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>
+   断开指定用户连接。
+ </p>
+
+<h3 class="function"><a name="get_affiliations-2">get_affiliations/2</a></h3>
+<div class="spec">
+<p><tt>get_affiliations(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>) -&gt; [<a href="#type-node_affiliation">node_affiliation()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取指定用户与所有节点的关系。
+ </p>
+
+<h3 class="function"><a name="get_affiliations-3">get_affiliations/3</a></h3>
+<div class="spec">
+<p><tt>get_affiliations(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, AffType::all | string()) -&gt; [<a href="#type-node_affiliation">node_affiliation()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定的关系类型，获取指定用户与所有节点的关系。可指定的类型为：
+       "publisher" 发布用户关系类型
+       "member" 订阅用户关系类型
+       "owner" 节点拥有者关系类型
+       "outcast" 拒绝访问关系类型
+ </p>
+
+<h3 class="function"><a name="get_node_affiliations-3">get_node_affiliations/3</a></h3>
+<div class="spec">
+<p><tt>get_node_affiliations(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; [<a href="#type-user_affiliation">user_affiliation()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取指定节点与所有用户的关系。
+ </p>
+
+<h3 class="function"><a name="get_node_affiliations-4">get_node_affiliations/4</a></h3>
+<div class="spec">
+<p><tt>get_node_affiliations(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, AffType::all | string()) -&gt; [<a href="#type-user_affiliation">user_affiliation()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定关系类型，获取指定节点与所有用户的关系。</p>
+<p><b>See also:</b> <a href="#get_affiliations-2">get_affiliations/2</a>.</p>
+
+<h3 class="function"><a name="get_node_config-3">get_node_config/3</a></h3>
+<div class="spec">
+<p><tt>get_node_config(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; [<a href="#type-node_config">node_config()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取指定节点配置
+ </p>
+
+<h3 class="function"><a name="get_node_config-4">get_node_config/4</a></h3>
+<div class="spec">
+<p><tt>get_node_config(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, ConfKey::string()) -&gt; [<a href="#type-node_config">node_config()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取指定节点配置的指定配置项
+ </p>
+
+<h3 class="function"><a name="get_nodes-2">get_nodes/2</a></h3>
+<div class="spec">
+<p><tt>get_nodes(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>) -&gt; [{<a href="#type-node_name">node_name()</a>, <a href="#type-node_title">node_title()</a>}]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取公共根节点下的子节点。
+ </p>
+
+<h3 class="function"><a name="get_nodes-3">get_nodes/3</a></h3>
+<div class="spec">
+<p><tt>get_nodes(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; [{<a href="#type-node_name">node_name()</a>, <a href="#type-node_title">node_title()</a>}]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取指定节点下的子节点。
+ </p>
+
+<h3 class="function"><a name="publish_item-4">publish_item/4</a></h3>
+<div class="spec">
+<p><tt>publish_item(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, ItemProps::[<a href="#type-item_prop">item_prop()</a>]) -&gt; ItemId::string()</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   创建发布项。
+ </p>
+
+<h3 class="function"><a name="publish_item-5">publish_item/5</a></h3>
+<div class="spec">
+<p><tt>publish_item(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, ItemProps::[<a href="#type-item_prop">item_prop()</a>], ItemId::string()) -&gt; ItemId::string()</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定item id创建发布项。
+ </p>
+
+<h3 class="function"><a name="remove_node_affiliations-4">remove_node_affiliations/4</a></h3>
+<div class="spec">
+<p><tt>remove_node_affiliations(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Affiliations::[<a href="#type-user_affiliation">user_affiliation()</a>]) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   移除指定节点与指定用户的关系。
+ </p>
+
+<h3 class="function"><a name="retract_item-4">retract_item/4</a></h3>
+<div class="spec">
+<p><tt>retract_item(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, ItemId::string()) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   删除指定的发布项。
+ </p>
+
+<h3 class="function"><a name="retrieve_items-3">retrieve_items/3</a></h3>
+<div class="spec">
+<p><tt>retrieve_items(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>) -&gt; [<a href="#type-item">item()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取所有发布项。
+ </p>
+
+<h3 class="function"><a name="retrieve_items-4">retrieve_items/4</a></h3>
+<div class="spec">
+<p><tt>retrieve_items(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, ItemIds::[string()]) -&gt; [<a href="#type-item">item()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据指定的item id，获取所有指定的发布项。
+ </p>
+
+<h3 class="function"><a name="retrieve_items_set-4">retrieve_items_set/4</a></h3>
+<div class="spec">
+<p><tt>retrieve_items_set(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Max::integer()) -&gt; {[<a href="#type-item">item()</a>], set()}</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据xep-0059协议获取指定数量的发布项。
+ </p>
+
+<h3 class="function"><a name="retrieve_items_set-5">retrieve_items_set/5</a></h3>
+<div class="spec">
+<p><tt>retrieve_items_set(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Max::integer(), After::string()) -&gt; {[<a href="#type-item">item()</a>], set()}</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   根据xep-0059协议获取指定数量的发布项。
+ </p>
+
+<h3 class="function"><a name="retrieve_most_recent_items-4">retrieve_most_recent_items/4</a></h3>
+<div class="spec">
+<p><tt>retrieve_most_recent_items(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Num::integer()) -&gt; [<a href="#type-item">item()</a>]</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   获取最近发布的指定数量的发布项。
+ </p>
+
+<h3 class="function"><a name="set_node_affiliations-4">set_node_affiliations/4</a></h3>
+<div class="spec">
+<p><tt>set_node_affiliations(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Affiliations::[<a href="#type-user_affiliation">user_affiliation()</a>]) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   设置指定节点的用户关系。当设置的jid与节点不存在关系时会建立所设置的关系。</p>
+<p><b>See also:</b> <a href="#get_affiliations-2">get_affiliations/2</a>.</p>
+
+<h3 class="function"><a name="set_node_config-4">set_node_config/4</a></h3>
+<div class="spec">
+<p><tt>set_node_config(User::string(), Rsrc::<a href="#type-user_resource">user_resource()</a>, NodeName::<a href="#type-node_name">node_name()</a>, Options::[<a href="#type-node_option">node_option()</a>]) -&gt; ok</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>
+   修改指定节点配置
+ </p>
+
+<h3 class="function"><a name="start-0">start/0</a></h3>
+<div class="spec">
+<p><tt>start() -&gt; ok</tt><br></p>
+</div><p>
+   启动pubsub服务。
+ </p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:43.</i></p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body {background-color:#3366CC;}
+            .label {background-color:#ffff00;}
+            .div1 {background-color:#ff0000;width:100px;height:50px;}
+            .table_app{background-color:#FFFFFF;left:0px;width:300px;}
+            .button{background-color:#ffff00;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+            ]]>
+        </script>
+        
+    </head>
+    <body class="body">
+        <div border='0'>
+            
+            <!-- 块级元素测试 -->
+            <label>下方红色div后换行应该有垂直间距</label>
+            <div class='div1'></div>
+            <br/>
+            
+            <label>下方tabel后换行应该有垂直间距</label>
+            <table class="table_app" border="1">
+                <tr>
+                    <td>
+                        <label> 这是一个table </label>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            
+            <label>此label后有两个br</label>
+            <br/>
+            <br/>
+            
+            <!-- 行内元素测试 -->
+            <label>label简单换行</label>
+            <br/>
+            <label>下方image后换行应该是简单换行</label>
+            <img src='local:Icon.png'></img>
+            <br/>
+            <input type="button" class ="button" value="此button后换行无垂直间距"/><br/>
+            <label>此label应该贴着上方的button</label>
+        </div>
+    </body>
+    
+</content>

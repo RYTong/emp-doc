@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_yaws_util</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_yaws_util</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+  This module offer helper functions to access info from yaws_arg.
+
+
+<h2><a name="description">Description</a></h2>
+  This module offer helper functions to access info from yaws_arg.
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-content_type">content_type()</a></h3>
+<p><tt>content_type() = string()</tt></p>
+<p>"content-type"</p>
+
+<h3 class="typedecl"><a name="type-mime_header">mime_header()</a></h3>
+<p><tt>mime_header() = {header, {<a href="#type-content_type">content_type()</a>, Mime::string()}}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-url">url()</a></h3>
+<p><tt>url() = string()</tt></p>
+<p>Url的语法请参考 rfc 2396, 例如: "http://www.erlang.org"是也个url</p>
+
+<h3 class="typedecl"><a name="type-yaws_arg">yaws_arg()</a></h3>
+<p><tt>yaws_arg() = tuple()</tt></p>
+<p>yaws请求参数</p>
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#deliver_file-2">deliver_file/2</a></td><td>检查静态资源的系统路径Path是否存在，如果存则返回yaws可接受的静态资源响应格式，
+  同时根据资源的后缀设置资源的mime类型，否则返回false。资源后缀和mime的对应格式为：
+      ".jad"  -&gt; "text/vnd.sun.j2me.app-descriptor;charset=utf-8"
+      ".apk"  -&gt; "application/vnd.android.package-archive"
+      ".CAB"  -&gt; "application/octet-stream;charset=utf-8"
+      ".xhtml" -&gt; "application/xhtml+xml; charset=utf-8".</td></tr>
+<tr><td valign="top"><a href="#filter_cookie-1">filter_cookie/1</a></td><td>过滤yaws参数中的EMP定义的 cookie信息，然后返回过滤后的yaws参数.</td></tr>
+<tr><td valign="top"><a href="#filter_uri-1">filter_uri/1</a></td><td>从请求参数中过滤掉'app'和'o'参数.</td></tr>
+<tr><td valign="top"><a href="#from_localhost-1">from_localhost/1</a></td><td>判断请求是否来自IP 127.0.0.1或192.168.*.*，如果是则返回true，否则返回false.</td></tr>
+<tr><td valign="top"><a href="#get-2">get/2</a></td><td>Yaws will return undefined instead of [] after version 1.77
+  when the query string is blank, so we add a fun here to adapt to
+  this change.</td></tr>
+<tr><td valign="top"><a href="#get_decode_fun-1">get_decode_fun/1</a></td><td>判断请求报文头中content-type是否为'application/x-www-form-urlencoded',
+  如果是则返回yaws_api:url_decode/1函数.</td></tr>
+<tr><td valign="top"><a href="#get_host-0">get_host/0</a></td><td>与"http://" ++ ewp_params:arg("host")相同.</td></tr>
+<tr><td valign="top"><a href="#get_url_prefix-1">get_url_prefix/1</a></td><td>从yaws arg参数中获取http[s]请求资源的路径.</td></tr>
+<tr><td valign="top"><a href="#get_var-2">get_var/2</a></td><td>与get_var(Var, A, string)相同.</td></tr>
+<tr><td valign="top"><a href="#get_var-3">get_var/3</a></td><td>先从http[s]请求URL参数中获取指定参数,如果取不到再从http[s]请求post body
+  （yaws clidata）中获取指定参数，最后转化为指定类型的值，如果参数不从在，或类型不存
+  在则返回undefined.</td></tr>
+<tr><td valign="top"><a href="#is_gzip_accepted-1">is_gzip_accepted/1</a></td><td>通过yaws arg判断客户端是否支持gzip压缩格式的报文.</td></tr>
+<tr><td valign="top"><a href="#post_var-2">post_var/2</a></td><td>与post_var(Var, A, string)相同.</td></tr>
+<tr><td valign="top"><a href="#post_var-3">post_var/3</a></td><td>从http[s]请求post body（yaws clidata）中获取指定参数，然后转化为指定类型的值，
+  如果参数不从在，或类型不存在则返回undefined.</td></tr>
+<tr><td valign="top"><a href="#query_var-2">query_var/2</a></td><td>与query_var(Var, A, string)相同.</td></tr>
+<tr><td valign="top"><a href="#query_var-3">query_var/3</a></td><td>从http[s]请求URL参数中获取指定参数，然后转化为指定类型的值，如果参数不从在，
+  或类型不存在则返回undefined.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="deliver_file-2">deliver_file/2</a></h3>
+<div class="spec">
+<p><tt>deliver_file(Path, Page) -&gt; Response</tt>
+<ul class="definitions"><li><tt>Path = string()</tt></li><li><tt>Page = string()</tt></li><li><tt>Response = {page, Page::string()} | {page, {<a href="#type-mime_header">mime_header()</a>, Page::string()}} | false</tt></li></ul></p>
+</div><p>检查静态资源的系统路径Path是否存在，如果存则返回yaws可接受的静态资源响应格式，
+  同时根据资源的后缀设置资源的mime类型，否则返回false。资源后缀和mime的对应格式为：
+      ".jad"  -&gt; "text/vnd.sun.j2me.app-descriptor;charset=utf-8"
+      ".apk"  -&gt; "application/vnd.android.package-archive"
+      ".CAB"  -&gt; "application/octet-stream;charset=utf-8"
+      ".xhtml" -&gt; "application/xhtml+xml; charset=utf-8"</p>
+
+<h3 class="function"><a name="filter_cookie-1">filter_cookie/1</a></h3>
+<div class="spec">
+<p><tt>filter_cookie(OrgArg::<a href="#type-yaws_arg">yaws_arg()</a>) -&gt; NewArg::<a href="#type-yaws_arg">yaws_arg()</a></tt><br></p>
+</div><p>过滤yaws参数中的EMP定义的 cookie信息，然后返回过滤后的yaws参数</p>
+
+<h3 class="function"><a name="filter_uri-1">filter_uri/1</a></h3>
+<div class="spec">
+<p><tt>filter_uri(Arg::OrgArg) -&gt; NewArg</tt>
+<ul class="definitions"><li><tt>OrgArg = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>NewArg = <a href="#type-yaws_arg">yaws_arg()</a></tt></li></ul></p>
+</div><p>从请求参数中过滤掉'app'和'o'参数</p>
+
+<h3 class="function"><a name="from_localhost-1">from_localhost/1</a></h3>
+<div class="spec">
+<p><tt>from_localhost(A) -&gt; Boolean</tt>
+<ul class="definitions"><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>Boolean = boolean()</tt></li></ul></p>
+</div><p>判断请求是否来自IP 127.0.0.1或192.168.*.*，如果是则返回true，否则返回false</p>
+
+<h3 class="function"><a name="get-2">get/2</a></h3>
+<div class="spec">
+<p><tt>get(X1, A) -&gt; any()</tt></p>
+</div><p>Yaws will return undefined instead of [] after version 1.77
+  when the query string is blank, so we add a fun here to adapt to
+  this change.</p>
+
+<h3 class="function"><a name="get_decode_fun-1">get_decode_fun/1</a></h3>
+<div class="spec">
+<p><tt>get_decode_fun(A) -&gt; DecodeFun</tt>
+<ul class="definitions"><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>DecodeFun = function()</tt></li></ul></p>
+</div><p>判断请求报文头中content-type是否为'application/x-www-form-urlencoded',
+  如果是则返回yaws_api:url_decode/1函数</p>
+
+<h3 class="function"><a name="get_host-0">get_host/0</a></h3>
+<div class="spec">
+<p><tt>get_host() -&gt; Url</tt>
+<ul class="definitions"><li><tt>Url = <a href="#type-url">url()</a></tt></li></ul></p>
+</div><p>与"http://" ++ ewp_params:arg("host")相同</p>
+
+<h3 class="function"><a name="get_url_prefix-1">get_url_prefix/1</a></h3>
+<div class="spec">
+<p><tt>get_url_prefix(A) -&gt; Path</tt>
+<ul class="definitions"><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>Path = string()</tt></li></ul></p>
+</div><p>从yaws arg参数中获取http[s]请求资源的路径</p>
+
+<h3 class="function"><a name="get_var-2">get_var/2</a></h3>
+<div class="spec">
+<p><tt>get_var(Var, A) -&gt; any()</tt></p>
+</div><p>与get_var(Var, A, string)相同</p>
+
+<h3 class="function"><a name="get_var-3">get_var/3</a></h3>
+<div class="spec">
+<p><tt>get_var(Var, A, Type) -&gt; Value</tt>
+<ul class="definitions"><li><tt>Var = string()</tt></li><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>Type = integer | float | atom | string | number</tt></li><li><tt>Value = number() | atom() | string()</tt></li></ul></p>
+</div><p>先从http[s]请求URL参数中获取指定参数,如果取不到再从http[s]请求post body
+  （yaws clidata）中获取指定参数，最后转化为指定类型的值，如果参数不从在，或类型不存
+  在则返回undefined</p>
+
+<h3 class="function"><a name="is_gzip_accepted-1">is_gzip_accepted/1</a></h3>
+<div class="spec">
+<p><tt>is_gzip_accepted(A) -&gt; IsAccepted</tt>
+<ul class="definitions"><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>IsAccepted = boolean()</tt></li></ul></p>
+</div><p>通过yaws arg判断客户端是否支持gzip压缩格式的报文</p>
+
+<h3 class="function"><a name="post_var-2">post_var/2</a></h3>
+<div class="spec">
+<p><tt>post_var(Var, A) -&gt; any()</tt></p>
+</div><p>与post_var(Var, A, string)相同</p>
+
+<h3 class="function"><a name="post_var-3">post_var/3</a></h3>
+<div class="spec">
+<p><tt>post_var(Var, A, Type) -&gt; Value</tt>
+<ul class="definitions"><li><tt>Var = string()</tt></li><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>Type = integer | float | atom | string | number</tt></li><li><tt>Value = number() | atom() | string()</tt></li></ul></p>
+</div><p>从http[s]请求post body（yaws clidata）中获取指定参数，然后转化为指定类型的值，
+  如果参数不从在，或类型不存在则返回undefined</p>
+
+<h3 class="function"><a name="query_var-2">query_var/2</a></h3>
+<div class="spec">
+<p><tt>query_var(Var, A) -&gt; any()</tt></p>
+</div><p>与query_var(Var, A, string)相同</p>
+
+<h3 class="function"><a name="query_var-3">query_var/3</a></h3>
+<div class="spec">
+<p><tt>query_var(Var, A, Type) -&gt; Value</tt>
+<ul class="definitions"><li><tt>Var = string()</tt></li><li><tt>A = <a href="#type-yaws_arg">yaws_arg()</a></tt></li><li><tt>Type = integer | float | atom | string | number</tt></li><li><tt>Value = number() | atom() | string()</tt></li></ul></p>
+</div><p>从http[s]请求URL参数中获取指定参数，然后转化为指定类型的值，如果参数不从在，
+  或类型不存在则返回undefined</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:47.</i></p>
+</body>
+</html>

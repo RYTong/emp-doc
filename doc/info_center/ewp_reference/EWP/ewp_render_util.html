@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_render_util</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_render_util</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>http响应生成通用API。该模块用来生成yaws规定的http响应格式，
+        调用者无须关注API的具体返回格式。该模块API常用来生成自定义
+        controller的返回值。.
+
+
+<h2><a name="description">Description</a></h2>http响应生成通用API。该模块用来生成yaws规定的http响应格式，
+        调用者无须关注API的具体返回格式。该模块API常用来生成自定义
+        controller的返回值。
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-header">header()</a></h3>
+<p><tt>header() = {Field::string(), Value::string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-option">option()</a></h3>
+<p><tt>option() = {status, Code::integer()} | {header, [<a href="#type-header">header()</a>]} | {content_type, string()}</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#render-1">render/1</a></td><td>相当于render(Content, [])。.</td></tr>
+<tr><td valign="top"><a href="#render-2">render/2</a></td><td>根据指定内容和选项生成响应.</td></tr>
+<tr><td valign="top"><a href="#render_404-0">render_404/0</a></td><td>相当于render_404("")。.</td></tr>
+<tr><td valign="top"><a href="#render_404-1">render_404/1</a></td><td>相当于render_404(Str, "text/plain; charset=utf-8")。.</td></tr>
+<tr><td valign="top"><a href="#render_404-2">render_404/2</a></td><td>根据指定内容和类型生成状态码为404的响应。.</td></tr>
+<tr><td valign="top"><a href="#render_binary-1">render_binary/1</a></td><td>相当于render_binary(Bin, []).</td></tr>
+<tr><td valign="top"><a href="#render_binary-2">render_binary/2</a></td><td>根据指定的二进制数据和选项生成响应。.</td></tr>
+<tr><td valign="top"><a href="#render_error_json-1">render_error_json/1</a></td><td>相当于render_error_json(Str, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_error_json-2">render_error_json/2</a></td><td>根据指定错误信息和选项生成{"message":"Str"}json响应.</td></tr>
+<tr><td valign="top"><a href="#render_error_msg-1">render_error_msg/1</a></td><td>根据指定错误信息生成响应。.</td></tr>
+<tr><td valign="top"><a href="#render_error_xhtml-1">render_error_xhtml/1</a></td><td>相当于render_error_xhtml(Str, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_error_xhtml-2">render_error_xhtml/2</a></td><td>根据指定的错误信息和选项生成xhtml响应.</td></tr>
+<tr><td valign="top"><a href="#render_error_xml-1">render_error_xml/1</a></td><td>相当于render_error_xml(Str, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_error_xml-2">render_error_xml/2</a></td><td>根据指定的错误信息和选项生成xml响应。.</td></tr>
+<tr><td valign="top"><a href="#render_html-2">render_html/2</a></td><td>根据指定的html字符串和选项生成响应。.</td></tr>
+<tr><td valign="top"><a href="#render_json-1">render_json/1</a></td><td>相当于render_json(Json, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_json-2">render_json/2</a></td><td>根据指定的json数据或json字符串和选项生成响应。.</td></tr>
+<tr><td valign="top"><a href="#render_ok_json-0">render_ok_json/0</a></td><td>相当于render_ok_json([])。.</td></tr>
+<tr><td valign="top"><a href="#render_ok_json-1">render_ok_json/1</a></td><td>根据指定选项生成{"message":"ok"}json响应.</td></tr>
+<tr><td valign="top"><a href="#render_text-1">render_text/1</a></td><td>相当于render_text(Text, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_text-2">render_text/2</a></td><td>根据指定的文本和选项生成响应。.</td></tr>
+<tr><td valign="top"><a href="#render_xhtml-1">render_xhtml/1</a></td><td>相当于render_xhtml(XhtmlContent,[])。.</td></tr>
+<tr><td valign="top"><a href="#render_xhtml-2">render_xhtml/2</a></td><td>根据指定的xhtml字符串和选项生成响应。.</td></tr>
+<tr><td valign="top"><a href="#render_xml-1">render_xml/1</a></td><td>相当于render_xml(Xml, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_xml-2">render_xml/2</a></td><td>根据指定的xml数据或xml字符串和选项生成响应.</td></tr>
+<tr><td valign="top"><a href="#render_xml-3">render_xml/3</a></td><td>根据指定的xml数据或xml字符串和选项以及yaws arg记录生成响应。
+       yaws arg记录用来判断响应是否需要压缩。.</td></tr>
+<tr><td valign="top"><a href="#render_xml_gzip-1">render_xml_gzip/1</a></td><td>相当于render_xml_gzip(Xml, [])。.</td></tr>
+<tr><td valign="top"><a href="#render_xml_gzip-2">render_xml_gzip/2</a></td><td>根据指定的xml数据或xml字符串和选项压缩并生成响应。.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="render-1">render/1</a></h3>
+<div class="spec">
+<p><tt>render(Content::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>throws <tt>{error, string()}</tt></p>
+<p>相当于render(Content, [])。</p>
+
+<h3 class="function"><a name="render-2">render/2</a></h3>
+<div class="spec">
+<p><tt>render(Content::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>throws <tt>{error, string()}</tt></p>
+<p>根据指定内容和选项生成响应</p>
+
+<h3 class="function"><a name="render_404-0">render_404/0</a></h3>
+<div class="spec">
+<p><tt>render_404() -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_404("")。</p>
+
+<h3 class="function"><a name="render_404-1">render_404/1</a></h3>
+<div class="spec">
+<p><tt>render_404(Str::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_404(Str, "text/plain; charset=utf-8")。</p>
+
+<h3 class="function"><a name="render_404-2">render_404/2</a></h3>
+<div class="spec">
+<p><tt>render_404(Content::string(), ContentType::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定内容和类型生成状态码为404的响应。</p>
+
+<h3 class="function"><a name="render_binary-1">render_binary/1</a></h3>
+<div class="spec">
+<p><tt>render_binary(Bin::binary()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_binary(Bin, [])</p>
+
+<h3 class="function"><a name="render_binary-2">render_binary/2</a></h3>
+<div class="spec">
+<p><tt>render_binary(Bin::binary(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的二进制数据和选项生成响应。</p>
+
+<h3 class="function"><a name="render_error_json-1">render_error_json/1</a></h3>
+<div class="spec">
+<p><tt>render_error_json(Str::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_error_json(Str, [])。</p>
+
+<h3 class="function"><a name="render_error_json-2">render_error_json/2</a></h3>
+<div class="spec">
+<p><tt>render_error_json(Str::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定错误信息和选项生成{"message":"Str"}json响应</p>
+
+<h3 class="function"><a name="render_error_msg-1">render_error_msg/1</a></h3>
+<div class="spec">
+<p><tt>render_error_msg(Msg::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>throws <tt>{error, string()}</tt></p>
+<p>根据指定错误信息生成响应。</p>
+
+<h3 class="function"><a name="render_error_xhtml-1">render_error_xhtml/1</a></h3>
+<div class="spec">
+<p><tt>render_error_xhtml(Str::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_error_xhtml(Str, [])。</p>
+
+<h3 class="function"><a name="render_error_xhtml-2">render_error_xhtml/2</a></h3>
+<div class="spec">
+<p><tt>render_error_xhtml(Str::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的错误信息和选项生成xhtml响应</p>
+
+<h3 class="function"><a name="render_error_xml-1">render_error_xml/1</a></h3>
+<div class="spec">
+<p><tt>render_error_xml(Str::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_error_xml(Str, [])。</p>
+
+<h3 class="function"><a name="render_error_xml-2">render_error_xml/2</a></h3>
+<div class="spec">
+<p><tt>render_error_xml(Str::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的错误信息和选项生成xml响应。</p>
+
+<h3 class="function"><a name="render_html-2">render_html/2</a></h3>
+<div class="spec">
+<p><tt>render_html(Content::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的html字符串和选项生成响应。</p>
+
+<h3 class="function"><a name="render_json-1">render_json/1</a></h3>
+<div class="spec">
+<p><tt>render_json(Json::<a href="#type-json">json()</a> | string() | binary()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_json(Json, [])。</p>
+
+<h3 class="function"><a name="render_json-2">render_json/2</a></h3>
+<div class="spec">
+<p><tt>render_json(Json::<a href="#type-json">json()</a> | string() | binary(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的json数据或json字符串和选项生成响应。</p>
+
+<h3 class="function"><a name="render_ok_json-0">render_ok_json/0</a></h3>
+<div class="spec">
+<p><tt>render_ok_json() -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_ok_json([])。</p>
+
+<h3 class="function"><a name="render_ok_json-1">render_ok_json/1</a></h3>
+<div class="spec">
+<p><tt>render_ok_json(Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定选项生成{"message":"ok"}json响应</p>
+
+<h3 class="function"><a name="render_text-1">render_text/1</a></h3>
+<div class="spec">
+<p><tt>render_text(Text::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_text(Text, [])。</p>
+
+<h3 class="function"><a name="render_text-2">render_text/2</a></h3>
+<div class="spec">
+<p><tt>render_text(Text::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的文本和选项生成响应。</p>
+
+<h3 class="function"><a name="render_xhtml-1">render_xhtml/1</a></h3>
+<div class="spec">
+<p><tt>render_xhtml(XhtmlContent::string()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_xhtml(XhtmlContent,[])。</p>
+
+<h3 class="function"><a name="render_xhtml-2">render_xhtml/2</a></h3>
+<div class="spec">
+<p><tt>render_xhtml(Xhtml::string(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的xhtml字符串和选项生成响应。</p>
+
+<h3 class="function"><a name="render_xml-1">render_xml/1</a></h3>
+<div class="spec">
+<p><tt>render_xml(Xml::<a href="#type-xml_element">xml_element()</a> | string() | binary()) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>throws <tt>{error, string()}</tt></p>
+<p>相当于render_xml(Xml, [])。</p>
+
+<h3 class="function"><a name="render_xml-2">render_xml/2</a></h3>
+<div class="spec">
+<p><tt>render_xml(Xml::<a href="#type-xml_element">xml_element()</a> | string() | binary(), Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>throws <tt>{error, string()}</tt></p>
+<p>根据指定的xml数据或xml字符串和选项生成响应</p>
+
+<h3 class="function"><a name="render_xml-3">render_xml/3</a></h3>
+<div class="spec">
+<p><tt>render_xml(Xml::<a href="#type-xml_element">xml_element()</a> | string() | binary(), Options::[<a href="#type-option">option()</a>], A::<a href="#type-yaws_arg">yaws_arg()</a>) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>throws <tt>{error, string()}</tt></p>
+<p>根据指定的xml数据或xml字符串和选项以及yaws arg记录生成响应。
+       yaws arg记录用来判断响应是否需要压缩。</p>
+
+<h3 class="function"><a name="render_xml_gzip-1">render_xml_gzip/1</a></h3>
+<div class="spec">
+<p><tt>render_xml_gzip(Xml::<a href="#type-xml_element">xml_element()</a> | string() | binary) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>相当于render_xml_gzip(Xml, [])。</p>
+
+<h3 class="function"><a name="render_xml_gzip-2">render_xml_gzip/2</a></h3>
+<div class="spec">
+<p><tt>render_xml_gzip(Xml::<a href="#type-xml_element">xml_element()</a> | string() | binary, Options::[<a href="#type-option">option()</a>]) -&gt; <a href="#type-response">response()</a></tt><br></p>
+</div><p>根据指定的xml数据或xml字符串和选项压缩并生成响应。</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:48.</i></p>
+</body>
+</html>

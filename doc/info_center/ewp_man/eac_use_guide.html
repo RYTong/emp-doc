@@ -1,0 +1,1773 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../manifest.appcache">
+    
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        
+        <meta charset="UTF-8">
+        <title>EWP管理平台使用文档 | EMP参考手册</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="">
+        <meta name="description" content="Erlang Mobile Platform">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        
+        <link rel="prev" href="../ewp_man/eac_fast_use_guide.html" />
+        
+
+        <meta property="og:title" content="EWP管理平台使用文档 | EMP参考手册">
+        <meta property="og:site_name" content="EMP参考手册">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    </head>
+    <body>
+        
+        
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book"  data-level="7.5" data-basepath=".." data-revision="1438943472421">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    
+    
+
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../index.html" >EMP参考手册</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+
+        
+
+        
+
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../index.html"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+    
+        <li class="chapter " data-level="1" data-path="overview/EMP5.4TechnologyWhitePapers.html">
+            
+            <a href="../overview/EMP5.4TechnologyWhitePapers.html">
+                <i class="fa fa-check"></i> <b>1.</b> EMP5.4技术白皮书
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> EMP 安全</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="emp_security/emp_security_channel.html">
+            
+            <a href="../emp_security/emp_security_channel.html">
+                <i class="fa fa-check"></i> <b>2.1.</b> EMP加密信道
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="emp_ui_reference/README.html">
+            
+            <a href="../emp_ui_reference/README.html">
+                <i class="fa fa-check"></i> <b>3.</b> EMP界面开发规范
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>3.1.</b> 变更记录
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="emp_ui_reference/ChangeLog.html">
+            
+            <a href="../emp_ui_reference/ChangeLog.html">
+                <i class="fa fa-check"></i> <b>3.1.1.</b> 5.2到5.3的变更记录
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="emp_ui_reference/css/css_introduction.html">
+            
+            <a href="../emp_ui_reference/css/css_introduction.html">
+                <i class="fa fa-check"></i> <b>3.2.</b> CSS样式
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="emp_ui_reference/css/CSS.html">
+            
+            <a href="../emp_ui_reference/css/CSS.html">
+                <i class="fa fa-check"></i> <b>3.2.1.</b> 样式介绍
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="emp_ui_reference/property/property_introduction.html">
+            
+            <a href="../emp_ui_reference/property/property_introduction.html">
+                <i class="fa fa-check"></i> <b>3.3.</b> 属性
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="emp_ui_reference/property/Property.html">
+            
+            <a href="../emp_ui_reference/property/Property.html">
+                <i class="fa fa-check"></i> <b>3.3.1.</b> 属性介绍
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="emp_ui_reference/property/control_global_property.html">
+            
+            <a href="../emp_ui_reference/property/control_global_property.html">
+                <i class="fa fa-check"></i> <b>3.3.2.</b> 工程配置属性介绍
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>3.4.</b> 界面标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="emp_ui_reference/html_tags/tag_binding.html">
+            
+            <a href="../emp_ui_reference/html_tags/tag_binding.html">
+                <i class="fa fa-check"></i> <b>3.4.1.</b> 控件支持属性和样式对照表
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="emp_ui_reference/html_tags/emp_layout.html">
+            
+            <a href="../emp_ui_reference/html_tags/emp_layout.html">
+                <i class="fa fa-check"></i> <b>3.4.2.</b> 布局规则
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="emp_ui_reference/html_tags/emp_layout_table.html">
+            
+            <a href="../emp_ui_reference/html_tags/emp_layout_table.html">
+                <i class="fa fa-check"></i> <b>3.4.3.</b> Table布局规则
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="emp_ui_reference/html_tags/align_valign_arithmetic.html">
+            
+            <a href="../emp_ui_reference/html_tags/align_valign_arithmetic.html">
+                <i class="fa fa-check"></i> <b>3.4.4.</b> 对齐算法
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>3.4.5.</b> 基本标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.5.1" data-path="emp_ui_reference/html_tags/Body.html">
+            
+            <a href="../emp_ui_reference/html_tags/Body.html">
+                <i class="fa fa-check"></i> <b>3.4.5.1.</b> Body
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.2" data-path="emp_ui_reference/html_tags/Div.html">
+            
+            <a href="../emp_ui_reference/html_tags/Div.html">
+                <i class="fa fa-check"></i> <b>3.4.5.2.</b> Div
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.3" data-path="emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+            
+            <a href="../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+                <i class="fa fa-check"></i> <b>3.4.5.3.</b> Table &amp; Tr &amp; Td &amp; Th
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.4" data-path="emp_ui_reference/html_tags/Image.html">
+            
+            <a href="../emp_ui_reference/html_tags/Image.html">
+                <i class="fa fa-check"></i> <b>3.4.5.4.</b> Image
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.5" data-path="emp_ui_reference/html_tags/Select &amp; Option.html">
+            
+            <a href="../emp_ui_reference/html_tags/Select &amp; Option.html">
+                <i class="fa fa-check"></i> <b>3.4.5.5.</b> Select &amp; Option
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.6" data-path="emp_ui_reference/html_tags/Button.html">
+            
+            <a href="../emp_ui_reference/html_tags/Button.html">
+                <i class="fa fa-check"></i> <b>3.4.5.6.</b> Button
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.7" data-path="emp_ui_reference/html_tags/Inputtext.html">
+            
+            <a href="../emp_ui_reference/html_tags/Inputtext.html">
+                <i class="fa fa-check"></i> <b>3.4.5.7.</b> InputText
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.8" data-path="emp_ui_reference/html_tags/Password.html">
+            
+            <a href="../emp_ui_reference/html_tags/Password.html">
+                <i class="fa fa-check"></i> <b>3.4.5.8.</b> Password
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.9" data-path="emp_ui_reference/html_tags/Radio.html">
+            
+            <a href="../emp_ui_reference/html_tags/Radio.html">
+                <i class="fa fa-check"></i> <b>3.4.5.9.</b> Radio
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.10" data-path="emp_ui_reference/html_tags/Checkbox.html">
+            
+            <a href="../emp_ui_reference/html_tags/Checkbox.html">
+                <i class="fa fa-check"></i> <b>3.4.5.10.</b> Checkbox
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.11" data-path="emp_ui_reference/html_tags/Hidden.html">
+            
+            <a href="../emp_ui_reference/html_tags/Hidden.html">
+                <i class="fa fa-check"></i> <b>3.4.5.11.</b> Hidden
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.12" data-path="emp_ui_reference/html_tags/Webview.html">
+            
+            <a href="../emp_ui_reference/html_tags/Webview.html">
+                <i class="fa fa-check"></i> <b>3.4.5.12.</b> Webview
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.13" data-path="emp_ui_reference/html_tags/Segment.html">
+            
+            <a href="../emp_ui_reference/html_tags/Segment.html">
+                <i class="fa fa-check"></i> <b>3.4.5.13.</b> Segment
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.14" data-path="emp_ui_reference/html_tags/Switch.html">
+            
+            <a href="../emp_ui_reference/html_tags/Switch.html">
+                <i class="fa fa-check"></i> <b>3.4.5.14.</b> Switch
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.15" data-path="emp_ui_reference/html_tags/Link.html">
+            
+            <a href="../emp_ui_reference/html_tags/Link.html">
+                <i class="fa fa-check"></i> <b>3.4.5.15.</b> Link
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.16" data-path="emp_ui_reference/html_tags/Label.html">
+            
+            <a href="../emp_ui_reference/html_tags/Label.html">
+                <i class="fa fa-check"></i> <b>3.4.5.16.</b> Label
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.17" data-path="emp_ui_reference/html_tags/I &amp; Em.html">
+            
+            <a href="../emp_ui_reference/html_tags/I &amp; Em.html">
+                <i class="fa fa-check"></i> <b>3.4.5.17.</b> I &amp; Em
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.18" data-path="emp_ui_reference/html_tags/B &amp; Strong.html">
+            
+            <a href="../emp_ui_reference/html_tags/B &amp; Strong.html">
+                <i class="fa fa-check"></i> <b>3.4.5.18.</b> B &amp; Strong
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.19" data-path="emp_ui_reference/html_tags/RichText.html">
+            
+            <a href="../emp_ui_reference/html_tags/RichText.html">
+                <i class="fa fa-check"></i> <b>3.4.5.19.</b> RichText
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.20" data-path="emp_ui_reference/html_tags/Form.html">
+            
+            <a href="../emp_ui_reference/html_tags/Form.html">
+                <i class="fa fa-check"></i> <b>3.4.5.20.</b> Form
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.21" data-path="emp_ui_reference/html_tags/Br.html">
+            
+            <a href="../emp_ui_reference/html_tags/Br.html">
+                <i class="fa fa-check"></i> <b>3.4.5.21.</b> Br
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="emp_ui_reference/html_tags/CustomizeTag.html">
+            
+            <a href="../emp_ui_reference/html_tags/CustomizeTag.html">
+                <i class="fa fa-check"></i> <b>3.4.6.</b> 定制标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.6.1" data-path="emp_ui_reference/html_tags/pies.html">
+            
+            <a href="../emp_ui_reference/html_tags/pies.html">
+                <i class="fa fa-check"></i> <b>3.4.6.1.</b> 饼状图
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6.2" data-path="emp_ui_reference/html_tags/barPlot.html">
+            
+            <a href="../emp_ui_reference/html_tags/barPlot.html">
+                <i class="fa fa-check"></i> <b>3.4.6.2.</b> 柱状图
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6.3" data-path="emp_ui_reference/html_tags/linePlot.html">
+            
+            <a href="../emp_ui_reference/html_tags/linePlot.html">
+                <i class="fa fa-check"></i> <b>3.4.6.3.</b> 折线图
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="emp_ui_reference/lua/Lua.html">
+            
+            <a href="../emp_ui_reference/lua/Lua.html">
+                <i class="fa fa-check"></i> <b>3.5.</b> Lua
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="emp_ui_reference/lua/FunctionInLibrary.html">
+            
+            <a href="../emp_ui_reference/lua/FunctionInLibrary.html">
+                <i class="fa fa-check"></i> <b>3.5.1.</b> EMP Lua Library
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="emp_ui_reference/lua/Metatable.html">
+            
+            <a href="../emp_ui_reference/lua/Metatable.html">
+                <i class="fa fa-check"></i> <b>3.5.2.</b> 界面标签支持的Lua接口
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="emp_ui_reference/lua/Animation.html">
+            
+            <a href="../emp_ui_reference/lua/Animation.html">
+                <i class="fa fa-check"></i> <b>3.5.3.</b> 动画
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="emp_ui_reference/lua/RYTL_Script_Library.html">
+            
+            <a href="../emp_ui_reference/lua/RYTL_Script_Library.html">
+                <i class="fa fa-check"></i> <b>3.5.4.</b> RYTL脚本库
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="emp_config/README.html">
+            
+            <a href="../emp_config/README.html">
+                <i class="fa fa-check"></i> <b>4.</b> EMP开发配置
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="emp_config/ewp/README.html">
+            
+            <a href="../emp_config/ewp/README.html">
+                <i class="fa fa-check"></i> <b>4.1.</b> 服务器配置
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="emp_config/ewp/ewp_conf.html">
+            
+            <a href="../emp_config/ewp/ewp_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.1.</b> EWP 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="emp_config/ewp/app_conf.html">
+            
+            <a href="../emp_config/ewp/app_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.2.</b> APP 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="emp_config/ewp/yaws_conf.html">
+            
+            <a href="../emp_config/ewp/yaws_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.3.</b> YAWS 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="emp_config/ewp/adapter_conf.html">
+            
+            <a href="../emp_config/ewp/adapter_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.4.</b> 适配 配置
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>5.</b> EWP5.4管理后台功能说明文档
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="console/Login.html">
+            
+            <a href="../console/Login.html">
+                <i class="fa fa-check"></i> <b>5.1.</b> 登录
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="console/ClusterManagement.html">
+            
+            <a href="../console/ClusterManagement.html">
+                <i class="fa fa-check"></i> <b>5.2.</b> 集群管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="console/BusinessChannelManagement.html">
+            
+            <a href="../console/BusinessChannelManagement.html">
+                <i class="fa fa-check"></i> <b>5.3.</b> 业务频道管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="console/PushManagement.html">
+            
+            <a href="../console/PushManagement.html">
+                <i class="fa fa-check"></i> <b>5.4.</b> Push管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="console/EWPStateMonitor.html">
+            
+            <a href="../console/EWPStateMonitor.html">
+                <i class="fa fa-check"></i> <b>5.5.</b> EWP状态监控
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="console/LogManagement.html">
+            
+            <a href="../console/LogManagement.html">
+                <i class="fa fa-check"></i> <b>5.6.</b> 日志管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="console/StatisticAnalysis.html">
+            
+            <a href="../console/StatisticAnalysis.html">
+                <i class="fa fa-check"></i> <b>5.7.</b> 统计分析
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="console/ResourceManagement.html">
+            
+            <a href="../console/ResourceManagement.html">
+                <i class="fa fa-check"></i> <b>5.8.</b> 资源管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="console/Logout.html">
+            
+            <a href="../console/Logout.html">
+                <i class="fa fa-check"></i> <b>5.9.</b> 退出
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ewp_reference/EWP/index.html">
+            
+            <a href="../ewp_reference/EWP/index.html">
+                <i class="fa fa-check"></i> <b>6.</b> EWP API
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>7.</b> EWP Manual
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="ewp_man/cron_service.html">
+            
+            <a href="../ewp_man/cron_service.html">
+                <i class="fa fa-check"></i> <b>7.1.</b> cron_service
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="ewp_man/InstructionUseSyslog.html">
+            
+            <a href="../ewp_man/InstructionUseSyslog.html">
+                <i class="fa fa-check"></i> <b>7.2.</b> syslog
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="ewp_man/PreventDuplicateSubmit.html">
+            
+            <a href="../ewp_man/PreventDuplicateSubmit.html">
+                <i class="fa fa-check"></i> <b>7.3.</b> 防重复提交使用说明
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="ewp_man/eac_fast_use_guide.html">
+            
+            <a href="../ewp_man/eac_fast_use_guide.html">
+                <i class="fa fa-check"></i> <b>7.4.</b> EWP管理平台快速使用文档
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="ewp_man/eac_use_guide.html">
+            
+            <a href="../ewp_man/eac_use_guide.html">
+                <i class="fa fa-check"></i> <b>7.5.</b> EWP管理平台使用文档
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 100%;min-width: 98.46153846153847%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../overview/EMP5.4TechnologyWhitePapers.html" title="EMP5.4技术白皮书" class="chapter done new-chapter" data-progress="1" style="left: 1.5384615384615385%;"></a>
+    
+        <a href="../emp_security/emp_security_channel.html" title="EMP加密信道" class="chapter done " data-progress="2.1" style="left: 3.076923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/README.html" title="EMP界面开发规范" class="chapter done new-chapter" data-progress="3" style="left: 4.615384615384615%;"></a>
+    
+        <a href="../emp_ui_reference/ChangeLog.html" title="5.2到5.3的变更记录" class="chapter done " data-progress="3.1.1" style="left: 6.153846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/css/css_introduction.html" title="CSS样式" class="chapter done " data-progress="3.2" style="left: 7.6923076923076925%;"></a>
+    
+        <a href="../emp_ui_reference/css/CSS.html" title="样式介绍" class="chapter done " data-progress="3.2.1" style="left: 9.23076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/property/property_introduction.html" title="属性" class="chapter done " data-progress="3.3" style="left: 10.76923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/property/Property.html" title="属性介绍" class="chapter done " data-progress="3.3.1" style="left: 12.307692307692308%;"></a>
+    
+        <a href="../emp_ui_reference/property/control_global_property.html" title="工程配置属性介绍" class="chapter done " data-progress="3.3.2" style="left: 13.846153846153847%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/tag_binding.html" title="控件支持属性和样式对照表" class="chapter done " data-progress="3.4.1" style="left: 15.384615384615385%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/emp_layout.html" title="布局规则" class="chapter done " data-progress="3.4.2" style="left: 16.923076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/emp_layout_table.html" title="Table布局规则" class="chapter done " data-progress="3.4.3" style="left: 18.46153846153846%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/align_valign_arithmetic.html" title="对齐算法" class="chapter done " data-progress="3.4.4" style="left: 20%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Body.html" title="Body" class="chapter done " data-progress="3.4.5.1" style="left: 21.53846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Div.html" title="Div" class="chapter done " data-progress="3.4.5.2" style="left: 23.076923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html" title="Table &amp; Tr &amp; Td &amp; Th" class="chapter done " data-progress="3.4.5.3" style="left: 24.615384615384617%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Image.html" title="Image" class="chapter done " data-progress="3.4.5.4" style="left: 26.153846153846153%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Select &amp; Option.html" title="Select &amp; Option" class="chapter done " data-progress="3.4.5.5" style="left: 27.692307692307693%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Button.html" title="Button" class="chapter done " data-progress="3.4.5.6" style="left: 29.23076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Inputtext.html" title="InputText" class="chapter done " data-progress="3.4.5.7" style="left: 30.76923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Password.html" title="Password" class="chapter done " data-progress="3.4.5.8" style="left: 32.30769230769231%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Radio.html" title="Radio" class="chapter done " data-progress="3.4.5.9" style="left: 33.84615384615385%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Checkbox.html" title="Checkbox" class="chapter done " data-progress="3.4.5.10" style="left: 35.38461538461539%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Hidden.html" title="Hidden" class="chapter done " data-progress="3.4.5.11" style="left: 36.92307692307692%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Webview.html" title="Webview" class="chapter done " data-progress="3.4.5.12" style="left: 38.46153846153846%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Segment.html" title="Segment" class="chapter done " data-progress="3.4.5.13" style="left: 40%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Switch.html" title="Switch" class="chapter done " data-progress="3.4.5.14" style="left: 41.53846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Link.html" title="Link" class="chapter done " data-progress="3.4.5.15" style="left: 43.07692307692308%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Label.html" title="Label" class="chapter done " data-progress="3.4.5.16" style="left: 44.61538461538461%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/I &amp; Em.html" title="I &amp; Em" class="chapter done " data-progress="3.4.5.17" style="left: 46.15384615384615%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/B &amp; Strong.html" title="B &amp; Strong" class="chapter done " data-progress="3.4.5.18" style="left: 47.69230769230769%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/RichText.html" title="RichText" class="chapter done " data-progress="3.4.5.19" style="left: 49.23076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Form.html" title="Form" class="chapter done " data-progress="3.4.5.20" style="left: 50.76923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Br.html" title="Br" class="chapter done " data-progress="3.4.5.21" style="left: 52.30769230769231%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/CustomizeTag.html" title="定制标签" class="chapter done " data-progress="3.4.6" style="left: 53.84615384615385%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/pies.html" title="饼状图" class="chapter done " data-progress="3.4.6.1" style="left: 55.38461538461539%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/barPlot.html" title="柱状图" class="chapter done " data-progress="3.4.6.2" style="left: 56.92307692307692%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/linePlot.html" title="折线图" class="chapter done " data-progress="3.4.6.3" style="left: 58.46153846153846%;"></a>
+    
+        <a href="../emp_ui_reference/lua/Lua.html" title="Lua" class="chapter done " data-progress="3.5" style="left: 60%;"></a>
+    
+        <a href="../emp_ui_reference/lua/FunctionInLibrary.html" title="EMP Lua Library" class="chapter done " data-progress="3.5.1" style="left: 61.53846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/lua/Metatable.html" title="界面标签支持的Lua接口" class="chapter done " data-progress="3.5.2" style="left: 63.07692307692308%;"></a>
+    
+        <a href="../emp_ui_reference/lua/Animation.html" title="动画" class="chapter done " data-progress="3.5.3" style="left: 64.61538461538461%;"></a>
+    
+        <a href="../emp_ui_reference/lua/RYTL_Script_Library.html" title="RYTL脚本库" class="chapter done " data-progress="3.5.4" style="left: 66.15384615384616%;"></a>
+    
+        <a href="../emp_config/README.html" title="EMP开发配置" class="chapter done new-chapter" data-progress="4" style="left: 67.6923076923077%;"></a>
+    
+        <a href="../emp_config/ewp/README.html" title="服务器配置" class="chapter done " data-progress="4.1" style="left: 69.23076923076923%;"></a>
+    
+        <a href="../emp_config/ewp/ewp_conf.html" title="EWP 配置" class="chapter done " data-progress="4.1.1" style="left: 70.76923076923077%;"></a>
+    
+        <a href="../emp_config/ewp/app_conf.html" title="APP 配置" class="chapter done " data-progress="4.1.2" style="left: 72.3076923076923%;"></a>
+    
+        <a href="../emp_config/ewp/yaws_conf.html" title="YAWS 配置" class="chapter done " data-progress="4.1.3" style="left: 73.84615384615384%;"></a>
+    
+        <a href="../emp_config/ewp/adapter_conf.html" title="适配 配置" class="chapter done " data-progress="4.1.4" style="left: 75.38461538461539%;"></a>
+    
+        <a href="../console/Login.html" title="登录" class="chapter done " data-progress="5.1" style="left: 76.92307692307692%;"></a>
+    
+        <a href="../console/ClusterManagement.html" title="集群管理" class="chapter done " data-progress="5.2" style="left: 78.46153846153847%;"></a>
+    
+        <a href="../console/BusinessChannelManagement.html" title="业务频道管理" class="chapter done " data-progress="5.3" style="left: 80%;"></a>
+    
+        <a href="../console/PushManagement.html" title="Push管理" class="chapter done " data-progress="5.4" style="left: 81.53846153846153%;"></a>
+    
+        <a href="../console/EWPStateMonitor.html" title="EWP状态监控" class="chapter done " data-progress="5.5" style="left: 83.07692307692308%;"></a>
+    
+        <a href="../console/LogManagement.html" title="日志管理" class="chapter done " data-progress="5.6" style="left: 84.61538461538461%;"></a>
+    
+        <a href="../console/StatisticAnalysis.html" title="统计分析" class="chapter done " data-progress="5.7" style="left: 86.15384615384616%;"></a>
+    
+        <a href="../console/ResourceManagement.html" title="资源管理" class="chapter done " data-progress="5.8" style="left: 87.6923076923077%;"></a>
+    
+        <a href="../console/Logout.html" title="退出" class="chapter done " data-progress="5.9" style="left: 89.23076923076923%;"></a>
+    
+        <a href="../ewp_reference/EWP/index.html" title="EWP API" class="chapter done new-chapter" data-progress="6" style="left: 90.76923076923077%;"></a>
+    
+        <a href="../section_README.html" title="EWP Manual" class="chapter done new-chapter" data-progress="7" style="left: 92.3076923076923%;"></a>
+    
+        <a href="../ewp_man/cron_service.html" title="cron_service" class="chapter done " data-progress="7.1" style="left: 93.84615384615384%;"></a>
+    
+        <a href="../ewp_man/InstructionUseSyslog.html" title="syslog" class="chapter done " data-progress="7.2" style="left: 95.38461538461539%;"></a>
+    
+        <a href="../ewp_man/PreventDuplicateSubmit.html" title="防重复提交使用说明" class="chapter done " data-progress="7.3" style="left: 96.92307692307692%;"></a>
+    
+        <a href="../ewp_man/eac_fast_use_guide.html" title="EWP管理平台快速使用文档" class="chapter done " data-progress="7.4" style="left: 98.46153846153847%;"></a>
+    
+        <a href="../ewp_man/eac_use_guide.html" title="EWP管理平台使用文档" class="chapter done " data-progress="7.5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_146">
+                    
+                        <h1 id="ewp-">EWP管理平台使用文档</h1>
+<!-- toc -->
+
+<ul>
+<li><a href="#概述">概述</a></li>
+<li><a href="#eacewp-admin-console">EAC（EWP Admin Console）</a><ul>
+<li><a href="#eac介绍">EAC介绍</a></li>
+<li><a href="#eac部署">EAC部署</a><ul>
+<li><a href="#获取代码">获取代码</a></li>
+<li><a href="#编译">编译</a></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#启动">启动</a></li>
+</ul>
+</li>
+<li><a href="#eac功能扩展">EAC功能扩展</a><ul>
+<li><a href="#eac的映射逻辑">EAC的映射逻辑</a></li>
+<li><a href="#eac扩展实例">EAC扩展实例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#admin插件">ADMIN插件</a><ul>
+<li><a href="#admin插件介绍">ADMIN插件介绍</a></li>
+<li><a href="#admin插件部署">ADMIN插件部署</a><ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a></li>
+</ul>
+</li>
+<li><a href="#admin插件功能扩展">ADMIN插件功能扩展</a><ul>
+<li><a href="#admin插件映射规则">ADMIN插件映射规则</a></li>
+<li><a href="#admin插件扩展实例">ADMIN插件扩展实例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#附录a-扩展实例源码">附录a 扩展实例源码</a><ul>
+<li><a href="#eac扩展实例源码">EAC扩展实例源码：</a><ul>
+<li><a href="#eacdemoeacerl">eac_demo_eac.erl</a></li>
+<li><a href="#eacdemohtml">eac_demo.html</a></li>
+</ul>
+</li>
+<li><a href="#admin扩展实例源码">ADMIN扩展实例源码</a><ul>
+<li><a href="#admindemoadminerl">admin_demo_admin.erl</a></li>
+<li><a href="#admindemohtml">admin_demo.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+
+
+<h2 id="-">概述</h2>
+<p>在EWP 5.3.7的版本中，优化了EWP管理平台，将管理平台从EWP中分离出来，并将其分成两部分：EAC（页面控制台）和ADMIN（服务插件）。如图1-1所示：<br> <img src="images/eac_guide1_1.png" alt="管理平台优化后的变化"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图1-1 管理平台优化后的变化 </p>
+<h2 id="eac-ewp-admin-console-">EAC（EWP Admin Console）</h2>
+<h3 id="eac-">EAC介绍</h3>
+<p>AC是从EWP中分离出的页面控制台，他负责的功能：</p>
+<ol>
+<li>页面展现和管理。EAC为管理后台提供前端的页面展现，而且能够整合所有的APP的管理后台，只需通过配置文件，就能够访问不同APP的管理后台。</li>
+<li>用户管理功能。支持非管理员的注册以及权限管理。</li>
+<li>扩展功能。EAC支持内部自定义功能扩展。</li>
+</ol>
+<h3 id="eac-">EAC部署</h3>
+<p>EAC的部署方法与其他APP（ebank、emas）的部署方法相似，操作步骤为：</p>
+<ol>
+<li>获取代码</li>
+<li>编译</li>
+<li>配置</li>
+<li>启动</li>
+</ol>
+<h4 id="-">获取代码</h4>
+<p>将代码获取到本地：
+EAC的代码路径：<code>https://192.168.64.239/hg/proj/emp/ewp_admin</code>
+提示：获取代码前，请先申请代码权限</p>
+<h4 id="-">编译</h4>
+<p>从服务器上获取EAC的代码后，放到本地  </p>
+<ol>
+<li>在ewp_admin路径下，执行<code>./configure</code>如需要调试log，则可加上debug指令<code>./configure --with-debug</code></li>
+<li>make  </li>
+</ol>
+<h4 id="-">配置</h4>
+<p>EAC有两个配置文件：eac.conf 和 admin_menu.conf。</p>
+<h5 id="eac-conf">eac.conf</h5>
+<p>文件路径： <code>ewp_admin/config/eac.conf</code>
+参考样例：</p>
+<pre><code>{app_urls, [{&quot;emas&quot;, &quot;192.168.64.127:4443&quot;},
+            {&quot;ebank&quot;, &quot;192.168.64.127:4000&quot;},
+            {&quot;unit-test&quot;, &quot;ebank&quot;, &quot;192.168.64.127:4009&quot;}]
+}.
+</code></pre><p>配置方式：
+EAC访问APP的地址配置，只有正确的配置访问APP</p>
+<pre><code>{app_urls, [{AppName, AppUrl}, 
+         {AppAlias, AppName, AppUrl}]
+}.
+</code></pre><p>AppName：应用名，参数类型：string()
+AppAlias：应用别名，如&quot;unit-test&quot;，使用别名&quot;unit-test&quot;登录，但是实际使用的应用名为&quot;ebank&quot;，参数类型：string()
+AppUrl：访问应用的URL，参数类型：string()
+特别解释：AppUrl -&gt; &quot;IP:Port&quot;
+　　IP：访问应用的服务器IP地址
+　　Port：参考访问应用yaws.conf中<server admin>的port配置</p>
+<h5 id="admin_menu-conf">admin_menu.conf</h5>
+<p>文件路径：<code>ewp_admin/config/admin_menu.conf</code>
+参考样例（图2-1）：<br> <img src="images/eac_guide2_1.png" alt="参考样例"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图2-1 admin_menu.conf示例  </p>
+<p>配置方式如下：
+<strong> 一级菜单 </strong></p>
+<pre><code>{pre_menu,[{id,&quot;pre_menu_id&quot;},
+            {name,&quot;pre_menu_name&quot;},
+            {seq,1}]}.
+</code></pre><p>id：一级菜单的唯一ID(全局唯一)
+name : 菜单名
+seq :菜单排列序号
+<strong> 二级菜单 </strong></p>
+<pre><code>{sec_menu,[{id,&quot;sec_menu_id&quot;},
+            {name,&quot;sec_menu_name&quot;},
+　　         {pre_menu,menu_id},
+            {index,&quot;html_page&quot;},
+              {param_types, [{func1, eac_bag}, {func2, eac_file}]}
+            {seq,1}]}.
+</code></pre><p>id：sec<em>menu的ID，此id也对应着请求的Mod名（全局唯一）
+name：sec_menu的名称
+pre_menu：指定关联的pre_menu 的id
+index：使用的html页面
+param_types：上送参数种类的集合
+seq：菜单排列序号
+<strong>param_types描述：</strong>
+param_types是管理平台上送参数种类的集合。也是功能接口的映射规则。
+配置方式：<code>{param_types, [{func, type}]}</code>
+func：调用方法名
+type : 调用方法参数类型（eac_set | eac_bag | eac_file | ewp_normal | ewp_file）
+EAC功能扩展标识&quot;eac</em>&quot;：</p>
+<ul>
+<li><strong>eac_set</strong>：将yaws arg记录存储的请求参数转换成请求参数字典，作为接口参数请调用 Mod:Func(dict())。  </li>
+<li><strong>eac_bag</strong>：对yaws arg不做处理，直接请求接口模块 Mod:Func(arg())，如果请求参数会有一对多的情况，可以使用该配置，在回调模块中使用ewp_param:bag_from_yaws_arg(Arg)进行请求参数转换。  </li>
+<li><strong>eac_file</strong>：对 Content-Type为&quot;multipart/form-data&quot;(一般是上传文件操作)的请求做处理，将文件写到ewp目录下的public/data/upload/FileName，并且将yaws arg记录存储的请求参数转换成请求参数字典，作为接口参数请调用 Mod:Func(dcit())。  </li>
+</ul>
+<p>ADMIN功能插件扩展标识&quot;ewp_&quot;：</p>
+<ul>
+<li><strong>ewp_file</strong>：与eac_file类似，将上传文件数据整合后，通过HTTP请求到ADMIN插件侧，由ADMIN插件对文件数据进一步逻辑处理。  </li>
+<li><strong>ewp_normal</strong>（默认值）：除文件类型以外的类型，将数据通过HTTP请求到ADMIN插件侧，由ADMIN插件进行分类、逻辑处理。  </li>
+</ul>
+<p>param<em>types的默认值为“ewp_normal”。如果该Mod没有配置param_types，那么该Mod所有的Func的参数类型都为“ewp_normal”。
+※带有&quot;eac</em>&quot;标识的扩展功能是EAC内部功能，不与ADMIN插件交互。</p>
+<h4 id="-">启动</h4>
+<p>在ewp_admin路径下，执行脚本<code>./iewp</code></p>
+<h3 id="eac-">EAC功能扩展</h3>
+<p>EAC支持内部功能扩展，方法为：在完成页面和功能模块后，再通过一定的配置就可以做到EAC的功能扩展。</p>
+<h4 id="eac-">EAC的映射逻辑</h4>
+<p>想要通过页面的请求，完成后台功能的调用，需要通过eac_controller模块进行解析。而eac_controller解析的规则，是通过配置文件:admin_menu.conf来完成的。
+admin_menu.conf配置示例：</p>
+<pre><code>{pre_menu,[{id,      &quot;eac_demo&quot;},
+           {name,    &quot;DEMO&quot;},
+           {seq,     10}
+           ]}.
+{sec_menu,[{id,          &quot;demo_eac&quot;},
+           {name,        &quot;EAC_DEMO&quot;},
+           {pre_menu_id, &quot;eac_demo&quot;},
+           {index,       &quot;eac_demo.html&quot;},
+           {param_types, [{&quot;eac_set_test&quot;, eac_set},
+                          {&quot;eac_bag_test&quot;, eac_bag},
+                          {&quot;eac_file_test&quot;, eac_file}]},
+           {seq,         1}
+           ]}.
+</code></pre><p>下图表示EAC的逻辑映射关系：<br> <img src="images/eac_guide2_2.png" alt="EAC逻辑映射关系"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图2-2 EAC逻辑映射关系<br>　　　① <a href="http://host:port/**demo_eac/eac_set_test**" target="_blank">http://host:port/**demo_eac/eac_set_test**</a><br>　　　② <a href="http://host:port/**demo_eac/eac_bag_test**" target="_blank">http://host:port/**demo_eac/eac_bag_test**</a><br>　　　③ <a href="http://host:port/**demo_eac/eac_file_test**" target="_blank">http://host:port/**demo_eac/eac_file_test**</a><br>EAC的实际扩展Mod名，会在Mod前追加前缀&quot;eac<em>&quot;，即调用EAC扩展功能，实际Mod为&quot;eac_Mod&quot;。根据admin_menu.conf配置内容，映射结果：<br>　　　① -&gt; eac</em><strong>demo_eac:eac_set_test</strong><br>　　　② -&gt; eac<em><strong>demo_eac:eac_bag_test</strong><br>　　　③ -&gt; eac</em><strong>demo_eac:eac_file_test</strong>  </p>
+<h4 id="eac-">EAC扩展实例</h4>
+<ol>
+<li>编写好EAC功能模块：eac_demo_eac.erl，内部实现方法：eac_set_test/1、eac_bag_test/1、eac_file_test/1。</li>
+<li>编写好html页面eac_demo.html。页面上调用接口的Url为：demo_eac/eac_set_test、demo_eac/eac_bag_test、demo_eac/eac_file_test。</li>
+<li>将写好的功能模块放到EAC的代码中：ewp_admin/src，页面放到EAC页面资源路径下：ewp_admin/public/admin。</li>
+<li><p>配置admin_menu.conf</p>
+<pre><code>{pre_menu,[{id,      &quot;eac_demo&quot;},
+        {name,    &quot;DEMO&quot;},
+        {seq,     10}
+        ]}.
+{sec_menu,[{id,          &quot;demo_eac&quot;},
+        {name,        &quot;EAC_DEMO&quot;},
+        {pre_menu_id, &quot;eac_demo&quot;},
+        {index,       &quot;eac_demo.html&quot;},
+        {param_types, [{&quot;eac_set_test&quot;, eac_set},
+                       {&quot;eac_bag_test&quot;, eac_bag},
+                       {&quot;eac_file_test&quot;, eac_file}]},
+        {seq,         1}
+        ]}.
+</code></pre></li>
+<li><p>编译EAC，重启服务，登录管理平台，点击“EAC_DEMO”进入扩展实例页面。</p>
+</li>
+</ol>
+<h2 id="admin-">ADMIN插件</h2>
+<h3 id="admin-">ADMIN插件介绍</h3>
+<p>ADMIN插件提供的是EWP管理后台逻辑处理功能。它依赖于EWP启动，处理EAC通过HTTP传输的请求，再通过HTTP将处理结果返回给EAC。可支持功能扩展。</p>
+<h3 id="admin-">ADMIN插件部署</h3>
+<h4 id="-">安装</h4>
+<p>ADMIN插件已预装在EWP上，安装EWP 5.3.7版本后的安装包即可。</p>
+<h4 id="-">配置</h4>
+<h5 id="ewp-conf">ewp.conf</h5>
+<p>ADMIN插件是在EWP启动中进行加载的，所以，需要在相应的APP的ewp.conf配置文件中追加配置选项。<br>文件路径：<code>APP/config/ewp.conf （APP：ebank、emas、unit-test……）</code>
+参考样例：</p>
+<pre><code>{ewp_addon, [
+　　{admin,[ 
+        %default is ewp_install_dir/addon/admin/config/admin_url_map.conf
+        %{map_conf, &quot;/var/www/apps/APP/config/admin_url_map.conf&quot;}
+    ]}
+]}.
+</code></pre><p>配置方式：
+<strong>{ewp_addon,[{AddonName, Options}]}.</strong></p>
+<pre><code>AddonName：插件的名称，参数类型：atom()
+Options：插件属性。
+Options = [Option]
+Option = {map_conf, FilePath :: string()}
+map_conf : ADMIN映射规则配置文件路径，可指定文件路径，如不配置此属性，
+则使用默认路径：ADMIN/config/admin_url_map.conf
+</code></pre><h5 id="yaws-conf">yaws.conf</h5>
+<p>每一个APP的ADMIN插件的service是不一样的，所以在yaws.conf中需要添加插件的配置。
+文件路径：APP/config/yaws.conf
+参考样例：</p>
+<pre><code>&lt;server admin&gt;
+    port = 4000
+    listen = 0.0.0.0
+    docroot = public/admin
+    appmods = &lt;/admin, admin_controller&gt;&lt;/, error_url&gt;
+    auth_skip_docroot = true
+    &lt;opaque&gt;
+        admin = true
+    &lt;/opaque&gt;
+&lt;/server&gt;
+</code></pre><p>server的名字为 admin
+port :监听的端口（这里的端口同时也用在eac.conf的URL配置中）。
+docroot :server使用的根目录，一般用来指定页面所存放的位置。
+appmods :yaws回调模块。
+auth_skip_docroot :是否跳过寻找docroot文件夹的.yaws_auth文件
+opaque/admin = true : 管理平台使用的标识。</p>
+<h5 id="admin_url_map-conf">admin_url_map.conf</h5>
+<p>ADMIN插件有一个重要的配置文件：admin_url_map.conf。它是ADMIN插件功能的接口映射规则。此配置文件路径是在APP的ewp.conf中配置的，在上面(配置文件:ewp.conf)已经说明。
+文件路径： <code>APP/config/admin_url_map.conf</code><br>默认配置路径： <code>Ewp_install_dir/addon/admin/config/admin_url_map.conf</code><br>参考样例：</p>
+<pre><code>{url_map,[
+    {{&quot;log&quot;},log,[{param_type, bag}]},
+    {{&quot;demo_admin&quot;},demo_admin,[]},
+    {{&quot;demo_admin&quot;, &quot;admin_bag_test&quot;},demo_admin,[{param_type, bag}]},
+    {{&quot;demo_admin&quot;, &quot;admin_file_test&quot;},demo_admin,[{param_type, file}]}
+    ]}.
+</code></pre><p>配置方式：
+<strong>{url_map, [{UrlPrefix, Mapping, Options}]}.</strong>
+UrlPrefix：URL的相对路径，例如：&quot;/demo_admin/admin_bag_test&quot;
+    结构：<strong>{MOD}、{MOD, FUNC}</strong>
+    类型：MOD :: string()  FUNC :: string()
+Mapping：映射模块，参数类型：atom()
+Options: 接口配置选项，参数类型：[option] = [{param_type, Type()}]
+        Type() = set | bag | file
+param_type描述：
+与EAC的&quot;param_types&quot;基本相同。</p>
+<ul>
+<li>set：将yaws arg记录存储的请求参数转换成请求参数字典，作为接口参数请调用 Mod:Func(dict())。</li>
+<li>bag: 对yaws arg不做处理，直接请求接口模块 Mod:Func(arg())，如果请求参数会有一对多的情况，可以使用该配置，在回调模块中使用ewp_param:bag_from_yaws_arg(Arg)进行请求参数转换。</li>
+<li>file: 对 Content-Type为&quot;multipart/form-data&quot;(一般是上传文件操作)的请求做处理，将文件写到ewp目录下的public/data/upload/FileName，并且将yaws arg记录存储的请求参数转换成请求参数字典，作为接口参数请调用 Mod:Func(dcit())。</li>
+</ul>
+<p>param_type的默认值为“set”。如果该{MOD}没有配置param_type，那么该Mod除了{MOD, FUNC}以外所有的Func的参数类型都为“set”。</p>
+<h3 id="admin-">ADMIN插件功能扩展</h3>
+<p>ADMIN插件也功能扩展，与EAC的思想相同，方法为：完成页面和功能模块后，再通过配置一些配置，完成功能扩展。</p>
+<h4 id="admin-">ADMIN插件映射规则</h4>
+<p>从页面请求，到调用ADMIN内部接口。需要经过eac_controller和admin_controller两个模块的解析。eac_controller根据“admin_menu.conf”解析后，通过HTTP，继续请求到“admin_controller”，由admin_controller模块解析“admin_url_map.conf”完成最终的映射逻辑。
+admin_menu.conf配置示例：</p>
+<pre><code>{pre_menu,[{id,      &quot;eac_demo&quot;},
+           {name,    &quot;DEMO&quot;},
+           {seq,     10}
+           ]}.
+{sec_menu,[{id,          &quot;demo_admin&quot;},
+           {name,        &quot;ADMIN_DEMO&quot;},
+           {pre_menu_id, &quot;eac_demo&quot;},
+           {index,       &quot;admin_demo.html&quot;},
+           {param_types, [{&quot;admin_set_test&quot;, ewp_normal},
+                          {&quot;admin_bag_test&quot;, ewp_normal},
+                          {&quot;admin_file_test&quot;, ewp_file}]},
+           {seq,         2}
+           ]}.
+</code></pre><p>admin_url_map.conf配置示例：</p>
+<pre><code>{url_map,[
+    {{&quot;demo_admin&quot;},demo_admin,[]},
+    {{&quot;demo_admin&quot;, &quot;admin_bag_test&quot;},demo_admin,[{param_type, bag}]},
+    {{&quot;demo_admin&quot;, &quot;admin_file_test&quot;},demo_admin,[{param_type, file}]}
+    ]}.
+</code></pre><p>下图表示ADMIN的逻辑映射关系：<br> <img src="images/eac_guide3_1.png" alt="ADMIN逻辑映射关系"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图3-1 ADMIN的逻辑映射关系<br>　　　① <a href="http://host:port/**demo_admin/admin_set_test**" target="_blank">http://host:port/**demo_admin/admin_set_test**</a><br>　　　② <a href="http://host:port/**demo_admin/admin_bag_test**" target="_blank">http://host:port/**demo_admin/admin_bag_test**</a><br>　　　③ <a href="http://host:port/**demo_adminadmin_file_test**" target="_blank">http://host:port/**demo_adminadmin_file_test**</a><br>　　　ADMIN实际使用的模块，是在sec<em>menu的id追加前缀&quot;admin</em>&quot;，即调用ADMIN扩展功能，实际使用的Mod为&quot;admin<em>Mod&quot;。根据admin_menu.conf、admin_url_map.conf配置内容，映射结果：<br>　　　① -&gt; admin</em><strong>demo_admin:admin_set_test</strong><br>　　　② -&gt; admin<em><strong>demo_admin:admin_bag_test</strong><br>　　　③ -&gt; admin</em><strong>demo_admin:admin_file_test</strong>  </p>
+<h4 id="admin-">ADMIN插件扩展实例</h4>
+<ol>
+<li>编写好ADMIN功能模块：admin_demo_admin.erl，内部实现方法：admin_set_test/1、admin_bag_test/1、admin_file_test/1。</li>
+<li>编写好html页面admin_demo.html。页面上调用接口的Url为：demo_admin/admin_set_test、demo_admin/admin_bag_test、demo_admin/admin_file_test。</li>
+<li>将编写好功能模块放到ADMIN的代码中：APP/src，页面放到EAC页面资源路径：ewp_admin/public/admin。</li>
+<li><p>配置admin_menu.conf (接上面EAC扩展)</p>
+<pre><code>{pre_menu,[{id,      &quot;eac_demo&quot;},
+        {name,    &quot;DEMO&quot;},
+        {seq,     10}
+        ]}.
+{sec_menu,[{id,          &quot;demo_admin&quot;},
+        {name,        &quot;ADMIN_DEMO&quot;},
+        {pre_menu_id, &quot;eac_demo&quot;},
+        {index,       &quot;admin_demo.html&quot;},
+        {param_types, [{&quot;admin_set_test&quot;, ewp_normal},
+                       {&quot;admin_bag_test&quot;, ewp_normal},
+                       {&quot;admin_file_test&quot;, ewp_file}]},
+        {seq,         2}
+        ]}.
+</code></pre></li>
+<li><p>配置admin_url_map.conf</p>
+<pre><code>{url_map,[
+ {{&quot;demo_admin&quot;},demo_admin,[]},
+ {{&quot;demo_admin&quot;, &quot;admin_bag_test&quot;},demo_admin,[{param_type, bag}]},
+ {{&quot;demo_admin&quot;, &quot;admin_file_test&quot;},demo_admin,[{param_type, file}]}
+ ]}.
+</code></pre></li>
+<li><p>编译ADMIN，重启服务，登录管理平台，点击“ADMIN_DEMO”进入扩展实例页面。</p>
+</li>
+</ol>
+<h2 id="-a-">附录a 扩展实例源码</h2>
+<h3 id="eac-">EAC扩展实例源码：</h3>
+<h4 id="eac_demo_eac-erl">eac_demo_eac.erl</h4>
+<pre><code>-module(eac_demo_eac).
+
+-include(&quot;eac.hrl&quot;).
+
+-export([eac_set_test/1,
+         eac_bag_test/1,
+         eac_file_test/1]).
+
+-define(UPLOAD_DIR, filename:join([?ewp_conf(ewp_dir, &quot;&quot;),&quot;public/data/upload/&quot;])).
+
+%% ====================================================================
+%% API functions
+%% ====================================================================
+eac_set_test(_P) -&gt;
+    Param = ?param(&quot;param_set&quot;, []),
+    Str = {obj, [{&quot;message&quot;, 
+                 list_to_binary(&quot;ok&quot;)}, 
+                 {&quot;param&quot;, list_to_binary(Param)}]},
+    JsonDec = ewp_json:encode(Str),
+    ewp_render_util:render_json(JsonDec).
+
+eac_bag_test(Arg) -&gt;
+    P = ewp_params:bag_from_yaws_arg(Arg),
+    Name = ewp_params:get(&quot;name&quot;, P, &quot;undefined&quot;),
+    Lists = [List ++ &quot; &quot; || List &lt;- ewp_params:get(&quot;select_id&quot;, P, [])],
+    Str = {obj, [{&quot;message&quot;, 
+                 list_to_binary(&quot;ok&quot;)},
+                 {&quot;name&quot;, list_to_binary(Name)},
+                 {&quot;param&quot;, list_to_binary(Lists)}]},
+    JsonDec = ewp_json:encode(Str),
+    ewp_render_util:render_json(JsonDec).
+
+eac_file_test(P) -&gt;
+    ewp_params:merge_params(P),
+    UploadFilePath = filename:join([?UPLOAD_DIR, ?param(&quot;file&quot;)]),
+    ?ewp_msg(&quot;~p~n&quot;, [UploadFilePath]),
+    Str = {obj, [{&quot;message&quot;, 
+                 list_to_binary(&quot;ok&quot;)},
+                 {&quot;path&quot;, list_to_binary(UploadFilePath)}]},
+    JsonDec = ewp_json:encode(Str),
+    ewp_render_util:render_json(JsonDec).
+</code></pre><h4 id="eac_demo-html">eac_demo.html</h4>
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+        &lt;title&gt;DEMO&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/layout.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+        &lt;!--[if lt IE 9]&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/ie.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+        &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+        &lt;![endif]--&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.7.1.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;js/_ajaxfileupload.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/json2.js&quot;&gt;&lt;/script&gt;
+
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //eac_set
+            function test_set()
+            {
+                var param = $(&quot;input[name=test_set]&quot;).val();
+                $.ajax({
+                    url: &quot;demo_eac/eac_set_test&quot;,
+                    type: &quot;GET&quot;,
+                    data:
+                        {
+                            param_set: param,
+                        },
+                    success: function(msg)
+                    {
+                        if (msg.message == &quot;please login&quot;) {
+                            alert(&quot;登录超时,请重新登录!&quot;);
+                            parent.location.replace(&quot;login.html&quot;);
+                        } else if(msg.message == &quot;ok&quot;)
+                        {
+                            alert(&quot;EAC_SET执行成功\n传送内容：&quot; + msg.param);
+                        }
+                        else
+                        {
+                            alert(msg.message);
+                        }
+                        // location.href = &quot;eac_demo.html&quot;;
+                    },
+                    error: function(errorMsg)
+                    {                            
+                        alert(errorMsg);
+                        location.href = &quot;eac_demo.html&quot;;
+                    }
+                });
+            }
+
+            //eac_bag
+            function test_bag() 
+            {
+                var param = $(&quot;input[name=test_bag]&quot;).val();
+                var input = $(&quot;input:checkbox&quot;);
+                var dataMessage = &quot;name=&quot; + param;
+                for (var i = 0; i &lt; input.length; i++) {
+                    if (input[i].checked) {
+                        dataMessage = dataMessage + &quot;&amp;select_id=&quot; + input[i].value;
+                    }
+                }
+                $.ajax({
+                    url: &quot;demo_eac/eac_bag_test&quot;,
+                    type: &quot;POST&quot;,
+                    dataType: &quot;JSON&quot;,
+                    data: dataMessage,
+                    success: function(msg) {
+                        if (msg.message == &quot;please login&quot;) 
+                        {
+                            alert(&quot;登录超时,请重新登录!&quot;);
+                            parent.location.replace(&quot;login.html&quot;);
+                        } 
+                        else if (msg.message == &quot;ok&quot;) 
+                        {
+                            alert(&quot;EAC_BAG执行成功\n&quot; + msg.name + &quot; 选择了：&quot; + msg.param);
+                        }
+                        else 
+                        {
+                            alert(msg.message);
+                        } 
+                    },
+                    error: function(errorMsg)
+                    {                            
+                        alert(errorMsg);
+                        location.href = &quot;eac_demo.html&quot;;
+                    }
+                });
+            }
+
+            //eac_file
+            function test_file()
+            {
+                if ($(&quot;#app_file&quot;).val()==&quot;&quot;) 
+                {
+                    alert(&quot;请选择上传文件!&quot;);
+                }
+                else
+                {
+                    $.ajaxFileUpload({
+                        url: &quot;demo_eac/eac_file_test&quot;,
+                        fileElementId: &quot;app_file&quot;,
+                        secureuri: false,
+                        dataType: &quot;json&quot;,
+                        success: function(data) 
+                        {
+                            if (data.message == &quot;ok&quot;) 
+                            {
+                                alert(&quot;EAC_FILE执行成功\n文件保存路径：&quot; + data.path);
+                                //window.location.href.reload(true);
+                                window.location.reload(true);
+                            } else {
+                                alert(&quot;上传失败，请查看日志！&quot;);
+                            }
+                            //alert(JSON.stringify(data));
+                        }
+                    });
+                }
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;article class=&quot;module width_fulls&quot;&gt;
+            &lt;header style=&quot;text-align:center;&quot;&gt;
+                &lt;h2&gt;DEMO--EAC扩展&lt;/h2&gt;
+            &lt;/header&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;EAC_SET&lt;/legend&gt;
+                &lt;table id=&quot;test_set_table&quot; cellpadding=&quot;10&quot; cellspacing=&quot;0&quot;&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;b&gt;传送内容:&lt;/b&gt;
+                            &lt;input name=&quot;test_set&quot; id=&quot;test_set&quot; value=&quot;HelloRytong&quot; /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;input type=&quot;button&quot; value=&quot;set&quot; onclick=&quot;test_set()&quot; /&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;EAC_BAG&lt;/legend&gt;
+                &lt;table id=&quot;test_bag_table&quot; border=&quot;0&quot; cellspacing=&quot;10&quot; cellpadding=&quot;0&quot;&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;b&gt;姓名:&lt;/b&gt;
+                            &lt;input name=&quot;test_bag&quot; id=&quot;test_bag&quot; value=&quot;Rytong&quot; /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;div&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No1&quot; &gt;No1&lt;/input&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No2&quot; &gt;No2&lt;/input&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No3&quot; &gt;No3&lt;/input&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No4&quot; &gt;No4&lt;/input&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;input type=&quot;button&quot; value=&quot;bag&quot; onclick=&quot;test_bag()&quot; /&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;EAC_FILE&lt;/legend&gt;
+                &lt;b style=&quot;margin-left:10px;&quot;&gt;请选择上传文件:&lt;/b&gt;
+                &lt;form&gt;
+                    &lt;p style=&quot;margin-left:10px;&quot;&gt;
+                        &lt;input type=&quot;text&quot; style=&quot;width:180px;&quot; id=&quot;txt&quot; /&gt;
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;input id=&quot;ii&quot; type=&quot;button&quot; style=&quot;width:80px;float:left;&quot; value=&quot;选择文件&quot; onclick=&quot;document.getElementById(&#39;app_file&#39;).click()&quot;/&gt;
+                    &lt;/p&gt;
+                    &lt;p style=&quot;margin-left:10px;display:none;&quot;&gt;
+                        &lt;input type=&quot;file&quot; name=&quot;file&quot;  id=&quot;app_file&quot; onchange=&quot;txt.value=this.value&quot; class=&quot;file&quot; /&gt;
+                    &lt;/p&gt;
+                    &lt;input type=&quot;button&quot; value=&quot;上传&quot; onclick=&quot;test_file()&quot; /&gt;
+                &lt;/form&gt;
+
+            &lt;/fieldset&gt;
+        &lt;/article&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="admin-">ADMIN扩展实例源码</h3>
+<h4 id="admin_demo_admin-erl">admin_demo_admin.erl</h4>
+<pre><code>-module(admin_demo_admin).
+
+-include(&quot;admin.hrl&quot;).
+
+-export([admin_set_test/1,
+         admin_bag_test/1,
+         admin_file_test/1]).
+
+%% ====================================================================
+%% API functions
+%% ====================================================================
+admin_set_test(_P) -&gt;
+    Param = ?param(&quot;param_set&quot;, []),
+    Str = {obj, [{&quot;message&quot;, 
+                 list_to_binary(&quot;ok&quot;)}, 
+                 {&quot;param&quot;, list_to_binary(Param)}]},
+    JsonDec = ewp_json:encode(Str),
+    ewp_render_util:render_json(JsonDec).
+
+admin_bag_test(Arg) -&gt;
+    P = ewp_params:bag_from_yaws_arg(Arg),
+    Name = ewp_params:get(&quot;name&quot;, P, &quot;undefined&quot;),
+    Lists = [List ++ &quot; &quot; || List &lt;- ewp_params:get(&quot;select_id&quot;, P, [])],
+    Str = {obj, [{&quot;message&quot;, 
+                 list_to_binary(&quot;ok&quot;)},
+                 {&quot;name&quot;, list_to_binary(Name)},
+                 {&quot;param&quot;, list_to_binary(Lists)}]},
+    JsonDec = ewp_json:encode(Str),
+    ewp_render_util:render_json(JsonDec).
+
+admin_file_test(P) -&gt;
+    ewp_params:merge_params(P),
+    UploadFilePath = filename:join([?UPLOAD_DIR, ?param(&quot;file&quot;)]),
+    ?ewp_msg(&quot;~p~n&quot;, [UploadFilePath]),
+    Str = {obj, [{&quot;message&quot;, 
+                 list_to_binary(&quot;ok&quot;)},
+                 {&quot;path&quot;, list_to_binary(UploadFilePath)}]},
+    JsonDec = ewp_json:encode(Str),
+    ewp_render_util:render_json(JsonDec).
+</code></pre><h4 id="admin_demo-html">admin_demo.html</h4>
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+        &lt;title&gt;DEMO&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/layout.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+        &lt;!--[if lt IE 9]&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/ie.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+        &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+        &lt;![endif]--&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.7.1.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;js/_ajaxfileupload.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/json2.js&quot;&gt;&lt;/script&gt;
+
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //admin_set
+            function test_set()
+            {
+                var param = $(&quot;input[name=test_set]&quot;).val();
+                $.ajax({
+                    url: &quot;demo_admin/admin_set_test&quot;,
+                    type: &quot;GET&quot;,
+                    data:
+                        {
+                            param_set: param,
+                        },
+                    success: function(msg)
+                    {
+                        if (msg.message == &quot;please login&quot;) {
+                            alert(&quot;登录超时,请重新登录!&quot;);
+                            parent.location.replace(&quot;login.html&quot;);
+                        } else if(msg.message == &quot;ok&quot;)
+                        {
+                            alert(&quot;ADMIN_SET执行成功\n传送内容：&quot; + msg.param);
+                        }
+                        else
+                        {
+                            alert(msg.message);
+                        }
+                        // location.href = &quot;admin_demo.html&quot;;
+                    },
+                    error: function(errorMsg)
+                    {                            
+                        alert(errorMsg);
+                        location.href = &quot;admin_demo.html&quot;;
+                    }
+                });
+            }
+
+            //admin_bag
+            function test_bag() 
+            {
+                var param = $(&quot;input[name=test_bag]&quot;).val();
+                var input = $(&quot;input:checkbox&quot;);
+                var dataMessage = &quot;name=&quot; + param;
+                for (var i = 0; i &lt; input.length; i++) {
+                    if (input[i].checked) {
+                        dataMessage = dataMessage + &quot;&amp;select_id=&quot; + input[i].value;
+                    }
+                }
+                $.ajax({
+                    url: &quot;demo_admin/admin_bag_test&quot;,
+                    type: &quot;POST&quot;,
+                    dataType: &quot;JSON&quot;,
+                    data: dataMessage,
+                    success: function(msg) {
+                        if (msg.message == &quot;please login&quot;) 
+                        {
+                            alert(&quot;登录超时,请重新登录!&quot;);
+                            parent.location.replace(&quot;login.html&quot;);
+                        } 
+                        else if (msg.message == &quot;ok&quot;) 
+                        {
+                            alert(&quot;ADMIN_BAG执行成功\n&quot; + msg.name + &quot; 选择了：&quot; + msg.param);
+                        }
+                        else 
+                        {
+                            alert(msg.message);
+                        } 
+                    },
+                    error: function(errorMsg)
+                    {                            
+                        alert(errorMsg);
+                        location.href = &quot;admin_demo.html&quot;;
+                    }
+                });
+            }
+
+            //admin_file
+            function test_file()
+            {
+                if ($(&quot;#app_file&quot;).val()==&quot;&quot;) 
+                {
+                    alert(&quot;请选择上传文件!&quot;);
+                }
+                else
+                {
+                    $.ajaxFileUpload({
+                        url: &quot;demo_admin/admin_file_test&quot;,
+                        fileElementId: &quot;app_file&quot;,
+                        secureuri: false,
+                        dataType: &quot;json&quot;,
+                        success: function(data) 
+                        {
+                            if (data.message == &quot;ok&quot;) 
+                            {
+                                alert(&quot;ADMIN_FILE执行成功\n文件保存路径：&quot; + data.path);
+                                //window.location.href.reload(true);
+                                window.location.reload(true);
+                            } else {
+                                alert(&quot;上传失败，请查看日志！&quot;);
+                            }
+                            //alert(JSON.stringify(data));
+                        }
+                    });
+                }
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;article class=&quot;module width_fulls&quot;&gt;
+            &lt;header style=&quot;text-align:center;&quot;&gt;
+                &lt;h2&gt;DEMO--ADMIN扩展&lt;/h2&gt;
+            &lt;/header&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;ADMIN_SET&lt;/legend&gt;
+                &lt;table id=&quot;test_set_table&quot; cellpadding=&quot;10&quot; cellspacing=&quot;0&quot;&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;b&gt;传送内容:&lt;/b&gt;
+                            &lt;input name=&quot;test_set&quot; id=&quot;test_set&quot; value=&quot;HelloRytong&quot; /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;input type=&quot;button&quot; value=&quot;set&quot; onclick=&quot;test_set()&quot; /&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;ADMIN_BAG&lt;/legend&gt;
+                &lt;table id=&quot;test_bag_table&quot; border=&quot;0&quot; cellspacing=&quot;10&quot; cellpadding=&quot;0&quot;&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;b&gt;姓名:&lt;/b&gt;
+                            &lt;input name=&quot;test_bag&quot; id=&quot;test_bag&quot; value=&quot;Rytong&quot; /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;div&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No1&quot; &gt;No1&lt;/input&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No2&quot; &gt;No2&lt;/input&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No3&quot; &gt;No3&lt;/input&gt;
+                                &lt;input type=&quot;checkbox&quot; id=&quot;node_id&quot; name=&quot;node_id&quot; class=&quot;reset&quot; value=&quot;No4&quot; &gt;No4&lt;/input&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;input type=&quot;button&quot; value=&quot;bag&quot; onclick=&quot;test_bag()&quot; /&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;ADMIN_FILE&lt;/legend&gt;
+                &lt;b style=&quot;margin-left:10px;&quot;&gt;请选择上传文件:&lt;/b&gt;
+                &lt;form&gt;
+                    &lt;p style=&quot;margin-left:10px;&quot;&gt;
+                        &lt;input type=&quot;text&quot; style=&quot;width:180px;&quot; id=&quot;txt&quot; /&gt;
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;input id=&quot;ii&quot; type=&quot;button&quot; style=&quot;width:80px;float:left;&quot; value=&quot;选择文件&quot; onclick=&quot;document.getElementById(&#39;app_file&#39;).click()&quot;/&gt;
+                    &lt;/p&gt;
+                    &lt;p style=&quot;margin-left:10px;display:none;&quot;&gt;
+                        &lt;input type=&quot;file&quot; name=&quot;file&quot;  id=&quot;app_file&quot; onchange=&quot;txt.value=this.value&quot; class=&quot;file&quot; /&gt;
+                    &lt;/p&gt;
+                    &lt;input type=&quot;button&quot; value=&quot;上传&quot; onclick=&quot;test_file()&quot; /&gt;
+                &lt;/form&gt;
+
+            &lt;/fieldset&gt;
+        &lt;/article&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../ewp_man/eac_fast_use_guide.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: EWP管理平台快速使用文档"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+
+        <script src="../gitbook/local/ace.js"></script>
+        <script src="../gitbook/local/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

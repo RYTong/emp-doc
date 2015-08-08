@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module session_service</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module session_service</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>session相关API.
+
+
+<h2><a name="description">Description</a></h2>session相关API
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#delete-1">delete/1</a></td><td>删除session.</td></tr>
+<tr><td valign="top"><a href="#do_clear_session-1">do_clear_session/1</a></td><td>请看 delete/1.</td></tr>
+<tr><td valign="top"><a href="#get_session_id-1">get_session_id/1</a></td><td>在yaws arg中获取session id.</td></tr>
+<tr><td valign="top"><a href="#incre_update-1">incre_update/1</a></td><td>根据指定数据列表更新当前session内容，键重复的数据会被覆盖。.</td></tr>
+<tr><td valign="top"><a href="#lookup-2">lookup/2</a></td><td>查找指定session数据中指定键的所有记录。.</td></tr>
+<tr><td valign="top"><a href="#lookup_first-2">lookup_first/2</a></td><td>查找指定session数据中指定键的第一条记录。.</td></tr>
+<tr><td valign="top"><a href="#make_cookie_str-1">make_cookie_str/1</a></td><td>根据session id生成设置cookie的header.</td></tr>
+<tr><td valign="top"><a href="#new_login_session-1">new_login_session/1</a></td><td>创建一个已登录session.</td></tr>
+<tr><td valign="top"><a href="#new_session-1">new_session/1</a></td><td>创建一个session 对象和SessionID。.</td></tr>
+<tr><td valign="top"><a href="#read-0">read/0</a></td><td>读取当前session信息.</td></tr>
+<tr><td valign="top"><a href="#read-1">read/1</a></td><td> 根据指定的yaws arg记录读取session.</td></tr>
+<tr><td valign="top"><a href="#read_by_id-1">read_by_id/1</a></td><td>根据指定sessionID读取session内容。.</td></tr>
+<tr><td valign="top"><a href="#read_login-1">read_login/1</a></td><td>根据指定yaws arg记录读取session，并标识是否为登录session.</td></tr>
+<tr><td valign="top"><a href="#update-2">update/2</a></td><td>更新session数据.</td></tr>
+<tr><td valign="top"><a href="#update_login-0">update_login/0</a></td><td>更新当前session为已登录session。.</td></tr>
+<tr><td valign="top"><a href="#update_login-1">update_login/1</a></td><td>更新指定session为已登录session。.</td></tr>
+<tr><td valign="top"><a href="#update_login-2">update_login/2</a></td><td>更新指定session为已登录同时修改session内容为指定数据。.</td></tr>
+<tr><td valign="top"><a href="#update_logout-0">update_logout/0</a></td><td>更新当前session为未登录session.</td></tr>
+<tr><td valign="top"><a href="#update_logout-1">update_logout/1</a></td><td>更新指定session为未登录session.</td></tr>
+<tr><td valign="top"><a href="#update_logout-2">update_logout/2</a></td><td>更新指定session为未登录同时修改session内容为指定数据。.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="delete-1">delete/1</a></h3>
+<div class="spec">
+<p><tt>delete(SessionId::string()) -&gt; ok</tt><br></p>
+</div><p>删除session</p>
+
+<h3 class="function"><a name="do_clear_session-1">do_clear_session/1</a></h3>
+<div class="spec">
+<p><tt>do_clear_session(SessionID::string()) -&gt; ok</tt><br></p>
+</div><p>请看 delete/1</p>
+
+<h3 class="function"><a name="get_session_id-1">get_session_id/1</a></h3>
+<div class="spec">
+<p><tt>get_session_id(YawsArg::#arg{}) -&gt; SessionID::string()</tt><br></p>
+</div><p>在yaws arg中获取session id</p>
+
+<h3 class="function"><a name="incre_update-1">incre_update/1</a></h3>
+<div class="spec">
+<p><tt>incre_update(PropList::[{Key::term(), Value::term()}]) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>根据指定数据列表更新当前session内容，键重复的数据会被覆盖。</p>
+
+<h3 class="function"><a name="lookup-2">lookup/2</a></h3>
+<div class="spec">
+<p><tt>lookup(Key::atom() | string(), SessionProps::[tuple()]) -&gt; [term()] | []</tt><br></p>
+</div><p>查找指定session数据中指定键的所有记录。</p>
+
+<h3 class="function"><a name="lookup_first-2">lookup_first/2</a></h3>
+<div class="spec">
+<p><tt>lookup_first(Key::atom() | string(), SessionProps::[tuple()]) -&gt; term() | undefined</tt><br></p>
+</div><p>查找指定session数据中指定键的第一条记录。</p>
+
+<h3 class="function"><a name="make_cookie_str-1">make_cookie_str/1</a></h3>
+<div class="spec">
+<p><tt>make_cookie_str(SessionID::string()) -&gt; {header, Header::string()}</tt><br></p>
+</div><p>根据session id生成设置cookie的header</p>
+
+<h3 class="function"><a name="new_login_session-1">new_login_session/1</a></h3>
+<div class="spec">
+<p><tt>new_login_session(PropList::list()) -&gt; SessionID::string()</tt><br></p>
+</div><p>创建一个已登录session</p>
+
+<h3 class="function"><a name="new_session-1">new_session/1</a></h3>
+<div class="spec">
+<p><tt>new_session(PropList::list()) -&gt; SessionID::string()</tt><br></p>
+</div><p>创建一个session 对象和SessionID。</p>
+
+<h3 class="function"><a name="read-0">read/0</a></h3>
+<div class="spec">
+<p><tt>read() -&gt; {SessionID::string(), PropList::list()} | {SessionID::string(), undefined} | {undefined, undefined}</tt><br></p>
+</div><p>读取当前session信息</p>
+
+<h3 class="function"><a name="read-1">read/1</a></h3>
+<div class="spec">
+<p><tt>read(Arg::#arg{}) -&gt; {SessionID::string(), PropList::list()} | {SessionID::string(), undefined} | {undefined, undefined}</tt><br></p>
+</div><p> 根据指定的yaws arg记录读取session</p>
+
+<h3 class="function"><a name="read_by_id-1">read_by_id/1</a></h3>
+<div class="spec">
+<p><tt>read_by_id(SessionID::string()) -&gt; Proplists::list() | undefined</tt><br></p>
+</div><p>根据指定sessionID读取session内容。</p>
+
+<h3 class="function"><a name="read_login-1">read_login/1</a></h3>
+<div class="spec">
+<p><tt>read_login(A::#yaws_arg{}) -&gt; undefined | {login, SessionID::string(), PropList::list()} | {visitor, SessionID::string(), PropList::list()}</tt><br></p>
+</div><p>根据指定yaws arg记录读取session，并标识是否为登录session</p>
+
+<h3 class="function"><a name="update-2">update/2</a></h3>
+<div class="spec">
+<p><tt>update(SessionID::string(), PropList::list()) -&gt; ok</tt><br></p>
+</div><p>更新session数据</p>
+
+<h3 class="function"><a name="update_login-0">update_login/0</a></h3>
+<div class="spec">
+<p><tt>update_login() -&gt; ok</tt><br></p>
+</div><p>throws <tt>no_session</tt></p>
+<p>更新当前session为已登录session。</p>
+
+<h3 class="function"><a name="update_login-1">update_login/1</a></h3>
+<div class="spec">
+<p><tt>update_login(SessionID::string()) -&gt; ok</tt><br></p>
+</div><p>throws <tt>no_session</tt></p>
+<p>更新指定session为已登录session。</p>
+
+<h3 class="function"><a name="update_login-2">update_login/2</a></h3>
+<div class="spec">
+<p><tt>update_login(SessionID::string(), PropList::list()) -&gt; ok</tt><br></p>
+</div><p>更新指定session为已登录同时修改session内容为指定数据。</p>
+
+<h3 class="function"><a name="update_logout-0">update_logout/0</a></h3>
+<div class="spec">
+<p><tt>update_logout() -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>更新当前session为未登录session</p>
+
+<h3 class="function"><a name="update_logout-1">update_logout/1</a></h3>
+<div class="spec">
+<p><tt>update_logout(SessionID::string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>更新指定session为未登录session</p>
+
+<h3 class="function"><a name="update_logout-2">update_logout/2</a></h3>
+<div class="spec">
+<p><tt>update_logout(SessionID::string(), PropList::list()) -&gt; ok</tt><br></p>
+</div><p>更新指定session为未登录同时修改session内容为指定数据。</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:43.</i></p>
+</body>
+</html>

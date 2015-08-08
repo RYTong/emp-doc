@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{width:320px;background-color:#f0f0f0;}
+            .label{font-size:12px;}
+            .line{height:1px;background-color:#000fff;}
+            
+            .father{width:300px;height:30px;left:10px;} 
+            .father_big{width:300px;height:100px;left:10px;}          
+            .father_free{width:300px;left:10px;}
+            .td1{width:100px;height:50px;background-color:#00FFFF;}
+            .td2{width:100px;height:50px;background-color:#CAFF70;}
+            .td3{width:100px;height:50px;background-color:#DDA0DD;}
+            .tr1{height:20px;background-color:#00FFFF;}
+            .tr2{height:20px;background-color:#DDA0DD;}
+            
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+
+            .positionFixed{position:fixed;filter:progid(alpha='0.5');background-color:#E0FFFF;}
+            .positionToplevel{position:toplevel;top:50px;filter:progid(alpha='0.5');background-color:#E0FFFF;}
+
+            .borderRadiusFour{border-radius: 0px 5px 10px 15px;}
+            .borderRadiusOne{border-radius:10px;}
+            .border{border:3px solid #00ff00}
+
+            .background_color {background-color:#FFFF00;}
+            .background_image {background-image:url(a.png);}
+            .filter1 {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            .filter2 {filter:progid(alpha=’0.5’); background-color: #FFFF00;}
+            
+            .textColor {color:#ff0000;}
+            .fontWeight{font-weight:bold;}
+            .fontSize{font-size:25px;}
+            .fontStyle{font-style:italic;}
+             
+            .td_line{width:2px;background-color:#000000;}
+            .tr_line{height:1px;background-color:#000000;}            
+            .tr_width_260{width:260px;}
+            .td_width_200{width:200px;}
+            .td_width_50{width:50px;}
+            .td_width_99{width:99px;}
+            .tr_height_60{height:60px;}
+            .tr_height_20{height:20px;}
+            .td_height_40{height:40px;}
+            .color_table{background-color:#BBBBBB;}
+            .color_tr{background-color:#8DEEEE;}
+            .color_tr2{background-color:#8DEEEE;filter:progid(alpha=’0.2’);}
+            .color_td{background-color:#DDCCDD;}
+            .color_td2{background-color:#DDCCDD;filter:progid(alpha=’0.5’);}
+      
+            .close_but {width:310px;height:30px;left:5px;font-size:20px;color:#000000;background-color:#ffff00;}
+            
+            
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                  ryt:back();
+                end;
+                
+                function click(arg)
+                  local info="可以点击，info:"..arg;
+                  window:alert(info);
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed ,这是body的第一个控件-->
+        <table class='father,positionFixed'> 
+            <tr>
+               <td>
+                <label>positionFixed Table</label>
+               </td>
+            </tr>         
+        </table>
+        
+        <b>测试separator</b><br/>
+        <label>分割线颜色：#fff000</label>
+        <table class="father_free" separator="#fff000">
+          <tr class="color_tr"> 
+            <td ><label>第1行第1列</label></td>
+            <td ><label>第1行第2列</label></td>
+          </tr>
+          <tr class="color_tr"> 
+            <td ><label>第2行第1列</label></td>
+            <td ><label>第2行第2列</label></td>
+          </tr>
+          <tr class="color_tr"> 
+            <td ><label>第3行第1列</label></td>
+            <td ><label>第3行第2列</label></td>
+          </tr>
+        </table>
+        
+        <label>分割线颜色：#BDBDBD</label>
+         <table class="father_free" separator="#BDBDBD">
+          <tr > 
+            <td ><label>第1行第1列</label></td>
+            <td ><label>第1行第2列</label></td>
+          </tr>
+          <tr > 
+            <td ><label>第2行第1列</label></td>
+            <td ><label>第2行第2列</label></td>
+          </tr>
+          <tr > 
+            <td ><label>第3行第1列</label></td>
+            <td ><label>第3行第2列</label></td>
+          </tr>
+        </table>
+                   
+        <!-- positon:toplevel -->          
+        <table class='father,positionToplevel'> 
+            <tr>
+               <td>
+                <label>positionToplevel Table</label>
+               </td>
+            </tr>        
+        </table>
+
+        <b>测试tr/th/td对align/valign的支持</b><br/>
+
+        <table class="father_free" border="0">
+          <tr align="left">
+               <td class="td1" >
+                 <label>tr:align=left</label>
+               </td>
+               <td class="td2" align="center">
+                 <label>td:align=center</label>
+               </td>
+               <td class="td3" align="right">
+                 <label>td:align=right</label>
+               </td>
+            </tr>
+            <tr align="center">
+               <td class="td2" >
+                 <label>tr:align=center</label>
+               </td>
+               <td class="td3" align="left">
+                 <label>td:align=left</label>
+               </td>
+               <td class="td1" align="right">
+                 <label>td:align=right</label>
+               </td>
+            </tr> 
+            <tr align="right">
+              <td class="td3">
+                 <label>tr:align=right</label>
+               </td>
+               <td class="td1" align="left">
+                 <label>td:align=left</label>
+               </td>
+               <td class="td2" align="center">
+                 <label>td:align=center</label>
+               </td>
+            </tr>  
+            <tr>
+              <td class="td1" valign="top">
+                 <label>td:valign=top</label>
+               </td>
+               <td class="td2" valign="middle">
+                 <label>td:valign=middle</label>
+               </td>
+               <td class="td3" valign="bottom">
+                 <label>td:valign=bottom</label>
+               </td>
+            </tr>       
+        </table>
+        
+        <b>测试table对hide/display/visibility的支持</b><br/>
+        
+        <!-- hide -->
+        <label>下面的table有:hide=false</label><br/>
+        <table class='father' hide="false">
+          <tr>
+               <td>
+                 <label>我在table中</label>
+               </td>
+            </tr>          
+        </table>
+        <label>下面的table有:hide=true</label><br/>
+        <table class='father' hide="true"> 
+            <tr>
+               <td>
+                 <label>我在table中</label>
+               </td>
+            </tr>                     
+        </table>
+
+         <!-- diaplay -->
+        <label>下面的table有:display=block</label><br/>
+        <table class='father,display2' > 
+            <tr>
+               <td>
+                 <label>我在table中</label>
+               </td>
+            </tr>          
+        </table>
+        <label>下面的table有:display=none</label><br/>
+        <table class='father,display1' >  
+            <tr>
+               <td>
+                 <label>我在table中</label>
+               </td>
+            </tr>         
+        </table>
+
+         <!-- visibility -->
+        <label>下面的table有:visibility=hidden</label><br/>
+        <table class='father,visibility2' > 
+            <tr>
+               <td>
+                 <label>我在table中</label>
+               </td>
+            </tr>          
+        </table>
+        <label>下面的table有:visibility=visible</label><br/>
+        <table class='father,visibility1' >  
+            <tr>
+               <td>
+                 <label>我在table中</label>
+               </td>
+            </tr>         
+        </table>
+        
+        <b>测试tr对hide/display的支持:第二行和第四行被隐藏</b><br/>
+        <table class='father_free'>
+            <tr hide="false" >
+               <td>
+                 <label>第1行:hide=false,下面一行hide=true</label>
+               </td>
+            </tr>
+            <tr hide="true">
+               <td>
+                 <label>第2行:hide=true</label>
+               </td>
+            </tr> 
+            <tr class="display2">
+               <td>
+                 <label>第3行:display=block,下面一行display=none</label>
+               </td>
+            </tr>
+            <tr class="display1" >
+               <td>
+                 <label>第4行:display=none</label>
+               </td>
+            </tr>      
+        </table>
+               
+        <!-- enable and onclick事件 -->
+        <b>测试tr对onclick/enable的支持</b><br/>       
+        <table class='father_free' border="0">
+            <tr class="tr1" onclick="click('tr')" enable="true">
+               <td>
+                 <label>点击这里-tr:enable=true</label>
+               </td>
+            </tr>
+            <tr class="tr2" onclick="click('tr')" enable="false">
+               <td>
+                 <label>点击这里-tr:enable=false</label>
+               </td>
+            </tr>
+            <tr class="tr1" >
+               <td  onclick="click('td')" enable="true">
+                 <label>点击这里-td:enable=true</label>
+               </td>
+            </tr>
+            <tr class="tr2" >
+               <td onclick="click('td')" enable="false">
+                 <label>点击这里-td:enable=false</label>
+               </td>
+            </tr> 
+            <tr class="tr1" onclick="click('tr')" enable="true">
+               <td  onclick="click('td')" enable="false">
+                 <label>点击这里-td:enable=false,tr:enable=true</label>
+               </td>
+            </tr>
+            <tr class="tr2" onclick="click('tr')" enable="false">
+               <td onclick="click('td')" enable="true">
+                 <label>点击这里-td:enable=true,tr:enable=false</label>
+               </td>
+            </tr> 
+        </table>
+
+        <!--table对border的支持 -->
+        <b>测试table对border属性的支持</b><br/>       
+        <table class='father'>
+           <tr><td>
+           <label>table没有指定border=?默认为1</label>  
+           </td></tr>       
+        </table>               
+        <table class='father' border="0">
+           <tr><td>
+           <label>table指定border=0</label>
+           </td></tr> 
+        </table>       
+        <table class='father' border="1"> 
+           <tr><td>
+           <label>table指定border=1</label>
+           </td></tr>   
+        </table>
+        <table class='father,background_color' border="1">
+           <tr><td>
+           <label>table有:background-color,border=1</label>
+           </td></tr> 
+        </table>       
+        <table class='father,background_image' border="1"> 
+           <tr><td>
+           <label>table有:background-image,border=1</label>
+           </td></tr>   
+        </table>
+        
+        <!--table对border的支持 -->
+        <b>测试table对border样式的支持</b><br/>               
+        <table class='father,border' border="0">  
+          <tr><td>
+          <label class="has_border">table有:border=0,border样式不起作用</label> 
+          </td></tr>        
+        </table>
+        <table class='father,border' border="1">  
+          <tr><td>
+          <label class="has_border">table有:border:3px solid #00ff00</label> 
+          </td></tr>        
+        </table>
+        <table class='father,background_color,border'>
+           <tr><td>
+           <label class="has_border">table有:background-color,border:3px solid #00ff00</label>
+           </td></tr>
+        </table>       
+        <table class='father,background_image,border'>
+           <tr><td>
+           <label class="has_border">table有:background-image,border:3px solid #00ff00</label>
+           </td></tr>
+        </table>
+  
+        <b>测试table对border-radius的支持</b><br/> 
+
+        <table class='father,borderRadiusOne,background_color' border="0">
+            <tr><td>
+            <label>table有:border=0,border-radius不起作用</label>
+            </td></tr>
+        </table>  
+
+        <table class='father,borderRadiusOne'>
+          <tr><td>  
+          <label>table有:border=1和border-radius:10</label>
+          </td></tr>        
+        </table>       
+        <table class='father,borderRadiusOne,background_color'>
+            <tr><td>
+            <label>table有:border-radius:10,background-color</label>
+            </td></tr>
+        </table> 
+        <table class='father,borderRadiusOne,background_image'>
+            <tr><td> 
+            <label>table有:border-radius:10,background-image</label> 
+            </td></tr>        
+        </table>  
+
+        <table class='father,borderRadiusFour'>  
+            <tr><td>
+            <label>table有:border-radius:0 10 15 20</label>
+            </td></tr>        
+        </table>                
+        <table class='father,borderRadiusFour,background_color'> 
+            <tr><td>
+            <label>table有:border-radius:0 10 15 20,background-color</label>  
+            </td></tr>       
+        </table>                      
+        <table class='father,borderRadiusFour,background_image'> 
+             <tr><td>
+             <label>table有:border-radius:0 5 10 15,background-image</label>
+             </td></tr>
+        </table>
+
+
+        <!-- filter/background-color/background-image--> 
+        <b>测试table,tr,td对filter/background-color/background-image的支持</b><br/>
+        <!-- filter -->
+        <table class='father,filter1' >   
+            <tr>
+               <td>
+                 <label>table:has filter渐变</label>
+               </td>
+            </tr>      
+        </table>
+        <table class='father,filter2' > 
+            <tr>
+               <td>
+                 <label>table:has filter透明度</label>
+               </td>
+            </tr>          
+        </table>
+        <!-- background-color -->
+        <table class='father,background_color' > 
+            <tr>
+               <td>
+                 <label>table:has background-color</label>
+               </td>
+            </tr>          
+        </table>
+        <!-- background-image -->
+        <table class='father,background_image' > 
+            <tr>
+               <td>
+                 <label>table:has background-image</label>
+               </td>
+            </tr>          
+        </table>
+
+        <!--tr-->
+        <table class='father_free'> 
+            <tr class="filter1">
+               <td>
+                 <label>tr:has filter渐变色</label>
+               </td>
+            </tr> 
+            <tr class="filter2">
+               <td>
+                 <label>tr:has filter透明度</label>
+               </td>
+            </tr>
+            <tr class="background_color">
+               <td>
+                 <label>tr:has background-color</label>
+               </td>
+            </tr>
+            <tr class="background_image">
+               <td>
+                 <label>tr:has background-image</label>
+               </td>
+            </tr>         
+        </table>
+
+        <!--td-->
+        <table class='father_free'> 
+            <tr>
+               <td class="filter1">
+                 <label>td:has filter渐变色</label>
+               </td>
+            </tr> 
+            <tr>
+               <td  class="filter2">
+                 <label>td:has filter透明度</label>
+               </td>
+            </tr>
+            <tr>
+               <td  class="background_color">
+                 <label>td:has background-color</label>
+               </td>
+            </tr>
+            <tr>
+               <td class="background_image">
+                 <label>td:has background-image</label>
+               </td>
+            </tr>         
+        </table>
+
+        <!-- color/font-size/font-wight/font-style--> 
+        <b>测试table对color/font-size/font-wight/font-style的支持</b><br/>
+        <!--color-->
+        <table class='father_free,textColor' > 
+           <tr>
+               <td>
+                 <input type="button" value="in table:textColor" /> 
+               </td>
+            </tr>         
+        </table>
+        <!--fontSize-->
+        <table class='father_free,fontSize' > 
+           <tr>
+               <td>
+                 <input type="button" value="in table:fontSize=25" /> 
+               </td>
+            </tr>        
+        </table>
+        <!--fontWeight-->
+        <table class='father_free,fontWeight' > 
+           <tr>
+               <td>
+                 <input type="button" value="in table:fontWeight" />
+               </td>
+            </tr>         
+        </table>
+        <!--fontStyle-->
+        <table class='father_free,fontStyle' > 
+           <tr>
+               <td>
+                 <input type="button" value="in table:fontStyle" />
+               </td>
+            </tr>         
+        </table>
+       <b>测试tr对color/font-size/font-wight/font-style的支持</b><br/>
+        <!--tr-->
+        <table class='father_free'> 
+            <tr class="textColor">
+               <td>
+                 <input type="button" value="in tr:textColor" />
+               </td>
+            </tr> 
+            <tr class="fontSize">
+               <td>
+                 <input type="button" value="in tr:fontSize=25" />
+               </td>
+            </tr>
+            <tr class="fontWeight">
+               <td>
+                 <input type="button" value="in tr:fontWeight" />
+               </td>
+            </tr>
+            <tr class="fontStyle">
+               <td>
+                 <input type="button" value="in tr:fontStyle" />
+               </td>
+            </tr>         
+        </table>
+        <b>测试td对color/font-size/font-wight/font-style的支持</b><br/>
+        <!--td-->
+        <table class='father_free'> 
+            <tr>
+               <td class="textColor">
+                 <input type="button" value="in td:textColor" />
+               </td>
+            </tr> 
+            <tr>
+               <td  class="fontSize">
+                <input type="button" value="in td:fontSize=25" />
+               </td>
+            </tr>
+            <tr>
+               <td  class="fontWeight">
+                <input type="button" value="in td:fontWeight" />
+               </td>
+            </tr>
+            <tr>
+               <td class="fontStyle">
+                 <input type="button" value="in td:fontStyle" />
+               </td>
+            </tr>         
+        </table>
+
+       <!--table布局相关测试-->
+       <b>table布局相关测试,tr背景淡蓝色,td背景淡紫色,table背景灰色,分割线黑色</b><br/>
+       
+       <!-- width -->
+       <b>table:width=300,no-height;测试tr/td宽</b>       
+       <table class='father_free,color_table' > 
+           <tr class="tr_width_260,color_tr">
+               <td class="td_width_200,color_td">
+                 <label>tr-width=260(无效),td-width=200(有效)</label>
+               </td>
+               <td class="td_line">
+               </td>
+               <td class="td_width_50,color_td">
+                 <label>td-width=50(无效,占满剩余空间)</label>
+               </td>
+            </tr> 
+            <tr class="tr_line"><td></td><td></td><td></td></tr>            
+            <tr class="color_tr">
+               <td class="td_width_99,color_td">
+                 <label>td-width=99(无效,取第一列最大值)</label>
+               </td>
+               <td class="td_line">
+               </td>
+                <td class="color_td">
+                 <label>td-no-width</label>
+               </td>
+            </tr>
+            <tr class="tr_line"><td></td><td></td><td></td></tr>
+            <tr class="color_tr">
+               <td class="color_td">
+                 <label>td-no-width</label>
+               </td>
+               <td class="td_line">
+               </td>
+                <td class="color_td">
+                 <label>td-no-width</label>
+               </td>
+            </tr>
+      </table>
+      
+      <!-- height -->
+      <b>table:width=300,no-height;测试tr/td高</b>
+      <table class='father_free,color_table' > 
+            <tr class="tr_height_60,color_tr" >
+               <td class="td_height_40,color_td">
+                 <label>tr-height=60,td-height=40(应取tr的60)</label>
+               </td>
+            </tr>
+            <tr class="tr_line"><td></td></tr>
+            <tr class="tr_height_20,color_tr">
+               <td class="td_height_40,color_td">
+                 <label>tr-height=20(应取td的40),td-height=40</label>
+               </td>
+            </tr>
+            <tr class="tr_line"><td></td></tr>
+            <tr class="tr_height_20,color_tr">
+               <td class="color_td">
+                 <label>tr-height=20,td-no-height(应取tr的20)</label>
+               </td>
+            </tr> 
+            <tr class="tr_line"><td></td></tr>
+            <tr class="color_tr">
+               <td class="td_height_40,color_td">
+                 <label>tr-no-height(应取td的40),td-height=40</label>
+               </td>
+            </tr> 
+            <tr class="tr_line"><td></td></tr>
+            <tr class="color_tr">
+               <td class="color_td">
+                 <label>tr-no height,td-no height</label>
+               </td>
+            </tr>       
+        </table>
+
+        <b>table/tr/td均未设置宽高</b><br/>
+        <table>
+          <tr class="color_tr"> 
+            <td class="color_td"><label>第1行第1列</label></td>
+            <td class="color_td2"><label>第1行第2列</label></td>
+            <td class="color_td"><label>第1行第3列</label></td>
+          </tr>
+          <tr class="color_tr2"> 
+            <td class="color_td"><label>第2行第1列</label></td>
+            <td class="color_td2"><label>第2行第2列</label></td>
+            <td class="color_td"><label>第2行第3列</label></td>
+          </tr>
+          <tr class="color_tr"> 
+            <td class="color_td"><label>第3行第1列</label></td>
+            <td class="color_td2"><label>第3行第2列</label></td>
+            <td class="color_td"><label>第3行第3列</label></td>
+          </tr>
+        </table>
+              
+    <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+    
+        <!-- positon:fixed ，这是body的最后一个控件-->
+        <table class='father,positionFixed'> 
+            <tr>
+               <td>
+                 <label>positionFixed</label>  
+               </td>
+             </tr>       
+        </table>
+    </body>
+</content>

@@ -1,0 +1,7 @@
+{application,ewp}.
+{packages,[]}.
+{modules,[cron_service,cs_api,evo,ewp_adapter,ewp_app_manager,
+          ewp_channel_util,ewp_conf_util,ewp_file_util,ewp_http_client,
+          ewp_image_util,ewp_json,ewp_params,ewp_pubsub_service,
+          ewp_render_util,ewp_str_util,ewp_time,ewp_unicode,ewp_util,
+          ewp_yaws_util,push,session_service,xml_eng]}.

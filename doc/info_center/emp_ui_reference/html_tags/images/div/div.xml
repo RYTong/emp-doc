@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#f0f0f0;width:320px;}
+            .label{font-size:12px;}
+            .i{width:150px;font-size:12px;height:15px;background-color:#00ff00;}
+            .top{top:3px;}
+            .left{left:3px;}
+ 
+            .father{width:300px;height:30px;left:10px;}
+            .father_lit{width:300px;height:10px;left:10px;}
+            .father_big{width:300px;height:100px;left:10px;}
+            .father_free{width:300px;left:10px;}
+            
+            .line{left:10px;width:280px;height:1px;background-color:#ff00ff;}
+            .child{left:10px;width:250px;height:30px;background-color:#00ff00;}
+            
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            
+            .positionFixed{position:fixed;filter:progid(alpha='0.5');background-color:#E0FFFF;}
+            .positionToplevel{position:toplevel;top:50px;filter:progid(alpha='0.5');background-color:#E0FFFF;}
+
+            .borderRadiusFour{border-radius: 0px 10px 15px 20px;}
+            .borderRadiusOne{border-radius:10px;}
+            .border{border:3px solid #00ff00}
+            .has_border{left:5px;top:5px;}
+            
+            .background_color {background-color:#FFFF00;}
+            .background_image {background-image:url(a.png);}
+            .filter1 {filter:progid(startColorStr='#FFFF00',endColorStr='#ff0000',gradientType='1',alpha='0.5');}
+            .filter2 {filter:progid(alpha='0.5'); background-color: #FFFF00;}
+            
+            .textColor {color:#ff0000;}
+            .fontWeight{font-weight:bold;}
+            .fontSize{font-size:25px;}
+            .fontStyle{font-style:italic;}
+            
+            .div1{width:300px;height:30px;left:10px;background-color:#00ff00;}
+            .div2{width:200px;height:20px;left:50px;top:5px;background-color:#00ffff;}
+            .div3{width:100px;height:10px;left:50px;top:5px;background-color:#ffff00;}
+     
+            .close_but {width:310px;height:30px;left:5px;font-size:20px;color:#000000;background-color:#ffff00;}
+                       
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                  ryt:back();
+                end;
+                
+                function click(arg)
+                  local info="可以点击，info:"..arg;
+                  window:alert(info);
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed -->
+        <div class='father,positionFixed'> 
+          <label>我在div中，div有:positionFixed</label>         
+        </div>
+                   
+        <!-- positon:toplevel -->          
+        <div class='father,positionToplevel'> 
+           <label>我在透明的div中，div有:positionToplevel</label>          
+        </div>
+        
+        <b>测试div对hide/display/visibility的支持</b><br/>
+        
+        <!-- hide -->
+        <label>下面的div有:hide=false</label><br/>
+        <div class='father_lit' hide="false">          
+        </div>
+        <label>下面的div有:hide=true</label><br/>
+        <div class='father_lit' hide="true">                     
+        </div>
+
+         <!-- diaplay -->
+        <label>下面的div有:display=block</label><br/>
+        <div class='father_lit,display2' >          
+        </div>
+        <label>下面的div有:display=none</label><br/>
+        <div class='father_lit,display1' >          
+        </div>
+       
+
+        <!-- visibility -->
+        <label>下面的div有:visibility=visible</label><br/>
+        <div class='father_lit,visibility1' >          
+        </div>
+        <label>下面的div有:visibility=hidden</label><br/>
+        <div class='father_lit,visibility2' >          
+        </div>
+        
+         <!-- hide&display display优先 -->
+        <label>下面的div有:hide=false,display=none</label><br/>
+        <div class='father_lit,display1' hide="false" >          
+        </div>
+        <label>下面的div有:hide=true,display=block</label><br/>
+        <div class='father_lit,display2' hide="true" >          
+        </div>
+        
+        <!-- visibility&display visibility优先 -->
+        <label>下面的div有:visibility=visible,display=none</label><br/>
+        <div class='father_lit,visibility1,display1' >          
+        </div>
+        <label>下面的div有:visibility=hidden,display=none</label><br/>
+        <div class='father_lit,visibility2,display1' >          
+        </div>
+        <label>下面的div有:visibility=hidden,display=block</label><br/>
+        <div class='father_lit,visibility2,display2' >          
+        </div>
+        
+        
+        <!-- enable and onclick事件 -->
+        <b>测试div对enable的支持</b><br/>       
+        <div class='father,background_color' enable="true" onclick="click('enable=true')"> 
+            <label>---点击我---enable=true</label>          
+        </div>
+        <div class='father,background_color' enable="false" onclick="click('enable=false')"> 
+            <label>---点击我---enable=false</label>          
+        </div>
+        <label>下面的div多层嵌套，div1在最外层：enable=false，div2在中间enable=true，div3在最里层enable=false</label><br/>
+        <div class='div1' enable="false" onclick="click('div1:enable=false')"> 
+            <div class='div2' enable="true" onclick="click('div2:enable=true')">
+                <div class='div3' enable="false" onclick="click('div3:enable=false')"></div>              
+            </div>          
+        </div>
+        <label>下面的div多层嵌套，div1在最外层：enable=true，div2在中间enable=false，div3在最里层enable=true</label><br/>
+        <div class='div1' enable="true" onclick="click('div1:enable=true')"> 
+            <div class='div2' enable="false" onclick="click('div2:enable=false')">
+                <div class='div3' enable="true" onclick="click('div3:enable=true')"></div>              
+            </div>          
+        </div>
+        
+        <!-- div的align/valign属性 -->
+        <b>测试div对align/valign属性的支持</b><br/>       
+        <div align="left" class='father' border="1">
+           <i>in div align=left</i>
+        </div> 
+        <div align="center" class='father' border="1">
+           <i>in div align=center</i>
+        </div>
+        <div align="right" class='father' border="1">
+           <i>in div align=right</i>
+        </div>
+        <div valign="top" class='father' border="1">
+           <i>in div valign=top</i>
+        </div>
+        <div valign="middle" class='father' border="1">
+           <i>in div valign=middle</i>
+        </div>
+        <div valign="bottom" class='father' border="1">
+           <i>in div valign=bottom</i> 
+        </div>
+        <label>当指定了子控件的left/right,align应当失效</label>
+        <div align="right" class='father' border="1">
+           <i class="left">in div align=right;left=3</i> 
+        </div>       
+        <label>当指定了子控件的top/bottom,valign应当失效</label>
+        <div valign="bottom" class='father' border="1">
+           <i class="top">in div valign=bottom;top=3</i> 
+        </div>
+
+        <!-- div的boder属性 -->
+        <b>测试div对border属性的支持</b><br/>       
+        <div class='father'>
+           <label>div没有指定border=?默认为1</label>         
+        </div> 
+        <div class='father' border='0'>
+           <label>div指定border=0</label>         
+        </div>
+        <div class='father' border='1'>
+           <label>div指定border=1</label>         
+        </div>
+        <div class='father,background_color' border="1">
+           <label class="has_border">div有:background-color,border=1</label>
+        </div>       
+        <div class='father,background_image' border="1"> 
+           <label class="has_border">div有:background-image,border=1</label>
+        </div>
+        
+        
+        <!-- div的border样式 -->
+        <b>测试div对border样式的支持</b><br/>
+        <div class='father,border' border="0">  
+          <label class="has_border">div有:border=0,border样式不起作用</label>      
+        </div>       
+        <div class='father,border' border="1">  
+          <label class="has_border">div有:border:3px solid #00ff00</label>        
+        </div>
+        <div class='father,background_color,border' border="1">
+           <label class="has_border">div有:background-color,border:3px solid #00ff00</label>
+        </div>       
+        <div class='father,background_image,border' border="1"> 
+           <label class="has_border">div有:background-image,border:3px solid #00ff00</label>
+        </div>
+  
+        <b>测试div对border-radius的支持</b><br/> 
+
+        <div class='father,borderRadiusOne,background_color' border="0">
+            <label>div有:border=0,border-radius不起作用</label>
+        </div>  
+
+        <div class='father,borderRadiusOne' border="1">  
+          <label>div有:border=1和border-radius:10</label>        
+        </div>       
+        <div class='father,borderRadiusOne,background_color' border="1">
+            <label>div有:border-radius:10,background-color</label>
+        </div> 
+        <div class='father,borderRadiusOne,background_image' border="1"> 
+            <label>div有:border-radius:10,background-image</label>         
+        </div>  
+
+        <div class='father,borderRadiusFour' border="1">  
+           <label>div有:border-radius:0 10 15 20</label>        
+        </div>                
+        <div class='father,borderRadiusFour,background_color' border="1"> 
+          <label>div有:border-radius:0 10 15 20,background-color</label>         
+        </div>                      
+        <div class='father,borderRadiusFour,background_image' border="1"> 
+           <label>div有:border-radius:0 5 10 15,background-image</label>
+        </div>
+                
+        <!-- filter/background-color/background-image--> 
+        <b>测试div对filter/background-color/background-image的支持</b><br/>
+        <!-- filter -->       
+        <div class='father,filter1' >
+            <label>div有:filter渐变</label>          
+        </div>        
+        <div class='father,filter2' > 
+            <label>div有:filter透明度</label>         
+        </div>
+        <!-- background-color -->        
+        <div class='father,background_color' > 
+            <label>div有:background-color</label>         
+        </div>
+        <!-- background-image -->
+        <div class='father,background_image' > 
+            <label>div有:background-image</label>         
+        </div>
+        <!-- background-color,background-image -->
+        <div class='father,background_image,background_color' > 
+            <label>div有:background-image,background-color</label>         
+        </div>
+        <!-- background-color,filter -->
+        <div class='father,background_color,filter1' > 
+            <label>div有:background_color，渐变</label>         
+        </div>
+        <!-- background-image,filter -->
+        <div class='father,background_image,filter1' > 
+            <label>div有:background-image，渐变</label>         
+        </div>
+
+        <!-- color/font-size/font-wight--> 
+        <b>测试div对color/font-size/font-wight/font-style的支持</b><br/>
+        <!--color-->
+        <div class='father_free,textColor' > 
+           <input type="button" value="in div:有color" />           
+        </div>
+        <!--fontSize-->
+        <div class='father_free,fontSize' > 
+           <input type="button" value="in div:有font-size:25" />         
+        </div>
+        <!--fontWeight-->
+        <div class='father_free,fontWeight' > 
+           <input type="button" value="in div:有fontWeight" />
+        </div>
+        <!--fontStyle-->
+        <div class='father_free,fontStyle' > 
+           <input type="button" value="in div:有fontStyle" />        
+        </div>
+        
+        <!-- 综合测试 -->
+        <b>测试div作为容器,盛放一些控件</b><br/>
+        <label>下面的div有固定宽高300,100</label><br/>
+        <div class='father_big' >
+            <br/> 
+            <label class="child">我是label</label>
+            <input class="child" type="text" border="0" value="我是input-text" /> 
+            <input class="child" type="button" border="0" value="我是button" />
+            <div class="child" border="0">
+               <label>我是label,在div中</label>
+            </div> 
+            <br/>     
+        </div>
+
+        <b>测试高度为1的div</b><br/>
+        <label>我的下边有两条用div画的线，第一条有border,第二条没有border</label>
+        <div class='line' border="1"></div>
+        <div class='line' border="0"></div>
+        <label>我的上边有两条用div画的线,第一条有border,第二条没有border</label>
+
+        
+		<!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+		
+        <!-- positon:fixed -->
+        <div class='father,positionFixed'> 
+          <label>我在div中，div有:positionFixed</label>         
+        </div>
+    </body>
+</content>

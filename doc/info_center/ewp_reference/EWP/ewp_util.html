@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_util</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_util</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>一些通用API。.
+
+
+<h2><a name="description">Description</a></h2>一些通用API。
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-proplist">proplist()</a></h3>
+<p><tt>proplist() = [{Key::term(), Value::term()}]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-random_byte">random_byte()</a></h3>
+<p><tt>random_byte() = 1..256</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#collect_once-2">collect_once/2</a></td><td>依次对指定列表的各元素进行指定的函数运算，
+       计算结果不为false时返回此结果并结束遍历列表。.</td></tr>
+<tr><td valign="top"><a href="#each_line-2">each_line/2</a></td><td>对指定字符串的每一行执行指定函数运算。函数返回{stop, Value}时
+       返回Value值并停止遍历字符串。.</td></tr>
+<tr><td valign="top"><a href="#filter_proplist-1">filter_proplist/1</a></td><td>过滤指定的proplist中值为undefined或""的键值对。.</td></tr>
+<tr><td valign="top"><a href="#gen_req_body_from_list-1">gen_req_body_from_list/1</a></td><td>根据指定的proplist生成请求参数字符串。.</td></tr>
+<tr><td valign="top"><a href="#log_helper-1">log_helper/1</a></td><td>将给定的文本写入文件中，文件会保存为启动路径下的report.log。.</td></tr>
+<tr><td valign="top"><a href="#make_rfc1808_url-2">make_rfc1808_url/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#parse_query_string-1">parse_query_string/1</a></td><td>将指定的请求参数字符串转换成proplist()。.</td></tr>
+<tr><td valign="top"><a href="#random_bytes-1">random_bytes/1</a></td><td>生成指定长度的随机字节列表。.</td></tr>
+<tr><td valign="top"><a href="#strip_ws-1">strip_ws/1</a></td><td>去除指定字符串首尾的空白字符（空格，\t, \n, \r）.</td></tr>
+<tr><td valign="top"><a href="#term_from_str-1">term_from_str/1</a></td><td>在指定字符串中获取Erlang数据。
+       如term_from_str("[{a, b, c}, {1, 2}]") -&gt; [{a, b, c}, {1, 2}].</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="collect_once-2">collect_once/2</a></h3>
+<div class="spec">
+<p><tt>collect_once(Fun::function(), List::list()) -&gt; term()</tt><br></p>
+</div><p>依次对指定列表的各元素进行指定的函数运算，
+       计算结果不为false时返回此结果并结束遍历列表。<br>
+       函数规格为fun(Element) -&gt; false | term()。</p>
+
+<h3 class="function"><a name="each_line-2">each_line/2</a></h3>
+<div class="spec">
+<p><tt>each_line(Fun, Str) -&gt; any()</tt></p>
+</div><p>对指定字符串的每一行执行指定函数运算。函数返回{stop, Value}时
+       返回Value值并停止遍历字符串。<br>
+       函数规格为fun(string()) -&gt; {stop, Value :: term()) | term()</p>
+
+<h3 class="function"><a name="filter_proplist-1">filter_proplist/1</a></h3>
+<div class="spec">
+<p><tt>filter_proplist(List::<a href="#type-proplist">proplist()</a>) -&gt; <a href="#type-proplist">proplist()</a></tt><br></p>
+</div><p>过滤指定的proplist中值为undefined或""的键值对。</p>
+
+<h3 class="function"><a name="gen_req_body_from_list-1">gen_req_body_from_list/1</a></h3>
+<div class="spec">
+<p><tt>gen_req_body_from_list(List::[{Key::string(), Value::string()}]) -&gt; string()</tt><br></p>
+</div><p>根据指定的proplist生成请求参数字符串。</p>
+
+<h3 class="function"><a name="log_helper-1">log_helper/1</a></h3>
+<div class="spec">
+<p><tt>log_helper(Content::string() | binary()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>将给定的文本写入文件中，文件会保存为启动路径下的report.log。</p>
+
+<h3 class="function"><a name="make_rfc1808_url-2">make_rfc1808_url/2</a></h3>
+<div class="spec">
+<p><tt>make_rfc1808_url(BaseUrl, Href) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="parse_query_string-1">parse_query_string/1</a></h3>
+<div class="spec">
+<p><tt>parse_query_string(QueryStr::string()) -&gt; [{Key::string(), Value::string()}]</tt><br></p>
+</div><p>将指定的请求参数字符串转换成proplist()。</p>
+
+<h3 class="function"><a name="random_bytes-1">random_bytes/1</a></h3>
+<div class="spec">
+<p><tt>random_bytes(Len::integer()) -&gt; [<a href="#type-random_byte">random_byte()</a>]</tt><br></p>
+</div><p>生成指定长度的随机字节列表。</p>
+
+<h3 class="function"><a name="strip_ws-1">strip_ws/1</a></h3>
+<div class="spec">
+<p><tt>strip_ws(Str::string()) -&gt; string()</tt><br></p>
+</div><p>去除指定字符串首尾的空白字符（空格，\t, \n, \r）</p>
+
+<h3 class="function"><a name="term_from_str-1">term_from_str/1</a></h3>
+<div class="spec">
+<p><tt>term_from_str(TermInStr::string()) -&gt; term()</tt><br></p>
+</div><p>在指定字符串中获取Erlang数据。
+       如term_from_str("[{a, b, c}, {1, 2}]") -&gt; [{a, b, c}, {1, 2}]</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:47.</i></p>
+</body>
+</html>

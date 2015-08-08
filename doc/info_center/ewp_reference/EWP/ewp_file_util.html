@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_file_util</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_file_util</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>文件通用API.
+
+
+<h2><a name="description">Description</a></h2>文件通用API.
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#add_path-1">add_path/1</a></td><td>将指定目录添加到Erlang代码搜索路径，并加载目录下所有beam文件。.</td></tr>
+<tr><td valign="top"><a href="#clean-1">clean/1</a></td><td>删除指定的所有文件及目录。.</td></tr>
+<tr><td valign="top"><a href="#consult-1">consult/1</a></td><td>按Erlang语法格式读取指定文件的Erlang数据。可参考
+       <a href="http://www.erlang.org/doc/man/file.html#consult-1">file:consult/1</a></td></tr>
+<tr><td valign="top"><a href="#copy-3">copy/3</a></td><td>从指定源目录将指定的文件或子目录复制到目标目录。.</td></tr>
+<tr><td valign="top"><a href="#del_dir-1">del_dir/1</a></td><td>删除指定目录.</td></tr>
+<tr><td valign="top"><a href="#full_filename-1">full_filename/1</a></td><td>根据指定的相对路径返回绝对路径。.</td></tr>
+<tr><td valign="top"><a href="#get_config_dir-0">get_config_dir/0</a></td><td>返回配置目录.</td></tr>
+<tr><td valign="top"><a href="#get_ewp_config-0">get_ewp_config/0</a></td><td>返回ewp.conf所在路径.</td></tr>
+<tr><td valign="top"><a href="#get_ewp_dir-0">get_ewp_dir/0</a></td><td>返回ewp根目录.</td></tr>
+<tr><td valign="top"><a href="#get_log_dir-0">get_log_dir/0</a></td><td>返回日志目录.</td></tr>
+<tr><td valign="top"><a href="#get_priv_dir-0">get_priv_dir/0</a></td><td>返回priv目录.</td></tr>
+<tr><td valign="top"><a href="#get_public_dir-0">get_public_dir/0</a></td><td>返回public目录.</td></tr>
+<tr><td valign="top"><a href="#list_dirs_in_dir-1">list_dirs_in_dir/1</a></td><td>返回指定目录的子目录列表。.</td></tr>
+<tr><td valign="top"><a href="#load_beam-1">load_beam/1</a></td><td>加载指定beam文件.</td></tr>
+<tr><td valign="top"><a href="#make_dir-1">make_dir/1</a></td><td>根据指定路径生成目录，返回绝对路径。.</td></tr>
+<tr><td valign="top"><a href="#read_file-1">read_file/1</a></td><td>读取指定路径下的文件。.</td></tr>
+<tr><td valign="top"><a href="#read_file-2">read_file/2</a></td><td>读取指定的docroot下的指定文件。.</td></tr>
+<tr><td valign="top"><a href="#remove_path-1">remove_path/1</a></td><td>将指定目录从Erlang代码搜索路径中移除，并卸载目录下的beam文件。.</td></tr>
+<tr><td valign="top"><a href="#rename-2">rename/2</a></td><td>重命名指定文件或目录。.</td></tr>
+<tr><td valign="top"><a href="#unload_beam-1">unload_beam/1</a></td><td>卸载指定的beam文件。.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="add_path-1">add_path/1</a></h3>
+<div class="spec">
+<p><tt>add_path(Path::string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>将指定目录添加到Erlang代码搜索路径，并加载目录下所有beam文件。</p>
+
+<h3 class="function"><a name="clean-1">clean/1</a></h3>
+<div class="spec">
+<p><tt>clean(List::[string()]) -&gt; over</tt><br></p>
+</div><p>删除指定的所有文件及目录。</p>
+
+<h3 class="function"><a name="consult-1">consult/1</a></h3>
+<div class="spec">
+<p><tt>consult(FilePath::string()) -&gt; term()</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>按Erlang语法格式读取指定文件的Erlang数据。可参考
+       <a href="http://www.erlang.org/doc/man/file.html#consult-1">file:consult/1</a></p>
+
+<h3 class="function"><a name="copy-3">copy/3</a></h3>
+<div class="spec">
+<p><tt>copy(Files::[string()], Src::string(), Dst::string()) -&gt; ok</tt><br></p>
+</div><p>从指定源目录将指定的文件或子目录复制到目标目录。</p>
+
+<h3 class="function"><a name="del_dir-1">del_dir/1</a></h3>
+<div class="spec">
+<p><tt>del_dir(Dir::string()) -&gt; ok | {error, Reason}</tt><br></p>
+</div><p>删除指定目录.</p>
+
+<h3 class="function"><a name="full_filename-1">full_filename/1</a></h3>
+<div class="spec">
+<p><tt>full_filename(Path::string()) -&gt; {ok, string()} | {error, empty_path | bad_path}</tt><br></p>
+</div><p>根据指定的相对路径返回绝对路径。</p>
+
+<h3 class="function"><a name="get_config_dir-0">get_config_dir/0</a></h3>
+<div class="spec">
+<p><tt>get_config_dir() -&gt; string()</tt><br></p>
+</div><p>返回配置目录.</p>
+
+<h3 class="function"><a name="get_ewp_config-0">get_ewp_config/0</a></h3>
+<div class="spec">
+<p><tt>get_ewp_config() -&gt; string()</tt><br></p>
+</div><p>返回ewp.conf所在路径.</p>
+
+<h3 class="function"><a name="get_ewp_dir-0">get_ewp_dir/0</a></h3>
+<div class="spec">
+<p><tt>get_ewp_dir() -&gt; string()</tt><br></p>
+</div><p>返回ewp根目录.</p>
+
+<h3 class="function"><a name="get_log_dir-0">get_log_dir/0</a></h3>
+<div class="spec">
+<p><tt>get_log_dir() -&gt; string()</tt><br></p>
+</div><p>返回日志目录.</p>
+
+<h3 class="function"><a name="get_priv_dir-0">get_priv_dir/0</a></h3>
+<div class="spec">
+<p><tt>get_priv_dir() -&gt; string()</tt><br></p>
+</div><p>返回priv目录.</p>
+
+<h3 class="function"><a name="get_public_dir-0">get_public_dir/0</a></h3>
+<div class="spec">
+<p><tt>get_public_dir() -&gt; string()</tt><br></p>
+</div><p>返回public目录.</p>
+
+<h3 class="function"><a name="list_dirs_in_dir-1">list_dirs_in_dir/1</a></h3>
+<div class="spec">
+<p><tt>list_dirs_in_dir(Dir::string()) -&gt; [string()]</tt><br></p>
+</div><p>返回指定目录的子目录列表。</p>
+
+<h3 class="function"><a name="load_beam-1">load_beam/1</a></h3>
+<div class="spec">
+<p><tt>load_beam(Beam::string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>加载指定beam文件.</p>
+
+<h3 class="function"><a name="make_dir-1">make_dir/1</a></h3>
+<div class="spec">
+<p><tt>make_dir(Path::string()) -&gt; AbsDir::string() | failed</tt><br></p>
+</div><p>根据指定路径生成目录，返回绝对路径。</p>
+
+<h3 class="function"><a name="read_file-1">read_file/1</a></h3>
+<div class="spec">
+<p><tt>read_file(Path::string()) -&gt; binary() | undefined</tt><br></p>
+</div><p>throws <tt>invalid_file_path</tt></p>
+<p>读取指定路径下的文件。</p>
+
+<h3 class="function"><a name="read_file-2">read_file/2</a></h3>
+<div class="spec">
+<p><tt>read_file(Docroot::string(), Path::string()) -&gt; binary() | undefined</tt><br></p>
+</div><p>throws <tt>invalid_file_path</tt></p>
+<p>读取指定的docroot下的指定文件。</p>
+
+<h3 class="function"><a name="remove_path-1">remove_path/1</a></h3>
+<div class="spec">
+<p><tt>remove_path(Path::string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>将指定目录从Erlang代码搜索路径中移除，并卸载目录下的beam文件。</p>
+
+<h3 class="function"><a name="rename-2">rename/2</a></h3>
+<div class="spec">
+<p><tt>rename(SrcFile::string(), DestFile::string()) -&gt; ok | {error, Reason}</tt><br></p>
+</div><p>重命名指定文件或目录。</p>
+
+<h3 class="function"><a name="unload_beam-1">unload_beam/1</a></h3>
+<div class="spec">
+<p><tt>unload_beam(Beam::string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>卸载指定的beam文件。</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:49.</i></p>
+</body>
+</html>
