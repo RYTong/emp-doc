@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body {background-color:#3366CC;}
+            .label {background-color:#ffff00;}
+            .div1 {background-color:#ff0000;width:100px;height:50px;}
+            
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+            ]]>
+        </script>
+        
+    </head>
+    <body class="body">
+        <div border='0'>
+            <!--
+             // 换行的情况:
+             // 1. inline block
+             // 2. block  block
+             // 3. block  br 插入默认行高
+             // 4. inline br
+             // 5. block  inline
+             // 6. br     inline
+             // 7. 正常换行,即超过显示宽度
+             -->
+            <label>11111111111111</label>
+            <div class='div1'></div><!-- case1 block控件前后都需要换行 -->
+            <img src='local:Icon.png'></img> <!-- case5 -->
+            <label>222222222222222</label>
+            <label>3333333333333333</label> <!-- case 4,7 超过一行在下一行显示-->
+            <br/>                           <!-- case 6 br导致换行-->
+            <label>444444444444444</label>
+            <br/><br/><br/>                      <!-- case 3 连续的br,除第一个外,其他的br需要占默认行高 -->
+            <label>555555555555555</label>
+            
+            <div class='div1'></div> <!-- case2 -->
+            <div class='div1'></div>
+            <br/>                    <!-- case 3 -->
+            <div class='div1'></div><!-- block元素中间有br,这些br需要占默认行高 -->
+            <br/>                       <!-- case 3 -->
+            <label>6666666666666666</label>
+            
+        </div>
+    </body>
+    
+</content>

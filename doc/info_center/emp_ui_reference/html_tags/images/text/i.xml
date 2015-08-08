@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;width:320px;}
+            .father{width:300px;height:30px;left:10px;font-size:15px;background-color:#CCCCCC;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .background_color {background-color:#FFFF00;}
+            .background_image {background-image:url(animation.png);}
+            .textColor {color:#ff0000;}
+            .filter {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            .positionFixed{position:fixed;}
+            .positionToplevel{position:toplevel;top:200px;left:10px;background-color:#ff0000;}
+            .fontWeight{font-weight:bold;background-color:#CCCCCC;}
+            .numberlines{background-color:#CCCCCC;}
+            .fontSize{font-size:30px;}
+            .textAlignLeft{text-align:left;}
+            .textAlignCenter{text-align:center;}
+            .textAlignRight{text-align:right;}
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                ryt:back();
+                end;
+                
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed -->
+        <i class='father,positionFixed' > positon:fixed body第一个控件 </i>
+        <!-- loop -->
+        <i class="father" loop="false">loop="false" 无跑马灯效果</i>
+        <i class="father" loop="true">loop="true" 跑马灯效果</i>
+        <!-- numlines -->
+        <i class="numberlines" numlines="3">显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。</i>
+        <!-- hide -->
+        <i hide='false' class='father' > hide=false，下方有hide=true的i控件 </i>
+        <i hide='true' class='father' > hide=true的i控件,不应该显示出来 </i>
+        <!-- diaplay -->
+        <i class='father,display2' > display=block，下方有display=none的i控件 </i>
+        <i class='father,display1' > display=none，不应该显示出来 </i>
+        <!-- positon:toplevel -->
+        <i class='father,positionToplevel' > positon:toplevel 不随页面滚动 </i>
+        <!-- background-color -->
+        <i class='father,background_color' > 背景色 ：background-color </i>
+        <!-- color -->
+        <i class='father,textColor' > 字体颜色：color </i>
+        <!-- filter -->
+        <i class='father,filter' > 渐变色：filter </i>
+        <!-- font-weight -->
+        <i class='father,fontWeight' > font-weight:bold </i>
+        <!-- font-size -->
+        <i class='father,fontSize' > font-size:30px </i>
+        <!-- text-align -->
+        <i class='father,textAlignLeft'> text-align:left </i>
+        <i class='father,textAlignCenter'> text-align:center </i>
+        <i class='father,textAlignRight'> text-align:right </i>
+        <!-- visibility -->
+        <i class='father,visibility1' loop="true"> visibility:visible下方有visibility=hidden的i控件 </i>
+        <i class='father,visibility2' > visibility:hidden 不应该显示 </i>
+        
+        <!-- 组合测试 -->
+        <!-- hide display -->
+        <i hide='true' class='father,display2'> display=block hide=true 样式>属性应显示 </i>
+        <i hide='false' class='father,display1' > display=none hide=false 样式>属性不显示 </i>
+        <!-- hide visibility -->
+        <i hide='true' class='father,visibility1'> visibility:visible hide=true 样式>属性应显示</i>
+        <i hide='false' class='father,visibility2' > visibility:hidden hide=false 样式>属性占位不显示 </i>
+        <!-- display visibility -->
+        <i class='father,display1,visibility1'> visibility:visible display=none 应显示</i>
+        <i class='father,display2,visibility2' > visibility:hidden display=block 占位不显示 </i>
+        
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+        <!-- positon:fixed -->
+        <i class='father,positionFixed' > positon:fixed body最后一个控件 </i>
+    </body>
+</content>

@@ -1,0 +1,30 @@
+{
+  "name": "emp-doc",
+  "main": "./lib/emp-doc",
+  "version": "0.0.0",
+  "description": "EMP API 文档集合",
+  "keywords": [
+    "EMP", "API", "Document"
+  ],
+  "maintainers": [
+  {
+    "name": "Ju Chao",
+    "email": "ju.chao@rytong.com"
+  }
+  ],
+  "bugs": {
+    "url": "https://github.com/RYTong/emp-doc/issues"
+  },
+  "activationCommands": {
+    "atom-workspace": "emp-doc:show-doc"
+  },
+  "repository": "https://github.com/atom/emp-doc",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.2",
+    "underscore-plus": "^1.2.1"
+  }
+}

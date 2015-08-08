@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#f0f0f0;width:320px;}
+            .father{width:300px;height:30px;left:10px;}
+            .father_lit{width:300px;height:10px;left:10px;}
+            .father_net{width:100px;height:20px;left:10px;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .filter5{filter:progid(alpha='0.5');}
+            .filter1{filter:progid(alpha='0.1');}
+            .positionFixed{position:fixed;}
+            .positionToplevel{position:toplevel;top:50px;left:10px;}
+            
+            .background_color {background-color:#FFFF00;}
+            .background_image {background-image:url(a_click.png);}
+            .filter{filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            
+            .close_but {width:310px;height:30px;left:5px;font-size:20px;color:#000000;background-color:#ffff00;}
+            
+            
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                  ryt:back();
+                end;
+                
+                function click()
+                  window:alert("可以点击！！！")
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed :body的第一个控件-->
+        <img src="local:a_fixed.png" class='father,positionFixed'></img>
+        
+        <!-- positon:toplevel -->          
+        <img src="local:a_toplevel.png" class='father,filter5,positionToplevel' ></img>
+        
+        <b>image对hide/display/visibility的支持</b><br/>
+        <!-- hide -->
+        <label>下面的image有:hide=false</label><br/>
+        <img hide='false' src="local:a.png" class='father_lit' ></img>
+        <label>下面的image有:hide=true</label><br/>
+        <img hide='true' src="local:a.png" class='father_lit' ></img>
+
+         <!-- diaplay -->
+        <label>下面的image有:display=block</label><br/>
+        <img src="local:a.png" class='father_lit,display2' ></img>
+        <label>下面的image有:display=none</label><br/>
+        <img src="local:a.png" class='father_lit,display1' ></img>
+
+        <!-- visibility -->
+        <label>下面的image有:visibility=visible</label><br/>
+        <img src="local:a.png" class='father_lit,visibility1' ></img>
+        <label>下面的image有:visibility=hidden</label><br/>
+        <img src="local:a.png" class='father_lit,visibility2' ></img>
+        
+        <!-- enable and onclick事件 -->
+        <b>image对点击事件和enable的支持</b><br/>
+        <label>下面的image有:enable=true</label><br/>
+        <img src="local:a_click.png"  class='father' onclick="click()"  enable='true'></img>
+        <label>下面的image有:enable=false</label><br/>
+        <img src="local:a_click.png" class='father' onclick="click()"  enable='false'></img>
+                        
+        <!-- filter:只支持alpha -->
+        <b>image对filter:progid(alpha=...)的支持</b><br/>
+        <label>下面的image有:alpha=0.5</label><br/>
+        <img src="local:a.png" class='father,filter5' ></img>
+        <label>下面的image有:alpha=0.1</label><br/>
+        <img src="local:a.png" class='father,filter1' ></img>
+        
+        <!-- 不支持背景色，背景图，渐变色 -->
+        <b>image不支持背景色，背景图，渐变色，下面三张应该显示图片a.png,第三张透明度不起作用</b><br/>
+        <img src="local:a.png" class='father,background_color' ></img>       
+        <img src="local:a.png" class='father,background_image' ></img>
+        <img src="local:a.png" class='father,filter' ></img>
+        
+       
+        <b>下面测试的是src加载网络图片，需要联网调试</b>
+        <br/>
+        <!-- img:src -->
+        <img class='father_net'  src="http://2f.zol-img.com.cn/product/89/695/ceMVrsqeDKqY.png"/><br/>
+        <img  class='father_net' src="https://192.168.64.128/emas/Btnota.jpg"/><br/>
+        <img  class='father_net' src="ewp_local://Btnota.jpg" /><br/>
+        
+        <!-- img:src with w,h-->
+        <img class='father_net'  src="http://2f.zol-img.com.cn/product/89/695/ceMVrsqeDKqY.png?w=200&h=30"/><br/>
+        <img class='father_net'  src="https://192.168.64.128/emas/Btnota.jpg?w=200&h=30"/><br/>
+        <img class='father_net'  src="ewp_local://Btnota.jpg?w=200&h=30" /><br/>
+        
+        <b>下面测试的是src加载三张没有给定宽高的图片</b><br/>
+        <label> 注意:预期结果为图片按照原像素显示,但是由于异步问题可能达不到预期效果,甚至因此而导致布局问题,所以项目中请指定图片宽高,这里仅为测试</label><br/>
+        
+        <img src="local:a.png" /><br/>
+        <img src="ewp_local://Btnota.jpg" /><br/>
+        <img src="ewp_local://Btnota.jpg?w=200&h=30"/><br/>
+
+        <br/><br/>
+
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+        
+        <!-- positon:fixed :body的最后一个控件-->
+        <img src="local:a_fixed.png" class='father,positionFixed' ></img>
+    </body>
+</content>

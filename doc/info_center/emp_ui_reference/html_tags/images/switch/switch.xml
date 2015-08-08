@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;width:320px;}
+            .switch1{width:320px;height:80px;left:0px;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .fontSize {font-size:15px;}
+            .fontWeight{font-weight:bold;}
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+            .label1{left:10px;width:300px;height:30px;font-weight:bold;}
+            .label2{left:10px;width:300px;height:30px;font-size:15px;}
+            .button{left:10px;width:300px;height:30px;font-size:13px;background-color:#f122f0;}
+            .positionFixed{position:fixed;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                ryt:back();
+                end;
+                
+                function onclick()
+                local switch = document:getElementsByName("sw11");
+                local checked = switch[1]:getPropertyByName("checked");
+                if checked == "true" then
+                window:alert("switch开启(onclick)");
+                else
+                window:alert("switch关闭(onclick)");
+                end;
+                end;
+                
+                function onclick1()
+                window:alert("switch开启(onclick1)");
+                end;
+                function onclick2()
+                window:alert("switch关闭(onclick2)");
+                end;
+                
+                function changechecked()
+                local switch = document:getElementsByName("sw9");
+                local checked = switch[1]:getPropertyByName("checked");
+                if checked == "true" then
+                switch[1]:setPropertyByName('checked','false')
+                else
+                switch[1]:setPropertyByName('checked','true')
+                end;
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        <!-- positon:fixed -->
+        <input type='switch' value='sww1' class='positionFixed'  name='sww1'>yes</input>
+        <input type='switch' value='sww1' name='sww1'>no</input>
+        <label class='label1'>说明：switch大小修改在iOS无效</label>
+        <!-- size -->
+        <label class='label2'>默认size</label>
+        <input type='switch' value='sw1' name='sw1'>yes</input>
+        <input type='switch' value='sw1' name='sw1'>no</input>
+        <label name ='label1' class='label2'>改变switch的size</label>
+        <input type='switch' value='sw2' name='sw2' class='switch1'>yes</input>
+        <input type='switch' value='sw2' name='sw2' >no</input>
+        <label class='label2'>说明：后面都采用默认size.</label>
+        <!-- hide -->
+        <label class='label1'> hide 测试</label>
+        <label class='label2'>hide = 'true',不显示</label>
+        <input type='switch' hide='true' value='sw3' name='sw3'>yes</input>
+        <input type='switch' value='sw3' name='sw3'>no</input>
+        
+        <label class='label2'>hide = 'false',显示</label>
+        <input type='switch' hide='false' value='sw4' name='sw4'>yes</input>
+        <input type='switch' value='sw4' name='sw4' >no</input>
+        <!-- diaplay -->
+        <label class='label1'> display 测试</label>
+        <label class='label2'>diplay='none',不显示,不占位</label>
+        <input type='switch' value='sw5' name='sw5' class='display1'>yes</input>
+        <input type='switch' value='sw5' name='sw5' >no</input>
+        
+        <label class='label2'>diplay='block',显示</label>
+        <input type='switch' value='sw6' name='sw6' class='display2'>yes</input>
+        <input type='switch' value='sw6' name='sw6' >no</input>
+        <!-- visibility -->
+        <label class='label1'> visibility 测试</label>
+        <label class='label2'>visibility='hidden',不显示,占位</label>
+        <input type='switch' value='sw7' name='sw7' class='visibility2'>yes</input>
+        <input type='switch' value='sw7' name='sw7' >no</input>
+        <label class='label2'>visibility='visible',显示</label>
+        <input type='switch' value='sw8' name='sw8' class='visibility1'>yes</input>
+        <input type='switch' value='sw8' name='sw8' >no</input>
+        <!-- checked -->
+        <label class='label1'> checked 测试</label>
+        <input type='button' value='点击通过改变checked改变下面switch选中状态' name='btn2' class='button' onclick='changechecked()'>yes</input>
+        <label class='label2'>switch默认开启</label>
+        <input type='switch' value='sw9' name='sw9' checked="checked">yes</input>
+        <input type='switch' value='sw9' name='sw9' >no</input>
+        <!-- enable -->
+        <label class='label1'> enable 测试</label>
+        <label class='label2'> enable = 'false' 不可点击</label>
+        <input type='switch' enable='false' value='sw10' name='sw10'>yes</input>
+        <input type='switch' value='sw10' name='sw10' onclick="onclick()">no</input>
+        <!-- onclick事件 -->
+        <label class='label1'> onclick 测试</label>
+        <label class='label2'> 文档实例1:onclick实现 </label>
+        <input type='switch' value='sw10' name='sw11' onclick="onclick()">yes</input>
+        <input type='switch' value='sw10' name='sw11' onclick="onclick()">no</input>
+        <label class='label2'> 文档实例2:onclick实现 </label>
+        <input type='switch' value='sw11' name='sw12' onclick="onclick1()">yes</input>
+        <input type='switch' value='sw11' name='sw12' onclick="onclick2()">no</input>
+        
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+    </body>
+</content>

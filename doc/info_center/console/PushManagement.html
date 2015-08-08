@@ -1,0 +1,1144 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../manifest.appcache">
+    
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        
+        <meta charset="UTF-8">
+        <title>Push管理 | EMP参考手册</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="">
+        <meta name="description" content="Erlang Mobile Platform">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../console/EWPStateMonitor.html" />
+        
+        
+        <link rel="prev" href="../console/BusinessChannelManagement.html" />
+        
+
+        <meta property="og:title" content="Push管理 | EMP参考手册">
+        <meta property="og:site_name" content="EMP参考手册">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    </head>
+    <body>
+        
+        
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book"  data-level="5.4" data-basepath=".." data-revision="1438943472421">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    
+    
+
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../index.html" >EMP参考手册</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+
+        
+
+        
+
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../index.html"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+    
+        <li class="chapter " data-level="1" data-path="overview/EMP5.4TechnologyWhitePapers.html">
+            
+            <a href="../overview/EMP5.4TechnologyWhitePapers.html">
+                <i class="fa fa-check"></i> <b>1.</b> EMP5.4技术白皮书
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> EMP 安全</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="emp_security/emp_security_channel.html">
+            
+            <a href="../emp_security/emp_security_channel.html">
+                <i class="fa fa-check"></i> <b>2.1.</b> EMP加密信道
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="emp_ui_reference/README.html">
+            
+            <a href="../emp_ui_reference/README.html">
+                <i class="fa fa-check"></i> <b>3.</b> EMP界面开发规范
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>3.1.</b> 变更记录
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="emp_ui_reference/ChangeLog.html">
+            
+            <a href="../emp_ui_reference/ChangeLog.html">
+                <i class="fa fa-check"></i> <b>3.1.1.</b> 5.2到5.3的变更记录
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="emp_ui_reference/css/css_introduction.html">
+            
+            <a href="../emp_ui_reference/css/css_introduction.html">
+                <i class="fa fa-check"></i> <b>3.2.</b> CSS样式
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="emp_ui_reference/css/CSS.html">
+            
+            <a href="../emp_ui_reference/css/CSS.html">
+                <i class="fa fa-check"></i> <b>3.2.1.</b> 样式介绍
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="emp_ui_reference/property/property_introduction.html">
+            
+            <a href="../emp_ui_reference/property/property_introduction.html">
+                <i class="fa fa-check"></i> <b>3.3.</b> 属性
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="emp_ui_reference/property/Property.html">
+            
+            <a href="../emp_ui_reference/property/Property.html">
+                <i class="fa fa-check"></i> <b>3.3.1.</b> 属性介绍
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="emp_ui_reference/property/control_global_property.html">
+            
+            <a href="../emp_ui_reference/property/control_global_property.html">
+                <i class="fa fa-check"></i> <b>3.3.2.</b> 工程配置属性介绍
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>3.4.</b> 界面标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="emp_ui_reference/html_tags/tag_binding.html">
+            
+            <a href="../emp_ui_reference/html_tags/tag_binding.html">
+                <i class="fa fa-check"></i> <b>3.4.1.</b> 控件支持属性和样式对照表
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="emp_ui_reference/html_tags/emp_layout.html">
+            
+            <a href="../emp_ui_reference/html_tags/emp_layout.html">
+                <i class="fa fa-check"></i> <b>3.4.2.</b> 布局规则
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="emp_ui_reference/html_tags/emp_layout_table.html">
+            
+            <a href="../emp_ui_reference/html_tags/emp_layout_table.html">
+                <i class="fa fa-check"></i> <b>3.4.3.</b> Table布局规则
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="emp_ui_reference/html_tags/align_valign_arithmetic.html">
+            
+            <a href="../emp_ui_reference/html_tags/align_valign_arithmetic.html">
+                <i class="fa fa-check"></i> <b>3.4.4.</b> 对齐算法
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>3.4.5.</b> 基本标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.5.1" data-path="emp_ui_reference/html_tags/Body.html">
+            
+            <a href="../emp_ui_reference/html_tags/Body.html">
+                <i class="fa fa-check"></i> <b>3.4.5.1.</b> Body
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.2" data-path="emp_ui_reference/html_tags/Div.html">
+            
+            <a href="../emp_ui_reference/html_tags/Div.html">
+                <i class="fa fa-check"></i> <b>3.4.5.2.</b> Div
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.3" data-path="emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+            
+            <a href="../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+                <i class="fa fa-check"></i> <b>3.4.5.3.</b> Table &amp; Tr &amp; Td &amp; Th
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.4" data-path="emp_ui_reference/html_tags/Image.html">
+            
+            <a href="../emp_ui_reference/html_tags/Image.html">
+                <i class="fa fa-check"></i> <b>3.4.5.4.</b> Image
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.5" data-path="emp_ui_reference/html_tags/Select &amp; Option.html">
+            
+            <a href="../emp_ui_reference/html_tags/Select &amp; Option.html">
+                <i class="fa fa-check"></i> <b>3.4.5.5.</b> Select &amp; Option
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.6" data-path="emp_ui_reference/html_tags/Button.html">
+            
+            <a href="../emp_ui_reference/html_tags/Button.html">
+                <i class="fa fa-check"></i> <b>3.4.5.6.</b> Button
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.7" data-path="emp_ui_reference/html_tags/Inputtext.html">
+            
+            <a href="../emp_ui_reference/html_tags/Inputtext.html">
+                <i class="fa fa-check"></i> <b>3.4.5.7.</b> InputText
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.8" data-path="emp_ui_reference/html_tags/Password.html">
+            
+            <a href="../emp_ui_reference/html_tags/Password.html">
+                <i class="fa fa-check"></i> <b>3.4.5.8.</b> Password
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.9" data-path="emp_ui_reference/html_tags/Radio.html">
+            
+            <a href="../emp_ui_reference/html_tags/Radio.html">
+                <i class="fa fa-check"></i> <b>3.4.5.9.</b> Radio
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.10" data-path="emp_ui_reference/html_tags/Checkbox.html">
+            
+            <a href="../emp_ui_reference/html_tags/Checkbox.html">
+                <i class="fa fa-check"></i> <b>3.4.5.10.</b> Checkbox
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.11" data-path="emp_ui_reference/html_tags/Hidden.html">
+            
+            <a href="../emp_ui_reference/html_tags/Hidden.html">
+                <i class="fa fa-check"></i> <b>3.4.5.11.</b> Hidden
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.12" data-path="emp_ui_reference/html_tags/Webview.html">
+            
+            <a href="../emp_ui_reference/html_tags/Webview.html">
+                <i class="fa fa-check"></i> <b>3.4.5.12.</b> Webview
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.13" data-path="emp_ui_reference/html_tags/Segment.html">
+            
+            <a href="../emp_ui_reference/html_tags/Segment.html">
+                <i class="fa fa-check"></i> <b>3.4.5.13.</b> Segment
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.14" data-path="emp_ui_reference/html_tags/Switch.html">
+            
+            <a href="../emp_ui_reference/html_tags/Switch.html">
+                <i class="fa fa-check"></i> <b>3.4.5.14.</b> Switch
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.15" data-path="emp_ui_reference/html_tags/Link.html">
+            
+            <a href="../emp_ui_reference/html_tags/Link.html">
+                <i class="fa fa-check"></i> <b>3.4.5.15.</b> Link
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.16" data-path="emp_ui_reference/html_tags/Label.html">
+            
+            <a href="../emp_ui_reference/html_tags/Label.html">
+                <i class="fa fa-check"></i> <b>3.4.5.16.</b> Label
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.17" data-path="emp_ui_reference/html_tags/I &amp; Em.html">
+            
+            <a href="../emp_ui_reference/html_tags/I &amp; Em.html">
+                <i class="fa fa-check"></i> <b>3.4.5.17.</b> I &amp; Em
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.18" data-path="emp_ui_reference/html_tags/B &amp; Strong.html">
+            
+            <a href="../emp_ui_reference/html_tags/B &amp; Strong.html">
+                <i class="fa fa-check"></i> <b>3.4.5.18.</b> B &amp; Strong
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.19" data-path="emp_ui_reference/html_tags/RichText.html">
+            
+            <a href="../emp_ui_reference/html_tags/RichText.html">
+                <i class="fa fa-check"></i> <b>3.4.5.19.</b> RichText
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.20" data-path="emp_ui_reference/html_tags/Form.html">
+            
+            <a href="../emp_ui_reference/html_tags/Form.html">
+                <i class="fa fa-check"></i> <b>3.4.5.20.</b> Form
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.21" data-path="emp_ui_reference/html_tags/Br.html">
+            
+            <a href="../emp_ui_reference/html_tags/Br.html">
+                <i class="fa fa-check"></i> <b>3.4.5.21.</b> Br
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="emp_ui_reference/html_tags/CustomizeTag.html">
+            
+            <a href="../emp_ui_reference/html_tags/CustomizeTag.html">
+                <i class="fa fa-check"></i> <b>3.4.6.</b> 定制标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.6.1" data-path="emp_ui_reference/html_tags/pies.html">
+            
+            <a href="../emp_ui_reference/html_tags/pies.html">
+                <i class="fa fa-check"></i> <b>3.4.6.1.</b> 饼状图
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6.2" data-path="emp_ui_reference/html_tags/barPlot.html">
+            
+            <a href="../emp_ui_reference/html_tags/barPlot.html">
+                <i class="fa fa-check"></i> <b>3.4.6.2.</b> 柱状图
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6.3" data-path="emp_ui_reference/html_tags/linePlot.html">
+            
+            <a href="../emp_ui_reference/html_tags/linePlot.html">
+                <i class="fa fa-check"></i> <b>3.4.6.3.</b> 折线图
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="emp_ui_reference/lua/Lua.html">
+            
+            <a href="../emp_ui_reference/lua/Lua.html">
+                <i class="fa fa-check"></i> <b>3.5.</b> Lua
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="emp_ui_reference/lua/FunctionInLibrary.html">
+            
+            <a href="../emp_ui_reference/lua/FunctionInLibrary.html">
+                <i class="fa fa-check"></i> <b>3.5.1.</b> EMP Lua Library
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="emp_ui_reference/lua/Metatable.html">
+            
+            <a href="../emp_ui_reference/lua/Metatable.html">
+                <i class="fa fa-check"></i> <b>3.5.2.</b> 界面标签支持的Lua接口
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="emp_ui_reference/lua/Animation.html">
+            
+            <a href="../emp_ui_reference/lua/Animation.html">
+                <i class="fa fa-check"></i> <b>3.5.3.</b> 动画
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="emp_ui_reference/lua/RYTL_Script_Library.html">
+            
+            <a href="../emp_ui_reference/lua/RYTL_Script_Library.html">
+                <i class="fa fa-check"></i> <b>3.5.4.</b> RYTL脚本库
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="emp_config/README.html">
+            
+            <a href="../emp_config/README.html">
+                <i class="fa fa-check"></i> <b>4.</b> EMP开发配置
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="emp_config/ewp/README.html">
+            
+            <a href="../emp_config/ewp/README.html">
+                <i class="fa fa-check"></i> <b>4.1.</b> 服务器配置
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="emp_config/ewp/ewp_conf.html">
+            
+            <a href="../emp_config/ewp/ewp_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.1.</b> EWP 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="emp_config/ewp/app_conf.html">
+            
+            <a href="../emp_config/ewp/app_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.2.</b> APP 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="emp_config/ewp/yaws_conf.html">
+            
+            <a href="../emp_config/ewp/yaws_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.3.</b> YAWS 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="emp_config/ewp/adapter_conf.html">
+            
+            <a href="../emp_config/ewp/adapter_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.4.</b> 适配 配置
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>5.</b> EWP5.4管理后台功能说明文档
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="console/Login.html">
+            
+            <a href="../console/Login.html">
+                <i class="fa fa-check"></i> <b>5.1.</b> 登录
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="console/ClusterManagement.html">
+            
+            <a href="../console/ClusterManagement.html">
+                <i class="fa fa-check"></i> <b>5.2.</b> 集群管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="console/BusinessChannelManagement.html">
+            
+            <a href="../console/BusinessChannelManagement.html">
+                <i class="fa fa-check"></i> <b>5.3.</b> 业务频道管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="console/PushManagement.html">
+            
+            <a href="../console/PushManagement.html">
+                <i class="fa fa-check"></i> <b>5.4.</b> Push管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="console/EWPStateMonitor.html">
+            
+            <a href="../console/EWPStateMonitor.html">
+                <i class="fa fa-check"></i> <b>5.5.</b> EWP状态监控
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="console/LogManagement.html">
+            
+            <a href="../console/LogManagement.html">
+                <i class="fa fa-check"></i> <b>5.6.</b> 日志管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="console/StatisticAnalysis.html">
+            
+            <a href="../console/StatisticAnalysis.html">
+                <i class="fa fa-check"></i> <b>5.7.</b> 统计分析
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="console/ResourceManagement.html">
+            
+            <a href="../console/ResourceManagement.html">
+                <i class="fa fa-check"></i> <b>5.8.</b> 资源管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="console/Logout.html">
+            
+            <a href="../console/Logout.html">
+                <i class="fa fa-check"></i> <b>5.9.</b> 退出
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ewp_reference/EWP/index.html">
+            
+            <a href="../ewp_reference/EWP/index.html">
+                <i class="fa fa-check"></i> <b>6.</b> EWP API
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="section_README.html">
+            
+            <a href="../section_README.html">
+                <i class="fa fa-check"></i> <b>7.</b> EWP Manual
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="ewp_man/cron_service.html">
+            
+            <a href="../ewp_man/cron_service.html">
+                <i class="fa fa-check"></i> <b>7.1.</b> cron_service
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="ewp_man/InstructionUseSyslog.html">
+            
+            <a href="../ewp_man/InstructionUseSyslog.html">
+                <i class="fa fa-check"></i> <b>7.2.</b> syslog
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="ewp_man/PreventDuplicateSubmit.html">
+            
+            <a href="../ewp_man/PreventDuplicateSubmit.html">
+                <i class="fa fa-check"></i> <b>7.3.</b> 防重复提交使用说明
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="ewp_man/eac_fast_use_guide.html">
+            
+            <a href="../ewp_man/eac_fast_use_guide.html">
+                <i class="fa fa-check"></i> <b>7.4.</b> EWP管理平台快速使用文档
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="ewp_man/eac_use_guide.html">
+            
+            <a href="../ewp_man/eac_use_guide.html">
+                <i class="fa fa-check"></i> <b>7.5.</b> EWP管理平台使用文档
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 81.53846153846153%;min-width: 80%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../overview/EMP5.4TechnologyWhitePapers.html" title="EMP5.4技术白皮书" class="chapter done new-chapter" data-progress="1" style="left: 1.5384615384615385%;"></a>
+    
+        <a href="../emp_security/emp_security_channel.html" title="EMP加密信道" class="chapter done " data-progress="2.1" style="left: 3.076923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/README.html" title="EMP界面开发规范" class="chapter done new-chapter" data-progress="3" style="left: 4.615384615384615%;"></a>
+    
+        <a href="../emp_ui_reference/ChangeLog.html" title="5.2到5.3的变更记录" class="chapter done " data-progress="3.1.1" style="left: 6.153846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/css/css_introduction.html" title="CSS样式" class="chapter done " data-progress="3.2" style="left: 7.6923076923076925%;"></a>
+    
+        <a href="../emp_ui_reference/css/CSS.html" title="样式介绍" class="chapter done " data-progress="3.2.1" style="left: 9.23076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/property/property_introduction.html" title="属性" class="chapter done " data-progress="3.3" style="left: 10.76923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/property/Property.html" title="属性介绍" class="chapter done " data-progress="3.3.1" style="left: 12.307692307692308%;"></a>
+    
+        <a href="../emp_ui_reference/property/control_global_property.html" title="工程配置属性介绍" class="chapter done " data-progress="3.3.2" style="left: 13.846153846153847%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/tag_binding.html" title="控件支持属性和样式对照表" class="chapter done " data-progress="3.4.1" style="left: 15.384615384615385%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/emp_layout.html" title="布局规则" class="chapter done " data-progress="3.4.2" style="left: 16.923076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/emp_layout_table.html" title="Table布局规则" class="chapter done " data-progress="3.4.3" style="left: 18.46153846153846%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/align_valign_arithmetic.html" title="对齐算法" class="chapter done " data-progress="3.4.4" style="left: 20%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Body.html" title="Body" class="chapter done " data-progress="3.4.5.1" style="left: 21.53846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Div.html" title="Div" class="chapter done " data-progress="3.4.5.2" style="left: 23.076923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html" title="Table &amp; Tr &amp; Td &amp; Th" class="chapter done " data-progress="3.4.5.3" style="left: 24.615384615384617%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Image.html" title="Image" class="chapter done " data-progress="3.4.5.4" style="left: 26.153846153846153%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Select &amp; Option.html" title="Select &amp; Option" class="chapter done " data-progress="3.4.5.5" style="left: 27.692307692307693%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Button.html" title="Button" class="chapter done " data-progress="3.4.5.6" style="left: 29.23076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Inputtext.html" title="InputText" class="chapter done " data-progress="3.4.5.7" style="left: 30.76923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Password.html" title="Password" class="chapter done " data-progress="3.4.5.8" style="left: 32.30769230769231%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Radio.html" title="Radio" class="chapter done " data-progress="3.4.5.9" style="left: 33.84615384615385%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Checkbox.html" title="Checkbox" class="chapter done " data-progress="3.4.5.10" style="left: 35.38461538461539%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Hidden.html" title="Hidden" class="chapter done " data-progress="3.4.5.11" style="left: 36.92307692307692%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Webview.html" title="Webview" class="chapter done " data-progress="3.4.5.12" style="left: 38.46153846153846%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Segment.html" title="Segment" class="chapter done " data-progress="3.4.5.13" style="left: 40%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Switch.html" title="Switch" class="chapter done " data-progress="3.4.5.14" style="left: 41.53846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Link.html" title="Link" class="chapter done " data-progress="3.4.5.15" style="left: 43.07692307692308%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Label.html" title="Label" class="chapter done " data-progress="3.4.5.16" style="left: 44.61538461538461%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/I &amp; Em.html" title="I &amp; Em" class="chapter done " data-progress="3.4.5.17" style="left: 46.15384615384615%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/B &amp; Strong.html" title="B &amp; Strong" class="chapter done " data-progress="3.4.5.18" style="left: 47.69230769230769%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/RichText.html" title="RichText" class="chapter done " data-progress="3.4.5.19" style="left: 49.23076923076923%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Form.html" title="Form" class="chapter done " data-progress="3.4.5.20" style="left: 50.76923076923077%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/Br.html" title="Br" class="chapter done " data-progress="3.4.5.21" style="left: 52.30769230769231%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/CustomizeTag.html" title="定制标签" class="chapter done " data-progress="3.4.6" style="left: 53.84615384615385%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/pies.html" title="饼状图" class="chapter done " data-progress="3.4.6.1" style="left: 55.38461538461539%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/barPlot.html" title="柱状图" class="chapter done " data-progress="3.4.6.2" style="left: 56.92307692307692%;"></a>
+    
+        <a href="../emp_ui_reference/html_tags/linePlot.html" title="折线图" class="chapter done " data-progress="3.4.6.3" style="left: 58.46153846153846%;"></a>
+    
+        <a href="../emp_ui_reference/lua/Lua.html" title="Lua" class="chapter done " data-progress="3.5" style="left: 60%;"></a>
+    
+        <a href="../emp_ui_reference/lua/FunctionInLibrary.html" title="EMP Lua Library" class="chapter done " data-progress="3.5.1" style="left: 61.53846153846154%;"></a>
+    
+        <a href="../emp_ui_reference/lua/Metatable.html" title="界面标签支持的Lua接口" class="chapter done " data-progress="3.5.2" style="left: 63.07692307692308%;"></a>
+    
+        <a href="../emp_ui_reference/lua/Animation.html" title="动画" class="chapter done " data-progress="3.5.3" style="left: 64.61538461538461%;"></a>
+    
+        <a href="../emp_ui_reference/lua/RYTL_Script_Library.html" title="RYTL脚本库" class="chapter done " data-progress="3.5.4" style="left: 66.15384615384616%;"></a>
+    
+        <a href="../emp_config/README.html" title="EMP开发配置" class="chapter done new-chapter" data-progress="4" style="left: 67.6923076923077%;"></a>
+    
+        <a href="../emp_config/ewp/README.html" title="服务器配置" class="chapter done " data-progress="4.1" style="left: 69.23076923076923%;"></a>
+    
+        <a href="../emp_config/ewp/ewp_conf.html" title="EWP 配置" class="chapter done " data-progress="4.1.1" style="left: 70.76923076923077%;"></a>
+    
+        <a href="../emp_config/ewp/app_conf.html" title="APP 配置" class="chapter done " data-progress="4.1.2" style="left: 72.3076923076923%;"></a>
+    
+        <a href="../emp_config/ewp/yaws_conf.html" title="YAWS 配置" class="chapter done " data-progress="4.1.3" style="left: 73.84615384615384%;"></a>
+    
+        <a href="../emp_config/ewp/adapter_conf.html" title="适配 配置" class="chapter done " data-progress="4.1.4" style="left: 75.38461538461539%;"></a>
+    
+        <a href="../console/Login.html" title="登录" class="chapter done " data-progress="5.1" style="left: 76.92307692307692%;"></a>
+    
+        <a href="../console/ClusterManagement.html" title="集群管理" class="chapter done " data-progress="5.2" style="left: 78.46153846153847%;"></a>
+    
+        <a href="../console/BusinessChannelManagement.html" title="业务频道管理" class="chapter done " data-progress="5.3" style="left: 80%;"></a>
+    
+        <a href="../console/PushManagement.html" title="Push管理" class="chapter done " data-progress="5.4" style="left: 81.53846153846153%;"></a>
+    
+        <a href="../console/EWPStateMonitor.html" title="EWP状态监控" class="chapter  " data-progress="5.5" style="left: 83.07692307692308%;"></a>
+    
+        <a href="../console/LogManagement.html" title="日志管理" class="chapter  " data-progress="5.6" style="left: 84.61538461538461%;"></a>
+    
+        <a href="../console/StatisticAnalysis.html" title="统计分析" class="chapter  " data-progress="5.7" style="left: 86.15384615384616%;"></a>
+    
+        <a href="../console/ResourceManagement.html" title="资源管理" class="chapter  " data-progress="5.8" style="left: 87.6923076923077%;"></a>
+    
+        <a href="../console/Logout.html" title="退出" class="chapter  " data-progress="5.9" style="left: 89.23076923076923%;"></a>
+    
+        <a href="../ewp_reference/EWP/index.html" title="EWP API" class="chapter  new-chapter" data-progress="6" style="left: 90.76923076923077%;"></a>
+    
+        <a href="../section_README.html" title="EWP Manual" class="chapter  new-chapter" data-progress="7" style="left: 92.3076923076923%;"></a>
+    
+        <a href="../ewp_man/cron_service.html" title="cron_service" class="chapter  " data-progress="7.1" style="left: 93.84615384615384%;"></a>
+    
+        <a href="../ewp_man/InstructionUseSyslog.html" title="syslog" class="chapter  " data-progress="7.2" style="left: 95.38461538461539%;"></a>
+    
+        <a href="../ewp_man/PreventDuplicateSubmit.html" title="防重复提交使用说明" class="chapter  " data-progress="7.3" style="left: 96.92307692307692%;"></a>
+    
+        <a href="../ewp_man/eac_fast_use_guide.html" title="EWP管理平台快速使用文档" class="chapter  " data-progress="7.4" style="left: 98.46153846153847%;"></a>
+    
+        <a href="../ewp_man/eac_use_guide.html" title="EWP管理平台使用文档" class="chapter  " data-progress="7.5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_9">
+                    
+                        <h1 id="push-">PUSH管理</h1>
+<p>在 PUSH 管理模块中，我们支持对多种智能手机系统（IOS，Android，winphone）的消息推送功能，包括对消息推送进行立即和定时推送以及对推送记录的管理，服务的配置等功能。</p>
+<!-- toc -->
+
+<ul>
+<li><a href="#设备查询">设备查询</a></li>
+<li><a href="#消息推送">消息推送</a></li>
+<li><a href="#推送管理">推送管理</a><ul>
+<li><a href="#推送管理-任务管理">推送管理-任务管理：</a></li>
+<li><a href="#推送管理-日志查询">推送管理-日志查询：</a></li>
+</ul>
+</li>
+<li><a href="#配置管理">配置管理</a><ul>
+<li><a href="#表单方式配置各平台push服务">表单方式配置各平台push服务：</a><ul>
+<li><a href="#开启ios平台的push服务">开启ios平台的push服务：</a></li>
+<li><a href="#开启android平台的push服务">开启Android平台的push服务：</a></li>
+<li><a href="#开启winphone平台的push服务">开启Winphone平台的push服务：</a></li>
+</ul>
+</li>
+<li><a href="#文件方式配置各平台push服务">文件方式配置各平台push服务：</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+
+
+<h2 id="-">设备查询</h2>
+<p>用户点击设备查询二级菜单进入设备查询界面，界面如图所示:</p>
+<p><img src="images/InstructionAdministeringFun/image013.jpg" alt=""></p>
+<p>设备查询时需保证 PUSH 服务的基础服务开启，即配置管理界面 MYSQL 数据库或 MNESIA 数据库为开启状态，因为查询的时候需要知道存储的设备ID是从哪种存储类型（MYSQL 数据库或 MNESIA 数据库）中读取的，而这个存储类型是基础服务开启时指定的。</p>
+<p>输入必填项&quot;应用&quot;，比如当前项目的应用名称为 ebank，点击查询按钮，会列出数据库中存储的全部设备ID。也可以进一步限定查询条件，平台（ios，android，winphone），用户ID，手机号（暂时未用到）进行查询，查询结果如图所示：</p>
+<p><img src="images/InstructionAdministeringFun/image014.jpg" alt=""></p>
+<p><strong>发送消息</strong>：</p>
+<p>勾选任意一条或多条设备记录，点击发送按钮，进入编辑发送信息界面，如图所示：</p>
+<p><img src="images/InstructionAdministeringFun/image015.jpg" alt=""></p>
+<p>应用名称默认显示当前项目应用名称，不可编辑，在内容区域编辑要推送的消息，设备区域列出在设备查询界面勾选的设备平台和ID，点击【重置】按钮，输入的消息内容清空，点击【发送】按钮，提示 &quot;消息发送成功！&quot;，即系统向所选的设备推送消息成功。</p>
+<h2 id="-">消息推送</h2>
+<p>用户点击消息推送二级菜单进入消息推送界面，界面如图所示:</p>
+<p><img src="images/InstructionAdministeringFun/image016.jpg" alt=""></p>
+<p>应用名称默认显示当前项目应用名字，若同一个项目包含多个应用，可以手动编辑应用名称，当选择推送方式为立即推送时，界面如上图所示，编辑推送内容，可以支持的平台包括 ios，Android，winphone，可以单独选择一个平台进行推送，也可以选择全部对全部平台进行推送。 &quot;图标数字&quot;，&quot;是否显示 VIEW 按钮&quot;，&quot;声音&quot; 只针对 iphone 平台进行单独设置，比如图标数字，我们可以设定在 iphone 的图标上显示的数字，假设我们对 iphone 客户端做了2点更新或通知，可以将图标数字设定为2；&quot;是否显示 VIEW 按钮&quot; 是根据 ios 的系统版本来区分的，对于 ios 高于5.0版本的情况，消息推送通知对话框包含两个按钮，分别是忽略和查看，对于低于5.0版本的情况，只显示查看按钮；对于声音的设置表示当有推送消息时会有声音提醒；此处对 iphone 的单独设置是指管理后台可以提供的功能，具体在手机客户端是否生效还需参考手机关于消息推送的设置，仅当手机对推送的设置开启时管理后台的设置才能生效。点击【重置】按钮后，输入的信息清空。</p>
+<p>当选择推送方式为定时推送时，界面如图所示：</p>
+<p><img src="images/InstructionAdministeringFun/image017.jpg" alt=""></p>
+<p>与立即推送界面的区别在于关于定时的设置，点击推送时间，弹出日期控件，选择日期，表示定时推送的起始时间，推送频率包含*天*小时*分，表示从推送起始时间开始，每隔*天*小时*分进行推送一次，一共推送n次。</p>
+<h2 id="-">推送管理</h2>
+<p>用户点击推送管理二级菜单进入推送管理界面，界面如图所示:</p>
+<p><img src="images/InstructionAdministeringFun/image018.jpg" alt=""></p>
+<h3 id="-">推送管理-任务管理：</h3>
+<p>此处任务管理界面只针对未发送的推送消息进行管理，即从消息推送界面尚未被发送的定时消息，通过选择起始时间对这些消息记录进行查询。</p>
+<p>记录包含任务ID，内容，状态，发布时间，操作，删除按钮，其中ID为序号，内容为推送的消息内容，状态都是待发送，发布时间为申请定时推送的时间，操作为删除。</p>
+<h3 id="-">推送管理-日志查询：</h3>
+<p><img src="images/InstructionAdministeringFun/image019.jpg" alt=""></p>
+<p>此处日志查询界面只针对已发送的推送消息进行管理，即从消息推送界面已被发送的定时消息和消息推送界面发送的立即推送消息，以及设备查询界面发送的推送消息，通过选择起始时间对这些消息记录进行查询。</p>
+<p>记录包含内容，类型，发布时间，其中内容为推送的消息内容，类型为定时和立即两种状态，发布时间为推送的时间或申请推送的时间。</p>
+<h2 id="-">配置管理</h2>
+<p>配置管理模块提供了对 PUSH 基础服务的启动和关闭，以及对 App 下的所有平台的 push 控制参数做相应调整，增加运行时的灵活性。</p>
+<p>用户点击配置管理二级菜单进入配置管理界面，界面如图所示:</p>
+<p><img src="images/InstructionAdministeringFun/image020.jpg" alt=""></p>
+<p>PUSH 服务的生效一定保证 push 基础服务开启，一般情况下我们使用 MYSQL 数据库，而且一旦项目已经确定很少会切换push的基础服务。所谓的基础服务是指指定从哪种存储类型（MYSQL 数据库或 MNESIA 数据库）的数据库中读取设备信息并依此进行发送推送消息。</p>
+<p>进入配置管理界面，在存储类型中会显示当前使用数据库的开启或关闭状态，若当前 MYSQL 数据库为开启状态，已开启按钮未灰色，可以点击关闭按钮进行关闭。</p>
+<h3 id="-push-">表单方式配置各平台push服务：</h3>
+<p>当配置方式选表单时，界面如上图所示。</p>
+<h4 id="-ios-push-">开启ios平台的push服务：</h4>
+<ol>
+<li>若基础服务未开启，配置完 ios 的各项参数点击【开启】按钮，提示&quot;请先开启基础服务！&quot;</li>
+<li><p>如基础服务已开启，配置 ios 的各项参数：</p>
+<ul>
+<li><p>证书文件： public/key/bankbh_cert.pem ，</p>
+</li>
+<li><p>私钥文件： public/key/bankbh_key.pem ，</p>
+</li>
+<li><p>CA证书文件（可选）： 未使用。</p>
+</li>
+<li><p>私钥文件密码（可选）： 未使用。</p>
+</li>
+<li><p>环境： 选择开发环境或生产环境，当选择不同环境时连接苹果提供的开发或测试的 push 服务器。</p>
+</li>
+<li><p>连接数： 整数，指定需要进行 push 推送所建立的连接数。</p>
+</li>
+<li><p>连接重建间隔（可选）： 为防止连接不自动释放可以设定连接重建时间。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="-android-push-">开启Android平台的push服务：</h4>
+<p>开启 Android 平台的 push 服务流程较简单，只需部署一台 android 的服务器，此处填写服务器的地址即可。</p>
+<p>点击【开启】按钮后，对应平台的 push 状态变成已开启，并且可以对已配置的信息进行修改和关闭操作。</p>
+<h4 id="-winphone-push-">开启Winphone平台的push服务：</h4>
+<p>点击【开启】按钮后，对应平台的 push 状态变成已开启，并且可以对已配置的信息进行修改和关闭操作。</p>
+<p>Winphone 平台的 push 服务开启无需任何配置，只能在测试环境使用，预留的两个参数客户端ID(可选)和客户端私钥(可选)是留给生产环境用的，由于暂时没有证书未进行调试。</p>
+<h3 id="-push-">文件方式配置各平台push服务：</h3>
+<p>当配置方式选文件时，界面如图所示：</p>
+<p><img src="images/InstructionAdministeringFun/image021.jpg" alt=""></p>
+<p>当选择文件方式进行开启时，不需要分别对每个平台进行开启，文件中包含全部平台的开启信息：</p>
+<ol>
+<li>若基础服务未开启，选择文件点击【开启】按钮，提示 &quot;请先开启基础服务！&quot;</li>
+<li>如基础服务已开启，选择配置文件，点击【开启】按钮，提示开启成功，再次进入配置管理界面显示表单配置的界面，界面显示从配置文件中读回的各项配置参数，比如配置文件中的关于 ios 的内容为：</li>
+</ol>
+<pre><code>{ebank, [
+
+{ios, [
+
+{certfile, &quot;public/key/empPushServicePublic.pem&quot;},
+
+{keyfile, &quot;public/key/empPushServicePrivate.pem&quot;},
+
+{pool_size, 1},
+
+{feedback, 4},
+
+{env, development}
+
+]},
+
+{android, [
+
+{xmpp_host, &quot;http://192.168.64.64:5280/rest&quot;}
+
+]},
+
+{winphone, [
+
+{client_id, &quot;Package security identifier (SID)&quot;},
+
+{client_secret, &quot;/path/to/private_key&quot;}]}
+
+]}.
+</code></pre>
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../console/BusinessChannelManagement.html" class="navigation navigation-prev " aria-label="Previous page: 业务频道管理"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../console/EWPStateMonitor.html" class="navigation navigation-next " aria-label="Next page: EWP状态监控"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="../gitbook/local/ace.js"></script>
+        <script src="../gitbook/local/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

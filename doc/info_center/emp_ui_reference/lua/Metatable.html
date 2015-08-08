@@ -1,0 +1,2527 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../../manifest.appcache">
+    
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        
+        <meta charset="UTF-8">
+        <title>界面标签支持的Lua接口 | EMP参考手册</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="">
+        <meta name="description" content="Erlang Mobile Platform">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../emp_ui_reference/lua/Animation.html" />
+        
+        
+        <link rel="prev" href="../../emp_ui_reference/lua/FunctionInLibrary.html" />
+        
+
+        <meta property="og:title" content="界面标签支持的Lua接口 | EMP参考手册">
+        <meta property="og:site_name" content="EMP参考手册">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    </head>
+    <body>
+        
+        
+
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+
+
+        
+    <div class="book"  data-level="3.5.2" data-basepath="../.." data-revision="1438943472421">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    
+    
+
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../index.html" >EMP参考手册</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+
+        
+
+        
+
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../../index.html"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+    
+        <li class="chapter " data-level="1" data-path="overview/EMP5.4TechnologyWhitePapers.html">
+            
+            <a href="../../overview/EMP5.4TechnologyWhitePapers.html">
+                <i class="fa fa-check"></i> <b>1.</b> EMP5.4技术白皮书
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> EMP 安全</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="emp_security/emp_security_channel.html">
+            
+            <a href="../../emp_security/emp_security_channel.html">
+                <i class="fa fa-check"></i> <b>2.1.</b> EMP加密信道
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="emp_ui_reference/README.html">
+            
+            <a href="../../emp_ui_reference/README.html">
+                <i class="fa fa-check"></i> <b>3.</b> EMP界面开发规范
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="section_README.html">
+            
+            <a href="../../section_README.html">
+                <i class="fa fa-check"></i> <b>3.1.</b> 变更记录
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="emp_ui_reference/ChangeLog.html">
+            
+            <a href="../../emp_ui_reference/ChangeLog.html">
+                <i class="fa fa-check"></i> <b>3.1.1.</b> 5.2到5.3的变更记录
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="emp_ui_reference/css/css_introduction.html">
+            
+            <a href="../../emp_ui_reference/css/css_introduction.html">
+                <i class="fa fa-check"></i> <b>3.2.</b> CSS样式
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="emp_ui_reference/css/CSS.html">
+            
+            <a href="../../emp_ui_reference/css/CSS.html">
+                <i class="fa fa-check"></i> <b>3.2.1.</b> 样式介绍
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="emp_ui_reference/property/property_introduction.html">
+            
+            <a href="../../emp_ui_reference/property/property_introduction.html">
+                <i class="fa fa-check"></i> <b>3.3.</b> 属性
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="emp_ui_reference/property/Property.html">
+            
+            <a href="../../emp_ui_reference/property/Property.html">
+                <i class="fa fa-check"></i> <b>3.3.1.</b> 属性介绍
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="emp_ui_reference/property/control_global_property.html">
+            
+            <a href="../../emp_ui_reference/property/control_global_property.html">
+                <i class="fa fa-check"></i> <b>3.3.2.</b> 工程配置属性介绍
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="section_README.html">
+            
+            <a href="../../section_README.html">
+                <i class="fa fa-check"></i> <b>3.4.</b> 界面标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="emp_ui_reference/html_tags/tag_binding.html">
+            
+            <a href="../../emp_ui_reference/html_tags/tag_binding.html">
+                <i class="fa fa-check"></i> <b>3.4.1.</b> 控件支持属性和样式对照表
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="emp_ui_reference/html_tags/emp_layout.html">
+            
+            <a href="../../emp_ui_reference/html_tags/emp_layout.html">
+                <i class="fa fa-check"></i> <b>3.4.2.</b> 布局规则
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="emp_ui_reference/html_tags/emp_layout_table.html">
+            
+            <a href="../../emp_ui_reference/html_tags/emp_layout_table.html">
+                <i class="fa fa-check"></i> <b>3.4.3.</b> Table布局规则
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="emp_ui_reference/html_tags/align_valign_arithmetic.html">
+            
+            <a href="../../emp_ui_reference/html_tags/align_valign_arithmetic.html">
+                <i class="fa fa-check"></i> <b>3.4.4.</b> 对齐算法
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="section_README.html">
+            
+            <a href="../../section_README.html">
+                <i class="fa fa-check"></i> <b>3.4.5.</b> 基本标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.5.1" data-path="emp_ui_reference/html_tags/Body.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Body.html">
+                <i class="fa fa-check"></i> <b>3.4.5.1.</b> Body
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.2" data-path="emp_ui_reference/html_tags/Div.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Div.html">
+                <i class="fa fa-check"></i> <b>3.4.5.2.</b> Div
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.3" data-path="emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+                <i class="fa fa-check"></i> <b>3.4.5.3.</b> Table &amp; Tr &amp; Td &amp; Th
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.4" data-path="emp_ui_reference/html_tags/Image.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Image.html">
+                <i class="fa fa-check"></i> <b>3.4.5.4.</b> Image
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.5" data-path="emp_ui_reference/html_tags/Select &amp; Option.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Select &amp; Option.html">
+                <i class="fa fa-check"></i> <b>3.4.5.5.</b> Select &amp; Option
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.6" data-path="emp_ui_reference/html_tags/Button.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Button.html">
+                <i class="fa fa-check"></i> <b>3.4.5.6.</b> Button
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.7" data-path="emp_ui_reference/html_tags/Inputtext.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Inputtext.html">
+                <i class="fa fa-check"></i> <b>3.4.5.7.</b> InputText
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.8" data-path="emp_ui_reference/html_tags/Password.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Password.html">
+                <i class="fa fa-check"></i> <b>3.4.5.8.</b> Password
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.9" data-path="emp_ui_reference/html_tags/Radio.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Radio.html">
+                <i class="fa fa-check"></i> <b>3.4.5.9.</b> Radio
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.10" data-path="emp_ui_reference/html_tags/Checkbox.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Checkbox.html">
+                <i class="fa fa-check"></i> <b>3.4.5.10.</b> Checkbox
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.11" data-path="emp_ui_reference/html_tags/Hidden.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Hidden.html">
+                <i class="fa fa-check"></i> <b>3.4.5.11.</b> Hidden
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.12" data-path="emp_ui_reference/html_tags/Webview.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Webview.html">
+                <i class="fa fa-check"></i> <b>3.4.5.12.</b> Webview
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.13" data-path="emp_ui_reference/html_tags/Segment.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Segment.html">
+                <i class="fa fa-check"></i> <b>3.4.5.13.</b> Segment
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.14" data-path="emp_ui_reference/html_tags/Switch.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Switch.html">
+                <i class="fa fa-check"></i> <b>3.4.5.14.</b> Switch
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.15" data-path="emp_ui_reference/html_tags/Link.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Link.html">
+                <i class="fa fa-check"></i> <b>3.4.5.15.</b> Link
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.16" data-path="emp_ui_reference/html_tags/Label.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Label.html">
+                <i class="fa fa-check"></i> <b>3.4.5.16.</b> Label
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.17" data-path="emp_ui_reference/html_tags/I &amp; Em.html">
+            
+            <a href="../../emp_ui_reference/html_tags/I &amp; Em.html">
+                <i class="fa fa-check"></i> <b>3.4.5.17.</b> I &amp; Em
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.18" data-path="emp_ui_reference/html_tags/B &amp; Strong.html">
+            
+            <a href="../../emp_ui_reference/html_tags/B &amp; Strong.html">
+                <i class="fa fa-check"></i> <b>3.4.5.18.</b> B &amp; Strong
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.19" data-path="emp_ui_reference/html_tags/RichText.html">
+            
+            <a href="../../emp_ui_reference/html_tags/RichText.html">
+                <i class="fa fa-check"></i> <b>3.4.5.19.</b> RichText
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.20" data-path="emp_ui_reference/html_tags/Form.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Form.html">
+                <i class="fa fa-check"></i> <b>3.4.5.20.</b> Form
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5.21" data-path="emp_ui_reference/html_tags/Br.html">
+            
+            <a href="../../emp_ui_reference/html_tags/Br.html">
+                <i class="fa fa-check"></i> <b>3.4.5.21.</b> Br
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="emp_ui_reference/html_tags/CustomizeTag.html">
+            
+            <a href="../../emp_ui_reference/html_tags/CustomizeTag.html">
+                <i class="fa fa-check"></i> <b>3.4.6.</b> 定制标签
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.6.1" data-path="emp_ui_reference/html_tags/pies.html">
+            
+            <a href="../../emp_ui_reference/html_tags/pies.html">
+                <i class="fa fa-check"></i> <b>3.4.6.1.</b> 饼状图
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6.2" data-path="emp_ui_reference/html_tags/barPlot.html">
+            
+            <a href="../../emp_ui_reference/html_tags/barPlot.html">
+                <i class="fa fa-check"></i> <b>3.4.6.2.</b> 柱状图
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6.3" data-path="emp_ui_reference/html_tags/linePlot.html">
+            
+            <a href="../../emp_ui_reference/html_tags/linePlot.html">
+                <i class="fa fa-check"></i> <b>3.4.6.3.</b> 折线图
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="emp_ui_reference/lua/Lua.html">
+            
+            <a href="../../emp_ui_reference/lua/Lua.html">
+                <i class="fa fa-check"></i> <b>3.5.</b> Lua
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="emp_ui_reference/lua/FunctionInLibrary.html">
+            
+            <a href="../../emp_ui_reference/lua/FunctionInLibrary.html">
+                <i class="fa fa-check"></i> <b>3.5.1.</b> EMP Lua Library
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="emp_ui_reference/lua/Metatable.html">
+            
+            <a href="../../emp_ui_reference/lua/Metatable.html">
+                <i class="fa fa-check"></i> <b>3.5.2.</b> 界面标签支持的Lua接口
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="emp_ui_reference/lua/Animation.html">
+            
+            <a href="../../emp_ui_reference/lua/Animation.html">
+                <i class="fa fa-check"></i> <b>3.5.3.</b> 动画
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="emp_ui_reference/lua/RYTL_Script_Library.html">
+            
+            <a href="../../emp_ui_reference/lua/RYTL_Script_Library.html">
+                <i class="fa fa-check"></i> <b>3.5.4.</b> RYTL脚本库
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="emp_config/README.html">
+            
+            <a href="../../emp_config/README.html">
+                <i class="fa fa-check"></i> <b>4.</b> EMP开发配置
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="emp_config/ewp/README.html">
+            
+            <a href="../../emp_config/ewp/README.html">
+                <i class="fa fa-check"></i> <b>4.1.</b> 服务器配置
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="emp_config/ewp/ewp_conf.html">
+            
+            <a href="../../emp_config/ewp/ewp_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.1.</b> EWP 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="emp_config/ewp/app_conf.html">
+            
+            <a href="../../emp_config/ewp/app_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.2.</b> APP 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="emp_config/ewp/yaws_conf.html">
+            
+            <a href="../../emp_config/ewp/yaws_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.3.</b> YAWS 配置
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="emp_config/ewp/adapter_conf.html">
+            
+            <a href="../../emp_config/ewp/adapter_conf.html">
+                <i class="fa fa-check"></i> <b>4.1.4.</b> 适配 配置
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section_README.html">
+            
+            <a href="../../section_README.html">
+                <i class="fa fa-check"></i> <b>5.</b> EWP5.4管理后台功能说明文档
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="console/Login.html">
+            
+            <a href="../../console/Login.html">
+                <i class="fa fa-check"></i> <b>5.1.</b> 登录
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="console/ClusterManagement.html">
+            
+            <a href="../../console/ClusterManagement.html">
+                <i class="fa fa-check"></i> <b>5.2.</b> 集群管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="console/BusinessChannelManagement.html">
+            
+            <a href="../../console/BusinessChannelManagement.html">
+                <i class="fa fa-check"></i> <b>5.3.</b> 业务频道管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="console/PushManagement.html">
+            
+            <a href="../../console/PushManagement.html">
+                <i class="fa fa-check"></i> <b>5.4.</b> Push管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="console/EWPStateMonitor.html">
+            
+            <a href="../../console/EWPStateMonitor.html">
+                <i class="fa fa-check"></i> <b>5.5.</b> EWP状态监控
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="console/LogManagement.html">
+            
+            <a href="../../console/LogManagement.html">
+                <i class="fa fa-check"></i> <b>5.6.</b> 日志管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="console/StatisticAnalysis.html">
+            
+            <a href="../../console/StatisticAnalysis.html">
+                <i class="fa fa-check"></i> <b>5.7.</b> 统计分析
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="console/ResourceManagement.html">
+            
+            <a href="../../console/ResourceManagement.html">
+                <i class="fa fa-check"></i> <b>5.8.</b> 资源管理
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="console/Logout.html">
+            
+            <a href="../../console/Logout.html">
+                <i class="fa fa-check"></i> <b>5.9.</b> 退出
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ewp_reference/EWP/index.html">
+            
+            <a href="../../ewp_reference/EWP/index.html">
+                <i class="fa fa-check"></i> <b>6.</b> EWP API
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="section_README.html">
+            
+            <a href="../../section_README.html">
+                <i class="fa fa-check"></i> <b>7.</b> EWP Manual
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="ewp_man/cron_service.html">
+            
+            <a href="../../ewp_man/cron_service.html">
+                <i class="fa fa-check"></i> <b>7.1.</b> cron_service
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="ewp_man/InstructionUseSyslog.html">
+            
+            <a href="../../ewp_man/InstructionUseSyslog.html">
+                <i class="fa fa-check"></i> <b>7.2.</b> syslog
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="ewp_man/PreventDuplicateSubmit.html">
+            
+            <a href="../../ewp_man/PreventDuplicateSubmit.html">
+                <i class="fa fa-check"></i> <b>7.3.</b> 防重复提交使用说明
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="ewp_man/eac_fast_use_guide.html">
+            
+            <a href="../../ewp_man/eac_fast_use_guide.html">
+                <i class="fa fa-check"></i> <b>7.4.</b> EWP管理平台快速使用文档
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="ewp_man/eac_use_guide.html">
+            
+            <a href="../../ewp_man/eac_use_guide.html">
+                <i class="fa fa-check"></i> <b>7.5.</b> EWP管理平台使用文档
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 63.07692307692308%;min-width: 61.53846153846154%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../overview/EMP5.4TechnologyWhitePapers.html" title="EMP5.4技术白皮书" class="chapter done new-chapter" data-progress="1" style="left: 1.5384615384615385%;"></a>
+    
+        <a href="../../emp_security/emp_security_channel.html" title="EMP加密信道" class="chapter done " data-progress="2.1" style="left: 3.076923076923077%;"></a>
+    
+        <a href="../../emp_ui_reference/README.html" title="EMP界面开发规范" class="chapter done new-chapter" data-progress="3" style="left: 4.615384615384615%;"></a>
+    
+        <a href="../../emp_ui_reference/ChangeLog.html" title="5.2到5.3的变更记录" class="chapter done " data-progress="3.1.1" style="left: 6.153846153846154%;"></a>
+    
+        <a href="../../emp_ui_reference/css/css_introduction.html" title="CSS样式" class="chapter done " data-progress="3.2" style="left: 7.6923076923076925%;"></a>
+    
+        <a href="../../emp_ui_reference/css/CSS.html" title="样式介绍" class="chapter done " data-progress="3.2.1" style="left: 9.23076923076923%;"></a>
+    
+        <a href="../../emp_ui_reference/property/property_introduction.html" title="属性" class="chapter done " data-progress="3.3" style="left: 10.76923076923077%;"></a>
+    
+        <a href="../../emp_ui_reference/property/Property.html" title="属性介绍" class="chapter done " data-progress="3.3.1" style="left: 12.307692307692308%;"></a>
+    
+        <a href="../../emp_ui_reference/property/control_global_property.html" title="工程配置属性介绍" class="chapter done " data-progress="3.3.2" style="left: 13.846153846153847%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/tag_binding.html" title="控件支持属性和样式对照表" class="chapter done " data-progress="3.4.1" style="left: 15.384615384615385%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/emp_layout.html" title="布局规则" class="chapter done " data-progress="3.4.2" style="left: 16.923076923076923%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/emp_layout_table.html" title="Table布局规则" class="chapter done " data-progress="3.4.3" style="left: 18.46153846153846%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/align_valign_arithmetic.html" title="对齐算法" class="chapter done " data-progress="3.4.4" style="left: 20%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Body.html" title="Body" class="chapter done " data-progress="3.4.5.1" style="left: 21.53846153846154%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Div.html" title="Div" class="chapter done " data-progress="3.4.5.2" style="left: 23.076923076923077%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html" title="Table &amp; Tr &amp; Td &amp; Th" class="chapter done " data-progress="3.4.5.3" style="left: 24.615384615384617%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Image.html" title="Image" class="chapter done " data-progress="3.4.5.4" style="left: 26.153846153846153%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Select &amp; Option.html" title="Select &amp; Option" class="chapter done " data-progress="3.4.5.5" style="left: 27.692307692307693%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Button.html" title="Button" class="chapter done " data-progress="3.4.5.6" style="left: 29.23076923076923%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Inputtext.html" title="InputText" class="chapter done " data-progress="3.4.5.7" style="left: 30.76923076923077%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Password.html" title="Password" class="chapter done " data-progress="3.4.5.8" style="left: 32.30769230769231%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Radio.html" title="Radio" class="chapter done " data-progress="3.4.5.9" style="left: 33.84615384615385%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Checkbox.html" title="Checkbox" class="chapter done " data-progress="3.4.5.10" style="left: 35.38461538461539%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Hidden.html" title="Hidden" class="chapter done " data-progress="3.4.5.11" style="left: 36.92307692307692%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Webview.html" title="Webview" class="chapter done " data-progress="3.4.5.12" style="left: 38.46153846153846%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Segment.html" title="Segment" class="chapter done " data-progress="3.4.5.13" style="left: 40%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Switch.html" title="Switch" class="chapter done " data-progress="3.4.5.14" style="left: 41.53846153846154%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Link.html" title="Link" class="chapter done " data-progress="3.4.5.15" style="left: 43.07692307692308%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Label.html" title="Label" class="chapter done " data-progress="3.4.5.16" style="left: 44.61538461538461%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/I &amp; Em.html" title="I &amp; Em" class="chapter done " data-progress="3.4.5.17" style="left: 46.15384615384615%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/B &amp; Strong.html" title="B &amp; Strong" class="chapter done " data-progress="3.4.5.18" style="left: 47.69230769230769%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/RichText.html" title="RichText" class="chapter done " data-progress="3.4.5.19" style="left: 49.23076923076923%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Form.html" title="Form" class="chapter done " data-progress="3.4.5.20" style="left: 50.76923076923077%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/Br.html" title="Br" class="chapter done " data-progress="3.4.5.21" style="left: 52.30769230769231%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/CustomizeTag.html" title="定制标签" class="chapter done " data-progress="3.4.6" style="left: 53.84615384615385%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/pies.html" title="饼状图" class="chapter done " data-progress="3.4.6.1" style="left: 55.38461538461539%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/barPlot.html" title="柱状图" class="chapter done " data-progress="3.4.6.2" style="left: 56.92307692307692%;"></a>
+    
+        <a href="../../emp_ui_reference/html_tags/linePlot.html" title="折线图" class="chapter done " data-progress="3.4.6.3" style="left: 58.46153846153846%;"></a>
+    
+        <a href="../../emp_ui_reference/lua/Lua.html" title="Lua" class="chapter done " data-progress="3.5" style="left: 60%;"></a>
+    
+        <a href="../../emp_ui_reference/lua/FunctionInLibrary.html" title="EMP Lua Library" class="chapter done " data-progress="3.5.1" style="left: 61.53846153846154%;"></a>
+    
+        <a href="../../emp_ui_reference/lua/Metatable.html" title="界面标签支持的Lua接口" class="chapter done " data-progress="3.5.2" style="left: 63.07692307692308%;"></a>
+    
+        <a href="../../emp_ui_reference/lua/Animation.html" title="动画" class="chapter  " data-progress="3.5.3" style="left: 64.61538461538461%;"></a>
+    
+        <a href="../../emp_ui_reference/lua/RYTL_Script_Library.html" title="RYTL脚本库" class="chapter  " data-progress="3.5.4" style="left: 66.15384615384616%;"></a>
+    
+        <a href="../../emp_config/README.html" title="EMP开发配置" class="chapter  new-chapter" data-progress="4" style="left: 67.6923076923077%;"></a>
+    
+        <a href="../../emp_config/ewp/README.html" title="服务器配置" class="chapter  " data-progress="4.1" style="left: 69.23076923076923%;"></a>
+    
+        <a href="../../emp_config/ewp/ewp_conf.html" title="EWP 配置" class="chapter  " data-progress="4.1.1" style="left: 70.76923076923077%;"></a>
+    
+        <a href="../../emp_config/ewp/app_conf.html" title="APP 配置" class="chapter  " data-progress="4.1.2" style="left: 72.3076923076923%;"></a>
+    
+        <a href="../../emp_config/ewp/yaws_conf.html" title="YAWS 配置" class="chapter  " data-progress="4.1.3" style="left: 73.84615384615384%;"></a>
+    
+        <a href="../../emp_config/ewp/adapter_conf.html" title="适配 配置" class="chapter  " data-progress="4.1.4" style="left: 75.38461538461539%;"></a>
+    
+        <a href="../../console/Login.html" title="登录" class="chapter  " data-progress="5.1" style="left: 76.92307692307692%;"></a>
+    
+        <a href="../../console/ClusterManagement.html" title="集群管理" class="chapter  " data-progress="5.2" style="left: 78.46153846153847%;"></a>
+    
+        <a href="../../console/BusinessChannelManagement.html" title="业务频道管理" class="chapter  " data-progress="5.3" style="left: 80%;"></a>
+    
+        <a href="../../console/PushManagement.html" title="Push管理" class="chapter  " data-progress="5.4" style="left: 81.53846153846153%;"></a>
+    
+        <a href="../../console/EWPStateMonitor.html" title="EWP状态监控" class="chapter  " data-progress="5.5" style="left: 83.07692307692308%;"></a>
+    
+        <a href="../../console/LogManagement.html" title="日志管理" class="chapter  " data-progress="5.6" style="left: 84.61538461538461%;"></a>
+    
+        <a href="../../console/StatisticAnalysis.html" title="统计分析" class="chapter  " data-progress="5.7" style="left: 86.15384615384616%;"></a>
+    
+        <a href="../../console/ResourceManagement.html" title="资源管理" class="chapter  " data-progress="5.8" style="left: 87.6923076923077%;"></a>
+    
+        <a href="../../console/Logout.html" title="退出" class="chapter  " data-progress="5.9" style="left: 89.23076923076923%;"></a>
+    
+        <a href="../../ewp_reference/EWP/index.html" title="EWP API" class="chapter  new-chapter" data-progress="6" style="left: 90.76923076923077%;"></a>
+    
+        <a href="../../section_README.html" title="EWP Manual" class="chapter  new-chapter" data-progress="7" style="left: 92.3076923076923%;"></a>
+    
+        <a href="../../ewp_man/cron_service.html" title="cron_service" class="chapter  " data-progress="7.1" style="left: 93.84615384615384%;"></a>
+    
+        <a href="../../ewp_man/InstructionUseSyslog.html" title="syslog" class="chapter  " data-progress="7.2" style="left: 95.38461538461539%;"></a>
+    
+        <a href="../../ewp_man/PreventDuplicateSubmit.html" title="防重复提交使用说明" class="chapter  " data-progress="7.3" style="left: 96.92307692307692%;"></a>
+    
+        <a href="../../ewp_man/eac_fast_use_guide.html" title="EWP管理平台快速使用文档" class="chapter  " data-progress="7.4" style="left: 98.46153846153847%;"></a>
+    
+        <a href="../../ewp_man/eac_use_guide.html" title="EWP管理平台使用文档" class="chapter  " data-progress="7.5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_137">
+                    
+                        <h1 id="metatable-elementfuction">Metatable – elementFuction</h1>
+<p>我们针对页面中每一个控件对象都设置了一个metatable，这个metatable提供了对于控件的一般操作方法，包括对样式，属性的操作等等。</p>
+<!-- toc -->
+
+<ul>
+<li><a href="#getstylebyname">getStyleByName</a></li>
+<li><a href="#setstylebyname">setStyleByName</a></li>
+<li><a href="#getpropertybyname">getPropertyByName</a></li>
+<li><a href="#setpropertybyname">setPropertyByName</a></li>
+<li><a href="#getmatrix">getMatrix</a></li>
+<li><a href="#setmatrix">setMatrix</a></li>
+<li><a href="#setinnerhtml">setInnerHtml</a></li>
+<li><a href="#getparent">getParent</a></li>
+<li><a href="#getchildren">getChildren</a></li>
+<li><a href="#submit">submit</a></li>
+<li><a href="#appendchild">appendChild</a></li>
+<li><a href="#insertbefore">insertBefore</a></li>
+<li><a href="#removechild">removeChild</a></li>
+<li><a href="#showloading">showLoading</a></li>
+<li><a href="#stoploading">stopLoading</a></li>
+<li><a href="#setmaptype">setMapType</a></li>
+<li><a href="#setmapscrollenabled">setMapScrollEnabled</a></li>
+<li><a href="#setmapzoomenabled">setMapZoomEnabled</a></li>
+<li><a href="#addannotation">addAnnotation</a></li>
+<li><a href="#getallannotations">getAllAnnotations</a></li>
+<li><a href="#setcenter">setCenter</a></li>
+<li><a href="#setonclicklistener">setOnClickListener()</a></li>
+<li><a href="#setonfocuslistener">setOnFocusListener()</a></li>
+<li><a href="#setonblurlistener">setOnBlurListener()</a></li>
+<li><a href="#setonchangelistener">setOnChangeListener()</a></li>
+</ul>
+<!-- toc stop -->
+
+
+
+<h2 id="getstylebyname">getStyleByName</h2>
+<ul>
+<li><strong>Description:</strong>
+获取指定的样式值.可以获取的样式参见表1.<br>对于left、right、top、bottom、width、height等和布局相关的位置样式来说，我们规定该接口返回的值是实际值根据缩放比换算后的样式值。例如：<br>在320<em>480分辨率的手机上，一个样式width=100的div内有个样式width=50的label，label的left=30。那通过该接口获取left返回30，虽然未设置right样式，但依旧可以获取right为100-50-30=20。若此时通过set接口设置right=10，那通过该接口获取right=10，获取left=100-50-10=40。<br>如果在640 </em> 960分辨率的手机上，虽然实际显示像素变为了2倍，但缩放后的样式依旧以320 * 480为基准，因此上述过程返回的值不变。</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:getStyleByName(name)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>name<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 样式名称
+支持样式范围详见：setStyleByName</li>
+</ul>
+</li>
+<li>control<ul>
+<li>操作的控件对象,通常为通过getElements函数获取的.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 样式值（如果涉及到像素值则返回值带有&#39;px&#39;）</li>
+</ul>
+</li>
+<li><strong>Examples:</strong><pre><code>local input = document:getElementsByName(&quot;button&quot;);
+local width = input[1]:getStyleByName(&quot;width&quot;);
+print(width); -- 200px
+</code></pre></li>
+</ul>
+<h2 id="setstylebyname">setStyleByName</h2>
+<ul>
+<li><strong>Description:</strong>
+设置指定样式的值,可以设置的样式参见表1.<br />
+在容器类控件样式中对字体样式(fontsize)设置只支持写在报文中，不支持脚本动态设置
+设置top,left,right,bottom,width,height时,value值必须带有单位<code>1px</code>.</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:setStyleByName(name, value)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>name<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 样式名称</li>
+</ul>
+</li>
+<li>value<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 样式值</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<p>style操作可支持样式：</p>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Value</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>#RRGGBB</td>
+<td></td>
+</tr>
+<tr>
+<td>background-color</td>
+<td>#RRGGBB</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>10 px</td>
+<td></td>
+</tr>
+<tr>
+<td>right</td>
+<td>10 px</td>
+<td></td>
+</tr>
+<tr>
+<td>top</td>
+<td>10 px</td>
+<td></td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>10 px</td>
+<td></td>
+</tr>
+<tr>
+<td>width</td>
+<td>320 px</td>
+<td></td>
+</tr>
+<tr>
+<td>height</td>
+<td>480px</td>
+<td></td>
+</tr>
+<tr>
+<td>font-size</td>
+<td>20px</td>
+<td></td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>normal/bold</td>
+<td></td>
+</tr>
+<tr>
+<td>display</td>
+<td>none/block</td>
+<td></td>
+</tr>
+<tr>
+<td>background-image</td>
+<td>例：<code>http://…/imag.png</code>或<code>imag.png</code></td>
+<td>图片下载请求，客户端会统一请求EWP中<code>/map/get_pic</code>接口。<br /> 有三种协议需要处理：<code>http://</code>, <code>https://</code>, <code>ewp_local://</code>。<br /> <code>http://</code>与<code>https://</code>表示该图片资源位于第三方的服务器上；<br /> <code>ewp_local://</code>表示该图片资源位于EWP服务器中。<br /> 客户端本地图片资源直接使用图片名称&quot;*.png&quot;。</td>
+</tr>
+</tbody>
+</table>
+<p>下面的表格为具体详细控件对上面可支持样式的支持情况：</p>
+<p>表1:</p>
+<table>
+<thead>
+<tr>
+<th>style</th>
+<th>color</th>
+<th>left</th>
+<th>right</th>
+<th>top</th>
+<th>bottom</th>
+<th>width</th>
+<th>height</th>
+<th>font-size</th>
+<th>font-weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>div</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>img</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:button</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:submit</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:segment</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:switch</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:checkbox</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:text</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:password</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:radio</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>link:a</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>select</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>text:i</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>text:em</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>text:strong</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>text:b</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>text:label</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>table:table</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:tr</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:td</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:th</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>style</th>
+<th>display</th>
+<th>position</th>
+<th>filter</th>
+<th>text-align</th>
+<th>background-color</th>
+<th>background-image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>div</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>img</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:button</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:submit</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:segment</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:switch</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:checkbox</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:text</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:password</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:radio</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>link:a</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>select</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>text:i</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:em</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:strong</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:b</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:label</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:table</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>table:tr</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>table:td</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>table:th</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p>关于支持的静态样式参见<a href="../html_tags/tag_binding.html">控件支持属性和样式对照表</a>中<code>控件支持样式对照表</code>一章中.</p>
+<h2 id="getpropertybyname">getPropertyByName</h2>
+<ul>
+<li><strong>Description:</strong>
+获取控件指定的属性值,可以获取的属性参见表2.<br / ></li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:getPropertyByName(name)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>name<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 属性名称
+支持属性值范围详见：setPropertyByName
+注：如果control为密码输入框，name为value，则返回值为密文，由于一般项目上不会让加密功能由产品来实现，所以产品目前没有实现此功能，目前返回值为明文，项目上一般使用定制控件来实现加密。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 属性值</li>
+</ul>
+</li>
+</ul>
+<h2 id="setpropertybyname">setPropertyByName</h2>
+<ul>
+<li><strong>Description:</strong>
+设定给定名称的控件当前属性值,可以设置的属性参见表2.<br / >
+注意：已获取到报文并展示在界面上的所有控件的属性，修改后可实时看到效果.<br / ><ul>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:setPropertyByName(name, value)
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>name<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 属性名称</li>
+</ul>
+</li>
+<li>value<em>(required)</em><ul>
+<li>类型: <em>String/Boolean.</em></li>
+<li>说明: 属性值</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<p>get/set 操作包含的属性：</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>&quot;string&quot;</td>
+<td>控件名称，name属性为只读.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>&quot;string&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>&quot;string&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>tagName</td>
+<td>&quot;string&quot;</td>
+<td>标签名称，tagName属性为只读.</td>
+</tr>
+<tr>
+<td>hide</td>
+<td>&quot;true/false&quot;</td>
+<td>当前控件是否隐藏</td>
+</tr>
+<tr>
+<td>focus</td>
+<td>&quot;true/false&quot;</td>
+<td>当前控件是否已经获取焦点</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>&quot;true/false&quot;</td>
+<td>当前控件是否可用</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>&quot;true/false&quot;</td>
+<td>当前控件是否是被选中状态</td>
+</tr>
+</tbody>
+</table>
+<p>下面的表格展示了具体控件对于上面这些可用属性的具体支持情况：</p>
+<p>表2:</p>
+<table>
+<thead>
+<tr>
+<th>proper属性</th>
+<th>name</th>
+<th>value</th>
+<th>text</th>
+<th>tagName</th>
+<th>hide</th>
+<th>focus</th>
+<th>enable</th>
+<th>src</th>
+<th>checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>div</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>form</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>img</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:button</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:submit</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:password</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:text</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>input:segment</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:switch</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:checkbox</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+</tr>
+<tr>
+<td>input:radio</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+</tr>
+<tr>
+<td>link</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>select</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:i</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:em</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:strong</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:b</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>text:label</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:table</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:tr</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>√</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td>table:td</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+<td>√</td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<p>关于支持的静态属性参见<a href="../html_tags/tag_binding.html">控件支持属性和样式对照表</a>中<code>控件支持属性对照表</code>一章中.</p>
+<h2 id="getmatrix">getMatrix</h2>
+<ul>
+<li><strong>Description:</strong>
+获取当前控件的矩阵，以lua table形式返回矩阵各字段值.默认为单元矩阵
+目前仅支持二维矩阵.  关于矩阵详细信息参见<a href="FunctionInLibrary.html">EMP Lua Library</a>中关于  Matrix一章.
+矩阵格式如下:
+  struct CATransform3D<br>{<br>  float m11, m12, m13;<br>  float m21, m22, m23;<br>  float m31, m32, m33;<br>};<br>返回的table中将以m11,m12等为字段名,返回它们分别对应的值.</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:getMatrix()
+</code></pre>
+</li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong><ul>
+<li>类型: <em>Table.</em></li>
+<li>说明: 3*3矩阵{m11, m12, … m33}</li>
+</ul>
+</li>
+<li><strong>See:</strong><br> setMatrix().</li>
+</ul>
+<h2 id="setmatrix">setMatrix</h2>
+<ul>
+<li><p><strong>Description:</strong>
+设置当前控件的矩阵.通过对矩阵的修改,达到图片变换的目的.</p>
+</li>
+<li><p><strong>Syntax:</strong></p>
+<pre><code class="lang-js">map:setMatrix(matrix)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>matrix<em>(required)</em><ul>
+<li>类型: <em>Table.</em></li>
+<li>说明: 3*3矩阵。{m11, m12, … m33}</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+<li><strong>See:</strong><br>getMatrix()</li>
+</ul>
+<h2 id="setinnerhtml">setInnerHtml</h2>
+<ul>
+<li><strong>Description:</strong>
+更新当前控件内容.当页面中的部分内容包含较大的数据量或需要较长的网络请求,为了提交用户体验,通常会将部分内容优先展示给用户,而将剩余内容通过局部刷新的方式显示.setInnerHtml就是一个完成这种功能的函数,它可以在页面显示后,通过更新单个控件内容的方式实现局部刷新.（只能是容器控件div, form, table, body）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:setInnerHtml(content)
+</code></pre>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ol>
+<li>content<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 报文内容（也可以包含样式、脚本，包含样式则在根节点加style，脚本则加script）。
+报文内容可以带有样式定义也可不带，但是要求报文的父节点 必须与要更新的控件节点名称相同。
+Content的内容必须以<content>作为根节点。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong>
+无</p>
+</li>
+<li><strong>Examples:</strong>
+更新界面上已有的Div控件，则指定的更新报文必须为：<pre><code>&lt;content&gt;
+&lt;style&gt;
+...
+&lt;/style&gt;
+&lt;script&gt;
+...
+&lt;/script&gt;
+&lt;div&gt;
+    ...
+&lt;/div&gt;
+&lt;/content&gt;
+</code></pre></li>
+</ul>
+<h2 id="getparent">getParent</h2>
+<ul>
+<li><strong>Description:</strong>
+获取当前控件父节点控件</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:getParent()
+</code></pre>
+</li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong><ul>
+<li>类型: <em>Userdata.</em></li>
+<li>说明: 父控件对象</li>
+</ul>
+</li>
+</ul>
+<h2 id="getchildren">getChildren</h2>
+<ul>
+<li><strong>Description:</strong>
+获取当前控件子节点控件</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:getChildren()
+</code></pre>
+</li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong><ul>
+<li>类型: <em>Table.</em></li>
+<li>说明: 子节点控件数组</li>
+</ul>
+</li>
+</ul>
+<h2 id="submit">submit</h2>
+<ul>
+<li><strong>Description:</strong>
+表单提交。与submit按钮的提交功能相同.本函数会将指定表单中需要提交的元素内容以post方式提交到服务器.该请求默认通过加密信道加密,并自动处理服务器返回数据. 如果服务器返回页面报文,则将该报文加入缓存,并显示页面内容.如果返回数据没有页面内容(即没有body),则该报文不加人缓存,但依然执行报文中的脚本.此方法只能由form控件调用，如果当前form表单中包含密码输入框,则会将密码进行一次一密加密.</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:submit()
+</code></pre>
+</li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<h2 id="appendchild">appendChild</h2>
+<blockquote>
+<ul>
+<li><strong>Description:</strong><br>将指定的控件节点添加到当前控件集合的最后一个子节点后（此方法仅对可包含子节点的控件起作用）。
+tr不支持此操作.table中要求每一行的td个数相同,因此不能对单个tr增加子节点.
+<br />注：v5.3及上以版本支持</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:appendChild(control2)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>control2<em>(required)</em><ul>
+<li>类型: <em>Userdata.</em></li>
+<li>类型: 待插入的子节点。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong><br>Boolean，插入成功返回真，否则返回假。</li>
+<li><strong>Examples:</strong><pre><code class="lang-js">local a = document:createElement(<span class="hljs-string">"a"</span>);
+local div = document:getElementsByName(<span class="hljs-string">"div1"</span>);
+div[<span class="hljs-number">1</span>]:appendChild(a);
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="insertbefore">insertBefore</h2>
+<blockquote>
+<ul>
+<li><strong>Description:</strong><br>将control1加到control的子节点control2前，如果没有control2参数，那么默认加到最后一个子节点后（此方法仅对可包含子节点的控件起作用）。
+td不支持此操作.table中要求每一行的td个数相同,因此不能删除td.
+<br />注：v5.3及上以版本支持</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:insertBefore(control1, control2)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>control1<em>(required)</em><ul>
+<li>类型: <em>Userdata.</em></li>
+<li>类型: 待插入的子节点。</li>
+</ul>
+</li>
+<li>control2<em>(optional)</em><ul>
+<li>类型: <em>Userdata.</em></li>
+<li>类型: 在control中的子节点。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong><br>Boolean，插入成功返回真，否则返回假。</li>
+<li><strong>Examples:</strong><pre><code class="lang-js">local a = document:createElement(<span class="hljs-string">"a"</span>);
+local div = document:getElementsByName(<span class="hljs-string">"div1"</span>);
+local b = div[<span class="hljs-number">1</span>]:getChildren();
+div[<span class="hljs-number">1</span>]:insertBefore(a, b[<span class="hljs-number">1</span>]);
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="removechild">removeChild</h2>
+<blockquote>
+<ul>
+<li><strong>Description:</strong><br>删除当前控件集全中指定的子节点（当一个节点被删除时，其所有子节点也会被删除。）。
+  tr不支持此操作.table中要求每一行的td个数相同,因此不能对单个tr删除子节点.
+<br />注：v5.3及上以版本支持</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:removeChild(control2)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>control2<em>(required)</em><ul>
+<li>类型: <em>Userdata.</em></li>
+<li>类型: 待删除的子节点。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong><br>Boolean，删除成功返回真，否则返回假。</li>
+<li><strong>Examples:</strong><pre><code class="lang-js">local div = document:getElementsByName(<span class="hljs-string">"div1"</span>);
+local b = div[<span class="hljs-number">1</span>]:getChildren();
+div[<span class="hljs-number">1</span>]:removeChild(b[<span class="hljs-number">1</span>]);
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="showloading">showLoading</h2>
+<ul>
+<li><strong>Description:</strong>
+在控件中心位置显示加载动画。加载动画根据平台不同效果会有差异.<br />
+针对同一个控件,只会显示一个加载动画.即使针对一个控件调用多次本函数也只会显示一个加载动画.通过stopLoading()函数移除此动画.</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">control:showLoading()
+</code></pre>
+</li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong>
+无</li>
+<li><strong>See:</strong>
+stopLoading()</li>
+</ul>
+<h2 id="stoploading">stopLoading</h2>
+<ul>
+<li><strong>Description:</strong>
+停止通过showLoading()显示的动画。</li>
+<li><strong>Syntax:</strong><pre><code>control:stopLoading()
+</code></pre></li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong>
+无</li>
+<li><strong>See:</strong>
+showLoading()</li>
+</ul>
+<h2 id="setmaptype">setMapType</h2>
+<ul>
+<li><strong>Description:</strong>
+设置地图类型。（仅地图控件可调用）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:setMapType(mapType)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>mapType<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 地图类型：road(街道平面图)/satellite(卫星鸟瞰图)/other(带路况平面图或不带路标卫星鸟瞰图)<ul>
+<li>iOS :road-MKMapTypeStandard; satellite-MKMapTypeSatelliste; other-MkMapTypeHybrid(带路况平面图)</li>
+<li>Android :road-setStreetView; satellite-setSatellite; other-setTraffic(带路况平面图)</li>
+<li>Phone7 :road-Road; satellite-AerialWithLabels; other-Aerial(不带路标卫星鸟瞰图)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<h2 id="setmapscrollenabled">setMapScrollEnabled</h2>
+<ul>
+<li><strong>Description:</strong>
+设置地图是否可以滚动（横竖方向一同设置）。（仅地图控件可调用）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:setMapScrollEnabled(enabled)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>enabled<em>(required)</em><ul>
+<li>类型: <em>Boolean.</em></li>
+<li>说明: 是否可滚动</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<h2 id="setmapzoomenabled">setMapZoomEnabled</h2>
+<ul>
+<li><strong>Description:</strong>
+设置地图是否可以缩放。（仅地图控件可调用）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:setMapZoomEnabled(enabled)
+</code></pre>
+<strong>Parameters:</strong><ol>
+<li>enabled<em>(required)</em><ul>
+<li>类型: <em>Boolean.</em></li>
+<li>说明: 是否可缩放</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<h2 id="addannotation">addAnnotation</h2>
+<ul>
+<li><strong>Description:</strong>
+在地图上添加新的坐标点。坐标点经纬度由latitude,longitude参数指定.（仅地图控件可调用）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:addAnnotation(latitude, longitude, title, subtitle)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>latitude<em>(required)</em><ul>
+<li>类型: <em>Number.</em></li>
+<li>说明: 指定坐标点纬度</li>
+</ul>
+</li>
+<li>longitude<em>(required)</em><ul>
+<li>类型: <em>Number.</em></li>
+<li>说明: 指定坐标点经度</li>
+</ul>
+</li>
+<li>title<em>(option)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 坐标点标题</li>
+</ul>
+</li>
+<li>subtitle<em>(option)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 坐标点子标题</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<h2 id="getallannotations">getAllAnnotations</h2>
+<ul>
+<li><strong>Description:</strong>
+返回当前地图上所有坐标点信息。（仅地图控件可调用）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:getAllAnnotations()
+</code></pre>
+</li>
+<li><strong>Parameters:</strong>
+无</li>
+<li><strong>Return:</strong><ul>
+<li>类型: <em>Table.</em></li>
+<li>说明: 包含地图上所有坐标点信息。每个坐标点信息封装成table各式,包含lat, lon, title, subtitle字段.<br>lat：Number类型 表示纬度<br>lon：Number类型 表示经度<br>title：String类型 坐标点标题, 通常为addAnnotation()函数指定的title.如果Annotation中没有title内容,则没有title字段.<br>subtitle：String类型 坐标点子标题 通常为addAnnotation()函数指定的subtitle.如果Annotation中没有subtitle内容,则没有subtitle字段.</li>
+</ul>
+</li>
+</ul>
+<h2 id="setcenter">setCenter</h2>
+<ul>
+<li><strong>Description:</strong>
+设置地图显示的中心点。本函数会将指定的经纬度作为地图中心点,中心点位置将显示在视图的正中心位置.
+中心点不会显示标记.（仅地图控件可调用）</li>
+<li><strong>Syntax:</strong><pre><code class="lang-js">map:setCenter(latitude, longitude)
+</code></pre>
+</li>
+<li><strong>Parameters:</strong><ol>
+<li>latitude<em>(required)</em><ul>
+<li>类型: <em>Number.</em></li>
+<li>说明: 坐标点纬度</li>
+</ul>
+</li>
+<li>longitude<em>(required)</em><ul>
+<li>类型: <em>Number.</em></li>
+<li>类型: 坐标点经度</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Return:</strong>
+无</li>
+</ul>
+<h2 id="setonclicklistener-">setOnClickListener()</h2>
+<ul>
+<li><strong>Description:</strong><br>为控件设置监听方法,监听控件被点击的行为，当控件被点击后会执行回调方法。 同一个控件可以设置多个监听方法.
+注意：监听的回调会先于属性设置的onclick方法执行。  </li>
+<li><strong>Syntax:</strong>  <pre><code>setOnClickListener(callback)
+</code></pre></li>
+<li><strong>Parameters:</strong>  <ol>
+<li>callback (required)_  <ul>
+<li>类型: <em>Function.</em>  </li>
+<li>说明: 监听函数，在控件点击后调用。该监听函数有3个参数，分别为：sender(控件本身)，name（控件的name值），value（控件的value值）。  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>Return:</strong><br>无</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  function btnClick(btn, name, value)       
+  end
+
+  local btn = Document:getEventElementsByName(&quot;cal&quot;);
+  btn[0]:setOnClickListener(btnClick);
+</code></pre></li>
+</ul>
+<h2 id="setonfocuslistener-">setOnFocusListener()</h2>
+<ul>
+<li><strong>Description:</strong><br>为控件设置监听方法,监听控件获得焦点的行为，当控件获得焦点时会执行回调方法。同一个控件可以设置多个监听方法.<br>注意：此方法仅在输入框控件有效，监听的回调会先于属性设置的onfocus方法执行。  </li>
+<li><strong>Syntax:</strong>  <pre><code>setOnFocusListener(callback)
+</code></pre></li>
+<li><strong>Parameters:</strong>  <ol>
+<li>callback (required)_  <ul>
+<li>类型: <em>Function.</em>  </li>
+<li>说明: 监听函数，在控件点击后调用。该监听函数有3个参数，分别为：sender(控件本身)，name（控件的name值），value（控件的value值）。  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>Return:</strong><br>无</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  function tfFocus(btn, name, value)       
+  end
+
+  local pw = Document:getEventElementsByName(&quot;password&quot;);
+  pw[0]:setOnFocusListener(tfCocus);
+</code></pre></li>
+</ul>
+<h2 id="setonblurlistener-">setOnBlurListener()</h2>
+<ul>
+<li><strong>Description:</strong><br>为控件设置监听方法,监听控件失去焦点的行为，当控件失去焦点时会执行回调方法。 同一个控件可以设置多个监听方法. 
+注意：此方法仅在输入框控件有效，监听的回调会先于属性设置的onblur方法执行。  </li>
+<li><strong>Syntax:</strong>  <pre><code>setOnBlurListener(callback)
+</code></pre></li>
+<li><strong>Parameters:</strong>  <ol>
+<li>callback (required)_  <ul>
+<li>类型: <em>Function.</em>  </li>
+<li>说明: 监听函数，在控件点击后调用。该监听函数有3个参数，分别为：sender(控件本身)，name（控件的name值），value（控件的value值）。  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>Return:</strong><br>无</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  function tfBlur(btn, name, value)       
+  end
+
+  local pw = Document:getEventElementsByName(&quot;password&quot;);
+  pw[0]:setOnBlurListener(tfBlur);
+</code></pre></li>
+</ul>
+<h2 id="setonchangelistener-">setOnChangeListener()</h2>
+<ul>
+<li><strong>Description:</strong><br>为控件设置监听方法,监听输入框内容改变的行为，当输入框内容改变时会执行回调方法。 同一个控件可以设置多个监听方法. 
+注意：此方法仅在输入框控件有效，监听的回调会先于属性设置的onchange方法执行。  </li>
+<li><strong>Syntax:</strong>  <pre><code>setOnChangeListener(callback)
+</code></pre></li>
+<li><strong>Parameters:</strong>  <ol>
+<li>callback (required)_  <ul>
+<li>类型: <em>Function.</em>  </li>
+<li>说明: 监听函数，在控件点击后调用。该监听函数有3个参数，分别为：sender(控件本身)，name（控件的name值），value（控件的value值）。  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>Return:</strong><br>无</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  function tfChange(btn, name, value)       
+  end
+
+  local pw = Document:getEventElementsByName(&quot;password&quot;);
+  pw[0]:setOnChangeListener(tfChange);
+</code></pre></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Note</th>
+<th>Modifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2014-12-03</td>
+<td>去掉get/setAttribute</td>
+<td>lin.jitao </td>
+</tr>
+<tr>
+<td>2014-12-03</td>
+<td>showloading支持所有控件</td>
+<td>lin.jitao </td>
+</tr>
+<tr>
+<td>2014-12-03</td>
+<td>addAnnotation title参数为可选</td>
+<td>lin.jitao </td>
+</tr>
+<tr>
+<td>2015-1-29</td>
+<td>增加事件监听相关API</td>
+<td>lin.jitao </td>
+</tr>
+<tr>
+<td>2015-3-24</td>
+<td>修改事件监听API回调的执行时机</td>
+<td>zhou.changjin </td>
+</tr>
+<tr>
+<td>2015-6-5</td>
+<td>完善getStyleByName接口的说明，增加针对left等位置样式的描述</td>
+<td>zhou.changjin</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../emp_ui_reference/lua/FunctionInLibrary.html" class="navigation navigation-prev " aria-label="Previous page: EMP Lua Library"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../emp_ui_reference/lua/Animation.html" class="navigation navigation-next " aria-label="Next page: 动画"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="../../gitbook/local/ace.js"></script>
+        <script src="../../gitbook/local/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

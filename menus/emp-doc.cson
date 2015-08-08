@@ -1,0 +1,38 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Show EMP Doc'
+      'command': 'emp-doc:show-doc'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'emp-doc'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'emp-doc:show-doc'
+        }
+      ]
+    ]
+  }
+  {
+    'label': 'Emp'
+    'submenu': [
+        {type: 'separator'}
+        {'label': 'EMP Doc',
+        'submenu': [
+          {
+            'label': 'Show EMP Doc'
+            'command': 'emp-doc:show-doc'
+          }
+        ]
+
+        }
+
+    ]
+  }
+]

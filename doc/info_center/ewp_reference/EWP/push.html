@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module push</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module push</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>消息推送相关API。.
+
+
+<h2><a name="description">Description</a></h2>消息推送相关API。
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-action_loc_key">action_loc_key()</a></h3>
+<p><tt>action_loc_key() = {action_loc_key, string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-alert">alert()</a></h3>
+<p><tt>alert() = [<a href="#type-ios_alert_opt">ios_alert_opt()</a>]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-badge">badge()</a></h3>
+<p><tt>badge() = {badge, integer()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-body">body()</a></h3>
+<p><tt>body() = {body, string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-expiry">expiry()</a></h3>
+<p><tt>expiry() = {expiry, Seconds::integer()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-format">format()</a></h3>
+<p><tt>format() = {sound, batch | enhance | simple}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-ios_alert_opt">ios_alert_opt()</a></h3>
+<p><tt>ios_alert_opt() = <a href="#type-body">body()</a> | <a href="#type-action_loc_key">action_loc_key()</a> | <a href="#type-loc_key">loc_key()</a> | loc_args | launch_image</tt></p>
+
+
+<h3 class="typedecl"><a name="type-ios_opt">ios_opt()</a></h3>
+<p><tt>ios_opt() = <a href="#type-alert">alert()</a> | <a href="#type-badge">badge()</a> | <a href="#type-sound">sound()</a> | <a href="#type-format">format()</a> | <a href="#type-expiry">expiry()</a></tt></p>
+
+
+<h3 class="typedecl"><a name="type-ios_opts">ios_opts()</a></h3>
+<p><tt>ios_opts() = [<a href="#type-ios_opt">ios_opt()</a>]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-launch_image">launch_image()</a></h3>
+<p><tt>launch_image() = {launch_image, string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-loc_args">loc_args()</a></h3>
+<p><tt>loc_args() = {loc_args, [binary()]}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-loc_key">loc_key()</a></h3>
+<p><tt>loc_key() = {loc_key, string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-os">os()</a></h3>
+<p><tt>os() = ios | android | winphone</tt></p>
+
+
+<h3 class="typedecl"><a name="type-push_opts">push_opts()</a></h3>
+<p><tt>push_opts() = <a href="#type-ios_opts">ios_opts()</a> | <a href="#type-wp_opts">wp_opts()</a></tt></p>
+
+
+<h3 class="typedecl"><a name="type-return_type">return_type()</a></h3>
+<p><tt>return_type() = token | record</tt></p>
+
+
+<h3 class="typedecl"><a name="type-sound">sound()</a></h3>
+<p><tt>sound() = {sound, string()}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-storage_type">storage_type()</a></h3>
+<p><tt>storage_type() = ewp_mnesia | ewp_db</tt></p>
+
+
+<h3 class="typedecl"><a name="type-wp_opts">wp_opts()</a></h3>
+<p><tt>wp_opts() = [{type, toast | title | row}]</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#find-2">find/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#find_records-1">find_records/1</a></td><td>Records query functions
+  Conditions = [{Key, Value} | {Key, '=', Value}].</td></tr>
+<tr><td valign="top"><a href="#find_tokens-1">find_tokens/1</a></td><td>Tokens query functions
+  Conditions = [{Key, Value} | {Key, '=', Value}].</td></tr>
+<tr><td valign="top"><a href="#init_from_conf-2">init_from_conf/2</a></td><td>初始化指定app的push服务.</td></tr>
+<tr><td valign="top"><a href="#init_from_file-2">init_from_file/2</a></td><td>从文件初始化指定app的push服务.</td></tr>
+<tr><td valign="top"><a href="#init_from_props-2">init_from_props/2</a></td><td>初始化指定app的push服务
+  Config Example:
+  Confs =  [osconfig()]
+  osconfig() = {ios, proplists()}| {android, proplists()} | {winphone, proplists()}.</td></tr>
+<tr><td valign="top"><a href="#is_supported-2">is_supported/2</a></td><td>查看指定app是否支持某平台的推送.</td></tr>
+<tr><td valign="top"><a href="#register-5">register/5</a></td><td>注册设备token.</td></tr>
+<tr><td valign="top"><a href="#send-2">send/2</a></td><td>发送消息到<code>#token</code>指定的设备.</td></tr>
+<tr><td valign="top"><a href="#send-3">send/3</a></td><td>发送消息到<code>#token</code>指定的设备.</td></tr>
+<tr><td valign="top"><a href="#send-4">send/4</a></td><td>发送消息.</td></tr>
+<tr><td valign="top"><a href="#send-5">send/5</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start-0">start/0</a></td><td>以ewp_mnesia模式启动push服务.</td></tr>
+<tr><td valign="top"><a href="#start-1">start/1</a></td><td>启动push基础服务.</td></tr>
+<tr><td valign="top"><a href="#stop-0">stop/0</a></td><td>停止push基础服务.</td></tr>
+<tr><td valign="top"><a href="#stop-1">stop/1</a></td><td>停止指定app的push功能.</td></tr>
+<tr><td valign="top"><a href="#unregister-3">unregister/3</a></td><td>注销设备token.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="find-2">find/2</a></h3>
+<div class="spec">
+<p><tt>find(Conditions::list(), ReturnType::<a href="#type-return_type">return_type()</a>) -&gt; list()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="find_records-1">find_records/1</a></h3>
+<div class="spec">
+<p><tt>find_records(Conditions::list()) -&gt; list()</tt><br></p>
+</div><p>Records query functions
+  Conditions = [{Key, Value} | {Key, '=', Value}]</p>
+
+<h3 class="function"><a name="find_tokens-1">find_tokens/1</a></h3>
+<div class="spec">
+<p><tt>find_tokens(Conditions::list()) -&gt; list()</tt><br></p>
+</div><p>Tokens query functions
+  Conditions = [{Key, Value} | {Key, '=', Value}]</p>
+
+<h3 class="function"><a name="init_from_conf-2">init_from_conf/2</a></h3>
+<div class="spec">
+<p><tt>init_from_conf(App::atom(), AllConfs::list()) -&gt; ok</tt><br></p>
+</div><p>初始化指定app的push服务</p>
+
+<h3 class="function"><a name="init_from_file-2">init_from_file/2</a></h3>
+<div class="spec">
+<p><tt>init_from_file(App::atom(), FilePath::string()) -&gt; ok</tt><br></p>
+</div><p>从文件初始化指定app的push服务</p>
+
+<h3 class="function"><a name="init_from_props-2">init_from_props/2</a></h3>
+<div class="spec">
+<p><tt>init_from_props(App::atom(), Confs::list) -&gt; ok</tt><br></p>
+</div><p>初始化指定app的push服务
+  Config Example:
+  Confs =  [osconfig()]
+  osconfig() = {ios, proplists()}| {android, proplists()} | {winphone, proplists()}</p>
+
+<h3 class="function"><a name="is_supported-2">is_supported/2</a></h3>
+<div class="spec">
+<p><tt>is_supported(App::atom(), OS::<a href="#type-os">os()</a>) -&gt; boolean()</tt><br></p>
+</div><p>查看指定app是否支持某平台的推送</p>
+
+<h3 class="function"><a name="register-5">register/5</a></h3>
+<div class="spec">
+<p><tt>register(OS::<a href="#type-os">os()</a>, App::atom(), Token::string(), UserID::string(), PhoneNO::string()) -&gt; ok</tt><br></p>
+</div><p>注册设备token</p>
+
+<h3 class="function"><a name="send-2">send/2</a></h3>
+<div class="spec">
+<p><tt>send(Records::list(), Msg::list) -&gt; ok</tt><br></p>
+</div><p>发送消息到<code>#token</code>指定的设备</p>
+
+<h3 class="function"><a name="send-3">send/3</a></h3>
+<div class="spec">
+<p><tt>send(Records::list(), Msg::string(), Options::<a href="#type-push_opts">push_opts()</a>) -&gt; ok</tt><br></p>
+</div><p>发送消息到<code>#token</code>指定的设备
+  <br>关于ios推送选项请参考APNS官方文档：https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1
+  <br>关于wp推送选项请参考MPNS官方文档http://msdn.microsoft.com/library/windows/apps/ff402558%28v=vs.105%29.aspx</p>
+
+<h3 class="function"><a name="send-4">send/4</a></h3>
+<div class="spec">
+<p><tt>send(OS::<a href="#type-os">os()</a>, App::atom(), Tokens::list(), Msg::list) -&gt; ok</tt><br></p>
+</div><p>发送消息</p>
+<p><b>See also:</b> <a href="#send_payload-3">send_payload/3</a>.</p>
+
+<h3 class="function"><a name="send-5">send/5</a></h3>
+<div class="spec">
+<p><tt>send(OS::<a href="#type-os">os()</a>, App::atom(), Tokens::list(), Msg::list, Options::<a href="#type-push_opts">push_opts()</a>) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start-0">start/0</a></h3>
+<div class="spec">
+<p><tt>start() -&gt; ok</tt><br></p>
+</div><p>以ewp_mnesia模式启动push服务</p>
+
+<h3 class="function"><a name="start-1">start/1</a></h3>
+<div class="spec">
+<p><tt>start(StorageType::<a href="#type-storage_type">storage_type()</a>) -&gt; ok</tt><br></p>
+</div><p>启动push基础服务</p>
+
+<h3 class="function"><a name="stop-0">stop/0</a></h3>
+<div class="spec">
+<p><tt>stop() -&gt; ok | {error, already_stop}</tt><br></p>
+</div><p>停止push基础服务</p>
+
+<h3 class="function"><a name="stop-1">stop/1</a></h3>
+<div class="spec">
+<p><tt>stop(App::atom()) -&gt; ok</tt><br></p>
+</div><p>停止指定app的push功能</p>
+
+<h3 class="function"><a name="unregister-3">unregister/3</a></h3>
+<div class="spec">
+<p><tt>unregister(OS::<a href="#type-os">os()</a>, App::atom(), Token::string()) -&gt; ok</tt><br></p>
+</div><p>注销设备token</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 6 2014, 14:10:00.</i></p>
+</body>
+</html>

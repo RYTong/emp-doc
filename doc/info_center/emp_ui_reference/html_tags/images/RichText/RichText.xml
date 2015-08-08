@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .div1 {width:300px;height:480px;top:0px;left:10px;}
+            .richText1 {left:0px;width:300px;top:0px;background-color:#FFFFFF;}
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;bottom:0px;}
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua"> </script>
+    </head>
+    <body>
+        <div class="div1">
+            <richtext class ="richText1" name ="richText">
+                <![CDATA[
+                    <font size="30">标签测试</font><br/>
+                    <b>粗体</b><br/>
+                    <i>斜体123abc</i><br/>
+                    <u>下划线</u><br/>
+                    正常文本<sup>上标</sup>正常文本<br/>
+                    正常文本<sub>下标</sub>正常文本<br/>
+                    <del>删除字</del><br/>
+                    <ins>插入字</ins><br/>
+                    <img src="animation.png" width=20 height=20 /><br/>
+                    <font color="red" size="24">绝对字体大小为24的红色字</font><br/>
+                    <font color="#00ff00" size="15">绝对字体大小为15的绿色字</font><br/>
+                    <a href="http://www.w3school.com.cn">W3School html在线测试地址[http://www.w3school.com.cn]，欢迎使用！</a><br/>
+                    <h1>使用&lt;H1&gt;输出1号标题字体</h1>
+                    <h2>使用&lt;H2&gt;输出2号标题字体</h2>
+                    <h3>使用&lt;H3&gt;输出3号标题字体</h3>
+                    <h4>使用&lt;H4&gt;输出4号标题字体</h4>
+                    <h5>使用&lt;H5&gt;输出5号标题字体</h5>
+                    <h6>使用&lt;H6&gt;输出6号标题字体</h6>
+                    <h7>使用&lt;H7&gt;输出7号标题字体</h7><br/>
+                    这是富文本的默认字体，不含任何标签，应该与<H7>显示效果一致<br/><br/><br/><br/>
+                    
+                    
+                    <font size="30">字体嵌套测试</font><br/>
+                    <b><font size="20">粗体嵌套font标签</font></b><br/>
+                    <i><font size="20">斜体嵌套font标签abc123</font></i><br/>
+                    <u><font size="20">下划线嵌套font标签</font></u><br/>
+                    正常文本<sup><font size="20">上标嵌套font标签</font></sup>正常文本<br/>
+                    正常文本<sub><font size="20">下标嵌套font标签</font></sub>正常文本<br/>
+                    <del><font size="20">删除字嵌套font标签</font></del><br/>
+                    <ins><font size="20">插入字嵌套font标签</font></ins><br/>
+                    <a href="http://www.baidu.com.cn"><font size="20">超链接嵌套font标签</font></a><br/>
+                    
+                    <font size="20"><b>font标签嵌套粗体</b></font><br/>
+                    <font size="20"><i>font标签abc123嵌套斜体</i></font><br/>
+                    <font size="20"><u>font标签嵌套下划线</u></font><br/>
+                    正常文本<font size="20"><sup>font标签嵌套上标</sup></font>正常文本<br/>
+                    正常文本<font size="20"><sub>font标签嵌套下标</sub></font>正常文本<br/>
+                    <font size="20"><del>font标签嵌套删除字</del></font><br/>
+                    <font size="20"><ins>font标签嵌套插入字</ins></font><br/>
+                    <font size="20"><a href="http://www.baidu.com.cn">font标签嵌套超链接</a></font><br/><br/><br/><br/>
+                    
+                    
+                    <font size="30">集合测试</font><br/>
+                    <h4>面朝大海，春暖花开</h4><br/>
+                    <font size="20">海子<sup>诗人</sup></font><br/>
+                    <font>从明天起，做一个<b>幸福</b>的人<br/>
+                    <i>喂马、劈柴，周游世界</i><br/>
+                    从明天起，<u>关心粮食和蔬菜</u><br/>
+                    我有一所房子，<font color="red">面朝大海，春暖花开</font><br/>
+                    从明天起，和每一个亲人通信 告诉他们我的幸福<br/>
+                    那幸福的闪电告诉我的<br/>
+                    我将告诉每一个人<br/>
+                    给每一条河每一座山取一个温暖的名字<br/>
+                    陌生人，我也为你祝福<br/>
+                    愿你有一个灿烂的前程<br/>
+                    愿你有情人终成眷属<br/>
+                    愿你在尘世获得幸福<br/>
+                    我只愿面朝大海，春暖花开<br/>
+                    <i>1989.1.13<sub>书</sub></i><br/>
+                    这是一首<del>歌曲</del><ins>诗歌</ins><br/>
+                    <a href="http://www.baidu.com">详细信息 www.baidu.com 百度一下，你就知道</a></font><br/><br/><br/><br/>
+                    
+                    
+                    <font size="30">两层标签嵌套测试</font><br/>
+                    <b><i>b标签abc123嵌套斜体</i></b><br/>
+                    <b><u>b标签嵌套下划线</u></b><br/>
+                    正常文本<b><sup>b标签嵌套上标</sup></b>正常文本<br/>
+                    正常文本<b><sub>b标签嵌套下标</sub></b>正常文本<br/>
+                    <b><del>b标签嵌套删除字</del></b><br/>
+                    <b><ins>b标签嵌套插入字</ins></b><br/>
+                    <b><a href="http://www.baidu.com.cn">b标签嵌套超链接</a></b><br/>
+                    <i><u>i标签123abc嵌套下划线</u></i><br/>
+                    正常文本<i><sup>i标签123abc嵌套上标</sup></i>正常文本<br/>
+                    正常文本<i><sub>i标签123abc嵌套下标</sub></i>正常文本<br/>
+                    <i><del>i标签123abc嵌套删除字</del></i><br/>
+                    <i><ins>i标签123abc嵌套插入字</ins></i><br/>
+                    <i><a href="http://www.baidu.com.cn">i标签123abc嵌套超链接</a></i><br/>
+                    正常文本<u><sup>u标签嵌套上标</sup></u>正常文本<br/>
+                    正常文本<u><sub>u标签嵌套下标</sub></u>正常文本<br/>
+                    <u><del>u标签嵌套删除字</del></u><br/>
+                    <u><ins>u标签嵌套插入字</ins></u><br/>
+                    <u><a href="http://www.baidu.com.cn">u标签嵌套超链接</a></u><br/>
+                    <del><a href="http://www.baidu.com.cn">del标签嵌套超链接</a></del><br/>
+                    <ins><a href="http://www.baidu.com.cn">ins标签嵌套超链接</a></ins><br/><br/><br/><br/>
+                    
+                    
+                    <font size="30">a标签嵌套测试</font><br/>
+                    <a href="http://www.baidu.com"><b>粗体</b><i>斜体123abc</i><sup>上标</sup><sub>下标</sub>
+                    </a><br/><br/><br/><br/>
+                    
+                    
+                    <font size="30">多层（大于两层）标签嵌套测试</font><br/>
+                    <u><b><i>下划线+粗体+斜体abc123</i></b></u><br/>
+                    <del><b><i>删除线+粗体+斜体abc123</i></b></del><br/>
+                    <ins><b><i>插入字+粗体+斜体abc123</i></b></ins><br/>
+                    <u><b><i><font size="20">下划线+粗体+斜体abc123+font</font></i></b></u><br/>
+                    <del><b><i><font size="20">删除线+粗体+斜体abc123+font</font></i></b></del><br/>
+                    <ins><b><i><font size="20">插入字+粗体+斜体abc123+font</font></i></b></ins><br/>
+                    <b><u><i><font size="15">粗体+下划线+斜体abc123+font</font></i></u></b><br/>
+                    <b><i><u><font size="15">粗体+斜体abc123+下划线+font</font></u></i></b><br/>
+                    <i><b><u><font size="15">斜体abc123+粗体+下划线+font</font></u></b></i><br/>
+                    <i><u><b><font size="15">斜体abc123+下划线+粗体+font</font></b></u></i><br/>
+                    <u><i><b><font size="15">下划线+斜体abc123+粗体+font</font></b></i></u><br/>
+                    <u><b><i><font size="15">下划线+粗体+斜体abc123+font</font></i></b></u><br/><br/><br/><br/><br/>
+                    
+                ]]>
+            </richtext>
+        </div>
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/>
+    </body>
+</content>

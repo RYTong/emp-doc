@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_time</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_time</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>时间处理通用API。.
+
+
+<h2><a name="description">Description</a></h2>时间处理通用API。
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-datetime">datetime()</a></h3>
+<p><tt>datetime() = {<a href="#type-date">date()</a>, <a href="#type-time">time()</a>}</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#date_to_gsec-1">date_to_gsec/1</a></td><td>把日期和时间转化成公历时间秒数.</td></tr>
+<tr><td valign="top"><a href="#datetime-0">datetime/0</a></td><td>返回当地日期和时间.</td></tr>
+<tr><td valign="top"><a href="#datetime_str-0">datetime_str/0</a></td><td>以“YYYYMMDDHHMMSS”格式返回当前时间的字符串.</td></tr>
+<tr><td valign="top"><a href="#datetime_to_datestr-1">datetime_to_datestr/1</a></td><td>将指定日期时间转换成字符串，格式为“YYYY-MM-DD HH:MM:SS”。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 获取更多类型信息.</td></tr>
+<tr><td valign="top"><a href="#datetime_to_utc-1">datetime_to_utc/1</a></td><td>将给定的时间转化成UTC秒数.</td></tr>
+<tr><td valign="top"><a href="#get_timezone_str-0">get_timezone_str/0</a></td><td>返回当地时区的字符串。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</td></tr>
+<tr><td valign="top"><a href="#gmt-0">gmt/0</a></td><td>以标准时间秒数返回当前时间.</td></tr>
+<tr><td valign="top"><a href="#local_date-0">local_date/0</a></td><td>以“YYYYMMDD”格式返回当前日期的字符串 .</td></tr>
+<tr><td valign="top"><a href="#to_iso8601-1">to_iso8601/1</a></td><td>根据指定参数计算iso8601标准的时间字符串.</td></tr>
+<tr><td valign="top"><a href="#to_rfc1123_date-1">to_rfc1123_date/1</a></td><td>根据指定参数计算rfc1123标准的时间字符串.</td></tr>
+<tr><td valign="top"><a href="#to_timezone-1">to_timezone/1</a></td><td>根据指定的参数计算当地时区。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 和
+  <a href="http://www.erlang.org/doc/man/erlang.html#now-0">BIF now()</a> 获取更多类型信息.</td></tr>
+<tr><td valign="top"><a href="#to_timezone_offset-1">to_timezone_offset/1</a></td><td>根据指定参数计算时差。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 和
+  <a href="http://www.erlang.org/doc/man/erlang.html#now-0">BIF now()</a> 获取更多类型信息.</td></tr>
+<tr><td valign="top"><a href="#utc-0">utc/0</a></td><td>返回当前UTC。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</td></tr>
+<tr><td valign="top"><a href="#utc_to_datestr-1">utc_to_datestr/1</a></td><td>将指定的utc秒转换成对应的日期时间字符串，格式为“YYYY-MM-DD HH:MM:SS”。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</td></tr>
+<tr><td valign="top"><a href="#utc_to_datetime-1">utc_to_datetime/1</a></td><td>将指定的utc秒转换成对应的日期时间
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 获取更多类型信息.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="date_to_gsec-1">date_to_gsec/1</a></h3>
+<div class="spec">
+<p><tt>date_to_gsec(Date::string() | binary() | {datetime, <a href="#type-datetime">datetime()</a>}) -&gt; integer()</tt><br></p>
+</div><p>把日期和时间转化成公历时间秒数.
+  如果参数是字符串，它有可能是以下情况之一: "2007-11-04 15:30:00 +0000"，"2007-11-04 15:30:00"，
+  "2000-03-04T23:00:00.1234560+03:00"和"20061206T120000".
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</p>
+
+<h3 class="function"><a name="datetime-0">datetime/0</a></h3>
+<div class="spec">
+<p><tt>datetime() -&gt; {<a href="#type-date">date()</a>, <a href="#type-time">time()</a>}</tt><br></p>
+</div><p>返回当地日期和时间.
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 获取更多类型信息.</p>
+
+<h3 class="function"><a name="datetime_str-0">datetime_str/0</a></h3>
+<div class="spec">
+<p><tt>datetime_str() -&gt; string()</tt><br></p>
+</div><p>以“YYYYMMDDHHMMSS”格式返回当前时间的字符串.</p>
+
+<h3 class="function"><a name="datetime_to_datestr-1">datetime_to_datestr/1</a></h3>
+<div class="spec">
+<p><tt>datetime_to_datestr(DateTime::<a href="#type-datetime">datetime()</a>) -&gt; string()</tt><br></p>
+</div><p>将指定日期时间转换成字符串，格式为“YYYY-MM-DD HH:MM:SS”。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 获取更多类型信息.</p>
+
+<h3 class="function"><a name="datetime_to_utc-1">datetime_to_utc/1</a></h3>
+<div class="spec">
+<p><tt>datetime_to_utc(DateTime::string() | binary() | {datetime, {<a href="#type-date">date()</a>, <a href="#type-time">time()</a>}}) -&gt; integer()</tt><br></p>
+</div><p>将给定的时间转化成UTC秒数.
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 获取更多类型信息.</p>
+
+<h3 class="function"><a name="get_timezone_str-0">get_timezone_str/0</a></h3>
+<div class="spec">
+<p><tt>get_timezone_str() -&gt; string()</tt><br></p>
+</div><p>返回当地时区的字符串。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</p>
+
+<h3 class="function"><a name="gmt-0">gmt/0</a></h3>
+<div class="spec">
+<p><tt>gmt() -&gt; integer()</tt><br></p>
+</div><p>以标准时间秒数返回当前时间.
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.
+  请参考 <a href="http://wenku.baidu.com/view/9e027f89d0d233d4b14e699d.html">GMT时间简介</a>获取更多时间信息.</p>
+
+<h3 class="function"><a name="local_date-0">local_date/0</a></h3>
+<div class="spec">
+<p><tt>local_date() -&gt; string()</tt><br></p>
+</div><p>以“YYYYMMDD”格式返回当前日期的字符串 .</p>
+
+<h3 class="function"><a name="to_iso8601-1">to_iso8601/1</a></h3>
+<div class="spec">
+<p><tt>to_iso8601(Value::<a href="#type-datetime">datetime()</a> | {datetime, <a href="#type-datetime">datetime()</a>}) -&gt; string()</tt><br></p>
+</div><p>根据指定参数计算iso8601标准的时间字符串.
+  请参考 <a href="http://baike.baidu.com/link?url=HtRaDzhffsT7ujTB8ZiwfipIKfK9znyb2MDsnE0B217mi0N6VsrrByUu2BqCetWK">ISO8601简介</a>获取更多关于ISO8601的信息.
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</p>
+
+<h3 class="function"><a name="to_rfc1123_date-1">to_rfc1123_date/1</a></h3>
+<div class="spec">
+<p><tt>to_rfc1123_date(DateTime::<a href="#type-datetime">datetime()</a>) -&gt; string()</tt><br></p>
+</div><p>根据指定参数计算rfc1123标准的时间字符串.
+  请参考 <a href="http://blog.sina.com.cn/s/blog_413978670100n1in.html">rfc1123简介</a>获取更多关于rfc1123的信息.
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</p>
+
+<h3 class="function"><a name="to_timezone-1">to_timezone/1</a></h3>
+<div class="spec">
+<p><tt>to_timezone(Now::<a href="#type-datetime">datetime()</a> | <a href="#type-now">now()</a>) -&gt; string()</tt><br></p>
+</div><p>根据指定的参数计算当地时区。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 和
+  <a href="http://www.erlang.org/doc/man/erlang.html#now-0">BIF now()</a> 获取更多类型信息.</p>
+
+<h3 class="function"><a name="to_timezone_offset-1">to_timezone_offset/1</a></h3>
+<div class="spec">
+<p><tt>to_timezone_offset(Now::<a href="#type-datetime">datetime()</a> | <a href="#type-now">now()</a>) -&gt; {Hour::integer(), Second::integer()}</tt><br></p>
+</div><p>根据指定参数计算时差。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 和
+  <a href="http://www.erlang.org/doc/man/erlang.html#now-0">BIF now()</a> 获取更多类型信息.</p>
+
+<h3 class="function"><a name="utc-0">utc/0</a></h3>
+<div class="spec">
+<p><tt>utc() -&gt; integer()</tt><br></p>
+</div><p>返回当前UTC。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.
+  请参考 <a href="http://baike.baidu.com/link?url=VwEpon21Ty0qmh03xuwaRwICjTmyNdTMYKSSHgT4MVKNCzgw7YD2zkDwpk1toiH9">UTC 时间简介</a>获取更多UTC时间信息.</p>
+
+<h3 class="function"><a name="utc_to_datestr-1">utc_to_datestr/1</a></h3>
+<div class="spec">
+<p><tt>utc_to_datestr(Utc::integer()) -&gt; string()</tt><br></p>
+</div><p>将指定的utc秒转换成对应的日期时间字符串，格式为“YYYY-MM-DD HH:MM:SS”。
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a>获取更多时间信息.</p>
+
+<h3 class="function"><a name="utc_to_datetime-1">utc_to_datetime/1</a></h3>
+<div class="spec">
+<p><tt>utc_to_datetime(Utc::integer()) -&gt; {<a href="#type-date">date()</a>, <a href="#type-time">time()</a>}</tt><br></p>
+</div><p>将指定的utc秒转换成对应的日期时间
+  请参考 <a href="http://www.erlang.org/doc/man/calendar.html">calender module</a> 获取更多类型信息.</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:48.</i></p>
+</body>
+</html>

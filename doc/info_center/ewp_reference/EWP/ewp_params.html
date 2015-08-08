@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_params</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_params</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>参数获取通用API。.
+
+
+<h2><a name="description">Description</a></h2>参数获取通用API。<br>
+        该模块基于Erlang进程字典实现，因此在调用时注意由进程字典带来的副作用。
+        在其他进程中调用该模块的函数可能导致与预期结果不符。
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-proplist">proplist()</a></h3>
+<p><tt>proplist() = [{Key::string(), Value::string()}]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-type">type()</a></h3>
+<p><tt>type() = integer | float | string | number</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#arg-1">arg/1</a></td><td>相当于arg(Key, undefined).</td></tr>
+<tr><td valign="top"><a href="#arg-2">arg/2</a></td><td>获取已保存的yaws arg记录中的指定值。可指定headers、
+       host、client_ip、client_port、docroot和
+       yaws.conf opaque的配置项。
+       获取不到时返回指定默认值。.</td></tr>
+<tr><td valign="top"><a href="#arg-3">arg/3</a></td><td>获取指定yaws arg记录中的指定值。可指定headers、
+       host、client_ip、client_port、docroot和yaws.conf opaque
+       的配置项。获取不到时返回指定默认值。.</td></tr>
+<tr><td valign="top"><a href="#bag_from_yaws_arg-1">bag_from_yaws_arg/1</a></td><td>将yaws arg记录存储的请求参数转换成请求参数字典。
+       每个参数名对应的值为一个列表，因此可以在请求参数
+       字典中获取同名参数的不同值（如果存在多个同名的请求参数）。.</td></tr>
+<tr><td valign="top"><a href="#convert-2">convert/2</a></td><td>将指定数据转换成指定类型。.</td></tr>
+<tr><td valign="top"><a href="#env-0">env/0</a></td><td>获取ewp.conf的environment配置项。.</td></tr>
+<tr><td valign="top"><a href="#erase_session-0">erase_session/0</a></td><td>清除已保存的session.</td></tr>
+<tr><td valign="top"><a href="#filter_params_to_proplist-0">filter_params_to_proplist/0</a></td><td>过滤掉请求参数字典中ewp指定的参数，并将结果以proplist格式返回。.</td></tr>
+<tr><td valign="top"><a href="#filter_params_to_proplist-1">filter_params_to_proplist/1</a></td><td>过滤掉请求参数字典中指定的参数和ewp指定的参数，并将结果以proplist格式返回。.</td></tr>
+<tr><td valign="top"><a href="#filter_params_to_url-0">filter_params_to_url/0</a></td><td>过滤掉请参数字典中ewp指定的参数，并将结果以url字符串格式返回。.</td></tr>
+<tr><td valign="top"><a href="#filter_params_to_url-1">filter_params_to_url/1</a></td><td>过滤掉请参数字典中指定参数和ewp指定的参数，并将结果以url字符串格式返回。.</td></tr>
+<tr><td valign="top"><a href="#from_yaws_arg-1">from_yaws_arg/1</a></td><td>将yaws arg记录存储的请求参数转换成请求参数字典。
+       每个参数名对应一个值，因此不能获取同名参数的不同值。.</td></tr>
+<tr><td valign="top"><a href="#get_args-0">get_args/0</a></td><td>获取已保存的yaws arg记录。.</td></tr>
+<tr><td valign="top"><a href="#get_params-0">get_params/0</a></td><td>获取请求参数字典。.</td></tr>
+<tr><td valign="top"><a href="#get_session-0">get_session/0</a></td><td>获取已保存的session.</td></tr>
+<tr><td valign="top"><a href="#join-1">join/1</a></td><td>将指定的请求参数字典中的所有参数拼接成url字符串。.</td></tr>
+<tr><td valign="top"><a href="#merge_params-1">merge_params/1</a></td><td>将指定的字典与请求参数字典合并后保存，参数重复时会保存指定字典中对应的值。.</td></tr>
+<tr><td valign="top"><a href="#param-1">param/1</a></td><td>相当于param(Key, undefined)。.</td></tr>
+<tr><td valign="top"><a href="#param-2">param/2</a></td><td>获取请求参数字典中指定的参数值。.</td></tr>
+<tr><td valign="top"><a href="#put_param-2">put_param/2</a></td><td>将指定参数保存到请求参数字典中。参数名重复时，旧的参数值会被覆盖。.</td></tr>
+<tr><td valign="top"><a href="#save_args-1">save_args/1</a></td><td>保存指定的yaws arg记录。.</td></tr>
+<tr><td valign="top"><a href="#save_params-1">save_params/1</a></td><td>将指定的参数列表保存到请求参数字典中。.</td></tr>
+<tr><td valign="top"><a href="#save_session-1">save_session/1</a></td><td>保存指定的session.</td></tr>
+<tr><td valign="top"><a href="#save_yaws_arg-1">save_yaws_arg/1</a></td><td>将yaws_arg记录存储的请求参数转换成请求参数字典并保存。
+       每个参数名对应一个值，因此不能获取同名参数的不同值。.</td></tr>
+<tr><td valign="top"><a href="#session-1">session/1</a></td><td>相当于session(Key, undefined).</td></tr>
+<tr><td valign="top"><a href="#session-2">session/2</a></td><td>获取已保存的session中指定的值，获取不到时返回指定默认值。.</td></tr>
+<tr><td valign="top"><a href="#session_or_arg-1">session_or_arg/1</a></td><td>在已保存的session或yaws arg记录中获取指定值。.</td></tr>
+<tr><td valign="top"><a href="#session_updated-0">session_updated/0</a></td><td>判断已保存的session是否更新过。.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="arg-1">arg/1</a></h3>
+<div class="spec">
+<p><tt>arg(Key::string()) -&gt; undefined | term()</tt><br></p>
+</div><p>相当于arg(Key, undefined)</p>
+
+<h3 class="function"><a name="arg-2">arg/2</a></h3>
+<div class="spec">
+<p><tt>arg(Key::string(), Default::term()) -&gt; term()</tt><br></p>
+</div><p>获取已保存的yaws arg记录中的指定值。可指定headers、
+       host、client_ip、client_port、docroot和
+       yaws.conf opaque的配置项。
+       获取不到时返回指定默认值。</p>
+
+<h3 class="function"><a name="arg-3">arg/3</a></h3>
+<div class="spec">
+<p><tt>arg(Key::string(), Arg::<a href="#type-yaws_arg">yaws_arg()</a>, Default::term()) -&gt; term()</tt><br></p>
+</div><p>获取指定yaws arg记录中的指定值。可指定headers、
+       host、client_ip、client_port、docroot和yaws.conf opaque
+       的配置项。获取不到时返回指定默认值。</p>
+
+<h3 class="function"><a name="bag_from_yaws_arg-1">bag_from_yaws_arg/1</a></h3>
+<div class="spec">
+<p><tt>bag_from_yaws_arg(Arg::<a href="#type-yaws_arg">yaws_arg()</a>) -&gt; dict()</tt><br></p>
+</div><p>将yaws arg记录存储的请求参数转换成请求参数字典。
+       每个参数名对应的值为一个列表，因此可以在请求参数
+       字典中获取同名参数的不同值（如果存在多个同名的请求参数）。</p>
+
+<h3 class="function"><a name="convert-2">convert/2</a></h3>
+<div class="spec">
+<p><tt>convert(Value::term(), Type::<a href="#type-type">type()</a>) -&gt; undefined | integer() | string() | float()</tt><br></p>
+</div><p>将指定数据转换成指定类型。</p>
+
+<h3 class="function"><a name="env-0">env/0</a></h3>
+<div class="spec">
+<p><tt>env() -&gt; development | production</tt><br></p>
+</div><p>获取ewp.conf的environment配置项。</p>
+
+<h3 class="function"><a name="erase_session-0">erase_session/0</a></h3>
+<div class="spec">
+<p><tt>erase_session() -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>清除已保存的session</p>
+
+<h3 class="function"><a name="filter_params_to_proplist-0">filter_params_to_proplist/0</a></h3>
+<div class="spec">
+<p><tt>filter_params_to_proplist() -&gt; <a href="#type-proplist">proplist()</a></tt><br></p>
+</div><p>过滤掉请求参数字典中ewp指定的参数，并将结果以proplist格式返回。</p>
+
+<h3 class="function"><a name="filter_params_to_proplist-1">filter_params_to_proplist/1</a></h3>
+<div class="spec">
+<p><tt>filter_params_to_proplist(FilterList::<a href="#type-proplist">proplist()</a>) -&gt; <a href="#type-proplist">proplist()</a></tt><br></p>
+</div><p>过滤掉请求参数字典中指定的参数和ewp指定的参数，并将结果以proplist格式返回。</p>
+
+<h3 class="function"><a name="filter_params_to_url-0">filter_params_to_url/0</a></h3>
+<div class="spec">
+<p><tt>filter_params_to_url() -&gt; string()</tt><br></p>
+</div><p>过滤掉请参数字典中ewp指定的参数，并将结果以url字符串格式返回。</p>
+
+<h3 class="function"><a name="filter_params_to_url-1">filter_params_to_url/1</a></h3>
+<div class="spec">
+<p><tt>filter_params_to_url(FilterList::<a href="#type-proplist">proplist()</a>) -&gt; string()</tt><br></p>
+</div><p>过滤掉请参数字典中指定参数和ewp指定的参数，并将结果以url字符串格式返回。</p>
+
+<h3 class="function"><a name="from_yaws_arg-1">from_yaws_arg/1</a></h3>
+<div class="spec">
+<p><tt>from_yaws_arg(Arg::<a href="#type-yaws_arg">yaws_arg()</a>) -&gt; dict()</tt><br></p>
+</div><p>将yaws arg记录存储的请求参数转换成请求参数字典。
+       每个参数名对应一个值，因此不能获取同名参数的不同值。</p>
+
+<h3 class="function"><a name="get_args-0">get_args/0</a></h3>
+<div class="spec">
+<p><tt>get_args() -&gt; <a href="#type-yaws_arg">yaws_arg()</a></tt><br></p>
+</div><p>获取已保存的yaws arg记录。</p>
+
+<h3 class="function"><a name="get_params-0">get_params/0</a></h3>
+<div class="spec">
+<p><tt>get_params() -&gt; dict()</tt><br></p>
+</div><p>获取请求参数字典。</p>
+
+<h3 class="function"><a name="get_session-0">get_session/0</a></h3>
+<div class="spec">
+<p><tt>get_session() -&gt; undefined | {SessionId::string(), Data::term()}</tt><br></p>
+</div><p>获取已保存的session</p>
+
+<h3 class="function"><a name="join-1">join/1</a></h3>
+<div class="spec">
+<p><tt>join(Params::dict()) -&gt; string()</tt><br></p>
+</div><p>将指定的请求参数字典中的所有参数拼接成url字符串。</p>
+
+<h3 class="function"><a name="merge_params-1">merge_params/1</a></h3>
+<div class="spec">
+<p><tt>merge_params(Dict::dict()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>将指定的字典与请求参数字典合并后保存，参数重复时会保存指定字典中对应的值。</p>
+
+<h3 class="function"><a name="param-1">param/1</a></h3>
+<div class="spec">
+<p><tt>param(Key::string()) -&gt; undefined | string()</tt><br></p>
+</div><p>相当于param(Key, undefined)。</p>
+
+<h3 class="function"><a name="param-2">param/2</a></h3>
+<div class="spec">
+<p><tt>param(Key::string(), Default::term()) -&gt; term()</tt><br></p>
+</div><p>获取请求参数字典中指定的参数值。</p>
+
+<h3 class="function"><a name="put_param-2">put_param/2</a></h3>
+<div class="spec">
+<p><tt>put_param(Key::string(), Value::string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>将指定参数保存到请求参数字典中。参数名重复时，旧的参数值会被覆盖。</p>
+
+<h3 class="function"><a name="save_args-1">save_args/1</a></h3>
+<div class="spec">
+<p><tt>save_args(A::<a href="#type-yaws_arg">yaws_arg()</a>) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>保存指定的yaws arg记录。</p>
+
+<h3 class="function"><a name="save_params-1">save_params/1</a></h3>
+<div class="spec">
+<p><tt>save_params(ParamList::[{Key::string(), Value::string()}]) -&gt; ok</tt><br></p>
+</div><p>将指定的参数列表保存到请求参数字典中。</p>
+
+<h3 class="function"><a name="save_session-1">save_session/1</a></h3>
+<div class="spec">
+<p><tt>save_session(X1::{Id::string(), Data::term()}) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>保存指定的session</p>
+
+<h3 class="function"><a name="save_yaws_arg-1">save_yaws_arg/1</a></h3>
+<div class="spec">
+<p><tt>save_yaws_arg(Arg::<a href="#type-yaws_arg">yaws_arg()</a>) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>将yaws_arg记录存储的请求参数转换成请求参数字典并保存。
+       每个参数名对应一个值，因此不能获取同名参数的不同值。</p>
+
+<h3 class="function"><a name="session-1">session/1</a></h3>
+<div class="spec">
+<p><tt>session(Key::atom() | string()) -&gt; undefined | term()</tt><br></p>
+</div><p>相当于session(Key, undefined)</p>
+
+<h3 class="function"><a name="session-2">session/2</a></h3>
+<div class="spec">
+<p><tt>session(Key::atom() | string(), Default::term()) -&gt; term()</tt><br></p>
+</div><p>获取已保存的session中指定的值，获取不到时返回指定默认值。</p>
+
+<h3 class="function"><a name="session_or_arg-1">session_or_arg/1</a></h3>
+<div class="spec">
+<p><tt>session_or_arg(Key::atom() | string()) -&gt; term()</tt><br></p>
+</div><p>在已保存的session或yaws arg记录中获取指定值。</p>
+
+<h3 class="function"><a name="session_updated-0">session_updated/0</a></h3>
+<div class="spec">
+<p><tt>session_updated() -&gt; boolean()</tt><br></p>
+</div><p>判断已保存的session是否更新过。</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:49.</i></p>
+</body>
+</html>

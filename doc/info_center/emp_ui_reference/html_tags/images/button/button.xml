@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{background-color:#ffffff;width:320px;}
+            .father{width:300px;height:30px;left:10px;font-size:15px;}
+            .display1{display:none;}
+            .display2{display:block;}
+            .visibility1{visibility:visible;}
+            .visibility2{visibility:hidden;}
+            .background_color {background-color:#FFFF00;}
+            .background_image {background-image:url(animation.png);}
+            .textColor {color:#ff0000;}
+            .filter {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            .positionFixed{position:fixed;}
+            .positionToplevel{position:toplevel;top:200px;left:10px;background-color:#FFFF00;}
+            .fontWeight{font-weight:bold;}
+            .borderRadiusFour{border-radius: 35px 0px 20px 10px;background-image:url(animation.png);}
+            .borderRadiusOne{border-radius:10px;background-color:#FF0000;}
+            .fontStyle{font-style:italic;}
+            .borderstyle{border:10px solid #ff00ff;}
+            .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                
+                function close()
+                ryt:back();
+                end;
+                
+                function click()
+                window:alert("可以点击的button")
+                end;
+            ]]>
+        </script>
+        
+    </head>
+    <body>
+        
+        <!-- positon:fixed -->
+        <input type='button' value='positon:fixed body第一个控件' class='father,positionFixed' border='1'></input>
+        <!-- 无value -->
+        <label>下面有一个无value属性的button</label>
+        <input type='button' class='father' border='1'></input>
+        <!-- hide -->
+        <input type='button' hide='false' value='hide=false，下方有hide=true的button' class='father' border='1'></input>
+        <input type='button' hide='true' value='hide=true的button,不应该显示出来' class='father' border='1'></input>
+        <!-- diaplay -->
+        <input type='button' value='display=block，下方有display=none的button' class='father,display2' border='1'></input>
+        <input type='button' value='display=none，不应该显示出来'  class='father,display1' border='1'></input>
+        <!-- visibility -->
+        <input type='button' value='visibility:visible 下方有visibility=hidden的button;' class='father,visibility1' border='1'></input>
+        <input type='button' value='visibility:hidden 不应该显示;' class='father,visibility2' border='1'></input>
+        <!-- border -->
+        <input type='button' value='border设置为1的button' border='1' class='father'></input>
+        <input type='button' value='border设置为0的button' border='0' class='father'></input>
+        <input type='button' value='border取默认值的button，默认无边框' class='father'></input>
+        <!-- border 样式-->
+        <input type='button' value='border设置为10的button' border='1' class='father,borderstyle'></input>
+        <!-- border-radius -->
+        <input type='button' value='border-radius: 35px 20px 0px 10px' class='father,borderRadiusFour'></input>
+        <input type='button' value='border-radius:10px' class='father,borderRadiusOne'></input>
+        <!-- enable onclick事件 -->
+        <input type='button' value='enable设置为true的button，可以点击'  onclick="click()" class='father' border='1' enable='true'></input>
+        <input type='button' value='enable设置为false的button，不可点击'  onclick="click()" class='father' border='1' enable='false'></input>
+        <!-- positon:toplevel -->
+        <input type='button' value='positon:toplevel 不随页面滚动' class='father,positionToplevel' border='1'></input>
+        <!--  font-weight -->
+        <input type='button' value='font-weight:bold' class='father,fontWeight' border='1'></input>
+        <!-- font-style -->
+        <input type='button' value='font-style:italic iOS7中文不斜体;' class='father,fontStyle' border='1'></input>
+        <!-- color -->
+        <input type='button' value='颜色/font' class='father,textColor' border='1'></input>
+        <!-- background-color -->
+        <input type='button' value='背景色,有边框' class='father,background_color' border='1'></input>
+        <input type='button' value='背景色,无边框' class='father,background_color' border='0'></input>
+        <!-- background-image -->
+        <input type='button' value='背景图，有边框' class='father,background_image' border='1'></input>
+        <input type='button' value='背景图，无边框' class='father,background_image' border='0'></input>
+        <!-- filter -->
+        <input type='button' value='渐变色,有边框' class='father,filter' border='1'></input>
+        <input type='button' value='渐变色,无边框' class='father,filter' border='0'></input>
+        <!-- background-image与background-color同时存在 -->
+        <input type='button' value='背景色与背景图，显示背景图' class='father,background_color,background_image' border='1'></input>
+        <!-- filter与background-color同时存在 -->
+        <input type='button' value='背景色与渐变色，显示渐变色' class='father,filter,background_color' border='1'></input>
+        <!-- background-image与filter同时存在 -->
+        <input type='button' value='背景图和渐变色，显示背景图' class='father,filter,background_image' border='1'></input>
+        
+        <!-- 关闭按钮 -->
+        <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
+        <!-- positon:fixed -->
+        <input type='button' value='positon:fixed body最后一个控件' class='father,positionFixed' border='1'></input>
+        
+    </body>
+</content>

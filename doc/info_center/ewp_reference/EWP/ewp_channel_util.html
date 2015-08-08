@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_channel_util</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_channel_util</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>菜单通用API。.
+
+
+<h2><a name="description">Description</a></h2>菜单通用API。
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-channel_prop">channel_prop()</a></h3>
+<p><tt>channel_prop() = {channel, [<a href="#type-property">property()</a>]}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-collection_prop">collection_prop()</a></h3>
+<p><tt>collection_prop() = {collection, [<a href="#type-property">property()</a>]}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-item">item()</a></h3>
+<p><tt>item() = <a href="#type-channel">channel()</a> | <a href="#type-collection">collection()</a></tt></p>
+
+
+<h3 class="typedecl"><a name="type-key">key()</a></h3>
+<p><tt>key() = string() | atom()</tt></p>
+
+
+<h3 class="typedecl"><a name="type-prop_input">prop_input()</a></h3>
+<p><tt>prop_input() = [{Key::<a href="#type-key">key()</a>, Value::<a href="#type-value">value()</a>}]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-property">property()</a></h3>
+<p><tt>property() = {id, string()} | {name, string()} | {url, string()} | {secure, 0 | 1}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-type">type()</a></h3>
+<p><tt>type() = channels | collections</tt></p>
+
+
+<h3 class="typedecl"><a name="type-value">value()</a></h3>
+<p><tt>value() = string() | atom() | integer() | <a href="#type-prop_input">prop_input()</a></tt></p>
+
+
+<h3 class="typedecl"><a name="type-xml_input">xml_input()</a></h3>
+<p><tt>xml_input() = [{xml_root, XML::string()}]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-xml_root">xml_root()</a></h3>
+<p><tt>xml_root() = <a href="#type-key">key()</a></tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#channel_adapter_cs_key-2">channel_adapter_cs_key/2</a></td><td>根据指定channel和trancode返回CS模板。优先返回views配置里指定的trancode
+       对应的模板。如未指定，则返回ChannelId_TranCode对应的模板。.</td></tr>
+<tr><td valign="top"><a href="#channel_run_cs_key-2">channel_run_cs_key/2</a></td><td>根据指定channel和trancode返回CS模板。优先返回views配置里指定的trancode
+       对应的模板。如未指定，则根据o参数（默认值为atom）调用channel_run_cs_key/3。.</td></tr>
+<tr><td valign="top"><a href="#channel_run_cs_key-3">channel_run_cs_key/3</a></td><td>根据指定channel和trancode返回CS模板。优先返回views配置里指定的trancode
+       对应的模板。如未指定，则返回ChannelId_Format对应的模板，如果Format值为
+       atom则返回ChannelId对应的模板，如果Format值为json则返回ChannelId_TranCode
+       对应的模板。.</td></tr>
+<tr><td valign="top"><a href="#collection_to_cs_tuplelist-3">collection_to_cs_tuplelist/3</a></td><td>根据指定参数生成CS模板输入。.</td></tr>
+<tr><td valign="top"><a href="#gen_channel-1">gen_channel/1</a></td><td>根据指定channel返回其各域的值.</td></tr>
+<tr><td valign="top"><a href="#gen_channel_list-1">gen_channel_list/1</a></td><td>根据指定的channel列表生成模板输入。.</td></tr>
+<tr><td valign="top"><a href="#gen_collection-1">gen_collection/1</a></td><td>根据指定collection返回其各域的值。.</td></tr>
+<tr><td valign="top"><a href="#gen_collection_list-1">gen_collection_list/1</a></td><td>根据指定collection列表生成CS模板。.</td></tr>
+<tr><td valign="top"><a href="#list_collection_items-2">list_collection_items/2</a></td><td>获取指定collection包含的指定类型的条目列表。.</td></tr>
+<tr><td valign="top"><a href="#load_menu_from_db-1">load_menu_from_db/1</a></td><td>在数据库中加载指定app的菜单。.</td></tr>
+<tr><td valign="top"><a href="#render-3">render/3</a></td><td>根据指定CS模板和输入生成字符串.</td></tr>
+<tr><td valign="top"><a href="#render_url-1">render_url/1</a></td><td>根据指定url，替换将格式为$conf_key$的子串替换为app.conf中对应的配置项。
+       如未定义，则抛出异常。.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="channel_adapter_cs_key-2">channel_adapter_cs_key/2</a></h3>
+<div class="spec">
+<p><tt>channel_adapter_cs_key(Channel::<a href="#type-channel">channel()</a>, TranCode::string()) -&gt; string()</tt><br></p>
+</div><p>根据指定channel和trancode返回CS模板。优先返回views配置里指定的trancode
+       对应的模板。如未指定，则返回ChannelId_TranCode对应的模板。</p>
+
+<h3 class="function"><a name="channel_run_cs_key-2">channel_run_cs_key/2</a></h3>
+<div class="spec">
+<p><tt>channel_run_cs_key(Channel::<a href="#type-channel">channel()</a>, TranCode::string()) -&gt; string()</tt><br></p>
+</div><p>根据指定channel和trancode返回CS模板。优先返回views配置里指定的trancode
+       对应的模板。如未指定，则根据o参数（默认值为atom）调用channel_run_cs_key/3。</p>
+
+<h3 class="function"><a name="channel_run_cs_key-3">channel_run_cs_key/3</a></h3>
+<div class="spec">
+<p><tt>channel_run_cs_key(Channel::<a href="#type-channel">channel()</a>, TranCode::string(), Format::atom()) -&gt; string()</tt><br></p>
+</div><p>根据指定channel和trancode返回CS模板。优先返回views配置里指定的trancode
+       对应的模板。如未指定，则返回ChannelId_Format对应的模板，如果Format值为
+       atom则返回ChannelId对应的模板，如果Format值为json则返回ChannelId_TranCode
+       对应的模板。</p>
+
+<h3 class="function"><a name="collection_to_cs_tuplelist-3">collection_to_cs_tuplelist/3</a></h3>
+<div class="spec">
+<p><tt>collection_to_cs_tuplelist(Format::atom(), Type::<a href="#type-type">type()</a>, Items::[<a href="#type-item">item()</a>]) -&gt; [<a href="#type-channel_prop">channel_prop()</a> | <a href="#type-collection_prop">collection_prop()</a>]</tt><br></p>
+</div><p>根据指定参数生成CS模板输入。</p>
+
+<h3 class="function"><a name="gen_channel-1">gen_channel/1</a></h3>
+<div class="spec">
+<p><tt>gen_channel(Channel::<a href="#type-channel">channel()</a>) -&gt; <a href="#type-channel_prop">channel_prop()</a></tt><br></p>
+</div><p>根据指定channel返回其各域的值</p>
+
+<h3 class="function"><a name="gen_channel_list-1">gen_channel_list/1</a></h3>
+<div class="spec">
+<p><tt>gen_channel_list(Channels::[<a href="#type-channel">channel()</a>]) -&gt; [<a href="#type-channel_prop">channel_prop()</a>]</tt><br></p>
+</div><p>根据指定的channel列表生成模板输入。</p>
+
+<h3 class="function"><a name="gen_collection-1">gen_collection/1</a></h3>
+<div class="spec">
+<p><tt>gen_collection(Collection::<a href="#type-collection">collection()</a>) -&gt; <a href="#type-collection_prop">collection_prop()</a></tt><br></p>
+</div><p>根据指定collection返回其各域的值。</p>
+
+<h3 class="function"><a name="gen_collection_list-1">gen_collection_list/1</a></h3>
+<div class="spec">
+<p><tt>gen_collection_list(Collections::[<a href="#type-collection">collection()</a>]) -&gt; [<a href="#type-collection_prop">collection_prop()</a>]</tt><br></p>
+</div><p>根据指定collection列表生成CS模板。</p>
+
+<h3 class="function"><a name="list_collection_items-2">list_collection_items/2</a></h3>
+<div class="spec">
+<p><tt>list_collection_items(Id::string(), Type::<a href="#type-type">type()</a> | all) -&gt; [<a href="#type-channel">channel()</a> | <a href="#type-collection">collection()</a>]</tt><br></p>
+</div><p>获取指定collection包含的指定类型的条目列表。</p>
+
+<h3 class="function"><a name="load_menu_from_db-1">load_menu_from_db/1</a></h3>
+<div class="spec">
+<p><tt>load_menu_from_db(App::atom() | string()) -&gt; <a href="#type-void">void()</a></tt><br></p>
+</div><p>在数据库中加载指定app的菜单。</p>
+
+<h3 class="function"><a name="render-3">render/3</a></h3>
+<div class="spec">
+<p><tt>render(CsKey::string(), XMLInput::<a href="#type-xml_input">xml_input()</a>, PropInput::<a href="#type-prop_input">prop_input()</a>) -&gt; binary()</tt><br></p>
+</div><p>根据指定CS模板和输入生成字符串</p>
+
+<h3 class="function"><a name="render_url-1">render_url/1</a></h3>
+<div class="spec">
+<p><tt>render_url(Url::string()) -&gt; string()</tt><br></p>
+</div><p>throws <tt>string()</tt></p>
+<p>根据指定url，替换将格式为$conf_key$的子串替换为app.conf中对应的配置项。
+       如未定义，则抛出异常。</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:50.</i></p>
+</body>
+</html>

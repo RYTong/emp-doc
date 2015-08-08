@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module ewp_str_util</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module ewp_str_util</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>字符串通用函数.
+
+
+<h2><a name="description">Description</a></h2>字符串通用函数.
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#eval_str-1">eval_str/1</a></td><td>执行字符串中的Erlang表达式，并返回结果。.</td></tr>
+<tr><td valign="top"><a href="#filter_whitespace-1">filter_whitespace/1</a></td><td>过滤掉指定字符串中的\r和\n.</td></tr>
+<tr><td valign="top"><a href="#gbk_to_utf8-1">gbk_to_utf8/1</a></td><td>将指定gbk编码的字符串转换成utf-8编码.</td></tr>
+<tr><td valign="top"><a href="#io_format-2">io_format/2</a></td><td>根据指定格式和指定数据生成字符串。
+  请参考<a href="http://www.erlang.org/doc/man/io.html#format-2">io:format/2</a>以便获取更多信息.</td></tr>
+<tr><td valign="top"><a href="#join-2">join/2</a></td><td>将指定的字符串列表用指定的连接符拼接起来。.</td></tr>
+<tr><td valign="top"><a href="#number_to_based_str-2">number_to_based_str/2</a></td><td>将指定的非负整数转换成指定进制的字符串，如number_to_based_str(10, 16) -&gt; "a".</td></tr>
+<tr><td valign="top"><a href="#number_to_based_str-3">number_to_based_str/3</a></td><td>将指定的非负整数转换成指定进制的字符串，结果最少保留Digits个有效数字。
+       如果结果长度超过Digits，那么结果长度不会改变。.</td></tr>
+<tr><td valign="top"><a href="#number_to_str-1">number_to_str/1</a></td><td>将指定数字转换成字符串.</td></tr>
+<tr><td valign="top"><a href="#str_to_number-1">str_to_number/1</a></td><td>将指定字符串转换成数字。.</td></tr>
+<tr><td valign="top"><a href="#to_binary-1">to_binary/1</a></td><td>将指定参数转换成二进制类型数据.</td></tr>
+<tr><td valign="top"><a href="#to_list-1">to_list/1</a></td><td>将指定参数转换成字符串.</td></tr>
+<tr><td valign="top"><a href="#uri_escape-1">uri_escape/1</a></td><td>对指定字符串进行url编码.</td></tr>
+<tr><td valign="top"><a href="#utf8_to_gbk-1">utf8_to_gbk/1</a></td><td>将指定utf-8编码的字符串转换成gbk编码.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="eval_str-1">eval_str/1</a></h3>
+<div class="spec">
+<p><tt>eval_str(String::string()) -&gt; term()</tt><br></p>
+</div><p>执行字符串中的Erlang表达式，并返回结果。</p>
+
+<h3 class="function"><a name="filter_whitespace-1">filter_whitespace/1</a></h3>
+<div class="spec">
+<p><tt>filter_whitespace(Str::string()) -&gt; string()</tt><br></p>
+</div><p>过滤掉指定字符串中的\r和\n</p>
+
+<h3 class="function"><a name="gbk_to_utf8-1">gbk_to_utf8/1</a></h3>
+<div class="spec">
+<p><tt>gbk_to_utf8(Content::string()) -&gt; string()</tt><br></p>
+</div><p>将指定gbk编码的字符串转换成utf-8编码</p>
+
+<h3 class="function"><a name="io_format-2">io_format/2</a></h3>
+<div class="spec">
+<p><tt>io_format(Format, Data::[term()]) -&gt; string()</tt>
+<ul class="definitions"><li><tt>Format = atom() | string() | binary()</tt></li></ul></p>
+</div><p>根据指定格式和指定数据生成字符串。
+  请参考<a href="http://www.erlang.org/doc/man/io.html#format-2">io:format/2</a>以便获取更多信息.</p>
+
+<h3 class="function"><a name="join-2">join/2</a></h3>
+<div class="spec">
+<p><tt>join(List::[string()], String::string()) -&gt; string()</tt><br></p>
+</div><p>将指定的字符串列表用指定的连接符拼接起来。</p>
+
+<h3 class="function"><a name="number_to_based_str-2">number_to_based_str/2</a></h3>
+<div class="spec">
+<p><tt>number_to_based_str(Number::integer(), Base::integer()) -&gt; string()</tt><br></p>
+</div><p>将指定的非负整数转换成指定进制的字符串，如number_to_based_str(10, 16) -&gt; "a"</p>
+
+<h3 class="function"><a name="number_to_based_str-3">number_to_based_str/3</a></h3>
+<div class="spec">
+<p><tt>number_to_based_str(Number::integer(), Base::integer(), Digits::integer()) -&gt; string()</tt><br></p>
+</div><p>将指定的非负整数转换成指定进制的字符串，结果最少保留Digits个有效数字。
+       如果结果长度超过Digits，那么结果长度不会改变。</p>
+
+<h3 class="function"><a name="number_to_str-1">number_to_str/1</a></h3>
+<div class="spec">
+<p><tt>number_to_str(X::integer() | float()) -&gt; string()</tt><br></p>
+</div><p>将指定数字转换成字符串.</p>
+
+<h3 class="function"><a name="str_to_number-1">str_to_number/1</a></h3>
+<div class="spec">
+<p><tt>str_to_number(Str::string()) -&gt; integer() | float() | undefined</tt><br></p>
+</div><p>将指定字符串转换成数字。</p>
+
+<h3 class="function"><a name="to_binary-1">to_binary/1</a></h3>
+<div class="spec">
+<p><tt>to_binary(Prop::term()) -&gt; binary()</tt><br></p>
+</div><p>将指定参数转换成二进制类型数据.</p>
+
+<h3 class="function"><a name="to_list-1">to_list/1</a></h3>
+<div class="spec">
+<p><tt>to_list(Prop::term()) -&gt; string()</tt><br></p>
+</div><p>将指定参数转换成字符串.</p>
+
+<h3 class="function"><a name="uri_escape-1">uri_escape/1</a></h3>
+<div class="spec">
+<p><tt>uri_escape(N::string() | binary()) -&gt; string()</tt><br></p>
+</div><p>对指定字符串进行url编码</p>
+
+<h3 class="function"><a name="utf8_to_gbk-1">utf8_to_gbk/1</a></h3>
+<div class="spec">
+<p><tt>utf8_to_gbk(Content::string()) -&gt; string()</tt><br></p>
+</div><p>将指定utf-8编码的字符串转换成gbk编码</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Nov 13 2013, 14:33:48.</i></p>
+</body>
+</html>
