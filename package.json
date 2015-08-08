@@ -18,7 +18,7 @@
   "activationCommands": {
     "atom-workspace": "emp-doc:show-doc"
   },
-  "repository": "https://github.com/atom/emp-doc",
+  "repository": "https://github.com/RYTong/emp-doc",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
