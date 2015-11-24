@@ -1,0 +1,285 @@
+<content>
+    <head>
+        <style>
+        .body {background-color: #E1E7ED;}
+        .div_title {background-color: #236EC3; top: 0px; left: 0px; width: 320px; height: 50px; position: fixed;}
+        .return_but {left:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px; }
+        .main_but {right:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px;}
+        .label_title {left:60px; top:10px; height:40px; width:200px; text-align:center; color: #FFFFFF; font-size: 22px;}
+        .table{background-color: #FFFFFF; left: 10px; width: 300px;}
+        .tr{height: 50px;}
+        .div_line {background-color: #CCCCCC; height: 1px;}
+        .td1{width: 120px; color: #535458; font-size: 16px;}
+        .td2{width: 180px; color: #535458; font-size: 16px; font-weight: bold;}
+        .label_detail {font-size: 17px;font-weight: bold; color: #295AB4;}
+        .label_balance{color: #295AB4;}
+        .button_tran_qry{left:40px; width: 240px;height: 40px;text-align: center;background-color:#5599FF;font-size:16px;color:#FFFFFF;}
+        .div_info{background-color: #F8EFB5;width: 300px; left: 10px;}
+        </style>
+    </head>
+    <script type="text/x-lua">
+        <![CDATA[
+            --json数据
+            local json_data = [[
+                                {
+                                  "Message": {
+                                        "tranCode": "MB0103",
+                                        "status": { "value": "0" },
+                                        "myAccount": {
+                                            "id": "4055122014011279",
+                                            "alias": "我的工资卡",
+                                            "currency":"01",
+                                            "type": "01",
+                                            "balance": "100000",
+                                            "rate": "0.3850 %",
+                                            "state":"0",
+                                            "detail":[
+                                                {
+                                                  "sequenceNo": "100001",
+                                                  "saveType": "001",
+                                                  "period": "1",
+                                                  "balance": "1000.00",
+                                                  "rate": "3.12 %",
+                                                  "beginDate": "20130709",
+                                                  "endDate": "20140708"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                              ]];
+
+            --使用客户端提供的json接口将json转换为lua中的table结构
+            local tab_data = json:objectFromJSON(json_data);
+            local tab_account = tab_data["Message"]["myAccount"];  --账户信息table
+            local cardNo = tab_account["id"];           --卡号
+            local currency = tab_account["currency"];   --币种
+            local balance = tab_account["balance"];     --余额
+            local rate = tab_account["rate"];           --利率
+            local state = tab_account["state"];         --状态
+            local tab_detail = tab_account["detail"];   --定期信息列表
+
+            --[[
+            @doc:根据名称改变控件属性
+            @params:
+            name:控件名称
+            property:属性，比如："value"
+            value:修改值，需要将控件属性修改的值
+            @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+            ]]--
+            function changeProperty(name,property,value)
+                local ctrl = document:getElementsByName(name);
+                if ctrl and #ctrl > 0 then
+                    for key,ctrl_atom in pairs(ctrl) do
+                        ctrl_atom:setPropertyByName(property,value);
+                    end;
+                else
+                    window:alert(name .. "控件不存在！");
+                end;
+            end;
+
+
+            --[[
+            @doc:初始化卡号和活期信息
+            @params:各个改变值
+            --]]
+            local function init_account_info(cardNo,currency,balance,rate,state)
+                --币种名称
+                local currency_c;
+                --根据币种序号判断币种名称
+                if currency == "01" then
+                    currency_c = "人民币"
+                elseif currency == "00" then
+                    currency_c = "美元"
+                else
+                    currency_c = "其他币种"
+                end;
+
+                --状态名称
+                local state_c;
+                --根据状态序号判断状态名称
+                if state == "0" then
+                    state_c = "活动"
+                else
+                    state_c = "禁止"
+                end;
+
+                --改变相应控件的value属性
+                changeProperty("label_acc_num","value",cardNo);
+                changeProperty("label_rmb","value",currency_c);
+                changeProperty("label_balance","value",balance);
+                changeProperty("label_intrest2","value",rate);
+                changeProperty("label_state2","value",state_c);
+            end;
+
+            --[[
+            @doc:初始化定期列表
+            --]]
+            local function init_deposit_detail(tab_detail)
+                local tr_detail = 
+                [[
+                    <tr>
+                        <td class="td1" align="left">
+                            <label class="label_detail">定期信息</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                ]];
+
+                --遍历定期信息列表
+                for key,detail in pairs(tab_detail) do
+                    local sequence = detail["sequenceNo"]; --定期序号
+                    local balance = detail["balance"]; --余额
+                    local period = detail["period"]; --存期
+                    local rate = detail["rate"]; --利率
+                    local beginDate = detail["beginDate"]; --起息日
+                    local endDate = detail["endDate"]; --到期日
+                    tr_detail = 
+                    tr_detail .. 
+                    [[
+                        <tr>
+                            <td class="td1" align="left">
+                                <label>定期序号:</label>
+                            </td>
+                            <td class="td2" align="right">
+                                <label name='label_sequence2'>]]..sequence..[[</label>
+                            </td>
+                        </tr>       
+                        <tr>
+                            <td class="td1" align="left">
+                                <label>余额:</label>
+                            </td>
+                            <td class="td2" align="right">
+                                <label class="label_balance" name='label_balance'>]]..balance..[[</label><label> 元</label>
+                            </td>
+                        </tr>            
+                        <tr>
+                            <td class="td1" align="left">
+                                <label>存期:</label>
+                            </td>
+                            <td class="td2" align="right">
+                                <label name='label_period2'>]]..period..[[</label><label> 年</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1" align="left">
+                                <label>利率:</label>
+                            </td>
+                            <td class="td2" align="right">
+                                <label name='label_rate'>]]..rate..[[</label>
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td class="td1" align="left">
+                                <label>起息日:</label>
+                            </td>
+                            <td class="td2" align="right">
+                                <label name='label_start_date2'>]]..beginDate..[[</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1" align="left">
+                                <label>到期日:</label>
+                            </td>
+                            <td class="td2" align="right">
+                                <label name='label_end_date2'>]]..endDate..[[</label>
+                            </td>
+                        </tr>
+                    ]];
+                end;
+                return tr_detail;
+            end;
+
+            --初始化函数
+            local function initial()
+                --刷新卡号和活期信息
+                init_account_info(cardNo,currency,balance,rate,state);
+                --拼接定期信息列表
+                local tr_info = init_deposit_detail(tab_detail);
+                local table_info = [[<table name="table_fix">]] .. tr_info .. [[</table>]];
+                --局部刷新
+                local ctrl_fix_table = document:getElementsByName("table_fix");
+                if ctrl_fix_table and #ctrl_fix_table>0 then
+                    ctrl_fix_table[1]:setInnerHTML(table_info);
+                else
+                    window:alert("控件不存在！");
+                end  
+
+                location:reload();
+            end
+
+            initial();
+        ]]>
+    </script>
+    <body name='body'>
+        <div class="div_title" border="0">
+            <input type="button" border="0" class="return_but" value="返回"></input>
+            <input type="button" border="0" class="main_but" value="主页"></input>
+            <label class="label_title">账户总览</label>
+        </div>
+        
+        <!--卡号-->
+        <table>
+            <tr>
+                <td class="td1" align="left">
+                    <label>当前一卡通:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_acc_num'></label>
+                </td>
+            </tr>
+        </table>
+        
+        <!--活期table-->
+        <table>
+            <tr>
+                <td class="td1" align="left">
+                    <label class="label_detail">活期结算明细</label>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>币种:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_rmb'></label>
+                </td>
+            </tr>  
+            <tr>
+                <td class="td1" align="left">
+                    <label>余额:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label class="label_balance" name='label_balance'></label><label> 元</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>利率:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_intrest2'></label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>状态:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_state2'></label>
+                </td>
+            </tr>
+        </table>
+
+        <!--定期table-->
+        <table name="table_fix"></table>
+
+        <input class="button_tran_qry" name="button_tran_qry" type="button" border="1" value="交易查询"/>
+
+        <div class="div_info">
+            <label>说明:</label>
+            <label>1. 您可以查询一卡通各个子账户的名称、币种、余额、起息日、存期、利率等信息。</label>
+        </div>
+    </body>
+</content>

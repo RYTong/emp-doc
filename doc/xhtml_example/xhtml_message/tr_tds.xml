@@ -1,0 +1,118 @@
+<content>
+    <head>
+        <style>
+           .body{width:320px;height:460px;}
+           .table1{left:20px;top:30px;width:280px;height:165px;}
+           .tr1{height: 30px;font-size:13px;}
+           .td_accNo1{width: 70px;height: 30px;}
+           .td_accNo2{width: 160px;height: 30px;}
+           .td_accNo4{width: 40px;height: 30px;}
+           .v_line{width: 2px;height: 27px;background-color: #ADADAD;}
+           .inputbox{text-align: right;background-color: #FFFFFF;}
+           .img_contacts{width: 30px;height: 27px;}
+           .h_line{height: 1px;width: 280px;}
+           .td_line{width: 280px;}
+           .td_accName1{width: 80px;height: 30px;}
+           .td_accName2{width: 200px;height: 30px;}
+           .td_add_payee1{width: 210px;height: 30px;}
+           .td_add_payee2{width: 70px;height: 30px;}
+           .switch1{width: 50px;height: 25px;}
+           .td_alias1{width: 110px;height: 30px;}
+           .td_alias2{width: 170px;height: 30px;}
+           .table2{left:20px;top:210px;width: 280px;height: 165px;}
+           .td_amount1{width: 70px;height: 30px;}
+           .td_amount2{width: 210px;height: 30px;}
+           .td_capital1{width: 100px; height: 30px;}
+           .td_capital2{width: 180px;height: 30px;}
+           .td_msg1{width: 40px; height: 30px;}
+           .td_msg2{width: 240px;height: 30px;}
+           .td_pwd1{width: 70px;height: 30px;}
+           .td_pwd2{width: 210px;height: 30px;}
+        </style>
+        <script type="text/x-lua">
+          function showMsg()
+            window:alert("在这个函数中实现跳转到常用收款人页面.");
+          end
+        </script>
+    </head>
+    <body class="body" >
+        <table class="table1" border="1">
+          <tr class="tr1">
+            <td class="td_accNo1"><label>收款账号:</label></td>
+            <td class="td_accNo2"><input class="inputbox" type="text" border="0" hold="请输入"/></td>
+            <td><div class="v_line"></div></td>
+            <td class="td_accNo4"><img class="img_contacts" src="local:contacts.png" onclick="showMsg()"/></td>
+          </tr>
+          <tr>
+            <td class="td_line"><div class="h_line"></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td_accName1"><label>收款方户名:</label></td>
+            <td class="td_accName2"><input class="inputbox" type="text" border="0" hold="请输入"/></td>
+            <td></td>
+            <td></td>
+          </tr>
+           <tr>
+            <td class="td_line"><div class="h_line"></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td_add_payee1"><label>添加到常用收款人</label></td>
+            <td class="td_add_payee2" align="center">
+              <input class="switch1" type="switch" name="switch1"></input>
+              <input class="switch1" type="switch" name="switch1"></input>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+           <tr>
+            <td class="td_line"><div class="h_line"></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td_alias1"><label>设置收款方别名:</label></td>
+            <td class="td_alias2"><input class="inputbox" type="text" border="0" hold="非必输"/></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <table class="table2" border="1">
+          <tr class="tr1">
+            <td class="td_amount1"><label>转账金额:</label></td>
+            <td class="td_amount2"><input class="inputbox" type="text" border="0" hold="请输入"/></td>
+          </tr>
+          <tr>
+            <td class="td_line"><div class="h_line"></div></td>
+            <td></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td_capital1"><label>转账金额(大写):</label></td>
+            <td class="td_capital2"><input class="inputbox" type="text" border="0" hold="请输入" value="壹万圆整"/></td>
+          </tr>
+          <tr>
+            <td class="td_line"><div class="h_line"></div></td>
+            <td></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td_msg1"><label>附言:</label></td>
+            <td class="td_msg2"><input class="inputbox" type="text" border="0" hold="非必输"/></td>
+          </tr>
+          <tr>
+            <td class="td_line"><div class="h_line"></div></td>
+            <td></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td_pwd1"><label>交易密码:</label></td>
+            <td class="td_pwd2"><input class="inputbox" type="text" border="0" hold="请输入"/></td>
+          </tr>
+        </table>
+    </body>
+</content>

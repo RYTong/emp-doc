@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<content>
+    <head>
+        <style>
+        .body {background-color: #E1E7ED;}
+        .div_title {background-color: #236EC3; top: 0px; left: 0px; width: 320px; height: 50px; position: fixed;}
+        .return_but {left:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px; }
+        .main_but {right:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px;}
+        .label_title {left:60px; top:10px; height:40px; width:200px; text-align:center; color: #FFFFFF; font-size: 22px;}
+        .table{background-color: #FFFFFF; left: 10px; width: 300px;}
+        .tr{height: 50px;}
+        .tr1 {height: 1px;}
+        .div_line {background-color: #CCCCCC; height: 1px;}
+        .td1{width: 120px; color: #535458; font-size: 16px;}
+        .td2{width: 180px; color: #535458; font-size: 16px; font-weight: bold;}
+        .label_detail {font-size: 17px;font-weight: bold; color: #295AB4;}
+        .label_balance{color: #295AB4;}
+        .button_tran_qry{left:40px; width: 240px;height: 40px;text-align: center;background-color:#5599FF;font-size:16px;color:#FFFFFF;}
+        .div_info{background-color: #F8EFB5;width: 300px; left: 10px;}
+        </style>
+    </head>
+    <body name='body'>
+        <div class="div_title" border="0">
+            <input type="button" border="0" class="return_but" value="返回"></input>
+            <input type="button" border="0" class="main_but" value="主页"></input>
+            <label class="label_title">账户总览</label>
+        </div>
+
+        <table>
+            <tr>
+                <td class="td1" align="left">
+                    <label>当前一卡通:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_acc_num'>6225********8641</label>
+                </td>
+            </tr>
+        </table>
+
+        <table class="table2" border="1">
+            <tr>
+                <td class="td1" align="left">
+                    <label class="label_detail">活期结算明细</label>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>币种:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_rmb'>人民币</label>
+                </td>
+            </tr>  
+            <tr>
+                <td class="td1" align="left">
+                    <label>余额:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label class="label_balance" name='label_balance'>3345</label><label>　元</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>利率:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_intrest2'>0.3850 %</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>状态:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_state2'>活动</label>
+                </td>
+            </tr>
+        </table>
+        
+         <table class="table2" border="1">
+
+            <tr>
+                <td class="td1" align="left">
+                    <label class="label_detail">定期信息</label>
+                </td>
+                <td></td>
+            </tr>     
+            <tr>
+                <td class="td1" align="left">
+                    <label>定期序号:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_sequence2'>000001</label>
+                </td>
+            </tr>      
+            <tr>
+                <td class="td1" align="left">
+                    <label>余额:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label class="label_balance" name='label_balance'>10000.00</label><label> 元</label>
+                </td>
+            </tr>                    
+            <tr>
+                <td class="td1" align="left">
+                    <label>存期:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_period2'>1年</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>利率:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_rate'>3.12 %</label>
+                </td>
+            </tr>    
+            <tr>
+                <td class="td1" align="left">
+                    <label>起息日:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_start_date2'>2013-09-09</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" align="left">
+                    <label>到期日:</label>
+                </td>
+                <td class="td2" align="right">
+                    <label name='label_end_date2'>2014-09-08</label>
+                </td>
+            </tr>
+        </table>
+
+        <input class="button_tran_qry" name="button_tran_qry" type="button" border="1" value="交易查询"/>
+
+        <div class="div_info">
+            <label>说明:</label>
+            <label>1. 您可以查询一卡通各个子账户的名称、币种、余额、起息日、存期、利率等信息。</label>
+        </div>
+    </body>
+</content>

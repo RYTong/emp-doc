@@ -1,0 +1,158 @@
+<content>
+    <head>
+        <style>
+            .body{width:320px;height:460px;background-color:#F0F0F0;}
+            .desktop_div{left:140px;bottom:0px;width:45px;height:220px;}
+            .desktop_button{left:0px;top:166px;width:45px;height:45px;background-image:url(desktop.png);}
+            .desktop1{left:1px;top:167px;width:42px;height:42px;background-image:url(d1.png);display:none;}
+            .desktop2{left:1px;top:167px;width:42px;height:42px;background-image:url(d2.png);display:none;}
+            .desktop3{left:1px;top:167px;width:42px;height:42px;background-image:url(d3.png);display:none;}
+        </style>
+        <script type="text/x-lua">
+            <![CDATA[
+                --[[
+                @doc:根据名称改变控件属性
+                @params:
+                name:控件名称
+                property:属性，比如："enable"
+                value:修改值，需要将控件属性修改的值
+                @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+                ]]--
+                function changeProperty(name,property,value)
+                    local ctrl = document:getElementsByName(name);
+                    if ctrl and #ctrl > 0 then
+                        for key,ctrl_atom in pairs(ctrl) do
+                            ctrl_atom:setPropertyByName(property,value);
+                        end;
+                    else
+                        window:alert(name .. "控件不存在！");
+                    end;
+                end;
+
+
+                --[[
+                @doc:改变一系列控件属性
+                @params:
+                tab_name:控件名称列表 {"name1","name2"}
+                property:属性，比如："enable"
+                value:修改值，需要将控件属性修改的值
+                ]]--
+                function changeCtrlsProperty(tab_name,property,value)
+                    for key,ctrlName in pairs(tab_name) do
+                        local ctrl = document:getElementsByName(ctrlName);
+                        if ctrl and #ctrl > 0 then
+                            for key,ctrl_atom in pairs(ctrl) do
+                                ctrl_atom:setPropertyByName(property,value);
+                            end;
+                        else
+                            window:alert(name .. "控件不存在！");
+                        end;
+                    end;
+                end;
+
+                --[[
+                @doc:改变一系列控件样式
+                @params:
+                tab_name:控件名称列表
+                style:属性，比如："height"
+                value:修改值，需要将控件样式修改的值
+                ]]--
+                function changeCtrlsStyle(tab_name,style,value)
+                    for key,ctrlName in pairs(tab_name) do
+                        local ctrl = document:getElementsByName(ctrlName);
+                        if ctrl and #ctrl > 0 then
+                            for key,ctrl_atom in pairs(ctrl) do
+                                ctrl_atom:setStyleByName(style,value);
+                            end;
+                        else
+                            window:alert(name .. "控件不存在！");
+                        end;
+                    end;
+                end;
+
+                --标记按钮上升或下降的状态
+                local change_state = true;
+                
+                --[[
+                @doc: 控件的上升和下降动画
+                @params:
+                but_list: 子控件名称列表
+                down_list: 下降的坐标列表
+                up_list: 上升的坐标列表
+                enable_ctrl: 控制按钮名称
+                ]]--
+                function up_and_down(but_list,down_list,up_list,enable_ctrl)
+                   
+                    -- 动画停止监听函数，向上移动动画结束后变更按钮为可用
+                    local function translate_lis_1(object)
+                        object:setPropertyByName("enable","true");
+                        changeProperty(enable_ctrl,"enable","true")
+                    end;
+
+                    -- 动画停止监听函数，向下移动动画结束后隐藏控件并变更切换按钮能点击
+                    local function translate_lis(object)
+                        object:setStyleByName("display","none");
+                        changeProperty(enable_ctrl,"enable","true")
+                    end;
+
+                    --[[
+                    @doc: 控件沿Y轴移动
+                    @params:
+                    tab_ctrlName: 子控件名称列表
+                    tab_distanceY: 子控件移动坐标列表
+                    change_state: true/false 判断是上升还是下降状态
+                    ]]--
+                    local function translate_y(tab_ctrlName,tab_distanceY,change_state)
+                        for key,value in pairs(tab_ctrlName) do
+                            local condition_button = document:getElementsByName(value);
+                            --设置动画停止监听函数
+                            if change_state then
+                                transition:setStopListener(condition_button[1],translate_lis_1);
+                            else
+                                transition:setStopListener(condition_button[1],translate_lis);
+                            end
+                            --控件移动动画
+                            transition:translateY(condition_button[1],tab_distanceY[key],0.5);
+                        end;
+                    end;
+
+                    --按钮上升动画
+                    if change_state then
+                        changeProperty(enable_ctrl,"enable","false");
+                        changeCtrlsStyle(but_list,"display","block");
+                        translate_y(but_list,up_list,change_state);
+                        change_state = false;
+                    --按钮下降动画
+                    else
+                        changeProperty(enable_ctrl,"enable","false");
+                        changeCtrlsProperty(but_list,"enable","false");
+                        translate_y(but_list,down_list,change_state);
+                        change_state = true;
+                    end;       
+                end;
+
+                --点击换肤按钮
+                function click_desktop()
+                    --子按钮名称列表
+                    local sub_but_list = {'desktop1','desktop2','desktop3'};
+                    --每个子按钮下降的坐标列表
+                    local down_list = {50,100,150};
+                    --每个子按钮上升的坐标列表
+                    local up_list = {-50,-100,-150};
+                    --换肤按钮名称
+                    local enable_ctrl = "desktop";
+                    --调用up_and_down函数实现动画
+                    up_and_down(sub_but_list,down_list,up_list,enable_ctrl);    
+                end; 
+            ]]>
+        </script>
+    </head>
+    <body class="body">
+        <div class="desktop_div" border="0">
+            <input type="button" class="desktop1" name="desktop1"/>
+            <input type="button" class="desktop2" name="desktop2"/>
+            <input type="button" class="desktop3" name="desktop3"/>
+            <input type="button" class="desktop_button" name="desktop" onclick="click_desktop()"/>
+        </div>
+    </body>
+</content>

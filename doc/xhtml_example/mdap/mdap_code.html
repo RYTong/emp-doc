@@ -1,0 +1,1788 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>数据采集脚本编写 | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../other/Introduction.html" />
+    
+    
+    <link rel="prev" href="../mdap/Introduction.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="11.1" data-basepath=".." data-revision="1445493391766">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="page/Introduction.html">
+            
+                
+                    <a href="../page/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         页面排版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="page/squared_up.html">
+            
+                
+                    <a href="../page/squared_up.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         自动九宫格排版
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="page/inputs.html">
+            
+                
+                    <a href="../page/inputs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         多个输入框
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="page/display_reload.html">
+            
+                
+                    <a href="../page/display_reload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         display占位
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4" data-path="page/resolution_adapter.html">
+            
+                
+                    <a href="../page/resolution_adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                         适配例子和说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="select/Introduction.html">
+            
+                
+                    <a href="../select/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         SELECT
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="select/select_inner.html">
+            
+                
+                    <a href="../select/select_inner.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         Select 联动
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="select/select_overlength.html">
+            
+                
+                    <a href="../select/select_overlength.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         select控件长度超长
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="select/script_change_select.html">
+            
+                
+                    <a href="../select/script_change_select.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         脚本动态设置select控件选中项及改变可选项
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="table/Introduction.html">
+            
+                
+                    <a href="../table/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         TABLE
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="table/title_up_down_center.html">
+            
+                
+                    <a href="../table/title_up_down_center.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         标题栏居中对齐
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="table/cut_line.html">
+            
+                
+                    <a href="../table/cut_line.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         Table 分隔线
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="table/merge_td.html">
+            
+                
+                    <a href="../table/merge_td.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         Table 合并td
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="table/tr_tds.html">
+            
+                
+                    <a href="../table/tr_tds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         tr 中多个td
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="table/tr_inner.html">
+            
+                
+                    <a href="../table/tr_inner.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         tr 的显隐
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="table/labels_tab.html">
+            
+                
+                    <a href="../table/labels_tab.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         Table 中多文字描述
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="table/scroll_tab.html">
+            
+                
+                    <a href="../table/scroll_tab.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         Table 滑动继续加载
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.8" data-path="table/new_table_layout.html">
+            
+                
+                    <a href="../table/new_table_layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         Table 新布局算法
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="onclick/Introduction.html">
+            
+                
+                    <a href="../onclick/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         事件响应
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="onclick/onclick_pass_on.html">
+            
+                
+                    <a href="../onclick/onclick_pass_on.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         事件传递
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="onclick/onclick_enable.html">
+            
+                
+                    <a href="../onclick/onclick_enable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         enable控制
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="onclick/listen_and_onclick.html">
+            
+                
+                    <a href="../onclick/listen_and_onclick.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         手势监听和点击事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="map/Introduction.html">
+            
+                
+                    <a href="../map/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         地图
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="map/dot_introduction.html">
+            
+                
+                    <a href="../map/dot_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         网点查询
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="animation/Introduction.html">
+            
+                
+                    <a href="../animation/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         动画
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="animation/input_ani.html">
+            
+                
+                    <a href="../animation/input_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         输入动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="animation/output_ani.html">
+            
+                
+                    <a href="../animation/output_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         吐账单动画加声音
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.3" data-path="animation/scroll_ani.html">
+            
+                
+                    <a href="../animation/scroll_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                         控件滑动动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.4" data-path="animation/page_scroll.html">
+            
+                
+                    <a href="../animation/page_scroll.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                         界面滑出动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.5" data-path="animation/shake_ani.html">
+            
+                
+                    <a href="../animation/shake_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                         控件左右晃动动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.6" data-path="animation/up_and_down.html">
+            
+                
+                    <a href="../animation/up_and_down.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                         控件上升和下降动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.7" data-path="animation/angulation_ani.html">
+            
+                
+                    <a href="../animation/angulation_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                         图片的不断扭曲
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.8" data-path="animation/curl_ani.html">
+            
+                
+                    <a href="../animation/curl_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                         卷角动画
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="offline_store/Introduction.html">
+            
+                
+                    <a href="../offline_store/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         离线存储
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="offline_store/offline_procedure.html">
+            
+                
+                    <a href="../offline_store/offline_procedure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         离线使用场景
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="offline_store/download_judge.html">
+            
+                
+                    <a href="../offline_store/download_judge.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         判断是否下载
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="offline_store/update_judge.html">
+            
+                
+                    <a href="../offline_store/update_judge.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         判断是否升级
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="offline_store/start_downloads.html">
+            
+                
+                    <a href="../offline_store/start_downloads.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         发起多个下载动作
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="audio/Introduction.html">
+            
+                
+                    <a href="../audio/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         视频音频
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="audio/video.html">
+            
+                
+                    <a href="../audio/video.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         视频播放
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="audio/audio.html">
+            
+                
+                    <a href="../audio/audio.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         音频播放
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="custom_ctrl/Introduction.html">
+            
+                
+                    <a href="../custom_ctrl/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         扩展控件
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="custom_ctrl/pies.html">
+            
+                
+                    <a href="../custom_ctrl/pies.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         饼状图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2" data-path="custom_ctrl/histograms.html">
+            
+                
+                    <a href="../custom_ctrl/histograms.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                         柱状图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.3" data-path="custom_ctrl/line_chart.html">
+            
+                
+                    <a href="../custom_ctrl/line_chart.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                         折线图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.4" data-path="custom_ctrl/select_city.html">
+            
+                
+                    <a href="../custom_ctrl/select_city.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                         城市选择控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.5" data-path="custom_ctrl/movie_seat.html">
+            
+                
+                    <a href="../custom_ctrl/movie_seat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                         电影票座位控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.6" data-path="custom_ctrl/lottery_ball.html">
+            
+                
+                    <a href="../custom_ctrl/lottery_ball.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.6.</b>
+                        
+                         彩票彩球控件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" data-path="show_ctrl/Introduction.html">
+            
+                
+                    <a href="../show_ctrl/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                         悬浮页面
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1" data-path="show_ctrl/showCtrl_and_setInnerHTML.html">
+            
+                
+                    <a href="../show_ctrl/showCtrl_and_setInnerHTML.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                         showControl和setInnerHTML同时使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.2" data-path="show_ctrl/window_layout.html">
+            
+                
+                    <a href="../show_ctrl/window_layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                         弹出框动态布局
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.3" data-path="show_ctrl/page_redirect.html">
+            
+                
+                    <a href="../show_ctrl/page_redirect.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                         页面跳转
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.4" data-path="show_ctrl/no_body.html">
+            
+                
+                    <a href="../show_ctrl/no_body.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                         无body报文
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="mdap/Introduction.html">
+            
+                
+                    <a href="../mdap/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         数据采集
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="11.1" data-path="mdap/mdap_code.html">
+            
+                
+                    <a href="../mdap/mdap_code.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         数据采集脚本编写
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" data-path="other/Introduction.html">
+            
+                
+                    <a href="../other/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                         其他
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="12.1" data-path="other/1px_image.html">
+            
+                
+                    <a href="../other/1px_image.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                         图片高度为1px
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.2" data-path="other/onchange_reload.html">
+            
+                
+                    <a href="../other/onchange_reload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                         循环调用onchange和reload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.3" data-path="other/onblur.html">
+            
+                
+                    <a href="../other/onblur.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                         onblur调用场景
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.4" data-path="other/multi_labels.html">
+            
+                
+                    <a href="../other/multi_labels.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                         label换行问题
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" data-path="channel/Introduction.html">
+            
+                
+                    <a href="../channel/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                         CHANNEL
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="13.1" data-path="channel/new_channel.html">
+            
+                
+                    <a href="../channel/new_channel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                         创建channel
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13.2" data-path="channel/business_procedure.html">
+            
+                
+                    <a href="../channel/business_procedure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                         业务流程开发
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" data-path="../ewp_lib_example/index.html">
+            
+                
+                    <a href="../../ewp_lib_example/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                         EWP常用函数例子
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" data-path="ios/Introduction.html">
+            
+                
+                    <a href="../ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                         IOS75.3适配
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="15.1" data-path="ios/ios_adaptation.html">
+            
+                
+                    <a href="../ios/ios_adaptation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.1.</b>
+                        
+                         IOS75.3新方案适配用例
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/xhtml_example/xhtml_example.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/xhtml_example/book.pdf" class="button">pdf</a>
+                
+                
+                <a href="" class="button">epub</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_2">
+                    
+                        <h1 id="数据采集脚本">数据采集脚本</h1>
+<!-- toc -->
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#lua接口说明">lua接口说明</a><ul>
+<li><a href="#设置用户信息">设置用户信息</a></li>
+<li><a href="#设置地理位置">设置地理位置</a></li>
+<li><a href="#统计用户行为">统计用户行为</a><ul>
+<li><a href="#logevent1"><code>logEvent(1)</code></a></li>
+<li><a href="#logevent2"><code>logEvent(2)</code></a></li>
+<li><a href="#logevent3"><code>logEvent(3)</code></a></li>
+<li><a href="#logevent4"><code>logEvent(4)</code></a></li>
+<li><a href="#endtimedevent1"><code>endTimedEvent(1)</code></a></li>
+<li><a href="#endtimedevent2"><code>endTimedEvent(2)</code></a></li>
+<li><a href="#endtimedevent3"><code>endTimedEvent(3)</code></a></li>
+</ul>
+</li>
+<li><a href="#统计会话">统计会话</a><ul>
+<li><a href="#startsession"><code>startSession</code></a></li>
+<li><a href="#endsession"><code>endSession</code></a></li>
+<li><a href="#setrequestinterval"><code>setRequestInterval</code></a></li>
+</ul>
+</li>
+<li><a href="#统计错误">统计错误</a><ul>
+<li><a href="#logerror"><code>logError</code></a></li>
+</ul>
+</li>
+<li><a href="#统计页面">统计页面</a><ul>
+<li><a href="#logpageview"><code>logPageView</code></a></li>
+</ul>
+</li>
+<li><a href="#获取页面信息">获取页面信息</a><ul>
+<li><a href="#getpageid"><code>getPageId</code></a></li>
+<li><a href="#setpageid"><code>setPageId</code></a></li>
+<li><a href="#getloadstarttime"><code>getLoadStartTime</code></a></li>
+<li><a href="#getloadcompletedtime"><code>getLoadCompletedTime</code></a></li>
+<li><a href="#getlastpageid"><code>getLastPageId</code></a></li>
+<li><a href="#getlastloadstarttime"><code>getLastLoadStartTime</code></a></li>
+<li><a href="#getlastloadcompletedtime"><code>getLastLoadCompletedTime</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#监听接口">监听接口</a><ul>
+<li><a href="#documentsetonclicklistenercallback">document:setOnClickListener(callback)</a></li>
+<li><a href="#elementsetonclicklistener">element:setOnClickListener()</a></li>
+</ul>
+</li>
+<li><a href="#运行机制">运行机制</a><ul>
+<li><a href="#默认脚本">默认脚本</a></li>
+<li><a href="#事件脚本">事件脚本</a></li>
+</ul>
+</li>
+<li><a href="#简单举例">简单举例</a><ul>
+<li><a href="#默认脚本">默认脚本</a></li>
+<li><a href="#自定义脚本">自定义脚本</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h2 id="介绍">1 介绍</h2>
+<p>公司产品<code>MDAP</code>（Mobile Data Analytics Platform）移动数据分析平台用来分析各种移动数据并提供丰富的展现结果。</p>
+<p>我们使用<code>EMP SDK</code>和<code>Javascript SDK</code>分别采集基于EMP客户端的App和基于浏览器的App数据，<code>EMP SDK</code>提供<code>Lua API</code>，
+<code>Javascript SDK</code>提供<code>Javascript API</code>。本章节只介绍Lua API并举例演示如何调用这些API。</p>
+<h2 id="lua接口说明">2 lua接口说明</h2>
+<p>下面章节介绍在项目中常用lua接口。</p>
+<h3 id="设置用户信息">2.1 设置用户信息</h3>
+<p><strong>名称</strong>
+<code>setUserId</code></p>
+<p><strong>语法</strong>
+<code>track.setUserId(userId)</code></p>
+<p><strong>参数</strong>
+<code>userId</code>    用户唯一标识，包含<code>1-255</code>个字符的字符串。</p>
+<p><strong>返回</strong>  无</p>
+<p><strong>用法</strong>
+设置用户唯一标识</p>
+<h3 id="设置地理位置">2.2 设置地理位置</h3>
+<p><strong>名称</strong>
+<code>setLocation</code></p>
+<p><strong>语法</strong>
+<code>track.setLocation(latitude, longitude, accuracy)</code></p>
+<p><strong>参数</strong><br><code>latitude</code>    经度，<code>double</code>类型<br><code>longitude</code>    维度，<code>double</code>类型<br><code>accuracy</code>    精确值，<code>float</code>类型  </p>
+<p><strong>返回</strong>
+无</p>
+<p><strong>用法</strong>
+用来设置用户的GPS地理位置，在相同会话中如果多次设置那么以最后一次设置为准</p>
+<h3 id="统计用户行为">2.3 统计用户行为</h3>
+<h4 id="logevent1">2.3.1 <code>logEvent(1)</code></h4>
+<p><strong>名称</strong>
+<code>logEvent(1)</code></p>
+<p><strong>语法</strong>
+<code>track.logEvent(eventName)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong><br>用户行为使用事件来标识，使用该方法可以记录不带参数的事件，每个api key最多可记录300个不同的事件名，一个会话最多可记录1000个事件，
+100个不同的事件名，如果超出改限制那么事件数据就会丢失。</p>
+<h4 id="logevent2">2.3.2 <code>logEvent(2)</code></h4>
+<p><strong>名称</strong>
+<code>logEvent(2)</code></p>
+<p><strong>语法</strong>
+<code>track.logEvent(eventName,eventParameters)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符的字符串<br><code>eventParameters</code>    事件参数，是一个Lua table，table的索引为参数名，索引对应的值为参数值，参数名和参数值都为包含1-255个字符的字符串，
+例如：<code>{p1=&quot;value1&quot;,p2=&quot;value2&quot;}</code></p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+使用该方法可以记录带参数的事件</p>
+<h4 id="logevent3">2.3.3 <code>logEvent(3)</code></h4>
+<p><strong>名称</strong>
+<code>logEvent(3)</code></p>
+<p><strong>语法</strong>
+<code>track.logEvent(eventName,eventParameters,IsTimedEvent)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符的字符串<br><code>eventParameters</code>    事件参数，是一个Lua table，table的索引为参数名，索引对应的值为参数值，参数名和参数值都为包含1-255个字符的字符串，
+例如：<code>{p1=&quot;value1&quot;,p2=&quot;value2&quot;}</code><br><code>IsTimedEvent</code>    是否为时间型事件，如果为<code>false</code>，那么同<code>mdap.logEvent(eventName,eventParameters)</code></p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong><br>当<code>IsTimedEvent</code>为true时用来开始一个时间型事件，调用<code>endTimedEvent</code>可结束一个时间型事件，对于开始的时间型事件，
+如果没有主动调用<code>endTimedEvent</code>，那么在会话结束时由SDK主动结束这些未停止的时间型事件</p>
+<h4 id="logevent4">2.3.4 <code>logEvent(4)</code></h4>
+<p><strong>名称</strong>
+<code>logEvent(4)</code></p>
+<p><strong>语法</strong>
+<code>track.logEvent(eventName,eventParameters,IsTimedEvent,IsDefault)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符的字符串<br><code>eventParameters</code>    事件参数，是一个Lua table，table的索引为参数名，索引对应的值为参数值，参数名和参数值都为包含1-255个字符的字符串，
+例如：<code>{p1=&quot;value1&quot;,p2=&quot;value2&quot;}</code>
+<code>IsTimedEvent</code>    是否为时间型事件，如果为<code>false</code>，那么同<code>track.logEvent(eventName,eventParameters)</code>
+<code>IsDefault</code>    是否为默认事件，如果为<code>false</code>，那么同<code>track.logEvent(eventName,eventParameters,IsTimedEvent)</code></p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong><br>当<code>IsTimedEvent</code>为true时用来开始一个时间型事件，调用<code>endTimedEvent</code>可结束一个时间型事件，对于开始的时间型事件，
+如果没有主动调用<code>endTimedEvent</code>，那么在会话结束时由SDK主动结束这些未停止的时间型事件</p>
+<h4 id="endtimedevent1">2.3.5 <code>endTimedEvent(1)</code></h4>
+<p><strong>名称</strong>
+<code>endTimedEvent (1)</code></p>
+<p><strong>语法</strong>
+<code>track.endTimedEvent(eventName)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符的字符串</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong><br>用来结束一个时间型事件，调用该方法后，指定时间型事件的持续时间为当前时间戳和事件开始时间戳之差</p>
+<h4 id="endtimedevent2">2.3.6 <code>endTimedEvent(2)</code></h4>
+<p><strong>名称</strong>
+<code>endTimedEvent (2)</code></p>
+<p><strong>语法</strong>
+<code>track.endTimedEvent(eventName, eventParameters)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符的字符串<br><code>eventParameters</code>    事件参数，是一个Lua table，table的key为参数名，value为参数值，参数名和参数值都为包含1-255个字符的字符串</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong><br>用来结束一个时间型事件，并且设置事件的参数</p>
+<h4 id="endtimedevent3">2.3.7 <code>endTimedEvent(3)</code></h4>
+<p><strong>名称</strong>
+<code>endTimedEvent (3)</code></p>
+<p><strong>语法</strong>
+<code>track.endTimedEvent(eventName, eventParameters, duration)</code></p>
+<p><strong>参数</strong><br><code>eventName</code>    事件名称，包含1-255个字符的字符串<br><code>eventParameters</code>    事件参数，是一个Lua table，table的key为参数名，value为参数值，参数名和参数值都为包含1-255个字符的字符串<br><code>duration</code>    事件持续时间，单位：ms</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong><br>用来结束一个时间型事件，并且设置事件的参数和指定事件的持续时间.<p style="color:red">注意：通过
+<code>track.endTimedEvent(eventName, eventParameters, duration)</code>结束时间型事件时，事件的持续时间不再是当前时间戳和事件开始时间戳的差，
+而是由<code>duration</code>参数指定。</p></p>
+<h3 id="统计会话">2.4 统计会话</h3>
+<h4 id="startsession">2.4.1 <code>startSession</code></h4>
+<p><strong>名称</strong>
+<code>startSession</code></p>
+<p><strong>语法</strong>
+<code>track.startSession(apiKey)</code></p>
+<p><strong>参数</strong>
+<code>apiKey</code>    应用唯一标识，通过管理端添加应用时生成</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+用来开始一个新的会话，如果上个会话没超时，或没有被通过调用<code>endSession</code>方法主动结束，那么将继续上个会话，否则创建新的会话。
+一般在页面加载时该方法被调用。</p>
+<h4 id="endsession">2.4.2 <code>endSession</code></h4>
+<p><strong>名称</strong>
+<code>endSession</code></p>
+<p><strong>语法</strong>
+<code>track.endSession()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+用来主动结束当前会话</p>
+<h4 id="setrequestinterval">2.4.3 <code>setRequestInterval</code></h4>
+<p><strong>名称</strong>
+<code>setRequestInterval</code></p>
+<p><strong>语法</strong>
+<code>track.setRequestInterval(timeInSeconds)</code></p>
+<p><strong>参数</strong>
+<code>timeInSeconds</code>    时间间隔，单位：秒</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+用来设置数据定时发送到后台的时间间隔，默认为8分钟，如果没有新数据产生那么不会进行网络请求</p>
+<h3 id="统计错误">2.5 统计错误</h3>
+<h4 id="logerror">2.5.1 <code>logError</code></h4>
+<p><strong>名称</strong>
+<code>logError</code></p>
+<p><strong>语法</strong>
+<code>track.logError(errorName,errorMessage,stack)</code></p>
+<p><strong>参数</strong><br><code>errorName</code>    错误名称，包含1-255个字符<br><code>errorMessage</code>    错误消息，包含1-255个字符<br><code>stack</code>    错误所在的行或错误堆栈信息  </p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+用来记录应用中发送的错误和警告信息，只记录前10个错误，后续错误将被忽略</p>
+<h3 id="统计页面">2.6 统计页面</h3>
+<h4 id="logpageview">2.6.1 <code>logPageView</code></h4>
+<p><strong>名称</strong>
+<code>logPageView</code></p>
+<p><strong>语法</strong>
+<code>track. logPageView()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+用来统计页面，在新页面加载时通常调用该API</p>
+<h3 id="获取页面信息">2.7 获取页面信息</h3>
+<h4 id="getpageid">2.7.1 <code>getPageId</code></h4>
+<p><strong>名称</strong>
+<code>getPageId</code></p>
+<p><strong>语法</strong>
+<code>track. getPageId ()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+返回当前页面ID，类型为<code>string</code></p>
+<p><strong>用法</strong>
+获取当前页面ID</p>
+<h4 id="setpageid">2.7.2 <code>setPageId</code></h4>
+<p><strong>名称</strong>
+<code>setPageId</code></p>
+<p><strong>语法</strong>
+<code>track. setPageId (pageId)</code></p>
+<p><strong>参数</strong>
+<code>pageId</code>    页面ID，为字符串类型</p>
+<p><strong>返回值</strong>
+无</p>
+<p><strong>用法</strong>
+设置当前页面ID</p>
+<h4 id="getloadstarttime">2.7.3 <code>getLoadStartTime</code></h4>
+<p><strong>名称</strong>
+<code>getLoadStartTime</code></p>
+<p><strong>语法</strong>
+<code>track. getLoadStartTime ()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+当前页面开始加载时间戳，类型为<code>string</code></p>
+<p><strong>用法</strong>
+获取当前页面开始加载时间戳</p>
+<h4 id="getloadcompletedtime">2.7.4 <code>getLoadCompletedTime</code></h4>
+<p><strong>名称</strong>
+<code>getLoadCompletedTime</code></p>
+<p><strong>语法</strong>
+<code>track. getLoadCompletedTime ()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+当前页面加载完成的时间戳，类型为<code>string</code></p>
+<p><strong>用法</strong>
+获取当前页面加载完成时间戳</p>
+<h4 id="getlastpageid">2.7.5 <code>getLastPageId</code></h4>
+<p><strong>名称</strong>
+<code>getLastPageId</code></p>
+<p><strong>语法</strong>
+<code>track. getLastPageId ()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+上个页面ID，类型为<code>string</code></p>
+<p><strong>用法</strong>
+获取上个页面ID</p>
+<h4 id="getlastloadstarttime">2.7.6 <code>getLastLoadStartTime</code></h4>
+<p><strong>名称</strong>
+<code>getLoadStartTime</code></p>
+<p><strong>语法</strong>
+<code>track. getLoadStartTime ()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+上个页面开始加载时间戳，类型为<code>string</code></p>
+<p><strong>用法</strong>
+获取上个页面开始加载时间戳</p>
+<h4 id="getlastloadcompletedtime">2.7.7 <code>getLastLoadCompletedTime</code></h4>
+<p><strong>名称</strong>
+<code>getLoadCompletedTime</code></p>
+<p><strong>语法</strong>
+<code>track. getLoadCompletedTime ()</code></p>
+<p><strong>参数</strong>
+无</p>
+<p><strong>返回值</strong>
+上个页面加载完成的时间戳，类型为<code>string</code></p>
+<p><strong>用法</strong>
+获取上个页面加载完成时间戳</p>
+<h2 id="监听接口">3 监听接口</h2>
+<p>数据采集代码不能影响正常业务流程代码，所以数据采集代码必须和正常业务流程代码分离。针对此需求，客户端提供了一些监听接口。</p>
+<p>下面简单介绍几个监听接口:</p>
+<h3 id="documentsetonclicklistenercallback">3.1 document:setOnClickListener(callback)</h3>
+<p><strong>Description</strong><br>给当前<code>dom</code>树中所有有<code>onClick</code>事件的控件设置监听.当再次调用本函数设置监听时,将覆盖先前通过本函数设置的监听函数.
+针对通过<code>element:setOnClickListener</code>设置的监听事件不能被覆盖.</p>
+<p><strong>Parameters</strong><br><code>callback(required)</code><br>类型: <code>Function</code>.<br>说明: 事件监听的回调方法.本方法设置监听方法与控件本身的onclick事件并不冲突且互不影响.
+本方法需要在执行完监听的回调后，再执行onclick事件。
+该监听函数有3个参数，分别为：<code>sender</code>(控件)，<code>name</code>（控件的name值），<code>value</code>（控件的value值）。</p>
+<h3 id="elementsetonclicklistener">3.2 element:setOnClickListener()</h3>
+<p><strong>Description</strong>
+为控件设置监听方法,监听控件被点击的行为，当控件被点击后会执行回调方法。 同一个控件可以设置多个监听方法.</p>
+<p style="color:red">注意：监听的回调会先于属性设置的onclick方法执行。</p>
+
+<p><strong>Syntax</strong><br><code>setOnClickListener(callback)</code></p>
+<p><strong>Parameters</strong><br><code>callback (required)</code><br>类型: <code>Function</code>.<br>说明: 监听函数，在控件点击后调用。该监听函数有3个参数，分别为：sender(控件本身)，name（控件的name值），value（控件的value值）。</p>
+<p><strong>Return</strong><br>无</p>
+<p><strong>Examples</strong>  </p>
+<pre><code>function btnClick(btn, name, value)
+end
+
+local btn = Document:getEventElementsByName(&quot;cal&quot;);
+btn[0]:setOnClickListener(btnClick);
+</code></pre><h2 id="运行机制">4 运行机制</h2>
+<p>数据的采集时机可以为页面初始化、按钮点击事件、光标移开事件等，这里就涉及到页面初始化默认执行统计脚本的问题。</p>
+<p>我们跟客户端商议，将所有的统计脚本放在mdap文件夹下，当做一个插件资源上传，在此文件夹下存在一个<code>mdap/default_track.lua</code>文件
+作为每个页面默认执行的公共统计脚本。每个channel对应一个以channelId命名的文件夹，在此文件夹下的xhtml文件夹下存在每个页面
+对应的统计脚本文件。</p>
+<p>我们规定默认事件采集脚本在离线资源中存放的位置为：<code>mdap/mdap/default_track.lua</code>;
+我们使用自定义事件采集脚本采集自定义事件，自定义事件区别与默认事件，其事件ID和事件参数都是自定义的，
+所有页面会加载与页面ID一一对应的自定义事件采集脚本，如果脚本不存在则该页面就不进行自定事件采集。
+假设页面ID为：<code>speed_login/xhtml/2mk0001.xhtml</code>，那么自定义事件采集脚本在离线资源中的存放位置为：
+<code>mdap/speed_login/xhtml/2mk0001_trac.lua</code>。</p>
+<h3 id="默认脚本">4.1 默认脚本</h3>
+<p>客户端在界面初始化时会先执行正常页面初始化脚本，然后加载执行default_track.lua中脚本，继而加载执行该页面track脚本。简单来说就是这
+三个脚本文件中只要是<code>非 function</code>中的代码都会执行。</p>
+<h3 id="事件脚本">4.2 事件脚本</h3>
+<p>如果对一个按钮设置了OnClick监听或者对整个document设置了OnClick监听，那么在点击此按钮时会先执行监听回调然后执行按钮本身onclick事件。</p>
+<h2 id="简单举例">5 简单举例</h2>
+<h3 id="默认脚本">5.1 默认脚本</h3>
+<p>在一些统计或者优化分析时，我们需要知道页面的加载时间，用户在页面的停留时间，每个页面都会执行此统计脚本，所以将这部分脚本作为默认脚本
+写在mdap/mdap/default_track.lua中，同时我们需要每个页面有一个唯一的ID，这里叫做PageId，为了保证PageId的非空，客户端提供了setPageId接口为
+页面设置页面Id。
+由于目前大多数业务都是使用file:read读取页面内容，读取时传入参数为页面路径path，所以客户端将此path存做页面唯一Id即pageId，可以使用
+getPageId接口获取，并以pageId作为每个页面事件名称。</p>
+<p>计算页面加载时间为：
+加载时间 ＝ 加载开始时间 － 加载完成时间;
+计算上个页面停留时间为：
+上个页面停留时间 ＝ 当前页面开始加载时间戳 - 上个页面加载及渲染完成时间戳;</p>
+<p>由于需要统计用户在上个页面的停留时间，所以此事件应该为持续事件，在下个页面中结束此事件。</p>
+<p>那么代码可以写作这样：</p>
+<pre><code>    --[[
+    @doc:页面持续事件开始
+    track.logEvent(eventName,eventParameters,IsTimedEvent)
+    --]]
+    function start_init_event()
+        local PageId = track:getPageId();
+        --页面默认持续事件开始
+        track:logEvent(PageId,nil,true,true);
+        --页面访问默认执行
+        track:logPageView();
+    end;
+
+    --[[
+    @doc:页面默认事件
+    持续事件
+    @事件传参：
+        加载时间
+    @统计页面
+    track.endTimedEvent(eventName, eventParameters, duration)
+    --]]
+    function page_init_event()
+        --先获取
+        local PageId = track:getPageId();
+        local LastPageId = track:getLastPageId();
+
+        --不为&quot;&quot;表示不是第一个页面可以执行endEvent
+        if LastPageId ~= &quot;&quot; then
+            --此时为获取上个页面加载时间
+            local LoadTime = track:getLastLoadStartTime() - track:getLastLoadCompletedTime();
+            --用户逗留时间为持续时间
+            local duration = track:getLoadStartTime() - track:getLastLoadCompletedTime();
+            local params_tab = {
+                                LoadTime = LoadTime
+                               };
+            track:endTimedEvent(LastPageId,params_tab,duration);
+        end;
+    end;
+    --默认执行此事件
+    start_init_event();
+    page_init_event();
+</code></pre><p>此上代码仅作参考。</p>
+<h3 id="自定义脚本">5.2 自定义脚本</h3>
+<p>假定目前界面为:</p>
+<pre><code>&lt;content&gt;
+&lt;head&gt;
+    &lt;script type=&quot;text/x-lua&quot;&gt;
+        &lt;![CDATA[
+            --下一步按钮点击
+            function submit()
+                local trancode = &quot;mb0002&quot;;
+                local channelId = &quot;track_test&quot;;
+                invoke_page(channelId .. &quot;/xhtml/&quot;..channelId..&quot;_&quot;..trancode..&quot;.xhtml&quot;,page_callback,nil);
+            end;
+        ]]&gt;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body class=&quot;body&quot;&gt;
+    &lt;label name=&quot;label_action&quot;&gt;&lt;/label&gt;&lt;br/&gt;
+    &lt;label class=&quot;label_text&quot;&gt;用户：&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;input_text&quot; name=&quot;input_text&quot; /&gt;
+    &lt;label  class=&quot;label_text&quot;&gt;密码：&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;input_text&quot; name=&quot;input_password&quot; /&gt;
+    &lt;input type=&quot;button&quot; class=&quot;button_close&quot; name=&quot;button_submit&quot; value=&quot;下一步&quot; onclick=&quot;submit()&quot; /&gt;
+&lt;/body&gt;
+&lt;/content&gt;
+</code></pre><p>需要在页面初始化时增加一个事件为<code>进入登录界面</code>，无参数。
+需要在点击下一步时统计用户输入的用户名和密码是否正确，如果出错，错误信息是什么？
+同时需要加入<code>下一步点击事件</code>，参数为 <code>nextPageName=&quot;登录成功界面&quot;</code>。</p>
+<p>假设页面名称为 <code>track_test/xhtml/track_test_mb01.xhtml</code>,那么统计脚本名称为<code>mdap/track_test/xhtml/track_test_mb01_track.lua</code>.</p>
+<p>根据需求在此脚本中有一个初始化执行脚本：</p>
+<pre><code>--下一步按钮监听事件
+local function button_submit_listener()
+    --[[
+    获取用户和密码控件value值，检查是否为空，如果为空则将错误日志调用统计接口进行统计
+    此处将部分代码省略
+    ]]--
+
+    ......
+
+    track:logError(&quot;密码错误&quot;,&quot;密码不能为空&quot;,935)
+
+    --添加下一步点击事件
+    local params = {nextPageName=&quot;登录成功界面&quot;};
+    track:logEvent(&quot;下一步点击事件&quot;,params);
+end;
+
+--初始化统计脚本
+local function init_track_event()
+    track:logEvent(&quot;进入登录界面&quot;);
+end;
+init_track_event();
+-- 为下一步按钮添加监听
+local ctrl = document:getElementsByName(&quot;button_submit&quot;);
+if ctrl and #ctrl &gt; 0 then
+    ctrl[1]:setOnClickListener(button_submit_listener);
+end;
+</code></pre><p>此时会碰到将用户和密码发送到服务器验证，如果密码输入错误则增加统计事件。因为监听回调在onclick事件之前执行，此时发送网络请求会导致
+onclick事件执行延后，用户体验不好。</p>
+<p>目前对这种特殊情况的解决方案为：</p>
+<p>在业务流程代码的发送请求回调中调用一个空方法,同时将需要的数据放入全局变量。
+<em>注意此方法不能与任何其他方法同名，最好将此方法写在公共方法中，方法内部什么也不用写</em></p>
+<p>假定此方法名称为<code>track_fun</code>,那么增加一句<code>track_fun();</code>
+放入全局变量：</p>
+<pre><code>global_tab[&quot;errorMsg&quot;] = &quot;登录密码与注册密码不符！&quot;
+</code></pre><p>此时在统计脚本中真正实现此方法。</p>
+<pre><code>function track_fun()
+    --获取全局变量
+    local errorMsg = global_tab[&quot;errorMsg&quot;];
+    if errorMsg ~= &quot;&quot; then
+        track:logError(&quot;密码错误&quot;,errorMsg,935)
+    end;
+end;
+</code></pre><p>如果这么写的话，就算客户端不加载统计脚本也不会影响正常业务流程运行。</p>
+<p>当然这个只是在特殊情况下才需要为了统计脚本去改动业务流程代码，一般情况下编写统计脚本完全不需要改动业务流程代码。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../mdap/Introduction.html" class="navigation navigation-prev " aria-label="Previous page: 数据采集"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../other/Introduction.html" class="navigation navigation-next " aria-label="Next page: 其他"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

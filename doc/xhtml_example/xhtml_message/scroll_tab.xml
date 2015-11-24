@@ -1,0 +1,135 @@
+<content>
+    <head>
+        <style>
+           .body{width:320px;height:460px;background-color: #F0F0F0;}
+           .card_table{top:30px;left:0px;width: 320px;}
+           .card_tr1{height: 40px;background-color: #FFFFFF;}
+           .card_td1{width: 60px;}
+           .card_td2{width: 220px;}
+           .img_select1{width: 10px;height: 10px;}
+           .card_tr2{height: 40px;}
+           .card_td4{width: 320px;}
+           .segment1{width: 200px;height: 27px;font-size: 11px;}
+           .line{width:320px;height:1px;background-color: #E0E0E0;}
+           .detail_table{top: 110px;left: 0px;width: 320px;}
+           .detail_tr{height: 130px;}
+           .td1{width: 20px;}
+           .img_vline{height: 135px;}
+           .td2{width: 300px;}
+           .label_date{width:300px;color: #ADADAD;}
+           .div_bg{height:105px; width:285px;background-image: url(bg_div.png);}
+           .label{font-size: 12px;}
+           .label_amount1{left: 15px;top: 15px;}
+           .label_amount2{right: 15px;top: 15px;color: #FFA042;}
+           .label_result1{left: 15px;top: 37px;}
+           .label_result2{right: 15px;top: 37px;}
+           .label_state1{left: 15px;top:59px;}
+           .label_state2{right: 15px;top: 59px;}
+           .label_operation1{left: 15px;top: 81px;}
+           .label_operation2{right: 27px;top:81px;}
+           .img_select2{right: 15px;top: 83px;width: 9px;height: 12px;}
+        </style>
+    </head>
+    <script type="text/x-lua">
+    <![CDATA[
+
+        --购买记录table
+        local dataset1 = {{date="2014-07-01",amount="￥1,000.00",result="交易成功",state="预受理",operation="撤单"},{date="2014-07-02",amount="￥2,000.00",result="交易成功",state="预受理",operation="撤单"},{date="2014-07-03",amount="￥3,000.00",result="交易成功",state="预受理",operation="撤单"},{date="2014-07-04",amount="￥4,000.00",result="交易成功",state="预受理",operation="撤单"},{date="2014-07-05",amount="￥5,000.00",result="交易成功",state="预受理",operation="撤单"},{date="2014-07-06",amount="￥6,000.00",result="交易成功",state="预受理",operation="撤单"},{date="2014-07-07",amount="￥7,000.00",result="交易成功",state="预受理",operation="撤单"}};
+        
+        --table中记录的条数
+        local table_n = #dataset1;
+        --table显示的最多记录数
+        local limit = 4;
+        --table显示记录的起始索引
+        local startIndex = 1;
+        --table显示记录的结束索引
+        local endIndex = startIndex+limit-1;
+
+        --拼接table报文
+        function detailList(coll_lists,startIndex,endIndex)
+            local tr_info = "";
+            for i=startIndex,endIndex,1 do
+              tr_info = tr_info..[[<tr class="detail_tr">
+                                      <td class="td1" align="right"><img class="img_vline" src="local:divider1.png"></img></td>
+                                      <td class="td2">
+                                        <label class="label_date">]]..coll_lists[i]["date"]..[[</label>
+                                        <div class="div_bg" border="0">
+                                            <label class="label_amount1">交易金额</label>
+                                            <label class="label_amount2">]]..coll_lists[i]["amount"]..[[</label>
+                                            <label class="label_result1">交易结果</label>
+                                            <label class="label_result2">]]..coll_lists[i]["result"]..[[</label>
+                                            <label class="label_state1">状态</label>
+                                            <label class="label_state2">]]..coll_lists[i]["state"]..[[</label>
+                                            <label class="label_operation1">操作</label>
+                                            <label class="label_operation2">]]..coll_lists[i]["operation"]..[[</label>
+                                            <img class="img_select2" src="local:select.png"></img>
+                                        </div>
+                                      </td>
+                                   </tr>]];
+            end
+            return tr_info;
+        end
+
+        --setHtml
+        function initial(coll_lists,startIndex,endIndex)
+            local tr_info=detailList(coll_lists,startIndex,endIndex);
+            local table_content = [[<table type="scrolltable" class="detail_table" border="0" name="table_detail"> nextUrl="getMore()"]]..tr_info..[[</table>]];
+            local table_detail = document:getElementsByName("table_detail");
+            if table_detail and #table_detail>0 then
+              table_detail[1]:setInnerHTML(table_content);
+            end
+        end
+
+        --获得前一页
+        function getPre()
+            endIndex = startIndex-1;
+            startIndex = endIndex-limit+1;
+            if startIndex>=1 then
+              initial(dataset1,startIndex,endIndex);
+            else
+              window:alert("已经是第一页了!");
+            end
+        end
+
+        --获得后一页
+        function getMore()
+            startIndex = startIndex+limit;
+            endIndex = startIndex+limit-1;
+            if startIndex<=table_n then 
+              if endIndex<=table_n then
+                initial(dataset1,startIndex,endIndex);
+              else
+                endIndex = table_n;
+                initial(dataset1,startIndex,endIndex);
+              end
+            else
+              startIndex = startIndex-limit;
+              window:alert("已经是最后一页了!");
+            end
+        end
+
+        initial(dataset1,startIndex,endIndex);
+
+        ]]>
+    </script>
+    <body class="body">
+        <table class="card_table" border="0">
+          <tr class="card_tr1">
+            <td class="card_td1" align="right"><label>工资卡</label></td>
+            <td class="card_td2"><label>4223237183148663</label></td>
+            <td class="card_td3" align="center"><img class="img_select1" src="local:select.png"/></td>
+          </tr>
+          <tr class="card_tr2">
+            <td class="card_td4" align="center">
+              <input type="segment" name="segment1" class="segment1">收益明细</input>
+              <input type="segment" name="segment1" class="segment1" checked="checked">购买明细</input>
+              <input type="segment" name="segment1" class="segment1">赎回明细</input>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div class="line" border="0"></div>
+        <table type="scrolltable" class="detail_table" border="0" name="table_detail" preUrl="getPre()" nextUrl="getMore()"></table>
+    </body>
+</content>

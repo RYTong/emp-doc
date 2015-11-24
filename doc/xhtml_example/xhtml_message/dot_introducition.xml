@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+	<head>
+		<style>
+            .body1{width:320px;height:460px;background-color:#C0C0C0;}
+            .map{left:0px;top:0px;width:320px;height:460px;}
+        </style>
+        <script type="text/x-lua">
+        	<![CDATA[
+        	local map = document:getElementsByName("map");
+            local gps_obj; --gps定位对象
+
+        	--实现gps定位获取当前位置，设置当前位置为中心点。
+        	local function gps_listener(event)
+        		local latitude = event.latitude;
+        		local longitude = event.longitude;
+        		map[1]:setCenter(latitude,longitude);
+                if gps_obj then
+                    gps:stopUpdateLocation(gps_obj);
+                end;
+        	end;
+        	function start_gps()
+        		gps_obj = gps:startUpdateLocation(); --开启gps;
+        		gps:setListener(gps_obj,gps_listener);
+        	end;
+
+        	--[[
+        	从当前位置为中心点查询网点
+        	由于网点的查询得从其他服务获取，所以此处写为静态数据。
+        	--]]
+        	local function add_dot()
+	        	local dot_tab = {
+	        					 {40.0306130000,116.2746940000,"北京市上地医院","北京市海淀区上地产业基地树村西街甲6号"},
+	        					 {40.0506100000,116.2941660000,"文思海辉大厦","北京市海淀区西北旺地区东北旺村西南方向"},
+	        					 {40.0168010000,116.2682950000,"百旺山森林公园","北京市海淀区马连洼街道百旺家苑社区西方向"},
+	        					 {40.0722570000,116.2894840000,"中关村森林公园","北京市海淀区西北旺地区唐家岭村东北方向"}
+	        					};
+	        	--将查询出的网点放到地图中
+	        	for key,value in pairs(dot_tab) do 
+	        		local lat = value[1];
+	        		local lon = value[2];
+	        		local title = value[3];
+	        		local sub_title = value[4];
+	        		map[1]:addAnnotation(lat,lon,title,sub_title);
+	        	end;
+        	end;
+
+        	local function initial()
+        		start_gps();
+        		add_dot();
+        	end;
+
+        	initial();
+        	]]>
+        </script>
+	</head>
+	<body class='body1'>
+		<div class='map' type="map" name="map">
+		</div>
+	</body>
+</content>

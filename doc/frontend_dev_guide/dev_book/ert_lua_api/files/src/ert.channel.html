@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Luadocs for src/ert.channel.lua</title>
+    <link rel="stylesheet" href="../../luadoc.css" type="text/css" />
+    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li>
+		<a href="../../files/src/binding/ert.cache_input.html">src/binding/ert.cache_input.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/binding/ert.nav.html">src/binding/ert.nav.lua</a>
+	</li>
+
+	<li><strong>src/ert.channel.lua</strong></li>
+	
+	<li>
+		<a href="../../files/src/ert.dom.html">src/ert.dom.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.html">src/ert.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.page.html">src/ert.page.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.platform.html">src/ert.platform.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.query.html">src/ert.query.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.stack.html">src/ert.stack.lua</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div> <!-- id="navigation" -->
+
+<div id="content">
+
+<h1>File <code>src/ert.channel.lua</code></h1>
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:back">channel_factory:back</a>&nbsp;()</td>
+    <td class="summary">返回channel的上一个界面，如果以是当前channel的第一页，则返回到进入channel的界面 page_stack维持当前页面在栈顶 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:finish">channel_factory:finish</a>&nbsp;()</td>
+    <td class="summary">退出当前channel，返回进入channel的界面 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:first_page">channel_factory:first_page</a>&nbsp;(id, trancode, post_body, options)</td>
+    <td class="summary">跳转到channel的首个页面，初始化一个Channel实例，存储channel_factory,然后调用channel：next_page() </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:get_channel">channel_factory:get_channel</a>&nbsp;(id)</td>
+    <td class="summary">按照id返回channel对象，如果id为nil则返回当前运行的channel </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:get_id">channel_factory:get_id</a>&nbsp;()</td>
+    <td class="summary">返回当前运行channel的id </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:get_page">channel_factory:get_page</a>&nbsp;(id, trancode)</td>
+    <td class="summary">获取指定Channel、指定交易步骤（trancode）的Page实例 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:get_request">channel_factory:get_request</a>&nbsp;(id, trancode)</td>
+    <td class="summary">获取指定Channel、指定交易步骤（trancode）的上送报文（post_body) </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:get_response">channel_factory:get_response</a>&nbsp;(id, trancode)</td>
+    <td class="summary">获取指定Channel、指定交易步骤（trancode）的返回报文 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory:next_page">channel_factory:next_page</a>&nbsp;(id, trancode, post_body, options)</td>
+    <td class="summary">跳转到channel下个界面 </td>
+    </tr>
+
+</table>
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+    <tr>
+    <td class="name" nowrap><a href="#Channel">Channel</a></td>
+    <td class="summary">Channel类，每个实例对应一个正在运行的Channel，并保存在channel_factory的channels字段中 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#channel_factory">channel_factory</a></td>
+    <td class="summary">ert.channel=channel_factory 用于存储和所有Channel实例，提供Channel运行所需要的方法 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#options">options</a></td>
+    <td class="summary">Channel执行界面（Page）切换时的option参数表 </td>
+    </tr>
+
+</table>
+
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="channel_factory:back"></a><strong>channel_factory:back</strong>&nbsp;()</dt>
+<dd>
+返回channel的上一个界面，如果以是当前channel的第一页，则返回到进入channel的界面 page_stack维持当前页面在栈顶
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:finish"></a><strong>channel_factory:finish</strong>&nbsp;()</dt>
+<dd>
+退出当前channel，返回进入channel的界面
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:first_page"></a><strong>channel_factory:first_page</strong>&nbsp;(id, trancode, post_body, options)</dt>
+<dd>
+跳转到channel的首个页面，初始化一个Channel实例，存储channel_factory,然后调用channel：next_page()
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: 
+	</li>
+	
+	<li>
+	  trancode: 
+	</li>
+	
+	<li>
+	  post_body: 
+	</li>
+	
+	<li>
+	  options: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="">
+		channel:next_page
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:get_channel"></a><strong>channel_factory:get_channel</strong>&nbsp;(id)</dt>
+<dd>
+按照id返回channel对象，如果id为nil则返回当前运行的channel
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: Channel ID
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:get_id"></a><strong>channel_factory:get_id</strong>&nbsp;()</dt>
+<dd>
+返回当前运行channel的id
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:get_page"></a><strong>channel_factory:get_page</strong>&nbsp;(id, trancode)</dt>
+<dd>
+获取指定Channel、指定交易步骤（trancode）的Page实例
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: Channel ID
+	</li>
+	
+	<li>
+	  trancode: 交易步骤码
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="">
+		Page
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:get_request"></a><strong>channel_factory:get_request</strong>&nbsp;(id, trancode)</dt>
+<dd>
+获取指定Channel、指定交易步骤（trancode）的上送报文（post_body)
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: Channel ID
+	</li>
+	
+	<li>
+	  trancode: 交易步骤码
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:get_response"></a><strong>channel_factory:get_response</strong>&nbsp;(id, trancode)</dt>
+<dd>
+获取指定Channel、指定交易步骤（trancode）的返回报文
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: Channel ID
+	</li>
+	
+	<li>
+	  trancode: 交易步骤码
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="channel_factory:next_page"></a><strong>channel_factory:next_page</strong>&nbsp;(id, trancode, post_body, options)</dt>
+<dd>
+跳转到channel下个界面
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: 跳转channel ID
+	</li>
+	
+	<li>
+	  trancode: 跳转channel trancode
+	</li>
+	
+	<li>
+	  post_body: 当前请求的上送参数，格式为table
+	</li>
+	
+	<li>
+	  options: 当前请求的配置选项，格式为table
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../../files/src/ert.channel.html#options">
+		options
+	</a>
+	
+</ul>
+
+</dd>
+
+
+</dl>
+
+
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Channel"></a><strong>Channel</strong></dt>
+<dd>Channel类，每个实例对应一个正在运行的Channel，并保存在channel_factory的channels字段中
+
+
+<h3>Fields</h3>
+<ul>
+	
+	<li>
+	  request_table: 存储channel请求的上送参数,以 trancode为key
+	</li>
+	
+	<li>
+	  response_table: 存储channel请求的返回报文,以 id_trancode为key
+	</li>
+	
+	<li>
+	  id: Channel id
+	</li>
+	
+	<li>
+	  trancode: 当前流程所处的channel 步骤代码
+	</li>
+	
+	<li>
+	  pages: 以kv形式存储已经创建的Page实例，key为trancode
+	</li>
+	
+	<li>
+	  page_stack: 用erl.stack栈实例存储Page的执行顺序
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="channel_factory"></a><strong>channel_factory</strong></dt>
+<dd>ert.channel=channel_factory 用于存储和所有Channel实例，提供Channel运行所需要的方法
+
+
+<h3>Fields</h3>
+<ul>
+	
+	<li>
+	  ui_debug: 是否打开ui 开发者模式，默认值为ert.config.ui_debug
+	</li>
+	
+	<li>
+	  debug_page: 打开离线资源的开发者模式，通过网络接口从ewp服务上获取离线资源
+	</li>
+	
+	<li>
+	  debug_json: 打开网络接口的开发者模式，即从ewp服务上的静态文件中模拟接口报文返回
+	</li>
+	
+	<li>
+	  loading_tag: 用于在channel切换过程中loading界面调用windows:show()/hide()的index，默认为999
+	</li>
+	
+	<li>
+	  channels: 以kv形式存储正在运行的Channel实例，key为Channel ID
+	</li>
+	
+	<li>
+	  channel_stack: 一个ert.stack栈实例，用于存放Channel实例的运行顺序
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="options"></a><strong>options</strong></dt>
+<dd>Channel执行界面（Page）切换时的option参数表
+
+
+<h3>Fields</h3>
+<ul>
+	
+	<li>
+	  replace: "show_content"|function 页面replace的方式，如果为show_content,则 会调用window:showContent()遮盖在当前页面之上，使用此方式的页面跳转应注意对应界面脚本中 保存Page对象的全局变量不能重名
+	</li>
+	
+	<li>
+	  show_loading: 是否在网络请求过程中加载loading界面
+	</li>
+	
+	<li>
+	  transiton_type: 界面向下跳转的动画类型
+	</li>
+	
+	<li>
+	  back_transiton_type: 界面返回的动画类型
+	</li>
+	
+	<li>
+	  success_callback: 网络请求成功时的回调函数
+	</li>
+	
+	<li>
+	  fail_callback: 网络请求异常时的回调函数
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->
+</body>
+</html>

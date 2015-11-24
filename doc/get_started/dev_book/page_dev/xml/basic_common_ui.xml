@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <link ref="eui.css" type="text/css"/>
+        <link ref="ert_ui_cmm_ui.css" type="text/css" />
+        <style>
+            .title_img_right {right: 10px;width: 20px;height: 20px;}
+            .select_card_custom{width:200px;font-size: 14px;color:#333333;}
+            .div_select_custom {height: 35px;}
+            .height_10 {height: 10px;}
+            .div_card_custom {height: 30px;background-image: url(background_img1.png);}
+            .lbl_card_custom {font-size: 14px;color:#FFFFFF;}
+
+            .div_card_info {width: 320px;background-color: #FFFFFF;}
+            .tbl_card_info {width: 310px;}
+            .tr_card_custom {height: 30px;font-size: 14px;}
+        </style>
+        <script type="text/x-lua" src="poc_finance/lua/tmp.lua"></script>
+    </head>
+    <body>
+       <!--title-->
+       #{local bar_flag = window:supportStatusBarInXML();}#
+       <div class="ert_position" align="center" valign="middle" border="0">
+           #{if bar_flag then}#
+           <div class="ert_w320_h20_blue" border = "0"></div>
+           #{end}#
+           <div class="ert_w320_h50_blue_f16w" align="center" valign="middle" border="0">
+               <div class="ert_w50_h45_l10" border="0" valign="middle" >
+                   <img src="btn_back.png" class="ert_w8_h14"></img>
+                   <div class="ert_div_w10" border="0"></div>
+                   <input class="ert_f14w" type="button" value="返回" onclick="back_fun()"/>
+               </div>
+               <label class="ert_f18w">我的账户</label>
+               <img class="title_img_right" src="btn_right.png"></img>
+           </div>
+       </div>
+
+       <!--segment-->
+       <div class="cmm_ui_segment_div" border="0">
+           <input type="button" border="0" class="cmm_ui_segment_btn,cmm_ui_segment_btn1" name="cmm_ui_segment_btn" value="储蓄卡" onclick="select_seg(1)"/>
+           <input type="button" border="0" class="cmm_ui_segment_btn,cmm_ui_segment_btn2" name="cmm_ui_segment_btn" value="信用卡" onclick="select_seg(2)"/>
+           <input type="button" border="0" class="cmm_ui_segment_btn,cmm_ui_segment_btn3" name="cmm_ui_segment_btn" value="更多" onclick="select_seg(3)"/>
+           <label class="cmm_ui_row_line_default,cmm_ui_segment_line_custom1" name="cmm_ui_segment_blue_line"></label>
+           <label class="cmm_ui_row_line_default,cmm_ui_segment_line_custom2"></label>
+       </div>
+
+       <!--select-->
+       <div class="ert_div_select,div_select_custom" valign="middle" align="center" border="0">
+             <select class="select_card_custom">
+               <option class="ert_option" >622226790365742151(工资卡)</option>
+               <option class="ert_option" >622226790365776109(工资卡)</option>
+               <option class="ert_option" >622226092470367081(账户)</option>
+             </select>
+             <div class="ert_w20_inline" valign="middle" align="center" border="0" >
+               <img name="select_img" src="down_1.png" class="ert_w12_h8"></img>
+             </div>
+             <label class="ert_rline_w320_b0"></label>
+       </div>
+
+       <div class="height_10" border="0"></div>
+
+       <!--表头-->
+       <div class="ert_w320_h50_w,div_card_custom"  valign="middle" border="0">
+         <label class="ert_f16g_l10,lbl_card_custom">工资卡</label>
+         <label class="ert_f16b_r10,lbl_card_custom">622662 2228 2952 1321</label>
+       </div>
+
+       <!--表体-->
+       <div class="div_card_info" border="0" align="right">
+           <table class="tbl_card_info" border="0" separator="#EEEEEE">
+               <tr class="cmm_ui_tr_lsi_tr,tr_card_custom" valign="middle">
+                   <td>
+                       <label>活期</label>
+                       <div class="cmm_ui_tr_lsi_div_right" border="0" valign="middle" align="right">
+                           <label>￥2000.00</label>
+                           <div class="cmm_ui_tr_lsi_div_arrow" valign="middle" border="0" align="right">
+                               <img src="right_arrow.png" class="cmm_ui_tr_lsi_img_arrow"></img>
+                           </div>
+                       </div>
+                   </td>
+               </tr>
+               <tr class="cmm_ui_tr_lsi_tr,tr_card_custom" valign="middle">
+                   <td>
+                       <label>定期</label>
+                       <div class="cmm_ui_tr_lsi_div_right" border="0" valign="middle" align="right">
+                           <label>￥10000.00</label>
+                           <div class="cmm_ui_tr_lsi_div_arrow" valign="middle" border="0" align="right">
+                               <img src="right_arrow.png" class="cmm_ui_tr_lsi_img_arrow"></img>
+                           </div>
+                       </div>
+                   </td>
+               </tr>
+               <tr class="cmm_ui_tr_lsi_tr,tr_card_custom" valign="middle">
+                   <td>
+                       <label>理财</label>
+                       <div class="cmm_ui_tr_lsi_div_right" border="0" valign="middle" align="right">
+                           <label>￥683.00</label>
+                           <div class="cmm_ui_tr_lsi_div_arrow" valign="middle" border="0" align="right">
+                               <img src="right_arrow.png" class="cmm_ui_tr_lsi_img_arrow"></img>
+                           </div>
+                       </div>
+                   </td>
+               </tr>
+            </table>
+        </div>
+
+       <!--add card footer-->
+       <div class="cmm_ui_add_card_div" align="center" valign="middle" border="0">
+           <label class="cmm_ui_row_line_default,cmm_ui_add_card_line_custom"></label>
+           <img src="add_bank.png" class="cmm_ui_add_card_img_add"></img>
+           <div border="0" class="cmm_ui_add_card_div_distance"></div>
+           <label>添加银行卡</label>
+       </div>
+    </body>
+</content>

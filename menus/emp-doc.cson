@@ -22,15 +22,119 @@
   {
     'label': 'Emp'
     'submenu': [
-        {type: 'separator'}
-        {'label': 'EMP Doc',
-        'submenu': [
-          {
-            'label': 'Show EMP Doc'
-            'command': 'emp-doc:show-doc'
-          }
-        ]
+        {
+          'label': 'Help'
+          'submenu':[
+              {'label': 'EMP Doc',
+              'submenu': [
+                  {'label': 'Info Center',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-doc'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-doc-brw'
+                      }
+                  ]
+                  }
 
+                  {'label': 'Inner Docs',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-inner'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-inner-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Get Start',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-started'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-started-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Ert Develop',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-ert'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-ert-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Ewp Lib Example',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-ewp'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-ewp-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Frontend Dev Guide',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-frontend'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-frontend-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Software Specification',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-software'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-software-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Xhtml Example',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-xhtml'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-xhtml-brw'
+                      }
+                  ]
+                  }
+
+              ]
+
+              }
+          ]
         }
 
     ]

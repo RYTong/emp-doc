@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <style>
+    .body{background-color:#F0F0F0;}
+    .label1{left:0px;top:40px;width:320px;height:40px;font-size:18px;font-weight:bold;text-align:center;}
+    .button1{left:20px;top:110px;width:280px;height:40px;font-size:18px;text-align:center;background-color:#0068b7;color:#FFFFFF;}
+    </style>
+    <script type="text/x-lua">
+      <![CDATA[
+        ryt = RYTL:new{};
+        
+        --返回上一页面
+        function back()
+            ryt:back();
+        end;
+        
+        window:setPhysicalkeyListener("backspace", back);
+      ]]>
+    </script>
+  </head>
+  <body>
+    <label class="label1">页面跳转示例页面二</label>
+    <input type="button" class="button1" value="点击返回" onclick="back()"/>
+  </body>
+</content>

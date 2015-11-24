@@ -3,7 +3,7 @@
     <head>
         <style>
             .body{background-color:#f0f0f0;width:320px;}
-            
+
             .father{width:200px;height:30px;left:10px;background-color:#afdfe4;}
             .father_border{width:300px;height:30px;left:10px;font-size:12px;}
 
@@ -23,7 +23,7 @@
             .background_image {background-image:url(a.png);}
             .filter1 {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
             .filter2 {filter:progid(alpha=’0.5’); background-color:#FFFF00;}
-            
+
             .textColor {color:#ff0000;}
             .fontWeight{font-weight:bold;}
             .fontSize{font-size:25px;}
@@ -31,244 +31,285 @@
             .textAlignLeft{text-align:left;}
             .textAlignCenter{text-align:center;}
             .textAlignRight{text-align:right;}
-
-
+            .tip{font-size: 14px;color:#00FF00;}
+            .option_father{font-size: 15px;}
             .close_but {width:310px;height:30px;left:5px;font-size:20px;color:#000000;background-color:#ffff00;}
-            
-            
+
+
         </style>
-        
+
         <script type="text/x-lua" src="RYTL.lua"></script>
         <script type="text/x-lua">
             <![CDATA[
-                
+
                 ryt = RYTL:new{};
-                
+
                 function close()
                   ryt:back();
                 end;
-                
+
                 function click(arg)
                   local info="可以点击！info:"..arg;
                   window:alert(info);
                 end;
             ]]>
         </script>
-        
+
     </head>
     <body>
         <!-- positon:fixed -->
-        <select class='father,positionFixed'> 
+        <select class='father,positionFixed'>
           <option>1:in select Fixed</option>
-          <option>2:in select Fixed</option>          
+          <option>2:in select Fixed</option>
         </select>
 
-        <!-- positon:toplevel --> 
-         <select class='father,positionToplevel'> 
+        <!-- positon:toplevel -->
+         <select class='father,positionToplevel'>
           <option>1:in select Toplevel</option>
-          <option>2:in select Toplevel</option>          
+          <option>2:in select Toplevel</option>
         </select>
 
         <!-- text/value-->
         <b>测试option对text/value的支持</b><br/>
-        <select class='father'> 
+        <select class='father'>
           <option value="value1">option-text1</option>
-          <option value="value2">option-text2</option> 
-          <option value="value3">option-text3</option>         
+          <option value="value2">option-text2</option>
+          <option value="value3">option-text3</option>
         </select>
 
         <!-- selected-->
         <b>测试option对selected的支持:设置选择第二项</b><br/>
-        <select class='father'> 
+        <select class='father'>
           <option value="value1">option-text1</option>
-          <option selected="selected" value="value2">option-text2</option> 
-          <option value="value3">option-text3</option>         
+          <option selected="selected" value="value2">option-text2</option>
+          <option value="value3">option-text3</option>
         </select>
 
 
         <b>测试select对hide/display/visibility的支持</b><br/>
-        
+
         <!-- hide -->
         <label>下面的select有:hide=false</label><br/>
-        <select hide="false" class='father'> 
+        <select hide="false" class='father'>
           <option>option1</option>
-          <option>option2</option>          
+          <option>option2</option>
         </select>
         <label>下面的select有:hide=true</label><br/>
-        <select hide="true" class='father'> 
+        <select hide="true" class='father'>
           <option>option1</option>
-          <option>option2</option>          
+          <option>option2</option>
         </select>
 
          <!-- diaplay -->
         <label>下面的select有:display=none</label><br/>
-        <select class='father,display1' > 
+        <select class='father,display1' >
           <option>option1</option>
-          <option>option2</option>          
+          <option>option2</option>
         </select>
         <label>下面的select有:display=block</label><br/>
-        <select class='father,display2' > 
+        <select class='father,display2' >
           <option>option1</option>
-          <option>option2</option>          
+          <option>option2</option>
         </select>
-         
+
         <!-- visibility -->
         <label>下面的select有:visibility=visible</label><br/>
         <select class='father,visibility1' >
           <option>option1</option>
-          <option>option2</option>           
+          <option>option2</option>
         </select>
         <label>下面的select有:visibility=hidden</label><br/>
         <select class='father,visibility2' >
           <option>option1</option>
-          <option>option2</option>           
+          <option>option2</option>
         </select>
-        
+
         <!-- enable and onclick事件 -->
-        <b>测试select对enable的支持，option对onclick的支持</b><br/> 
+        <b>测试select对enable的支持，option对onclick的支持</b><br/>
          <label>下面的select有:enable=true</label><br/>
-        <select class='father' enable="true" >  
+        <select class='father' enable="true" >
           <option>option1</option>
-          <option>option2</option>        
+          <option>option2</option>
         </select>
         <label>下面的select有:enable=false</label><br/>
-        <select class='father' enable="false" > 
+        <select class='father' enable="false" >
           <option>option1</option>
-          <option>option2</option>         
+          <option>option2</option>
         </select>
         <label>下面的option定义了onclick事件</label><br/>
-        <select class='father'> 
+        <select class='father'>
           <option onclick="click('option1')">option1</option>
-          <option onclick="click('option2')">option2</option>         
+          <option onclick="click('option2')">option2</option>
         </select>
-        
+
        <!-- select对border的支持 -->
-        <b>测试select对border属性的支持</b><br/>       
+        <b>测试select对border属性的支持</b><br/>
         <select class='father_border'>
-           <option>select没有指定属性border=?默认为0</option>         
-        </select> 
+           <option>select没有指定属性border=?默认为0</option>
+        </select>
         <select class='father_border' border="0">
            <option>select指定属性border=0</option>
-        </select>       
-        <select class='father_border' border="1"> 
-           <option>select指定属性border=1</option>  
-        </select>              
+        </select>
+        <select class='father_border' border="1">
+           <option>select指定属性border=1</option>
+        </select>
         <select class='father_border,background_color' border="1">
            <option>select有:background-color,border=1</option>
-        </select>       
-        <select class='father_border,background_image' border="1"> 
-           <option>select有:background-image,border=1</option>  
         </select>
-        
+        <select class='father_border,background_image' border="1">
+           <option>select有:background-image,border=1</option>
+        </select>
+
 
         <!-- select对border的支持 -->
-        <b>测试select对border样式的支持</b><br/>                   
-        <select class='father_border,border' border="0">  
-          <option>select有:border=0,border样式不起作用</option>        
+        <b>测试select对border样式的支持</b><br/>
+        <select class='father_border,border' border="0">
+          <option>select有:border=0,border样式不起作用</option>
         </select>
-        <select class='father_border,border' border="1">  
-          <option>select有:border=1,border:3px solid #00ff00</option>        
+        <select class='father_border,border' border="1">
+          <option>select有:border=1,border:3px solid #00ff00</option>
         </select>
         <select class='father_border,background_color,border' border="1">
            <option>select有:background-color,border=1,border:3px solid #00ff00</option>
-        </select>       
+        </select>
         <select class='father_border,background_image,border' border="1">
            <option>select有:background-image,border=1,border:3px solid #00ff00</option>
         </select>
 
-        <b>测试select对border-radius的支持</b><br/> 
+        <b>测试select对border-radius的支持</b><br/>
         <select class='father_border,borderRadiusOne,background_color' border="0">
             <option>select有:border=0,border-radius不起作用</option>
-        </select>  
+        </select>
 
-        <select class='father_border,borderRadiusOne' border="1">  
-          <option>select有:border=1,border-radius:10</option>        
-        </select>       
+        <select class='father_border,borderRadiusOne' border="1">
+          <option>select有:border=1,border-radius:10</option>
+        </select>
         <select class='father_border,borderRadiusOne,background_color' border="1">
             <option>select有:border=1,border-radius:10,background-color</option>
-        </select> 
+        </select>
         <select class='father_border,borderRadiusOne,background_image' border="1">
-            <option>select有:border=1,border-radius:10,background-image</option>         
-        </select>  
-        <select class='father_border,borderRadiusFour' border="1">  
-           <option>select有:border=1,border-radius:0 10 15 20</option>        
-        </select>                
-        <select class='father_border,borderRadiusFour,background_color' border="1"> 
+            <option>select有:border=1,border-radius:10,background-image</option>
+        </select>
+        <select class='father_border,borderRadiusFour' border="1">
+           <option>select有:border=1,border-radius:0 10 15 20</option>
+        </select>
+        <select class='father_border,borderRadiusFour,background_color' border="1">
           <option>select有:border=1,border-radius:0 10 15 20,background-color</option>
-        </select>                      
-        <select class='father_border,borderRadiusFour,background_image' border="1"> 
+        </select>
+        <select class='father_border,borderRadiusFour,background_image' border="1">
            <option>select有:border=1,border-radius:0 5 10 15,background-image</option>
         </select>
-           
-        <!-- filter/background-color/background-image--> 
-        <b>测试select对filter/background-color/background-image的支持</b><br/>     
+
+        <!-- filter/background-color/background-image-->
+        <b>测试select对filter/background-color/background-image的支持</b><br/>
         <!-- filter -->
         <label>下面的select有:filter渐变</label><br/>
-        <select class='father,filter1' > 
+        <select class='father,filter1' >
           <option>option1</option>
-          <option>option2</option>         
+          <option>option2</option>
         </select>
         <label>下面的select有:filter透明度</label><br/>
         <select class='father,filter2' >
           <option>option1</option>
-          <option>option2</option>          
+          <option>option2</option>
         </select>
         <!-- background-color -->
         <label>下面的select有:background-color</label><br/>
-        <select class='father,background_color' >  
+        <select class='father,background_color' >
           <option>option1</option>
-          <option>option2</option>        
+          <option>option2</option>
         </select>
         <!-- background-image -->
         <label>下面的select有:background-image</label><br/>
-        <select class='father,background_image' > 
+        <select class='father,background_image' >
           <option>option1</option>
-          <option>option2</option>         
+          <option>option2</option>
         </select>
 
-        <!-- color/font-size/font-wight/font-style--> 
-        <b>测试select对color/font-size/font-wight/font-style/text-align的支持</b><br/>
+        <!-- color/font-size/font-wight/font-style-->
+        <b>测试option对color/font-size/font-wight/font-style/text-align的支持</b><br/>
         <!--color-->
-        <select class='father,textColor' > 
-           <option>1-color</option>
-           <option>2-color</option>         
+        <b class="tip">测试option对color的支持</b><br/>
+        <select class='father' >
+           <option class='option_father,textColor'>1-color</option>
+           <option>2-color</option>
         </select>
         <!--fontSize-->
-        <select class='father,fontSize' > 
-           <option>1-font-size:25px</option> 
-           <option>2-font-size:25px</option>        
+        <b class="tip">测试option对font-size</b><br/>
+        <select class='father' >
+           <option class='fontSize'>1-font-size:25px</option>
+           <option>2-font-size:25px</option>
         </select>
         <!--fontWeight-->
-        <select class='father,fontWeight' > 
-           <option>1-font-weight</option>
-           <option>2-font-weight</option>         
+        <b class="tip">测试option对font-wight的支持</b><br/>
+        <select class='father' >
+           <option class='option_father,fontWeight'>1-font-weight</option>
+           <option>2-font-weight</option>
         </select>
         <!--fontStyle-->
-        <select class='father,fontStyle' > 
-           <option>1-font-style</option>
-           <option>2-font-style</option>         
+        <b class="tip">测试option对font-style的支持</b><br/>
+        <select class='father' >
+           <option class='option_father,fontStyle'>1-font-style</option>
+           <option>2-font-style</option>
         </select>
         <!--textAlign-->
-        <select class='father,textAlignLeft' > 
+        <b class="tip">测试option对text-align的支持</b><br/>
+        <select class='father' >
+           <option class='option_father,textAlignLeft'>1-textAlignLeft</option>
+           <option>2-textAlignLeft</option>
+        </select>
+        <select class='father' >
+           <option class='option_father,textAlignCenter'>1-textAlignCenter</option>
+           <option>2-textAlignCenter</option>
+        </select>
+        <select class='father' >
+           <option class='option_father,textAlignRight'>1-textAlignRight</option>
+           <option>2-textAlignRight</option>
+        </select>
+
+        <!-- color/font-size/font-wight/font-style-->
+        <b>测试select对color/font-size/font-wight/font-style/text-align的支持</b><br/>
+        <!--color-->
+        <select class='father,textColor' >
+           <option>1-color</option>
+           <option>2-color</option>
+        </select>
+        <!--fontSize-->
+        <select class='father,fontSize' >
+           <option>1-font-size:25px</option>
+           <option>2-font-size:25px</option>
+        </select>
+        <!--fontWeight-->
+        <select class='father,fontWeight' >
+           <option>1-font-weight</option>
+           <option>2-font-weight</option>
+        </select>
+        <!--fontStyle-->
+        <select class='father,fontStyle' >
+           <option>1-font-style</option>
+           <option>2-font-style</option>
+        </select>
+        <!--textAlign-->
+        <select class='father,textAlignLeft' >
            <option>1-textAlignLeft</option>
-           <option>2-textAlignLeft</option>         
+           <option>2-textAlignLeft</option>
         </select>
-        <select class='father,textAlignCenter' > 
+        <select class='father,textAlignCenter' >
            <option>1-textAlignCenter</option>
-           <option>2-textAlignCenter</option>         
+           <option>2-textAlignCenter</option>
         </select>
-        <select class='father,textAlignRight' > 
+        <select class='father,textAlignRight' >
            <option>1-textAlignRight</option>
-           <option>2-textAlignRight</option>         
+           <option>2-textAlignRight</option>
         </select>
-        
+
 		<!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
-		
+
         <!-- positon:fixed -->
-        <select class='father,positionFixed'> 
+        <select class='father,positionFixed'>
           <option>1:in select Fixed</option>
-          <option>2:in select Fixed</option>          
+          <option>2:in select Fixed</option>
         </select>
     </body>
 </content>

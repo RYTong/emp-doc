@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <script type="text/x-lua">
+      <![CDATA[
+          window:alert("无body页面示例");
+      ]]>
+    </script>
+  </head>
+</content>

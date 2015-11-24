@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <style>
+    .body{background-color:#F0F0F0;}
+    .label1{left:0px;top:40px;width:320px;height:40px;font-size:18px;font-weight:bold;text-align:center;}
+    .button1{left:20px;top:110px;width:280px;height:40px;font-size:18px;text-align:center;background-color:#0068b7;color:#FFFFFF;}
+    .table_showContent{width:280px;height:300px;top:100px;left:20px;background-color:#FFFFFF;display:none;}
+    .tr_content{height:300px;}
+    .td_content{width:280px;}
+    .div_showContent{width:220px;background-color:#FFFFFF;}  
+    .label_info{width:220px;font-size:18px;font-weight:bold;}
+    .button_close{left:10px;width:200px;height:40px;background-color:#0068b7;font-size:18px;color:#FFFFFF;}
+    .height_10{height:10px;}
+    </style>
+    <script type="text/x-lua">
+      <![CDATA[
+      --页面标记
+      local tag = 1;
+      --弹出框中的文字
+      local text = "这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字这是测试文字";
+
+      --关闭弹出框
+      function hidetable()       
+        window:hide(tag);
+      end;            
+      
+      --显示弹出框
+      function showContent()
+        --弹出框报文
+        local showboby=[[
+        <table class="table_showContent" name="showContent_table" border="0">
+          <tr class="tr_content">
+            <td class="td_content" align="center" valign="middle">
+              <div class="div_showContent" border="0">
+                <label class="label_info">]]..text..[[</label>
+                <div class="height_10" border="0"></div>
+                <input type="button" class="button_close" value="关闭" onclick="hidetable()"/>
+              </div>
+            </td>
+          </tr>
+        </table>]];
+
+        --动态设置报文
+        local table_control_show = document:getElementsByName("showContent_table");
+        table_control_show[1]:setInnerHTML(showboby);
+        --显示弹出框 
+        window:showControl(table_control_show[1],tag); 
+        --设置物理键监听
+        window:setPhysicalkeyListener("backspace",hidetable);
+      end;     
+      ]]>
+    </script>
+  </head>
+  <body>
+    <!--主页-->
+    <label class="label1">弹出框内容居中布局示例</label>
+    <input type="button" class="button1" value="点击显示弹出框" onclick="showContent()"/>
+    <!--弹出框-->
+    <table class="table_showContent" name="showContent_table" border="0">
+    </table>
+  </body>
+</content>

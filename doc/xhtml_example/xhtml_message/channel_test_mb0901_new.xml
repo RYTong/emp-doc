@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <link ref="channel_test/css/title.css" type="text/css"/>
+    <style>
+       .input_test{top:120px;left:30px;width:260px;height:35px;}
+       .button_test{top:190px;left:70px;width:180px;height:30px;color:#FFFFFF;background-color:#1C86EE;}
+    </style>
+    <script type="text/x-lua">
+      <![CDATA[
+            --请求下一页面
+            function business_req()
+                local inputContent;
+                --显示加载界面
+                window:showContent("local:FullSLoading1.xml",loadingtag);
+                local channelId = "channel_test";
+                local trancode = "mb0902";
+                --获取输入框内容
+                local inputCrl = document:getElementsByName("test_input");
+                if inputCrl and #inputCrl>0 then 
+                    inputContent = inputCrl[1]:getPropertyByName("value");
+                end
+                local params = {id=channelId,tranCode=trancode,userId=inputContent};
+                invoke_trancode(channelId, trancode, params, callback_channel, {trancode=trancode,channelId=channelId});
+            end
+      ]]>
+    </script>
+</head>
+<body>
+    <!--Title-->
+    <table class="table_title" border="0">
+        <tr class="tr_title" >
+            <td align="center" valign="middle">
+                <label class="label_title">新频道示例页面一</label>
+                <input type="button" class="button_back" name="back_but" onclick="back_fun()"/>
+                <input type="button" class="button_main" name="main_but" onclick="main_page_callback()"/>
+            </td>
+        </tr>
+    </table>
+
+    <input type="text" class="input_test" name="test_input" hold="请输入用户Id" />
+    <input type="button" class="button_test" value="提交" onclick="business_req()"/>
+</body>
+</content>

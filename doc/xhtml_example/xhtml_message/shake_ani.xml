@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>   
+    <head>
+        <style>
+            .body{width:320px;height:460px;}
+            .input{width:200px;height: 45px;background-color: #cccccc;color: #FFFFFF;}
+            .register_but1{width:50px;height:45px;background-image:url(login/images/vas3.png);} 
+            .register_but2{width:50px;height:45px;background-image:url(login/images/set3.png);}         
+        </style>
+        <script type="text/x-lua">
+            <![CDATA[
+
+                function shake(paramCtrl)
+                    local random_angle;
+                    local shake_index;
+                    local rotate_1;
+                    local rotate_2;
+                    local rotate_stop;
+                    local rotate_stop_lis;
+                    local stop = -1;
+
+                    --获得随机晃动的角度
+                    local function get_angle()
+                        math.randomseed(tonumber(tostring(os.time()):reverse():sub(1,12)));
+                        local random_test = math.random(0,2*10000);
+                        local random_index = math.random(0,2*10000);
+                        return random_index/10000;
+                    end;
+                    --不做任何操作
+                    rotate_stop_lis = function()
+                        if shake_index == 2 then
+                            transition:rotate(paramCtrl,random_angle,'z',0.1);
+                        else
+                        end;
+                    end;
+                    --动画停止
+                    rotate_stop = function()
+                        transition:setStopListener(paramCtrl,rotate_stop_lis);
+                        transition:rotate(paramCtrl,-random_angle,'z',0.1);
+                    end;
+                    --复原
+                    rotate_2 = function ()
+                        if stop == -1 then
+                            shake_index = 2;
+                            random_angle = 0 - random_angle;
+                            transition:setStopListener(paramCtrl,rotate_1);
+                            transition:rotate(paramCtrl,random_angle,'z',0.1); 
+                        else
+                            rotate_stop();
+                        end;
+                    end;
+                    --晃动
+                    rotate_1 = function ()
+                        if stop == -1 then
+                            shake_index = 1;
+                            random_angle = 6 - get_angle();
+                            transition:setStopListener(paramCtrl,rotate_2);
+                            transition:rotate(paramCtrl,random_angle,'z',0.1);
+                        else
+                            rotate_stop();
+                        end;
+                    end;
+
+                    --开始
+                    local start = function()
+                        rotate_1();
+                    end;
+
+                    --停止
+                    local stop = function()
+                        stop = 0;
+                    end;
+
+                    return start,stop;                
+                end;
+
+                local start_timer_tab = {};
+                local stop_timer_tab = {};
+                
+                function start()
+                    for i=1,10 do
+                        local ctrl = document:getElementsByName("but_register"..i);
+                        start_timer_tab["but_register"..i],stop_timer_tab["but_register"..i]= shake(ctrl[1]);
+                        start_timer_tab["but_register"..i]();
+                    end;
+                end;
+
+                function stop()
+                    for i=1,10 do
+                        stop_timer_tab["but_register"..i]();
+                    end;                   
+                end;
+            ]]>
+        </script>
+    </head>
+    <body class="body" name="body">
+        <input type="button" name="but_register" onclick="back()" value="返回"/>
+        <input type="button" name="but_register" onclick="start()" value="开始"/><br/>
+        <input type="button" name="but_register" onclick="stop()" value="停止"/><br/>
+        <input type="button" class="register_but1" name="but_register1" onclick="register()" />
+        <input type="button" class="register_but2" name="but_register2" onclick="register()" />
+        <input type="button" class="register_but1" name="but_register3" onclick="register()" />
+        <input type="button" class="register_but2" name="but_register4" onclick="register()" />
+        <input type="button" class="register_but1" name="but_register5" onclick="register()" /><br/>
+        <input type="button" class="register_but2" name="but_register6" onclick="register()" />
+        <input type="button" class="register_but1" name="but_register7" onclick="register()" />
+        <input type="button" class="register_but2" name="but_register8" onclick="register()" />
+        <input type="button" class="register_but1" name="but_register9" onclick="register()" />
+        <input type="button" class="register_but2" name="but_register10" onclick="register()" />        
+    </body>
+</content>

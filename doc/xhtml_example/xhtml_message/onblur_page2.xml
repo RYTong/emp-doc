@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .label{top:20px;left:0px;font-size:19px;width:320px;font-weight:bold;text-align:center;}
+            .input1{top:60px;width:300px;left:10px;height:35px;} 
+            .input2{top:105px;width:300px;left:10px;height:35px;} 
+            .button1{left:60px;top:160px;width:200px;height:35px;background-color:#1E90FF;}
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script>
+            ryt = RYTL:new{};
+
+            this = {};
+
+            --onblur回调函数
+            function this.onblur2()
+              window:alert("onblur2!");
+            end
+
+            --返回按钮
+            function this.back()
+              ryt:back();
+            end
+        </script>
+    </head>
+    <body>
+        <label>onblur调用场景页面二</label>
+        <input type="text" class="input1" onblur="this.onblur2()"/>
+        <input type="text" class="input2"/> 
+        <input type="button" class="button1" value="返回" border="1" onclick="this.back()"/> 
+    </body>
+</content>

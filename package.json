@@ -17,9 +17,25 @@
   "bugs": {
     "url": "https://github.com/RYTong/emp-doc/issues"
   },
-  "activationCommands": {
-    "atom-workspace": "emp-doc:show-doc"
-  },
+  "activationEvents": [
+    "emp-doc:show-doc",
+    "emp-doc:show-doc-brw",
+    "emp-doc:show-inner",
+    "emp-doc:show-inner-brw",
+    "emp-doc:show-started",
+    "emp-doc:show-started-brw",
+    "emp-doc:show-ert",
+    "emp-doc:show-ert-brw",
+    "emp-doc:show-ewp",
+    "emp-doc:show-ewp-brw",
+    "emp-doc:show-frontend",
+    "emp-doc:show-frontend-brw",
+    "emp-doc:show-software",
+    "emp-doc:show-software-brw",
+    "emp-doc:show-xhtml",
+    "emp-doc:show-xhtml-brw"
+
+  ],
   "repository": "https://github.com/RYTong/emp-doc",
   "license": "MIT",
   "engines": {
@@ -27,6 +43,7 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.2",
-    "underscore-plus": "^1.2.1"
+    "underscore-plus": "^1.2.1",
+    "open": "*"
   }
 }

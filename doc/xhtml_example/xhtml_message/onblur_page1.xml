@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .label{top:20px;left:0px;font-size:19px;width:320px;font-weight:bold;text-align:center;}
+            .input1{top:60px;width:300px;left:10px;height:35px;} 
+            .input2{top:105px;width:300px;left:10px;height:35px;} 
+            .button1{left:60px;top:160px;width:200px;height:35px;background-color:#1E90FF;}
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script>
+            ryt = RYTL:new{};
+
+            this = {};
+
+            --onblur回调函数
+            function this.onblur1()
+                window:alert("onblur1!");
+            end
+
+            --页面请求回调函数
+            function this.page_callback(responsedata)
+                if responsedata["responseCode"] == 1599 then
+                    location:replace(responsedata["responseBody"]);
+                elseif responsedata["responseCode"] == 200 then
+                    history:add(responsedata["responseBody"]);
+                    location:replace(responsedata["responseBody"]);
+                else
+                    window:alert("网络请求失败！");
+                    return;
+                end;
+            end;
+            
+            --请求第二个页面
+            function this.page_request()
+                local restr = "name=onblur_page2.xml";
+                ryt:post(nil, "test_s/get_json_data", restr, this.page_callback, {}, false);
+            end
+        </script>
+    </head>
+    <body>
+        <label>onblur调用场景页面一</label>
+        <input type="text" class="input1" onblur="this.onblur1()"/>
+        <input type="text" class="input2"/>
+        <input type="button" class="button1" value="跳转" border="1" onclick="this.page_request()"/> 
+    </body>
+</content>

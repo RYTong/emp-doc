@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <style>
+      .label_title{top:50px;width:320px;font-size:18px;font-weight:bold;color:#000000;text-align:center;}
+      .button_showContent{left:10px;top:110px;width:300px;height:40px;background-color:#0068b7;font-size:18px;color:#FFFFFF;}
+      .div_showContent{height:150;width:280;top:100px;left:20px;background-color:#FFFFFF;display:none;}  
+      .label_info{left: 0px;top:30px;width:280px;font-size:18px;font-weight:bold;text-align:center;}
+      .button_close{left:40px;top:80px;width:200px;height:40px;background-color:#0068b7;font-size:18px;color:#FFFFFF;}   
+    </style>
+    <script type="text/x-lua">
+    <![CDATA[  
+
+      --页面标记
+      local tag = 1;
+
+      --关闭弹出框
+      function hidetable()       
+        window:hide(tag);
+      end;            
+      
+      --显示弹出框            
+      function contentShow()
+        --弹出框报文
+        local showboby=[[
+          <div class="div_showContent" name="showcontent_div" border="0">
+              <label class="label_info">这是被隐藏的div！</label>
+              <input type="button" class="button_close" value="关闭" onclick="hidetable()"/>
+          </div>
+        ]]
+        --动态设置报文
+        local div_control_show = document:getElementsByName("showcontent_div");
+        div_control_show[1]:setInnerHTML(showboby);
+        --显示弹出框 
+        window:showControl(div_control_show[1],tag); 
+        --设置物理键监听
+        window:setPhysicalkeyListener("backspace",hidetable);       
+      end;
+    ]]>
+    </script>
+  </head>
+  <body>
+    <!--主页面-->
+    <label class="label_title">showControl和setInnerHTML同时使用</label>   
+    <input type="button"  class="button_showContent" value="显示弹出框" onclick="contentShow()"/>
+
+    <!--弹出框-->
+    <div class="div_showContent" name="showcontent_div" border="0"></div>                    
+ </body>
+</content> 

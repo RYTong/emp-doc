@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+	<head>
+	  <style>
+	  	.body {background-color: #1E75C6;}
+	  	.label1 {top:10px; left: 0px; width: 320px; text-align: center; color: #FFFFFF; font-size: 22px;}
+	  	.label2 {color: #000000;left: 0px; width: 100px; text-align: center; height: 45px;}
+	  	.input1{height: 40px; width: 200px; left: 0px;}
+	  	.segment1 {left:10px; height: 40px; width: 300px;  font-size: 16px; color: #3C3C3C; }
+	  	.div1 {background-color: #FFFFFF; height: 400px;}
+	  	.div_line {background-color: #CCCCCC; height: 1px;}
+	  	.table{width: 320px;}
+	  	.tr {height: 45px;}
+	  	.tr1 {height: 1px;}
+	  	.td1 {width: 100px;}
+	  	.td2 {width: 220px;}
+	  	.button1 {left: 10px; height: 45px; width: 300px; color: #FFFFFF; font-size: 18px; background-color: #1E75C6;}
+	  </style>
+	  <script type="text/x-lua">
+	      <![CDATA[
+	      	-- 判断卡号，查询密码是否输入
+	      	function login()
+	      		local cardNo = check_input("cardNo","卡号");
+	      		local password = check_input("password","查询密码");
+
+	      		if cardNo == nil or password == nil then
+	      			return
+	      		end;
+	      		
+	      		check_length(cardNo,20,15,"卡号");
+	      		check_length(password,14,6,"查询密码");
+	      	end
+
+	      	-- 判断控件值
+	      	function check_input(ctrlName,msg)
+	      		local ctrl = get_ctrl(ctrlName);
+	      		local ctrlValue;
+	  			ctrlValue = ctrl[1]:getPropertyByName("value");
+	  			if ctrlValue == nil or ctrlValue == "" then
+	  				window:alert("请输入"..msg);
+	  				return;
+	  			else
+	  				return ctrlValue;
+	  			end
+	      	end;
+
+	      	-- 判断输入长度
+	      	function check_length(value,maxlength,minlength,msg)
+	      		local length = string.len(value);
+
+	      		if length > maxlength then
+	      			window:alert(msg.."不能多于"..maxlength.."位");
+	      			return;
+	      		end;
+
+	      		if length < minlength then
+	      			window:alert(msg.."不能少于"..minlength.."位");
+	      			return;
+	      		end;
+	      	end;
+
+	      	function get_ctrl(ctrlName)
+	      		local ctrl = document:getElementsByName(ctrlName);
+	      		if ctrl and #ctrl > 0 then
+	      			return ctrl;
+	      		else
+	      			window:alert("控件不存在！");
+	      			return;
+	      		end;
+	      	end;
+
+	      ]]>
+	  </script>
+	</head>
+	<body>
+		<label class="label1">手机银行</label>
+		<input type="segment" name="cardFlag" value="1" class="segment1" checked="checked" >一卡通</input>
+		<input type="segment" name="cardFlag" value="2" >信用卡</input>
+		<input type="segment" name="cardFlag" value="3" >一网通</input>
+
+		<div class="div1" border="0">
+			<table border="0">
+				<tr >
+					<td class="td1">
+						<label class="label2">卡    号</label>
+					</td>
+					<td class="td2" align="right">
+						<input type="text" class="input1" name="cardNo" hold="请输入卡号" style="-wap-input-format:'N';" border="0" value=""></input>
+					</td>
+				</tr>
+				<tr class="tr1">
+					<td class="td1">
+						<div class="div_line" border="0"></div>
+					</td>
+					<td class="td2" align="right">
+						<div class="div_line" border="0"></div>	
+					</td>					
+				</tr>
+				<tr>
+					<td class="td1">
+						<label class="label2">查询密码</label>
+					</td>
+					<td class="td2" align="right">
+						<input type="password" class="input1" name="password" hold="请输入查询密码" style="-wap-input-format:'N';" border="0" value=""></input>
+					</td>
+				</tr>
+				<tr class="tr1">
+					<td class="td1">
+						<div class="div_line" border="0"></div>
+					</td>
+					<td class="td2" align="right">
+						<div class="div_line" border="0"></div>	
+					</td>					
+				</tr>			
+				<tr>
+					<td class="td1">
+						<label class="label2">记住卡号</label>
+					</td>
+					<td class="td2" align="right">
+						<input type="switch" name="remember_flag" value="yes" checked="checked"/>
+						<input type="switch" name="remember_flag" value="no" />
+					</td>
+				</tr>						
+			</table>
+
+			<input type="button" class="button1" value="登 录" onclick = "login()"/>
+		</div>
+	</body>
+</content>

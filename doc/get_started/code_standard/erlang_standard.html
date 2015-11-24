@@ -1,0 +1,2383 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Erlang 编码规范 | EMP用户手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../code_standard/xhtml_standard.html" />
+    
+    
+    <link rel="prev" href="../code_standard/code_standard.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="12.1" data-basepath=".." data-revision="1445493290423">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="overview/Introduction.html">
+            
+                
+                    <a href="../overview/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         什么是EMP
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="overview/TermIntroduction.html">
+            
+                
+                    <a href="../overview/TermIntroduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         名词解释
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="overview/EMPIntroduce.html">
+            
+                
+                    <a href="../overview/EMPIntroduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         EMP 概述
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="overview/Components.html">
+            
+                
+                    <a href="../overview/Components.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         EMP 组件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4" data-path="overview/Client.html">
+            
+                
+                    <a href="../overview/Client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                         EMP 客户端
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5" data-path="overview/EWP.html">
+            
+                
+                    <a href="../overview/EWP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                         EMP EWP服务
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6" data-path="overview/Console.html">
+            
+                
+                    <a href="../overview/Console.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                         EMP 管理平台
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.7" data-path="overview/IDE.html">
+            
+                
+                    <a href="../overview/IDE.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                         EMP IDE
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.8" data-path="overview/EMPRun.html">
+            
+                
+                    <a href="../overview/EMPRun.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                         EMP 如何运转
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="prerequisites/Introduction.html">
+            
+                
+                    <a href="../prerequisites/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         储备知识
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="prerequisites/Erlang.html">
+            
+                
+                    <a href="../prerequisites/Erlang.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         Erlang
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="prerequisites/Lua.html">
+            
+                
+                    <a href="../prerequisites/Lua.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         Lua
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="prerequisites/XHTML.html">
+            
+                
+                    <a href="../prerequisites/XHTML.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         XHTML
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4" data-path="prerequisites/CSS.html">
+            
+                
+                    <a href="../prerequisites/CSS.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                         CSS
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="prerequisites/ClearSilver.html">
+            
+                
+                    <a href="../prerequisites/ClearSilver.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         CLEARSILVER
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.6" data-path="prerequisites/slt_code.html">
+            
+                
+                    <a href="../prerequisites/slt_code.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                         Lua 预编译
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="setup_develop_env/Introduction.html">
+            
+                
+                    <a href="../setup_develop_env/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         开发环境安装
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="setup_develop_env/server/Introduction.html">
+            
+                
+                    <a href="../setup_develop_env/server/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         EMP Server 开发环境
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1.1" data-path="setup_develop_env/server/Windows/Introduction.html">
+            
+                
+                    <a href="../setup_develop_env/server/Windows/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.</b>
+                        
+                         Windows系统中环境安装
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1.1.1" data-path="setup_develop_env/server/Windows/VMInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Windows/VMInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.1.</b>
+                        
+                         虚拟机安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.1.2" data-path="setup_develop_env/server/Windows/ErlangInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Windows/ErlangInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.2.</b>
+                        
+                         Erlang安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.1.3" data-path="setup_develop_env/server/Windows/AndroidSimInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Windows/AndroidSimInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.3.</b>
+                        
+                         Android模拟器安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.1.4" data-path="setup_develop_env/server/Windows/EclipseIDEInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Windows/EclipseIDEInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.4.</b>
+                        
+                         Eclipse IDE安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.1.5" data-path="dev_book/develop_env/atom.html">
+            
+                
+                    <a href="../dev_book/develop_env/atom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.5.</b>
+                        
+                         开发工具
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.1.6" data-path="dev_book/develop_env/env.html">
+            
+                
+                    <a href="../dev_book/develop_env/env.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.6.</b>
+                        
+                         开发环境
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.2" data-path="setup_develop_env/server/Linux/Introduction.html">
+            
+                
+                    <a href="../setup_develop_env/server/Linux/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.2.</b>
+                        
+                         Linux系统中环境安装
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1.2.1" data-path="setup_develop_env/server/Linux/EMPInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Linux/EMPInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.2.1.</b>
+                        
+                         ubuntu系统EMP开发环境安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.2.2" data-path="setup_develop_env/server/Linux/AndroidSimInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Linux/AndroidSimInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.2.2.</b>
+                        
+                         Android 模拟器安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.1.2.3" data-path="setup_develop_env/server/Linux/ECTSInstall.html">
+            
+                
+                    <a href="../setup_develop_env/server/Linux/ECTSInstall.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.2.3.</b>
+                        
+                         ECTS环境安装
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="hello_emp/Introduction.html">
+            
+                
+                    <a href="../hello_emp/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Hello EMP
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="dev_book/create_project/create_project.html">
+            
+                
+                    <a href="../dev_book/create_project/create_project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         创建Project
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="dev_book/create_project/start_project.html">
+            
+                
+                    <a href="../dev_book/create_project/start_project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         启动Project
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="app_dev/Introduction.html">
+            
+                
+                    <a href="../app_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         前端界面开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="app_dev/xhtml/XHTMLDev.html">
+            
+                
+                    <a href="../app_dev/xhtml/XHTMLDev.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         XHTML界面开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="app_dev/xhtml/xhtmlCompost/XHTMLCompost.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlCompost/XHTMLCompost.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         界面基本构成
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1.1" data-path="app_dev/xhtml/xhtmlCompost/xhtml_baseTag.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlCompost/xhtml_baseTag.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.1.</b>
+                        
+                         标准控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.1.2" data-path="app_dev/xhtml/xhtmlCompost/xhtml_css.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlCompost/xhtml_css.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.2.</b>
+                        
+                         CSS样式
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.1.3" data-path="app_dev/xhtml/xhtmlCompost/xhtml_cusTag.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlCompost/xhtml_cusTag.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.3.</b>
+                        
+                         定制控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.1.4" data-path="app_dev/xhtml/xhtmlCompost/xhtml_LuaScript.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlCompost/xhtml_LuaScript.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.4.</b>
+                        
+                         Lua脚本
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.1.5" data-path="app_dev/xhtml/xhtmlCompost/xhtml_mul_example.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlCompost/xhtml_mul_example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.5.</b>
+                        
+                         综合实例
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.2" data-path="app_dev/xhtml/xhtmlDyn/xhtml_dyn.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlDyn/xhtml_dyn.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                         动态界面
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.2.1" data-path="app_dev/xhtml/xhtmlDyn/xhtml_init.html">
+            
+                
+                    <a href="../app_dev/xhtml/xhtmlDyn/xhtml_init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.1.</b>
+                        
+                         界面初始化
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="app_dev/pageData/page_data.html">
+            
+                
+                    <a href="../app_dev/pageData/page_data.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         界面数据获取
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="app_dev/pageData/from_module.html">
+            
+                
+                    <a href="../app_dev/pageData/from_module.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         获取MODULE数据
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="app_dev/pageData/page_to_page.html">
+            
+                
+                    <a href="../app_dev/pageData/page_to_page.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         界面间传值
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="deepin_app_dev/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         前端深入APP开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="deepin_app_dev/channel_and_collection/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_and_collection/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         菜单和业务频道
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.1" data-path="deepin_app_dev/channel_and_collection/channel_and_collection.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_and_collection/channel_and_collection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.</b>
+                        
+                         菜单和业务频道介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2" >
+            
+            <span><b>7.1.2.</b> 使用管理后台</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.2.1" data-path="deepin_app_dev/channel_and_collection/create_channel_and_collection.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_and_collection/create_channel_and_collection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.1.</b>
+                        
+                         创建菜单和业务频道
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2.2" data-path="deepin_app_dev/channel_and_collection/create_collection_page.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_and_collection/create_collection_page.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.2.</b>
+                        
+                         开发菜单界面
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2.3" data-path="deepin_app_dev/channel_and_collection/create_channel_entrance_page.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_and_collection/create_channel_entrance_page.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.3.</b>
+                        
+                         开发频道入口界面
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.3" >
+            
+            <span><b>7.1.3.</b> 使用atom工具</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.3.1" data-path="dev_book/create_channel/create_channel.html">
+            
+                
+                    <a href="../dev_book/create_channel/create_channel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.1.</b>
+                        
+                         创建channel
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4" data-path="deepin_app_dev/channel_page/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_page/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.</b>
+                        
+                         业务界面
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.4.1" data-path="dev_book/lua_fun/jump.html">
+            
+                
+                    <a href="../dev_book/lua_fun/jump.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.1.</b>
+                        
+                         跳转界面
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4.2" data-path="dev_book/lua_fun/public_fun.html">
+            
+                
+                    <a href="../dev_book/lua_fun/public_fun.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.2.</b>
+                        
+                         公共方法
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4.3" data-path="dev_book/page_dev/add_basic_common.html">
+            
+                
+                    <a href="../dev_book/page_dev/add_basic_common.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.3.</b>
+                        
+                         使用基础控件和公共控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4.4" data-path="deepin_app_dev/channel_page/channel_page_develop.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_page/channel_page_develop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.4.</b>
+                        
+                         开发业务界面
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4.5" data-path="deepin_app_dev/channel_page/channel_lua_develop.html">
+            
+                
+                    <a href="../deepin_app_dev/channel_page/channel_lua_develop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.5.</b>
+                        
+                         使用公共方法编写脚本逻辑
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.5" data-path="dev_book/debug/Introduction.html">
+            
+                
+                    <a href="../dev_book/debug/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.5.</b>
+                        
+                         调试
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.5.1" data-path="dev_book/debug/debug.html">
+            
+                
+                    <a href="../dev_book/debug/debug.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.5.1.</b>
+                        
+                         如何调试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.5.2" data-path="dev_book/debug/log.html">
+            
+                
+                    <a href="../dev_book/debug/log.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.5.2.</b>
+                        
+                         查看日志
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="deepin_app_dev/complete_transaction_dev/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/complete_transaction_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         完整交易开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="deepin_app_dev/complete_transaction_dev/folder_introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/complete_transaction_dev/folder_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         文件夹目录介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="deepin_app_dev/complete_transaction_dev/page_dev.html">
+            
+                
+                    <a href="../deepin_app_dev/complete_transaction_dev/page_dev.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         界面开发
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.3" data-path="deepin_app_dev/complete_transaction_dev/pack.html">
+            
+                
+                    <a href="../deepin_app_dev/complete_transaction_dev/pack.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                         离线资源打包
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.4" data-path="deepin_app_dev/complete_transaction_dev/upload.html">
+            
+                
+                    <a href="../deepin_app_dev/complete_transaction_dev/upload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                         离线资源上传
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5" data-path="deepin_app_dev/complete_transaction_dev/run_and_verify.html">
+            
+                
+                    <a href="../deepin_app_dev/complete_transaction_dev/run_and_verify.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                         运行和验证
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" >
+            
+            <span><b>9.</b> 后端Module开发入门</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="app_dev/module/module_dev.html">
+            
+                
+                    <a href="../app_dev/module/module_dev.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         EWP MODULE开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1.1" data-path="app_dev/module/module_function.html">
+            
+                
+                    <a href="../app_dev/module/module_function.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.1.</b>
+                        
+                         Module实现功能
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.1.2" data-path="app_dev/module/module_compose.html">
+            
+                
+                    <a href="../app_dev/module/module_compose.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.2.</b>
+                        
+                         Module创建以及编写
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2" data-path="app_dev/ewpData/module_data.html">
+            
+                
+                    <a href="../app_dev/ewpData/module_data.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                         MODULE数据获取
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.2.1" data-path="app_dev/ewpData/simple_session.html">
+            
+                
+                    <a href="../app_dev/ewpData/simple_session.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.1.</b>
+                        
+                         Session简单操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2.2" data-path="app_dev/ewpData/database.html">
+            
+                
+                    <a href="../app_dev/ewpData/database.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.2.</b>
+                        
+                         数据库获取
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2.3" data-path="app_dev/ewpData/other_service.html">
+            
+                
+                    <a href="../app_dev/ewpData/other_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.3.</b>
+                        
+                         第三方Service获取
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" data-path="deepin_app_dev/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                         后端深入开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1" data-path="deepin_app_dev/adapter/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/adapter/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                         适配器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1.1" data-path="deepin_app_dev/adapter/adapter.html">
+            
+                
+                    <a href="../deepin_app_dev/adapter/adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.1.</b>
+                        
+                         适配器介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.1.2" data-path="deepin_app_dev/adapter/deploy_adapter.html">
+            
+                
+                    <a href="../deepin_app_dev/adapter/deploy_adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.2.</b>
+                        
+                         配置适配器
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.1.3" data-path="deepin_app_dev/adapter/channel_module_develop.html">
+            
+                
+                    <a href="../deepin_app_dev/adapter/channel_module_develop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.3.</b>
+                        
+                         开发业务流程
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="deepin_app_dev/interface/Introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/interface/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         接口介绍
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1" data-path="deepin_app_dev/interface/WebInterfaceIntroduction.html">
+            
+                
+                    <a href="../deepin_app_dev/interface/WebInterfaceIntroduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         扩展Web接口
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1.1" data-path="deepin_app_dev/interface/webInterface_regAndImplement.html">
+            
+                
+                    <a href="../deepin_app_dev/interface/webInterface_regAndImplement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.1.</b>
+                        
+                         Web接口注册与实现
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.2" data-path="deepin_app_dev/interface/callback_plugin_introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/interface/callback_plugin_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                         Callback 插件开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.2.1" data-path="deepin_app_dev/interface/callback_plugin_dev_guide.html">
+            
+                
+                    <a href="../deepin_app_dev/interface/callback_plugin_dev_guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.1.</b>
+                        
+                         Callback插件开发入门
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.2.2" data-path="deepin_app_dev/interface/ewp_callback_plugin_introduction.html">
+            
+                
+                    <a href="../deepin_app_dev/interface/ewp_callback_plugin_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.2.</b>
+                        
+                         EWP Callback详细介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" data-path="code_standard/code_standard.html">
+            
+                
+                    <a href="../code_standard/code_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                         编码规范
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="12.1" data-path="code_standard/erlang_standard.html">
+            
+                
+                    <a href="../code_standard/erlang_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                         Erlang 编码规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.2" data-path="code_standard/xhtml_standard.html">
+            
+                
+                    <a href="../code_standard/xhtml_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                         Xhtml 编码规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.3" data-path="code_standard/css_standard.html">
+            
+                
+                    <a href="../code_standard/css_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                         CSS 编码规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.4" data-path="code_standard/lua_standard.html">
+            
+                
+                    <a href="../code_standard/lua_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                         Lua 编码规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.5" data-path="code_standard/lua_include.html">
+            
+                
+                    <a href="../code_standard/lua_include.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                         界面编写部分规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.6" data-path="code_standard/basic_tag_standard.html">
+            
+                
+                    <a href="../code_standard/basic_tag_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                         基础控件命名规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.7" data-path="code_standard/public_tag_standard.html">
+            
+                
+                    <a href="../code_standard/public_tag_standard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.7.</b>
+                        
+                         公共控件命名规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" data-path="dev_book/add_tag/Introduction.html">
+            
+                
+                    <a href="../dev_book/add_tag/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                         控件入库流程
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="13.1" data-path="dev_book/add_tag/basic_ui.html">
+            
+                
+                    <a href="../dev_book/add_tag/basic_ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                         基础控件入库流程
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13.2" data-path="dev_book/add_tag/public_ui.html">
+            
+                
+                    <a href="../dev_book/add_tag/public_ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                         公共控件入库流程
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" data-path="common_problem/FAQ.html">
+            
+                
+                    <a href="../common_problem/FAQ.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                         常见问题
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" data-path="senior_topical/Introduction.html">
+            
+                
+                    <a href="../senior_topical/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                         EWP 高级主题
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="15.1" data-path="senior_topical/Session.html">
+            
+                
+                    <a href="../senior_topical/Session.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.1.</b>
+                        
+                         SESSION操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.2" data-path="senior_topical/SessionShared.html">
+            
+                
+                    <a href="../senior_topical/SessionShared.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.2.</b>
+                        
+                         SESSION共享操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.3" data-path="senior_topical/Push.html">
+            
+                
+                    <a href="../senior_topical/Push.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.3.</b>
+                        
+                         消息推送
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.4" data-path="senior_topical/error_code_service.html">
+            
+                
+                    <a href="../senior_topical/error_code_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.</b>
+                        
+                         错误服务
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.5" data-path="senior_topical/data_store.html">
+            
+                
+                    <a href="../senior_topical/data_store.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.5.</b>
+                        
+                         数据采集
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.6" data-path="senior_topical/OfflineStore.html">
+            
+                
+                    <a href="../senior_topical/OfflineStore.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.6.</b>
+                        
+                         离线存储
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.7" data-path="senior_topical/client_package_verify.html">
+            
+                
+                    <a href="../senior_topical/client_package_verify.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.7.</b>
+                        
+                         防篡改
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.8" data-path="senior_topical/py_resource_up_down.html">
+            
+                
+                    <a href="../senior_topical/py_resource_up_down.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.8.</b>
+                        
+                         命令行方式上传下载离线资源
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.9" data-path="senior_topical/offline_resource.html">
+            
+                
+                    <a href="../senior_topical/offline_resource.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.9.</b>
+                        
+                         离线资源的使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.10" data-path="senior_topical/preset_resource.html">
+            
+                
+                    <a href="../senior_topical/preset_resource.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.10.</b>
+                        
+                         服务器如何正确导出预置资源
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15.11" data-path="senior_topical/Database.html">
+            
+                
+                    <a href="../senior_topical/Database.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.11.</b>
+                        
+                         数据库
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/get_started/get_started.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/get_started/book.pdf" class="button">pdf</a>
+                
+                
+                <a href="" class="button">epub</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >EMP用户手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_40">
+                    
+                        <h1 id="erlang-编码规范">Erlang 编码规范</h1>
+<!-- toc -->
+<ul>
+<li><a href="#命名规范">命名规范</a><ul>
+<li><a href="#module名">Module名</a></li>
+<li><a href="#函数名">函数名</a></li>
+<li><a href="#变量名">变量名</a></li>
+<li><a href="#常量名">常量名</a></li>
+</ul>
+</li>
+<li><a href="#代码样式">代码样式</a><ul>
+<li><a href="#缩进">缩进</a></li>
+<li><a href="#长度控制">长度控制</a></li>
+<li><a href="#空格">空格</a></li>
+<li><a href="#注释">注释</a></li>
+</ul>
+</li>
+<li><a href="#程序规则">程序规则</a><ul>
+<li><a href="#注释function">注释Function</a></li>
+<li><a href="#公共提取">公共提取</a></li>
+<li><a href="#细化">细化</a></li>
+<li><a href="#嵌套简化">嵌套简化</a></li>
+<li><a href="#标识消息返回">标识消息返回</a></li>
+<li><a href="#代码并行">代码并行</a></li>
+<li><a href="#慎用进程字典和ets表">慎用进程字典和ETS表</a></li>
+<li><a href="#import和export">import和export</a></li>
+<li><a href="#分类撰写lib">分类撰写lib</a></li>
+<li><a href="#减少文件读写">减少文件读写</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h2 id="命名规范">1 命名规范</h2>
+<h3 id="module名">1.1 Module名</h3>
+<p>在我们的系统中，module名为全小写，如包含两个或以上的单词，用<code>_</code>间隔。如：<code>channel_parser</code>,<code>channel_controller</code>。</p>
+<p>Module名称需要体现module功能。</p>
+<p>对于应用中channel模块的命名，我们应该统一命名为app_channelID。</p>
+<h3 id="函数名">1.2 函数名</h3>
+<p>函数命名规范与module相同。名称太长时，可以使用简写，如：
+<code>gen_channel_req（generate_channel_request）</code>，根据名称可以推断该方法的逻辑是产生一个与channel相关的request。
+<em>注：不需要其返回结果的方法或者主要逻辑功能为某种<code>side effect</code> 的方法，可以使用动词 do_xx或者将动词置后，如<code>do_db_update，data_validate，role_authenticate</code>等等。</em></p>
+<p><em><code>side effect</code>是<code>function</code>中纯运算以外的逻辑，如发送消息，调用I/O，改变系统环境等等。</em></p>
+<h3 id="变量名">1.3 变量名</h3>
+<p>Erlang中的变量名称需以大写字母开头，可以使用<code>My_variable</code>或者<code>MyVariable</code>，在我们的系统中，一致使用后者（也称驼峰命名法）。变量名称需要体现其意义，如<code>Pid</code>表示进程<code>ID</code>，<code>ChannelItem</code>为<code>channel</code>内容的一项等等。（请不要使用如<code>A</code>，<code>B</code>，<code>X</code>之类的变量名称）</p>
+<h3 id="常量名">1.4 常量名</h3>
+<p>在<code>erlang</code>中我们可以在头文件或者<code>module</code>开头定义常量。格式如下：
+<code>-define(MAX_MAPTILE_WIDTH, 1024).</code>
+常量名称需全部大写，用<code>_</code>分割。</p>
+<h2 id="代码样式">2 代码样式</h2>
+<h3 id="缩进">2.1 缩进</h3>
+<p>4个<code>space</code>作为缩进的单元。不可用TAB键做缩进。</p>
+<h3 id="长度控制">2.2 长度控制</h3>
+<p>建议<code>module</code>内容不要超过<code>400</code>行，<code>function</code>内容为<code>15-20</code>行，单行不要超过<code>80</code>个字符。
+当<code>module</code>内容超过长度时，可将其分割为几个更小的<code>module</code>，<code>funtion</code>同理。
+当单行内容过长时，可以以运算符或标点为尾，另起一行，如：</p>
+<pre><code>ewp_util:render_xml(ewp_util:export_xml
+        ({feed,
+          [{entry,[{title,[&quot;test&quot;]},         
+          {description,[&quot;Test:&lt;form action=&quot;test_form_post_2&quot;&gt;&lt;/form&gt;&quot;]}
+                  ]}]}))
+</code></pre><h3 id="空格">2.3 空格</h3>
+<p>在编码中需要对空格的使用保持一致的风格。在目前系统中，我们应该使用
+<code>{12, 23, 45}</code>
+而不是：
+<code>{12,23,45}</code>。</p>
+<h3 id="注释">2.4 注释</h3>
+<p>我们要求注释言简意赅，尽量使用英语。
+注释格式为：关于<code>module</code>的注释使用三个<code>%</code>开头，即<code>%%%</code>，无缩进。
+关于<code>function</code>的注释使用两个<code>%</code>，即<code>%%</code>，无缩进。(函数注释的具体规则参考程序规则中注释Function章节)。
+而关于<code>code</code>的注释使用一个<code>%</code>，缩进与代码保持一致。（尽量直接在行尾注释）。</p>
+<h2 id="程序规则">3 程序规则</h2>
+<h3 id="注释function">3.1 注释Function</h3>
+<p>我们需要为每一个<code>function</code>撰写注释，内容包括：</p>
+<ul>
+<li>函数功能</li>
+<li>参数格式及意义</li>
+<li>返回结果的可能格式及意义</li>
+<li>可能产生的side effect</li>
+</ul>
+<p>格式为：</p>
+<pre><code>%%-----------------------------------------------------------------
+%% Function: get_server_statistics/2
+%% Purpose: Get various information from a process.
+%% Args:   Option is normal|all.
+%% Returns: A list of {Key, Value} 
+%%     or {error, Reason} (if the process is dead)
+%%-----------------------------------------------------------------
+get_server_statistics(Option, Pid) when pid(Pid) -&gt;
+</code></pre><p>并且，我们应该在函数设计之初就撰写其所对应的<code>@spec</code>，目前最新版本的<code>erlang</code>已经支持在编译时对<code>function</code>的<code>specification</code>进行检查（目前我们还未使用）。<code>function</code>的<code>@spec</code>格式可以参考<code>《programing-eralng》</code>中的<code>Appendix A</code>。示例如下：</p>
+<pre><code>%% @doc Create a new ErlyWeb application in the directory AppDir.
+%% This function creates the standard ErlyWeb directory structure as well as
+%% a few basic files for a rudimantary application.
+%%
+%% @spec create_app(AppName::string(), AppDir::string()) -&gt; ok | {error, Err}
+create_app(AppName, AppDir) -&gt;
+</code></pre><h3 id="公共提取">3.2 公共提取</h3>
+<p>当你试图复制、粘贴一段代码时，请先思考能否提取出其中的公共逻辑，将其封装为粒度更细的<code>function</code>。这对于增加程序可读性、健壮性、可扩展性，降低维护成本，都有着重要的意义。</p>
+<h3 id="细化">3.3 细化</h3>
+<p>编码时，让一个<code>function</code>只完成某一种逻辑功能，而不要试图用一个<code>function</code>去做所有的事情。
+尽量把包含<code>side effect</code>的逻辑剥离出来，封装成另一个<code>function</code>。但同时，要保证<code>do/undo one thing in a same function</code>。例如，打开和关闭一个文件，创建和销毁一个<code>XML handle</code>。
+我们需要</p>
+<pre><code>do_something_with(File) -&gt; 
+      case file:open(File, read) of
+        {ok, Stream} -&gt;
+              doit(Stream), 
+              file:close(Stream) % The correct solution
+        Error -&gt; 
+            Error
+      end.
+</code></pre><p>而不是：</p>
+<pre><code>do_something_with(File) -&gt; 
+      case file:open(File, read) of
+        {ok, Stream} -&gt;
+              doit(Stream)
+        Error -&gt; 
+            Error
+      end.
+doit(Stream) -&gt; 
+      ...., 
+      func234(...,Stream,...).
+      ...
+func234(..., Stream, ...) -&gt;
+      ...,
+      file:close(Stream) %% Don&#39;t do this
+</code></pre><h3 id="嵌套简化">3.4 嵌套简化</h3>
+<p>不要使用深层嵌套的case、if、receive，这会大大降低程序的可读性。
+对于</p>
+<pre><code>case checkprefix(FirstPrefix, String) of
+    {ok, Tail} -&gt;
+        do_this(Tail);
+    _ -&gt;
+        case checkprefix(SecondPrefix, String) of
+            {ok, Tail} -&gt;
+                do_that(Tail);
+            _ -&gt;
+                case checkprefix(ThirdPrefix, String) of
+                    and so on...
+</code></pre><p>你可以使用：</p>
+<pre><code>Prefixes = [{&quot;prefix1&quot;, fun do_this/1},
+            {&quot;prefix2&quot;, fun do_that/1},
+            {&quot;prefix3&quot;, fun do_something/1}],
+case checkprefixes(Prefixes) of
+     {ok, {Fun,Tail}} -&gt;
+           Fun(Tail);
+     {error, not_found} -&gt;
+          ...
+end.
+
+checkprefixes([], String) -&gt;
+      {error, not_found};
+checkprefixes([{Pre,Fun}|T], String) -&gt;
+      case check_prefix({Pre,Fun}, String) of
+           {ok, Tail} -&gt;
+                {ok, {Fun,Tail}};
+            _ -&gt;  % I&#39;d be specific in what I&#39;m matching here.
+                check_prefixes(T, String)
+      end.
+</code></pre><p>或者：</p>
+<pre><code>Prefixes = [{&quot;prefix1&quot;, fun do_this/1},
+            {&quot;prefix2&quot;, fun do_that/1},
+            {&quot;prefix3&quot;, fun do_something/1}],
+    catch lists:foldl(fun({Prefix, Fun}, Tail) -&gt;
+        case checkprefix(Prefix, Tail) of
+            {ok, NewTail} -&gt;
+                Fun(NewTail);
+            _ -&gt;
+                throw(done)
+        end
+    end, String, Prefixes).
+</code></pre><p>或者其他的方式。</p>
+<h3 id="标识消息返回">3.5 标识消息返回</h3>
+<p>避免这样的代码出现：</p>
+<pre><code>loop(State) -&gt;
+      receive
+        ...
+        {Mod, Funcs, Args} -&gt; % Don&#39;t do this
+              apply(Mod, Funcs, Args},
+              loop(State);
+            ...
+      end.
+</code></pre><p>我们可以给<code>message</code>加上标识：</p>
+<pre><code>loop(State) -&gt;
+  receive
+    ...
+    {execute, Mod, Funcs, Args} -&gt; % Use a tagged message.
+      apply(Mod, Funcs, Args},
+      loop(State);
+    {get_status_info, From, Option} -&gt;
+      From ! {status_info, get_status_info(Option, State)},
+      loop(State);    
+    ...
+  end.
+</code></pre><p>当返回结果有多种情况时同理。</p>
+<h3 id="代码并行">3.6 代码并行</h3>
+<p>当你发现你的代码在等待一个可以并行的任务，并因此而耗费很多时间时，创建一个平行的进程去处理它。例如：</p>
+<pre><code>get_item_type(CollectionId, User) -&gt;
+    {ID, Type} = 
+        case CollectionId of
+            undefined-&gt;
+                {o(User,favorite_collection_id),collection};
+            _-&gt;
+                {CollectionId,channel}
+        end,
+    A = get(arg),
+    spawn(?MODULE, call_app_send_sms, [ID,A]),
+    %% don’t use call_app_send_sms(ID,A)
+    {ID, Type}.
+call_app_send_sms(ID,A) -&gt;
+    ...
+    case binary_to_list(Name) of
+        &quot;基金&quot; -&gt;
+            ewp_http_client:request(post, RequestX, [], []);
+        &quot;转账&quot; -&gt;
+            ewp_http_client:request(post, RequestX, [], []);
+        &quot;手机支付&quot; -&gt;
+            ewp_http_client:request(post, RequestX, [], []);
+        _ -&gt;  go_on
+    end.
+</code></pre><h3 id="慎用进程字典和ets表">3.7 慎用进程字典和ETS表</h3>
+<p>对于进程字典，由于可以在一个进程的多处对其进行修改，导致其状态不确定。对于ETS，如果为<code>public</code>类型，则可以在多个进程中对其进行读写，那么它的状态同步需要通过编码来实现。因此，除非你非常清楚所有可能出现情况，否则请谨慎使用它们。
+另外，使用时请尽量保证一处写、多处读的原则。</p>
+<h3 id="import和export">3.8 import和export</h3>
+<p>请不要使用<code>import</code>。
+对于<code>export</code>，请按照功能分组到处，并分别注释。例如：</p>
+<pre><code>%% Callbacks for ota behavior.
+-export([get_params_for_download/1,
+         get_params_for_update/1,
+         download_check/1,
+         publisher_from_user_id/1,
+         get_and_set_file_content/2,
+         do_db_update/1
+        ]).
+
+%% APIs for user.
+-export([download/1,
+         update/1,
+         notify/1]).
+</code></pre><h3 id="分类撰写lib">3.9 分类撰写lib</h3>
+<p>编码时应避免模块之间的循环调用，减少用户功能模块间的调用。将经常使用的代码按照功能分类，放到lib库中。
+在修改lib库中的方法或者某公共方法（如<code>behavior</code>）时，如果改变了接口规范（接口参数、格式、意义），应同时修改所有的相关调用，并email通知所有小组成员。</p>
+<h3 id="减少文件读写">3.10 减少文件读写</h3>
+<p>编码或者调试接口时，避免在代码中加入<code>file:write_file(xxx.json,[Data])</code>. 这样的代码。
+如果一定需要写文件操作，我们可以通过宏定义开关来打开或者关闭写文件操作，一种解决方案是：</p>
+<pre><code>-ifdef(ewp_debug_flag).
+    -define(
+        WRITE_FILE(File,Content),
+        file:write_file(File,[Content])
+        ).
+-endif.
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../code_standard/code_standard.html" class="navigation navigation-prev " aria-label="Previous page: 编码规范"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../code_standard/xhtml_standard.html" class="navigation navigation-next " aria-label="Next page: Xhtml 编码规范"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

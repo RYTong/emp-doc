@@ -20,32 +20,40 @@
             .fontStyle{font-style:italic;}
             .borderstyle{border:10px solid #ff00ff;}
             .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
+            .tip{width:310px;height: 30px;left: 10px;color: #00FF00; font-size: 12px;}
+            .tip_1{width:310px;height: 40px;left: 10px;color: #0000FF; font-size: 15px;}
+            .newHeight{height: 40px;}
+
+            .button1{width:300px;height:30px;left:10px;font-size:15px;}
+            .button1:active {color: #ff0000;font-size: 20px;background-color: #1cff00;}
+            .btn{color:#123abc;background-color:#abc123;left:20px;width:280px;}
+            .btn:inactive{color:#ffffff;background-color:#DEF123;font-size:20px;}
         </style>
-        
+
         <script type="text/x-lua" src="RYTL.lua"></script>
         <script type="text/x-lua">
             <![CDATA[
-                
+
                 ryt = RYTL:new{};
-                
+
                 function close()
                 ryt:back();
                 end;
-                
+
                 function click()
                 window:alert("可以点击的button")
                 end;
+                function myclick()
+                 window:alert("伪类测试！")
+                end;
             ]]>
         </script>
-        
+
     </head>
     <body>
-        
+
         <!-- positon:fixed -->
         <input type='button' value='positon:fixed body第一个控件' class='father,positionFixed' border='1'></input>
-        <!-- 无value -->
-        <label>下面有一个无value属性的button</label>
-        <input type='button' class='father' border='1'></input>
         <!-- hide -->
         <input type='button' hide='false' value='hide=false，下方有hide=true的button' class='father' border='1'></input>
         <input type='button' hide='true' value='hide=true的button,不应该显示出来' class='father' border='1'></input>
@@ -55,10 +63,6 @@
         <!-- visibility -->
         <input type='button' value='visibility:visible 下方有visibility=hidden的button;' class='father,visibility1' border='1'></input>
         <input type='button' value='visibility:hidden 不应该显示;' class='father,visibility2' border='1'></input>
-        <!-- border -->
-        <input type='button' value='border设置为1的button' border='1' class='father'></input>
-        <input type='button' value='border设置为0的button' border='0' class='father'></input>
-        <input type='button' value='border取默认值的button，默认无边框' class='father'></input>
         <!-- border 样式-->
         <input type='button' value='border设置为10的button' border='1' class='father,borderstyle'></input>
         <!-- border-radius -->
@@ -90,11 +94,45 @@
         <input type='button' value='背景色与渐变色，显示渐变色' class='father,filter,background_color' border='1'></input>
         <!-- background-image与filter同时存在 -->
         <input type='button' value='背景图和渐变色，显示背景图' class='father,filter,background_image' border='1'></input>
-        
+        <!-- 无value -->
+        <label>下面有一个无value属性的button</label>
+        <input type='button' class='father' border='1'></input>
+        <!-- delay -->
+        <input type='button' class='father' border='1' delay='10' value='一个delay=10的button' onclick='click()'></input>
+        <!-- border -->
+        <input type='button' value='border设置为1的button' border='1' class='father'></input>
+        <input type='button' value='border设置为0的button' border='0' class='father'></input>
+        <input type='button' value='border取默认值的button，默认无边框' class='father'></input>
+
+        <!-- rightimg -->
+        <label class="tip_1">加载本地图片：</label>
+        <input type='button' class='father' border='1' rightimg='right_arrow.png' value='rightimg:加载本地图片'></input>
+        <label class="tip_1">加载网络图片：</label>
+        <input type='button'border='1' class='father'
+             rightimg='http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg' value='网络图片,没有w,h参数'></input>
+        <input type='button'border='1' class='father'
+             rightimg='http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg?w=30&amp;h=20' value='网络图片,有w,h参数,且h小于Button高度'></input>
+        <input type='button'border='1' class='father'
+             rightimg='http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg?w=30&amp;h=40' value='网络图片,有w,h参数,且h大于Button高度'></input>
+        <!-- leftimg -->
+         <label class="tip_1">加载本地图片：</label>
+         <input type='button' class='father' border='1' leftimg='btn_back.png' value='leftimg:加载本地图片'></input>
+         <label class="tip_1">加载网络图片：</label>
+         <input type='button'border='1' class='father'
+              leftimg='http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg' value='网络图片,没有w,h参数'></input>
+         <input type='button'border='1' class='father'
+              leftimg='http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg?w=30&amp;h=20' value='网络图片,有w,h参数,且h小于Button高度'></input>
+         <input type='button'border='1' class='father'
+              leftimg='http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg?w=30&amp;h=40' value='网络图片,有w,h参数,且h大于Button高度'></input>
+        <!-- active & inactive-->
+        <label>设置了active样式的按钮</label>
+        <input type='button' value='这是一个按钮' class="btn"/>
+        <label>设置了inactive的enable=false的按钮</label>
+        <input type='button' value='这是一个按钮' enable="false" class="btn"/>
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
         <!-- positon:fixed -->
         <input type='button' value='positon:fixed body最后一个控件' class='father,positionFixed' border='1'></input>
-        
+
     </body>
 </content>

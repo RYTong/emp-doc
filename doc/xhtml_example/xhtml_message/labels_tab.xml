@@ -1,0 +1,126 @@
+<content>
+    <head>
+        <style>
+           .body{width:320px;height:460px;background-color: #F0F0F0;}
+           .table1{left:20px;top:30px;width:280px;background-color: #FFFFFF;}
+           .tr1{height: 30px;}
+           .td11{width: 40px;}
+           .td12{width: 210px;font-weight: bold;font-size:12px; }
+           .td13{width: 30px;}
+           .img_hot{width: 30px;height: 30px;}
+           .img_select{width: 10px;height: 10px;}
+           .tr2{height:50px; font-size: 12px;}
+           .td21{width: 210px;}
+           .td22{width: 70px;}
+           .label_benefit{width: 190px;color: #FF8000;font-weight: bold;}
+           .img_buy{width: 50px;height: 50px;}
+           .label_detail{width: 190px;color: #8E8E8E;font-weight: bold;}
+           .tr3{height:60px;}
+           .td31{width: 280px;}
+           .div_detail{width:270px;background-color: #ECF5FF;border-radius: 0px;}
+           .img_tag1{top:6px;left:9px;width: 13px;height: 13px;}
+           .label_amount1{top: 5px;left: 25px;}
+           .label_amount2{top:20px;left: 10px;}
+           .divider1{height: 45px;top: 5px;left: 88px;}
+           .img_tag2{top:6px;left:105px;width: 13px;height: 13px;}
+           .label_term1{top: 5px;left:120px;}
+           .label_term2{top: 20px;left: 125px;}
+           .divider2{height: 45px;top: 5px;left: 180px;}
+           .img_tag3{top:6px;left:204px;width: 13px;height: 13px;}
+           .label_sale_term1{left: 220px;top: 5px;}
+           .label_sale_term2{left: 205px;top: 20px;}
+           .label_sale_term3{left: 205px;top: 32px;}
+           .label1{font-size:10px;color: #6C6C6C; font-weight:bold;}
+           .label2{font-size: 10px;color: #FF8000;font-weight:bold;}
+           .table2{left: 20px;width: 280px;background-color: #FFFFFF;}
+           .td_line{width: 280px;}
+           .line{width: 280px;height: 1px;background-color: #FCFCFC;}
+           .img_pocket{width: 30px;height: 30px;}
+           .img_saleout{width: 50px;height: 50px;}
+        </style>
+    </head>
+ 
+    <body class="body" >
+        <table class="table1" border="0">
+          <tr class="tr1">
+            <td class="td11"><img class="img_hot" src="local:hot.png"/></td>
+            <td class="td12"><label>滚续产品0101滚续滚续产品滚续 (H12390) (手机银行专属款)</label></td>
+            <td class="td13"><img class="img_select" src="local:select.png"/></td>
+          </tr>
+          <tr>
+            <td class="td_line"><div class="line"></div></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="tr2">
+            <td class="td21" align="center">
+              <label class="label_benefit">参考年化收益</label>
+              <label class="label_detail">单笔购买金额：小于20万元 5.25%；20万元(含) - 100万元 5.3%100万元(含) - 300万元 5.53%；300万元(含)以上 5.4%;</label>
+            </td>
+            <td class="td22"><img class="img_buy" src="local:buy.png"/></td>
+            <td class="td23"></td>
+          </tr>
+          <tr class="tr3">
+            <td class="td31" align="center">
+              <div class="div_detail">
+                <img class="img_tag1" src="local:tag.png"/>
+                <label class="label1,label_amount1">起售金额</label>
+                <label class="label2,label_amount2">10,000.00元</label>
+                <img class="divider1" src="local:divider.png"/>
+                <img class="img_tag2" src="local:tag.png"/>
+                <label class="label1,label_term1">产品期限</label>
+                <label class="label2,label_term2">7天</label>
+                <img class="divider2" src="local:divider.png"/>
+                <img class="img_tag3" src="local:tag.png"/>
+                <label class="label1,label_sale_term1">销售期</label>
+                <label class="label2,label_sale_term2">2014.12.01</label>
+                <label class="label2,label_sale_term3">2014.12.31</label>
+              </div>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <table class="table2" border="0">
+          <tr class="tr1">  
+            <td class="td11"><img class="img_pocket" src="local:pocket.png"/></td>
+            <td class="td12"><label>滚续产品01滚续产品01滚续产 (H12390)</label></td>
+            <td class="td13"><img class="img_select" src="local:select.png"/></td>
+          </tr>
+          <tr>
+            <td class="td_line"><div class="line"></div></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="tr2">
+            <td class="td21" align="center">
+              <label class="label_benefit">参考年化收益</label>
+              <label class="label_detail">5.25%;</label>
+            </td>
+            <td class="td22"><img class="img_saleout" src="local:saleout.png"/></td>
+            <td class="td23"></td>
+          </tr>
+          <tr class="tr3">
+            <td class="td31" align="center">
+              <div class="div_detail">
+                <img class="img_tag1" src="local:tag.png"/>
+                <label class="label1,label_amount1">起售金额</label>
+                <label class="label2,label_amount2">10,000.00元</label>
+                <img class="divider1" src="local:divider.png"/>
+                <img class="img_tag2" src="local:tag.png"/>
+                <label class="label1,label_term1">产品期限</label>
+                <label class="label2,label_term2">7天</label>
+                <img class="divider2" src="local:divider.png"/>
+                <img class="img_tag3" src="local:tag.png"/>
+                <label class="label1,label_sale_term1">销售期</label>
+                <label class="label2,label_sale_term2">2014.12.01</label>
+                <label class="label2,label_sale_term3">2014.12.31</label>
+              </div>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+    </body>
+</content>

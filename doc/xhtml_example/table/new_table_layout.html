@@ -1,0 +1,1444 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Table 新布局算法 | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../onclick/Introduction.html" />
+    
+    
+    <link rel="prev" href="../table/scroll_tab.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="3.8" data-basepath=".." data-revision="1445493391766">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="page/Introduction.html">
+            
+                
+                    <a href="../page/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         页面排版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="page/squared_up.html">
+            
+                
+                    <a href="../page/squared_up.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         自动九宫格排版
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="page/inputs.html">
+            
+                
+                    <a href="../page/inputs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         多个输入框
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="page/display_reload.html">
+            
+                
+                    <a href="../page/display_reload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         display占位
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4" data-path="page/resolution_adapter.html">
+            
+                
+                    <a href="../page/resolution_adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                         适配例子和说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="select/Introduction.html">
+            
+                
+                    <a href="../select/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         SELECT
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="select/select_inner.html">
+            
+                
+                    <a href="../select/select_inner.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         Select 联动
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="select/select_overlength.html">
+            
+                
+                    <a href="../select/select_overlength.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         select控件长度超长
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="select/script_change_select.html">
+            
+                
+                    <a href="../select/script_change_select.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         脚本动态设置select控件选中项及改变可选项
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="table/Introduction.html">
+            
+                
+                    <a href="../table/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         TABLE
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="table/title_up_down_center.html">
+            
+                
+                    <a href="../table/title_up_down_center.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         标题栏居中对齐
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="table/cut_line.html">
+            
+                
+                    <a href="../table/cut_line.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         Table 分隔线
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="table/merge_td.html">
+            
+                
+                    <a href="../table/merge_td.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         Table 合并td
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="table/tr_tds.html">
+            
+                
+                    <a href="../table/tr_tds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         tr 中多个td
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="table/tr_inner.html">
+            
+                
+                    <a href="../table/tr_inner.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         tr 的显隐
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="table/labels_tab.html">
+            
+                
+                    <a href="../table/labels_tab.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         Table 中多文字描述
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="table/scroll_tab.html">
+            
+                
+                    <a href="../table/scroll_tab.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         Table 滑动继续加载
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.8" data-path="table/new_table_layout.html">
+            
+                
+                    <a href="../table/new_table_layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         Table 新布局算法
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="onclick/Introduction.html">
+            
+                
+                    <a href="../onclick/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         事件响应
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="onclick/onclick_pass_on.html">
+            
+                
+                    <a href="../onclick/onclick_pass_on.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         事件传递
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="onclick/onclick_enable.html">
+            
+                
+                    <a href="../onclick/onclick_enable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         enable控制
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="onclick/listen_and_onclick.html">
+            
+                
+                    <a href="../onclick/listen_and_onclick.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         手势监听和点击事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="map/Introduction.html">
+            
+                
+                    <a href="../map/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         地图
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="map/dot_introduction.html">
+            
+                
+                    <a href="../map/dot_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         网点查询
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="animation/Introduction.html">
+            
+                
+                    <a href="../animation/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         动画
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="animation/input_ani.html">
+            
+                
+                    <a href="../animation/input_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         输入动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="animation/output_ani.html">
+            
+                
+                    <a href="../animation/output_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         吐账单动画加声音
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.3" data-path="animation/scroll_ani.html">
+            
+                
+                    <a href="../animation/scroll_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                         控件滑动动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.4" data-path="animation/page_scroll.html">
+            
+                
+                    <a href="../animation/page_scroll.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                         界面滑出动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.5" data-path="animation/shake_ani.html">
+            
+                
+                    <a href="../animation/shake_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                         控件左右晃动动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.6" data-path="animation/up_and_down.html">
+            
+                
+                    <a href="../animation/up_and_down.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                         控件上升和下降动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.7" data-path="animation/angulation_ani.html">
+            
+                
+                    <a href="../animation/angulation_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                         图片的不断扭曲
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.8" data-path="animation/curl_ani.html">
+            
+                
+                    <a href="../animation/curl_ani.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                         卷角动画
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="offline_store/Introduction.html">
+            
+                
+                    <a href="../offline_store/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         离线存储
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="offline_store/offline_procedure.html">
+            
+                
+                    <a href="../offline_store/offline_procedure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         离线使用场景
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="offline_store/download_judge.html">
+            
+                
+                    <a href="../offline_store/download_judge.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         判断是否下载
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="offline_store/update_judge.html">
+            
+                
+                    <a href="../offline_store/update_judge.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         判断是否升级
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="offline_store/start_downloads.html">
+            
+                
+                    <a href="../offline_store/start_downloads.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         发起多个下载动作
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="audio/Introduction.html">
+            
+                
+                    <a href="../audio/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         视频音频
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="audio/video.html">
+            
+                
+                    <a href="../audio/video.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         视频播放
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="audio/audio.html">
+            
+                
+                    <a href="../audio/audio.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         音频播放
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="custom_ctrl/Introduction.html">
+            
+                
+                    <a href="../custom_ctrl/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         扩展控件
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="custom_ctrl/pies.html">
+            
+                
+                    <a href="../custom_ctrl/pies.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         饼状图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2" data-path="custom_ctrl/histograms.html">
+            
+                
+                    <a href="../custom_ctrl/histograms.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                         柱状图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.3" data-path="custom_ctrl/line_chart.html">
+            
+                
+                    <a href="../custom_ctrl/line_chart.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                         折线图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.4" data-path="custom_ctrl/select_city.html">
+            
+                
+                    <a href="../custom_ctrl/select_city.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                         城市选择控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.5" data-path="custom_ctrl/movie_seat.html">
+            
+                
+                    <a href="../custom_ctrl/movie_seat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                         电影票座位控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.6" data-path="custom_ctrl/lottery_ball.html">
+            
+                
+                    <a href="../custom_ctrl/lottery_ball.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.6.</b>
+                        
+                         彩票彩球控件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" data-path="show_ctrl/Introduction.html">
+            
+                
+                    <a href="../show_ctrl/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                         悬浮页面
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1" data-path="show_ctrl/showCtrl_and_setInnerHTML.html">
+            
+                
+                    <a href="../show_ctrl/showCtrl_and_setInnerHTML.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                         showControl和setInnerHTML同时使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.2" data-path="show_ctrl/window_layout.html">
+            
+                
+                    <a href="../show_ctrl/window_layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                         弹出框动态布局
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.3" data-path="show_ctrl/page_redirect.html">
+            
+                
+                    <a href="../show_ctrl/page_redirect.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                         页面跳转
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.4" data-path="show_ctrl/no_body.html">
+            
+                
+                    <a href="../show_ctrl/no_body.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                         无body报文
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="mdap/Introduction.html">
+            
+                
+                    <a href="../mdap/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         数据采集
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1" data-path="mdap/mdap_code.html">
+            
+                
+                    <a href="../mdap/mdap_code.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         数据采集脚本编写
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" data-path="other/Introduction.html">
+            
+                
+                    <a href="../other/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                         其他
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="12.1" data-path="other/1px_image.html">
+            
+                
+                    <a href="../other/1px_image.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                         图片高度为1px
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.2" data-path="other/onchange_reload.html">
+            
+                
+                    <a href="../other/onchange_reload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                         循环调用onchange和reload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.3" data-path="other/onblur.html">
+            
+                
+                    <a href="../other/onblur.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                         onblur调用场景
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.4" data-path="other/multi_labels.html">
+            
+                
+                    <a href="../other/multi_labels.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                         label换行问题
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" data-path="channel/Introduction.html">
+            
+                
+                    <a href="../channel/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                         CHANNEL
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="13.1" data-path="channel/new_channel.html">
+            
+                
+                    <a href="../channel/new_channel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                         创建channel
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13.2" data-path="channel/business_procedure.html">
+            
+                
+                    <a href="../channel/business_procedure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                         业务流程开发
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" data-path="../ewp_lib_example/index.html">
+            
+                
+                    <a href="../../ewp_lib_example/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                         EWP常用函数例子
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" data-path="ios/Introduction.html">
+            
+                
+                    <a href="../ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                         IOS75.3适配
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="15.1" data-path="ios/ios_adaptation.html">
+            
+                
+                    <a href="../ios/ios_adaptation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.1.</b>
+                        
+                         IOS75.3新方案适配用例
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/xhtml_example/xhtml_example.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/xhtml_example/book.pdf" class="button">pdf</a>
+                
+                
+                <a href="" class="button">epub</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_54">
+                    
+                        <h1 id="table新布局算法">Table新布局算法</h1>
+<!-- toc -->
+<ul>
+<li><a href="#说明">说明</a></li>
+<li><a href="#示例">示例</a><ul>
+<li><a href="#显示顺序问题">显示顺序问题</a></li>
+<li><a href="#多行控件的垂直居中问题">多行控件的垂直居中问题</a></li>
+</ul>
+</li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<!-- toc stop -->
+<h2 id="说明">1 说明</h2>
+<p>客户端修改了table的布局算法，支持了td中控件的多行显示，导致某些报文写法在新旧客户端上的显示效果有差异，故本章节通过示例说明使用新客户端后布局table需注意的问题。</p>
+<h2 id="示例">2 示例</h2>
+<h3 id="显示顺序问题">2.1 显示顺序问题</h3>
+<p>我们要实现一个如下图所示的标题栏：</p>
+<p><img src="../images/new_table_layout2.png" alt=""></p>
+<p>有如下报文写法:</p>
+<pre><code class="lang-html"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">content</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+            <span class="hljs-class">.table_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">0px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"><span class="hljs-number">0px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">320px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">fixed</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.tr_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">70px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-image</span>:<span class="hljs-value"><span class="hljs-function">url</span>(title_bg.png)</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.td_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">320px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.label_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">70px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">180px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">18px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">bold</span></span>;<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#FFFFFF</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.button_back</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">8px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">54px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">32px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-image</span>:<span class="hljs-value"><span class="hljs-function">url</span>(back_but.png)</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.button_main</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"><span class="hljs-number">8px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">54px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">32px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-image</span>:<span class="hljs-value"><span class="hljs-function">url</span>(main_but.png)</span></span>;<span class="hljs-rule">}</span></span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table_title"</span> <span class="hljs-attribute">border</span>=<span class="hljs-value">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tr_title"</span> &gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"td_title"</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">"center"</span> <span class="hljs-attribute">valign</span>=<span class="hljs-value">"middle"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"label_title"</span>&gt;</span>天气预报查询测试<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button_back"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"back_but"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"back_fun()"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button_main"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"main_but"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"main_page()"</span>/&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">content</span>&gt;</span>
+</code></pre>
+<p>在旧版本的客户端中，table是不支持多行显示的，使用以上写法，td中的三个控件会在同一行根据left和right样式排列，得到了我们想要的效果。</p>
+<p>而新客户端的显示效果如下：</p>
+<p><img src="../images/new_table_layout1.png" alt=""></p>
+<p>由于新的table布局算法支持了td中控件的多行显示，td中的控件会先按照报文中出现的顺序排版，再根据left、right样式定位，即：label在第一位，两个button控件排在label后面，由于button定义了left和right样式，只能在label后另起一行显示。</p>
+<p>将td中控件的顺序修改下就可以得到正确的显示效果，table的报文修改如下：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table_title"</span> <span class="hljs-attribute">border</span>=<span class="hljs-value">"0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tr_title"</span> &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"td_title"</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">"center"</span> <span class="hljs-attribute">valign</span>=<span class="hljs-value">"middle"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button_back"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"back_but"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"back_fun()"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"label_title"</span>&gt;</span>天气预报查询测试<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button_main"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"main_but"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"main_page()"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+<h3 id="多行控件的垂直居中问题">2.2 多行控件的垂直居中问题</h3>
+<p>新客户端支持table对多行控件垂直居中对齐，控件的居中对齐方式为以中心线对齐。</p>
+<p>以下报文用来验证多行控件垂直居中对齐的显示效果:</p>
+<pre><code class="lang-html"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">content</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+            <span class="hljs-class">.body</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#FFFFFF</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.table_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">0px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"><span class="hljs-number">0px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">320px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">fixed</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#F0F0F0</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.tr_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">350px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.td_title</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">320px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl1</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">30px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">60px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">15px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#FFE4E1</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl2</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">40px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">80px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">18px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#FFE1FF</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl3</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">50px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">100px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">21px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#EED2EE</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl4</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">30px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">60px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">15px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#F0FFFF</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl5</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">40px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">80px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">18px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#B4EEB4</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl6</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">50px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">100px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl7</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">30px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">70px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl8</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">30px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">150px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">15px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl9</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">40px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">150px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">10px</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.ctrl10</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">30px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">80px</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">15px</span></span></span>;<span class="hljs-rule">}</span></span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table_title"</span> <span class="hljs-attribute">border</span>=<span class="hljs-value">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tr_title"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"td_title"</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">"center"</span> <span class="hljs-attribute">valign</span>=<span class="hljs-value">"middle"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl1"</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl2"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Button"</span>/&gt;</span> 
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl3"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Input"</span>/&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl4"</span>&gt;</span> 
+                      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>select1<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>select2<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>          
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>                    
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl5"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"image_test.png"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl6"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">img</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"switch"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"switch1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl7"</span> <span class="hljs-attribute">checked</span>=<span class="hljs-value">"checked"</span>&gt;</span>yes<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"switch"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"switch1"</span>&gt;</span>no<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl8"</span>&gt;</span>Checkbox<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"segment"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"segment1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"seg1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl9"</span>&gt;</span>seg1<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"segment"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"segment1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"seg2"</span>&gt;</span>seg2<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"segment"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"segment1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"seg3"</span>&gt;</span>seg3<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ctrl10"</span>&gt;</span>Radio<span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">content</span>&gt;</span>
+</code></pre>
+<p>效果图如下：</p>
+<p><img src="../images/new_table_layout3.png" alt=""></p>
+<h2 id="总结">3 总结</h2>
+<ol>
+<li>在写table的报文时，要注意：td中多个控件在报文中的顺序应与其在界面中显示的顺序一致。</li>
+<li>新的table布局算法已支持对多行控件进行垂直居中对齐，每一行控件都以其中心线为基准对齐。</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../table/scroll_tab.html" class="navigation navigation-prev " aria-label="Previous page: Table 滑动继续加载"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../onclick/Introduction.html" class="navigation navigation-next " aria-label="Next page: 事件响应"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

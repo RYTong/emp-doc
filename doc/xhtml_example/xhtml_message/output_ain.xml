@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+	<head>
+		<style>
+            .table_title{left:0px;top:0px;width:320px;position:fixed;}
+            .tr_title{left:0px;top:0px;width:320px;height:51px;background-image:url(title_bg.png);}
+            .label_title{top:16px;width:320px;text-align:center;font-size:19px;font-weight:bold;color:#FFFFFF;}
+            .button_main{top:10px;left:260px;width:54px;height:32px;background-image:url(main_but.png);}
+            .button_back{top:10px;left:8px;width:54px;height:32px;background-image:url(back_but.png);}
+            .success_div{left:15px;top:61px;width:290px;height:360px;}
+            .body{width:320px;height:460px;background-image:url(fast_transfer/images/transfer_success.png);}
+            .bill_head_div{left:10px;top:56px;width:300px;height:11px;background-image:url(fast_transfer/images/transfer_bill_head.png);}
+            .trans_bill_div{left:0px;top:-360px;width:290px;height:360px;background-image:url(fast_transfer/images/transfer_bill.png);}
+            .trans_bill_table{left:40px;top:76px;width:215px;}
+            .tr{height:30px;}
+            .bill_td1{width:72px;}
+            .bill_td2{width:160px;}
+            .td1_label{font-size:12px;color:#bd4141;width:72px;}
+            .td2_label{font-size:12px;color:#6d6d6d;width:160px;}
+            .count_label{font-size:22px;color:#bd4141;height:27px;}
+            .tr_img{width:210px;height:2px;background-image:url(fast_transfer/images/separator_line.png);}
+            .tr_count{left:0px;top:0px;height:30px;}
+            .line_img{left:0px;top:0px;width:210px;height:2px;}
+        </style>
+        <script type="text/x-lua">
+        	<![CDATA[
+
+            local function change_value(name,value)
+                local ctrl = document:getElementsByName(name);
+                if ctrl and #ctrl > 0 then
+                    ctrl[1]:setPropertyByName("value",value);
+                else
+                    window:alert("控件不存在！");
+                end;
+            end;
+            --初始化改变label值
+            local function initial()
+                change_value("accNo_in","633354**********8352");
+                change_value("accNo_out","644454**********7867");
+                change_value("bankName","交通银行");
+                change_value("name","张三");
+                change_value("service_charge","20.00");
+                change_value("amount","10000");
+            end;
+            --动画
+            local function translate()
+                local div_ctrl = document:getElementsByName("div_trans_bill");
+                if div_ctrl and #div_ctrl > 0 then
+                    transition:setCurve(div_ctrl[1], curve.ease_inout);
+                    transition:translateY(div_ctrl[1], 360, 2);
+                    local au = audio:load("result.mp3");
+                    audio:play(au,1);
+                end;
+            end;
+
+            initial();
+            translate();
+        	]]>
+        </script>
+	</head>
+	<body>
+        <table class="table_title" border="0">
+            <tr class="tr_title" >
+                <td align="center" valign="middle" class="td_title">
+                    <label class="label_title" name='label_title'>快速转帐</label>
+                    <input type="button" class="button_back" name="back_but" onclick="back_fun_second('tranfer_remit')"/>
+                    <input type="button" class="button_main" name="main_but" onclick="main_page_callback()"/>
+                </td>
+            </tr>
+        </table>
+        <!--transfer bill-->
+        <div class="bill_head_div" border="0">
+        </div>
+        <div class="success_div" border="0">
+            <div class="trans_bill_div" name="div_trans_bill"  border="0">
+                <table class="trans_bill_table" border="0">
+                    <tr>
+                        <td class="bill_td1" valign="middle"><label class="td1_label">转入帐号:</label></td>
+                        <td class="bill_td2" valign="middle"><label class="td2_label" name="accNo_in"></label></td>
+                    </tr>
+                    <tr class="tr_img">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bill_td1" valign="middle"><label class="td1_label">转出帐号:</label></td>
+                        <td class="bill_td2" valign="middle"><label class="td2_label" name="accNo_out"></label></td>
+                    </tr>
+                    <tr class="tr_img">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bill_td1" valign="middle"><label class="td1_label">转入银行:</label></td>
+                        <td class="bill_td2" valign="middle"><label class="td2_label" name="bankName"></label></td>
+                    </tr>
+                    <tr class="tr_img">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bill_td1" valign="middle"><label class="td1_label">收款人:</label></td>
+                        <td class="bill_td2" valign="middle"><label class="td2_label" name="name"></label></td>
+                    </tr>
+                    <tr class="tr_img">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bill_td1" valign="middle"><label class="td1_label">转账手续费:</label></td>
+                        <td class="bill_td2" valign="middle"><label class="td2_label" name="service_charge"></label></td>
+                    </tr>
+                    <tr class="tr_img">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="tr_count">
+                        <td class="bill_td1" valign="middle"><label class="td1_label">转账金额:</label></td>
+                        <td class="bill_td2" valign="middle">
+                            <label class="count_label">￥</label>
+                            <label class="count_label" name="amount"></label>
+                        </td>
+                    </tr>
+                    <tr class="tr_img">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+	</body>
+</content>

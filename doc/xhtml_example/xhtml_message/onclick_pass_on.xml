@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <style>
+        .body{width:320px;background-image:url(bg_img.png);}
+        .div_content {top:100px; width: 320px; font-size: 14px; color: #000000; height: 320px; background-color: #7FBA00;}
+        .alpha_style{top:100px; width: 320px; height: 320px;display: block; filter:progid(alpha='0.1');}
+        .table_content{top:50px;width:220px;left:50px;};
+        .tr_content{height: 100px; background-color: #CCCCCC;}
+        .tr_content1{height: 100px; background-color: #F5CD7F;}
+        .but_tr{height: 80px; width: 100px; right: 5px; background-color: #787878;}
+        .div_tr{height: 80px; width: 100px; left: 5px; background-color: #909090;}
+    </style>
+    <script type="text/x-lua">
+    	<![CDATA[
+
+            local flag1 = 1;
+            local flag2 = 1;
+            local flag3 = 1;
+            local flag4 = 1;
+            function div_onclick()
+                local div_content = document:getElementsByName("div_content");
+                if flag1 == 1 then
+                    div_content[1]:setStyleByName("background-color","#FF0000");
+                    flag1 = 0;
+                else
+                    div_content[1]:setStyleByName("background-color","#7FBA00");
+                    flag1 = 1;                    
+                end;
+            end;
+
+            function div_table_tr_onclick()
+                local tr_content = document:getElementsByName("tr_content");
+                if flag2 == 1 then
+                    tr_content[1]:setStyleByName("background-color","#FFFF00");
+                    flag2 = 0;
+                else
+                    tr_content[1]:setStyleByName("background-color","#CCCCCC");
+                    flag2 = 1;                    
+                end;                
+            end
+
+            function div_table_tr_button_onclick()
+                local but_tr = document:getElementsByName("but_tr");
+                if flag3 == 1 then
+                    but_tr[1]:setStyleByName("background-color","#00FF00");
+                    flag3 = 0;
+                else
+                    but_tr[1]:setStyleByName("background-color","#787878");
+                    flag3 = 1;                    
+                end;                 
+            end
+
+            function div_table_tr_div_onclick()
+                local div_tr = document:getElementsByName("div_tr");
+                if flag4 == 1 then
+                    div_tr[1]:setStyleByName("background-color","#00FFFF");
+                    flag4 = 0;
+                else
+                    div_tr[1]:setStyleByName("background-color","#909090");
+                    flag4 = 1;                    
+                end;                 
+            end
+        ]]>
+    </script> 
+</head>
+<body>
+    <div class="div_content" name="div_content" border="0" onclick = "div_onclick()"> 
+        <table class="table_content" border="0">
+            <tr class="tr_content" name="tr_content" onclick="div_table_tr_onclick()">
+                <td valign="middle">
+                    <input class="but_tr" name="but_tr" type="button" value="测试点击" onclick="div_table_tr_button_onclick()" />
+                    <div class="div_tr" name="div_tr" border="0" onclick="div_table_tr_div_onclick()">
+                    </div>
+                </td>
+            </tr>
+            <tr class="tr_content1"  onclick = "div_onclick()">
+                <td valign="middle">
+                    <div class="div_tr" name="div_tr" border="0">
+                        <label>无点击事件tr</label>
+                    </div>
+                </td>
+            </tr>            
+        </table>
+    </div>
+</body>
+</content>

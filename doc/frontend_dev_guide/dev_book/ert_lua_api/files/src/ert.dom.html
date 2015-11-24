@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Luadocs for src/ert.dom.lua</title>
+    <link rel="stylesheet" href="../../luadoc.css" type="text/css" />
+    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li>
+		<a href="../../files/src/binding/ert.cache_input.html">src/binding/ert.cache_input.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/binding/ert.nav.html">src/binding/ert.nav.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.channel.html">src/ert.channel.lua</a>
+	</li>
+
+	<li><strong>src/ert.dom.lua</strong></li>
+	
+	<li>
+		<a href="../../files/src/ert.html">src/ert.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.page.html">src/ert.page.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.platform.html">src/ert.platform.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.query.html">src/ert.query.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.stack.html">src/ert.stack.lua</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div> <!-- id="navigation" -->
+
+<div id="content">
+
+<h1>File <code>src/ert.dom.lua</code></h1>
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+    <tr>
+    <td class="name" nowrap><a href="#dom:get_ctrl">dom:get_ctrl</a>&nbsp;(...)</td>
+    <td class="summary">根据属性列表获取控件，如果控件存在则返回控件列表，如果控件不存在则弹出提示框，返回nil。 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#dom:get_ctrl_by_id">dom:get_ctrl_by_id</a>&nbsp;(id)</td>
+    <td class="summary">根据id获取控件，如果控件存在则返回根据id获取的控件，如果id重复也只返回获取的第一个控件，如果控件不存在则弹出提示框，返回nil。 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#dom:get_ctrl_by_name">dom:get_ctrl_by_name</a>&nbsp;(name)</td>
+    <td class="summary">根据name获取控件,如果控件存在则返回控件列表table，如果控件不存在则弹出提示框，返回nil。 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#dom:set_style_by_id">dom:set_style_by_id</a>&nbsp;(id, style, value)</td>
+    <td class="summary">根据id改变控件样式，只修改界面中有此id的第一个控件。 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#dom:set_style_by_name">dom:set_style_by_name</a>&nbsp;(name, style, value)</td>
+    <td class="summary">根据名称改变控件样式，如果界面中有多个此名称控件则这些控件都会被修改。 </td>
+    </tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="dom:get_ctrl"></a><strong>dom:get_ctrl</strong>&nbsp;(...)</dt>
+<dd>
+根据属性列表获取控件，如果控件存在则返回控件列表，如果控件不存在则弹出提示框，返回nil。
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  ...: 属性列表，例如{name="button",type="submit"}
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+table 控件列表
+
+
+
+</dd>
+
+
+
+
+<dt><a name="dom:get_ctrl_by_id"></a><strong>dom:get_ctrl_by_id</strong>&nbsp;(id)</dt>
+<dd>
+根据id获取控件，如果控件存在则返回根据id获取的控件，如果id重复也只返回获取的第一个控件，如果控件不存在则弹出提示框，返回nil。
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: string 控件id
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+userdata 单个控件
+
+
+
+</dd>
+
+
+
+
+<dt><a name="dom:get_ctrl_by_name"></a><strong>dom:get_ctrl_by_name</strong>&nbsp;(name)</dt>
+<dd>
+根据name获取控件,如果控件存在则返回控件列表table，如果控件不存在则弹出提示框，返回nil。
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  name: string 控件名称
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+table 控件列表
+
+
+
+</dd>
+
+
+
+
+<dt><a name="dom:set_style_by_id"></a><strong>dom:set_style_by_id</strong>&nbsp;(id, style, value)</dt>
+<dd>
+根据id改变控件样式，只修改界面中有此id的第一个控件。
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  id: 控件Id
+	</li>
+	
+	<li>
+	  style: 样式名称，比如："height"
+	</li>
+	
+	<li>
+	  value: 修改值，需要将控件样式修改的值
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+nil
+
+
+
+</dd>
+
+
+
+
+<dt><a name="dom:set_style_by_name"></a><strong>dom:set_style_by_name</strong>&nbsp;(name, style, value)</dt>
+<dd>
+根据名称改变控件样式，如果界面中有多个此名称控件则这些控件都会被修改。
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  name: 控件名称
+	</li>
+	
+	<li>
+	  style: 样式名称，比如："height"
+	</li>
+	
+	<li>
+	  value: 修改值，需要将控件样式修改的值
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+nil
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->
+</body>
+</html>

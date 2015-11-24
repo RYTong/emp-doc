@@ -1,0 +1,2372 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Android EMP3.2和EMP5.2双引擎兼容改造方案 | ERT开发</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../release_note/android/Introduction.html" />
+    
+    
+    <link rel="prev" href="../../client_dev/migrate/EMP_Android_5.1to5.2.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="2.6.3" data-basepath="../.." data-revision="1445493172813">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         iOS 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="architecture_design/Introduction.html">
+            
+                
+                    <a href="../../architecture_design/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         架构设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1.1" data-path="architecture_design/iOS/iOSArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/iOS/iOSArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                         iOS总体架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.1.2" data-path="architecture_design/iOS/iOSLuaArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/iOS/iOSLuaArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                         iOS Lua架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.1.3" data-path="architecture_design/iOS/iOSJSArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/iOS/iOSJSArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                         iOS JS架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="setup_develop_env/iOSDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/iOSDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         iOS开发环境搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         iOS开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.3.1" data-path="client_dev/iOSDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/iOSDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                         iOS开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.2" data-path="hello_emp/client/CreateiOSApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateiOSApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                         创建iOS_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3" data-path="client_dev/emp_config/ert/ios/README.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                         配置说明
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.3.3.1" data-path="client_dev/emp_config/ert/ios/ert_config.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ert_config.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.1.</b>
+                        
+                         iOS配置说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.2" data-path="client_dev/emp_config/ert/ios/develop_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/develop_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.2.</b>
+                        
+                         开发模式配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.3" data-path="client_dev/emp_config/ert/ios/push_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/push_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.3.</b>
+                        
+                         推送配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.4" data-path="client_dev/emp_config/ert/ios/mdap_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/mdap_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.4.</b>
+                        
+                         统计分析配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.5" data-path="client_dev/emp_config/ert/ios/encrypt_config.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/encrypt_config.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.5.</b>
+                        
+                         加密库配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.6" data-path="client_dev/emp_config/ert/ios/other_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/other_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.6.</b>
+                        
+                         ====配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.7" data-path="client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.7.</b>
+                        
+                         DEMO-APP本地资源
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4" data-path="deepin_client_dev/ios/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                         iOS高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.4.1" data-path="deepin_client_dev/ios/iOS_Control_Extension.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Control_Extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                         IOS扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.2" data-path="deepin_client_dev/ios/iOS_Lua_Extension.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Lua_Extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                         IOS扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.3" data-path="deepin_client_dev/ios/iOS_JS_Architecture.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_JS_Architecture.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                         IOS扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.4" data-path="deepin_client_dev/ios/iOS_Control_Extension_5.2.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Control_Extension_5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.4.</b>
+                        
+                         IOS扩展UI控件_5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.5" data-path="deepin_client_dev/ios/iOS_Lua_Extension_5.2.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Lua_Extension_5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.5.</b>
+                        
+                         IOS扩展Lua接口_5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5" data-path="deepin_client_dev/ios/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                         iOS功能说明
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.5.1" data-path="client_dev/emp_config/ert/ios/ios_statusBar.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ios_statusBar.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                         iOS 状态栏
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.2" data-path="client_dev/emp_config/ert/ios/ios_adapter.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ios_adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                         iOS 适配说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.3" data-path="client_dev/emp_config/ert/ios/international.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/international.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.</b>
+                        
+                         iOS 国际化使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.4" data-path="client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.</b>
+                        
+                         iOS App目录下本地资源说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.5" data-path="deepin_client_dev/ios/iOS_Offline.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.</b>
+                        
+                         IOS5.2离线文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.6" data-path="deepin_client_dev/ios/iOS_MDAP.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_MDAP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.</b>
+                        
+                         IOS统计分析使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.7" data-path="deepin_client_dev/ios/iOS_LuaQRCode.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_LuaQRCode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.7.</b>
+                        
+                         IOS QRCode使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.8" data-path="client_dev/emp_config/ert/ios/ios_SDK.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ios_SDK.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.8.</b>
+                        
+                         iOS SDK定制说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.9" data-path="deepin_client_dev/ios/iOS_Exception_Catch.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Exception_Catch.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.9.</b>
+                        
+                         iOS 异常捕获
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                         migrate
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.6.1" data-path="client_dev/migrate/EMP_x.xto5.x.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_x.xto5.x.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                         客户端升级改造to5.x
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6.2" data-path="client_dev/migrate/EMP_iOS_5.1to5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_iOS_5.1to5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                         iOS 5.1to5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6.3" data-path="client_dev/migrate/EMP_iOS_TwinEngine_3.2_5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_iOS_TwinEngine_3.2_5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                         iOS EMP3.2和EMP5.2双引擎兼容改造方案
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.7" data-path="release_note/ios/Introduction.html">
+            
+                
+                    <a href="../../release_note/ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                         Release Note
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.7.1" data-path="release_note/ios/Release_Note_5.3.41.html">
+            
+                
+                    <a href="../../release_note/ios/Release_Note_5.3.41.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.1.</b>
+                        
+                         5.3.41
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Android 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="architecture_design/Introduction.html">
+            
+                
+                    <a href="../../architecture_design/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         架构设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1.1" data-path="architecture_design/android/Android_ArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/android/Android_ArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                         Android架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="setup_develop_env/AndroidDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/AndroidDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         Android平台配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         Android开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.3.1" data-path="client_dev/AndroidDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/AndroidDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                         Android开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.2" data-path="hello_emp/client/CreateAndroidApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateAndroidApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                         创建Android_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.3" data-path="client_dev/emp_config/ert/android/README.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.</b>
+                        
+                         配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.3.3.1" data-path="client_dev/emp_config/ert/android/emp_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/emp_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.1.</b>
+                        
+                         EmpConfig
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.3.2" data-path="client_dev/emp_config/ert/android/widget_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/widget_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.2.</b>
+                        
+                         WidgetConfig(废弃类)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.3.3" data-path="client_dev/emp_config/ert/android/control_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/control_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.3.</b>
+                        
+                         ControlConfig
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4" data-path="deepin_client_dev/android/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                         Android高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.4.1" data-path="deepin_client_dev/android/Android_Control_Extending_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Control_Extending_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                         Android EMP5.2扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.2" data-path="deepin_client_dev/android/Android_Lua_Extending_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Lua_Extending_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.2.</b>
+                        
+                         Android EMP5.2扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.3" data-path="deepin_client_dev/android/Android_JS_Extending_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_JS_Extending_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.3.</b>
+                        
+                         Android EMP5.2扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.4" data-path="deepin_client_dev/android/Android_Forward_Support_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Forward_Support_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.4.</b>
+                        
+                         Android EMP5.2对EMP5.1支持
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.5" data-path="deepin_client_dev/android/Android_Thread_Dev.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Thread_Dev.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.5.</b>
+                        
+                         Android EMP5.2线程分离改造开发说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.6" data-path="deepin_client_dev/android/Android_Keyboard_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Keyboard_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.6.</b>
+                        
+                         Android EMP5.3自定义键盘开发
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.7" data-path="deepin_client_dev/android/Android_SM_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_SM_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.7.</b>
+                        
+                         Android EMP5.2国密使用说明兼开发记录
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="deepin_client_dev/android/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         Android高级功能使用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.5.1" data-path="deepin_client_dev/android/Android_Offline.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                         Android离线1版本使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.2" data-path="deepin_client_dev/android/Android_Offline_V2.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Offline_V2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                         Android离线2版本使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.3" data-path="deepin_client_dev/android/Android_Offline_5.2To5.1.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Offline_5.2To5.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.3.</b>
+                        
+                         Android EMP5.2离线模块移植到5.1的解决方案
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.4" data-path="deepin_client_dev/android/Android_MDAP.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_MDAP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.4.</b>
+                        
+                         Android统计分析使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.5" data-path="deepin_client_dev/android/Android_EmpReader.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_EmpReader.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.5.</b>
+                        
+                         Android附件阅读使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.6" data-path="deepin_client_dev/android/Android_EmpQrcode.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_EmpQrcode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.6.</b>
+                        
+                         Android二维码使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.7" data-path="deepin_client_dev/android/Android_EmpChart.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_EmpChart.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.7.</b>
+                        
+                         Android图表使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.8" data-path="deepin_client_dev/android/Android_International_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_International_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.8.</b>
+                        
+                         Android国际化使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.9" data-path="deepin_client_dev/android/Android_Exception.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Exception.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.9.</b>
+                        
+                         Android异常本地查看说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.6" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                         migrate
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.6.1" data-path="client_dev/migrate/EMP_x.xto5.x.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_x.xto5.x.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.1.</b>
+                        
+                         客户端升级改造to5.x
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.6.2" data-path="client_dev/migrate/EMP_Android_5.1to5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_Android_5.1to5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.2.</b>
+                        
+                         Android 5.1to5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="2.6.3" data-path="client_dev/migrate/EMP_Android_TwinEngine_3.2&amp;5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_Android_TwinEngine_3.2&amp;5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.3.</b>
+                        
+                         Android EMP3.2和EMP5.2双引擎兼容改造方案
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.7" data-path="release_note/android/Introduction.html">
+            
+                
+                    <a href="../../release_note/android/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                         Release Note
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.7.1" data-path="release_note/android/Release_Note_Android_5.3.41.html">
+            
+                
+                    <a href="../../release_note/android/Release_Note_Android_5.3.41.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.1.</b>
+                        
+                         5.3.41
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         WP 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="setup_develop_env/WindowsPhoneDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/WindowsPhoneDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Windows Phone开发环境配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         WP开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.2.1" data-path="client_dev/WPDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/WPDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         WP开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.2" data-path="hello_emp/client/CreateWPApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateWPApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.2.</b>
+                        
+                         创建WP_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3" data-path="client_dev/emp_config/ert/wp/README.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                         配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.2.3.1" data-path="client_dev/emp_config/ert/wp/develop_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/develop_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.1.</b>
+                        
+                         开发模式配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3.2" data-path="client_dev/emp_config/ert/wp/push_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/push_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.2.</b>
+                        
+                         推送配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3.3" data-path="client_dev/emp_config/ert/wp/mdap_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/mdap_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.3.</b>
+                        
+                         统计分析配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3.4" data-path="client_dev/emp_config/ert/wp/other_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/other_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.4.</b>
+                        
+                         ====配置
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="deepin_client_dev/WP/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         WP高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.3.1" data-path="deepin_client_dev/WP/WP_Control_ExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Control_ExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.1.</b>
+                        
+                         WindowsPhone扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.2" data-path="deepin_client_dev/WP/WP_LuaArchitectureAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_LuaArchitectureAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.2.</b>
+                        
+                         WindowsPhone扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.3" data-path="deepin_client_dev/WP/WP_JS_ArchitectureAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_JS_ArchitectureAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.3.</b>
+                        
+                         WindowsPhone扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.4" data-path="deepin_client_dev/WP/WP_SM_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_SM_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.4.</b>
+                        
+                         WindowsPhoneEMP5.2国密使用说明兼加密调整
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.5" data-path="deepin_client_dev/WP/WP_Global.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Global.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.5.</b>
+                        
+                         WindowsPhone国际化使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="deepin_client_dev/WP/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         WP高级功能使用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.4.1" data-path="deepin_client_dev/WP/WP_Offline.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.1.</b>
+                        
+                         WindowsPhone5.2离线文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.2" data-path="deepin_client_dev/WP/WP_MDAP.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_MDAP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.2.</b>
+                        
+                         WindowsPhone5.2数据采集
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.3" data-path="deepin_client_dev/WP/WP_Chart_ExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Chart_ExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.3.</b>
+                        
+                         WindowsPhone图表扩展及使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.4" data-path="deepin_client_dev/WP/WP_EmpReader.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_EmpReader.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.4.</b>
+                        
+                         WindowsPhone附件阅读使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.5" data-path="deepin_client_dev/WP/WP_SDK_Custom_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_SDK_Custom_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.5.</b>
+                        
+                         WindowsPhone 控件SDK定制及使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         QT 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="setup_develop_env/QTDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/QTDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         QT开发环境配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         QT开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.2.1" data-path="client_dev/QTDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/QTDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.1.</b>
+                        
+                         QT开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2.2" data-path="hello_emp/client/CreateQTApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateQTApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.2.</b>
+                        
+                         创建QT_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="deepin_client_dev/QT/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/QT/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         QT高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.3.1" data-path="deepin_client_dev/qt/QT_Control_ExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/qt/QT_Control_ExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.1.</b>
+                        
+                         QT扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3.2" data-path="deepin_client_dev/qt/QT_Lua_FunctionAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/qt/QT_Lua_FunctionAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.2.</b>
+                        
+                         QT扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3.3" data-path="deepin_client_dev/qt/QT_JS_Bridge_ArchitectureAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/qt/QT_JS_Bridge_ArchitectureAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.3.</b>
+                        
+                         QT扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/ert_develop/ert_develop.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/ert_develop/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >ERT开发</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_75">
+                    
+                        <h1 id="emp32和emp52双引擎兼容改造方案">EMP3.2和EMP5.2双引擎兼容改造方案</h1>
+<h2 id="概述">1 概述</h2>
+<p>本文档主要描述在EMP3.2的引擎基础上，兼容支持EMP5.2引擎的改造方法。以下改造方法以邮储银行项目为例，其它EMP3.2框架项目可参考修改。</p>
+<h2 id="以32框架首页为入口的改造方法">2 以3.2框架首页为入口的改造方法</h2>
+<p>首先需要在项目工程中导入5.2框架的jar包。</p>
+<h3 id="更改冲突的文件名">2.1 更改冲突的文件名</h3>
+<p>由于邮储项目和5.2框架都加了防篡改功能，且用的so库都为<code>libAppVerify.so</code>，因此需要将项目中的使用的so库改名为<code>libAppVerify1.so</code>，同时将<code>com.rytong.tools.crypto.AppVerify</code>中的<code>System.loadLibrary(&quot;AppVerify&quot;);</code>代码段修改为<code>System.loadLibrary(&quot;AppVerify1&quot;);</code>。</p>
+<h3 id="注册52引擎">2.2 注册5.2引擎</h3>
+<p>在<code>com.rytong.bankps.BaseView</code>类中增加变量：</p>
+<pre><code>private EMPRender mEMPRender = null; 
+public static AndroidEMPBuilder mAndroidEMPBuilder = null;
+</code></pre><p>在<code>onCreate()</code>方法中增加以下代码：</p>
+<pre><code>mAndroidEMPBuilder = new AndroidEMPBuilder(this); 
+mEMPRender = new EMPRender(mAndroidEMPBuilder); 
+// 修改设置 
+final EMPConfig empConfig = mEMPRender.getEMPConfig(); 
+onAdjustEMPConfig(empConfig); 
+</code></pre><p>覆写方法<code>onAdjustEMPConfig()</code>，该方法用于设置5.2引擎运行时的一些配置，各配置项含义可参考<a href="../../emp_config/ert/android/emp_conf.html">EmpConfig配置</a>。</p>
+<pre><code>/** 
+ * 设置运行配置 
+ * @param empConfig 
+ */ 
+public void onAdjustEMPConfig(EMPConfig empConfig) { 
+    empConfig.setBasicScreen(new Rect(0, 0, 320, 480));
+    empConfig.setPrintLog(true);
+    empConfig.setAlertPrompt(true);
+    empConfig.setUpdateOfflineRes(true);
+    empConfig.setDevelopmentMode(true);
+    empConfig.setOfflinePromptOn(true);
+    empConfig.setTrack(false);
+    empConfig.setServerUri(&quot;http://192.168.64.128:4002&quot;);
+    empConfig.setServerUriNoPort(&quot;http://192.168.64.128&quot;);
+    empConfig.setOfflineVersion(1);
+} 
+</code></pre><p>覆写方法<code>onWindowFocusChanged()</code>，主要作用是记录activity的可用显示范围大小。</p>
+<pre><code>/** 
+ * 在获取焦点时调整body并记录在Screen类中 
+ */ 
+@Override 
+public void onWindowFocusChanged(boolean hasFocus) { 
+    super.onWindowFocusChanged(hasFocus);
+    if (mAndroidEMPBuilder != null)  {
+        mAndroidEMPBuilder.onWindowFocusChanged(hasFocus);
+    }
+} 
+</code></pre><h3 id="增加物理返回键处理">2.3 增加物理返回键处理</h3>
+<p>在需要加入新业务的页面Activity中增加5.2框架的物理返回处理，如在<code>com.rytong.bankps.BOCMainView</code>的<code>onKeyDown</code>方法中增加代码：</p>
+<pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if (mAndroidEMPBuilder != null &amp;&amp; mAndroidEMPBuilder.onKeyDown(keyCode, event)) {
+        return true;
+    }
+    // 以下是原有处理
+    ...
+}
+</code></pre><h3 id="信道修改">2.4 信道修改</h3>
+<p>由于项目原有代码和5.2框架都有一套信道流程，为实现单信道连接的方案，同时兼容新旧业务的需求，需要修改项目中与信道连接相关的代码。</p>
+<ol>
+<li><p>在<code>com.rytong.bankps.UserManager</code>类中增加通过5.2框架建立信道的方法。</p>
+<pre><code> final void clientHello_new(final BaseView bv) throws Exception {
+     mid_.waitDialog_.addFgTask(bv, new WaitDialog.Task(0) {
+         String initContent = &quot;&quot;;
+
+         @Override
+         public void run(WaitDialog dlg) throws Exception {
+             ClientHello ch = new ClientHello(ConfigManager.currentView_, &quot;&quot;, false);
+             initContent = ClientHello.getText();
+
+             setCookie(com.rytong.emp.net.HttpManager.COOKIE);
+             sessionKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+             // save key.
+             AESCipher.clientKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+             AESCipher.clientIv_ = com.rytong.emp.security.AESCipher.clientIv_;
+             AESCipher.serverKey_ = com.rytong.emp.security.AESCipher.serverKey_;
+             AESCipher.serverIv_ = com.rytong.emp.security.AESCipher.serverIv_;
+
+             // hmac key
+             clientHmacKey_ = ClientHello.getClientHmacKey();
+             serverHmacKey_ = ClientHello.getServerHmacKey();
+         }
+
+         public void onSuccess(WaitDialog dlg) {
+             // 这部分根据需求自定义实现
+             if (null != initContent &amp;&amp; initContent.indexOf(&quot;&lt;error&quot;) != -1) {
+                 WaitDialog.Task.cancelProgressBar(ConfigManager.currentView_);
+                 String error = LPUtils.getXMLResponseAttribute(initContent,
+                         &quot;string=\&quot;&quot;, 0, LPUtils.MATCH);
+                 mid_.alert(ConfigManager.currentView_, error, false);
+             } else if (!TextUtils.isEmpty(initContent)
+                     &amp;&amp; initContent.contains(&quot;立即更新&quot;)) {
+                 showLoginView(ConfigManager.currentView_, initContent);
+             } else {
+                 ConfigManager.currentView_.gotoGridView(null, null);
+             }
+         }
+
+         public void onFailure(WaitDialog dlg) {
+             // 这部分根据需求自定义实现
+             mid_.alert(bv, getErrMsg(), false);
+             super.onFailure(dlg);
+         }
+     }, false);
+ }
+</code></pre><p>其中下面这段是将信道建立后的一些变量，存到3.2框架中，保证项目代码正常运行。5.2框架需要提供相应的获取接口。</p>
+<pre><code> setCookie(com.rytong.emp.net.HttpManager.COOKIE);
+ sessionKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+ // save key.
+ AESCipher.clientKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+ AESCipher.clientIv_ = com.rytong.emp.security.AESCipher.clientIv_;
+ AESCipher.serverKey_ = com.rytong.emp.security.AESCipher.serverKey_;
+ AESCipher.serverIv_ = com.rytong.emp.security.AESCipher.serverIv_;
+
+ // hmac key
+ clientHmacKey_ = ClientHello.getClientHmacKey();
+ serverHmacKey_ = ClientHello.getServerHmacKey();
+</code></pre></li>
+<li><p>在旧框架中需要建立信道的地方，调用新添加的方法。如在<code>com.rytong.bankps.BaseView</code>类中，将方法</p>
+<pre><code> public void stepIntoView(String mainChannelID, String subChannelID) {
+     ...
+         if (!&quot;ebank_dxfw_i&quot;.equals(mainChannelID)
+                 &amp;&amp; (AESCipher.clientKey_ == null || AESCipher.clientIv_ == null)) {
+             mid_.um_.clientHello(this);
+         } else {
+             ...
+         }
+     ...
+ }
+</code></pre><p>修改为</p>
+<pre><code> public void stepIntoView(String mainChannelID, String subChannelID) {
+     ...
+         if (!&quot;ebank_dxfw_i&quot;.equals(mainChannelID)
+                 &amp;&amp; (AESCipher.clientKey_ == null || AESCipher.clientIv_ == null)) {
+             mid_.um_.clientHello_new(this);
+         } else {
+             ...
+         }
+     ...
+ }
+</code></pre></li>
+<li><p>本地保存的证书，在5.2框架中是保存在文件中，路径为<code>assets\xx_ca_test.png</code>，而3.2框架是将证书字符窜写死在代码中。为了确保5.2的信道流程正常运行，需要将项目的证书按照5.2的格式保存在文件中。</p>
+</li>
+</ol>
+<h3 id="开启新业务">2.5 开启新业务</h3>
+<p>由于5.2框架实现新业务都是通过页面报文进行，因此3.2框架使用5.2框架实现新业务时，首先得加载一段本地报文，报文内容按照需求自定义实现。如在<code>com.rytong.bankps.BaseView</code>类的<code>gotoGridView()</code>方法中添加功能：</p>
+<pre><code>public void gotoGridView(String mainChannelID, String subChannelID) {
+    if (TextUtils.isEmpty(mainChannelID) &amp;&amp; !TextUtils.isEmpty(channelID_)) {
+        mainChannelID = channelID_;
+    }
+    if (&quot;bankdemo&quot;.equals(mainChannelID)) {
+        mEMPRender.loadLocalFile(&quot;assets:main.xml&quot;);
+        return;
+    }
+    // 之后是原有操作
+    ...
+}
+</code></pre><p>而从5.2新业务切换回3.2框架时，可以通过扩展Lua接口实现。</p>
+<h2 id="以52框架首页为入口的改造方法">3 以5.2框架首页为入口的改造方法</h2>
+<p>首先需要在项目工程中导入5.2框架的jar包。</p>
+<h3 id="更改冲突的文件名">3.1 更改冲突的文件名</h3>
+<p>由于邮储项目和5.2框架都加了防篡改功能，且用的so库都为<code>libAppVerify.so</code>，因此需要将项目中的使用的so库改名为<code>libAppVerify1.so</code>，同时将<code>com.rytong.tools.crypto.AppVerify</code>中的<code>System.loadLibrary(&quot;AppVerify&quot;);</code>代码段修改为<code>System.loadLibrary(&quot;AppVerify1&quot;);</code>。</p>
+<h3 id="创建52框架用的activity">3.2 创建5.2框架用的Activity</h3>
+<ol>
+<li><p>新建一个Activity类，用于注册5.2框架模块，及当做5.2新业务的展示Activity。例如在<code>com.rytong.bankps</code>包下新建类<code>NewEngineActivity</code>：</p>
+<pre><code> import android.graphics.Rect;
+ import android.os.Bundle;
+ import android.view.Window;
+
+ import com.rytong.emp.android.EMPActivity;
+ import com.rytong.emp.lua.EMPLua;
+ import com.rytong.emp.render.EMPRender;
+ import com.rytong.emp.tool.EMPConfig;
+
+ public class NewEngineActivity extends EMPActivity {
+
+     @Override
+     public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         ExitApplication.getInstance().addActivity(this);
+         ConfigManager.newEngineView = this;
+     }
+
+     @Override
+     public void onInitActivity() {
+         // 隐藏系统标题栏
+         requestWindowFeature(Window.FEATURE_NO_TITLE);
+     }
+
+     @Override
+     public void onAdjustEMPConfig(EMPConfig empConfig) {
+         empConfig.setBasicScreen(new Rect(0, 0, 320, 480));
+         empConfig.setPrintLog(true);
+         empConfig.setAlertPrompt(true);
+         empConfig.setUpdateOfflineRes(true);
+         empConfig.setDevelopmentMode(false);
+         empConfig.setOfflinePromptOn(true);
+         empConfig.setTrack(false);
+ //        empConfig.setServerUri(&quot;http://192.168.64.219:4002&quot;);
+ //        empConfig.setServerUriNoPort(&quot;http://192.168.64.219&quot;);
+ //        empConfig.setServerUri(&quot;http://192.168.65.153:5002&quot;);
+ //        empConfig.setServerUriNoPort(&quot;http://192.168.65.153&quot;);
+         empConfig.setServerUri(&quot;http://192.168.64.128:6002&quot;);
+         empConfig.setServerUriNoPort(&quot;http://192.168.64.128&quot;);
+         ConfigManager.SERVER_URI = empConfig.getServerUri() + &quot;/&quot;;
+         ConfigManager.SERVER_URI_NO_PORT = empConfig.getServerUriNoPort() + &quot;/&quot;;
+         empConfig.setTlsVersion(1.3f);
+         empConfig.setOfflineVersion(1);
+     }
+
+     @Override
+     public void onLoadStartPage(EMPRender empRender) {
+         // 加载assets下页面
+         empRender.loadLocalFile(&quot;assets:main.xml&quot;);
+     }
+ }
+</code></pre><p>方法<code>onAdjustEMPConfig()</code>用于设置5.2引擎运行时的一些配置，各配置项含义可参考<a href="../../emp_config/ert/android/emp_conf.html">EmpConfig配置</a>。</p>
+</li>
+<li><p>在项目的<code>AndroidManifest.xml</code>文件中注册该Activity。</p>
+<pre><code> &lt;activity
+     android:name=&quot;com.rytong.bankps.NewEngineActivity&quot;
+     android:alwaysRetainTaskState=&quot;true&quot;
+     android:configChanges=&quot;orientation|keyboardHidden&quot;
+     android:launchMode=&quot;singleTask&quot;
+     android:screenOrientation=&quot;portrait&quot;
+     android:windowSoftInputMode=&quot;adjustPan&quot; &gt;
+ &lt;/activity&gt;
+</code></pre></li>
+<li><p>在<code>com.rytong.bankps.ConfigManager</code>中增加变量，用于保存5.2引擎Acitivity对象。</p>
+<pre><code> // 当前界面引用对象
+ static NewEngineActivity newEngineView;
+</code></pre></li>
+</ol>
+<h3 id="网络连接修改">3.3 网络连接修改</h3>
+<p>由于新老框架引擎采用一条信道，但网络连接时使用各自的网络模块，因此需要改造3.2框架的网络模块。</p>
+<ol>
+<li><p>修改<code>com.rytong.bankps.HttpManager</code>中的<code>addSerialNData</code>方法，保证新老引擎网络请求中的防重放参数保持同步。</p>
+<pre><code> import com.rytong.emp.net.CryptoHttpManager;
+
+ private String addSerialNData(String body) {
+     String result = null;
+     if (body != null) {
+         // 新老引擎网络请求防重放参数保持同步
+         if (CryptoHttpManager.mSerialN &gt; serialN_) {
+             serialN_ = CryptoHttpManager.mSerialN;
+         }
+         serialN_ += 1;
+         CryptoHttpManager.mSerialN = serialN_;
+         byte[] byt = new byte[8];
+         for (int i = 0; i &lt; 8; i++) {
+             byt[i] = (byte) (serialN_ &gt;&gt; (56 - i * 8));
+         }
+         String serN = Base64.encode(byt);
+         result = serN + body;
+     }
+
+     return result;
+ }
+</code></pre></li>
+</ol>
+<h3 id="开启新业务首页">3.4 开启新业务首页</h3>
+<p>使用5.2框架实现新业务首页时，只需要将<code>NewEngineActivity</code>设为项目的主Activity即可。或者在原有欢迎页面的Acitivity执行完后，通过代码调用。在需要开启新业务主页的地方添加如下代码：</p>
+<pre><code>Intent intent = new Intent();
+// 定义值传递对象
+Bundle bundle = new Bundle();
+intent.putExtras(bundle);
+intent.setClass(activity, NewEngineActivity.class);
+activity.startActivity(intent);
+WaitDialog.Task.cancelProgressBar(activity);
+activity.finish();
+</code></pre><p><strong>注意：5.2引擎的Activity，整个程序运行过程中只能存在一份，且必须在程序退出时才可销毁。</strong></p>
+<h3 id="扩展用于新老业务跳转的lua方法">3.5 扩展用于新老业务跳转的lua方法</h3>
+<ol>
+<li><p>扩展lua方法，用于实现5.2首页到3.2老业务的跳转。例如在<code>com.rytong.bankps</code>包下新建类<code>LuaEngine</code>，实现lua接口<code>engine:loadPageWithEngine3(table, int)</code>，其中table参数保存业务channel的一些信息，int参数表示跳转页面时一级菜单页面还是二级菜单页面。</p>
+<pre><code> import android.content.Intent;
+ import android.os.Bundle;
+
+ import com.rytong.emp.lua.java.CLEntity;
+ import com.rytong.emp.net.ClientHello;
+ import com.rytong.emp.render.EMPRender;
+
+ public class LuaEngine {
+
+     private EMPRender mEMPRender = null;
+
+     public LuaEngine(EMPRender empRender) {
+         mEMPRender = empRender;
+     }
+</code></pre></li>
+</ol>
+<pre><code>        public void loadPageWithEngine3(CLEntity channelInfo, int type) {
+
+            BaseView.mid_.um_.setCookie(com.rytong.emp.net.HttpManager.COOKIE);
+            BaseView.mid_.um_.sessionKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+
+            // save key.
+            AESCipher.clientKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+            AESCipher.clientIv_ = com.rytong.emp.security.AESCipher.clientIv_;
+            AESCipher.serverKey_ = com.rytong.emp.security.AESCipher.serverKey_;
+            AESCipher.serverIv_ = com.rytong.emp.security.AESCipher.serverIv_;
+
+            // hmac key
+            BaseView.mid_.um_.clientHmacKey_ = ClientHello.getClientHmacKey();
+            BaseView.mid_.um_.serverHmacKey_ = ClientHello.getServerHmacKey();
+
+            String channelID = CLEntity.getString(channelInfo.get(&quot;id&quot;));
+            String channelTitle = CLEntity.getString(channelInfo.get(&quot;title&quot;));
+            Channel channel = new Channel(BaseView.mid_.channelRepo_);
+            channel.setId(channelID);
+            channel.setTitle(channelTitle);
+            channel.shortCut_ = channelID;
+
+            if (type == 1) {
+                BaseView.mid_.pushDisplayable(LPMid.BOC_MAIN_VIEW, null, BOCConstant.MAIN_TITLE);
+                BaseView.mid_.channelRepo_.addChannel(channel);
+                BaseView.mid_.channelRepo_.setCurrentChannelID(channelID);
+                ConfigManager.currentView_.gotoGridView(channelID, null);
+            } else if (type == 2) {
+                channel.setSeniorID(&quot;&quot;);
+                channel.isSecure_ = true;
+                BaseView.mid_.topChannelRepo_.reset();
+                BaseView.mid_.topChannelRepo_.addChannel(channel);
+                BaseView.mid_.channelRepo_.setCurrentChannelID(channelID);
+
+                Intent intent = new Intent();
+                intent.setClass(ConfigManager.newEngineView, BOCDetailView.class);
+                // 定义值传递对象
+                Bundle bundle = new Bundle();
+                bundle.putBoolean(&quot;getPreTitle&quot;, false);
+                bundle.putBoolean(&quot;showTab&quot;, true);
+                bundle.putBoolean(&quot;isRunChangeChannel&quot;, false);
+                bundle.putBoolean(&quot;isAddChannelHistory&quot;, false);
+                bundle.putInt(&quot;detailType&quot;, 0);
+                intent.putExtras(bundle);
+                ConfigManager.newEngineView.startActivity(intent);
+            }
+        }
+    }
+</code></pre><p>其中以下部分代码段，作用是为设置新老业务使用同一个信道连接，需要将5.2框架信道信道建立后的一些变量，存到3.2框架中，保证项目代码正常运行。5.2框架需要提供相应的获取接口。</p>
+<pre><code>    BaseView.mid_.um_.setCookie(com.rytong.emp.net.HttpManager.COOKIE);
+    BaseView.mid_.um_.sessionKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+
+    // save key.
+    AESCipher.clientKey_ = com.rytong.emp.security.AESCipher.clientKey_;
+    AESCipher.clientIv_ = com.rytong.emp.security.AESCipher.clientIv_;
+    AESCipher.serverKey_ = com.rytong.emp.security.AESCipher.serverKey_;
+    AESCipher.serverIv_ = com.rytong.emp.security.AESCipher.serverIv_;
+
+    // hmac key
+    BaseView.mid_.um_.clientHmacKey_ = ClientHello.getClientHmacKey();
+    BaseView.mid_.um_.serverHmacKey_ = ClientHello.getServerHmacKey();
+</code></pre><ol>
+<li><p>在<code>NewEngineActivity</code>类中的<code>onAddLua(EMPLua)</code>方法中注册该lua接口。更多lua扩展的方法可参考<a href="../../../ert_develop/deepin_client_dev/android/Android_Lua_Extending_Guide.html">Android EMP5.2扩展lua接口</a>。</p>
+<pre><code> @Override
+ public void onAddLua(EMPLua empLua) {
+     // 注册lua 接口\方法
+     EMPRender empRender = empLua.getEMPRender();
+     empLua.addJavaInterface(&quot;engine&quot;, new LuaEngine(empRender));
+ }
+</code></pre></li>
+<li><p>5.2框架实现业务都是通过页面报文进行，因此在需要跳转到老业务的场景中，只需要在脚本中添加对应lua语句即可。</p>
+<pre><code> engine:loadPageWithEngine3({id = &quot;ps_demo&quot;, title = &quot;邮储demo&quot;},1);
+</code></pre></li>
+</ol>
+<h3 id="老业务返回新业务">3.6 老业务返回新业务</h3>
+<p>而从3.2老业务通过返回键切换回5.2框架时，需要修改老业务对应页面的返回键处理，将老业务的Activity销毁即可。</p>
+<pre><code>ConfigManager.currentView_.finish();
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../client_dev/migrate/EMP_Android_5.1to5.2.html" class="navigation navigation-prev " aria-label="Previous page: Android 5.1to5.2"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../release_note/android/Introduction.html" class="navigation navigation-next " aria-label="Next page: Release Note"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

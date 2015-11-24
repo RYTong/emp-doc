@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <content>
     <head>
         <style>
@@ -72,7 +72,7 @@
         <label>下方有visibility:hidden display=block的input:</label>
         <input type="text" class="father,display2,visibility2" value="visibility:hidden display=block 占位不显示"/>
         <!-- background-color -->
-        <input type="text" class="father,background_color" value="背景色:background-color"/> 
+        <input type="text" class="father,background_color" value="背景色:background-color"/>
         <!-- background-image -->
         <input type="text" class="father,background_image" value="背景图:background-image"/>
         <!-- filter -->
@@ -132,10 +132,10 @@
         <!-- 日期控件 textColor fontSize text-align -->
         <label>日期控件textColor+fontSize+text-align:</label>
         <input type="text" class="father,textColor,fontSize,textAlignRight" style="-wap-input-format:'date'"/>
-        <!-- 日期控件 showFormat -->
+        <!-- 日期控件 showformat -->
         <label>日期控件showformat:</label>
-        <input type="text" class="father" style="-wap-input-format:'date'" showFormat="w-E-yyyy-MM-d"/>
-        <input type="text" class="father" style="-wap-input-format:'date'" showFormat="W/EEEE/yy/MMM/dd"/>
+        <input type="text" class="father" style="-wap-input-format:'date'" showformat="w-E-yyyy-MM-d"/>
+        <input type="text" class="father" style="-wap-input-format:'date'" showformat="W/EEEE/yy/MMM/dd"/>
         <!-- 日期控件 filter border-radius -->
         <label>日期控件filter+border-radius:</label>
         <input type="text" class="father,filter1,borderRadiusFour" style="-wap-input-format:'date'"/>
@@ -144,6 +144,27 @@
         <input type="text" class="father" value="onchange事件测试" onchange="alert('onchange')"/>
         <input type="text" class="father" value="onblur事件测试" onblur="alert('onblur')"/>
         <input type="text" class="father" value="事件响应组合测试" onfocus="alert('onfocus')" onchange="alert('onchange')" onblur="alert('onblur')"/>
+        <!--clearmode-->
+        <input type="text" class="father" clearmode="never" value="clearmode=never"/>
+        <input type="text" class="father" clearmode="always" value="clearmode=always" />
+        <input type="text" class="father" clearmode="editing" value="clearmode=editing" />
+        <input type="text" class="father" clearmode="unlessEditing" value="clearmode=unlessEditing" />
+        <!--returnkeytype returnkeyaction-->
+        <input type="text" class="father" value="returnkeytype=default" returnkeytype="default"/>
+        <input type="text" class="father" value="returnkeytype=go" returnkeytype="go"/>
+        <input type="text" class="father" value="returnkeytype=join" returnkeytype="join"/>
+        <input type="text" class="father" value="returnkeytype=next" returnkeytype="next"/>
+        <input type="text" class="father" value="returnkeytype=done&returnkeyaction" returnkeytype="done" returnkeyaction="alert('returnkeyaction')"/>
+        <!--leftimg leftimgmode-->
+        <input type="text" class="father" leftimg="contact.png" value="leftimg(未定义leftimgmode默认不显示)"/>
+        <input type="text" class="father" leftimg="contact.png" leftimgmode="always" value="leftimg&leftimgmode=always"/>
+        <input type="text" class="father" leftimg="contact.png" leftimgmode="editing" value="leftimg&leftimgmode=editing"/>
+        <input type="text" class="father" leftimg="contact.png" leftimgmode="unlessEditing" value="leftimg&leftimgmode=unlessEditing" />
+        <!--rightimg rightimgmode-->
+        <input type="text" class="father" rightimg="contact.png" value="rightimg(未定义rightimgmode默认不显示)"/>
+        <input type="text" class="father" rightimg="contact.png" rightimgmode="always" value="rightimg&rightimgmode=always"/>
+        <input type="text" class="father" rightimg="contact.png" rightimgmode="editing" value="rightimg&rightimgmode=editing"/>
+        <input type="text" class="father" rightimg="contact.png" rightimgmode="unlessEditing" value="rightimg&rightimgmode=unlessEditing" />
 
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/>

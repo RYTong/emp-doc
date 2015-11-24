@@ -1,0 +1,290 @@
+<content>
+    <head>
+        <style>
+            .body{width:320px;height:460px;background-color: #F0F0F0;}
+            .img_divider{width:1px;height:32px;top:198px;left:269px;}
+            .img_divider1{width:1px;height:32px;top:240px;left:269px;}
+            .img_divider2{width:1px;height:32px;top:285px;left:269px;}
+            .img_result{width:18px;height:16px;top:10px;left:8px;display:none;}
+            .div_anim_name{width:35px;height:40px;top:191px;left:270px;background-color:#FFFFFF;}
+            .div_anim_phone{width:35px;height:40px;top:235px;left:270px;background-color:#FFFFFF;}
+            .div_anim_pwd{width:35px;height:40px;top:283px;left:270px;background-color:#FFFFFF;}
+            .input_pw{left:17px;top:281px;height:45px;width:289px;color:#000000;font-size:14px;background-image:url(table1.png);}
+            .input_name{left:17px;top:189px;height:45px;width:289px;color:#000000;font-size:14px;background-image:url(table1.png);}
+            .input_phone{left:17px;top:235px;height:45px;width:289px;color:#000000;font-size:14px;background-image:url(table1.png);}
+            .register_but{width:290px;height:40px;left:17px;top:369px;font-size:20px;background-image:url(register.png);color:#FFFFFF;} 
+        </style>
+    </head>
+    <script type="text/x-lua">
+    <![CDATA[
+            --name的动画对象
+            local aniObj_name;
+            --phone的动画对象
+            local aniObj_phone;
+            --password的动画对象
+            local aniObj_password;
+            
+            --[[
+            @doc:输入动画
+            @params:
+            setFrame：table {x=1,y=1,width=1,height=1}设置动画x相对父控件显示位置
+            addCtrl：设置动画父控件，控件对象
+            setDuration:num 设置动画持续时间
+            setRepeatCount：num 设置动画播放次数
+            setStopListener：fun名称 设置动画停止监听方法
+
+            @doc return:
+            返回动画对象
+            --]]
+            function input_animation(setFrame,setDuration,setRepeatCount,setStopListener,addCtrl)
+                local framesTab = 
+                { 
+                    "login/images/login_input_pen1.png",
+                    "login/images/login_input_pen2.png",
+                    "login/images/login_input_pen3.png"
+                };
+                local aniObj = animation:newFrames(framesTab);
+                --设置动画
+                animation:setFrame(aniObj,setFrame);
+                animation:setDuration(aniObj,setDuration);
+                animation:setRepeatCount(aniObj,setRepeatCount);
+                animation:setStopListener(aniObj,setStopListener);
+                animation:add(aniObj,addCtrl);
+
+                return aniObj;
+            end;
+
+            --[[
+            @doc:根据名称改变控件样式
+            @params:
+            name:控件名称
+            style:样式名称，比如："display"
+            value:修改值，需要将控件样式修改的值
+            @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+            ]]--
+            function changeStyle(name,style,value)
+                local ctrl = document:getElementsByName(name);
+                if ctrl and #ctrl > 0 then
+                    for key,ctrl_atom in pairs(ctrl) do
+                        ctrl_atom:setStyleByName(style,value);
+                    end;
+                else
+                    window:alert(name .. "控件不存在！");
+                end;
+            end;
+
+            --[[根据名称获取控件]]--
+            function getCtrl(name)
+                local ctrl = document:getElementsByName(name);
+                if ctrl and #ctrl > 0 then
+                    return ctrl;   
+                else
+                    window:alert(name .. "控件不存在！");
+                end;
+            end;
+
+            --[[
+            @doc: 根据名称获取控件值
+            @params:
+            name: 控件名称
+            msg: 返回的提示消息
+            require: 是否验证控件值为空
+            ]]--    
+            function getValue(name,msg,require)
+                local ctrl = document:getElementsByName(name);
+                local ctrl_value;
+                if ctrl and #ctrl > 0 then
+                    ctrl_value = ctrl[1]:getPropertyByName("value");
+                    if require then
+                        if ctrl_value ~= nil and ctrl_value ~= "" then
+                           return ctrl_value;
+                        else
+                            window:alert(msg);
+                            return -1;
+                        end;
+                    else
+                        return ctrl_value;
+                    end;
+                else
+                    window:alert( name .. "控件不存在！");
+                end;
+            end;
+
+            --[[
+            @doc: 检查字符串长度
+            @params:
+            value: 字符串值
+            min_len: 最小长度
+            max_len: 最大长度
+            msg: 返回的提示消息
+            ]]--
+            function check_length(value,min_len,max_len,msg)
+                local length = string.len(value);
+                if length > max_len then
+                    window:alert(msg.."不能多于"..max_len.."位");
+                    return nil;
+                end;
+                if length < min_len then
+                    window:alert(msg.."不能少于"..min_len.."位");
+                    return nil;
+                end;
+                return true;
+            end;
+
+
+            --[[用户名输入动画完成监听]]--
+            function input_anim_stop_listen_name()
+                local div_anim_name = getCtrl("div_anim_name");
+                local img_result_name = getCtrl("img_result_name");
+                --显示加载动画
+                div_anim_name[1]:showLoading();
+               
+                --获取ID号验证是否为空
+                local num = getValue("name","ID号不能为空",true);
+                if num == -1 then
+                    div_anim_name[1]:stopLoading();
+                    return;
+                end;
+               
+                --ID号输入正确显示对勾
+                img_result_name[1]:setStyleByName("display","block");
+                --加载动画停止
+                div_anim_name[1]:stopLoading();
+            end;
+
+            --[[用户名输入动画]]--
+            function start_name_anim()
+                --隐藏判断结果的图片
+                changeStyle("img_result_name","display","none");
+                --动画展示的区域
+                local setFrame = {x=11,y=12,width=20,height=20};
+                local div_anim_name = getCtrl("div_anim_name");
+                --获得设置好的动画对象
+                aniObj_name = input_animation(setFrame,1,-1,input_anim_stop_listen_name,div_anim_name[1]);
+                --开始动画
+                animation:play(aniObj_name);
+            end;
+
+            --[[用户名输入完成后停止动画]]--
+            function stop_name_anim()
+                animation:stop(aniObj_name);
+            end;
+
+            --[[电话号码动画完成监听]]--
+            function input_anim_stop_listen_phone()
+                local div_anim_phone = getCtrl("div_anim_phone");
+                --显示加载动画
+                div_anim_phone[1]:showLoading();
+                local img_result_phone = getCtrl("img_result_phone");
+                
+                --判断手机号是否为空
+                local num = getValue("phoneNum","手机号不能为空",true);
+                if num == -1 then
+                    div_anim_phone[1]:stopLoading();
+                    return;
+                end;
+                
+                --判断手机号长度，手机号长度不符合则显示叉号
+                local check_flag = check_length(num,11,11,"手机号");
+                if check_flag == nil then
+                    div_anim_phone[1]:stopLoading();
+                    img_result_phone[2]:setStyleByName("display","block");
+                    return;
+                end;
+                
+                --加载动画停止
+                div_anim_phone[1]:stopLoading();
+                --输入正确显示对勾
+                img_result_phone[1]:setStyleByName("display","block");
+            end;
+
+            --[[电话号码输入动画]]--
+            function start_phone_anim()
+                changeStyle("img_result_phone","display","none");
+                local setFrame = {x=11,y=12,width=20,height=20};
+                local div_anim_phone = getCtrl("div_anim_phone");
+                aniObj_phone = input_animation(setFrame,1,-1,input_anim_stop_listen_phone,div_anim_phone[1]);
+                animation:play(aniObj_phone);
+            end;
+
+            --[[电话号码输入完成后停止动画]]--
+            function stop_phone_anim()
+                animation:stop(aniObj_phone);
+            end;
+
+            --[[密码动画完成监听]]--
+            function input_anim_stop_listen_password()
+                local div_anim_password = getCtrl("div_anim_password");
+                local img_result_password = getCtrl("img_result_password");
+                div_anim_password[1]:showLoading();
+
+                --验证密码是否为空
+                local pw = getValue("password","密码不能为空",true);
+                if pw == -1 then
+                    div_anim_password[1]:stopLoading();
+                    return;
+                end;
+
+                --验证密码长度，不符合则显示叉号
+                local check_flag = check_length(pw,8,12,"密码");
+                if check_flag == nil then
+                    div_anim_password[1]:stopLoading();
+                    img_result_password[2]:setStyleByName("display","block");
+                    return;
+                end;
+
+                --加载动画停止
+                div_anim_password[1]:stopLoading();
+                --输入正确显示对勾
+                img_result_password[1]:setStyleByName("display","block");
+            end;
+
+            --[[密码输入动画]]--
+            function start_password_anim()
+                changeStyle("img_result_password","display","none");
+                local setFrame = {x=11,y=12,width=20,height=20};
+                local div_anim_password = getCtrl("div_anim_password");
+                aniObj_password = input_animation(setFrame,1,-1,input_anim_stop_listen_password,div_anim_password[1]);
+                animation:play(aniObj_password);        
+            end;
+            
+            --[[密码输入完成后停止动画]]--
+            function stop_password_anim()
+                animation:stop(aniObj_password);
+            end;
+                
+        ]]>
+    </script>
+    <body class="body">
+            <!--name输入框-->
+            <input type="text" border="0" class="input_name" name="name" maxleng='11' hold="请输入ID号" onfocus="start_name_anim()" onblur="stop_name_anim()" />
+            <div class="div_anim_name" border="0" name="div_anim_name">
+                <img class="img_result" name="img_result_name" src="local:input_determine.png"/>
+                <img class="img_result" name="img_result_name" src="local:input_error.png"/>
+            </div>
+            <img class="img_divider" src="local:login_the_divider.png"/>
+            
+            <!--phone输入框-->
+            <input type="text" border="0" class="input_phone" style="-wap-input-format:'N'" name="phoneNum" maxleng='11' onfocus="start_phone_anim()" onblur="stop_phone_anim()"
+            hold="请输入手机号"/>
+            <div class="div_anim_phone" border="0" name="div_anim_phone">
+                <img class="img_result" name="img_result_phone" src="local:input_determine.png"/>
+                <img class="img_result" name="img_result_phone" src="local:input_error.png"/>
+            </div>
+            <img class="img_divider1" src="local:login_the_divider.png"/>
+            
+            <!--password输入框-->
+            <input type="password" border="0" class="input_pw" name="password" hold="密码" minleng='8' maxleng='12' onfocus="start_password_anim()" onblur="stop_password_anim()"/>
+            <div class="div_anim_pwd" border="0" name="div_anim_password">
+                <img class="img_result" name="img_result_password" src="local:input_determine.png"/>
+                <img class="img_result" name="img_result_password" src="local:input_error.png"/>
+            </div>
+            <img class="img_divider2" src="local:login_the_divider.png"/>
+            
+            <!--注册按钮-->
+            <input type="button" class="register_but" value="注册"/>
+    </body>
+</content>
+
+
+
