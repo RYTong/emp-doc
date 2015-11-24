@@ -1,7 +1,7 @@
 {
   "name": "emp-doc",
   "main": "./lib/emp-doc",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "EMP API 文档集合",
   "keywords": [
     "EMP",
@@ -34,7 +34,6 @@
     "emp-doc:show-software-brw",
     "emp-doc:show-xhtml",
     "emp-doc:show-xhtml-brw"
-
   ],
   "repository": "https://github.com/RYTong/emp-doc",
   "license": "MIT",
