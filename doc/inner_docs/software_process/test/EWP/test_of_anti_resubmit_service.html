@@ -1,0 +1,1806 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>防重复提交功能性能测试 | 产品文档</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../../client_function/Introduction.html" />
+    
+    
+    <link rel="prev" href="../../../software_process/test/EWP/session_share_pftest_results.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../../../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="8.1.3" data-basepath="../../.." data-revision="1445493345191">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="hg_guide/Introduction.html">
+            
+                
+                    <a href="../../../hg_guide/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         代码提交
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="hg_guide/commit_specification.html">
+            
+                
+                    <a href="../../../hg_guide/commit_specification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         代码提交规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="hg_guide/how_mercurial_works.html">
+            
+                
+                    <a href="../../../hg_guide/how_mercurial_works.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         mercurial基本原理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="hg_guide/mercurial_commands.html">
+            
+                
+                    <a href="../../../hg_guide/mercurial_commands.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         mercurial使用教程
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="coding_convention/c++.html">
+            
+                
+                    <a href="../../../coding_convention/c++.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码规范
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="coding_convention/c++.html">
+            
+                
+                    <a href="../../../coding_convention/c++.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         c++编码规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="coding_convention/client_development_specification.html">
+            
+                
+                    <a href="../../../coding_convention/client_development_specification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         客户端开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="ci_guide/Introduction.html">
+            
+                
+                    <a href="../../../ci_guide/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         持续集成
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="ci_guide/jenkins.html">
+            
+                
+                    <a href="../../../ci_guide/jenkins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Jenkins持续集成
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="ci_guide/deploy.html">
+            
+                
+                    <a href="../../../ci_guide/deploy.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         Jenkins持续发布
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="ci_guide/ClientBuild.html">
+            
+                
+                    <a href="../../../ci_guide/ClientBuild.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         客户端构建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="ci_guide/sonarqube.html">
+            
+                
+                    <a href="../../../ci_guide/sonarqube.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         Sonar代码质量检测
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="ci_guide/Phabricator.html">
+            
+                
+                    <a href="../../../ci_guide/Phabricator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         Code Review
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="ci_guide/Appium.html">
+            
+                
+                    <a href="../../../ci_guide/Appium.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         UI自动化测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="ci_guide/ldap.html">
+            
+                
+                    <a href="../../../ci_guide/ldap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         LDAP服务部署和集成
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.8" data-path="ci_guide/p_code.html">
+            
+                
+                    <a href="../../../ci_guide/p_code.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         个人构建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9" data-path="ci_guide/tools/Introduction.html">
+            
+                
+                    <a href="../../../ci_guide/tools/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         持续集成依赖工具
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.9.1" data-path="ci_guide/tools/brew.html">
+            
+                
+                    <a href="../../../ci_guide/tools/brew.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.1.</b>
+                        
+                         Homebrew安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9.2" data-path="ci_guide/tools/install_jdk.html">
+            
+                
+                    <a href="../../../ci_guide/tools/install_jdk.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.2.</b>
+                        
+                         JDK安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9.3" data-path="ci_guide/tools/install_sdk.html">
+            
+                
+                    <a href="../../../ci_guide/tools/install_sdk.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.3.</b>
+                        
+                         Android SDK安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9.4" data-path="ci_guide/tools/install_tomcat.html">
+            
+                
+                    <a href="../../../ci_guide/tools/install_tomcat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.4.</b>
+                        
+                         Tomcat安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9.5" data-path="ci_guide/tools/maven.html">
+            
+                
+                    <a href="../../../ci_guide/tools/maven.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.5.</b>
+                        
+                         Maven构建工具
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9.6" data-path="ci_guide/tools/nexus.html">
+            
+                
+                    <a href="../../../ci_guide/tools/nexus.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.6.</b>
+                        
+                         Nexus依赖仓库
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9.7" data-path="ci_guide/tools/Ansible.html">
+            
+                
+                    <a href="../../../ci_guide/tools/Ansible.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.7.</b>
+                        
+                         Asible服务集群部署
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="code_server/Introduction.html">
+            
+                
+                    <a href="../../../code_server/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         代码服务器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="code_server/deploy.html">
+            
+                
+                    <a href="../../../code_server/deploy.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         代码服务器部署
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="code_server/hghook.html">
+            
+                
+                    <a href="../../../code_server/hghook.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         hghook脚本安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="code_server/pmmm_functions.html">
+            
+                
+                    <a href="../../../code_server/pmmm_functions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         PMMM插件功能列表
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.4" data-path="code_server/trac_sqlite_to_mysql.html">
+            
+                
+                    <a href="../../../code_server/trac_sqlite_to_mysql.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                         Trac迁移Sqlite到MySQL
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="tech/tech_wordpress.html">
+            
+                
+                    <a href="../../../tech/tech_wordpress.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         技术期刊
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="tech/tech_wordpress.html">
+            
+                
+                    <a href="../../../tech/tech_wordpress.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         技术期刊Wordpress搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="tech/mail_wordpress.html">
+            
+                
+                    <a href="../../../tech/mail_wordpress.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         Wordpress安装邮件服务
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="software_process/requirement/Introduction.html">
+            
+                
+                    <a href="../../../software_process/requirement/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         需求文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" >
+            
+            <span><b>6.1.</b> 离线资源</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1.1" data-path="software_process/requirement/security_optimization_of_offline.html">
+            
+                
+                    <a href="../../../software_process/requirement/security_optimization_of_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.1.</b>
+                        
+                         离线资源安全优化需求
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="software_process/requirement/EMP/touchevent/touchEventRequirement.html">
+            
+                
+                    <a href="../../../software_process/requirement/EMP/touchevent/touchEventRequirement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         TouchEvent事件监听需求
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="software_process/design/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         设计文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="software_process/design/offline/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/offline/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         离线资源
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.1" data-path="software_process/design/offline/offline_resource.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.</b>
+                        
+                         离线资源协议1.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.1.1" data-path="software_process/design/offline/offline_resource_design_server.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_design_server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.1.</b>
+                        
+                         服务端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.1.2" data-path="software_process/design/offline/offline_resource_design_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_design_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.2.</b>
+                        
+                         客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2" data-path="software_process/design/offline/offline_resource_2.0.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_2.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.</b>
+                        
+                         离线资源协议2.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.2.1" data-path="software_process/design/offline/design_of_security_optimization.html">
+            
+                
+                    <a href="../../../software_process/design/offline/design_of_security_optimization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.1.</b>
+                        
+                         离线资源2.0安全性优化设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2.2" data-path="software_process/design/offline/h5_resources_support.html">
+            
+                
+                    <a href="../../../software_process/design/offline/h5_resources_support.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.2.</b>
+                        
+                         离线资源2.1 H5资源支持设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2.3" data-path="software_process/design/offline/h5_resources_support_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/h5_resources_support_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.3.</b>
+                        
+                         离线资源2.1 H5资源支持客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.3" data-path="software_process/design/offline/offline_resource_3.0.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_3.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.</b>
+                        
+                         离线资源协议3.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.3.1" data-path="software_process/design/offline/design_of_multi_app_support_of_offline_server.html">
+            
+                
+                    <a href="../../../software_process/design/offline/design_of_multi_app_support_of_offline_server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.1.</b>
+                        
+                         离线资源多App支持服务器设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.3.2" data-path="software_process/design/offline/design_of_multi_app_support_of_offline_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/design_of_multi_app_support_of_offline_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.2.</b>
+                        
+                         离线资源多App支持客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="software_process/design/xmpp/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/xmpp/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         可靠消息
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.2.1" data-path="software_process/design/xmpp/xmpp_design_client.html">
+            
+                
+                    <a href="../../../software_process/design/xmpp/xmpp_design_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.1.</b>
+                        
+                         可靠消息机制客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="software_process/design/EMP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         EMP设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.3.1" data-path="software_process/design/EMP/slt2/design_of_slt2_parsing.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/slt2/design_of_slt2_parsing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.1.</b>
+                        
+                         SLT2脚本解析功能总体设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.2" data-path="software_process/design/EMP/files_security/local_files_security.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/files_security/local_files_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.2.</b>
+                        
+                         客户端文件安全
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.3" data-path="software_process/design/EMP/internationalization.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/internationalization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.3.</b>
+                        
+                         国际化设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.4" data-path="software_process/design/EMP/screen_adaptation/screen_adaptation.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/screen_adaptation/screen_adaptation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.4.</b>
+                        
+                         屏幕适配设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.5" data-path="software_process/design/EMP/iOS_5.3_NativeTesting_Design.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/iOS_5.3_NativeTesting_Design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.5.</b>
+                        
+                         iOS native测试设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.6" data-path="software_process/design/EMP/Android_5.3_NativeTesting_Design.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/Android_5.3_NativeTesting_Design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.6.</b>
+                        
+                         Android native测试设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.7" data-path="software_process/design/EMP/dom_search_optimization_scheme.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/dom_search_optimization_scheme.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.7.</b>
+                        
+                         DOM查找性能测试及优化方案
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.8" data-path="software_process/design/EMP/globalcss/css_global_cache.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/globalcss/css_global_cache.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.8.</b>
+                        
+                         CSS功能样式缓存
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3.9" data-path="software_process/design/EMP/touch_event/touch_event.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/touch_event/touch_event.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.9.</b>
+                        
+                         touch event事件监听
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="software_process/design/EWP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         EWP设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.4.1" data-path="software_process/design/EWP/design_of_anti_resubmit_service.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/design_of_anti_resubmit_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.1.</b>
+                        
+                         防重复提交设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4.2" data-path="software_process/design/EWP/offline/DD_of_security_optimization.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/offline/DD_of_security_optimization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.2.</b>
+                        
+                         离线配置设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4.3" data-path="software_process/design/EWP/offline/design_of_refactor.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/offline/design_of_refactor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.3.</b>
+                        
+                         离线分层设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4.4" data-path="software_process/design/EWP/session/design_of_optimization_of_shared_session.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/session/design_of_optimization_of_shared_session.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.4.</b>
+                        
+                         Session共享概要设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4.5" data-path="software_process/design/EWP/session/detailed_design_of_shared_session.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/session/detailed_design_of_shared_session.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.5.</b>
+                        
+                         Session共享详细设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4.6" data-path="software_process/design/EWP/EAC/design_of_eac.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/EAC/design_of_eac.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.6.</b>
+                        
+                         EMP管理平台优化设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="software_process/test/Introduction.html">
+            
+                
+                    <a href="../../../software_process/test/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         测试文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="software_process/test/EWP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         EWP测试结果
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1.1" data-path="software_process/test/EWP/httpc_test.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/httpc_test.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.1.</b>
+                        
+                         HTTPC接口性能测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.1.2" data-path="software_process/test/EWP/session_share_pftest_results.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/session_share_pftest_results.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.2.</b>
+                        
+                         Session优化性能测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="8.1.3" data-path="software_process/test/EWP/test_of_anti_resubmit_service.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/test_of_anti_resubmit_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.3.</b>
+                        
+                         防重复提交功能性能测试
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="client_function/Introduction.html">
+            
+                
+                    <a href="../../../client_function/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         客户端其他功能
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="client_function/error_check.html">
+            
+                
+                    <a href="../../../client_function/error_check.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         错误检测
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/inner_docs/inner_docs.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/inner_docs/book.pdf" class="button">pdf</a>
+                
+                
+                <a href="" class="button">epub</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >产品文档</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_81">
+                    
+                        <h1 id="防重复提交功能性能测试">防重复提交功能性能测试</h1>
+<!-- toc -->
+<ul>
+<li><a href="#测试内容">测试内容</a></li>
+<li><a href="#测试环境">测试环境</a><ul>
+<li><a href="#测试机器">测试机器</a></li>
+<li><a href="#测试程序">测试程序</a></li>
+</ul>
+</li>
+<li><a href="#测试方法">测试方法</a></li>
+<li><a href="#测试场景">测试场景</a><ul>
+<li><a href="#本身效率测试">本身效率测试</a></li>
+<li><a href="#对业务运行效率影响测试">对业务运行效率影响测试</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h2 id="测试内容">1 测试内容</h2>
+<p>本次测试内容:</p>
+<ul>
+<li><p>防重复提交功能本身的运行效率</p>
+</li>
+<li><p>防重复提交功能对现有业务运行效率影响</p>
+</li>
+</ul>
+<h2 id="测试环境">2 测试环境</h2>
+<h3 id="测试机器">2.1 测试机器</h3>
+<p>本地虚拟机(双核)：
+系统：CentOS release 5.4 (Final)
+CPU：Intel(R) Core(TM) i3-2350M CPU @ 2.30GHz
+内存：4 G
+MySQL版本：5.5.31</p>
+<p>simulator 服务器(四核)：
+系统：CentOS release 6.5 (Final)
+CPU：四核 Intel(R) Xeon(R) CPU E5-2450 0 @ 2.10GHz
+内存：2 G
+MySQL版本：5.1.73</p>
+<h3 id="测试程序">2.2 测试程序</h3>
+<p>erlang版本：R15B (erts-5.9) 64-bit
+ewp版本：5.2
+ebank版本：5.2</p>
+<h2 id="测试方法">3 测试方法</h2>
+<ul>
+<li><p>防重复提交功能本身的运行效率性能测试在本地虚拟机和simlulator分别进行测试，在不同系统配置下，对本身的运行效率的影响，通过性能测试函数performance_test:main/5，对防重复提交功能测试用例函数trans1/0的调用，main/5的最后一个参数是循环次数，设置为5，结果取5次数据中的中间值，测试函数是下面代码的test_trans/2函数。</p>
+</li>
+<li><p>对现有业务运行效率影响测试是在本地虚拟机上，模拟业务请求，在ebank业务逻辑中添加防重复提交的代码，通过cpu_usage:start/1，cpu_usage:stop/1统计防重复提交功能逻辑消耗的时间和请求消耗的时间，同样通过性能测试函数performance_test:main/5对测试用例函数trans2/0的调用，main/5的最后一个参数是循环次数，设置为1，测试函数是下面的test_trans_eff/2函数。</p>
+</li>
+</ul>
+<p>参数解释：</p>
+<ul>
+<li>M：并发数。</li>
+<li>N：执行测试函数的次数。</li>
+</ul>
+<h2 id="测试场景">4 测试场景</h2>
+<h3 id="本身效率测试">4.1 本身效率测试</h3>
+<p>测试条件：测试用例调用次数相同，并发数不同的情况下，进行数据统计。</p>
+<p>执行次数：100000 * 5
+有如下统计信息：</p>
+<p><strong> 表1 本地虚拟机上测试数据统计 </strong></p>
+<table>
+<thead>
+<tr>
+<th>并发数</th>
+<th>TPS</th>
+<th>%id</th>
+<th>beam.smp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>8.450</td>
+<td>24</td>
+<td>147</td>
+</tr>
+<tr>
+<td>5</td>
+<td>14.968</td>
+<td>8.2</td>
+<td>180</td>
+</tr>
+<tr>
+<td>10</td>
+<td>14.927</td>
+<td>7.4</td>
+<td>182</td>
+</tr>
+<tr>
+<td>50</td>
+<td>13.849</td>
+<td>4.4</td>
+<td>188</td>
+</tr>
+<tr>
+<td>100</td>
+<td>12.747</td>
+<td>4.8</td>
+<td>186</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong> 表2 simulator服务器上测试数据统计 </strong></p>
+<table>
+<thead>
+<tr>
+<th>并发数</th>
+<th>TPS</th>
+<th>%id</th>
+<th>beam.smp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>19.152</td>
+<td>80</td>
+<td>191</td>
+</tr>
+<tr>
+<td>5</td>
+<td>39.123</td>
+<td>52</td>
+<td>203</td>
+</tr>
+<tr>
+<td>10</td>
+<td>37.962</td>
+<td>38</td>
+<td>287</td>
+</tr>
+<tr>
+<td>50</td>
+<td>38.851</td>
+<td>35</td>
+<td>314</td>
+</tr>
+<tr>
+<td>100</td>
+<td>36.776</td>
+<td>23</td>
+<td>346</td>
+</tr>
+<tr>
+<td>200</td>
+<td>37.669</td>
+<td>26</td>
+<td>342</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>根据上面表1和表2的第1，2列数据可以得出总结：</p>
+<p>1.在并发为5-10之间时，TPS达到最大值，cpu在此并发下的运行效率最高。
+2.TPS会随着cpu性能的提高而增加。</p>
+<h3 id="对业务运行效率影响测试">4.2 对业务运行效率影响测试</h3>
+<p>测试条件：测试用例调用次数同，并发数不同的情况下，进行数据统计。</p>
+<p>有如下统计信息：</p>
+<p><strong> 表2 数据统计 </strong></p>
+<table>
+<thead>
+<tr>
+<th>请求数</th>
+<th>并发数</th>
+<th>TPS</th>
+<th>请求消耗时间</th>
+<th>防重复提交功能消耗时间</th>
+<th>防重复提交功能消耗时间与请求消耗时间百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5000</td>
+<td>5</td>
+<td>0.2031</td>
+<td>120946.9</td>
+<td>13421.8</td>
+<td>11.10</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>5</td>
+<td>0.1582</td>
+<td>311549.5</td>
+<td>35950.3</td>
+<td>11.53</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>10</td>
+<td>0.1907</td>
+<td>259957.4</td>
+<td>13812.9</td>
+<td>5.31</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>10</td>
+<td>0.1596</td>
+<td>621112.4</td>
+<td>39951.2</td>
+<td>6.43</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>50</td>
+<td>0.1873</td>
+<td>1320681.9</td>
+<td>14490.3</td>
+<td>1.10</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>50</td>
+<td>0.1476</td>
+<td>3375619.5</td>
+<td>40710.1</td>
+<td>1.21</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>根据上面表2第1，2，5列的数据可以得出总结：</p>
+<p>请求数一定，当并发增大时，防重复提交功能消耗时间变化不大，所以防重复提交功能对交易流程的影响不大。</p>
+<p>测试用例代码：</p>
+<pre><code class="lang-Erlang"><span class="hljs-comment">%%------------------------------------------------</span>
+<span class="hljs-comment">%%防重复提交功能本身的运行效率</span>
+<span class="hljs-comment">%%------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">trans1</span><span class="hljs-params">()</span> -&gt;</span>  
+    <span class="hljs-variable">Id</span> = <span class="hljs-function_name">anti_resubmit_service:gen_trans_id</span>(), 
+    <span class="hljs-literal">true</span> = <span class="hljs-function_name">anti_resubmit_service:init_trans</span>(<span class="hljs-variable">Id</span>), 
+    ok = <span class="hljs-function_name">anti_resubmit_service:lock_trans</span>(<span class="hljs-variable">Id</span>),   
+    <span class="hljs-literal">true</span> = <span class="hljs-function_name">anti_resubmit_service:unlock_trans</span>(<span class="hljs-variable">Id</span>).  
+
+<span class="hljs-function"><span class="hljs-title">test_trans</span><span class="hljs-params">(<span class="hljs-variable">M</span>, <span class="hljs-variable">N</span>)</span> -&gt;</span>
+    <span class="hljs-function_name">anti_resubmit_service:start_link</span>(),
+    <span class="hljs-function_name">performance_test:main</span>(<span class="hljs-variable">M</span>, <span class="hljs-variable">N</span>, <span class="hljs-keyword">fun</span>(<span class="hljs-variable">_</span>) -&gt; <span class="hljs-function_name">trans1</span>() <span class="hljs-keyword">end</span>, [], <span class="hljs-number">5</span>).
+
+<span class="hljs-comment">%%------------------------------------------------</span>
+<span class="hljs-comment">%% 对现有业务运行效率影响的测试</span>
+<span class="hljs-comment">%%------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">trans2</span><span class="hljs-params">()</span> -&gt;</span>
+    <span class="hljs-variable">SessionId</span> = <span class="hljs-function_name">session:new</span>([<span class="hljs-tuple">{clientinfo,
+                                  [<span class="hljs-tuple">{id,<span class="hljs-string">"C986_2SALCN1"</span>}</span>,
+                                   <span class="hljs-tuple">{platform,<span class="hljs-string">"android"</span>}</span>,
+                                   <span class="hljs-tuple">{target,<span class="hljs-string">"OT986"</span>}</span>,
+                                   <span class="hljs-tuple">{version,<span class="hljs-string">"5.2.70_B"</span>}</span>]}</span>]),
+
+    <span class="hljs-variable">SessionsslData</span> = [<span class="hljs-tuple">{<span class="hljs-variable">SessionId</span>,
+                                    <span class="hljs-tuple">{cipher_state,
+                                     <span class="hljs-tuple">{<span class="hljs-number">1</span>,<span class="hljs-number">4</span>}</span>,
+                                     &lt;&lt;<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">249</span>,<span class="hljs-number">227</span>,<span class="hljs-number">106</span>,<span class="hljs-number">25</span>,<span class="hljs-number">6</span>,<span class="hljs-number">183</span>,<span class="hljs-number">40</span>,<span class="hljs-number">116</span>,<span class="hljs-number">136</span>,<span class="hljs-number">1</span>,
+                                       <span class="hljs-number">176</span>,<span class="hljs-number">155</span>,<span class="hljs-number">185</span>,<span class="hljs-number">167</span>,<span class="hljs-number">84</span>,<span class="hljs-number">46</span>,<span class="hljs-number">32</span>,<span class="hljs-number">239</span>,<span class="hljs-number">95</span>,<span class="hljs-number">8</span>,<span class="hljs-number">188</span>,
+                                       <span class="hljs-number">107</span>,<span class="hljs-number">179</span>,<span class="hljs-number">243</span>,<span class="hljs-number">17</span>,<span class="hljs-number">115</span>,<span class="hljs-number">51</span>,<span class="hljs-number">98</span>,<span class="hljs-number">170</span>,<span class="hljs-number">140</span>,<span class="hljs-number">236</span>,
+                                       <span class="hljs-number">195</span>,<span class="hljs-number">164</span>,<span class="hljs-number">150</span>,<span class="hljs-number">22</span>,<span class="hljs-number">170</span>,<span class="hljs-number">91</span>,<span class="hljs-number">119</span>,<span class="hljs-number">98</span>,<span class="hljs-number">239</span>,<span class="hljs-number">210</span>,<span class="hljs-number">43</span>,
+                                       <span class="hljs-number">89</span>,<span class="hljs-number">159</span>,<span class="hljs-number">170</span>,<span class="hljs-number">105</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">0</span>,<span class="hljs-number">7</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">56</span>,<span class="hljs-number">208</span>,<span class="hljs-number">86</span>,<span class="hljs-number">105</span>,<span class="hljs-number">178</span>,<span class="hljs-number">144</span>,<span class="hljs-number">74</span>,<span class="hljs-number">205</span>,<span class="hljs-number">190</span>,<span class="hljs-number">203</span>,<span class="hljs-number">96</span>,
+                                       <span class="hljs-number">82</span>,<span class="hljs-number">237</span>,<span class="hljs-number">20</span>,<span class="hljs-number">227</span>,<span class="hljs-number">143</span>,<span class="hljs-number">238</span>,<span class="hljs-number">22</span>,<span class="hljs-number">75</span>,<span class="hljs-number">242</span>,<span class="hljs-number">76</span>,<span class="hljs-number">150</span>,
+                                       <span class="hljs-number">248</span>,<span class="hljs-number">105</span>,<span class="hljs-number">0</span>,<span class="hljs-number">87</span>,<span class="hljs-number">191</span>,<span class="hljs-number">11</span>,<span class="hljs-number">166</span>,<span class="hljs-number">140</span>,<span class="hljs-number">254</span>,<span class="hljs-number">235</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">33</span>,<span class="hljs-number">65</span>,<span class="hljs-number">59</span>,<span class="hljs-number">150</span>,<span class="hljs-number">160</span>,<span class="hljs-number">183</span>,<span class="hljs-number">229</span>,<span class="hljs-number">149</span>,<span class="hljs-number">84</span>,<span class="hljs-number">181</span>,<span class="hljs-number">1</span>,
+                                       <span class="hljs-number">107</span>,<span class="hljs-number">98</span>,<span class="hljs-number">84</span>,<span class="hljs-number">191</span>,<span class="hljs-number">189</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">234</span>,<span class="hljs-number">91</span>,<span class="hljs-number">4</span>,<span class="hljs-number">141</span>,<span class="hljs-number">37</span>,<span class="hljs-number">210</span>,<span class="hljs-number">187</span>,<span class="hljs-number">216</span>,<span class="hljs-number">222</span>,<span class="hljs-number">223</span>,<span class="hljs-number">181</span>,
+                                       <span class="hljs-number">64</span>,<span class="hljs-number">15</span>,<span class="hljs-number">59</span>,<span class="hljs-number">217</span>,<span class="hljs-number">94</span>,<span class="hljs-number">55</span>,<span class="hljs-number">173</span>,<span class="hljs-number">189</span>,<span class="hljs-number">51</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">204</span>,<span class="hljs-number">108</span>,<span class="hljs-number">19</span>,<span class="hljs-number">249</span>,<span class="hljs-number">59</span>,<span class="hljs-number">182</span>,<span class="hljs-number">240</span>,<span class="hljs-number">55</span>,<span class="hljs-number">218</span>,<span class="hljs-number">36</span>,<span class="hljs-number">45</span>,
+                                       <span class="hljs-number">131</span>,<span class="hljs-number">99</span>,<span class="hljs-number">191</span>,<span class="hljs-number">90</span>,<span class="hljs-number">242</span>,<span class="hljs-number">38</span>,<span class="hljs-number">233</span>,<span class="hljs-number">226</span>,<span class="hljs-number">140</span>,<span class="hljs-number">218</span>,<span class="hljs-number">83</span>,
+                                       <span class="hljs-number">165</span>,<span class="hljs-number">144</span>,<span class="hljs-number">92</span>,<span class="hljs-number">202</span>,<span class="hljs-number">124</span>,<span class="hljs-number">17</span>,<span class="hljs-number">30</span>,<span class="hljs-number">20</span>,<span class="hljs-number">158</span>,<span class="hljs-number">192</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">185</span>,<span class="hljs-number">98</span>,<span class="hljs-number">107</span>,<span class="hljs-number">145</span>,<span class="hljs-number">31</span>,<span class="hljs-number">146</span>,<span class="hljs-number">180</span>,<span class="hljs-number">21</span>,<span class="hljs-number">4</span>,<span class="hljs-number">32</span>,<span class="hljs-number">47</span>,<span class="hljs-number">6</span>,
+                                       <span class="hljs-number">55</span>,<span class="hljs-number">50</span>,<span class="hljs-number">204</span>,<span class="hljs-number">9</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">97</span>,<span class="hljs-number">242</span>,<span class="hljs-number">221</span>,<span class="hljs-number">37</span>,<span class="hljs-number">229</span>,<span class="hljs-number">203</span>,<span class="hljs-number">66</span>,<span class="hljs-number">206</span>,<span class="hljs-number">253</span>,<span class="hljs-number">237</span>,
+                                       <span class="hljs-number">194</span>,<span class="hljs-number">107</span>,<span class="hljs-number">89</span>,<span class="hljs-number">217</span>,<span class="hljs-number">5</span>,<span class="hljs-number">241</span>,<span class="hljs-number">184</span>,<span class="hljs-number">182</span>,<span class="hljs-number">131</span>,<span class="hljs-number">9</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">6</span>,<span class="hljs-number">39</span>,<span class="hljs-number">133</span>,<span class="hljs-number">195</span>,<span class="hljs-number">151</span>,<span class="hljs-number">207</span>,<span class="hljs-number">32</span>,<span class="hljs-number">182</span>,<span class="hljs-number">53</span>,<span class="hljs-number">84</span>,<span class="hljs-number">133</span>,
+                                       <span class="hljs-number">158</span>,<span class="hljs-number">9</span>,<span class="hljs-number">212</span>,<span class="hljs-number">67</span>,<span class="hljs-number">9</span>,<span class="hljs-number">168</span>,<span class="hljs-number">147</span>,<span class="hljs-number">178</span>,<span class="hljs-number">19</span>,<span class="hljs-number">247</span>,<span class="hljs-number">122</span>,
+                                       <span class="hljs-number">21</span>,<span class="hljs-number">192</span>,<span class="hljs-number">51</span>,<span class="hljs-number">190</span>,<span class="hljs-number">233</span>,<span class="hljs-number">74</span>,<span class="hljs-number">66</span>,<span class="hljs-number">223</span>,<span class="hljs-number">207</span>,<span class="hljs-number">223</span>&gt;&gt;,
+                                     &lt;&lt;<span class="hljs-number">76</span>,<span class="hljs-number">132</span>,<span class="hljs-number">232</span>,<span class="hljs-number">127</span>,<span class="hljs-number">65</span>,<span class="hljs-number">155</span>,<span class="hljs-number">212</span>,<span class="hljs-number">126</span>,<span class="hljs-number">212</span>,<span class="hljs-number">44</span>,
+                                       <span class="hljs-number">118</span>,<span class="hljs-number">222</span>,<span class="hljs-number">128</span>,<span class="hljs-number">255</span>,<span class="hljs-number">121</span>,<span class="hljs-number">13</span>&gt;&gt;,
+                                     <span class="hljs-number">0</span>}</span>,
+                                    [<span class="hljs-tuple">{server_random,
+                                      &lt;&lt;<span class="hljs-number">85</span>,<span class="hljs-number">102</span>,<span class="hljs-number">191</span>,<span class="hljs-number">204</span>,<span class="hljs-number">86</span>,<span class="hljs-number">146</span>,<span class="hljs-number">115</span>,<span class="hljs-number">45</span>,<span class="hljs-number">121</span>,<span class="hljs-number">157</span>,
+                                        <span class="hljs-number">180</span>,<span class="hljs-number">251</span>,<span class="hljs-number">30</span>,<span class="hljs-number">232</span>,<span class="hljs-number">104</span>,<span class="hljs-number">253</span>,<span class="hljs-number">209</span>,<span class="hljs-number">159</span>,<span class="hljs-number">161</span>,<span class="hljs-number">22</span>,
+                                        <span class="hljs-number">240</span>,<span class="hljs-number">140</span>,<span class="hljs-number">133</span>,<span class="hljs-number">60</span>,<span class="hljs-number">246</span>,<span class="hljs-number">36</span>,<span class="hljs-number">16</span>,<span class="hljs-number">244</span>,<span class="hljs-number">115</span>,<span class="hljs-number">251</span>,
+                                        <span class="hljs-number">30</span>,<span class="hljs-number">55</span>&gt;&gt;}</span>,
+                                     <span class="hljs-tuple">{client_pms,
+                                      &lt;&lt;<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">78</span>,<span class="hljs-number">152</span>,<span class="hljs-number">251</span>,<span class="hljs-number">94</span>,<span class="hljs-number">193</span>,<span class="hljs-number">11</span>,<span class="hljs-number">110</span>,<span class="hljs-number">209</span>,<span class="hljs-number">52</span>,
+                                        <span class="hljs-number">126</span>,<span class="hljs-number">225</span>,<span class="hljs-number">68</span>,<span class="hljs-number">168</span>,<span class="hljs-number">88</span>,<span class="hljs-number">187</span>,<span class="hljs-number">30</span>,<span class="hljs-number">129</span>,<span class="hljs-number">203</span>,<span class="hljs-number">46</span>,
+                                        <span class="hljs-number">145</span>,<span class="hljs-number">244</span>,<span class="hljs-number">62</span>,<span class="hljs-number">161</span>,<span class="hljs-number">2</span>,<span class="hljs-number">101</span>,<span class="hljs-number">175</span>,<span class="hljs-number">18</span>,<span class="hljs-number">117</span>,<span class="hljs-number">216</span>,
+                                        <span class="hljs-number">136</span>,<span class="hljs-number">235</span>,<span class="hljs-number">78</span>,<span class="hljs-number">178</span>,<span class="hljs-number">251</span>,<span class="hljs-number">94</span>,<span class="hljs-number">194</span>,<span class="hljs-number">37</span>,<span class="hljs-number">110</span>,<span class="hljs-number">210</span>,
+                                        <span class="hljs-number">53</span>,<span class="hljs-number">152</span>,<span class="hljs-number">226</span>,<span class="hljs-number">69</span>,<span class="hljs-number">168</span>,<span class="hljs-number">11</span>,<span class="hljs-number">187</span>&gt;&gt;}</span>],
+                                    <span class="hljs-number">1432869838</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>}</span>],
+
+    <span class="hljs-function_name">ets:insert</span>(sessions_ssl, <span class="hljs-variable">SessionsslData</span>),
+    <span class="hljs-variable">A</span> = <span class="hljs-function_name">lists:concat</span>([<span class="hljs-string">"_session_id="</span>,<span class="hljs-variable">SessionId</span>]), 
+    <span class="hljs-variable">Arg</span> = <span class="hljs-tuple">{arg,undefined,
+                           <span class="hljs-tuple">{<span class="hljs-tuple">{<span class="hljs-number">192</span>,<span class="hljs-number">168</span>,<span class="hljs-number">71</span>,<span class="hljs-number">213</span>}</span>,<span class="hljs-number">53500</span>}</span>,
+                           <span class="hljs-tuple">{headers,<span class="hljs-string">"Keep-Alive"</span>,<span class="hljs-string">"text/vnd.wap.wml"</span>,
+                               <span class="hljs-string">"192.168.72.51:4002"</span>,undefined,undefined,
+                               undefined,undefined,undefined,undefined,
+                               undefined,<span class="hljs-string">"LightPole/5.2.70_B/android1.5"</span>,
+                               undefined,
+                               [<span class="hljs-variable">A</span>],
+                               undefined,undefined,<span class="hljs-string">"212"</span>,
+                               <span class="hljs-string">"application/x-www-form-urlencoded"</span>,undefined,
+                               undefined,undefined,undefined,
+                               [<span class="hljs-tuple">{http_header,<span class="hljs-number">0</span>,<span class="hljs-string">"X-Emp-Signature"</span>,undefined,
+                                    <span class="hljs-string">"zOS7WYY4ldstWH87kMTfiBvR8Ag="</span>}</span>,
+                                <span class="hljs-tuple">{http_header,<span class="hljs-number">0</span>,<span class="hljs-string">"X-Emp-Cookie"</span>,undefined,
+                                    <span class="hljs-variable">A</span>}</span>,
+                                <span class="hljs-tuple">{http_header,<span class="hljs-number">52</span>,'<span class="hljs-variable">Proxy</span>-<span class="hljs-variable">Connection</span>',undefined,
+                                    <span class="hljs-string">"Keep-Alive"</span>}</span>,
+                                <span class="hljs-tuple">{http_header,<span class="hljs-number">4</span>,'<span class="hljs-variable">Pragma</span>',undefined,
+                                    <span class="hljs-string">"no-cache"</span>}</span>]}</span>,
+                           <span class="hljs-tuple">{http_request,'<span class="hljs-variable">POST</span>',
+                               <span class="hljs-tuple">{abs_path,<span class="hljs-string">"/channel_s/run?app=ebank&amp;o=i"</span>}</span>,
+                               <span class="hljs-tuple">{<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}</span>}</span>,
+                           &lt;&lt;<span class="hljs-string">"RoMJzPD/WZ9gJDHFCB1qyXiQJmUIAAAAAAAAAAF0c/euFz9rSDbF1v59V6G4QokZUEI68ulx0TR7tF9xFFJst1pd0Xg8HIaGh0fiArazqOy9DV/8jYMOMW9wx90/mZsEUbeWVB/XF1MEk9DiMSWo9ACfoXpvqyv+xW3U0Olw7JfHG6J0dvos3qacYkxqGc3KIzmM2ONVLYpF+33NGQ=="</span>&gt;&gt;,
+                           <span class="hljs-string">"/channel_s/run"</span>,<span class="hljs-string">"app=ebank&amp;o=i"</span>,<span class="hljs-string">"channel_s/run"</span>,
+                           <span class="hljs-string">"/usr/local/lib/ewp/public/www"</span>,<span class="hljs-string">"/"</span>,
+                           <span class="hljs-string">"/usr/local/lib/ewp/public/www/channel_s/run"</span>,
+                           undefined,undefined,<span class="hljs-function_name">list_to_pid</span>(<span class="hljs-string">"&lt;0.62.0&gt;"</span>),[],[],[],
+                           <span class="hljs-string">"/channel_s/run"</span>}</span>,
+    <span class="hljs-function_name">cpu_usage:start</span>(foo3),
+    <span class="hljs-function_name">ewp_controller:out</span>(<span class="hljs-variable">Arg</span>),
+    <span class="hljs-function_name">cpu_usage:stop</span>(foo3),
+    <span class="hljs-function_name">session_service:delete</span>(<span class="hljs-variable">SessionId</span>).
+
+<span class="hljs-function"><span class="hljs-title">test_trans_eff</span><span class="hljs-params">(<span class="hljs-variable">M</span>,<span class="hljs-variable">N</span>)</span> -&gt;</span>
+    <span class="hljs-function_name">cpu_usage:start_link</span>(),
+    <span class="hljs-function_name">performance_test:main</span>(<span class="hljs-variable">M</span>, <span class="hljs-variable">N</span>, <span class="hljs-keyword">fun</span>(<span class="hljs-variable">_</span>) -&gt; <span class="hljs-function_name">trans2</span>() <span class="hljs-keyword">end</span>, [], <span class="hljs-number">1</span>),
+    <span class="hljs-function_name">cpu_usage:dump</span>().
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../software_process/test/EWP/session_share_pftest_results.html" class="navigation navigation-prev " aria-label="Previous page: Session优化性能测试"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../../client_function/Introduction.html" class="navigation navigation-next " aria-label="Next page: 客户端其他功能"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

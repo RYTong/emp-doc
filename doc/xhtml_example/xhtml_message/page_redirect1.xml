@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <style>
+    .body{background-color:#F0F0F0;}
+    .label1{left:0px;top:40px;width:320px;height:40px;font-size:18px;font-weight:bold;text-align:center;}
+    .button1{left:20px;top:110px;width:280px;height:40px;font-size:18px;text-align:center;background-color:#0068b7;color:#FFFFFF;}
+    </style>
+    <script type="text/x-lua">
+      <![CDATA[
+        ryt = RYTL:new{};
+
+        --加载页面标记
+        local loadingtag = 1;
+
+        --关闭加载页面
+        function replace_callback()       
+            window:hide(loadingtag);
+        end;                
+
+        --页面请求回调函数
+        function callback(responsedata)
+            if responsedata["responseCode"] == 1599 then
+                location:replace(responsedata["responseBody"],replace_callback,nil);
+            elseif responsedata["responseCode"] == 200 then
+                history:add(responsedata["responseBody"]);
+                location:replace(responsedata["responseBody"],replace_callback,nil);
+            else
+                window:alert("网络请求失败！");
+                window:hide(loadingtag);
+                return;
+            end;
+        end;
+                
+        --跳转到第二个页面
+        function redirect()
+            window:showContent("local:FullSLoading1.xml",loadingtag);
+            local restr = "name=page_redirect2.xml";
+            ryt:post(nil, "test_s/get_json_data", restr, callback, {}, false);
+        end;
+        
+        --关闭页面
+        function back()
+            window:close();
+        end;
+        
+        --设置物理返回键
+        window:setPhysicalkeyListener("backspace", back);
+      ]]>
+    </script>
+  </head>
+  <body>
+    <label class="label1">页面跳转示例</label>
+    <input type="button" class="button1" value="点击跳转" onclick="redirect()"/>
+  </body>
+</content>

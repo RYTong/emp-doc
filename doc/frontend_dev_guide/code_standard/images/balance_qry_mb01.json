@@ -1,0 +1,30 @@
+{
+    "return":
+    {
+        "error_code":"000000",
+        "error_msg":"",
+        "account":
+        [
+            {
+                "acc_no":"3338480010038844666",
+                "acc_alias":"薪资卡",
+                "card_desc":"zhang xin"
+            },
+            {
+                "acc_no":"8888480011138855777",
+                "acc_alias":"理财卡",
+                "card_desc":"huang xin"
+            },
+            {
+                "acc_no":"6222534758583922020",
+                "acc_alias":"理财卡",
+                "card_desc":"liu xin"
+            },
+            {
+                "acc_no":"6222534758583922020",
+                "acc_alias":"12345678901234567890",
+                "card_desc":"liu xin"
+            }
+        ]
+    }
+}

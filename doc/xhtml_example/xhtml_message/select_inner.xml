@@ -1,0 +1,80 @@
+<content>
+    <head>
+        <style>
+          .body{width:320px;height:460px;background-color: #F0F0F0;}
+          .label1{top: 30px;left: 10px;width: 100px;height:30px;font-size: 13px;}
+          .select_saveNum{left: 120px; top: 30px;height: 30px;font-size: 13px;}
+          .label2{left: 10px;top: 60px;height: 30px;font-size: 13px;}
+          .table_detail{left: 10px; top: 90px; width: 300px;height: 90px;}
+          .tr{font-size: 13px; height: 30px;}
+          .td{width: 75px;height: 30px;}
+        </style>
+        <script type="text/x-lua">
+          --[[存储option对应的存单详细信息]]--
+          local detailTable = 
+          {option1={startDate="20130101", savingType="整存整取", savingTerm="一个月", intrestRate="0.1", principalDeposit="1000", currencyType="01"}, 
+          option2={startDate="20130102", savingType="整存整取", savingTerm="两个月", intrestRate="0.2", principalDeposit="2000", currencyType="02"}, 
+          option3={startDate="20130103", savingType="整存整取", savingTerm="三个月", intrestRate="0.3", principalDeposit="3000", currencyType="03"}};
+
+          --[[改变单个控件值]]--
+          function changeValue(name,value)
+            local ctrl = document:getElementsByName(name);
+            if ctrl and #ctrl > 0 then
+              ctrl[1]:setPropertyByName("value",value);
+            else
+                window:alert(name .. "控件不存在!");
+            end;
+          end;
+
+          --[[根据所选存单序号,改变存单详情]]--
+          function changeDetail(subTableName)
+            changeValue("startDate",detailTable[subTableName]["startDate"]);
+            changeValue("savingType",detailTable[subTableName]["savingType"]);
+            changeValue("savingTerm",detailTable[subTableName]["savingTerm"]);
+            changeValue("intrestRate",detailTable[subTableName]["intrestRate"]);
+            changeValue("principalDeposit",detailTable[subTableName]["principalDeposit"]);
+            changeValue("currencyType",detailTable[subTableName]["currencyType"]);
+          end
+
+          --[[判断所选存单序号]]--
+          function checkOption(optionName)
+            if optionName == "option1" then
+              changeDetail("option1");
+            elseif optionName == "option2" then
+              changeDetail("option2");
+            else
+              changeDetail("option3");
+            end
+          end
+        </script>
+    </head>
+    <body class="body" >
+      <label class="label1">请选择存单序号:</label>
+      <select class="select_saveNum">
+        <option name="option1" onclick="checkOption('option1')">0001</option>
+        <option name="option2" onclick="checkOption('option2')">0002</option>
+        <option name="option3" onclick="checkOption('option3')">0003</option>
+      </select>
+      <label class="label2">存单详情:</label>
+      <table class="table_detail">
+        <tr>
+          <td><label>起息日:</label></td>
+          <td><label name="startDate">20130101</label></td>
+          <td><label>存款类型:</label></td>
+          <td><label name="savingType">整存整取</label></td>
+        </tr>
+        <tr>
+          <td><label>存期:</label></td>
+          <td><label name="savingTerm">一个月</label></td>
+          <td><label>利率:</label></td>
+          <td><label name="intrestRate">0.1</label></td>
+        </tr>
+        <tr>
+          <td><label>存款本金:</label></td>
+          <td><label name="principalDeposit">1000</label></td>
+          <td><label>币种:</label></td>
+          <td><label name="currencyType">01</label></td>
+        </tr>
+      </table>
+    </body>
+</content>

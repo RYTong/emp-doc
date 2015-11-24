@@ -1,0 +1,68 @@
+<content>
+    <head>
+        <style>
+            .body{width:320px;height:460px;background-color:#F0F0F0;}
+            .div_main_page{top:0px;left:0px;width:320px;height:460px;}
+            .table_title{left:0px;top:0px;width:320px;}
+            .tr_title{height:51px;background-image:url(title_bg.png);}
+            .td_title{width:320px;}
+            .label_title{top:16px;width:320px;text-align:center;font-size:19px;font-weight:bold;color:#FFFFFF;}
+            .button_login{top:10px;right:10px;width:54px;height:32px;background-image:url(unlogin.png);}
+            .label_welcome{left:40px;top:100px;font-size:30px;color:#0080FF;}
+            .label_tips{left:30px;top:250px;font-size:20px;}
+            .div_login{left:320px;top:0px;height:460px;width:320px;}
+            .label_login{left:125px;top:150px;font-size:35px;color:#0080FF;}
+            .input_phone{left:17px;top:235px;height:45px;width:289px;color:#000000;font-size:14px;background-image:url(table1.png);}
+            .input_pw{left:17px;top:280px;height:45px;width:289px;color:#000000;font-size:14px;background-image:url(table2.png);}
+            .login_but{left:17px;top:339px;background-image:url(login_but.png);width:290px;height:40px;}
+        </style>
+        <script type="text/x-lua">
+            <![CDATA[
+                --获取主页面div控件
+                local main_page_ctrl = document:getElementsByName("main_page");
+                --获取登录页面div控件
+                local login_page_ctrl = document:getElementsByName("login_page");
+
+                --登录页面手势滑动，页面右移
+                function toMainPage(argument)
+                    if argument["direction"] == "right" then
+                        transition:translateX(login_page_ctrl[1],320,0.6);
+                        transition:translateX(main_page_ctrl[1],320,0.6);
+                    end;
+                end;
+
+                --点击登录按钮页面沿X轴左移
+                function translate_X()
+                    transition:translateX(main_page_ctrl[1],-320,0.6);
+                    transition:translateX(login_page_ctrl[1],-320,0.6);
+                    --登录页面设置滑动监听
+                    gesture:setSwipeListener(login_page_ctrl[1], toMainPage);
+                end;
+            ]]>
+        </script>
+    </head>
+    <body class="body">
+        <!--主页面-->
+        <div class="div_main_page" name="main_page" border="0">
+            <!--Title-->
+            <table class="table_title" border="0">
+                <tr class="tr_title">
+                    <td class="td_title" align="center" valign="middle">
+                        <label class="label_title">手机银行</label>
+                        <input type="button" class="button_login" onclick="translate_X()"/>
+                    </td>
+                </tr>
+            </table>
+            <label class="label_welcome">欢迎进入手机银行!</label>
+            <label class="label_tips">请点击登录按钮进入登录界面</label>
+        </div>
+
+        <!-- 登录界面 -->
+        <div class="div_login" name="login_page" border="0">
+            <label class="label_login">登录</label>
+            <input type="text" border="0" class="input_phone" hold="请输入手机号"/>
+            <input type="password" border="0" class="input_pw" hold="密码"/>
+            <input type="button" class="login_but"/>
+        </div>
+    </body>
+</content>

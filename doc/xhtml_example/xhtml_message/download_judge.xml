@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{width:320px;height:460px;background-color:#F0F0F0;}
+            .table_title{left:0px;top:0px;width:320px;}
+            .tr_title{height:51px;background-image:url(title_bg.png);}
+            .td_title{width:320px;}
+            .label_title{width:320px;text-align:center;font-size:19px;font-weight:bold;color:#FFFFFF;}
+            .button_delete{left:255px;width:58px;height:30px;color:#FFFFFF;font-size:14px;background-color:#4682B4;}
+            .menu_div{left:0px;top:100px;height:278px;width:320px;}
+            .menu_stock{left:30px;top:0px;width:93px;height:85px;background-image:url(stock.png);}
+            .download_stock{left:30px;top:30px;width:93px;height:25px;background-image:url(offline-download.png);display:none;}
+            .del_stock{left:105px;top:0px;width:25px;height:25px;background-image:url(menu_delete_button.png);display:none;}
+            .menu_weather{left:132px;top:0px;width:93px;height:85px;background-image:url(weather_forecast.png);}
+            .download_weather{left:132px;top:30px;width:93px;height:25px;background-image:url(offline-download.png);display:none;}
+            .del_weather{left:207px;top:0px;width:25px;height:25px;background-image:url(menu_delete_button.png);display:none;}
+        </style>
+        <script src="unit_fun.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+
+            --标记状态：0表示正常状态，1表示删除状态
+            local flag = 0;
+            --离线协议版本
+            local offline_version = tostring(offline:version());
+            --本地已经下载的可选插件列表
+            local optDownloadLocal;
+            --服务器可选下载插件列表
+            local optDownloadServer;
+            
+            --[[刷新本地下载插件列表]]--
+            local function refresh_download_json()
+                if offline_version == "0" then
+                    local downloadLocal = offline:optDownloadJsonInLocal();
+                    optDownloadLocal  = json:objectFromJSON(downloadLocal);
+                else
+                    optDownloadLocal = offline:getOptInfoInLocal();
+                end;        
+            end;
+
+            --[[刷新服务器可选下载插件列表]]--
+            local function refresh_server_json()
+                if offline_version == "0" then
+                    local manag_info = offline:optDownloadJson();
+                    optDownloadServer = json:objectFromJSON(manag_info);
+                else
+                    optDownloadServer = offline:getOptInfoInServer();
+                end;
+            end;
+
+            --[[
+            @doc:根据名称改变控件样式
+            @params:
+            name:控件名称
+            style:样式名称，比如："display"
+            value:修改值，需要将控件样式修改的值
+            ]]--
+            local function changeStyle(name,style,value)
+                local ctrl = document:getElementsByName(name);
+                if ctrl and #ctrl > 0 then
+                    for key,ctrl_atom in pairs(ctrl) do
+                        ctrl_atom:setStyleByName(style,value);
+                    end;
+                else
+                    window:alert(name .. "控件不存在！");
+                end;
+            end;
+
+            --[[
+            @doc:根据名称改变控件属性
+            @params:
+            name:控件名称
+            property:属性，比如："enable"
+            value:修改值，需要将控件属性修改的值
+            ]]--
+            local function changeProperty(name,property,value)
+                local ctrl = document:getElementsByName(name);
+                if ctrl and #ctrl > 0 then
+                    for key,ctrl_atom in pairs(ctrl) do
+                        ctrl_atom:setPropertyByName(property,value);
+                    end;
+                else
+                    window:alert(name .. "控件不存在！");
+                end;
+            end;
+
+
+            --[[
+                @doc:检测某个控件是否已经下载
+                @params:
+                sender:控件对象
+            --]]
+            local function check_download(sender)
+                local check_value="false";
+                local sender_name = sender:getPropertyByName("name");
+                --遍历本地下载的可选插件列表
+                for key,value in pairs(optDownloadLocal) do
+                    --download_name为除去后缀.zip后的插件名称
+                    local download_name = string.sub(key,0,string.len(key)-4);
+                    local ctrl = document:getElementsByName(download_name);
+                    if ctrl and #ctrl then
+                        if download_name == sender_name then
+                            check_value="true";
+                        end;
+                    end;
+                end;
+                return check_value;
+            end;
+
+            --[[检查已下载插件个数]]--
+            local function check_download_num()
+                --刷新本地下载插件列表
+                refresh_download_json();
+                --已下载插件个数
+                local check_num = 0;
+                --本地已经下载的可选插件的json字符串。
+                for key,value in pairs(optDownloadLocal) do
+                    local download_name = string.sub(key,0,string.len(key)-4);
+                    local ctrl = document:getElementsByName(download_name);
+                    if ctrl and #ctrl > 0 then
+                        check_num = check_num + 1;
+                    end;
+                end;
+                return check_num;
+            end;
+
+            --[[检查是否显示下载按钮]]--
+            local function set_download_style()
+                local ctrl_stock = document:getElementsByName("stock");
+                if ctrl_stock and #ctrl_stock > 0 then
+                    local check_value = check_download(ctrl_stock[1]);
+                    --插件未下载显示下载按钮并设置频道按钮不可点击
+                    if check_value=="false" then
+                        changeStyle("download_stock","display","block");
+                        changeProperty("stock","enable","false");
+                    end;
+                end;
+
+                local ctrl_weather = document:getElementsByName("weather_forecast");
+                if ctrl_weather and #ctrl_weather > 0 then
+                    local check_value = check_download(ctrl_weather[1]);
+                    --插件未下载显示下载按钮并设置频道按钮不可点击
+                    if check_value=="false" then
+                        changeStyle("download_weather_forecast","display","block");
+                        changeProperty("weather_forecast","enable","false");
+                    end;
+                end;
+            end;
+
+
+            --[[点击下载]]--
+            function download_channel(channelid)
+                --下载回调函数
+                local function callback_download(result)
+                    if result == true then
+                        window:alert("下载成功!");
+                        --隐藏下载按钮
+                        changeStyle("download_"..channelid,"display","none");
+                        --改变channelid按钮为可点击
+                        changeProperty(channelid,"enable","true");
+                    else
+                        window:alert("下载失败！");
+                    end;
+                end;
+
+                --处在删除状态中时下载按钮不可用
+                if flag == 1 then 
+                    window:alert("请先取消删除！");
+                    return;
+                end;
+
+                --下载动作
+                for key,value in pairs(optDownloadServer) do
+                    if key == channelid .. ".zip" then
+                        if offline_version == "0" then
+                            offline:downfile(key,value,callback_download);
+                        else
+                            offline:downOptionalFile(key,callback_download);
+                        end;
+                    end;
+                end;            
+            end;
+
+            --[[
+                @doc:跳转界面
+                @params：
+                channedid:频道ID
+            --]]
+            function post_channel(channelid)
+                invoke_page(channelid .. "/xhtml/"..channelid..".xhtml",page_callback,nil);
+            end;
+
+            --[[进入删除状态和取消删除状态]]--
+            function delete_and_cancel()
+                local down_load_count = check_download_num();
+                if down_load_count == 0 then
+                    window:alert("无可删除的插件！");
+                    return;
+                end;
+
+                --进入删除状态
+                if flag == 0 then
+                    for key,value in pairs(optDownloadLocal) do
+                        local download_name = string.sub(key,0,string.len(key)-4);
+                        --设置频道按钮不可点击
+                        changeProperty(download_name,"enable","false");
+                        --显示删除频道按钮
+                        changeStyle("del_"..download_name,"display","block");
+                    end;
+                    --将标题栏中的删除按钮变为取消按钮
+                    changeProperty("del_button","value","取消");
+                    flag = 1;
+                    return;
+                --取消删除状态
+                else
+                    for key,value in pairs(optDownloadLocal) do
+                        local download_name = string.sub(key,0,string.len(key)-4);
+                        --设置频道按钮可点击
+                        changeProperty(download_name,"enable","true");
+                        --隐藏删除频道按钮
+                        changeStyle("del_"..download_name,"display","none");
+                    end;
+                    flag = 0;
+                    --将标题栏中的取消按钮变为删除按钮
+                    changeProperty("del_button","value","删除");
+                    return;
+                end;
+            end;
+
+            --[[
+                @doc:删除频道
+                @params：
+                channelid:频道ID
+            ]]--
+            function delete_channel(channelid)
+                --删除动作
+                if offline_version == "0" then
+                    offline:remove(channelid);
+                else
+                    offline:removeOptionalFile(channelid..".zip");
+                end;
+                --显示下载按钮
+                changeStyle("download_"..channelid,"display","block");
+                --隐藏删除频道按钮
+                changeStyle("del_"..channelid,"display","none");
+
+                --当无已下载的频道时，取消删除状态
+                local down_load_count = check_download_num();
+                if down_load_count == 0 then
+                    flag = 0;
+                    --将取消按钮变为删除按钮
+                    changeProperty("del_button","value","删除");
+                end;
+            end
+
+            --[[初始化]]--
+            local function initial()
+                --刷新本地下载插件列表
+                refresh_download_json();
+                --刷新服务器可选下载插件列表
+                refresh_server_json();
+                --设置下载按钮显示状态
+                set_download_style();
+            end
+
+            initial();
+            ]]>
+
+        </script>
+    </head>
+    <body class="body">
+        <!--Title-->
+        <table class="table_title">
+            <tr class="tr_title" >
+                <td class="td_title" align="center" valign="middle">
+                    <label class="label_title">手机银行</label>
+                    <input type="button" class="button_delete" name="del_button" value="删除" onclick="delete_and_cancel()"/>
+                </td>
+            </tr>
+        </table>  
+
+        <!--MainMenu 主菜单-->
+        <div class="menu_div" name="div_menu" border="0">   
+            <input type="button" class="menu_stock" name="stock" onclick="post_channel('stock')"></input>
+            <input type="button" class="del_stock" name="del_stock" onclick="delete_channel('stock')"></input>
+            <input type="button" class="download_stock" name="download_stock" onclick="download_channel('stock')"></input>
+            <input type="button" class="menu_weather" name="weather_forecast" onclick="post_channel('weather_forecast')"></input>
+            <input type="button" class="del_weather" name="del_weather_forecast" onclick="delete_channel('weather_forecast')"></input>
+            <input type="button" class="download_weather" name="download_weather_forecast" onclick="download_channel('weather_forecast')"></input>
+        </div> 
+    </body>
+</content>

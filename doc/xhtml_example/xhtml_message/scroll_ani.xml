@@ -1,0 +1,224 @@
+<content>
+    <head>
+        <style>
+            .body{width: 320px;height: 460px;background-color: #F0F0F0;}
+            .acc_out_div{left:0px;top:51px;width:320px;height:170px;}
+            .acc_table{left:4px;width:312px;top:23px;display:none;}
+            .tr_acc{height:125px;left:0px;background-image:url(tr_card.png);}
+            .td_acc{height:125px;left:0px;}
+            .img_rytong{left:21px;top:11px;height:34px;width:34px;}
+            .label_acc{left:21px;top:56px;font-size:18px;color:#2E2E2E;}
+            .label_alias{font-size:15px;color:#0c0c0c;top:19px;left:70px;font-weight:bold;}
+            .label_species{font-size:12px;color:#2e2e2e;top:97px;left:21px;}
+            .label_balance{font-size:23px;color:#E60101;top:88px;left:133px;font-weight:bold;}
+            .pull_button{left:260px;top:52px;height:26px;width:26px;background-image:url(card_pull_but.png);}
+            .div_img{left:0px;top:148px;width:320px;height:22px;}
+            .img_show{top:6px;width:4px;height:4px;}
+        </style>
+        <script type="text/x-lua">
+            <![CDATA[
+                
+                --账户列表table
+                local coll_lists = {
+                    {accNo="6029693000105131",accAlias="我的薪资卡",balance_species="yu hangxiang",balance_count="￥100,00"},
+                    {accNo="6029693000105132",accAlias="我的理财卡",balance_species="cheng jinhui",balance_count="￥20,000"},
+                    {accNo="6029693000105133",accAlias="我的支付卡",balance_species="huang huihong",balance_count="￥30,000"},
+                    {accNo="6029693000105134",accAlias="融易通薪资卡",balance_species="can langlang",balance_count="￥40,000"}
+                };
+
+                --卡片个数
+                local cardLen = #coll_lists;
+                --当前卡片索引
+                local ppindex = 1;
+
+                --[[
+                @doc:根据名称改变控件样式
+                @params:
+                name:控件名称
+                style:样式名称，比如："height"
+                value:修改值，需要将控件样式修改的值
+                @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+                ]]--
+                function changeStyle(name,style,value)
+                    local ctrl = document:getElementsByName(name);
+                    if ctrl and #ctrl > 0 then
+                        for key,ctrl_atom in pairs(ctrl) do
+                            ctrl_atom:setStyleByName(style,value);
+                        end;
+                    else
+                        window:alert(name .. "控件不存在！");
+                    end;
+                end;
+
+                --[[
+                @doc:根据名称改变控件属性
+                @params:
+                name:控件名称
+                property:属性，比如："enable"
+                value:修改值，需要将控件属性修改的值
+                @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+                ]]--
+                function changeProperty(name,property,value)
+                    local ctrl = document:getElementsByName(name);
+                    if ctrl and #ctrl > 0 then
+                        for key,ctrl_atom in pairs(ctrl) do
+                            ctrl_atom:setPropertyByName(property,value);
+                        end;
+                    else
+                        window:alert(name .. "控件不存在！");
+                    end;
+                end;
+
+
+                --[[
+                @doc: 生成转出账号列表, 卡片下方的指示图片列表
+                @params: 
+                coll_lists: 转出账户列表table
+                ]]--
+                function accout_list(coll_lists)
+                    local table_channel = "";
+                    local img_list = "";
+                    for key, coll_list in pairs(coll_lists) do
+                        --[[此时key为1,2,3,4]]--
+                        local tr_channel = "";
+                        tr_channel =
+                              tr_channel ..
+                              [[<tr class="tr_acc">
+                                    <td class="td_acc">
+                                        <img src="local:logo.png" class="img_rytong"/>
+                                        <label class="label_acc" name="acc_label]]..key..[[">]]..coll_list["accNo"]..[[</label>
+                                        <label class="label_alias" name="alias_label">]]..coll_list["accAlias"]..[[</label><br/>
+                                        <label class="label_species" name="species_label">]]..coll_list["balance_species"]..[[</label>
+                                        <label class="label_balance" name="balance_label">]]..coll_list["balance_count"]..[[</label>
+                                        <input type="button" class="pull_button" onclick="changeCard()" />
+                                    </td>
+                                </tr>]];
+                        table_channel =
+                              table_channel .. [[<table class="acc_table" border="0" name="acc_table]]..key..[[">]]
+                              .. tr_channel .. [[</table>]];
+                        img_list =
+                              img_list ..
+                              [[<img src="local:card_slide1.png" class="img_show" name="show_img]]..key..[["/>]];
+                    end;
+                    return table_channel, img_list;
+                end;
+
+                --[[
+                @doc: 设置各个指示图片列表的left值
+                @params:
+                cardLen: 子账户个数
+                ]]--
+                function set_imgleft()
+                    local img_width = cardLen*8-4;
+                    for key=1,cardLen do
+                        changeStyle("show_img"..key, "left", 160-img_width/2+(key-1)*8);
+                    end;
+                end;
+
+
+                --[[初始化]]--
+                function initial()
+                    
+                    --拼接转出账户列表菜单
+                    local table_lists, img_lists = accout_list(coll_lists);
+                    local div_img =  [[<div class="div_img" name="img_div" border="0">]]
+                                            .. img_lists ..
+                                     [[</div>]];
+                    local div_accout = [[<div class="acc_out_div" name="acc_out_div" border="0">]]
+                                            .. table_lists ..div_img..
+                                     [[</div>]];
+                    
+                    --setInnerHTML
+                    local div_accout_ctrl = document:getElementsByName("acc_out_div");
+                    if div_accout_ctrl and #div_accout_ctrl > 0 then
+                        div_accout_ctrl[1]:setInnerHTML(div_accout);
+                    end;
+                    
+                    --设置各个指示图片列表的left值
+                    set_imgleft();
+
+                    changeStyle("acc_table1", "display", "block");
+                    changeProperty("show_img1", "src", "local:card_slide2.png");
+
+                    --设置卡片滑动监听
+                    gesture:setSwipeListener(div_accout_ctrl[1],switchCard);
+
+                end
+
+                initial();
+
+                -----------------------------------------卡片切换动画start--------------------------------------
+                --[[
+                @doc: 卡片切换动画
+                @params: 
+                direction: "pre" 代表前一张, "next"代表后一张
+                ]]--
+                function transfer(direction)
+                    local ctrl1;
+                    local ctrl2;
+                    local nextIndex;
+                    local preIndex;
+                    if direction == "next" then
+                        if(ppindex < cardLen) then 
+                            nextIndex = ppindex + 1;
+                        else
+                            nextIndex = 1;
+                        end 
+                        ctrl1 = document:getElementsByName("acc_table"..ppindex);
+                        ctrl2 = document:getElementsByName("acc_table"..nextIndex);
+                        transition:from(ctrl1[1],{x=4});
+                        transition:to(ctrl1[1],{x=-316},0.4);
+                        changeStyle("acc_table"..nextIndex, "display", "block");
+                        transition:from(ctrl2[1],{x=320});
+                        transition:to(ctrl2[1],{x=4},0.5);
+                        changeProperty("show_img"..ppindex, "src", "local:card_slide1.png");
+                        changeProperty("show_img"..nextIndex, "src", "local:card_slide2.png");
+                        ppindex = nextIndex;
+                    else
+                        if ppindex > 1 then
+                            preIndex = ppindex -1;
+                        else
+                            preIndex = cardLen; 
+                        end
+                        ctrl1 = document:getElementsByName("acc_table"..ppindex);
+                        ctrl2 = document:getElementsByName("acc_table"..preIndex);
+                        transition:from(ctrl1[1],{x=4});
+                        transition:to(ctrl1[1],{x=320},0.4);
+                        changeStyle("acc_table"..preIndex, "display", "block");
+                        transition:from(ctrl2[1],{x=-316});
+                        transition:to(ctrl2[1],{x=4},0.5);
+                        changeProperty("show_img"..ppindex, "src", "local:card_slide1.png");
+                        changeProperty("show_img"..preIndex, "src", "local:card_slide2.png");
+                        ppindex = preIndex;   
+                    end;
+                end;
+
+                --[[
+                @doc: 根据滑动手势切换卡片
+                @params:
+                tdive: 滑动监听获得的参数table
+                ]]--
+                function switchCard(tdive)
+                    if tdive.direction == "right" then
+                        transfer("pre");
+                    elseif tdive.direction == "left" then
+                        transfer("next");
+                    end;
+                end;
+
+                --[[
+                @doc: 点击按钮切换下一张
+                ]]--
+                function changeCard()
+                    transfer("next");
+                end;
+                ------------------------------------------卡片切换动画end-----------------------------------------------
+                
+            ]]>
+        </script>
+    </head>
+    <body class="body">
+        <!--账户卡片-->
+        <div class="acc_out_div" name="acc_out_div" border="0"></div> 
+    </body>
+</content>

@@ -4,6 +4,11 @@
         <style>
             .body{background-color:#ffffff;width:320px;}
             .father{width:300px;height:30px;left:10px;font-size:15px;background-color:#CCCCCC;}
+            .a_color{color:#00ff00;}
+            .a_fontsize{font-size:10px;}
+            .a:active{background-color:#550066;}
+            .a_color:active{color:#0000ff;}
+            .a_fontsize:inactive{font-size: 15px;}
             .display1{display:none;}
             .display2{display:block;}
             .visibility1{visibility:visible;}
@@ -15,6 +20,7 @@
             .positionFixed{position:fixed;}
             .positionToplevel{position:toplevel;top:200px;left:0px;background-color:#ff0000;}
             .fontWeight{font-weight:bold;background-color:#CCCCCC;}
+            .linebreakmode{font-size: 14px;}
             .fontSize{font-size:30px;}
             .fontStyle{font-style:italic;}
             .textAlignLeft{text-align:left;}
@@ -22,13 +28,13 @@
             .textAlignRight{text-align:right;}
             .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
         </style>
-        
+
         <script type="text/x-lua" src="RYTL.lua"></script>
         <script type="text/x-lua">
             <![CDATA[
-                
+
                 ryt = RYTL:new{};
-                
+
                 local data = [[<?xml version="1.0" encoding="UTF-8"?>
                 <content>
                 <head>
@@ -54,25 +60,25 @@
                 </body>
                 </content>
                 ]];
-                
+
                 file:write("TEST.txt",data);
-                
+
                 function close()
                 ryt:back();
                 end;
-                
+
                 function click()
                 window:alert("return true.");
                 return true;
                 end;
             ]]>
         </script>
-        
+
     </head>
     <body>
         <!-- positon:fixed -->
         <a class='father,positionFixed' > positon:fixed body第一个控件 </a>
-        
+
         <!-- hide -->
         <a hide='false' class='father' > hide=false，下方有hide=true的a控件 </a>
         <a hide='true' class='father' > hide=true的a控件,不应该显示出来 </a>
@@ -85,10 +91,15 @@
         <a class='father,visibility1' > visibility:visible 下方有visibility=hidden的a控件 </a>
         <a class='father,visibility2' > visibility:hidden 不应该显示 </a>
         <a class='father,visibility1' > visibility:visible 上方有visibility=hidden的a控件 </a>
-        
+
         <!-- positon:toplevel -->
         <a class='father,positionToplevel' > positon:toplevel 不随页面滚动 </a>
-        
+        <!-- linebreakmode -->
+        <a class="father,linebreakmode" linebreakmode="head">linebreakmode="head",文字开始部分省略,用'...'代替.</a>
+        <a class="father,linebreakmode" linebreakmode="tail">linebreakmode="tail",文字结尾部分省略,用'...'代替.</a>
+        <a class="father,linebreakmode" linebreakmode="middle">linebreakmode="middle",文字中间部分省略,用'...'代替.</a>
+        <a class="father,linebreakmode" linebreakmode="none">linebreakmode="none",不使用'...'代替.增加文字超过一行。</a>
+        <a class="father,linebreakmode" numlines="1">numlines="1",linebreakmode此时未设置,此时在末尾省略。</a>
         <!-- background-color -->
         <a class='father,background_color' > background-color </a>
         <!-- color -->
@@ -105,7 +116,7 @@
         <a class='father,textAlignLeft'> text-align:left </a>
         <a class='father,textAlignCenter'> text-align:center </a>
         <a class='father,textAlignRight'> text-align:right </a>
-        
+
         <!-- enable -->
         <a class="father" href="tel://4008888888" enable="true">客服电话(测试enable="true") 点击可访问</a><br/>
         <a class="father" href="tel://4008888888" enable="false">客服电话(测试enable="false")</a><br/>
@@ -116,11 +127,13 @@
         <a class="father" href="mailto://a.bc@rytong.com">客服邮件 点击可访问</a>
         <!-- onclick -->
         <a class="father" onclick="click()">onclick 点击可访问</a><br/><br/>
-        
+
         <!-- 无指定宽度 -->
         <a> 不指定控件样式的情况</a><br/>
         <a> 不指定控件样式且长度超过一行显示的情况</a><br/><br/>
-        
+        <!-- 伪类 -->
+        <a class="father,a_color">http://www.baidu.com/</a>
+        <a class="father,a_fontsize">http://www.baidu.com/</a>
         <!--  组合测试  -->
         <!--  font-style  font-weight -->
         <a class="fontWeight,fontStyle,father">bold+italic 加粗并倾斜显示</a>
@@ -136,7 +149,7 @@
         <a class="father,display1,visibility1">visibility:visible display=none 应显示</a>
         <a class="father,display2,visibility2">visibility:hidden display=block 占位不显示</a>
         <a class="father,display1,visibility1">visibility:visible display=none 应显示</a>
-        
+
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
         <!-- positon:fixed -->

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body{width:320px;height:460px;background-color: #CCCCCC;}
+            .body1{top:0px;left:0px;width:320px;height:440px;}
+            .channel_table{top:10px;left:20px;width:283px;}
+            .tr1{height:89px;width:283px;background-image:url(tr_channel.png);}
+            .tr2{height:10px;width:283px;}
+            .menu_div2{left:0px;top:51px;width:320px;}
+            .img_channel1{left:13px;top:26px;height:32px;width:32px;}
+            .img_channel2{left:54px;top:21px;height:47px;width:2px;}
+            .channel_div{left:65px;top:0px;height:89px;width:218px;}
+            .img_onclick{left:174px;top:26px;height:32px;width:32px;}
+            .label_channel{left:0px;top:26px;font-size:18px;color:#656565;}
+            .label_channel_py{left:0px;top:50px;font-size:11px;color:#868585;}
+            .button_zhankai{left:140px;top:0px;width:30px;height:20px;background-image:url(zhankai.png);display:block;}
+            .div_h{left:0px;top:440px;};
+            .menu_div_h{left:0px;top:20px;width:320px;display:none;}
+            .menu_button{width:89px;height:70px;background-color: #0000FF;}
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                local div_h_ctrl = document:getElementsByName("div_h");
+                local div_menu_ctrl = document:getElementsByName("div_menu");
+                local second_menu_ctrl = document:getElementsByName("second_menu");
+                local body_ctrl = document:getElementsByName("body");
+
+                local anima_flag = true; --动画按钮点击标识
+                --[[
+                @doc:初始化
+                --]]
+                local function initial()
+
+                    --适配屏幕高度
+                    local height;
+                    local p = screen:width()/320;
+                    height = screen:height()/p;
+
+                    local plat_form = system:getInfo("platform");
+                    if string.find(plat_form,"iPhone") then
+                        height = height -20;
+                    end;
+                    height,_d = math.modf(height);
+                    local heightpx = tostring(height) .. "px";
+                    local toppx = tostring(height-20) .. "px";
+
+                    second_menu_ctrl[1]:setStyleByName("height",heightpx);
+                    body_ctrl[1]:setStyleByName("height",heightpx);
+                    div_h_ctrl[1]:setStyleByName("top",toppx);                   
+                    local input_button = 
+                    [[
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                        <input type="button" class="menu_button" name="button_test"></input>
+                    ]];
+                    local div_menu = [[
+                        <div class="menu_div_h" name="div_menu" border="0">]].. input_button ..[[
+                        </div>]];
+                    div_menu_ctrl[1]:setInnerHTML(div_menu); 
+                end;
+
+                function anima()
+                    if anima_flag then
+                        up();
+                    else
+                        down()
+                    end;
+                end;
+
+                local function stop_listener(sender)
+                    if anima_flag then
+                        anima_flag = false
+                    else
+                        div_menu_ctrl[1]:setStyleByName("display","none");
+                        div_h_ctrl[1]:setStyleByName("height","20px");
+                        anima_flag = true
+                    end;
+                end;                
+                function up()
+                    --二级菜单列表变小和透明度变化
+                    transition:matrix(second_menu_ctrl[1],{m11=0.8,m22=0.8},2);
+                    transition:alpha(second_menu_ctrl[1],0.5,2);
+                    --显示九宫格菜单列表
+                    div_menu_ctrl[1]:setStyleByName("display","block");
+                    div_h_ctrl[1]:setStyleByName("height","340px");
+                    --向上移动九宫格菜单列表
+                    transition:setStopListener(div_h_ctrl[1],stop_listener);
+                    transition:translateY(div_h_ctrl[1],-220,2);
+                end;
+
+                function down()
+                    --二级菜单列表恢复
+                    transition:matrix(second_menu_ctrl[1],{m11=1,m22=1},2);
+                    transition:alpha(second_menu_ctrl[1],1,2);
+                    --向下移动九宫格菜单列表
+                    transition:setStopListener(div_h_ctrl[1],stop_listener);
+                    transition:translateY(div_h_ctrl[1],220,2);
+                end;
+
+                initial();
+            ]]>
+        </script>
+    </head>
+    <body name="body" class="body">
+        <!--频道列表div-->
+        <div name='second_menu' zindex="-1" class="body1" border="0" onclick="hideMenu()">
+            <table name="channel_table" class="channel_table" border="0">
+                <tr class="tr1">
+                    <td>
+                        <img src="local:vertical_line.png" class="img_channel2" />
+                        <div class="channel_div" border="0" >
+                            <label class="label_channel">跨行汇款</label><br/>
+                            <label class="label_channel_py">kua hang hui kuan </label>
+                            <img src="local:pull_but.png" class="img_onclick"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr2"><td></td></tr>
+                <tr class="tr1">
+                    <td>
+                        <img src="local:vertical_line.png" class="img_channel2" />
+                        <div class="channel_div" border="0" >
+                            <label class="label_channel">行内转账</label><br/>
+                            <label class="label_channel_py">hang nei zhuan zhang </label>
+                            <img src="local:pull_but.png" class="img_onclick"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr2"><td></td></tr> 
+                <tr class="tr1">
+                    <td>
+                        <img src="local:vertical_line.png" class="img_channel2" />
+                        <div class="channel_div" border="0" >
+                            <label class="label_channel">手机号转账</label><br/>
+                            <label class="label_channel_py">shou ji hao zhuan zhang </label>
+                            <img src="local:pull_but.png" class="img_onclick"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tr2"><td></td></tr>                                         
+            </table>
+        </div>
+        <div class="div_h" name="div_h" border="0">
+            <input type="button" class="button_zhankai" onclick="anima()"/>
+            <div class="menu_div_h" name="div_menu" border="0">
+            </div>
+        </div>
+    </body>
+</content>

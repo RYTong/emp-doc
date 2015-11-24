@@ -1,0 +1,53 @@
+<content> 
+<head> 
+  <style> 
+    .body{background-color:#FFFFFF;}
+    .table1{width:300px;top:30px;left:10px;}
+    .tr1{height:45px;}
+    .td{width:300px;}
+    .label{font-size:15px;height:30px;}
+    .label1{width:60px;}
+    .label2{width:60px;}
+    .label3{width:80px;}
+    .select_accountNo{right:10px;font-size:15px;color:#000000;width:230px;height:30px;text-align:right;background-color:#F0F0F0;}
+    .input{right:10px;height:30px;text-align:right;}
+    .input1{width:220px;}
+    .input2{width:200px;}
+    .line{height:1px;background-color:#F0F0F0;}
+  </style>
+</head>
+<body> 
+  <table class="table1" border="0"> 
+    <tr class="tr1"> 
+      <td>
+        <label class="label1">账号：</label> 
+        <select class="select_accountNo"> 
+          <option>账户1234569311123483722222842</option> 
+          <option>3703031231231239999</option> 
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><div class="line"></div></td>
+    </tr>
+    <tr class="tr1"> 
+      <td>
+        <label class="label2">手机号：</label> 
+        <input type="text" class="input1" hold="请输入" border="0" style="-wap-input-format:'phone'"/>
+      </td>
+    </tr>
+    <tr>
+      <td><div class="line"></div></td>
+    </tr>
+    <tr class="tr1"> 
+      <td>
+        <label class="label3">查询密码：</label> 
+        <input type="text" class="input2" hold="请输入" border="0"/>
+      </td>
+    </tr>
+    <tr>
+      <td><div class="line"></div></td>
+    </tr>
+  </table>
+</body>
+</content>

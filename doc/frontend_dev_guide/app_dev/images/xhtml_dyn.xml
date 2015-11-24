@@ -1,0 +1,301 @@
+<content>
+<head>
+    <style>
+        .body {background-color: #E1E7ED;}
+        .div_title {background-color: #236EC3; top: 0px; left: 0px; width: 320px; height: 50px; position: fixed;}
+        .return_but {left:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px; }
+        .main_but {right:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px;}
+        .label_title {left:60px; top:10px; height:40px; width:200px; text-align:center; color: #FFFFFF; font-size: 22px;}
+        .table {left: 10px; width: 300px;}
+        .tr {height: 50px;}
+        .tr1 {height: 1px;}
+        .td1{width: 200px; background-color: #E5EFFF;}
+        .td2{width: 100px; background-color: #71A5E9;}
+        .div_line {background-color: #CCCCCC; height: 1px;}
+        .but_refresh {width:100px; height:50px; color: #FFFFFF; font-size: 14px;}
+        .label_date {width:200px; height:50px; color: #000000; font-size: 14px;} 
+        .td3{width:150px;background-color: #FFFFFF; color: #535458; font-size: 16px; }
+        .td4{width:150px;background-color: #FFFFFF; color: #295AB4; font-size: 16px; font-weight: bold;}
+        .label_flag { height:50px; left:10px; color: #44454A;}
+        .label_fund { color: #FF0000; font-size: 10px; height: 50px;}
+        .label_zzy {height: 50px;}
+        .but_tranfer {left:10px; color: #FFFFFF; font-size: 14px; width: 140px; height: 50px; background-color: #71A5E8;}
+        .but_financial {right:10px; color: #FFFFFF; font-size: 14px; width: 140px; height: 50px; background-color: #71A5E8;}
+    </style>
+    <script type="text/x-lua">
+      <![CDATA[
+
+        --暂时将数据写为界面中静态数据
+        local json_data = [[
+                            {
+                              "Message": {
+                                "tranCode": "MB0102",
+                                "status": { "value": "0" },
+                                "asset": "98763.87",
+                                "debt": "0.00",
+                                "account":[
+                                    {
+                                        "cardNo":"3338480010038844666",
+                                        "balance":"100,000.00",
+                                        "flag":"0"
+                                    },
+                                    {
+                                        "cardNo":"8888480011138855777",
+                                        "balance":"20,000.00",
+                                        "flag":"1"
+                                    },
+                                    {
+                                        "cardNo":"6222534758583922020",
+                                        "balance":"0.67",
+                                        "flag":"0"
+                                    }        
+                                ]
+                              }
+                            }
+                           ]];
+
+        --使用客户端提供的json接口将json转换为lua中的table结构
+        local tab_data = json:objectFromJSON(json_data);
+        --账号信息列表
+        local tab_card = tab_data["Message"]["account"];
+        --资产
+        local asset = tab_data["Message"]["asset"];
+        --负债
+        local debt = tab_data["Message"]["debt"];
+
+        --[[
+        @doc:根据名称改变控件样式
+        @params:
+        name:控件名称
+        style:样式名称，比如："display"
+        value:修改值，需要将控件样式修改的值
+        @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+        ]]--
+        function changeStyle(name,style,value)
+            local ctrl = document:getElementsByName(name);
+            if ctrl and #ctrl > 0 then
+                for key,ctrl_atom in pairs(ctrl) do
+                    ctrl_atom:setStyleByName(style,value);
+                end;
+            else
+                window:alert(name .. "控件不存在！");
+            end;
+        end;
+
+        --[[
+        @doc:根据名称改变控件属性
+        @params:
+        name:控件名称
+        property:属性，比如："value"
+        value:修改值，需要将控件属性修改的值
+        @attention:如果界面中有多个此名称控件则这些控件都会被修改。
+        ]]--
+        function changeProperty(name,property,value)
+            local ctrl = document:getElementsByName(name);
+            if ctrl and #ctrl > 0 then
+                for key,ctrl_atom in pairs(ctrl) do
+                    ctrl_atom:setPropertyByName(property,value);
+                end;
+            else
+                window:alert(name .. "控件不存在！");
+            end;
+        end;
+
+        --刷新时间
+        function refresh()
+            --获取当前时间
+            local now = os.date("%H:%M:%S");
+            local label_now = "更新时间:" .. now;
+            --改变label_date控件值为当前时间
+            changeProperty("label_date","value",label_now);
+        end;
+
+        --跳转入子账户界面，未实现
+        function sub_account(cardNo)
+            window:alert(cardNo);
+        end;
+
+        --显示选中账户的信息
+        function select_card(selected_cardNo)
+            --先将所有账户信息的tr都隐藏
+            for key , card in pairs(tab_card) do
+                local cardNo =  card["cardNo"];
+                local ctrl_name = "tr_" .. cardNo;
+                changeStyle(ctrl_name,"display","none");
+            end;
+
+            --再显示选中的账号信息的tr
+            local ctrl_name = "tr_" .. selected_cardNo;
+            changeStyle(ctrl_name,"display","block");
+
+            --重新布局
+            location:reload();
+        end;
+
+        --实现资产和负债数值动态
+        function change_asset(asset,debt)
+            --改变资产和负债为json中的数值
+            changeProperty("label_money","value",asset);
+            changeProperty("label_bs","value",debt);
+        end;
+
+        --动态生成账户信息列表
+        function change_card(tab_card)
+            local tr_card = "";
+
+            --拼接账号选择select下拉框报文
+            local select_ctrl = [[<select name="select_card">]];
+            --pairs：lua为数据结构table提供的泛型循环方法
+            for key , card in pairs(tab_card) do
+                local cardNo = card["cardNo"];
+                select_ctrl = select_ctrl .. [[<option value="]]..cardNo..[[" onclick="select_card(']]..cardNo..[[')">]]..cardNo..[[</option>]];
+            end;
+            select_ctrl = select_ctrl .. [[</select>]];
+
+
+            --拼接账户信息列表报文
+            tr_card = [[<tr>
+                            <td align="left" class="td3">
+                                <label name="label_flag">一卡通</label>
+                            </td>
+                            <td align="right" class="td4">]]
+                            .. select_ctrl .. [[</td>
+                        </tr>
+                        <tr class="tr1">
+                            <td class="td3">
+                                <div class="div_line" border="0"></div>
+                            </td>
+                            <td class="td3">
+                                <div class="div_line" border="0"></div> 
+                            </td>                   
+                        </tr>]];
+
+            for key , card in pairs(tab_card) do
+                --一卡通账号
+                local cardNo = card["cardNo"];
+                --活期结算户
+                local balance = card["balance"];
+                --朝朝盈状态
+                local zzyFlag = card["flag"];
+                --zzyFlag对应的文字
+                local zzyStr;
+                if zzyFlag == "0" then
+                    zzyStr = "未开通";
+                else
+                    zzyStr = "已开通";
+                end;
+                --tr的name值
+                local tr_name = "tr_" .. cardNo;
+                tr_card = tr_card .. [[ <tr name="]]..tr_name..[[" onclick = "sub_account(']]..cardNo..[[')">
+                                            <td align="left" class="td3">
+                                                <label >活期结算户</label>
+                                            </td>
+                                            <td align="right" class="td4">
+                                                <label name="label_current">]]..balance..[[</label>
+                                            </td>
+                                        </tr>
+                                        <tr name="]]..tr_name..[[" class="tr1">
+                                            <td class="td3">
+                                                <div class="div_line" border="0"></div>
+                                            </td>
+                                            <td class="td3">
+                                                <div class="div_line" border="0"></div> 
+                                            </td>                   
+                                        </tr>       
+                                        <tr name="]]..tr_name..[[">
+                                            <td align="left" class="td3" >
+                                                <label class="label_zzy">朝朝盈:</label><label class="label_fund">超高收益 0秒赎回</label>
+                                            </td>
+                                            <td align="right" class="td4">
+                                                <label name="label_current">]]..zzyStr..[[</label>
+                                            </td>
+                                        </tr>
+                                    ]];
+            end;
+
+            return tr_card;
+        end;
+
+        --界面初始化
+        function initial()
+            --初始进入界面时刷新时间为当前时间
+            refresh();
+            --改变资产和负债数值
+            change_asset(asset,debt);
+
+            --拼接账户信息列表
+            local tr_card = change_card(tab_card); 
+            local card_table = [[<table name="card_table">]] .. tr_card .. [[</table>]];
+            --局部刷新
+            local ctrl_card_table = document:getElementsByName("card_table");
+            if ctrl_card_table and #ctrl_card_table > 0 then
+                ctrl_card_table[1]:setInnerHTML(card_table);
+            else
+                window:alert("card_table控件不存在！");
+            end;
+
+            --默认选中第一个账号
+            select_card(tab_card[1]["cardNo"]);
+
+            location:reload();
+        end
+
+        --调用初始化函数
+        initial();
+      ]]>
+  </script>
+</head>
+<body>
+    <div class="div_title" border="0">
+        <input type="button" border="0" class="return_but" value="返回"></input>
+        <input type="button" border="0" class="main_but" value="主页"></input>
+        <label class="label_title">账户总览</label>
+    </div>
+
+    <table >
+        <tr>
+            <td class="td1">
+                <label class="label_date" name="label_date">更新时间:10:02:23</label>
+            </td>
+            <td class="td2">
+                <input type="button" border="0" class="but_refresh" value="刷新" onclick = "refresh()"></input>
+            </td>
+        </tr>
+    </table>
+
+    <table >
+        <tr>
+            <td align="left" class="td3">
+                <label >我的资产</label>
+            </td>
+            <td align="right" class="td4">
+                <label name="label_money"></label>  
+            </td>
+        </tr>
+        <tr class="tr1">
+            <td class="td3">
+                <div class="div_line" border="0"></div>
+            </td>
+            <td class="td3">
+                <div class="div_line" border="0"></div> 
+            </td>                   
+        </tr>
+        <tr>
+            <td align="left" class="td3">
+                <label >我的负债</label>
+            </td>
+            <td align="right" class="td3">
+                <label name="label_bs" ></label>
+            </td>
+        </tr>       
+    </table>
+
+    <label class="label_flag">我的一卡通</label>
+
+    <table name="card_table">   
+    </table>
+
+    <input type="button" class="but_tranfer" value="转账汇款" ></input>
+    <input type="button" class="but_financial" value="购买理财"></input>
+</body>
+</content>

@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>系统安全规范 | 3.0项目实施规范</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../system_spec/performance.html" />
+    
+    
+    <link rel="prev" href="../system_spec/system_introduction.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="1445493412837">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="system_spec/system_introduction.html">
+            
+                
+                    <a href="../system_spec/system_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         技术类规范
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="1.1" data-path="system_spec/system_security.html">
+            
+                
+                    <a href="../system_spec/system_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         系统安全规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="system_spec/performance.html">
+            
+                
+                    <a href="../system_spec/performance.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         系统可用性规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="coding_spec/coding_spec.html">
+            
+                
+                    <a href="../coding_spec/coding_spec.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         应用开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="teamwork_spec/teamwork.html">
+            
+                
+                    <a href="../teamwork_spec/teamwork.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         实施类规范
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="teamwork_spec/ui.html">
+            
+                
+                    <a href="../teamwork_spec/ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         UI复用规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="teamwork_spec/interface.html">
+            
+                
+                    <a href="../teamwork_spec/interface.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         接口开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/software_specification/software_specification.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/software_specification/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >3.0项目实施规范</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_5">
+                    
+                        <h1 id="系统安全规范">系统安全规范</h1>
+<!-- toc -->
+<ul>
+<li><a href="#概述">概述</a><ul>
+<li><a href="#应用开发规范">应用开发规范</a></li>
+<li><a href="#应用管理规范">应用管理规范</a></li>
+<li><a href="#应用运行规范">应用运行规范</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h1 id="概述">概述</h1>
+<p>与以往的系统架构不同，3.0手机银行系统将作为移动应用开发平台接受来自于总行、分行和第三方开发团队开发的应用，
+手机银行系统将会面临上述所有应用所带来的安全风险。因此，从系统安全出发，我们对于平台上的应用开发有如下
+规范约束。</p>
+<blockquote>
+<blockquote>
+<p>说明：这里的应用开发指对同一个客户端APP上的功能进行扩展，例如分行开发人员在手机银行中添加<code>水电缴费</code>业务，它对应为EMP定义的一个业务功能插件。
+开发人员可按照业务需求开发一个和多个业务插件，通过EMP提供的开发工具打包为一个应用，然后按照下文描述的流程发布到手机银行中。</p>
+</blockquote>
+</blockquote>
+<h2 id="应用开发规范">1 应用开发规范</h2>
+<p><img src="../images/plugin.png" alt=""></p>
+<ol>
+<li>所有的应用开发应当基于EMP提供的客户端SDK和开发工具，将应用前端代码封装为符合EMP插件规范的应用包；</li>
+<li>应用开发者须使用EMP提供的网络通讯API，以及EMP提供的前端开发框架和模板库；</li>
+<li>应用首次开发时，须参考融易通提供的《生产环境安全检查参考手册》中客户端部分的相关要求，如：对于敏感信息输入应使用安全键盘；</li>
+</ol>
+<h2 id="应用管理规范">2 应用管理规范</h2>
+<p>应用经过开发者测试完成之后，统一提交到行内测试平台进入应用审核流程，审核内容包括:</p>
+<ol>
+<li>应用源码是否遵循EMP插件规范，源码中是否包含对非法API的调用；</li>
+<li>应用流程是否畅通，界面风格和用户体验是否满足统一要求；</li>
+<li>应用是否符合《生产环境安全检查参考手册》相关要求；</li>
+</ol>
+<p>经过审核之后的应用，方可发布到手机银行生产环境。</p>
+<p><img src="../images/submit-check.png" alt=""></p>
+<h2 id="应用运行规范">3 应用运行规范</h2>
+<ol>
+<li>基于手机银行APP运行的所有应用，其运行时的统一入口为EWP服务，不允许APP直接访问其他的后台业务系统（包括获取APP上的界面）；</li>
+<li>APP和EWP之间的通讯方式统一使用EMP产品自定义的TLS实现，推荐使用国密算法，并打开Android的防篡改校验；</li>
+<li>对于运行时的可访问API设置必要的鉴权机制，对信任级别较低的应用开发者（如第三方开发者）设置较低的API权限级别，
+并进行运行时的API鉴权检查；</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../system_spec/system_introduction.html" class="navigation navigation-prev " aria-label="Previous page: 技术类规范"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../system_spec/performance.html" class="navigation navigation-next " aria-label="Next page: 系统可用性规范"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,0 +1,68 @@
+<content>
+    <head>
+        <style>
+           .body{width:320px;height:460px;background-color: #F0F0F0;}
+           .table1{left:10px;top:30px;width:300px;height:200px;}
+           .inputbox{width:150px;height:27px;background-color: #FFFFFF;}
+           .tr{height: 40px;font-size: 13px;}
+           .tr_checkName{height: 30px;font-size: 10px;}
+           .tr_name{display: none;}
+           .td1{width:80px;}
+           .td2{width: 160px;}
+           .td3{width: 60px;}
+           .table2{left:0px;top:230px;width: 320px;height: 40px;}
+           .td_button{width: 320px;}
+           .button1{width: 150px;height:30px;color:#FFFFFF;background-color:#6495ED;}
+           .img_contacts{width: 30px;height: 27px;}
+        </style>
+        <script type="text/x-lua">
+          function check() 
+            local checkName = document:getElementsByName("checkName");
+            local checkValue = checkName[1]:getPropertyByName("checked");
+            local tr_name = document:getElementsByName("tr_name");
+            if checkValue=="true" then
+              tr_name[1]:setStyleByName("display","block");
+              location:reload();
+            else
+              tr_name[1]:setStyleByName("display","none");
+              location:reload();
+            end
+          end
+        </script>
+    </head>
+    <body class="body" >
+        <table class="table1" border="0">
+          <tr>
+            <td class="td1" align="right"><label>收款账号:</label></td>
+            <td class="td2"><input type="text" class="inputbox" hold="银行卡号"/></td>
+            <td class="td3"><img class="img_contacts" src="local:contacts.png"/></td>
+          </tr>
+          <tr class="tr_checkName">
+            <td class="td1"></td>
+            <td class="td2" valign="top"><input type="checkbox" name="checkName" onclick="check()">校验收款人姓名</input></td>
+            <td class="td3"></td>
+          </tr>
+          <tr class="tr_name" name="tr_name">
+            <td class="td1" align="right"><label>收款人姓名:</label></td>
+            <td class="td2"><input type="text" class="inputbox" hold="姓名"/></td>
+            <td class="td3"></td>
+          </tr>
+          <tr>
+            <td class="td1" align="right"><label>付款金额:</label></td>
+            <td class="td2"><input type="text" class="inputbox" hold="金额"/></td>
+            <td class="td3"><label>元</label></td>
+          </tr>
+          <tr>
+            <td class="td1" align="right"><label>付款说明:</label></td>
+            <td class="td2"><input type="text" class="inputbox" value="转账"/></td>
+            <td class="td3"><label>添加备注</label></td>
+          </tr>
+        </table>
+
+        <table class="table2" border="0">
+          <tr>
+            <td class="td_button" align="center"><input type="button" class="button1" border="1" value="下一步"/></td>
+          </tr>
+        </table>
+    </body>
+</content>

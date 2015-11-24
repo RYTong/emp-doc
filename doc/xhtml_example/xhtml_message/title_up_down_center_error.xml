@@ -1,0 +1,18 @@
+<content>
+    <head>
+        <style>
+           .body{width:320px;height:460px;}
+           .title_div{left:0px;top:0px;width:320px;height:51px;background-image:url(title_bg.png);position:fixed;}
+           .label_title{left:123px;top:14px;font-size:19px;font-weight:bold;color:#FFFFFF;} 
+           .button_main{left:8px;top:10px;width:54px;height:32px;background-image:url(login/images/msb_scibe.png);}
+           .button_back{right:8px;top:10px;width:54px;height:32px;background-image:url(unlogin.png);}
+        </style>
+    </head>
+    <body class="body" >
+    <div class="title_div" border="0">
+        <label class="label_title">手机银行</label>
+        <input type="button" class="button_main" name="main_but" onclick="main_page_callback()"/>
+        <input type="button" class="button_back" name="back_but" onclick="back_fun()"/>
+    </div>
+    </body>
+</content>

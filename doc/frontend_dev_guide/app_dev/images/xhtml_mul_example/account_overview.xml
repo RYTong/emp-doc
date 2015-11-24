@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<content>
+    <head>
+      <style>
+        .body {background-color: #E1E7ED;}
+        .div_title {background-color: #236EC3; top: 0px; left: 0px; width: 320px; height: 50px;}
+        .return_but {left:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px; }
+        .main_but {right:10px; top:10px; height:40px; width:50px; color: #FFFFFF; font-size: 16px;}
+        .label_title {left:60px; top:10px; height:40px; width:200px; text-align:center; color: #FFFFFF; font-size: 22px;}
+        .table {left: 10px; width: 300px;}
+        .tr {height: 50px;}
+        .tr1 {height: 1px;}
+        .td1{width: 200px; background-color: #E5EFFF;}
+        .td2{width: 100px; background-color: #71A5E9;}
+        .div_line {background-color: #CCCCCC; height: 1px;}
+        .but_refresh {width:100px; height:50px; color: #FFFFFF; font-size: 14px;}
+        .label_date {width:200px; height:50px; color: #000000; font-size: 14px;} 
+        .td3{width:150px;background-color: #FFFFFF; color: #535458; font-size: 16px; }
+        .td4{width:150px;background-color: #FFFFFF; color: #295AB4; font-size: 16px; font-weight: bold;}
+        .label_flag { height:50px; left:10px; color: #44454A;}
+        .label_fund { color: #FF0000; font-size: 10px;}
+        .but_tranfer {left:10px; color: #FFFFFF; font-size: 14px; width: 140px; height: 50px; background-color: #71A5E8;}
+        .but_financial {right:10px; color: #FFFFFF; font-size: 14px; width: 140px; height: 50px; background-color: #71A5E8;}
+      </style>
+      <script type="text/x-lua">
+          <![CDATA[
+            
+            暂时将刷新实现为刷新更新时间。
+            
+            function refresh()
+
+                local ctrl_date = document:getElementsByName("label_date");
+ 
+                local now = os.date("%H:%M:%S");
+
+                if ctrl_date and #ctrl_date > 0 then 
+
+                    local label_now = "更新时间:" .. now;
+
+                    ctrl_date[1]:setPropertyByName("value",label_now);
+
+                else
+
+                    window:alert("控件不存在！");
+
+                end
+
+            end;
+
+            跳转入子账户界面
+
+            function sub_account(cardNo)
+
+                window:alert(cardNo);
+
+            end;
+
+          ]]>
+      </script>
+    </head>
+    <body>
+        <div class="div_title" border="0">
+            <input type="button" border="0" class="return_but" value="返回"></input>
+            <input type="button" border="0" class="main_but" value="主页"></input>
+            <label class="label_title">账户总览</label>
+        </div>
+
+        <table >
+            <tr>
+                <td class="td1">
+                    <label class="label_date" name="label_date">更新时间:10:02:23</label>
+                </td>
+                <td class="td2">
+                    <input type="button" border="0" class="but_refresh" value="刷新" onclick = "refresh()"></input>
+                </td>
+            </tr>
+        </table>
+
+        <table >
+            <tr>
+                <td align="left" class="td3">
+                    <label >我的资产</label>
+                </td>
+                <td align="right" class="td4">
+                    <label name="label_money">20,797.25</label> 
+                </td>
+            </tr>
+            <tr class="tr1">
+                <td class="td3">
+                    <div class="div_line" border="0"></div>
+                </td>
+                <td class="td3">
+                    <div class="div_line" border="0"></div> 
+                </td>                   
+            </tr>
+            <tr>
+                <td align="left" class="td3">
+                    <label >我的负债</label>
+                </td>
+                <td align="right" class="td3">
+                    <label name="label_bs" >0.00</label>
+                </td>
+            </tr>       
+        </table>
+
+        <label class="label_flag">我的一卡通</label>
+
+        <table >
+            <tr>
+                <td align="left" class="td3">
+                    <label name="label_flag">一卡通</label>
+                </td>
+                <td align="right" class="td4">
+                    <select name="select_card" class="select">
+                        <option value="1">11111111111</option>
+                        <option value="2">22222222222</option>
+                        <option value="3">33333333333</option>
+                    </select>   
+                </td>
+            </tr>
+            <tr class="tr1">
+                <td class="td3">
+                    <div class="div_line" border="0"></div>
+                </td>
+                <td class="td3">
+                    <div class="div_line" border="0"></div> 
+                </td>                   
+            </tr>       
+            <tr onclick = "sub_account('111111111')">
+                <td align="left" class="td3">
+                    <label >活期结算户</label>
+                </td>
+                <td align="right" class="td4">
+                    <label name="label_current">20,797.25</label>
+                </td>
+            </tr>
+            <tr class="tr1">
+                <td class="td3">
+                    <div class="div_line" border="0"></div>
+                </td>
+                <td class="td3">
+                    <div class="div_line" border="0"></div> 
+                </td>                   
+            </tr>       
+            <tr >
+                <td align="left" class="td3" >
+                    <label >朝朝盈:</label><label class="label_fund">超高收益 0秒赎回</label>
+                </td>
+                <td align="right" class="td4">
+                    <label name="label_current">未开通</label>
+                </td>
+            </tr>       
+        </table>
+
+        <input type="button" class="but_tranfer" value="转账汇款" ></input>
+        <input type="button" class="but_financial" value="购买理财"></input>
+    </body>
+</content>

@@ -17,6 +17,9 @@
             .positionToplevel{position:toplevel;top:200px;left:10px;background-color:#ff0000;}
             .fontWeight{font-weight:bold;background-color:#CCCCCC;}
             .numberlines{background-color:#CCCCCC;}
+            .linebreakmode{font-size: 14px;}
+            .shadowcolor{height: 50px;}
+            .shadowoffset{height: 50px;}
             .fontSize{font-size:30px;}
             .fontStyle{font-style:italic;}
             .textAlignLeft{text-align:left;}
@@ -24,20 +27,20 @@
             .textAlignRight{text-align:right;}
             .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
         </style>
-        
+
         <script type="text/x-lua" src="RYTL.lua"></script>
         <script type="text/x-lua">
             <![CDATA[
-                
+
                 ryt = RYTL:new{};
-                
+
                 function close()
                 ryt:back();
                 end;
-                
+
             ]]>
         </script>
-        
+
     </head>
     <body>
         <!-- positon:fixed -->
@@ -45,13 +48,32 @@
         <!-- loop -->
         <label class="father" loop="false">loop="false" 无跑马灯效果</label>
         <label class="father" loop="true">loop="true" 跑马灯效果</label>
+        <!-- linebreakmode -->
+        <label class="father,linebreakmode" linebreakmode="head">linebreakmode="head",文字开始部分省略,用'...'代替.</label>
+        <label class="father,linebreakmode" linebreakmode="tail">linebreakmode="tail",文字结尾部分省略,用'...'代替.</label>
+        <label class="father,linebreakmode" linebreakmode="middle">linebreakmode="middle",文字中间部分省略,用'...'代替.</label>
+        <label class="father,linebreakmode" linebreakmode="none">linebreakmode="none",不使用'...'代替.增加文字超过一行。</label>
+        <label class="father,linebreakmode" numlines="1">linebreakmode未设置,numlines="1",此时在末尾省略.</label>
+        <!-- velocity -->
+        <label class="father" loop="true" velocity="5">velocity="5",指定跑马灯的移动速度为每秒5个像素点</label>
+        <label class="father" loop="true" velocity="15">velocity="5",指定跑马灯的移动速度为每秒15个像素点</label>
         <!-- numlines -->
         <label class="numberlines" numlines="3">显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。</label>
+        <!-- shadowcolor -->
+        <label class="father,shadowcolor" >不指定文字阴影效果的颜色</label>
+        <label class="father,shadowcolor" shadowcolor="#FF0000">shadowcolor="#FF0000"，指定文字阴影效果的颜色为红色</label>
+        <!-- shadowoffset -->
+        <label class="father,shadowoffset" shdowOffset="(9,9)">不指定文字阴影效果的颜色</label>
+        <label class="father,shadowoffset" shadowcolor="#FF0000">指定文字阴影偏移量为默认</label>
+        <label class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(9,0)">指定文字阴影偏移量为(9,0)</label>
+        <label class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(0,9)">指定文字阴影偏移量为(0,9)</label>
+        <label class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(9,9)">指定文字阴影偏移量为(9,9)</label>
+        <label class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(9,15)">指定文字阴影偏移量为(9,15)</label>
         <!-- hide -->
         <label hide='false' class='father' > hide=false，下方有hide=true的label </label>
         <label hide='true' class='father' > hide=true的label,不应该显示出来 </label>
         <label hide='false' class='father' > hide=false，上方有hide=true的label </label>
-        
+
         <!-- diaplay -->
         <label class='father,display2' > display=block，下方有display=none的label </label>
         <label class='father,display1' > display=none，不应该显示出来 </label>
@@ -60,10 +82,10 @@
         <label class='father,visibility1' loop="true"> visibility:visible下方有visibility=hidden的label </label>
         <label class='father,visibility2' > visibility:hidden 不应该显示 </label>
         <label class='father,visibility1' loop="true"> visibility:visible上方有visibility=hidden的label </label>
-        
+
         <!-- positon:toplevel -->
         <label class='father,positionToplevel' > positon:toplevel 不随页面滚动 </label>
-        
+
         <!-- background-color -->
         <label class='father,background_color' > 背景色 ：background-color </label>
         <!-- color -->
@@ -81,13 +103,13 @@
         <label class='father,textAlignLeft'> text-align:left </label>
         <label class='father,textAlignCenter'> text-align:center </label>
         <label class='father,textAlignRight'> text-align:right </label>
-        
+
         <!-- 不指定样式下的label布局测试 -->
         <label> 不指定控件样式的情况</label><br/>
         <label> 不指定控件样式且长度超过一行显示的情况</label><br/>
         <label class="background_color">short text  </label>
         <label>  another short text</label>
-        
+
 
         <!-- 组合测试 -->
         <!-- font-style  font-weight-->
@@ -104,7 +126,7 @@
         <label class='father,display1,visibility1'> visibility:visible display=none 应显示</label>
         <label class='father,display2,visibility2' > visibility:hidden display=block 占位不显示 </label>
         <label class='father,display1,visibility1'> visibility:visible display=none 应显示</label>
-        
+
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
         <!-- positon:fixed -->

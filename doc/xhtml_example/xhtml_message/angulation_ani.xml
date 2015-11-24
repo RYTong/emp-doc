@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>   
+    <head>
+        <style>
+            .body{width:320px;height:460px;}
+            .input{width:200px;height: 45px;background-color: #cccccc;color: #FFFFFF;}
+            .img1{left:50px;width:118px;height:118px;}
+        </style>
+        <script type="text/x-lua">
+            <![CDATA[
+                local x = 1;
+                local flag = true;
+                local anguTimer;
+
+                --图片宽高不停变化，并且宽高比例不变
+                function angulation()
+                    local paramCtrl = document:getElementsByName("img_ctrl")[1];
+                    local width = 118;
+                    local height = 118;
+                    local ratio = width/height;
+                    if flag then
+                        x = x + 1;
+                    end;
+                    local limit = 100;
+                    if x >= limit then
+                        flag = false
+                    end;
+                    if flag == false then
+                        x = x - 1;
+                    end;
+                    if x <= -100 then
+                        flag = true;
+                    end;
+                    local newWidth = width + x;
+                    local newHeight = newWidth/ratio;
+                    paramCtrl:setStyleByName("width",newWidth);
+                    paramCtrl:setStyleByName("height",newHeight);
+                end;
+
+                --图片宽高不停变化，不保持宽高比例
+                function angulation_1()
+                    local paramCtrl = document:getElementsByName("img_ctrl")[1];
+                    local width = 118;
+                    local height = 118;
+                    local ratio = width/height;
+                    if flag then
+                        x = x + 1;
+                    end;
+                    local limit = 100;
+                    if x >= limit then
+                        flag = false
+                    end;
+                    if flag == false then
+                        x = x - 1;
+                    end;
+                    if x <= -100 then
+                        flag = true;
+                    end;
+                    local newWidth = width + x;
+                    local newHeight = height - x;
+                    paramCtrl:setStyleByName("width",newWidth);
+                    paramCtrl:setStyleByName("height",newHeight);                    
+                end;
+
+                function start()
+                    --启动计时器
+                    anguTimer = timer:startTimer(0.1, 1, angulation)
+                end;
+
+                function stop()
+                    timer:stopTimer(anguTimer);                   
+                end;
+            ]]>
+        </script>
+    </head>
+    <body class="body" name="body">
+        <input type="button" name="but_register" onclick="back()" value="返回"/>
+        <input type="button" name="but_register" onclick="start()" value="开始"/><br/>
+        <input type="button" name="but_register" onclick="stop()" value="停止"/><br/>
+        
+        <img src="local:channel_load8.png" class="img1" name="img_ctrl"/>      
+    </body>
+</content>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+  <head>
+    <link ref="channel_test/css/title.css" type="text/css"/>
+    <style>
+        .label_test1{top:90px;left:30px;width:80px;height:35px;font-size:19px;}
+        .label_test2{top:90px;left:120px;height:35px;font-size:21px;color:#436EEE;}
+        .label_test3{top:140px;left:30px;width:80px;height:35px;font-size:19px;}
+        .label_test4{top:140px;left:120px;height:35px;font-size:21px;color:#436EEE;}
+    </style>
+    <script type="text/x-lua">
+      <![CDATA[
+            local json_info = globalTable["mb0902"];
+            local table_info = json:objectFromJSON(json_info);
+            --用户信息
+            local userInfo = table_info["return"]["info"];
+            --用户id
+            local userId = userInfo["userId"];
+            --用户名
+            local userName = userInfo["userName"];
+            local label_crl = document:getElementsByName("test_label");
+            if label_crl and #label_crl>0 then 
+                label_crl[1]:setPropertyByName("text",userId);
+                label_crl[2]:setPropertyByName("text",userName);
+            end 
+      ]]>
+    </script>
+</head>
+<body>
+    <!--Title-->
+    <table class="table_title" border="0">
+        <tr class="tr_title" >
+            <td align="center" valign="middle">
+                <label class="label_title">新频道示例页面二</label>
+                <input type="button" class="button_back" name="back_but" onclick="back_fun()"/>
+                <input type="button" class="button_main" name="main_but" onclick="main_page_callback()"/>
+            </td>
+        </tr>
+    </table>
+
+    <label class="label_test1">用户id:</label>
+    <label class="label_test2" name="test_label"></label>
+    <label class="label_test3">用户名:</label>
+    <label class="label_test4" name="test_label"></label>
+</body>
+</content>

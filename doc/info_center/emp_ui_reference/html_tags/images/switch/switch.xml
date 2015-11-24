@@ -15,18 +15,19 @@
             .label2{left:10px;width:300px;height:30px;font-size:15px;}
             .button{left:10px;width:300px;height:30px;font-size:13px;background-color:#f122f0;}
             .positionFixed{position:fixed;}
+
         </style>
-        
+
         <script type="text/x-lua" src="RYTL.lua"></script>
         <script type="text/x-lua">
             <![CDATA[
-                
+
                 ryt = RYTL:new{};
-                
+
                 function close()
                 ryt:back();
                 end;
-                
+
                 function onclick()
                 local switch = document:getElementsByName("sw11");
                 local checked = switch[1]:getPropertyByName("checked");
@@ -36,14 +37,14 @@
                 window:alert("switch关闭(onclick)");
                 end;
                 end;
-                
+
                 function onclick1()
                 window:alert("switch开启(onclick1)");
                 end;
                 function onclick2()
                 window:alert("switch关闭(onclick2)");
                 end;
-                
+
                 function changechecked()
                 local switch = document:getElementsByName("sw9");
                 local checked = switch[1]:getPropertyByName("checked");
@@ -55,7 +56,7 @@
                 end;
             ]]>
         </script>
-        
+
     </head>
     <body>
         <!-- positon:fixed -->
@@ -75,7 +76,7 @@
         <label class='label2'>hide = 'true',不显示</label>
         <input type='switch' hide='true' value='sw3' name='sw3'>yes</input>
         <input type='switch' value='sw3' name='sw3'>no</input>
-        
+
         <label class='label2'>hide = 'false',显示</label>
         <input type='switch' hide='false' value='sw4' name='sw4'>yes</input>
         <input type='switch' value='sw4' name='sw4' >no</input>
@@ -84,7 +85,7 @@
         <label class='label2'>diplay='none',不显示,不占位</label>
         <input type='switch' value='sw5' name='sw5' class='display1'>yes</input>
         <input type='switch' value='sw5' name='sw5' >no</input>
-        
+
         <label class='label2'>diplay='block',显示</label>
         <input type='switch' value='sw6' name='sw6' class='display2'>yes</input>
         <input type='switch' value='sw6' name='sw6' >no</input>
@@ -92,16 +93,10 @@
         <label class='label1'> visibility 测试</label>
         <label class='label2'>visibility='hidden',不显示,占位</label>
         <input type='switch' value='sw7' name='sw7' class='visibility2'>yes</input>
-        <input type='switch' value='sw7' name='sw7' >no</input>
+        <input type='switch' value='sw7' name='sw7'>no</input>
         <label class='label2'>visibility='visible',显示</label>
         <input type='switch' value='sw8' name='sw8' class='visibility1'>yes</input>
         <input type='switch' value='sw8' name='sw8' >no</input>
-        <!-- checked -->
-        <label class='label1'> checked 测试</label>
-        <input type='button' value='点击通过改变checked改变下面switch选中状态' name='btn2' class='button' onclick='changechecked()'>yes</input>
-        <label class='label2'>switch默认开启</label>
-        <input type='switch' value='sw9' name='sw9' checked="checked">yes</input>
-        <input type='switch' value='sw9' name='sw9' >no</input>
         <!-- enable -->
         <label class='label1'> enable 测试</label>
         <label class='label2'> enable = 'false' 不可点击</label>
@@ -115,7 +110,38 @@
         <label class='label2'> 文档实例2:onclick实现 </label>
         <input type='switch' value='sw11' name='sw12' onclick="onclick1()">yes</input>
         <input type='switch' value='sw11' name='sw12' onclick="onclick2()">no</input>
-        
+        <!-- checked 测试-->
+        <label class="label1">checked 测试</label>
+        <label class='label2'> 默认打开状态 </label>
+        <input type="switch" value="sw18" name="sw20" checked="checked">yes</input>
+        <input type="switch" value="sw18" name="sw20">no</input>
+        <label class='label2'> 默认关闭状态 </label>
+        <input type="switch" value="sw18" name="sw20">yes</input>
+        <input type="switch" value="sw18" name="sw20" checked="checked">no</input>
+        <input type='button' value='点击通过改变checked改变下面switch选中状态' name='btn2' class='button' onclick='changechecked()'></input>
+        <label class='label2'>默认关闭点击之后switch开启</label>
+        <input type='switch' value='sw9' name='sw9'>yes</input>
+        <input type='switch' value='sw9' name='sw9' checked="checked">no</input>
+        <!-- onTintColo -->
+        <label class='label1'> ontintcolor 测试</label>
+        <label class='label2'> ontintcolor:打开状态颜色 </label>
+        <input type='switch' value='sw13' ontintcolor="#3CB371" name='sw13'>yes</input>
+        <input type='switch' value='sw13' name='sw13'>no</input>
+        <!-- offtintcolor -->
+        <label class='label1'> offtintcolor 测试</label>
+        <label class='label2'> offtintcolor:关闭状态颜色</label>
+        <input type='switch' value='sw14' offtintcolor="#3CB371" name='sw14'>yes</input>
+        <input type='switch' value='sw14' name='sw14'>no</input>
+        <!-- thumbtintcolor -->
+        <label class='label1'> thumbtintcolor 测试</label>
+        <label class='label2'> thumbtintcolor:滑块颜色</label>
+        <input type='switch' value='sw15' thumbtintcolor="#2E8B57" name='sw15'>yes</input>
+        <input type='switch' value='sw15' name='sw15'>no</input>
+        <!--onTintColo offtintcolor thumbtintcolor Switch组合测试-->
+        <label class='label1'> Switch组合测试</label>
+        <label class='label2'> 开关状态及滑块颜色</label>
+        <input type='switch' value='sw16' ontintcolor="#3CB371" offtintcolor="#3CB371" thumbtintcolor="#2E8B57" name='sw17'>yes</input>
+        <input type='switch' value='sw16' name='sw17'>no</input>
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
     </body>

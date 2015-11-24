@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+            .body {width:320px;background-image:url(loading_ryt.png);}
+            .loaddiv{width:66px;height:66px;top:266px;left:117px;background-image:url(loading_bj.png);}
+        </style>
+        <script type="text/x-lua">
+            <![CDATA[
+                -- window:alert 回调方法：
+                -- 若mustupdate = 0 ，用户点击确定按钮开始下载必选资源
+                function alert_callback(btnIndex)
+                if btnIndex == 0 then
+                -- 用户点击[确定]按钮
+                offline:update_resource();
+                end
+                -- 页面替换
+                location:replace(content);
+                end
+                
+                -- offline:update_desc 回调方法：
+                -- 根据mustupdate 值给出提示信息，并替换页面
+                function updateDesc_callback(mustUpdate)
+                if mustUpdate == 0 then
+                window:alert("您有新的离线资源需要下载，是否更新？", "确定", "取消", alert_callback);
+                elseif mustUpdate == 1 then
+                window:alert("有离线资源正在更新","确定",alert_callback);
+                else
+                -- 页面替换
+                location:replace(content);
+                end
+                end
+                
+                --tls 回调方法： 若有必选资源更新时，走offline:update_desc接口；否则页面替换
+                function tls_callback(update)
+                if update == 1 or update == 2 or update == 3 then
+                -- 有必选可选资源更新时
+                offline:update_desc(updateDesc_callback);
+                end
+                end
+                
+                local version = offline:version();
+                if version == 1 then
+                offline:update_hash(tls_callback)
+                end
+                
+            ]]>
+        </script>
+    </head>
+</content>

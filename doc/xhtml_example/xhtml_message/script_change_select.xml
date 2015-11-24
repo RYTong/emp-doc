@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <head>
+        <style>
+            .label1{left:20px;top:30px;width:80px;height:30px;font-size:18px;font-weight:bold;}
+            .label2{left:20px;top:80px;width:80px;height:30px;font-size:18px;font-weight:bold;}
+            .selectOne {top:30px;left:100px;height:30px;width:120px;font-size:18px;background-color:#FFE600;text-align:center;}
+            .selectTwo {top:10px;left:0px;height:30px;width:120px;font-size:18px;background-color:#FFE600;text-align:center;}
+            .div1 {left:100px;top:70px;height:60px;width:300px;}
+        </style>
+        <script type="text/x-lua" >
+            <![CDATA[
+
+            --根据select1选中项的value值动态设置select2的选项
+            function changeSelTwo()
+                --获取select1选中项的value值
+                local selOneValue;
+                local selOne = document:getElementsByName("selOne");
+                if selOne and #selOne > 0 then
+                    selOneValue = selOne[1]:getPropertyByName("value");
+                end;
+
+                --根据value值拼接select2报文
+                local content;
+                if selOneValue == "1" then
+                    content = [[<div class="div1" name="div_sel" border="0">
+                                    <select class="selectTwo">
+                                        <option>A</option>
+                                    </select>
+                                </div>]];
+                elseif selOneValue == "2" then
+                    content = [[<div class="div1" name="div_sel" border="0">
+                                    <select class="selectTwo">
+                                        <option>A</option>
+                                        <option selected="selected">B</option>
+                                    </select>
+                                </div>]];
+                else
+                    content = [[<div class="div1" name="div_sel" border="0">
+                                    <select class="selectTwo">
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option selected="selected">C</option>
+                                    </select>
+                                </div>]];
+                end
+
+                --设置select2报文
+                local div_sel = document:getElementsByName("div_sel");
+                if div_sel and #div_sel > 0 then
+                    div_sel[1]:setInnerHTML(content);
+                end;
+            end
+            ]]>
+        </script>
+    </head>
+    <body>
+        <!--select1-->
+        <label class="label1">select1:</label>
+        <select name="selOne" class="selectOne">
+            <option value="1" selected="selected" onclick="changeSelTwo()">1</option>
+            <option value="2" onclick="changeSelTwo()">2</option>
+            <option value="3" onclick="changeSelTwo()">3</option>
+        </select>
+
+        <!--select2-->
+        <label class="label2">select2:</label>
+        <div class="div1" name="div_sel" border="0">
+            <select class="selectTwo">
+                <option>A</option>
+            </select>
+        </div>
+    </body>
+</content>

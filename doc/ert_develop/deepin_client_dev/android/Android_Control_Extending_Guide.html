@@ -1,0 +1,2760 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Android EMP5.2扩展UI控件 | ERT开发</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../deepin_client_dev/android/Android_Lua_Extending_Guide.html" />
+    
+    
+    <link rel="prev" href="../../deepin_client_dev/android/Introduction.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="2.4.1" data-basepath="../.." data-revision="1445493172813">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         iOS 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="architecture_design/Introduction.html">
+            
+                
+                    <a href="../../architecture_design/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         架构设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1.1" data-path="architecture_design/iOS/iOSArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/iOS/iOSArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                         iOS总体架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.1.2" data-path="architecture_design/iOS/iOSLuaArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/iOS/iOSLuaArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                         iOS Lua架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.1.3" data-path="architecture_design/iOS/iOSJSArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/iOS/iOSJSArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                         iOS JS架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="setup_develop_env/iOSDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/iOSDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         iOS开发环境搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         iOS开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.3.1" data-path="client_dev/iOSDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/iOSDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                         iOS开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.2" data-path="hello_emp/client/CreateiOSApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateiOSApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                         创建iOS_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3" data-path="client_dev/emp_config/ert/ios/README.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                         配置说明
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.3.3.1" data-path="client_dev/emp_config/ert/ios/ert_config.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ert_config.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.1.</b>
+                        
+                         iOS配置说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.2" data-path="client_dev/emp_config/ert/ios/develop_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/develop_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.2.</b>
+                        
+                         开发模式配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.3" data-path="client_dev/emp_config/ert/ios/push_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/push_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.3.</b>
+                        
+                         推送配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.4" data-path="client_dev/emp_config/ert/ios/mdap_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/mdap_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.4.</b>
+                        
+                         统计分析配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.5" data-path="client_dev/emp_config/ert/ios/encrypt_config.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/encrypt_config.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.5.</b>
+                        
+                         加密库配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.6" data-path="client_dev/emp_config/ert/ios/other_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/other_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.6.</b>
+                        
+                         ====配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.3.7" data-path="client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.7.</b>
+                        
+                         DEMO-APP本地资源
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4" data-path="deepin_client_dev/ios/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                         iOS高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.4.1" data-path="deepin_client_dev/ios/iOS_Control_Extension.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Control_Extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                         IOS扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.2" data-path="deepin_client_dev/ios/iOS_Lua_Extension.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Lua_Extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                         IOS扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.3" data-path="deepin_client_dev/ios/iOS_JS_Architecture.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_JS_Architecture.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                         IOS扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.4" data-path="deepin_client_dev/ios/iOS_Control_Extension_5.2.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Control_Extension_5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.4.</b>
+                        
+                         IOS扩展UI控件_5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.4.5" data-path="deepin_client_dev/ios/iOS_Lua_Extension_5.2.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Lua_Extension_5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.5.</b>
+                        
+                         IOS扩展Lua接口_5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5" data-path="deepin_client_dev/ios/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                         iOS功能说明
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.5.1" data-path="client_dev/emp_config/ert/ios/ios_statusBar.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ios_statusBar.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                         iOS 状态栏
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.2" data-path="client_dev/emp_config/ert/ios/ios_adapter.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ios_adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                         iOS 适配说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.3" data-path="client_dev/emp_config/ert/ios/international.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/international.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.</b>
+                        
+                         iOS 国际化使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.4" data-path="client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/resource_instruction_for_app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.</b>
+                        
+                         iOS App目录下本地资源说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.5" data-path="deepin_client_dev/ios/iOS_Offline.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.</b>
+                        
+                         IOS5.2离线文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.6" data-path="deepin_client_dev/ios/iOS_MDAP.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_MDAP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.6.</b>
+                        
+                         IOS统计分析使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.7" data-path="deepin_client_dev/ios/iOS_LuaQRCode.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_LuaQRCode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.7.</b>
+                        
+                         IOS QRCode使用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.8" data-path="client_dev/emp_config/ert/ios/ios_SDK.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/ios/ios_SDK.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.8.</b>
+                        
+                         iOS SDK定制说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.5.9" data-path="deepin_client_dev/ios/iOS_Exception_Catch.html">
+            
+                
+                    <a href="../../deepin_client_dev/ios/iOS_Exception_Catch.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.9.</b>
+                        
+                         iOS 异常捕获
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                         migrate
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.6.1" data-path="client_dev/migrate/EMP_x.xto5.x.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_x.xto5.x.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                         客户端升级改造to5.x
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6.2" data-path="client_dev/migrate/EMP_iOS_5.1to5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_iOS_5.1to5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                         iOS 5.1to5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.6.3" data-path="client_dev/migrate/EMP_iOS_TwinEngine_3.2_5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_iOS_TwinEngine_3.2_5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                         iOS EMP3.2和EMP5.2双引擎兼容改造方案
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.7" data-path="release_note/ios/Introduction.html">
+            
+                
+                    <a href="../../release_note/ios/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                         Release Note
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.7.1" data-path="release_note/ios/Release_Note_5.3.41.html">
+            
+                
+                    <a href="../../release_note/ios/Release_Note_5.3.41.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.1.</b>
+                        
+                         5.3.41
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Android 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="architecture_design/Introduction.html">
+            
+                
+                    <a href="../../architecture_design/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         架构设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1.1" data-path="architecture_design/android/Android_ArchitectureDesign.html">
+            
+                
+                    <a href="../../architecture_design/android/Android_ArchitectureDesign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                         Android架构设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="setup_develop_env/AndroidDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/AndroidDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         Android平台配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         Android开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.3.1" data-path="client_dev/AndroidDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/AndroidDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                         Android开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.2" data-path="hello_emp/client/CreateAndroidApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateAndroidApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                         创建Android_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.3" data-path="client_dev/emp_config/ert/android/README.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.</b>
+                        
+                         配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.3.3.1" data-path="client_dev/emp_config/ert/android/emp_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/emp_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.1.</b>
+                        
+                         EmpConfig
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.3.2" data-path="client_dev/emp_config/ert/android/widget_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/widget_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.2.</b>
+                        
+                         WidgetConfig(废弃类)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3.3.3" data-path="client_dev/emp_config/ert/android/control_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/android/control_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.3.3.</b>
+                        
+                         ControlConfig
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4" data-path="deepin_client_dev/android/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                         Android高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="2.4.1" data-path="deepin_client_dev/android/Android_Control_Extending_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Control_Extending_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                         Android EMP5.2扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.2" data-path="deepin_client_dev/android/Android_Lua_Extending_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Lua_Extending_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.2.</b>
+                        
+                         Android EMP5.2扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.3" data-path="deepin_client_dev/android/Android_JS_Extending_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_JS_Extending_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.3.</b>
+                        
+                         Android EMP5.2扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.4" data-path="deepin_client_dev/android/Android_Forward_Support_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Forward_Support_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.4.</b>
+                        
+                         Android EMP5.2对EMP5.1支持
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.5" data-path="deepin_client_dev/android/Android_Thread_Dev.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Thread_Dev.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.5.</b>
+                        
+                         Android EMP5.2线程分离改造开发说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.6" data-path="deepin_client_dev/android/Android_Keyboard_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Keyboard_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.6.</b>
+                        
+                         Android EMP5.3自定义键盘开发
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.4.7" data-path="deepin_client_dev/android/Android_SM_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_SM_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.7.</b>
+                        
+                         Android EMP5.2国密使用说明兼开发记录
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="deepin_client_dev/android/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         Android高级功能使用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.5.1" data-path="deepin_client_dev/android/Android_Offline.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                         Android离线1版本使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.2" data-path="deepin_client_dev/android/Android_Offline_V2.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Offline_V2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                         Android离线2版本使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.3" data-path="deepin_client_dev/android/Android_Offline_5.2To5.1.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Offline_5.2To5.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.3.</b>
+                        
+                         Android EMP5.2离线模块移植到5.1的解决方案
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.4" data-path="deepin_client_dev/android/Android_MDAP.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_MDAP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.4.</b>
+                        
+                         Android统计分析使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.5" data-path="deepin_client_dev/android/Android_EmpReader.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_EmpReader.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.5.</b>
+                        
+                         Android附件阅读使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.6" data-path="deepin_client_dev/android/Android_EmpQrcode.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_EmpQrcode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.6.</b>
+                        
+                         Android二维码使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.7" data-path="deepin_client_dev/android/Android_EmpChart.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_EmpChart.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.7.</b>
+                        
+                         Android图表使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.8" data-path="deepin_client_dev/android/Android_International_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_International_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.8.</b>
+                        
+                         Android国际化使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.9" data-path="deepin_client_dev/android/Android_Exception.html">
+            
+                
+                    <a href="../../deepin_client_dev/android/Android_Exception.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.9.</b>
+                        
+                         Android异常本地查看说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.6" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                         migrate
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.6.1" data-path="client_dev/migrate/EMP_x.xto5.x.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_x.xto5.x.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.1.</b>
+                        
+                         客户端升级改造to5.x
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.6.2" data-path="client_dev/migrate/EMP_Android_5.1to5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_Android_5.1to5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.2.</b>
+                        
+                         Android 5.1to5.2
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.6.3" data-path="client_dev/migrate/EMP_Android_TwinEngine_3.2&amp;5.2.html">
+            
+                
+                    <a href="../../client_dev/migrate/EMP_Android_TwinEngine_3.2&amp;5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.3.</b>
+                        
+                         Android EMP3.2和EMP5.2双引擎兼容改造方案
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.7" data-path="release_note/android/Introduction.html">
+            
+                
+                    <a href="../../release_note/android/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                         Release Note
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.7.1" data-path="release_note/android/Release_Note_Android_5.3.41.html">
+            
+                
+                    <a href="../../release_note/android/Release_Note_Android_5.3.41.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.1.</b>
+                        
+                         5.3.41
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         WP 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="setup_develop_env/WindowsPhoneDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/WindowsPhoneDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Windows Phone开发环境配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         WP开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.2.1" data-path="client_dev/WPDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/WPDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         WP开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.2" data-path="hello_emp/client/CreateWPApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateWPApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.2.</b>
+                        
+                         创建WP_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3" data-path="client_dev/emp_config/ert/wp/README.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                         配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.2.3.1" data-path="client_dev/emp_config/ert/wp/develop_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/develop_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.1.</b>
+                        
+                         开发模式配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3.2" data-path="client_dev/emp_config/ert/wp/push_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/push_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.2.</b>
+                        
+                         推送配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3.3" data-path="client_dev/emp_config/ert/wp/mdap_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/mdap_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.3.</b>
+                        
+                         统计分析配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3.4" data-path="client_dev/emp_config/ert/wp/other_conf.html">
+            
+                
+                    <a href="../../client_dev/emp_config/ert/wp/other_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.4.</b>
+                        
+                         ====配置
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="deepin_client_dev/WP/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         WP高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.3.1" data-path="deepin_client_dev/WP/WP_Control_ExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Control_ExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.1.</b>
+                        
+                         WindowsPhone扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.2" data-path="deepin_client_dev/WP/WP_LuaArchitectureAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_LuaArchitectureAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.2.</b>
+                        
+                         WindowsPhone扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.3" data-path="deepin_client_dev/WP/WP_JS_ArchitectureAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_JS_ArchitectureAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.3.</b>
+                        
+                         WindowsPhone扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.4" data-path="deepin_client_dev/WP/WP_SM_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_SM_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.4.</b>
+                        
+                         WindowsPhoneEMP5.2国密使用说明兼加密调整
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.5" data-path="deepin_client_dev/WP/WP_Global.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Global.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.5.</b>
+                        
+                         WindowsPhone国际化使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="deepin_client_dev/WP/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         WP高级功能使用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.4.1" data-path="deepin_client_dev/WP/WP_Offline.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.1.</b>
+                        
+                         WindowsPhone5.2离线文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.2" data-path="deepin_client_dev/WP/WP_MDAP.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_MDAP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.2.</b>
+                        
+                         WindowsPhone5.2数据采集
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.3" data-path="deepin_client_dev/WP/WP_Chart_ExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_Chart_ExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.3.</b>
+                        
+                         WindowsPhone图表扩展及使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.4" data-path="deepin_client_dev/WP/WP_EmpReader.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_EmpReader.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.4.</b>
+                        
+                         WindowsPhone附件阅读使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.5" data-path="deepin_client_dev/WP/WP_SDK_Custom_Guide.html">
+            
+                
+                    <a href="../../deepin_client_dev/WP/WP_SDK_Custom_Guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.5.</b>
+                        
+                         WindowsPhone 控件SDK定制及使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         QT 开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="setup_develop_env/QTDevEnv.html">
+            
+                
+                    <a href="../../setup_develop_env/QTDevEnv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         QT开发环境配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="client_dev/Introduction.html">
+            
+                
+                    <a href="../../client_dev/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         QT开发入门
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.2.1" data-path="client_dev/QTDevFoundation.html">
+            
+                
+                    <a href="../../client_dev/QTDevFoundation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.1.</b>
+                        
+                         QT开发基础
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2.2" data-path="hello_emp/client/CreateQTApplication.html">
+            
+                
+                    <a href="../../hello_emp/client/CreateQTApplication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.2.</b>
+                        
+                         创建QT_Application
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="deepin_client_dev/QT/Introduction.html">
+            
+                
+                    <a href="../../deepin_client_dev/QT/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         QT高级开发
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.3.1" data-path="deepin_client_dev/qt/QT_Control_ExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/qt/QT_Control_ExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.1.</b>
+                        
+                         QT扩展UI控件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3.2" data-path="deepin_client_dev/qt/QT_Lua_FunctionAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/qt/QT_Lua_FunctionAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.2.</b>
+                        
+                         QT扩展Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3.3" data-path="deepin_client_dev/qt/QT_JS_Bridge_ArchitectureAndExtendingGuide.html">
+            
+                
+                    <a href="../../deepin_client_dev/qt/QT_JS_Bridge_ArchitectureAndExtendingGuide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.3.</b>
+                        
+                         QT扩展JS接口
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp5.3/ert_develop/ert_develop.zip" class="button">html</a>
+                
+                
+                <a href="/emp5.3/ert_develop/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >ERT开发</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_13">
+                    
+                        <h1 id="android-扩展控件">Android 扩展控件</h1>
+<!-- toc -->
+<ul>
+<li><a href="#目的">目的</a></li>
+<li><a href="#关键类接口说明必读">关键类/接口说明（必读）</a><ul>
+<li><a href="#guiview接口">GUIView接口</a></li>
+<li><a href="#layout-抽象类">Layout 抽象类</a></li>
+<li><a href="#style-抽象类">Style 抽象类</a></li>
+<li><a href="#propertyguipropertyadjustment接口">Property，GUIPropertyAdjustment接口</a></li>
+<li><a href="#guiselfonclick-接口">GUISelfOnClick 接口</a></li>
+<li><a href="#guirealview-接口">GUIRealView 接口</a></li>
+<li><a href="#guiformsubmit-接口">GUIFormSubmit 接口</a></li>
+<li><a href="#guiinit-接口-产品内部接口永远不需要项目实现">GUIInit 接口-产品内部接口，永远不需要项目实现</a></li>
+<li><a href="#basicview-类">BasicView 类:</a></li>
+<li><a href="#产品实现的布局">产品实现的布局</a><ul>
+<li><a href="#常用布局">常用布局</a></li>
+<li><a href="#专属布局">专属布局</a></li>
+</ul>
+</li>
+<li><a href="#产品实现的样式">产品实现的样式</a><ul>
+<li><a href="#bgstyle类">BgStyle类</a></li>
+<li><a href="#fontstyle类">FontStyle类</a></li>
+<li><a href="#alignstyle">AlignStyle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#扩展新控件">扩展新控件</a><ul>
+<li><a href="#扩展流程">扩展流程</a></li>
+<li><a href="#示例-扩展控件extendsview">示例-扩展控件ExtendsView：</a></li>
+</ul>
+</li>
+<li><a href="#扩展替换产品控件">扩展/替换产品控件</a><ul>
+<li><a href="#示例-扩展input-text控件增加样式cursor-color">示例-扩展input-text控件，增加样式cursor-color</a></li>
+<li><a href="#注意事项">注意事项</a></li>
+</ul>
+</li>
+<li><a href="#扩展样式">扩展样式</a><ul>
+<li><a href="#示例-扩展样式extendsstyle">示例-扩展样式ExtendsStyle：</a></li>
+</ul>
+</li>
+<li><a href="#扩展布局">扩展布局</a><ul>
+<li><a href="#示例1-子控件横向滚动的容器控件">示例1-子控件横向滚动的容器控件</a></li>
+<li><a href="#示例2-子控件按圆形布局的容器控件">示例2-子控件按圆形布局的容器控件</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h2 id="目的">1 目的</h2>
+<p>指导Android客户端开发人员在ERT-Android5.2产品的基础上扩展控件。</p>
+<p>其中包括：扩展新控件，覆写已有控件，扩展新的布局方式，扩展新的样式。</p>
+<h2 id="关键类接口说明必读">2 关键类/接口说明（必读）</h2>
+<h3 id="guiview接口">2.1 GUIView接口</h3>
+<p><strong>说明：</strong> 所有视图控件必须实现该接口</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public onBindElement(Element element)</code>方法，该方法有参数element传入，可以处理一些与element相关的事情如处理element的textContent、property等。</p>
+<p>2.<code>public Layout onBuildLayout()</code>方法，返回控件的布局对象，布局对象本身可以在该方法中创建，也可以在该方法调用之前创建，如在构造方法中创建。</p>
+<h3 id="layout-抽象类">2.2 Layout 抽象类</h3>
+<p><strong>说明：</strong> 所有处理布局的类必须继承自该类，该类本身继承自Style 抽象类，该类的功能既包括处理一些公用的样式如display、position等，也包括控制布局。</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public abstract Rect getDefaultSpace(Rect parentSpace, Rect usedSpace)</code>方法，根据父控件空间(parentSpace)和父控件中已用空间(usedSpace)以及样式中给定的宽高样式计算自身占据空间。</p>
+<p>2.<code>public abstract void adjustSpace(Rect mySpace, Rect childSpace)</code>方法，根据子控件占据空间(childSpace)调整自身占据空间。</p>
+<p>3.<code>public abstract void adjustPosition(Rect mySpace, Rect parentSpace, Rect usedSpace);</code>方法，根据父控件空间(parentSpace)和父控件中已用空间(usedSpace)以及样式中给定的位置样式调整自身坐标位置。</p>
+<p>4.<code>public void reportChildLayout(Layout childLayout)</code>方法，通知子控件调整子控件的布局。</p>
+<p>5.<code>setStyleByName(String name, String value)</code>，该方法覆写了Style类<code>setStyleByName</code>，处理样式display、position、padding-left、padding-top、padding-right、padding-bottom、line-spacing、row-spacing。</p>
+<p>6.<code>setStyleByName(String name, String value, boolean addToRepository)</code>方法，css样式设置的入口，如果参数addToRepository==false，则同<code>setStyleByName(String name, String value)</code>，如果参数addToRepository==true，则设置的样式会被存入用户样式库。</p>
+<p>说明：用户样式库即通过模板代码的css静态设置或者lua动态设置的样式，如果客户端自定义了一个控件并希望为此控件设置某默认样式，需要调用<code>setStyleByName(name, value)</code>而不是方法<code>setStyleByName(name, value, true)</code>，否则会污染用户样式库。</p>
+<p>7.<code>public boolean checkInRepository(String styleName)</code>检测用户样式库是否包含某个样式。</p>
+<h3 id="style-抽象类">2.3 Style 抽象类</h3>
+<p><strong>说明：</strong> 所有处理样式的类必须继承该抽象类。</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public Style setStyleByName(String name, String value)</code>方法，<code>Style</code>类本身的该方法递归寻找处理传入的样式的类。子类需要覆写此方法，处理子类需要处理的样式，如果传入的name被子类处理则返回子类本身，否则返回null。</p>
+<p>2.<code>public abstract void onAdjustStyle(Element element, BaleRepository baleRepository)</code>方法，在绘制节点前再次调整样式或属性，该方法在所有样式通过<code>setStyleByName(name, value)</code>处理之后调用,可以处理一些需要在其他样式设定之后再处理的样式或属性。</p>
+<p>3.<code>public abstract void onApplyStyle(Element element, View view, BaleRepository baleRepository)</code>方法，对样式进行应用。注意该方法运行在UI线程中,请不要做耗时处理。</p>
+<h3 id="propertyguipropertyadjustment接口">2.4 Property，GUIPropertyAdjustment接口</h3>
+<p><strong>说明：</strong> 用来设置与获取控件的非常用属性，需要自定义属性的控件继承，非必须继承。<code>GUIPropertyAdjustment</code>接口是在5.2.48版本后为了解决线程分离问题而增加的接口。</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public String getPropertyValue(String name)</code>方法，为获取控件属性的返回值做处理。如果该属性总是等于element.getAttribute(name)，则不需要在该方法里做处理。</p>
+<p>2.<code>public boolean setPropertyByName(String name, String value)</code>方法，设置控件属性，5.2.48之前，返回值表示是否需要刷新控件。5.2.48以及以后该方法只在UI线程调用，返回值只是为了兼容之前版本。</p>
+<p>3.<code>public boolean luaPropertyAdjustment(String name, String value)</code>方法，5.2.48以后增加该方法，处理属性需要在lua线程处理的部分，返回值表示是否需要刷新控件。</p>
+<h3 id="guiselfonclick-接口">2.5 GUISelfOnClick 接口</h3>
+<p><strong>说明：</strong> 如果控件不必指定onClick属性，被点击后自动执行某一点击事件，需要实现这个接口。</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public void selfClick(EMPRender empRender)</code>控件被点击后自动调用的方法。</p>
+<h3 id="guirealview-接口">2.6 GUIRealView 接口</h3>
+<p><strong>说明：</strong> 如果该扩展控件需要在真正绘制前处理一些事情，且这些事情要在UI线程执行，则需要实现接口GUIRealView。</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public void initRealView(Context context)</code>在UI线程执行，在控件绘制前调用。</p>
+<h3 id="guiformsubmit-接口">2.7 GUIFormSubmit 接口</h3>
+<p><strong>说明:</strong> 若要Form表单自动提交时包含扩展控件的信息,需要实现该接口</p>
+<p><strong>关键方法:</strong></p>
+<p><code>public String getValue();</code>  form 表单提交时,通过该方法获取控件值</p>
+<h3 id="guiinit-接口-产品内部接口永远不需要项目实现">2.8 GUIInit 接口-产品内部接口，永远不需要项目实现</h3>
+<p><strong>说明：</strong> 该接口的存在只是为了<font color="red">产品内部使用</font>，产品定义的控件需要在此方法里初始化成员变量，避免由于项目的覆写导致成员变量为未初始化，后续调用报错。
+如果项目扩展了产品的控件，请<font color="red">务必不要</font>覆写init方法。</p>
+<p><strong>关键方法：</strong></p>
+<p>1.<code>public void init(Element element)</code> 仅仅产品内部定义的控件需要实现，且项目<font color="red">永远不可以</font>覆写。产品定义的控件需要在该方法中初始化成员变量。</p>
+<h3 id="basicview-类">2.9 BasicView 类:</h3>
+<p><strong>说明：</strong> 基础扩展类，实现以上部分接口(<code>BasicView extends View implements GUIView, GUIInit</code>)</p>
+<p><strong>关键变量：</strong></p>
+<p>1.<code>protected mElement</code>变量,在init()方法中初始化，<code>init方法</code>不可以被重写,避免mElement为空导致后续方法执行错误。</p>
+<p>2.<code>protected mLayout</code>变量,在构造方法中初始化为<code>ComplexLayout</code>。</p>
+<h3 id="产品实现的布局">2.10 产品实现的布局</h3>
+<p>下面罗列了产品已经实现的布局,项目可以直接使用或者进一步扩展。</p>
+<h4 id="常用布局">2.10.1 常用布局</h4>
+<p>1.<code>RowLayout extends Layout</code>处理width、height.布局方式为从父控件左上角依次排开,如果超出父控件宽度则换行。</p>
+<p>2.<code>ComplexLayout extends RowLayout</code>处理left、top、right、bottom.布局方式为如果有left/top/right/bottom，则根据left/top/right/bottom定位位置，如果没有则同<code>RowLayout</code>。</p>
+<p>3.<code>ScrollLayout extends ComplexLayout</code>处理滚动条.在<code>ComplexLayout</code>的基础上增加了滚动条。</p>
+<p>4.<code>FontLayout extends ComplexLayout</code>处理字体。在<code>ComplexLayout</code>的基础上装载了<code>FontStyle</code>，并处理了文字的换行，以及根据文字计算控件所需要的空间大小。</p>
+<h4 id="专属布局">2.10.2 专属布局</h4>
+<p>某些控件专属的<code>layout</code>：<code>TableLayout</code>、<code>TdLayout</code>、<code>TrLayout</code>、<code>SwitchLayout</code>、<code>SegementLayout</code>。</p>
+<h3 id="产品实现的样式">2.11 产品实现的样式</h3>
+<p>下面罗列了产品已经实现的样式,项目可以直接使用或者进一步扩展。</p>
+<h4 id="bgstyle类">2.11.1 BgStyle类</h4>
+<p><strong>说明：</strong></p>
+<p>1.<code>BgStyle extends Style</code>处理backgournd-color、filter（包括渐变色和透明度）、background-image、border（包括圆角和边框线)。</p>
+<p>2.<code>BgStyle</code>默认支持backgournd-color、filter（包括渐变色和透明度）、background-image、默认没有支持border。</p>
+<p>3.可以通过<code>addDecorate(decorate)</code>增加对某一样式的支持，<code>removeDecorate(decorate)</code>移除对某一样式的支持，<code>orDecorate(decorate)</code>判断是否支持某一样式。如<code>addDecorate(BgStyle.BG_BORDER|BgStyle.BG_ROUNDED|BG_FILTERALPHA)</code>表示增加支持圆角，边框和透明度，<code>removeDecorate(BgStyle.BG_BACKGROUNDCOLOR|BG_FILTERALPHA)</code>表示移除对背景色和透明度的支持。</p>
+<p><strong>注意：</strong></p>
+<p>1.在5.2.46以及之前版本，<code>Filter类</code>处理filter样式，继承自<code>BgStyle</code>,在5.2.47以及之后<code>Filter类</code>被废弃，filter（包括渐变色和透明度）被移到<code>BgStyle</code>中处理。</p>
+<p>2.在<code>BgStyle</code>中操作了以下系统接口，扩展控件如果在<code>BgStyle</code>的<code>onApplyStyle</code>调用之前调用了这些接口，将被<code>BgStyle</code>的<code>onApplyStyle</code>覆盖。<br><code>view.setBackgroundDrawable(drawable)</code>--设置背景<br><code>((TextView) view).setTextColor())</code>--设置字体透明度<br><code>view.setPadding(borderWidth)</code>--当有border时为了避免子控件覆盖border设置padding，如果控件不支持border则不会调用该接口。</p>
+<h4 id="fontstyle类">2.11.2 FontStyle类</h4>
+<p><strong>说明：</strong></p>
+<p>1.<code>FontStyle extends Style</code>处理font-color、font-size、font-align、font-weight。</p>
+<p>2.<code>FontStyle</code>总是支持以上所有font样式，除非通过<code>setAlwaysBold</code>或者<code>setAlwaysItalic</code>设置为总是粗体或者总是斜体，这两个方法分别针对B标签和I标签。</p>
+<p><strong>注意：</strong></p>
+<p>1.在<code>FontStyle</code>中操作了一下系统接口，扩展控件如果在<code>FontStyle</code>的<code>onApplyStyle</code>调用之前调用了这些接口将被<code>FontStyle</code>的<code>onApplyStyle</code>代码覆盖。<br><code>textView.setTextColor(fontColors);</code>--设置字体颜色<br><code>textView.setTextSize(size);</code>--设置字体大小<br><code>textView.setGravity(gravity);</code>--设置水平方向对齐方式<br><code>textView.getPaint().setFakeBoldText();</code>--设置粗体<br><code>textView.getPaint().setTextSkewX();</code>--设置斜体  </p>
+<h4 id="alignstyle">2.11.3 AlignStyle</h4>
+<p><strong>说明：</strong></p>
+<p>1.<code>AlignStyle  extends Style</code>处理align/valign。(align/valign本是属性，由于样式的实现机制更符合处理align/valign，所以这里用样式处理)。</p>
+<p>2.目前产品的div和td使用该类,可作参考</p>
+<p><strong>注意：</strong></p>
+<p>1.该类在5.2.52后稳定,所以请在5.2.52后使用。</p>
+<h2 id="扩展新控件">3 扩展新控件</h2>
+<p>扩展控件构造方法必须定义为带参数Contex的有参构造，即<code>类名(Context context)</code>，否则将无法创建该控件。</p>
+<p>如：<code>BasicView</code> 类，构造方法定义 : <code>BasicView(Context context){…}</code>。</p>
+<h3 id="扩展流程">3.1 扩展流程</h3>
+<p><strong>step1.</strong> 继承<code>com.rytong.emp.gui.atom.BasicView</code>基类或者实现<code>com.rytong.emp.gui.GUIView</code>接口，demo仅以后者为例。</p>
+<p><strong>step2.</strong> 通过<code>OnBindElement</code>得到element，处理与element相关的逻辑，也可以存为成员变量以便后续使用。</p>
+<p><strong>step3.</strong> 在<code>OnBuildLayout</code>中初始化布局，并装载需要的样式（布局的初始化也可以在OnBuildLayout方法调用之前完成，如在构造函数中完成）。</p>
+<p><strong>step4.</strong> 根据需求实现其他接口，如<code>Property</code>、<code>GUIPropertyAdjustment</code>、<code>GUISelftOnclick</code>、<code>GUIRealView</code>。</p>
+<p><strong>step5.</strong> 根据需求实现控件其他功能。</p>
+<p><strong>step6.</strong> 在<code>MainActivity</code>的<code>addGuiView</code>中注册控件。</p>
+<h3 id="示例-扩展控件extendsview">3.2 示例-扩展控件ExtendsView：</h3>
+<pre><code>/**
+ * 功能：demo,以扩展View并实现GUIView等接口为例&lt;br&gt;
+ * &lt;p&gt;
+ * 说明：&lt;br&gt;
+ * 1.扩展控件根据需求继承任意的系统控件,这里仅以android.view.View为例&lt;br&gt;
+ * 2.扩展控件必须实现接口GUIView&lt;br&gt;
+ * 3.如果该扩展控件有自定义属性,则需要实现接口Property,GUIPropertyAdjustment&lt;br&gt;
+ * 4.如果该扩展控件控件不必指定onClick属性，被点击后自动执行某一点击事件，则需要实现接口GUISelfOnClick &lt;br&gt;
+ * 5.如果该扩展控件需要在真正绘制前处理一些事情，且这些事情要在UI线程执行，则需要实现接口GUIRealView &lt;br&gt;
+ * &lt;/p&gt;
+ */
+public class ExtendsView extends View implements GUIView, Property, GUIPropertyAdjustment, GUISelfOnClick, GUIRealView {
+
+    private final String LINE_NUMBER = &quot;line-number&quot;;
+    private BgStyle mBgStyle;
+    private Element mElement;
+    private String mText;
+
+    public ExtendsView(Context context) {
+        super(context);
+
+        // ------do something here----------
+
+        // 如果ExtendsView需要支持背景样式，则需要装载BgStyle
+        // new BgStyle()的构造方式等同于
+        // new BgStyle(BgStyle.BG_BACKGROUNDCOLOR|BgStyle.BG_BACKGROUNDIMAGE|BgStyle.BG_FILTERGRADIENT|BgStyle.BG_FILTERALPHA);
+        // 即BgStyle默认支持背景色，背景图，背景渐变色，和透明度
+        mBgStyle = new BgStyle();
+        // 如果bgStyle需要支持圆角和边框则需要通过addDecorate(decorate)实现
+        // 这样的设置相当于默认有属性border=&quot;1&quot;;
+        mBgStyle.addDecorate(BgStyle.BG_ROUNDED | BgStyle.BG_BORDER);
+        // 如果bgStyle不需要支持图片则需要通过removeDecrator(decorate)实现
+        mBgStyle.removeDecorate(BgStyle.BG_BACKGROUNDIMAGE);
+        // 上面三步可以合并为
+        // mBgStyle = new BgStyle(BgStyle.BG_BACKGROUNDCOLOR|BgStyle.BG_FILTERGRADIENT|BgStyle.BG_FILTERALPHA|BgStyle.BG_ROUNDED|BgStyle.BG_BORDER);
+
+        // 为ExtendsView设置一下默认背景色
+        // 通过onBuildLayout中的layout.setStyleByName(Entity.NODE_ATTRIBUTE_BACKGROUND_COLOR, &quot;f0f0f0&quot;);设置效果相同
+        // 但是这种方式效率更高，如果通过layout设置，还需要递归遍历
+        mBgStyle.setStyleByName(Entity.NODE_ATTRIBUTE_BACKGROUND_COLOR, &quot;f0f0f0&quot;);
+    }
+
+    @Override
+    public void onBindElement(Element element) {
+        // -------------------do someting about element--------------
+        // 如果在后续方法需要用到element,则存为成员变量
+        mElement = element;
+        // 如果ExtendsView需要处理节点间的值
+        String text = element.getTextContent();
+        if (text != null) {
+            // -------------do someting here---------------
+            setText(text);
+        }
+
+        // 如果ExtendsView需要支持border,则需要添加以下代码
+        // 因为这里要用到mBgStyle，所以将mBgStyle放到了构造方法中初始化而不是放到onBuildLayout中
+        if (element.hasAttribute(Entity.NODE_ATTRIBUTE_BORDER)) {
+            String value = element.getAttribute(Entity.NODE_ATTRIBUTE_BORDER);
+            if (value.equals(&quot;0&quot;)) {
+                mBgStyle.removeDecorate(BgStyle.BG_BORDER | BgStyle.BG_ROUNDED);
+            } else {
+                mBgStyle.addDecorate(BgStyle.BG_BORDER | BgStyle.BG_ROUNDED);
+            }
+        }
+
+        // 如果ExtendsView需要处理某一属性例如linenumber
+        // 一般在这里处理的属性都是静态属性，即不能通过lua脚本改变
+        // 如果是可以动态改变的属性，需要用Property提供的接口处理
+        if (element.hasAttribute(LINE_NUMBER)) {
+            String lineNumber = element.getAttribute(LINE_NUMBER);
+            // ----------------do someting here---------------------------
+        }
+
+    }
+
+    @Override
+    public Layout onBuildLayout() {
+        // layout可以是Layout的任意子类,这里仅仅以ComplexLayout为例
+        Layout layout = new ComplexLayout(Layout.MATCH_PARENT, Layout.WRAP_CONTENT);
+        // 如果ExtendsView需要支持ExtendsStyle中处理的样式
+        ExtendsStyle eStyle = new ExtendsStyle();
+
+        // 像串糖葫芦一样将style们依次装载到layout上
+        mBgStyle.setStyle(eStyle);
+        layout.setStyle(mBgStyle);
+
+        // 返回layout
+        return layout;
+    }
+
+    @Override
+    public String getPropertyValue(String name) {
+        // 如果ExtendsView支持某一特殊属性如text,则getPropertyByName的返回值在这里处理
+        if (name.equals(&quot;text&quot;)) {
+            // --------------do domething here------------
+            String text = &quot;set your text here&quot;;
+            return text;
+        }
+        // 如果这个属性返回的值总是等于element.getAttribute(name),则也可以不处理
+        // 例如如果你打算写的代码是下面这种形式，则可以略去这段代码
+        if (name.equals(&quot;value&quot;)) {
+            return mElement.getAttribute(name);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean luaPropertyAdjustment(String name, String value) {
+        // 需要注意5.2.48版本线程分离以后增加该方法，在刷新UI之前处理Property,解决异步问题
+        // 如果一个属性的处理既需要在lua线程执行一些操作，又需要在UI线程执行一些操作，则在这里处理lua部分
+
+        // ---------------do someting on lua thead here-----
+
+        // 如果ExtendsView支持某一特殊属性如text,且该属性的设置会影响其他属性如width,height,则需要在这里返回true以便及时刷新
+        // 否则模板通过属性设置了text后马上getStyleByName(&quot;height&quot;)会得到错误的值
+        if (name.equals(&quot;text&quot;)) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean setPropertyByName(String name, String value) {
+        // 需要注意5.2.48版本线程分离以后该方法总是在UI线程执行
+        // 如果一个属性的处理既需要在lua线程执行一些操作，又需要在UI线程执行一些操作，则在这里处理ui部分
+        // ---------------do someting on ui thead here--------
+        if (name.equals(&quot;text&quot;)) {
+            // 例如如果setText需要在ui执行，则在这里调用
+            setText(value);
+        }
+        return false;
+    }
+
+    @Override
+    public void initRealView(Context context) {
+        // 该方法在ui线程执行,在view真正被绘制前执行
+        // --------------do something here--------------------
+        // 使用可参考DivWebView,Div等
+        // 例如在DivWebView extends Div的initRealView中有以下处理，因为GUIWebView必须在UI线程创建
+        // if (mWebView == null) {
+        // mWebView = new GUIWebView(context, mUrl);
+        // mWebView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 0, 0));
+        // addView(mWebView);
+        // }
+    }
+
+    @Override
+    public void selfClick(EMPRender empRender) {
+        // 控件控件不必指定onClick属性，被点击后自动执行某一点击事件
+        // --------------do something here--------------------
+        // 例如点击该控件弹出提示框
+        GUIAlertDialog.infoAlert((Activity) getContext(), &quot;ExtendsView&quot;, &quot; test selfCilck &quot;);
+
+    }
+
+    // 实现扩展控件需要实现的其他方法
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        if (mText != null) {
+            Paint paint = new Paint();
+            paint.setTextSize(20);
+            paint.setColor(Color.BLUE);
+            paint.setAntiAlias(true);
+            canvas.drawText(mText, 30, 30, paint);
+        }
+    }
+
+    /**
+     * 设置mText
+     * 
+     * @param mText
+     */
+    public void setText(String text) {
+        this.mText = text;
+    }
+
+}
+</code></pre><p>在MainActivity类中注册</p>
+<pre><code>@Override
+public void onAddGUIView() {
+        ...
+        // 注册控件
+        //下面注册方式对应标签extendsView
+        GUIRepository.addGUIView(&quot;extendsView&quot;, ExtendsView.class);
+        //下面注册方式对应标签extendsView，type=&quot;basic&quot;
+        GUIRepository.addGUIView(&quot;extendsview&quot;, &quot;basic&quot;, ExtendsBasicView.class);
+}
+</code></pre><h2 id="扩展替换产品控件">4 扩展/替换产品控件</h2>
+<p>扩展流程基本同上述步骤，只是不用每一步都实现，酌情处理即可。</p>
+<h3 id="示例-扩展input-text控件增加样式cursor-color">4.1 示例-扩展input-text控件，增加样式cursor-color</h3>
+<pre><code>/**
+ * 功能：demo,扩展产品控件InputText&lt;br&gt;
+ * &lt;p&gt;
+ * 说明：&lt;br&gt;
+ * 1.增加样式cursor-color:black|white|yellow
+ * 2.需要android-api-17以及以上版本手机测试
+ * &lt;/p&gt;
+ */
+public class CursorInputText extends InputText {
+
+    public CursorInputText(Context context) {
+        super(context);
+    }
+
+    @Override
+    public Layout onBuildLayout() {
+        Layout layout = super.onBuildLayout();
+        Style style = layout;
+        while (style.getStyle() != null) {
+            style = style.getStyle();
+        }
+        ExtendsStyle eStyle = new ExtendsStyle();
+        //cursor-color样式由ExtendsStyle处理，装载到原有layout的最后一层既可以使用
+        style.setStyle(eStyle);
+        return layout;
+    }
+
+}
+</code></pre><p>在MainActivity类中注册</p>
+<pre><code>@Override
+public void onAddGUIView() {
+        ...
+        // 重新注册控件，替换原有控件
+        GUIRepository.addGUIView(&quot;input&quot;,&quot;text&quot;, CursorInputText.class);
+}
+</code></pre><h3 id="注意事项">4.2 注意事项</h3>
+<p>在扩展产品的以下控件时需要注意一些事情 </p>
+<ol>
+<li><code>Img.class</code> ： 如果覆写了<code>onBuildLayout</code> new了新的布局对象，需要调用<code>getImage</code>方法图片才可以正常显示。  </li>
+<li><code>Div.class</code> ： 如果覆写了<code>onBuildLayout</code> new了新的布局对象，样式<code>inline-block</code>的支持将会受到影响，如果需要支持该样式请参考产品源码 。  </li>
+<li><code>InputRadio.class</code> ： 如果覆写了<code>onBuildLayout</code> new了新的布局对象，Radio的显示大小将会受到影响，如果需要支持该样式请参考产品源码 。  </li>
+<li><code>InputCheckbox.class</code> ： 如果覆写了<code>onBuildLayout</code> new了新的布局对象，CheckBox的显示大小将会受到影响，如果需要支持该样式请参考产品源码 。  </li>
+<li><code>Select.class</code> ： 如果覆写了<code>onBuildLayout</code> new了新的布局对象，样式<code>font-align</code>的支持将会受到影响，如果需要支持该样式请参考产品源码 。  </li>
+</ol>
+<h2 id="扩展样式">5 扩展样式</h2>
+<p>扩展样式必须继承自Style类。并覆写<code>setStyleByName</code>方法，在该方法中对自己所需样式进行接收和处理。再在<code>onApplyStyle</code>方法中对控件进行应用。</p>
+<h3 id="示例-扩展样式extendsstyle">5.1 示例-扩展样式ExtendsStyle：</h3>
+<pre><code>/**
+ * 功能：demo,以处理样式光标颜色 {cursor-color:yellow|black|white;}为例&lt;br&gt;
+ * &lt;p&gt;
+ * 说明：&lt;br&gt;
+ * 1.扩展样式必须继承Style类&lt;br&gt;
+ * &lt;/p&gt;
+ */
+public class ExtendsStyle extends Style {
+
+    private final String CURSOR_COLOR = &quot;cursor-color&quot;;
+    private final String BLACK = &quot;black&quot;;
+    private final String WHITE = &quot;white&quot;;
+    private final String YELLOW = &quot;yellow&quot;;
+
+    public ExtendsStyle() {
+        // 默认黑色
+        setStyleByName(CURSOR_COLOR, BLACK);
+    }
+
+    @Override
+    public Style setStyleByName(String name, String value) {
+        // 先处理该Style的mStyle.如：
+        // ExtendsStyle ex=new ExtendsStyle(); ex.setStyle(new BgStyle());
+        // 则super方法会先走BgStyle的setStyleByName(String name, String value)
+        Style style = super.setStyleByName(name, value);
+        // 如果该Style的mStyle没有匹配项，则继续
+        if (style == null) {
+            if (CURSOR_COLOR.equals(name)) {
+                int color = Color.BLACK;
+                int id=R.drawable.cursor_color_black;
+                if(value.equals(YELLOW)){
+                    color=Color.YELLOW;
+                    id=R.drawable.cursor_color_yellow;
+                }
+                if(value.equals(WHITE)){
+                    color=Color.WHITE;
+                    id=R.drawable.cursor_color_white;
+                }
+                // 存到应用样式库baleRepository
+                baleStyle(CURSOR_COLOR.concat(&quot;_int&quot;), color);// 用于与背景色做对比
+                baleStyle(CURSOR_COLOR, id);// 用于绘制
+
+                // STYLE_USE表示已经存入样式库，可以绘制
+                // 关于setEffect的其他参数如REFRESH等可以参考Style.java的API
+                setEffect(STYLE_USE);
+                // 如果传入的name由改类处理，则返回该类对象本身
+                style = this;
+            }
+        }
+        return style;
+    }
+
+    @Override
+    public void onAdjustStyle(Element element, BaleRepository baleRepository) {
+        // 这里主要处理一些相互作用的样式,也可以分担onApplyStyle中不是必须在UI中处理的代码
+        // 该方法的调用比setStyleByName()晚，比onApplyStyle早
+        // 比如如果光标色和背景样式颜色一样，则调整光标颜色
+        Layout layout = (Layout) element.getUserData(Entity.NODE_USER_STYLE);
+        BgStyle bgStyle = (BgStyle) layout.findStyle(BgStyle.class);
+        if (bgStyle != null) {
+            // 取出背景色
+            Object back_color = bgStyle.getStyleInBaleRepository(Entity.NODE_ATTRIBUTE_BACKGROUND_COLOR);
+            if (back_color != null &amp;&amp; back_color instanceof Integer) {
+                int cursorColor = baleRepository.getInt(CURSOR_COLOR.concat(&quot;_int&quot;));
+                int backColor = (Integer) back_color;
+                if (cursorColor == backColor) {
+                    // 换掉光标色
+                    cursorColor = Color.blue(cursorColor);
+                    baleStyle(Entity.NODE_ATTRIBUTE_FONT_COLOR, cursorColor);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onApplyStyle(Element element, View view, BaleRepository baleRepository) {
+        // 该方法在UI线程中调用
+        // 取出光标颜色
+        int cursorColor= baleRepository.getInt(CURSOR_COLOR);
+        if (view instanceof EditText) {
+            // 目前的android还不支持代码设置光标颜色，只能在xml中定义
+            // 改变光标颜色---------------------------------------------------
+            try {
+                Field f = TextView.class.getDeclaredField(&quot;mCursorDrawableRes&quot;);
+                f.setAccessible(true);            
+                f.set((TextView) view, cursorColor);
+            } catch (Exception ignored) {
+            }
+        }
+    }
+}
+</code></pre><h2 id="扩展布局">6 扩展布局</h2>
+<p>扩展布局必须继承自Layout类。</p>
+<h3 id="示例1-子控件横向滚动的容器控件">6.1 示例1-子控件横向滚动的容器控件</h3>
+<p>首先扩展布局类，实现子控件按横向顺序布局： </p>
+<pre><code>public class LandspaceLayout extends ComplexLayout {
+    private Rect mMaxChildSpace = new Rect();
+    private Rect mLastChildSpace = new Rect();
+
+    public LandspaceLayout(int w, int h) {
+        super(w, h);
+    }
+
+    @Override
+    public void reportChildLayout(Layout childLayout) {
+        // 子控件布局时，会调用父控件布局类的这个方法。在这里记录需要传递给父控件布局的子控件布局信息。
+        // 记录最大的子控件大小
+        final Rect prune = childLayout.getNativeSpace();
+        mMaxChildSpace.left = Math.max(mMaxChildSpace.left, prune.left);
+        mMaxChildSpace.right = Math.max(mMaxChildSpace.right, prune.right);
+        mMaxChildSpace.top = Math.max(mMaxChildSpace.top, prune.top);
+        mMaxChildSpace.bottom = Math.max(mMaxChildSpace.bottom, prune.bottom);
+    }
+
+    @Override
+    public void adjustSpace(Rect mySpace, Rect childSpace) {
+        // 该方法会在子控件都布局完后调用，根据子控件的布局调整当前控件的一些布局设置，在这里可以调整每个子控件的布局位置
+        // 未给定高度时，根据子控件大小改变当前控件高度
+        if (!fixHeight()) {
+            mySpace.bottom = mMaxChildSpace.bottom + mPaddingRect.bottom;
+        }
+
+        // 调整每个子控件的位置
+        Element element = null;
+        NodeList nodeList = mElement.getChildNodes();
+        final int size = nodeList.getLength();
+        for (int i = 0; i &lt; size; i++) {
+            Node child = nodeList.item(i);
+            if (child.getNodeType() == Node.ELEMENT_NODE) {
+                element = (Element) child;
+                Layout layout = (Layout) element.getUserData(Entity.NODE_USER_STYLE);
+                if (layout != null &amp;&amp; layout instanceof ComplexLayout) {
+                    // 将子控件按顺序横向排列
+                    ComplexLayout childComplexLayout = (ComplexLayout) layout;
+                    if (childComplexLayout.fixLocation()) {
+                        // 子控件固定位置，不作处理
+                        continue;
+                    }
+                    if (childComplexLayout.fixX()) {
+                        // 固定X值，Y值调整为0或上边距
+                        int offsetY = mMarginRect.top;
+                        childComplexLayout.setStyleByName(Entity.NODE_ATTRIBUTE_TOP, Integer.toString(offsetY) + &quot;nat&quot;);
+                        childComplexLayout.requstLayout();
+                    } else if (childComplexLayout.fixY()) {
+                        // 固定Y值，横向向后排列
+                        int offsetX = 0;
+                        if (mLastChildSpace.right == 0) {
+                            offsetX = mMarginRect.left;
+                        } else {
+                            offsetX = mLastChildSpace.right + childComplexLayout.mSpacingX;
+                        }
+                        childComplexLayout.setStyleByName(Entity.NODE_ATTRIBUTE_LEFT, Integer.toString(offsetX) + &quot;nat&quot;);
+                        childComplexLayout.requstLayout();
+                    } else {
+                        int offsetX = 0;
+                        if (mLastChildSpace.right == 0) {
+                            offsetX = mMarginRect.left;
+                        } else {
+                            offsetX = mLastChildSpace.right +     childComplexLayout.mSpacingX;
+                        }
+                        childComplexLayout.setStyleByName(Entity.NODE_ATTRIBUTE_LEFT, Integer.toString(offsetX) + &quot;nat&quot;);
+                        int offsetY = mMarginRect.top;
+                        childComplexLayout.setStyleByName(Entity.NODE_ATTRIBUTE_TOP, Integer.toString(offsetY) + &quot;nat&quot;);
+                        childComplexLayout.requstLayout();
+                    }
+                    mLastChildSpace.set(childComplexLayout.getDisplaySpace());
+                }
+            }
+        }
+    }
+}
+</code></pre><p>接着实现容器控件类，该控件需要绑定刚才实现的扩展布局类：</p>
+<pre><code>public class DivLandspace extends AbsoluteLayout implements GUIView, GUIRealView {
+
+    private LandspaceLayout mLayout = null;
+    private Filter mFilter = null;
+
+    private HorizontalScrollView mScrollView = null;
+    private AbsoluteLayout mDivVat = null;
+
+    public DivLandspace(Context context) {
+        super(context);
+        setBackgroundColor(0x00ffffff);
+
+        mFilter = new Filter();
+        mFilter.addDecorate(BgStyle.BG_BORDER | BgStyle.BG_ROUNDED );
+
+        mDivVat = new AbsoluteLayout(getContext());
+        mDivVat.setBackgroundColor(Color.TRANSPARENT);
+        super.addView(mDivVat);
+    }
+
+    @Override
+    public void onBindElement(Element element) {
+        // 边框属性处理
+        if (element.hasAttribute(Entity.NODE_ATTRIBUTE_BORDER)) {
+            String value = element.getAttribute(Entity.NODE_ATTRIBUTE_BORDER);
+            if (value.equals(&quot;0&quot;)) {
+                mFilter.clearDecorate();
+            } else {
+                int border = Utils.defaultToScreen(value);
+                mFilter.setBorderWidth(border);
+                mFilter.addDecorate(BgStyle.BG_BORDER | BgStyle.BG_ROUNDED);
+            }
+        }
+    }
+
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        if (mDivVat!=null) {
+            mDivVat.setEnabled(enabled);
+        }
+        if (mScrollView!=null) {
+            mScrollView.setEnabled(enabled);
+        }
+    }
+
+    @Override
+    public Layout onBuildLayout() {
+        // 绑定横向滚动布局类
+        int height = Utils.defaultToScreen(0);
+        mLayout = new LandspaceLayout(Layout.WRAP_CONTENT, height);
+        mLayout.setStyle(mFilter);
+
+        return mLayout;
+    }
+
+    @Override
+    public void addView(View view) {
+        mDivVat.addView(view);
+    }
+
+    @Override
+    public void removeView(View view){
+        mDivVat.removeView(view);
+    }
+
+    @Override
+    public void removeAllViews(){
+        mDivVat.removeAllViews();
+    }
+
+    @Override
+    public void initRealView(Context context) {
+        // 在容器控件内部添加滚动视图
+        if (mScrollView == null) {
+            mScrollView = new HorizontalScrollView(getContext());
+            mScrollView.setBackgroundColor(Color.TRANSPARENT);
+            super.removeView(mDivVat);
+            mScrollView.addView(mDivVat, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+            super.addView(mScrollView, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        }
+    }
+}
+</code></pre><p>最后修改MainActivity类，将新增容器控件加入GUI库：</p>
+<pre><code>@Override
+public void onAddGUIView() {
+    GUIRepository.addGUIView(&quot;div&quot;, &quot;landspace&quot;, DivLandspace.class);
+}
+</code></pre><h3 id="示例2-子控件按圆形布局的容器控件">6.2 示例2-子控件按圆形布局的容器控件</h3>
+<p>扩展实现一个容器控件，该控件内部的子控件按圆形布局添加。</p>
+<p>首先扩展布局类，实现子控件按圆形顺序布局：</p>
+<pre><code>public class CircleLayout extends ComplexLayout {
+
+    private Rect mMaxChildSpace = new Rect();
+    private int mChildNum = 0;
+    private int mRadius = 0;
+
+    public CircleLayout(int w, int h) {
+        super(w, h);
+    }
+
+    @Override
+    public void reportChildLayout(Layout childLayout) {
+        // 子控件布局时，会调用父控件布局类的这个方法。在这里记录需要传递给父控件布局的子控件布局信息。
+        // 记录子控件个数
+        mChildNum++;
+        // 记录最大的子控件大小
+        final Rect prune = childLayout.getNativeSpace();
+        mMaxChildSpace.left = Math.min(mMaxChildSpace.left, prune.left);
+        mMaxChildSpace.right = Math.max(mMaxChildSpace.right, prune.right);
+        mMaxChildSpace.top = Math.min(mMaxChildSpace.top, prune.top);
+        mMaxChildSpace.bottom = Math.max(mMaxChildSpace.bottom, prune.bottom);
+    }
+
+    @Override
+    public void adjustSpace(Rect mySpace, Rect childSpace) {
+        // 计算圆的半径
+        mRadius = (getWidth() - mMaxChildSpace.width()) / 2;
+
+        // 调整每个子控件的位置
+        int count = 0;
+        childSpace.setEmpty();
+        Element element = null;
+        NodeList nodeList = mElement.getChildNodes();
+        final int size = nodeList.getLength();
+        for (int i = 0; i &lt; size; i++) {
+            Node child = nodeList.item(i);
+            if (child.getNodeType() == Node.ELEMENT_NODE) {
+                element = (Element) child;
+                Layout layout = (Layout) element.getUserData(Entity.NODE_USER_STYLE);
+                if (layout != null &amp;&amp; layout instanceof ComplexLayout) {
+                    // 按照子控件个数，将园N等分，从正上方开始，顺时针算出每个点的坐标，作为每个子控件中心点的位置
+                    double angle = count * Math.PI * 2 / mChildNum - Math.PI / 2;
+                    ComplexLayout childComplexLayout = (ComplexLayout) layout;
+                    int offsetX = (int) (getWidth() / 2 + mRadius * Math.cos(angle));
+                    offsetX -= childComplexLayout.mWidth / 2;
+                    childComplexLayout.setStyleByName(Entity.NODE_ATTRIBUTE_LEFT, Integer.toString(offsetX) + &quot;nat&quot;);
+                    int offsetY = (int) (getWidth() / 2 + mRadius * Math.sin(angle));
+                    offsetY -= childComplexLayout.mHeight / 2;
+                    childComplexLayout.setStyleByName(Entity.NODE_ATTRIBUTE_TOP, Integer.toString(offsetY) + &quot;nat&quot;);
+                    childComplexLayout.requstLayout();
+
+                    childSpace.union(childComplexLayout.getDisplaySpace());
+
+                    count++;
+                }
+            }
+        }
+        // 未给定高度时，根据子控件大小改变当前控件高度
+        if (!fixHeight()) {
+            mySpace.bottom = childSpace.bottom + mPaddingRect.bottom;
+        }
+    }
+}
+</code></pre><p>接着实现容器控件类，该控件需要绑定刚才实现的扩展布局类：</p>
+<pre><code>public class DivCircle extends AbsoluteLayout implements GUIView {
+
+    private CircleLayout mLayout = null;
+    private Filter mFilter = null;
+
+    public DivCircle(Context context) {
+        super(context);
+        setBackgroundColor(0x00ffffff);
+
+        mFilter = new Filter();
+        mFilter.addDecorate(BgStyle.BG_BORDER | BgStyle.BG_ROUNDED );
+    }
+
+    @Override
+    public void onBindElement(Element element) {
+        // 边框属性处理
+        if (element.hasAttribute(Entity.NODE_ATTRIBUTE_BORDER)) {
+            String value = element.getAttribute(Entity.NODE_ATTRIBUTE_BORDER);
+            if (value.equals(&quot;0&quot;)) {
+                mFilter.clearDecorate();
+            } else {
+                int border = Utils.defaultToScreen(value);
+                mFilter.setBorderWidth(border);
+                mFilter.addDecorate(BgStyle.BG_BORDER | BgStyle.BG_ROUNDED);
+            }
+        }
+    }
+
+    @Override
+    public Layout onBuildLayout() {
+        // 绑定圆形布局类
+        int height = Utils.defaultToScreen(300);
+        mLayout = new CircleLayout(Layout.MATCH_PARENT, height);
+        mLayout.setStyle(mFilter);
+
+        return mLayout;
+    }
+}
+</code></pre><p>最后修改MainActivity类，将新增容器控件加入GUI库：</p>
+<pre><code>@Override
+public void onAddGUIView() {
+    GUIRepository.addGUIView(&quot;div&quot;, &quot;circle&quot;, DivCircle.class);
+}
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../deepin_client_dev/android/Introduction.html" class="navigation navigation-prev " aria-label="Previous page: Android高级开发"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../deepin_client_dev/android/Android_Lua_Extending_Guide.html" class="navigation navigation-next " aria-label="Next page: Android EMP5.2扩展Lua接口"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

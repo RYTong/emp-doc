@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Luadocs for src/ert.page.lua</title>
+    <link rel="stylesheet" href="../../luadoc.css" type="text/css" />
+    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li>
+		<a href="../../files/src/binding/ert.cache_input.html">src/binding/ert.cache_input.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/binding/ert.nav.html">src/binding/ert.nav.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.channel.html">src/ert.channel.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.dom.html">src/ert.dom.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.html">src/ert.lua</a>
+	</li>
+
+	<li><strong>src/ert.page.lua</strong></li>
+	
+	<li>
+		<a href="../../files/src/ert.platform.html">src/ert.platform.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.query.html">src/ert.query.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/src/ert.stack.html">src/ert.stack.lua</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div> <!-- id="navigation" -->
+
+<div id="content">
+
+<h1>File <code>src/ert.page.lua</code></h1>
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+    <tr>
+    <td class="name" nowrap><a href="#Page:get_data">Page:get_data</a>&nbsp;()</td>
+    <td class="summary">获取当前Page展现所需的动态数据 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#Page:has_cache">Page:has_cache</a>&nbsp;()</td>
+    <td class="summary">当前Page是否有缓存的用户输出 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#Page:hide">Page:hide</a>&nbsp;()</td>
+    <td class="summary">如果当前Page是用show_content的方式显示，即channel流程中的options中指定了 “replace”=”show_content”，则需要页面开发者将Page:hide()绑定到相应的event用于释放该界面 </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#Page:id">Page:id</a>&nbsp;()</td>
+    <td class="summary">获取当前Page所属的Channel ID </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#Page:trancode">Page:trancode</a>&nbsp;()</td>
+    <td class="summary">获取当前Page对应的trancode </td>
+    </tr>
+
+</table>
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+    <tr>
+    <td class="name" nowrap><a href="#Page">Page</a></td>
+    <td class="summary">Page类，每个实例对应Channel的一个界面，保存在所属Channel的pages字段中。Page实例一般会 被每个界面的lua 脚本引用，通常为this = ert.channel:get_page(id, trancode); </td>
+    </tr>
+
+</table>
+
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Page:get_data"></a><strong>Page:get_data</strong>&nbsp;()</dt>
+<dd>
+获取当前Page展现所需的动态数据
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Page:has_cache"></a><strong>Page:has_cache</strong>&nbsp;()</dt>
+<dd>
+当前Page是否有缓存的用户输出
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+boolean
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Page:hide"></a><strong>Page:hide</strong>&nbsp;()</dt>
+<dd>
+如果当前Page是用show_content的方式显示，即channel流程中的options中指定了 “replace”=”show_content”，则需要页面开发者将Page:hide()绑定到相应的event用于释放该界面
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Page:id"></a><strong>Page:id</strong>&nbsp;()</dt>
+<dd>
+获取当前Page所属的Channel ID
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Page:trancode"></a><strong>Page:trancode</strong>&nbsp;()</dt>
+<dd>
+获取当前Page对应的trancode
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Page"></a><strong>Page</strong></dt>
+<dd>Page类，每个实例对应Channel的一个界面，保存在所属Channel的pages字段中。Page实例一般会 被每个界面的lua 脚本引用，通常为this = ert.channel:get_page(id, trancode);
+
+
+<h3>Fields</h3>
+<ul>
+	
+	<li>
+	  _id: 当前流程所对应的channel id
+	</li>
+	
+	<li>
+	  _trancode: 当前流程所处的channel 步骤代码
+	</li>
+	
+	<li>
+	  _content: Page报文，通常为静态html界面
+	</li>
+	
+	<li>
+	  _data: Page输入 = ert.channel:get_response(_id, _trancode);
+	</li>
+	
+	<li>
+	  _user_input: 以kv形式存储Page页面中用户输入的信息，key为页面标签的id
+	</li>
+	
+	<li>
+	  _last_page: 同一Channel流程中的上一个Page实例，用于Page:replace()时缓存其 页面上的用户输入
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->
+</body>
+</html>

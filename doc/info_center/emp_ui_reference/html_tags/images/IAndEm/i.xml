@@ -16,26 +16,29 @@
             .positionToplevel{position:toplevel;top:200px;left:10px;background-color:#ff0000;}
             .fontWeight{font-weight:bold;background-color:#CCCCCC;}
             .numberlines{background-color:#CCCCCC;}
+            .linebreakmode{font-size: 14px;}
+            .shadowcolor{height: 50px;}
+            .shadowoffset{height: 50px;}
             .fontSize{font-size:30px;}
             .textAlignLeft{text-align:left;}
             .textAlignCenter{text-align:center;}
             .textAlignRight{text-align:right;}
             .close_but {width:300px;height:30px;left:10px;font-size:20px;color:#000000;background-color:#ffff00;}
         </style>
-        
+
         <script type="text/x-lua" src="RYTL.lua"></script>
         <script type="text/x-lua">
             <![CDATA[
-                
+
                 ryt = RYTL:new{};
-                
+
                 function close()
                 ryt:back();
                 end;
-                
+
             ]]>
         </script>
-        
+
     </head>
     <body>
         <!-- positon:fixed -->
@@ -45,6 +48,25 @@
         <i class="father" loop="true">loop="true" 跑马灯效果</i>
         <!-- numlines -->
         <i class="numberlines" numlines="3">显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。显示三行，无法显示完整时以“...”结尾。</i>
+        <!-- linebreakmode -->
+        <i class="father,linebreakmode" linebreakmode="head">linebreakmode="head",文字开始部分省略,用'...'代替.</i>
+        <i class="father,linebreakmode" linebreakmode="tail">linebreakmode="tail",文字结尾部分省略,用'...'代替.</i>
+        <i class="father,linebreakmode" linebreakmode="middle">linebreakmode="middle",文字中间部分省略,用'...'代替.</i>
+        <i class="father,linebreakmode" linebreakmode="none">linebreakmode="none",不使用'...'代替.增加文字超过一行。</i>
+        <i class="father,linebreakmode" numlines="1">linebreakmode未设置,numlines="1",此时在末尾省略.</i>
+        <!-- velocity -->
+        <i class="father" loop="true" velocity="5">velocity="5",指定跑马灯的移动速度为每秒5个像素点</i>
+        <i class="father" loop="true" velocity="15">velocity="5",指定跑马灯的移动速度为每秒15个像素点</i>
+        <!-- shadowcolor -->
+        <i class="father,shadowcolor" >不指定文字阴影效果的颜色</i>
+        <i class="father,shadowcolor"shadowcolor="#FF0000">shadowcolor="#FF0000",指定文字阴影效果的颜色为红色</i>
+        <!-- shadowoffset -->
+        <i class="father,shadowoffset" shdowOffset="(9,9)">不指定文字阴影效果的颜色</i>
+        <i class="father,shadowoffset" shadowcolor="#FF0000">指定文字阴影偏移量为默认</i>
+        <i class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(9,0)">指定文字阴影偏移量为(9,0)</i>
+        <i class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(0,9)">指定文字阴影偏移量为(0,9)</i>
+        <i class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(9,9)">指定文字阴影偏移量为(9,9)</i>
+        <i class="father,shadowoffset" shadowcolor="#FF0000" shadowoffset="(9,15)">指定文字阴影偏移量为(9,15)</i>
         <!-- hide -->
         <i hide='false' class='father' > hide=false，下方有hide=true的i控件 </i>
         <i hide='true' class='father' > hide=true的i控件,不应该显示出来 </i>
@@ -57,10 +79,10 @@
         <i class='father,visibility1' loop="true"> visibility:visible下方有visibility=hidden的i控件 </i>
         <i class='father,visibility2' > visibility:hidden 不应该显示 </i>
         <i class='father,visibility1' loop="true"> visibility:visible上方有visibility=hidden的i控件 </i>
-        
+
         <!-- positon:toplevel -->
         <i class='father,positionToplevel' > positon:toplevel 不随页面滚动 </i>
-        
+
         <!-- background-color -->
         <i class='father,background_color' > 背景色 ：background-color </i>
         <!-- color -->
@@ -75,7 +97,7 @@
         <i class='father,textAlignLeft'> text-align:left </i>
         <i class='father,textAlignCenter'> text-align:center </i>
         <i class='father,textAlignRight'> text-align:right </i>
-        
+
         <!-- 组合测试 -->
         <!-- hide display -->
         <i hide='true' class='father,display2'> display=block hide=true 样式>属性应显示 </i>
@@ -89,7 +111,7 @@
         <i class='father,display1,visibility1'> visibility:visible display=none 应显示</i>
         <i class='father,display2,visibility2' > visibility:hidden display=block 占位不显示 </i>
         <i class='father,display1,visibility1'> visibility:visible display=none 应显示</i>
-        
+
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
         <!-- positon:fixed -->

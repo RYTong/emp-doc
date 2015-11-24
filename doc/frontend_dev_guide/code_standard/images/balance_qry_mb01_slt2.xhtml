@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+<head>
+    <link ref="balance_qry/css/balance_qry_mb01.css" type="text/css"/>
+    <script type="text/x-lua" src="balance_qry/lua/balance_qry_mb01_action.lua"></script>
+</head>
+<body>
+    <!--Title-->
+    <table class="table_title" border="0">
+        <tr class="tr_title" >
+            <td align="center" valign="middle">
+                <label class="label_title">余额查询</label>
+                <input type="button" class="button_back" name="back_but" onclick="back_fun_mb01('account_qry')"/>
+                <input type="button" class="button_main" name="main_but" onclick="main_page_callback()"/>
+            </td>
+        </tr>
+    </table>
+    <!--账户列表-->
+    <div class="acc_div" name="div_acc" border="0">
+        <table class="acc_table" border="0">
+            #{ for key, coll_list in pairs(coll_lists) do }#
+                <tr>
+                    <td>
+                        <div class="tr_div"  border="0">
+                            <img src="local:balance_qry/images/logo.png" class="img_rytong"/>
+                            <label class="label_alias">#{= coll_list["acc_alias"]}#</label><br/>
+                            <label class="label_acc">#{= string.sub(coll_list["acc_no"],1,4) }#****#{= string.sub(coll_list["acc_no"],string.len(coll_list["acc_no"])-3,-1)}#</label>
+                            <img src="local:balance_qry/images/card_pull_but.png" class="img_onclick"/><br/>
+                            <label class="label_py">#{= coll_list["card_desc"]}#</label>
+                        </div>
+                    </td>
+                </tr>
+            #{ end }#
+        </table>
+    </div>
+</body>
+</content>

@@ -1,0 +1,30 @@
+<content>
+    <head>
+        <style>
+           .body{width:320px;height:460px;}
+           .table1{left:20px;top:30px;width:280px;height:170px;}
+           .tr1{height: 50px;}
+           .td1{width: 280px; height: 50px;}
+           .line{width: 280px; height: 1px; background-color: #ADADAD;}
+        </style>
+    </head>
+    <body class="body" >
+        <table class="table1" border="1">
+          <tr class="tr1">
+            <td class="td1"><label>table分隔线示例</label></td>
+          </tr>
+          <tr>
+            <td><div class="line"></div></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td1"><label>上方的分割线是高度为1px的div</label></td>
+          </tr>
+          <tr>
+            <td><div class="line"></div></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td1"><label>上方的分割线是高度为1px的div</label></td>
+          </tr>
+        </table>
+    </body>
+</content>

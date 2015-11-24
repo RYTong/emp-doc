@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+    <head>
+        <style>
+           .body{background-color:#f0f0f0;}
+           .div_top{left:0px;top:0px;width:320px;height:50px;filter:progid(alpha='0.5'); background-color:#00ffff;}
+           .fix{left:0px;top:50px;width:320px;height:410px;filter:progid(alpha='0.5'); background-color:#000fff;}      
+        </style>
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua">
+            <![CDATA[
+                --[[
+                @doc:获取div高度
+                --]]
+                local function get_div_height()
+                    --计算上一个div的显示高度
+                    local top_div_height = screen:width()/320*50;
+                    --获得下一个div的高度
+                    local div_height = screen:height() - top_div_height;
+
+                    local p = screen:width() / 320;
+
+                    div_height = div_height / p;
+                    return div_height;
+                end;
+                --[[
+                @doc:初始化让此div铺满屏幕底部
+                --]]
+                local function initial()
+                    local fixed_ctrl = document:getElementsByName("fixed");
+                    local height = get_div_height();
+                    fixed_ctrl[1]:setStyleByName("height",height);
+                end;
+
+                initial();
+            ]]>
+        </script>
+    </head>
+    <body>
+        <div class="div_top" border="0">
+            <label>div_top</label>
+        </div>        
+        <div class="fix" name="fixed" border="0">
+            <label>first-fixed</label>
+        </div>
+    </body>
+</content>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<content>
+<head>
+    <style>
+        .body{width:320px;height:460px;}
+        .table_title{left:0px;top:0px;width:320px;}
+        .tr_title{left:0px;top:0px;width:320px;height:51px;background-image:url(title_bg.png);}
+        .label_title{top:16px;width:320px;text-align:center;font-size:19px;font-weight:bold;color:#FFFFFF;}
+        .button_logout{top:10px;left:8px;width:54px;height:32px;background-image:url(login/images/msb_scibe.png);}
+        .button_login{top:10px;right:10px;width:54px;height:32px;background-image:url(unlogin.png);}
+        .ad_div{left:0px;top:51px;background-image:url(login/images/main_ad.png);width:320px;height:131px;}
+        .div_menu{left:0px;top:180px;width:320px;background-color: #CCCCCC;}
+        .menu_button{width:86px;height:80px;background-color: #FF0000;}
+        .menu_sliding{left:150px; width:18px;height:7px;bottom:0px;position:fixed;background-image:url(login/images/menu_sliding1.png);display:none;}
+    </style>
+    <script type="text/x-lua">
+        <![CDATA[
+
+            --[[
+            @doc:获得手机平台
+            --]]
+            local function get_platform_info()
+                local platform = system:getInfo("platform");
+                if string.find(platform,"Android") then
+                    return "android";
+                elseif string.find(platform,"iPhone") then
+                    return "iphone";
+                elseif string.find(platform,"Window") then
+                    return "wp";
+                else
+                    return "qt";
+                end;
+            end;
+
+            --[[
+            @doc:两个数相除，如果不为整除，则结果加1.
+            --]]
+            local function delivery(divisor,dividend)
+                local quotient = divisor/dividend;
+                local quotient_int, quotient_deg = math.modf(quotient);
+                if quotient_deg > 0 then
+                    quotient_int = quotient_int + 1;
+                end;
+                return quotient_int;
+            end;
+
+            --[[
+            @doc:计算每排能放多少按钮
+            根据宽度和按钮宽度算出合适的按钮间距
+            默认距离屏幕边为10px；
+            @参数：
+                width：屏幕宽度
+                but_width:按钮宽度
+            @返回：
+                返回按钮个数，按钮之间合适间距
+            --]]
+            local function get_but_num(width,but_width)
+                local sreen_width = width - 20;
+                --计算出如果没有间隔可以放多少按钮
+                local width_num,de = math.modf(sreen_width / but_width);
+                --计算出剩余多距离
+                local remainder = math.fmod(sreen_width,but_width);
+                local distance_ret;
+                local but_ret_num;
+
+                --如果剩余像素小于10则将一个按钮的宽度当做间距
+                if remainder < 10 then
+                    remainder = but_width + remainder;
+                    local distance,_n = math.modf(remainder/(width_num - 2));
+                    distance_ret = distance;
+                    but_ret_num = width_num - 1;
+                else
+                    local distance,_n = math.modf(remainder/(width_num - 1));
+                    distance_ret = distance;
+                    but_ret_num = width_num;
+                end;
+                return but_ret_num,distance_ret;
+            end;
+
+            local plat_info = get_platform_info();
+
+            -- 获得手机屏幕宽高
+            local width = screen:width();
+            local p = width / 320;
+            local height = screen:height();
+            if plat_info == "iphone" then
+                height = height -20;
+            end;
+
+            --初始化所需要数据
+            local menuData = file:read("menu_list.json","text");
+            local menu_obj = json:objectFromJSON(menuData);
+            local coll_lists = menu_obj["return"]["collection_list"];
+
+            --按钮总个数
+            local total_num = table.getn(coll_lists);
+            -- 假设按钮左右边距为10px，按钮之间间距为10px.
+            local each_row_buts,distance = get_but_num(width,86); --每排可放按钮个数
+            local number_rows,h_distance = get_but_num(height-180,80); -- 计算容器控件能放多少排，每排的间距是多少
+            local page_total = each_row_buts * number_rows; --容器控件每页能放多少button
+
+            --[[
+            @doc:计算能分多少页
+            @param:
+            total_num:按钮总数
+            each_row_buts:每排能放多少按钮
+            number_rows：每页能放多少排按钮
+            --]]
+            local function get_page_num(total_num,each_row_buts,number_rows)
+                local menu_rows = delivery(total_num,each_row_buts); -- 计算出所以的按钮能放多少排
+                local page_num_ret;
+                if menu_rows > number_rows then
+                    local page_num = delivery(menu_rows,number_rows); --计算出能分出多少页
+                    page_num_ret = page_num;
+                else
+                    page_num_ret = 1;
+                end;
+                return page_num_ret;
+            end;
+
+            local page_num = get_page_num(total_num,each_row_buts,number_rows);
+
+            --[[
+                @doc:根据有多少页生成滑动小圆点和多页菜单。
+            --]]
+            local function create_slide_page()
+                if page_num > 1 then
+                    local menu_sliding_ctrl = document:getElementsByName("menu_sliding");
+                    menu_sliding_ctrl[1]:setStyleByName("display","block");
+                    local div_menu = document:getElementsByName("div_menu");
+                    div_menu[1]:setStyleByName("width",(page_num*320).."px");
+                end;
+            end;
+
+            --[[
+            @doc:
+            根据每排按钮个数对button进行换行
+            此时实现为自动排版，如果按钮一页显示不完可以滑动看到
+            --]]
+            local function input_button(coll_lists)
+                local input_button = "";
+                for key, coll_list in pairs(coll_lists) do
+                    --[[此时key为1,2,3,4,5,6,7,8,9]]--
+                    input_button =
+                        input_button ..
+                        [[<input type="button" class="menu_button" name="]]
+                        .. coll_list["collection"] .. [["]];
+                    if key % each_row_buts == 0 then
+                        input_button = input_button .. [[></input><br/>]];
+                    else
+                        input_button = input_button .. [[></input>]];
+                    end;
+                end;
+                return input_button;
+            end;
+
+            --[[
+                @doc:计算每个按钮的top值和left值
+                @param：
+                key:第几个按钮
+                page_total：每页能放多少按钮
+                each_row_buts:每排能放多少按钮
+                number_rows:每页能放多少排按钮
+                distance:按钮间左右间隔
+                h_distance:按钮间上下间隔
+                p:跟320标准手机比对比例
+            --]]
+            local function get_top_and_left(key,menu_total,page_total,each_row_buts,number_rows,distance,h_distance,p)
+                --按钮所在页目
+                local page_no = delivery(key,page_total);
+                local page_num = get_page_num(total_num,each_row_buts,number_rows);
+                --计算left值
+                local left_dis;
+                local right_dis;
+                local top_dis;
+                for i = 1, each_row_buts do
+                    if key % each_row_buts == i then
+                        left_dis = 10 + (86 + distance)*(i-1) + (page_no-1)*320;
+                    elseif key % each_row_buts == 0 then
+                        right_dis = 10 + (page_num-page_no)*320;
+                    end;
+                end;
+                --改变按钮top值
+                for i = 1, number_rows*page_no do
+                    local divisor = delivery(key,each_row_buts);
+                    if divisor == i then
+                        top_dis = 10+(80+h_distance)*(i-number_rows*(page_no-1)-1);
+                    end;
+                end;
+                if left_dis then
+                    return true,left_dis,top_dis;
+                else
+                    return false,right_dis,top_dis;
+                end
+            end;
+
+            --滑屏
+            local tagscreen = 1;
+            local page_index = 1; -- 记录滑屏到了那一页
+
+            local function function_tag_1()
+                page_index = page_index + 1;
+            end;
+            local function function_tag_0()
+                page_index = page_index -1;
+            end;
+            --[[
+            @doc:滑屏操作
+            --]]
+            local function totscreen(argument)
+                local div_menu_ctrl = document:getElementsByName("div_menu");
+                if  argument["direction"] =="left" then
+                    if page_index < page_num then
+                        transition:setStopListener(div_menu_ctrl[1],function_tag_1)
+                        transition:translateX(div_menu_ctrl[1],-320,0.6);
+                    end;
+                elseif argument["direction"] =="right" then
+                    if page_index > 1 then
+                        transition:setStopListener(div_menu_ctrl[1],function_tag_0)
+                        transition:translateX(div_menu_ctrl[1],320,0.6);
+                    end;
+                end;
+            end;
+            --[[
+            @doc:初始化方法
+            --]]
+            local function initial()
+                local input_button = input_button(coll_lists);
+                local menu_table =
+                [[<div class="div_menu" name="div_menu" border="0">]]..input_button..[[</div>]];
+                local div_menu_ctrl = document:getElementsByName("div_menu");
+                div_menu_ctrl[1]:setInnerHTML(menu_table);
+                create_slide_page();
+                for key, coll_list in pairs(coll_lists) do
+                    local ctrl = document:getElementsByName(coll_list["collection"]);
+                    ctrl[1]:setStyleByName("background-image",coll_list["menu_img"]);
+                    local flag,dis,top = get_top_and_left(key,total_num,page_total,each_row_buts,number_rows,distance,h_distance,p);
+                    if flag then
+                        ctrl[1]:setStyleByName("left",dis.."px");
+                    else
+                        ctrl[1]:setStyleByName("right",dis.."px");
+                    end;
+                    ctrl[1]:setStyleByName("top",top.."px");                  
+                end;
+
+                --设置滑屏监听
+                gesture:setSwipeListener(div_menu_ctrl[1], totscreen);
+                location:reload();
+            end;
+
+            initial();
+
+
+        ]]>
+    </script>
+</head>
+
+<body>
+    <table class="table_title" border="0">
+        <tr class="tr_title" name="test_title">
+            <td align="center" valign="middle">
+                <label class="label_title">手机银行</label>
+                <input type="button" class="button_logout" name="logout_but" />
+                <input type="button" class="button_login" name="login_but" />
+            </td>
+        </tr>
+    </table>
+
+     <!--Ad-->
+    <div class="ad_div" name="div_ad" border="0" >
+    </div>
+
+    <!--MainMenu-->
+    <div class="div_menu" name="div_menu" border="0">
+    </div>
+        
+    <input type="button" class="menu_sliding" name="menu_sliding"/>
+</body>
+</content>

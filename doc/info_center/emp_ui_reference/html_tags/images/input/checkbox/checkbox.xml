@@ -43,7 +43,7 @@
         <input type="checkbox" class="father,visibility2">visibility=hidden,不显示占位</input>
         <!-- hide -->
         <input type="checkbox" hide="false" class="father">hide=false,显示</input>
-        <label>下方有hide=true的checkbox,不显示不占位</label> 
+        <label>下方有hide=true的checkbox,不显示不占位</label>
         <input type="checkbox" hide="true" class="father">hide=true,不显示不占位</input>
         <!-- hide display -->
         <input type="checkbox" hide="true" class="father,display2">display=block,hide=true,应显示</input>
@@ -52,28 +52,28 @@
         <!-- hide visibility -->
         <input type="checkbox" class="father,visibility1" hide="true">visibility=visible,hide=true,显示</input>
         <label>下方有visibility=hidden,hide=false的checkbox</label>
-        <input type="checkbox" class="father,visibility2" hide="false">visibility=hidden,hide=false,不显示占位</input> 
+        <input type="checkbox" class="father,visibility2" hide="false">visibility=hidden,hide=false,不显示占位</input>
         <!-- display visibility -->
         <input type="checkbox" class="father,display1,visibility1">visibility=visible,display=none,显示</input>
         <label>下方有visibility=hidden,display=block的checkbox</label>
-        <input type="checkbox" class="father,display2,visibility2">visibility=hidden,display=block,不显示占位</input> 
-        <!-- background-color -->      
+        <input type="checkbox" class="father,display2,visibility2">visibility=hidden,display=block,不显示占位</input>
+        <!-- background-color -->
         <input type="checkbox" class="father,background_color">背景色background-color</input>
-        <!-- background-image -->     
+        <!-- background-image -->
         <input type="checkbox" class="father,background_image">背景图background-image</input>
-        <!-- filter -->        
+        <!-- filter -->
         <input type="checkbox" class="father,filter1">filter渐变色</input>
         <input type="checkbox" class="father,filter2">filter(alpha=0.5)</input>
-        <!-- color -->  
+        <!-- color -->
         <input type="checkbox" class="father,textColor">字体颜色color</input>
         <!-- font-weight -->
         <input type="checkbox" class="father,fontWeight">font-weight:bold</input>
-        <!-- font-size --> 
-        <input type="checkbox" class="father,fontSize">font-size:23px</input> 
-        <!-- font-style --> 
-        <input type="checkbox" class="father,fontStyle">fontStyle:italic</input> 
+        <!-- font-size -->
+        <input type="checkbox" class="father,fontSize">font-size:23px</input>
+        <!-- font-style -->
+        <input type="checkbox" class="father,fontStyle">fontStyle:italic</input>
         <!-- fontStyle fontWeight-->
-        <input type="checkbox" class="father,fontWeight,fontStyle">bold+italic,加粗斜体</input> 
+        <input type="checkbox" class="father,fontWeight,fontStyle">bold+italic,加粗斜体</input>
         <!-- textColor fontSize fontStyle fontWeight -->
         <input type="checkbox" class="father,textColor,fontSize,fontWeight,fontStyle">color,fontSize,bold,italic</input>
         <!-- enable -->
@@ -87,7 +87,22 @@
         <input type="checkbox" class="father" value="checkbox"></input>
         <input type="checkbox" class="father">text文字</input>
         <input type="checkbox" class="father" value="checkbox">设置value属性,显示的是标签间的text</input>
-
+        <!-- numlines -->
+        <input type="checkbox" class="father,heigthStyle" numlines="2">若将numlinese属性值设置为“2”，那么指定的固定文字便会显示为2行。如下图所示：</input>
+        <!-- linebreakmode -->
+        <input type="checkbox" class="father" linebreakmode="middle">linebreakmode指定文字被截取时省略号的位置.</input>
+        <!-- numlines、linebreakmode -->
+        <input type="checkbox" class="father,heigthStyle" numlines="2"linebreakmode="middle">当numlines与linebreakmode同时设置时，linebreakmode的优先级高于numlines的！</input>
+        <!-- valign -->
+        <input type="checkbox" class="father" valign="top">valign="top"</input>
+        <input type="checkbox" class="father">默认valign="middle"</input>
+        <input type="checkbox" class="father" valign="bottom">valign="bottom"</input>
+        <!-- shadowcolor & shadowoffset -->
+        <input type="checkbox" class="father" shadowcolor="#0000FF">只有shadowcolor时</input>
+        <input type="checkbox" class="father" shadowoffset="(5,5)">只有shadowoffset时</input>
+        <input type="checkbox" class="father" shadowcolor="#0000FF" shadowoffset="(5,0)">只有横向偏移</input>
+        <input type="checkbox" class="father" shadowcolor="#0000FF" shadowoffset="(0,5)">只有纵向偏移</input>
+        <input type="checkbox" class="father" shadowcolor="#0000FF" shadowoffset="(3,3)">正向的横向偏移+纵向偏移</input>
         <!-- 关闭按钮 -->
         <input type="button" border="1" class="close_but" value="关闭" onclick="close()"/><br/>
         <!-- positon:fixed 这是body最后一个控件-->

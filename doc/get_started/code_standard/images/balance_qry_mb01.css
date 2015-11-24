@@ -1,0 +1,16 @@
+    /* 标题栏 */
+    .body{width:320px;background-image:url(bg_img.png);}
+    .table_title{left:0px;top:0px;width:320px;position:fixed;}
+    .tr_title{left:0px;top:0px;width:320px;height:51px;background-image:url(title_bg.png);}
+    .label_title{top:16px;width:320px;text-align:center;font-size:19px;font-weight:bold;color:#FFFFFF;}
+    .button_main{top:10px;left:260px;width:54px;height:32px;background-image:url(main_but.png);}
+    .button_back{top:10px;left:8px;width:54px;height:32px;background-image:url(back_but.png);}
+    /* 账户列表 */
+    .acc_div{left:0px;top:51px;width:320px;}
+    .acc_table{left:4px;width:312px;top:10px;}
+    .tr_div{top:10px;height:115px;width:312px;background-image:url(balance_qry/images/tr_card.png);}
+    .img_rytong{left:20px;top:8px;height:41px;width:41px;}
+    .img_onclick{left:254px;top:51px;height:28px;width:28px;}
+    .label_alias{font-size:15px;color:#383838;top:8px;height:41px;width:60px;left:69px;text-align:center;}
+    .label_acc{top:51px;font-size:18px;color:#2E2E2E;height:28px;left:20px;text-align:center;}
+    .label_py{right:56px;top:85px;font-size:12px;color:#2F2F2F;}

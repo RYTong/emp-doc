@@ -33,7 +33,7 @@
     <body class='body1'>
         <form method='post' action="/ebank_s/check_form" name="form_test">
             <input type='text' name='phonenumber' class='text1' value="" style="-wap-input-format:'phone'"  maxleng='11' hold='请输入手机号'/>
-            <input type="password" name="password" class="password" value=""  maxleng="6" style="-wap-input-format:'n';" hold="请输入密码" encryptMode="00"/>
+            <input type="password" name="password" class="password" value=""  maxleng="6" style="-wap-input-format:'n';" hold="请输入密码" encryptmode="00"/>
             <div class="div1" border="0">
                 <label class="label">请输入文字:</label>
                 <input type="text" name="text" class="text" value="" hold="在这里输入数据" />
