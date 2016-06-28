@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>模拟登陆调试 | EWP开发手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../debug/interface.html" />
+    
+    
+    <link rel="prev" href="../debug/intro.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="1461314305409">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 配置</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="config/menu.html">
+            
+                
+                    <a href="../config/menu.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         菜单配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="config/adapter.html">
+            
+                
+                    <a href="../config/adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         adapter
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="dev_guide/example.html">
+            
+                
+                    <a href="../dev_guide/example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="debug/intro.html">
+            
+                
+                    <a href="../debug/intro.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         联调
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="3.1" data-path="debug/login.html">
+            
+                
+                    <a href="../debug/login.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         模拟登陆调试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="debug/interface.html">
+            
+                
+                    <a href="../debug/interface.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         接口联调
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 编码规范</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="coding_spec/erlang.html">
+            
+                
+                    <a href="../coding_spec/erlang.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Erlang开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/frontend_dev_guide/backend_dev_guide.zip" class="button">html</a>
+                
+                
+                <a href="/emp/frontend_dev_guide/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >EWP开发手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_7">
+                    
+                        <h1 id="模拟登陆调试">模拟登陆调试</h1>
+<p>本章节主要讲解如何模拟登陆方便调试</p>
+<h2 id="1配置模拟登陆开关">1 1、配置模拟登陆开关</h2>
+<p>修改配置 config/ebank.conf</p>
+<pre><code>%%是否启用模拟session
+{login,true}. % true|false|con  代码模拟登陆|报文模拟登陆|完整流程
+</code></pre><h2 id="2配置模拟登陆数据">2 2、配置模拟登陆数据</h2>
+<p>修改配置 config/make_session.conf</p>
+<p>内容如下：</p>
+<pre><code>{&quot;customerId&quot;, &quot;1000018713&quot;}.
+{&quot;customerName&quot;, &quot;张聪&quot;}.
+{&quot;mobileNo&quot;, &quot;18032178965&quot;}.
+{&quot;certType&quot;, &quot;0&quot;}.
+{&quot;certNo&quot;, &quot;13062719910927122X&quot;}.
+{&quot;lastLogonTime&quot;, &quot;20150611162954&quot;}.
+{&quot;nowLogonTime&quot;, &quot;20150611163820&quot;}.
+{&quot;secondVerifyFlag&quot;, &quot;0&quot;}.
+{&quot;PrdName&quot;, &quot;最红星期4.5&quot;}.
+{&quot;EMP_SID&quot;, &quot;ETAVHVFTDSJPCJBFJEEZJTBEJADOILEVFTFMBVDB&quot;}.
+{login,true}.
+{cardList, [
+[{accountNo,&quot;6230000099000790419&quot;},{accountAlias,&quot;工资卡&quot;},{accountType,&quot;738&quot;},{signFlag,&quot;0&quot;},{balance,&quot;4996363.79&quot;},{aBalance,&quot;4996363.79&quot;}],
+[{accountNo,&quot;6230000099000790888&quot;},{accountAlias,&quot;理财专用&quot;},{accountType,&quot;738&quot;},{signFlag,&quot;2&quot;},{balance,&quot;7777777.79&quot;},{aBalance,&quot;7777777.79&quot;}],
+[{accountNo,&quot;6230000099000790777&quot;},{accountAlias,&quot;取款的&quot;},{accountType,&quot;738&quot;},{signFlag,&quot;1&quot;},{balance,&quot;888888.79&quot;},{aBalance,&quot;888888.79&quot;}]
+]}.
+</code></pre><p>可以配合模拟登陆模式进行后端模拟调试</p>
+<h2 id="3配置公共参数">3 3、配置公共参数</h2>
+<p>通过修改配置config/public_params.conf 文件来配置invoke_procedure请求的公共参数，如下：</p>
+<pre><code>{&quot;channel&quot;, &quot;cs&quot;}.
+{&quot;httpHostInfo&quot;,&quot;&quot;}.
+{&quot;certType&quot;,&quot;&quot;}.
+{&quot;certNo&quot;,&quot;&quot;}.
+{&quot;mobileNo&quot;,&quot;&quot;}.
+{&quot;platform&quot;,&quot;&quot;}.
+{&quot;EMP_SID&quot;,&quot;&quot;}.
+</code></pre><p>注意：此处配置公共参数为invoke_procedure请求时自动补充的值，按照优先级别分别从session中的userinfo区域以及session中的transaction中的default_params中取值，每个键值对的value值表示默认值，所以为保证公共参数有值，后台开发人员仍需编写代码在合适的流程中在session中指定的区域中存放需要取出的值。</p>
+<h2 id="配置管理页面登陆管理界面选择调试菜单如下">4 配置管理页面，登陆管理界面，选择调试菜单如下</h2>
+<p><img src="../image/debug.png" alt=""></p>
+<p>如此可以通过模拟登陆在登陆管理界面时自动创建登陆后的session
+可以通过界面来进行调试后端代码。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../debug/intro.html" class="navigation navigation-prev " aria-label="Previous page: 联调"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../debug/interface.html" class="navigation navigation-next " aria-label="Next page: 接口联调"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

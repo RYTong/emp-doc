@@ -31,7 +31,7 @@
 
 
         
-    <div class="book" data-level="15.1" data-basepath=".." data-revision="1445493391766">
+    <div class="book" data-level="15.1" data-basepath=".." data-revision="1463048526523">
     
 
 <div class="book-summary">
@@ -1265,10 +1265,10 @@
             </div>
             <div class="buttons">
                 
-                <a href="/emp5.3/xhtml_example/xhtml_example.zip" class="button">html</a>
+                <a href="/emp/xhtml_example/xhtml_example.zip" class="button">html</a>
                 
                 
-                <a href="/emp5.3/xhtml_example/book.pdf" class="button">pdf</a>
+                <a href="/emp/xhtml_example/book.pdf" class="button">pdf</a>
                 
                 
                 <a href="" class="button">epub</a>
@@ -1292,9 +1292,9 @@
                     
                         <h1 id="ios753新方案适配用例">IOS75.3新方案适配用例</h1>
 <h2 id="ios-状态栏">1 iOS 状态栏</h2>
-<p>iOS 7出现后,状态栏占用空间被解放出来,增加了应用程序的可显示区域.同时应用程序的显示区域不再与状态栏的显示与隐藏相关.</p>
-<p>为了更好的支持这种效果,并使项目能够灵活的控制现实的效果.我们把屏幕高度与状态栏的显隐分离.并提供接口由项目自定义状态栏所需要占用的空间.</p>
-<p>这样可以支持iOS 6, iOS 7 两种状态栏效果.</p>
+<p>iOS 7出现后,状态栏占用空间被解放出来,增加了应用程序的可显示区域。同时应用程序的显示区域不再与状态栏的显示与隐藏相关。</p>
+<p>为了更好的支持这种效果,并使项目能够灵活的控制显示的效果。我们把屏幕高度与状态栏的显隐分离。并提供接口由项目自定义状态栏所需要占用的空间。</p>
+<p>这样可以支持iOS 6, iOS 7 两种状态栏效果。</p>
 <p>详细内容可参考文档：<a href="https://dev.rytong.me/emp5.3/ert_develop/client_dev/emp_config/ert/ios/ios_statusBar.html" target="_blank">https://dev.rytong.me/emp5.3/ert_develop/client_dev/emp_config/ert/ios/ios_statusBar.html</a></p>
 <h2 id="引发的问题">2 引发的问题</h2>
 <p>iOS状态栏占用空间被解放出来以后，为了报文适配其他平台，起初由于用户需求的单一化我们对于IOS7导航栏的
@@ -1302,7 +1302,7 @@
 一张图片，使用当时的产品就不能满足此需求。所以经过深入细致的讨论与多次试验论证，我们生成了一套拥有自己
 特色的成熟的IOS7适配方案。</p>
 <h2 id="现有的ios7适配方案">3 现有的iOS7适配方案</h2>
-<p>客户端新增lua接口window:supportStatusBarInXML，是否通过模板来适配ios7状态栏效果.如果系统ios7,并且状态栏高度为0. 认为适配 ios7状态栏效果。且 window:supportStatusBarInXML返回值为 true或false, 数据类型为 boolen。</p>
+<p>客户端新增lua接口window:supportStatusBarInXML，是否通过模板来适配ios7状态栏效果。如果系统ios7,并且状态栏高度为0。 认为适配 ios7状态栏效果。且 window:supportStatusBarInXML返回值为 true或false, 数据类型为 boolen。</p>
 <p>后台报文根据system:getInfo(&quot;version&quot;）接口获取当前操作系统版本，如果为ios7或者以上版本，
 则针对布局起始点为{0,0}编写body中第一个控件及其子控件样式，其他操作系统版本遵循以前规则。</p>
 <p>由于适配IOS7导航栏，起始点为{0,0}，所以对于body的其他子节点如果写了top值需要客户端遍历修改top值为 (top先前值+增加导航栏高度)(客户端工作)。后台报文在写的时候尽量把header和下面的控件分别写为两个控件，保证body的子节点只有两个，便于客户端修改。(后台报文工作)。</p>

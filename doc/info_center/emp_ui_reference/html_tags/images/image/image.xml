@@ -17,7 +17,7 @@
             .positionToplevel{position:toplevel;top:50px;left:10px;}
             .background_color {background-color:#FFFF00;}
             .background_image {background-image:url(a_click.png);}
-            .filter{filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
+            .filter{filter:progid(startColorStr='#FFFF00',endColorStr='#ff0000',gradientType='1',alpha='0.5');}
             .close_but {width:310px;height:30px;left:5px;font-size:20px;color:#000000;background-color:#ffff00;}
         </style>
         <script type="text/x-lua" src="RYTL.lua"></script>

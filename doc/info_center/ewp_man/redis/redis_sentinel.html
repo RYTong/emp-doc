@@ -1,0 +1,3086 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>redis哨兵说明 | EMP参考手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../ewp_man/redis/redis_other.html" />
+    
+    
+    <link rel="prev" href="../../ewp_man/redis/redis_replicate.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="11.10.6" data-basepath="../.." data-revision="1465797969288">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="overview/EMP5.4TechnologyWhitePapers.html">
+            
+                
+                    <a href="../../overview/EMP5.4TechnologyWhitePapers.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         EMP5.4技术白皮书
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> EMP 安全</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="emp_security/emp_security_channel.html">
+            
+                
+                    <a href="../../emp_security/emp_security_channel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         EMP加密信道
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Release Note</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="release_note/release_note_5.4.24.html">
+            
+                
+                    <a href="../../release_note/release_note_5.4.24.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         5.4
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1.1" data-path="release_note/ewp/release_note_5.4.24B.html">
+            
+                
+                    <a href="../../release_note/ewp/release_note_5.4.24B.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.</b>
+                        
+                         EWP (5.4.24B)
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="release_note/release_note_5.4.29.html">
+            
+                
+                    <a href="../../release_note/release_note_5.4.29.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         5.4.29
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.2.1" data-path="release_note/ewp/release_note_5.4.29B.html">
+            
+                
+                    <a href="../../release_note/ewp/release_note_5.4.29B.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         EWP (5.4.29B)
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="special_issues/Introduction.html">
+            
+                
+                    <a href="../../special_issues/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         EMP产品已知问题列表
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="special_issues/SpecialIssues.html">
+            
+                
+                    <a href="../../special_issues/SpecialIssues.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         通用问题
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="special_issues/SpecialIssues_EWP.html">
+            
+                
+                    <a href="../../special_issues/SpecialIssues_EWP.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         EWP
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="special_issues/SpecialIssues_iOS.html">
+            
+                
+                    <a href="../../special_issues/SpecialIssues_iOS.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         iOS
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.4" data-path="special_issues/SpecialIssues_Android.html">
+            
+                
+                    <a href="../../special_issues/SpecialIssues_Android.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                         Android
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="emp_ui_reference/README.html">
+            
+                
+                    <a href="../../emp_ui_reference/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         EMP界面开发规范
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         变更记录
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="emp_ui_reference/changelog/changelog_5.4.24.html">
+            
+                
+                    <a href="../../emp_ui_reference/changelog/changelog_5.4.24.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         5.3到5.4（5.4.24B）的变更记录
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="emp_ui_reference/FAQ.html">
+            
+                
+                    <a href="../../emp_ui_reference/FAQ.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         FAQ
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="emp_ui_reference/css/css_introduction.html">
+            
+                
+                    <a href="../../emp_ui_reference/css/css_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         CSS样式
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.3.1" data-path="emp_ui_reference/css/CSS.html">
+            
+                
+                    <a href="../../emp_ui_reference/css/CSS.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.1.</b>
+                        
+                         样式介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4" data-path="emp_ui_reference/property/property_introduction.html">
+            
+                
+                    <a href="../../emp_ui_reference/property/property_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                         属性
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.4.1" data-path="emp_ui_reference/property/Property.html">
+            
+                
+                    <a href="../../emp_ui_reference/property/Property.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.1.</b>
+                        
+                         属性介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4.2" data-path="emp_ui_reference/property/control_global_property.html">
+            
+                
+                    <a href="../../emp_ui_reference/property/control_global_property.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.2.</b>
+                        
+                         工程配置属性介绍
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                         界面标签
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.5.1" data-path="emp_ui_reference/html_tags/tag_binding.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/tag_binding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.1.</b>
+                        
+                         控件支持属性和样式对照表
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.</b>
+                        
+                         基础标签
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.5.2.1" data-path="emp_ui_reference/html_tags/A.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/A.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.1.</b>
+                        
+                         A
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.2" data-path="emp_ui_reference/html_tags/B &amp; Strong.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/B &amp; Strong.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.2.</b>
+                        
+                         B &amp; Strong
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.3" data-path="emp_ui_reference/html_tags/Body.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Body.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.3.</b>
+                        
+                         Body
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.4" data-path="emp_ui_reference/html_tags/Br.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Br.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.4.</b>
+                        
+                         Br
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.5" data-path="emp_ui_reference/html_tags/Div.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Div.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.5.</b>
+                        
+                         Div
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.6" data-path="emp_ui_reference/html_tags/Form.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Form.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.6.</b>
+                        
+                         Form
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.7" data-path="emp_ui_reference/html_tags/I &amp; Em.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/I &amp; Em.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.7.</b>
+                        
+                         I &amp; Em
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.8" data-path="emp_ui_reference/html_tags/Img.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Img.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.8.</b>
+                        
+                         Img
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.9" data-path="emp_ui_reference/html_tags/InputButton.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputButton.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.9.</b>
+                        
+                         InputButton
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.10" data-path="emp_ui_reference/html_tags/InputCheckbox.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputCheckbox.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.10.</b>
+                        
+                         InputCheckbox
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.11" data-path="emp_ui_reference/html_tags/InputHidden.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputHidden.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.11.</b>
+                        
+                         InputHidden
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.12" data-path="emp_ui_reference/html_tags/InputPassword.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputPassword.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.12.</b>
+                        
+                         InputPassword
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.13" data-path="emp_ui_reference/html_tags/InputRadio.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputRadio.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.13.</b>
+                        
+                         InputRadio
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.14" data-path="emp_ui_reference/html_tags/InputSegment.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputSegment.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.14.</b>
+                        
+                         InputSegment
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.15" data-path="emp_ui_reference/html_tags/InputSwitch.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputSwitch.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.15.</b>
+                        
+                         InputSwitch
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.16" data-path="emp_ui_reference/html_tags/InputText.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/InputText.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.16.</b>
+                        
+                         InputText
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.17" data-path="emp_ui_reference/html_tags/Label.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Label.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.17.</b>
+                        
+                         Label
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.18" data-path="emp_ui_reference/html_tags/Richtext.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Richtext.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.18.</b>
+                        
+                         Richtext
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.19" data-path="emp_ui_reference/html_tags/Select &amp; Option.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Select &amp; Option.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.19.</b>
+                        
+                         Select &amp; Option
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.20" data-path="emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Table &amp; Tr &amp; Td &amp; Th.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.20.</b>
+                        
+                         Table &amp; Tr &amp; Td &amp; Th
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.2.21" data-path="emp_ui_reference/html_tags/Webview.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/Webview.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.21.</b>
+                        
+                         Webview
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.3" data-path="emp_ui_reference/html_tags/sdkexplain.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/sdkexplain.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.3.</b>
+                        
+                         SDK定制说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.4" data-path="emp_ui_reference/html_tags/CustomizeTag.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/CustomizeTag.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.4.</b>
+                        
+                         定制标签
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.5.4.1" data-path="emp_ui_reference/html_tags/pies.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/pies.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.4.1.</b>
+                        
+                         饼状图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.4.2" data-path="emp_ui_reference/html_tags/barPlot.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/barPlot.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.4.2.</b>
+                        
+                         柱状图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5.4.3" data-path="emp_ui_reference/html_tags/linePlot.html">
+            
+                
+                    <a href="../../emp_ui_reference/html_tags/linePlot.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.4.3.</b>
+                        
+                         折线图
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.6" data-path="emp_ui_reference/layout/layout_introduction.html">
+            
+                
+                    <a href="../../emp_ui_reference/layout/layout_introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                         布局与刷新
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.6.1" data-path="emp_ui_reference/layout/emp_layout.html">
+            
+                
+                    <a href="../../emp_ui_reference/layout/emp_layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.1.</b>
+                        
+                         页面布局规则
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.6.2" data-path="emp_ui_reference/layout/emp_layout_table.html">
+            
+                
+                    <a href="../../emp_ui_reference/layout/emp_layout_table.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.2.</b>
+                        
+                         Table布局规则
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.6.3" data-path="emp_ui_reference/layout/align_valign_arithmetic.html">
+            
+                
+                    <a href="../../emp_ui_reference/layout/align_valign_arithmetic.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.3.</b>
+                        
+                         align/valign对齐算法
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.6.4" data-path="emp_ui_reference/layout/emp_refresh.html">
+            
+                
+                    <a href="../../emp_ui_reference/layout/emp_refresh.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.4.</b>
+                        
+                         页面刷新规则
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.6.5" data-path="emp_ui_reference/layout/emp_screen_adaptation.html">
+            
+                
+                    <a href="../../emp_ui_reference/layout/emp_screen_adaptation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.5.</b>
+                        
+                         屏幕适配规则
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7" data-path="emp_ui_reference/lua/Lua.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Lua.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                         Lua
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.7.1" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.</b>
+                        
+                         基础Lua库
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.7.1.1" data-path="emp_ui_reference/lua/Accelerometer.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Accelerometer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.1.</b>
+                        
+                         accelerometer
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.2" data-path="emp_ui_reference/lua/Audio.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Audio.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.2.</b>
+                        
+                         audio
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.3" data-path="emp_ui_reference/lua/Corp.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Corp.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.3.</b>
+                        
+                         corp
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.4" data-path="emp_ui_reference/lua/Database.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Database.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.4.</b>
+                        
+                         database
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.5" data-path="emp_ui_reference/lua/Document.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Document.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.5.</b>
+                        
+                         document
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.6" data-path="emp_ui_reference/lua/File.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/File.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.6.</b>
+                        
+                         file
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.7" data-path="emp_ui_reference/lua/Gesture.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Gesture.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.7.</b>
+                        
+                         gesture
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.8" data-path="emp_ui_reference/lua/GPS.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/GPS.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.8.</b>
+                        
+                         gps
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.9" data-path="emp_ui_reference/lua/History.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/History.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.9.</b>
+                        
+                         history
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.10" data-path="emp_ui_reference/lua/Http.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Http.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.10.</b>
+                        
+                         http
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.11" data-path="emp_ui_reference/lua/Json.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Json.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.11.</b>
+                        
+                         json
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.12" data-path="emp_ui_reference/lua/KV.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/KV.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.12.</b>
+                        
+                         kv
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.13" data-path="emp_ui_reference/lua/Location.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Location.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.13.</b>
+                        
+                         location
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.14" data-path="emp_ui_reference/lua/Offline.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.14.</b>
+                        
+                         offline
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.15" data-path="emp_ui_reference/lua/QRCode.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/QRCode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.15.</b>
+                        
+                         qrcode
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.16" data-path="emp_ui_reference/lua/Screen.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Screen.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.16.</b>
+                        
+                         screen
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.17" data-path="emp_ui_reference/lua/System.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/System.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.17.</b>
+                        
+                         system
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.18" data-path="emp_ui_reference/lua/Timer.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Timer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.18.</b>
+                        
+                         timer
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.19" data-path="emp_ui_reference/lua/Tls.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Tls.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.19.</b>
+                        
+                         tls
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.20" data-path="emp_ui_reference/lua/Utility.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Utility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.20.</b>
+                        
+                         utility
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.21" data-path="emp_ui_reference/lua/Video.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Video.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.21.</b>
+                        
+                         video
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.1.22" data-path="emp_ui_reference/lua/Window.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Window.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.22.</b>
+                        
+                         window
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.2" data-path="emp_ui_reference/lua/Metatable.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Metatable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.2.</b>
+                        
+                         界面标签支持的Lua接口
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.3" data-path="emp_ui_reference/lua/Animation.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/Animation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.3.</b>
+                        
+                         动画
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.7.4" data-path="emp_ui_reference/lua/RYTL_Script_Library.html">
+            
+                
+                    <a href="../../emp_ui_reference/lua/RYTL_Script_Library.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.4.</b>
+                        
+                         RYTL脚本库
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.8" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                         javascript
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.8.1" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.1.</b>
+                        
+                         基础js库
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.8.1.1" data-path="emp_ui_reference/js/EMPHttp.html">
+            
+                
+                    <a href="../../emp_ui_reference/js/EMPHttp.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.1.1.</b>
+                        
+                         EMPHttp
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.8.1.2" data-path="emp_ui_reference/js/EMPLocation.html">
+            
+                
+                    <a href="../../emp_ui_reference/js/EMPLocation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.1.2.</b>
+                        
+                         EMPLocation
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.9" data-path="emp_ui_reference/Event.html">
+            
+                
+                    <a href="../../emp_ui_reference/Event.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                         事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="emp_config/README.html">
+            
+                
+                    <a href="../../emp_config/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         EMP开发配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="emp_config/ewp/README.html">
+            
+                
+                    <a href="../../emp_config/ewp/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         服务器配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1.1" data-path="emp_config/ewp/ewp_conf.html">
+            
+                
+                    <a href="../../emp_config/ewp/ewp_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.1.</b>
+                        
+                         EWP 配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.1.2" data-path="emp_config/ewp/app_conf.html">
+            
+                
+                    <a href="../../emp_config/ewp/app_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.2.</b>
+                        
+                         APP 配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.1.3" data-path="emp_config/ewp/yaws_conf.html">
+            
+                
+                    <a href="../../emp_config/ewp/yaws_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.3.</b>
+                        
+                         YAWS 配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.1.4" data-path="emp_config/ewp/adapter_conf.html">
+            
+                
+                    <a href="../../emp_config/ewp/adapter_conf.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.4.</b>
+                        
+                         适配 配置
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         Migrate
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         EWP
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.1" data-path="migrate/EWP3.2to5.x.html">
+            
+                
+                    <a href="../../migrate/EWP3.2to5.x.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.</b>
+                        
+                         EWP3.2to5.x参考手册
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2" data-path="migrate/EWP4.xto5.x.html">
+            
+                
+                    <a href="../../migrate/EWP4.xto5.x.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.</b>
+                        
+                         EWP4.xto5.x参考手册
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.3" data-path="migrate/EWP_user_guide.html">
+            
+                
+                    <a href="../../migrate/EWP_user_guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.</b>
+                        
+                         EWP升级操作手册
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4" data-path="migrate/EWP_FAQ.html">
+            
+                
+                    <a href="../../migrate/EWP_FAQ.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.</b>
+                        
+                         EWP升级FAQ
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         EWP5.4管理后台功能说明文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="console/Login.html">
+            
+                
+                    <a href="../../console/Login.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         登录
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="console/ClusterManagement.html">
+            
+                
+                    <a href="../../console/ClusterManagement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         集群管理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.3" data-path="console/BusinessChannelManagement.html">
+            
+                
+                    <a href="../../console/BusinessChannelManagement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                         业务频道管理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.4" data-path="console/PushManagement.html">
+            
+                
+                    <a href="../../console/PushManagement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                         Push管理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5" data-path="console/EWPStateMonitor.html">
+            
+                
+                    <a href="../../console/EWPStateMonitor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                         EWP状态监控
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6" data-path="console/LogManagement.html">
+            
+                
+                    <a href="../../console/LogManagement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                         日志管理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.7" data-path="console/StatisticAnalysis.html">
+            
+                
+                    <a href="../../console/StatisticAnalysis.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                         统计分析
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.8" data-path="console/ResourceManagement.html">
+            
+                
+                    <a href="../../console/ResourceManagement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                         资源管理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.9" data-path="console/Logout.html">
+            
+                
+                    <a href="../../console/Logout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                         退出
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="ewp_reference/EWP/index.html">
+            
+                
+                    <a href="../../ewp_reference/EWP/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         EWP API
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" >
+            
+            <span><b>10.</b> EWP DEMO</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1" >
+            
+            <span><b>10.1.</b> redis缓存示例</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1.1" data-path="ewp_demo/redis/user_obj_cache_demo.erl">
+            
+                
+                    <a href="../../ewp_demo/redis/user_obj_cache_demo.erl">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.1.</b>
+                        
+                         user_obj缓存Erlang源码
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.1.2" data-path="ewp_demo/redis/lua/redis_cache/get_user_obj.lua">
+            
+                
+                    <a href="../../ewp_demo/redis/lua/redis_cache/get_user_obj.lua">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.2.</b>
+                        
+                         读取user_obj缓存Lua源码
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.1.3" data-path="ewp_demo/redis/lua/redis_cache/set_user_obj.lua">
+            
+                
+                    <a href="../../ewp_demo/redis/lua/redis_cache/set_user_obj.lua">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.3.</b>
+                        
+                         写入user_obj缓存Lua源码
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.2" >
+            
+            <span><b>10.2.</b> redis数据存储示例</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.2.1" data-path="ewp_demo/redis/user_track_store_demo.erl">
+            
+                
+                    <a href="../../ewp_demo/redis/user_track_store_demo.erl">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.1.</b>
+                        
+                         轨迹数据存储Erlang源码
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.2.2" data-path="ewp_demo/redis/lua/redis_data_store/get_user_track_info.lua">
+            
+                
+                    <a href="../../ewp_demo/redis/lua/redis_data_store/get_user_track_info.lua">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.2.</b>
+                        
+                         读取轨迹数据Lua源码
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.2.3" data-path="ewp_demo/redis/lua/redis_data_store/set_user_track_info.lua">
+            
+                
+                    <a href="../../ewp_demo/redis/lua/redis_data_store/set_user_track_info.lua">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.3.</b>
+                        
+                         写入轨迹数据Lua源码
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="section_README.html">
+            
+                
+                    <a href="../../section_README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         EWP Manual
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1" data-path="ewp_man/cron_service.html">
+            
+                
+                    <a href="../../ewp_man/cron_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         cron_service
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.2" data-path="ewp_man/InstructionUseSyslog.html">
+            
+                
+                    <a href="../../ewp_man/InstructionUseSyslog.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                         syslog
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.3" data-path="ewp_man/PreventDuplicateSubmit.html">
+            
+                
+                    <a href="../../ewp_man/PreventDuplicateSubmit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.</b>
+                        
+                         防重复提交使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.4" data-path="ewp_man/eac_fast_use_guide.html">
+            
+                
+                    <a href="../../ewp_man/eac_fast_use_guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.</b>
+                        
+                         EWP管理平台快速使用文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.5" data-path="ewp_man/eac_use_guide.html">
+            
+                
+                    <a href="../../ewp_man/eac_use_guide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.</b>
+                        
+                         EWP管理平台使用文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.6" data-path="ewp_man/guide_of_multi_app_support_of_offline.html">
+            
+                
+                    <a href="../../ewp_man/guide_of_multi_app_support_of_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.</b>
+                        
+                         5.3离线资源多App支持配置使用文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.7" data-path="ewp_man/guide_of_multi_app_support_of_offline_5_4.html">
+            
+                
+                    <a href="../../ewp_man/guide_of_multi_app_support_of_offline_5_4.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.7.</b>
+                        
+                         5.4离线资源多App支持配置使用文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.8" data-path="ewp_man/guide_of_websocket_support_of_offline.html">
+            
+                
+                    <a href="../../ewp_man/guide_of_websocket_support_of_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.8.</b>
+                        
+                         离线资源Websocket下载配置使用文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.9" data-path="ewp_man/UsingdocumentserversupportsmultipleHTTPSchannel.html">
+            
+                
+                    <a href="../../ewp_man/UsingdocumentserversupportsmultipleHTTPSchannel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.9.</b>
+                        
+                         服务端支持多https信道使用文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10" >
+            
+            <span><b>11.10.</b> redis</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.10.1" data-path="ewp_man/redis/redis_deploy.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_deploy.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.1.</b>
+                        
+                         redis安装部署
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10.2" data-path="ewp_man/redis/redis_persistence.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_persistence.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.2.</b>
+                        
+                         redis持久化说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10.3" data-path="ewp_man/redis/redis_cluster.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_cluster.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.3.</b>
+                        
+                         redis集群说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10.4" data-path="ewp_man/redis/redis_latency.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_latency.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.4.</b>
+                        
+                         redis延迟监控说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10.5" data-path="ewp_man/redis/redis_replicate.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_replicate.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.5.</b>
+                        
+                         redis主从复制说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="11.10.6" data-path="ewp_man/redis/redis_sentinel.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_sentinel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.6.</b>
+                        
+                         redis哨兵说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10.7" data-path="ewp_man/redis/redis_other.html">
+            
+                
+                    <a href="../../ewp_man/redis/redis_other.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.7.</b>
+                        
+                         其他内容说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.10.8" data-path="ewp_man/redis/redis.conf">
+            
+                
+                    <a href="../../ewp_man/redis/redis.conf">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.10.8.</b>
+                        
+                         redis配置文件示例
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/info_center/info_center.zip" class="button">html</a>
+                
+                
+                <a href="/emp/info_center/book.pdf" class="button">pdf</a>
+                
+                
+                <a href="" class="button">epub</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >EMP参考手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_16">
+                    
+                        <h1 id="redis哨兵sentinel">Redis哨兵（sentinel）</h1>
+<p>哨兵为Redis提供了高可用性。意味着实际中可以使用哨兵创建一个非人工干预的、可以抵抗特定类型故障的Redis部署结构。此外哨兵还提供了监控、通知等附属功能。Redis哨兵在宏观层面上提供完整功能列表为：</p>
+<ul>
+<li>监控。不断检测主节点和从节点的工作是否符合预期。</li>
+<li>通知。被监控的实例出现错误时，通过API通知系统管理员或其他程序</li>
+<li>自动故障恢复。如果主节点无法正常工作，哨兵会启动故障转移程序。推选一个从节点替换主节点，其他从节点重新配置到新主节点。并通知应用程序新的主节点地址。</li>
+<li>配置提供者。为客户端服务发现提供权威来源：客户端连接到哨兵来获取当前主节点的地址。</li>
+</ul>
+<h2 id="分布式特性">1 分布式特性</h2>
+<p>Redis哨兵是一个分布式系统。哨兵被设计为在多个哨兵进程互相协同的配置中运行。多个协同进程的优势为：</p>
+<ol>
+<li>故障检测须由多个哨兵对一个指定节点不再可用的事实达成一致，这样可以降低误报概率。</li>
+<li>即使部分哨兵进程无法工作时，哨兵服务依然可用。使得系统更加健壮。使用一个自身存在单点故障的故障恢复系统一点也不好玩。</li>
+</ol>
+<p>哨兵、Redis实例和客户端的总和也组成了一个大型的分布式系统。本文将从哨兵的基本信息到更复杂的哨兵工作原理对其逐步进行介绍。</p>
+<h2 id="快速入门">2 快速入门</h2>
+<h3 id="使用版本">2.1 使用版本</h3>
+<p>当前版本为Sentinel 2版本。Redis2.8和3.0是使用哨兵的稳定版本。附带Redis 2.6的Sentinel 1版本已经弃用。</p>
+<h3 id="运行">2.2 运行</h3>
+<p>使用redis-sentinel脚本可以运行哨兵：</p>
+<pre>
+    redis-sentinel /path/to/sentinel.conf
+</pre>
+
+<p>或者使用redis-server脚本按哨兵模式启动：</p>
+<pre>
+    redis-server /path/to/sentiel.conf --sentinel
+</pre>
+
+<p>两种方式结果相同。哨兵在启动时会强制要求指定配置文件，该配置是系统用于保存当前状态的，以便重启时加载。如果没指定配置文件或指定文件没有写权限，则启动将被拒绝。</p>
+<p>哨兵启动是会默认监听26379端口，所以服务器中的26379端口必须对其他服务器的哨兵实例打开，以便接收它们的连接。</p>
+<h3 id="一些注意事项">2.3 一些注意事项</h3>
+<ol>
+<li>你需要至少3个哨兵实例来构建一个健壮的部署结构</li>
+<li>三个实例应该位于（出现故障）互不影响的服务器或虚拟机上。</li>
+<li>哨兵不能保证被确认的更新操作不会丢失。</li>
+<li>哨兵需要客户端支持。多数客户端都会支持哨兵，但并非所有</li>
+<li>如果没有经过不断的测试，安全的高可用性的设置是不存在的。你可能会出现配置错误的情况，而当这个错误明显暴露出来的时候已经晚了。</li>
+<li>哨兵、Docker、NAT或端口映射在一起使用时需要注意：Docker会执行端口重映射，会破坏哨兵自动发现其他哨兵进程和从节点列表的能力。</li>
+</ol>
+<h3 id="哨兵配置">2.4 哨兵配置</h3>
+<p>Redis源码中有名为sentinel.conf的文件，是一个自描述的示例配置。一个典型的最小化的配置文件如下：</p>
+<pre>
+sentinel monitor mymaster 127.0.0.1 6379 2
+sentinel down-after-milliseconds mymaster 60000
+sentinel failover-timeout mymaster 180000
+sentinel parallel-syncs mymaster 1
+
+sentinel monitor resque 192.168.1.3 6380 4
+sentinel down-after-milliseconds resque 10000
+sentinel failover-timeout resque 180000
+sentinel parallel-syncs resque 5
+</pre>
+
+<p>配置只需要指定被监控的主节点，并为每个主节点命名。从节点不需指定，会被自动发现。哨兵会自动将从节点的信息更新到配置中，以便重启时直接获取这些信息。每次从节点被选举替换主节点以及每次发现新哨兵都会将配置重写。</p>
+<p>上面的例子中监控了两个Redis实例集合，一个集合名为mymaster，另一个为resque。Sentinel monitor语句的参数为：</p>
+<pre>
+    sentinel monitor <master-group-name> <ip> <port> <quorum>
+</pre>
+
+<p>实例配置第一行告诉哨兵去监控一个名为mymaster的主节点，地址为127.0.0.1，端口为6379，表决者数量为2。表决者数量参数的含义为：</p>
+<ul>
+<li>表决者数量是认同一个主节点无法访问的哨兵数量，以便将其标记为故障状态，并最终启动故障转移程序。</li>
+<li>表决者数量仅用于检测故障。为了真正执行故障转移，其中一个哨兵需要被选为领袖并被授权执行故障转移。领袖只能由大多数哨兵进程投票产生。</li>
+</ul>
+<p>假设有5个哨兵进程，表决者数量为2。于是会发生：</p>
+<ul>
+<li>如果两个哨兵同时认为一个主节点无法访问，其中一个哨兵会尝试一次故障转移</li>
+<li>如果至少存在3个可访问的哨兵，故障转移会被授权并真正的启动。</li>
+</ul>
+<p>也就是说，在实际使用中如果多数哨兵进程无法互相访问，则故障转移无法执行。</p>
+<h3 id="其他配置项">2.5 其他配置项</h3>
+<p>其他的配置项格式均为：</p>
+<pre>
+    sentinel <option_name> <master_name> <option_value>
+</pre>
+
+<p>选项的用途为：</p>
+<ul>
+<li>down-after-milliseconds是哨兵开始认为一个实例出现故障时，该实例无法访问（要么不回复ping，要么回复错误）持续的时间，单位为毫秒。</li>
+<li>parallel-syncs设置了在故障转移后，可以同时重配置为复制新主节点的从节点数量。值越小，故障转移的完成时间消耗越多。如果从节点配置为可以服务旧数据，你可能不想所有从节点同时同步主节点数据。虽然复制是非阻塞的，但同步时依然存在一段暂停服务的时间，以便从主节点加载大块数据。如希望保证同一时间只有一个从节点不可用，那么该选项就设置为1。</li>
+</ul>
+<p>其余选项会在后续章节中介绍。所有配置参数都可以使用SENTINEL SET指令在运行时修改。</p>
+<h3 id="哨兵部署实例">2.6 哨兵部署实例</h3>
+<p>本节会用到以下图例：</p>
+<p>下图表示一个虚拟机或物理机，取名为“盒子”</p>
+<pre>
++--------------------+
+| This is a computer |
+| or VM that fails   |
+| independently. We  |
+| call it a "box"    |
++--------------------+
+</pre>
+
+<p>下图表示哪些程序正在运行</p>
+<pre>
++-------------------+
+| Redis master M1   |
+| Redis Sentinel S1 |
++-------------------+
+</pre>
+
+<p>下图表示不同盒子之间可以互相访问</p>
+<pre>
++-------------+               +-------------+
+| Sentinel S1 |---------------| Sentinel S2 |
++-------------+               +-------------+
+</pre>
+
+<p>下图表示网络断开</p>
+<pre>
++-------------+                +-------------+
+| Sentinel S1 |------ // ------| Sentinel S2 |
++-------------+                +-------------+
+</pre>
+
+<p>此外</p>
+<ul>
+<li>M1, M2, M3, ..., Mn表示主节点</li>
+<li>R1, R2, R3, ..., Rn表示从节点</li>
+<li>S1, S2, S3, ..., Sn表示哨兵</li>
+<li>C1, C2, C3, ..., Cn表示客户端</li>
+<li>由哨兵触发的角色改变使用方括号表示，如 [M1] 表示实例由于哨兵的干预而变成了主节点。</li>
+</ul>
+<h4 id="示例1只有两个哨兵">2.6.1 示例1：只有两个哨兵</h4>
+<pre>
++----+         +----+
+| M1 |---------| R1 |
+| S1 |         | S2 |
++----+         +----+
+
+quorum = 1
+</pre>
+
+<p>如果M1和S1所在的盒子停止工作，S2将无法授权故障转移，系统将不可用。</p>
+<pre>
++----+           +------+
+| M1 |----//-----| [M1] |
+| S1 |           | S2   |
++----+           +------+
+</pre>
+
+<p>在上图中，我们创建了两个对称的主节点。客户端可以分别在两端写入，当网络恢复正常后，没有办法判断哪边的配置是正确的。</p>
+<h4 id="示例2三个盒子的基本设置">2.6.2 示例2：三个盒子的基本设置</h4>
+<pre>
+       +----+
+       | M1 |
+       | S1 |
+       +----+
+          |
++----+    |    +----+
+| R2 |----+----| R3 |
+| S2 |         | S3 |
++----+         +----+
+
+quorum = 2
+</pre>
+
+<p>在每种哨兵设置中，Redis总会出现写操作丢失的风险。然而在上面的示例中，由于客户端可能会访问旧的主节点，写操作丢失的风险会更高。</p>
+<pre>
+         +----+
+         | M1 |
+         | S1 | <- C1 (writes will be lost)
+         +----+
+            |
+            /
+            /
++------+    |    +----+
+| [M2] |----+----| R3 |
+| S2   |         | S3 |
++------+         +----+
+</pre>
+
+<p>网络分区将M1隔离开，R2成为主节点，C1与M1在同一分区。此时C1可能会执行写操作。由于网络分区恢复后，M1将被配置为M2的从节点，C1的写操作将永久丢失。</p>
+<p>此问题使用下面的Redis复制特性可以得到缓解。如果主节点检测到自己无法向指定数量的从节点复制写操作，该特性允许停止接收写操作。</p>
+<pre>
+min-slaves-to-write 1
+min-slaves-max-lag 10
+</pre>
+
+<p>使用上述配置，如果无法向至少1个从节点复制，主节点将停止接收写操作。无法向从节点复制写操作实际意味着从节点或者无法连接，或者没有回复确认的时间（秒）超过配置的max-lag。因此M1将在10秒后变得不可用。然而这种特性也有弊端，如果两个从节点同时故障，主节点也将不可用。</p>
+<h3 id="示例3哨兵在客户端节点">2.7 示例3：哨兵在客户端节点</h3>
+<p>有时我们只有一主一从两个节点。上一个示例中的配置是行不通的，我们可以采纳下面的方式，将哨兵与客户端放置在一个盒子中：</p>
+<pre>
+            +----+         +----+
+            | M1 |----+----| R1 |
+            | S1 |    |    | S2 |
+            +----+    |    +----+
+                      |
+         +------------+------------+
+         |            |            |
+         |            |            |
+      +----+        +----+      +----+
+      | C1 |        | C2 |      | C3 |
+      | S1 |        | S2 |      | S3 |
+      +----+        +----+      +----+
+
+   quorum = 2
+</pre>
+
+<h3 id="示例4哨兵在客户端节点且客户端少于三个">2.8 示例4：哨兵在客户端节点且客户端少于三个</h3>
+<p>如果客户端节点少于三个，示例3中的设置将无法使用。本例中我们采用以下设置：</p>
+<pre>
+            +----+         +----+
+            | M1 |----+----| R1 |
+            | S1 |    |    | S2 |
+            +----+    |    +----+
+                      |
+               +------+-----+
+               |            |  
+               |            |
+            +----+        +----+
+            | C1 |        | C2 |
+            | S3 |        | S4 |
+            +----+        +----+
+
+      quorum = 3
+</pre>
+
+<h3 id="哨兵dockernat和可能的问题">2.9 哨兵、Docker、NAT和可能的问题</h3>
+<p>Docket使用一种称为端口映射的技术：在Docker容器中运行的程序可能会被使用不同的端口暴露给外界，而不是程序以为正在使用的端口。在同一服务器同时使用相同端口运行多个容器时很有用。Docket不是唯一遇到这种情况的软件系统，还存在其他的NAT设置会让端口重新映射，甚至是IP地址。</p>
+<p>IP和端口的重映射会以两种方式对哨兵产生影响：</p>
+<ol>
+<li>自动发现其他哨兵的功能无法使用。是因为该功能基于hello消息实现的，该消息是每个哨兵表名自己在监听哪个IP和端口。然而哨兵无法知道IP或端口被重映射了，因此它正常声明的消息对其他节点可能是错误的。</li>
+<li>INFO指令输出的从节点列表。IP地址是由主节点根据检查TCP连接的远程端检测出来的，但端口是从节点在握手时自己通告的。与上一条类似，这个端口可能是错误的。</li>
+</ol>
+<p>因此哨兵使用INFO指令自动发现的从节点都是无法使用的，也将导致无法对主节点进行故障转移。因此目前哨兵无法监控部署在Docker上的主节点和从节点的集合，除非命令Docket按1:1映射端口。</p>
+<p>对于第一个问题，假设需要在Docker中（或其他重映射端口的NAT环境中）使用哨兵实例，可以使用以下两个配置来让哨兵声明指定的IP和端口：</p>
+<pre>
+sentinel announce-ip <ip>
+sentinel announce-port <port>
+</pre>
+
+<p>Docker可以使用host networking模式运行（参考--net=host参数），该模式不会对哨兵产生影响，因为端口不会被重映射。</p>
+<h2 id="上手指南">3 上手指南</h2>
+<p>本节是一个展示如何配置3个哨兵实例并与其交互的指南，读者可以尽快的运行系统。</p>
+<p>假设哨兵实例使用5000、5001和5002端口，一主一从节点分布使用6379和6380端口。IP均使用127.0.0.1。三个哨兵配置类似于：</p>
+<pre>
+port 5000
+sentinel monitor mymaster 127.0.0.1 6379 2
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 60000
+sentinel parallel-syncs mymaster 1
+</pre>
+
+<h3 id="查询主节点状态">3.1 查询主节点状态</h3>
+<pre>
+$ redis-cli -p 5000
+127.0.0.1:5000> sentinel master mymaster
+ 1) "name"
+ 2) "mymaster"
+ 3) "ip"
+ 4) "127.0.0.1"
+ 5) "port"
+ 6) "6379"
+ 7) "runid"
+ 8) "953ae6a589449c13ddefaee3538d356d287f509b"
+ 9) "flags"
+10) "master"
+11) "link-pending-commands"
+12) "0"
+13) "link-refcount"
+14) "1"
+15) "last-ping-sent"
+16) "0"
+17) "last-ok-ping-reply"
+18) "735"
+19) "last-ping-reply"
+20) "735"
+21) "down-after-milliseconds"
+22) "5000"
+23) "info-refresh"
+24) "126"
+25) "role-reported"
+26) "master"
+27) "role-reported-time"
+28) "532439"
+29) "config-epoch"
+30) "1"
+31) "num-slaves"
+32) "1"
+33) "num-other-sentinels"
+34) "2"
+35) "quorum"
+36) "2"
+37) "failover-timeout"
+38) "60000"
+39) "parallel-syncs"
+40) "1"
+</pre>
+
+<p>可以看到，哨兵打印了大量的主节点信息。我们可能会对其中一些很感兴趣：</p>
+<ol>
+<li>num-other-sentinels是2，可以知道该哨兵已经检测到另外两个检测该主节点的哨兵。你可以在日志中看到+sentinel事件。</li>
+<li>flags只有master。如果主节点故障，我们会期望还能看到s_down或o_down标记。</li>
+<li>num-slaves是1。哨兵能检测到有一个从节点附属到主节点上。</li>
+</ol>
+<p>尝试下面两条指令可以获得更多信息：</p>
+<pre>
+SENTINEL slaves mymaster
+SENTINEL sentinels mymaster
+</pre>
+
+<p>第一条提供从节点的类似信息，第二条是关于其他哨兵的。</p>
+<h3 id="获取当前节点地址">3.2 获取当前节点地址</h3>
+<p>哨兵可以作为配置提供者，使用以下指令可以获取当前活跃主节点的访问地址：</p>
+<pre>
+127.0.0.1:5000> SENTINEL get-master-addr-by-name mymaster
+1) "127.0.0.1"
+2) "6379"
+</pre>
+
+<h3 id="测试故障转移">3.3 测试故障转移</h3>
+<p>下面我们可以杀掉主节点来查看配置是否变更。执行下面指令：</p>
+<pre>
+    redis-cli -p 6379 DEBUG sleep 30
+</pre>
+
+<p>该指令会通过使主节点睡眠30秒从而无法被访问。此时如果查看哨兵的日志，可以看到许多操作：</p>
+<ol>
+<li>哨兵检测到主节点故障，出现+sdown事件。</li>
+<li>之后事件升级为+odown。表示多个哨兵已经就无法访问主节点的实时达成一致。</li>
+<li>选举出一个哨兵启动第一次故障转移尝试。</li>
+<li>发生故障转移</li>
+</ol>
+<p>此时查询mymaster主节点地址将会得到不同的结果：</p>
+<pre>
+127.0.0.1:5000> SENTINEL get-master-addr-by-name mymaster
+1) "127.0.0.1"
+2) "6380"
+</pre>
+
+<h2 id="哨兵api">4 哨兵API</h2>
+<p>哨兵提供了一个API来检查自己的状态、查看主从节点的健康状况、订阅通知以及在线修改哨兵配置。哨兵默认使用26379端口运行，并使用Redis协议接收指令。因此使用redis-cli或其他客户端都可以与哨兵通信。
+使用Pub/Sub可以接收哨兵推送的消息，每次发生某些事件时（如故障转移或一个实例处于错误状态等）哨兵会主动将通知推送给客户端。</p>
+<h3 id="哨兵指令">4.1 哨兵指令</h3>
+<p>下面是哨兵支持的指令（不包含修改配置的指令）：</p>
+<pre>
+* PING。该指令仅是返回PONG
+* SENTINEL masters。显示主节点列表及状态。
+* SENTINEL master <master name>。显示指定主节点的状态和信息
+* SENTINEL slaves <master name>。显示指定主节点的从节点列表和状态。
+* SENTINEL sentinels <master name>。显示指定主节点的哨兵列表和状态。
+* SENTINEL get-master-addr-by-name <master name>。返回指定主节点的访问地址。如果故障转移正在进行或已成功完成，结果为新选举的从节点地址。
+* SENTINEL reset <pattern>。重置匹配的所有主节点。pattern参数使用通配符格式。重置操作会清空主节点之前的所有状态，移除每个已发现的、与指定主节点相关的从节点和哨兵信息。
+* SENTINEL failover <master name>。强制执行故障转移，且不会征求其他哨兵的同意。
+* SENTINEL ckquorum <master name>。检查当前配置是否可以满足quorum数量要求，以及授权故障转移的要求。该指令应该在监控系统中使用，来检测哨兵部署是否正常。
+* SENTINEL flushconfig。强制哨兵将配置重写到磁盘中，包括当前状态。哨兵通常在每次状态变化是重写配置。然而有些时候配置文件可能因为出现误操作、磁盘故障等情况而丢失。此时可以手动重写配置。
+</pre>
+
+<h3 id="在线配置">4.2 在线配置</h3>
+<p>在Redis 2.8.4版本之后，哨兵提供了用于添加、删除或修改指定主节点配置的API。需要注意的是如果有多个哨兵，应该将修改应用到所有哨兵实例中，以便它们正常工作。一个实例的配置修改无法自动传播到其他哨兵实例中。下面是更新配置的指令列表：</p>
+<pre>
+* SENTINEL MONITOR <name> <ip> <port> <quorum>。该指令使哨兵开始监控新的主节点。与配置文件中sentinel monitor配置不同，该指令的ip参数只能为IP地址，不能为域名。
+* SENTINEL REMOVE <name>。该指令用来移除对指定的主节点的监控。
+* SENTINEL SET <name> <option> <value>。该指令用来修改指定主节点的配置参数。可以指定多个option/value对。所有在sentinel.conf中的参数都可以用该指令设置。
+</pre>
+
+<p>下面示例用来修改down-after-milliseconds的配置：</p>
+<pre>
+SENTINEL SET objects-cache-master down-after-milliseconds 1000
+</pre>
+
+<p>该指令还可以用来修改quorum参数，而不用先SENTINEL REMOVE再SENTINEL MONITOR：</p>
+<pre>
+SENTINEL SET objects-cache-master quorum 5
+</pre>
+
+<p>注意，没有对应的GET指令来获取配置，获取配置须使用SENTINEL MASTER指令。</p>
+<h3 id="添加和删除哨兵">4.3 添加和删除哨兵</h3>
+<p>因为有自动发现的机制，添加哨兵非常简单。只需要将新增哨兵配置为监控当前活跃的主节点。哨兵在10秒内将获得其他哨兵的列表以及从节点列表。
+如果需要一次添加多个哨兵，建议一个一个添加，等其他所有哨兵都发现一个新增哨兵后再添加下一个。这样可以保证在网络分区时，多数哨兵可以访问。
+最后使用SENTINEL MASTER指令检查是否所有的哨兵对哨兵总数达成一致。</p>
+<p>删除哨兵会有些麻烦，哨兵无法遗忘已知的哨兵，即使它们很长一段时间内无法被访问。删除方法为：</p>
+<ol>
+<li>停止想要删除的哨兵进程</li>
+<li>向其他哨兵实例发送SENTINEL RESET * 指令，一个接一个且每次至少等待30秒。</li>
+<li>使用SENTINEL MASTER指令检查所有哨兵输出的活跃哨兵数量是一致的。</li>
+</ol>
+<h3 id="删除旧的主节点或无法访问的从节点">4.4 删除旧的主节点或无法访问的从节点</h3>
+<p>哨兵无法遗忘指定主节点的从节点，即使长时间内无法访问它们。因为哨兵应该在网络分区或故障事件之后将回归的从节点正确配置。此外，故障主节点实际上会被添加到新主节点的从节点列表中，当该节点可用时哨兵会对其重新配置。</p>
+<p>有时你会想在监控列表中永久删除一个从节点（或一个旧的主节点）。你需要向所有哨兵实例发送SENTINEL RESET mastername指令。之后每个哨兵只会添加目前正在复制指定主节点的从节点。</p>
+<h3 id="pubsub消息">4.5 Pub/Sub消息</h3>
+<p>客户端可以使用SUBSCRIBE或PSUBSCRIBE指令来订阅哨兵的频道以及获取特定事件的通知。
+频道名称与事件名称相同，如+sdown频道将接收所有关于实例进入SDOWN（SDOWN意思是目前正在查询的哨兵认为该实例无法访问）状态的通知。
+如获取所有消息，只须使用PSUBSCRIBE * 指令。</p>
+<p>下面是可以接收的所有频道和消息格式。第一个单词是频道或事件名称，其余的是数据格式：</p>
+<pre>
+* +reset-master <instance details> —— 主节点被重置。
+* +slave <instance details> —— 新的从节点被检测到。
+* +failover-state-reconf-slaves <instance details> —— 故障转移状态改变到reconf-slaves状态
+* +failover-detected <instance details> —— 检测到另一个哨兵或其他外部实体启动了一次故障转移。
+* +slave-reconf-sent <instance details> —— 哨兵领袖向该实例发送SLAVEOF指令来重新配置。
+* +slave-reconf-inprog <instance details> —— 显示正在被重新配置的从节点将要成为新主节点的从节点，但数据同步过程尚未完成。
+* +slave-reconf-done <instance details> —— 从节点已与新主节点同步。
+* -dup-sentinel <instance details> —— 指定主节点因为重复而将一个或多个哨兵移除。
+* +sentinel <instance details> —— 检测到该主节点有新的哨兵加入。
+* +sdown <instance details> —— 指定实例处于主观宕机状态。
+* -sdown <instance details> —— 指定实例不再处于主观宕机状态。
+* +odown <instance details> —— 指定实例处于客观宕机状态。
+* -odown <instance details> —— 指定实例不再处于客观宕机状态。
+* +new-epoch <instance details> —— current epoch更新了。
+* +try-failover <instance details> —— 正在进行新一轮的故障转移，在等待多数哨兵选举领袖。
+* +elected-leader <instance details> —— 在当前纪元赢得选举，可以执行故障转移。
+* +failover-state-select-slave <instance details> —— 在选举从节点
+* no-good-slave <instance details> —— 没有可选举的健康从节点。过段时间会重试
+* selected-slave <instance details> —— 找到可选举的从节点
+* failover-state-send-slaveof-noone <instance details> —— 正在重试将从节点重配置为主节点，等待从节点转换。
+* failover-end-for-timeout <instance details> —— 故障转移因为超时而终止。无论如何从节点最终会被配置为新主节点的副本。
+* failover-end <instance details> —— 故障转移成功结束。所有从节点似乎被配置为新主节点的副本。
+* switch-master <master name> <oldip> <oldport> <newip> <newport> —— 主节点新的访问地址为指定值。大多数外部用户会对此信息感兴趣。
+* +tilt —— 进入Tilt模式
+* -tilt —— 退出Tilt模式
+</pre>
+
+<h3 id="处理-busy状态">4.6 处理-BUSY状态</h3>
+<p>-BUSY状态会由一个Redis实例返回，当一段Lua脚本运行时间超过配置的Lua脚本时间限制时返回该状态。此时在触发故障转移前，哨兵会尝试发送SCRIPT KILL指令。如果脚本只有读操作，该指令会成功。如果该实例之后还处于错误状态，最终它将被故障转移。</p>
+<h3 id="从节点优先级">4.7 从节点优先级</h3>
+<p>Redis实例有一个名为slave-priority的配置参数。从节点会将该信息在INFO结果中返回，哨兵使用它来挑选执行故障转移的从节点，规则为：</p>
+<ol>
+<li>如果优先级为0，该从节点不会被选举为主节点。</li>
+<li>哨兵优先选择低优先级的从节点</li>
+</ol>
+<p>例如从节点S1与主节点在相同数据中心，该主节点的从节点S2在另一个数据中心。可以将S1优先级设为10，S2设为100。这样当两者都可用时，S1将优先被用于故障恢复。</p>
+<h3 id="哨兵和redis认证">4.8 哨兵和Redis认证</h3>
+<p>当主节点配置了客户端访问密码，从节点同样需要知道该密码来认证主节点。通过以下配置完成：</p>
+<ul>
+<li>在主节点配置requirepass来设置密码。</li>
+<li>在从节点配置masterauth来认证主节点。</li>
+</ul>
+<p>当使用哨兵时，由于故障转移，主节点可能不止一个，且主节点也会变为从节点。因此，需要将上述两个配置参数在每个节点中配置。如果需要一个从节点不需认证，可以将该节点的优先级设为0，这样便可阻止从节点成为主节点。并且该从节点只配置masterauth。</p>
+<h2 id="进阶内容">5 进阶内容</h2>
+<h3 id="sdown和odown状态">5.1 SDOWN和ODOWN状态</h3>
+<p>哨兵有两个宕机概念，一个为主观宕机（SDOWN），是指定哨兵实例本地的宕机状态。另一个为客观宕机（ODOWN），当有足够的哨兵有SDOWN状态时将满足ODOWN状态，并且使用SENTINEL is-master-down-by-addr指令从其他哨兵获得反馈。</p>
+<p>从哨兵的角度，当它在is-master-down-after-milliseconds配置时间内没有收到有效的PING回复时会满足SDOWN条件。有效的PING回复有：</p>
+<ul>
+<li>+PONG回复</li>
+<li>-LOADING错误回复</li>
+<li>-MASTERDOWN错误回复</li>
+</ul>
+<p>一个逻辑主节点在INFO返回内容中表名自己是从节点时，该主节点会被认为是宕机状态。SDOWN需要在配置的时间间隔内没有收到有效回复，如果配置时间间隔为30秒，每29秒收到一个回复，该实例仍会被认为在正常工作。</p>
+<p>SDOWN不足以触发故障转移，它只意味着单个哨兵认为一个实例不可用了。故障转移必须达到ODOWN状态。SDOWN到ODOWN的切换没有使用强一致性算法，而是使用一种gossip协议的形式：如果指定哨兵在给定时间范围内从足够数量的哨兵处获得报告表明一个主节点不能工作了，SDOWN才会升级为ODOWN。如果之后不再有相关报告，该状态会被恢复。</p>
+<p>ODOWN状态只适用于主节点。其不会用于从节点和哨兵中，只有SDOWN会。然而SDOWN依然有语义内涵，例如在SDOWN状态的从节点不会被哨兵选举来执行故障转移。</p>
+<h3 id="哨兵和从节点自动发现">5.2 哨兵和从节点自动发现</h3>
+<p>哨兵与其他哨兵保持连接来互相检查可用性并交换消息。然而你无需在每个哨兵实例中配置其他哨兵的地址列表，因为哨兵会使用Pub/Sub功能来发现监控相同节点的其他实例。该特性通过向名为 __sentinel__:hello的频道发送hello消息实现。同样从节点列表也无需配置。</p>
+<ul>
+<li>每个哨兵每2秒向监控的每个主从节点的__sentinel__:hello频道发布消息，表明自己在线，以及使用的IP、端口和运行ID</li>
+<li>每个哨兵节点订阅每个主从节点的__sentinel__:hello频道来查找未知的哨兵。</li>
+<li>hello消息还包括了主节点的全部配置。如果接收的哨兵拥有的主节点配置较旧，它将理解更新配置。</li>
+<li>在添加新哨兵前，现有哨兵会检查是否存在相同运行ID或地址的哨兵。如果有，所有符合条件的哨兵都将被删除。</li>
+</ul>
+<h3 id="重新配置实例">5.3 重新配置实例</h3>
+<p>即使没有故障转移在执行，哨兵依然会一直尝试设置被监控实例的配置，尤其是：</p>
+<ul>
+<li>声称是主节点的从节点会被配置为当前主节点的副本</li>
+<li>连接到错误主节点的从节点会被重新配置为正确主节点的副本</li>
+</ul>
+<p>为了重新配置从节点，哨兵必须观察错误配置一段时间，这段时间比广播新配置的时间要长。这样就阻止了使用旧配置的哨兵在接收到更新的配置之前就尝试修改从节点配置。</p>
+<p>一直尝试强加当前配置的语义使得故障转移对网络分区的抗性更好</p>
+<ul>
+<li>被故障转移的主节点在恢复可用后会被重新配置为从节点</li>
+<li>配网络分区隔断的从节点一旦可用会被重新配置</li>
+</ul>
+<p>本节最重要的内容是：哨兵是一个系统，其中每个进程会一直尝试向监控的实例强加最近的逻辑配置。</p>
+<h3 id="从节点评选和优先级">5.4 从节点评选和优先级</h3>
+<p>从节点评选过程会评估下列关于从节点的信息；</p>
+<ol>
+<li>与主节点断开连接的时间</li>
+<li>从节点优先级</li>
+<li>已处理的副本偏移量</li>
+<li>运行ID</li>
+</ol>
+<p>从节点与主节点断开连接时间超过一定长度会被认为不适合用来故障转移，这段时间长度是配置的主节点超时时间（down-after-milliseconds 选项）的10倍与执行故障转移的哨兵认为的主节点不可用的持续时间之和，即：</p>
+<pre>
+    (down-after-milliseconds * 10) + milliseconds_since_master_is_in_SDOWN_state
+</pre>
+
+<p>选举只会考虑满足上述条件的从节点，并按下述条件排序：</p>
+<ol>
+<li>按slave-priority配置排序，低优先级优先</li>
+<li>如优先级相同，再检查从节点处理的副本偏移量，复制数据多的从节点会被选择</li>
+<li>以上两条都相同，则选择运行ID按字典排序更小的从节点。</li>
+</ol>
+<h2 id="算法与内部实现">6 算法与内部实现</h2>
+<h3 id="quorum">6.1 Quorum</h3>
+<p>每个被监控的主节点都须配置一个表决者数量（quorum），用来指定哨兵进程的数量，这些哨兵需要对主节点不可用状态达成一致从而触发故障转移。</p>
+<ul>
+<li>Quorum：需要检测到错误条件以使主节点被标记为ODOWN的哨兵进程数量。</li>
+<li>故障转移由ODOWN状态触发</li>
+<li>一旦触发故障转移，尝试故障转移的哨兵被要求向大多数哨兵请求授权（如果quorum设置的值大于哨兵数量的一半，则授权节点数量要大于quorum值）</li>
+</ul>
+<h3 id="配置纪元">6.2 配置纪元</h3>
+<p>要求从多数哨兵获取授权是由于一些重要原因：当哨兵得到授权，它将获得对正在被故障转移主节点来说唯一的配置纪元。当故障转移完成后，配置纪元用来给新配置记录版本。因为多数哨兵同意一个给定的版本已经分配给给定的哨兵，其他哨兵将无法再次使用该版本号。</p>
+<p>此外哨兵有一条规则：如果哨兵对给定主节点故障的恢复为其他哨兵投票，那么过一段时间它将再次尝试转移相同的主节点。这段延迟时间可以用sentinel.conf的failover-timeout配置。这就意味着同一时间哨兵不会尝试故障转移相同的主节点，一个失败之后另一个哨兵过一段时间后会再一次尝试。</p>
+<p>哨兵保证了活性属性，如果多数哨兵可用，其中之一最终会被授权来故障转移。哨兵还保证了安全性，每个哨兵故障会使用不同的配置纪元来转移同一个主节点。</p>
+<h3 id="配置传播">6.3 配置传播</h3>
+<p>一旦哨兵成功转移了一个主节点，它将开始传播新的配置，以便其他哨兵会更新给定主节点的信息。为了认定故障转移成功，要求哨兵能够向被选的从节点发送SLAVEOF NO ONE指令，并且之后到主节点的切换可以从主节点的INFO输出中看出来。即使此时正在进行从节点的重配置，故障转移也会被认定为成功，并且系统会要求所有哨兵报告新配置。传播新配置的方式是由于我们需要每个故障转移是使用不同版本号授权的。</p>
+<p>每个哨兵在主节点和所有从节点之间使用Pub/Sub消息持续广播主节点配置的版本，同时所有哨兵会等待消息来查看其它节点通告的配置是什么内容。配置是在__sentinel__:hello频道中广播的。</p>
+<p>因为每个配置有不同的版本号，较大的版本总会生效。这意味着哨兵会保证第二个活性属性：可以互相通信的一组哨兵将收敛于版本号更高的同一配置。</p>
+<h3 id="网络分区下的一致性">6.4 网络分区下的一致性</h3>
+<p>使用哨兵的系统中有三种角色：</p>
+<ul>
+<li>Redis实例</li>
+<li>哨兵实例</li>
+<li>客户端</li>
+</ul>
+<p>为了定义系统行为，我们不想考虑所有角色。</p>
+<pre>
+            +-------------+
+            | Sentinel 1  |----- Client A
+            | Redis 1 (M) |
+            +-------------+
+                    |
+                    |
++-------------+     |          +------------+
+| Sentinel 2  |-----+-- // ----| Sentinel 3 |----- Client B
+| Redis 2 (S) |                | Redis 3 (M)|
++-------------+                +------------+
+</pre>
+
+<p>在上述例子的初始状态中，Redis 3是主节点。网络分区使得它被隔离，哨兵1和2开始故障转移，使得Redis 1成为新主节点。哨兵属性保证了哨兵1和2有主节点的新配置，然而3依然使用旧配置。如果有客户端与Redis 3在同一分区会发生什么呢？</p>
+<p>客户端依然可以向Redis 3写数据。当网络恢复，Redis 3变为1的从节点，所有网络分区期间已写数据都将丢失。你可以通过配置决定上述情况是否可以发生：</p>
+<ul>
+<li>如果使用Redis作为缓存，即使数据会丢失，客户端B依然可以向旧主节点写。</li>
+<li>如果使用Redis作为存储，你需要配置系统来避免部分影响。</li>
+</ul>
+<p>由于Redis使用异步复制，在此场景中无法避免完全的数据丢失。然而Redis 3和1的分歧可以使用下面配置来限制：</p>
+<pre>
+min-slaves-to-write 1
+min-slaves-max-lag 10
+</pre>
+
+<p>使用上述配置，如果主节点无法向至少一个从节点写数据将停止接收写操作。无法向从节点写数据意思是从节点或者无法连接，或者无法发送异步确认超过max-lag秒。</p>
+<h3 id="哨兵持久化状态">6.5 哨兵持久化状态</h3>
+<p>哨兵状态会在哨兵配置文件中持久化。每次接收到或创建新主节点配置，配置和配置纪元值都会持久化到磁盘。停止和重启哨兵进程会很安全</p>
+<h3 id="tilt模式">6.6 TILT模式</h3>
+<p>Redis哨兵非常依赖系统时间，例如为了了解一个实例是否可用，哨兵会记录最后一次PING指令的成功回复时间，并与当前时间比较从而知道它有多旧。如果系统时间以意想不到的方式发生了改变，或系统非常繁忙，或进程由于没写原因而阻塞，哨兵可能会有出乎意料的行为。</p>
+<p>TILT模式是一种特殊的保护模式，当检测到一些降低系统可靠性的的奇怪事情时，一个哨兵便会进入这种模式。哨兵的时钟中断通常是每秒10次，因此我们预期在两次时钟中断间会大约消逝100毫秒。</p>
+<p>哨兵做的事情就是在调用时钟中断时注册之前的实际，并与当前调用时的时间比较。如果时间差是负数或意外的大（2秒或以上），哨兵将进入TILT模式（如果已经进入将推迟退出TILT模式）</p>
+<p>在TILT模式时哨兵会继续监控一切除了：</p>
+<ul>
+<li>完全停止动作。</li>
+<li>开始对is-master-down-by-addr请求做否定回复，因为检测故障的能力不再可信。</li>
+</ul>
+<p>如果30秒的时间内一切正常，哨兵会退出TILT模式。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../ewp_man/redis/redis_replicate.html" class="navigation navigation-prev " aria-label="Previous page: redis主从复制说明"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../ewp_man/redis/redis_other.html" class="navigation navigation-next " aria-label="Next page: 其他内容说明"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

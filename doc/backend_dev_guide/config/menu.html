@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>菜单配置 | EWP开发手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../config/adapter.html" />
+    
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="1461314305409">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 配置</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="1.1" data-path="config/menu.html">
+            
+                
+                    <a href="../config/menu.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         菜单配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="config/adapter.html">
+            
+                
+                    <a href="../config/adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         adapter
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="dev_guide/example.html">
+            
+                
+                    <a href="../dev_guide/example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="debug/intro.html">
+            
+                
+                    <a href="../debug/intro.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         联调
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="debug/login.html">
+            
+                
+                    <a href="../debug/login.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         模拟登陆调试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="debug/interface.html">
+            
+                
+                    <a href="../debug/interface.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         接口联调
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 编码规范</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="coding_spec/erlang.html">
+            
+                
+                    <a href="../coding_spec/erlang.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Erlang开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/frontend_dev_guide/backend_dev_guide.zip" class="button">html</a>
+                
+                
+                <a href="/emp/frontend_dev_guide/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >EWP开发手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_4">
+                    
+                        <h1 id="菜单配置">菜单配置</h1>
+<p>本章节主要讲解菜单的配置以及相关开发的方法。</p>
+<h3 id="菜单配置方法">0.1 菜单配置方法</h3>
+<p>详见前端开发指南</p>
+<h3 id="菜单含义">0.2 菜单含义</h3>
+<p>菜单以树的结构管理形成。分为collection和channel。具体见下图</p>
+<p><img src="../image/menu.gif" alt="">  </p>
+<p>其中collection分为根节点、和普通节点，用了表示非叶子节点；channel用来表示叶子节点</p>
+<h5 id="1collection">0.2.0.1 1、collection</h5>
+<pre><code>[{id,&quot;ebankv2_root&quot;},
+               {app,&quot;ebank&quot;},
+               {name,&quot;标准银行&quot;},
+               {url,undefined},
+               {user_id,undefined},
+               {type,1},
+               {state,1},
+               {items,[[{item_id,&quot;mine&quot;},{item_type,0},{menu_order,1}]]}],
+</code></pre><ul>
+<li>id：表示collection的id</li>
+<li>app：表示所属项目，一般都是ebank</li>
+<li>name：表示collection的名字</li>
+<li>type：表示菜单的类型：1表示根菜单，0表示普通菜单</li>
+<li>state：表示菜单的状体：1表示可用，0表示不可用</li>
+<li>items：表示菜单的子项<ul>
+<li>item_id：表示子项的id</li>
+<li>item_type：表示子项的类型：1表示collection，0表示channel</li>
+<li>menu_order：表示子项的排序编号</li>
+</ul>
+</li>
+</ul>
+<h5 id="2channel">0.2.0.2 2、channel</h5>
+<pre><code>[{id,&quot;credit_invoke&quot;},
+            {app,&quot;ebank&quot;},
+            {name,&quot;信用卡还款&quot;},
+            {entry,channel_adapter},
+            {views,undefined},
+            {props,[{method,post},
+                    {encrypt_flag,1},
+                    {need_login,&quot;true&quot;},
+                    {post,1},
+                    {trancode,&quot;mxh151&quot;}]},
+            {state,1}]
+</code></pre><ul>
+<li>id：channel的id</li>
+<li>app：所属项目，一般都是ebank</li>
+<li>name：channel的名字</li>
+<li>entry：表示菜单的类型，一般都是channel_adater（适配）</li>
+<li>views：entry其他类型使用的字段，暂时略过</li>
+<li>porps：channel的额外参数，需要根据项目需要定制，此处只讲曾经用到过的字段。<ul>
+<li>method：channel的第一个请求的请求类型（post、get） 此处有疑问，不太清楚用处</li>
+<li>encrypt_flag：加密标志，用来配置当前channel下请求后端是否需要解密，生产过程中需要配置为1即加密，联调时可以配置修改请求方式为不加密是配置为0即不需要解密</li>
+<li>need_login：项目定制参数，表示登陆权限:&quot;true&quot;|&quot;&quot;|&quot;code1#code2#...#coden&quot;,&quot;true&quot;表示当前channel的所有请求都需要登陆；&quot;&quot;表示不需要登陆；最后一种表示被“#”隔开的交易都需要登陆。</li>
+<li>post：表示channel的第一个页面的获取方式：1表示需要请求后台；2不需要请求后台。</li>
+<li>trancode：表示channel的第一个页面的交易码</li>
+</ul>
+</li>
+<li>state：channel的状态，同collection</li>
+</ul>
+<h3 id="菜单使用">0.3 菜单使用</h3>
+<h5 id="1菜单树的获取">0.3.0.1 1、菜单树的获取</h5>
+<p>参见代码如下：</p>
+<pre><code class="lang-erlang"><span class="hljs-function"><span class="hljs-title">'first_page'</span><span class="hljs-params">(<span class="hljs-variable">TranCode</span>, <span class="hljs-variable">Channel</span>)</span> -&gt;</span>
+    <span class="hljs-variable">Id</span> = ?<span class="hljs-function_name">param</span>(<span class="hljs-string">"collection_id"</span>),
+    <span class="hljs-variable">Type</span> = ?<span class="hljs-function_name">param</span>(<span class="hljs-string">"type"</span>,<span class="hljs-string">"collections"</span>),
+    <span class="hljs-comment">%%关键代码</span>
+    <span class="hljs-variable">Menu</span> = <span class="hljs-function_name">ebank_controller:get_menu</span>(<span class="hljs-variable">Id</span>,<span class="hljs-function_name">list_to_atom</span>(<span class="hljs-variable">Type</span>)),
+    <span class="hljs-function_name">cs_api:render</span>(<span class="hljs-string">"ebank_list_i"</span>,<span class="hljs-variable">Menu</span>),
+    <span class="hljs-comment">%%关键代码</span>
+    <span class="hljs-variable">Res</span>.
+</code></pre>
+<p>输出结果如下：</p>
+<pre><code class="lang-json">{
+  "<span class="hljs-attribute">response</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">error_code</span>": <span class="hljs-value"><span class="hljs-string">"0000"</span></span>,
+    "<span class="hljs-attribute">error_msg</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">timeoffset</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">menu</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"ebankv2_root"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">img</span>": <span class="hljs-value"><span class="hljs-string">"collection_ebankv2_root.png"</span></span>,
+      "<span class="hljs-attribute">sub</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"poc_transfer"</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"12312312"</span></span>,
+          "<span class="hljs-attribute">img</span>": <span class="hljs-value"><span class="hljs-string">"channel_poc_transfer.png"</span></span>,
+          "<span class="hljs-attribute">trancode</span>": <span class="hljs-value"><span class="hljs-string">"MB0001"</span></span>,
+          "<span class="hljs-attribute">post</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+          "<span class="hljs-attribute">need_login</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+          "<span class="hljs-attribute">sub</span>": <span class="hljs-value">[]
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"mobile_pay"</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"充值"</span></span>,
+          "<span class="hljs-attribute">img</span>": <span class="hljs-value"><span class="hljs-string">"channel_mobile_pay.png"</span></span>,
+          "<span class="hljs-attribute">trancode</span>": <span class="hljs-value"><span class="hljs-string">"MB0001"</span></span>,
+          "<span class="hljs-attribute">post</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+          "<span class="hljs-attribute">need_login</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+          "<span class="hljs-attribute">sub</span>": <span class="hljs-value">[]
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"foreign_exc"</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"理财-HTML5"</span></span>,
+          "<span class="hljs-attribute">img</span>": <span class="hljs-value"><span class="hljs-string">"channel_foreign_exc.png"</span></span>,
+          "<span class="hljs-attribute">trancode</span>": <span class="hljs-value"><span class="hljs-string">"MB3012"</span></span>,
+          "<span class="hljs-attribute">post</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+          "<span class="hljs-attribute">need_login</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+          "<span class="hljs-attribute">sub</span>": <span class="hljs-value">[]
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"poc_finance"</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"理财"</span></span>,
+          "<span class="hljs-attribute">img</span>": <span class="hljs-value"><span class="hljs-string">"channel_poc_finance.png"</span></span>,
+          "<span class="hljs-attribute">trancode</span>": <span class="hljs-value"><span class="hljs-string">"MB2011"</span></span>,
+          "<span class="hljs-attribute">post</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+          "<span class="hljs-attribute">need_login</span>": <span class="hljs-value"><span class="hljs-string">"mb2012#mb2013"</span></span>,
+          "<span class="hljs-attribute">sub</span>": <span class="hljs-value">[]
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"flight"</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"飞机票"</span></span>,
+          "<span class="hljs-attribute">img</span>": <span class="hljs-value"><span class="hljs-string">"channel_flight.png"</span></span>,
+          "<span class="hljs-attribute">trancode</span>": <span class="hljs-value"><span class="hljs-string">"MB0001"</span></span>,
+          "<span class="hljs-attribute">post</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+          "<span class="hljs-attribute">need_login</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+          "<span class="hljs-attribute">sub</span>": <span class="hljs-value">[]
+        </span>}
+      ]
+    </span>}
+  </span>}
+</span>}
+</code></pre>
+<p>注意事项：channel菜单必须为叶子节点，也可以游离于菜单树之外，此为后话。</p>
+<p>2、菜单树参数的定制流程</p>
+<p>项目中可能会增加一些参数，此处提供修改，添加的说明。举一个例子说明：
+添加参数transfer_flag（转账权限开关）</p>
+<ul>
+<li>a、首先需要在channel中配置参数如下：</li>
+</ul>
+<pre><code>[{id,&quot;credit_invoke&quot;},
+            {app,&quot;ebank&quot;},
+            {name,&quot;信用卡还款&quot;},
+            {entry,channel_adapter},
+            {views,undefined},
+            {props,[{method,post},
+                    {encrypt_flag,1},
+                    {need_login,&quot;true&quot;},
+                    {post,1},
+                    %%添加参数
+                    {transfer_flag,1},
+                    {trancode,&quot;mxh151&quot;}]},
+            {state,1}]
+</code></pre><ul>
+<li>b、然后在ebank.hrl中配置</li>
+</ul>
+<pre><code class="lang-erlang"><span class="hljs-comment">%%新增transfer_flag</span>
+<span class="hljs-pp"><span class="hljs-keyword">-record</span><span class="hljs-params">(menu,<span class="hljs-tuple">{id,name,trancode = <span class="hljs-string">""</span>,post = <span class="hljs-string">""</span>,need_login = <span class="hljs-string">""</span>,transfer_flag = <span class="hljs-string">""</span>,tms_html = <span class="hljs-string">""</span>,sub = [],url = []}</span>)</span></span>.
+</code></pre>
+<ul>
+<li>c、修改ebank_list_i.cs 文件增加输出项</li>
+</ul>
+<pre><code>#{cs     if:row.transfer_flag != &quot;&quot; &amp;&amp; row.transfer_flag != undefined}#
+         &quot;transfer_flag&quot;:&quot;#{cs var:row.transfer_flag}#&quot;,
+#{cs     /if}#
+</code></pre><p>通过以上步骤基本上已经说明了菜单功能的设计了。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <a href="../config/adapter.html" class="navigation navigation-next navigation-unique" aria-label="Next page: adapter"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

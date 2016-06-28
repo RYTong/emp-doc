@@ -14,7 +14,7 @@
 
     *A：这个错误是由于根据信道配置没有读取到文件导致的。在升级时遇到该问题，很有可能是因为没有正确配置。EWP5.x信道相关配置的格式做了修改，如果仍使用旧版本的配置文件，将无法读取证书。具体修改可查看参考手册的第三章的“安全信道配置”小节。*
 
-* Q：启动的时候遇到ewp_ets_cleaner模块undef的错误，该怎么解决？日志如下：
+* Q：启动的时候遇到ewp\_ets\_cleaner模块undef的错误，该怎么解决？日志如下：
 <pre>
 =SUPERVISOR REPORT==== 30-Jan-2015::13:47:17 ===
      Supervisor: {local,ewp_sup}
@@ -56,9 +56,9 @@
 
 * Q：我在修改callback，但是回调的输入找不到Arg或P参数了，我不想每个交易都修改请求参数的获取方式，这工作量太庞大了，有更好的解决方法么？
 
-    *A：可以通过Arg = ewp_params:get_args()和P = ewp_params:get_params()来获取两个参数。需要注意的是，通过ewp_params:get_args()获取到的Arg参数后，再调用P = ewp_params:from_yaws_arg(Arg)是无法获取所有请求参数的。*
+    *A：可以通过Arg = ewp\_params:get\_args()和P = ewp\_params:get\_params()来获取两个参数。需要注意的是，通过ewp\_params:get\_args()获取到的Arg参数后，再调用P = ewp\_params:from\_yaws\_arg(Arg)是无法获取所有请求参数的。*
 
-* Q：我在启动的时候出现了load_menu错误，怎么解决？错误信息为ewp_app_manager:720 error: error happend during calling ewp_app_util:load_menu
+* Q：我在启动的时候出现了load\_menu错误，怎么解决？错误信息为ewp\_app\_manager:720 error: error happend during calling ewp\_app_util:load\_menu
 
     *A：为了解决这个问题，需要在.app文件中添加menu配置，修改方法查看参考手册的第三章的“菜单存储类型配置”小节。*
 
@@ -68,10 +68,9 @@
 <pre>
 error_code_service:556 apply function with args:
 [error_code_service,render_404,
- [{
-     {err_app,ebank,undefined},
-     {err,app_upgrade,undefined,"APP-Upgrading","APP-Upgrading",{callback,{error_code_service,render_404}}}
-  },
+ [{{err_app,ebank,undefined},
+   {err,app_upgrade,undefined,"APP-Upgrading","APP-Upgrading",
+        {callback,{error_code_service,render_404}}}},
   "App ebank not running, please try later"]]
 </pre>
 
@@ -85,14 +84,14 @@ error_code_service:556 apply function with args:
 
     *A：修改菜单配置的collections->items->menu_order参数即可，菜单会按照由小到大的顺序显示。*
 
-* Q：我在一次一密解密之前从session数据获取cipher_state并判断不为undefined才会解密，为什么升级之后cipher_state一直是undefined？
+* Q：我在一次一密解密之前从session数据获取cipher\_state并判断不为undefined才会解密，为什么升级之后cipher_state一直是undefined？
 
     *A：在新版本中，cipher_state将无法在session中获取。解密可以直接调用 sec_cipher:decrypt_password(Password) 方法。*
 
-* Q：我在交易的cs模板中使用#{cs var:ewp_host}#生成form的action属性，为什么升级后ewp_host变成了空字符串？
+* Q：我在交易的cs模板中使用#{cs var:ewp\_host}#生成form的action属性，为什么升级后ewp_host变成了空字符串？
 
     *A：在新版本中channel旧回调的模板输入中删除了ewp_host，为了兼容可以在transform的返回结果中加入{ewp_host, ?arg("host")}*
 
 * Q：升级之后发现很多页面都显示为空页面，原因是服务器返回的报文最开始多了一些空格，旧版本客户端逻辑无法解析，该如何解决？
 
-    *A：cs模板在3.x版本中的换行符不会被过滤，在4.x版本中的换行符会被删除。但在5.x版本中，换行符会被替换成空格，这可能导致一些页面无法正常显示。此时可以修改ewp.conf的cs_enter_filter配置，为0时不过滤换行，为1时删除换行。*
+    *A：cs模板在3.x版本中的换行符不会被过滤，在4.x版本中的换行符会被删除。但在5.x版本中，换行符会被替换成空格，这可能导致一些页面无法正常显示。此时可以修改ewp.conf的cs\_enter\_filter配置，为0时不过滤换行，为1时删除换行。*

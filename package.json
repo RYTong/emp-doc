@@ -33,7 +33,11 @@
     "emp-doc:show-software",
     "emp-doc:show-software-brw",
     "emp-doc:show-xhtml",
-    "emp-doc:show-xhtml-brw"
+    "emp-doc:show-xhtml-brw",
+    "emp-doc:show-compatible",
+    "emp-doc:show-compatible-brw",
+    "emp-doc:show-backend",
+    "emp-doc:show-backend-brw"
   ],
   "repository": "https://github.com/RYTong/emp-doc",
   "license": "MIT",

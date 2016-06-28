@@ -11,8 +11,8 @@
             .background_color {background-color:#FFFF00;}
             .background_image {background-image:url(animation.png);}
             .textColor {color:#ff0000;}
-            .filter1 {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’1’,alpha=’0.5’);}
-            .filter0 {filter:progid(startColorStr=’#FFFF00’,endColorStr=’#ff0000’,gradientType=’0’,alpha=’0.5’);}
+            .filter1 {filter:progid(startColorStr='#FFFF00',endColorStr='#ff0000',gradientType='1',alpha='0.5');}
+            .filter0 {filter:progid(startColorStr='#FFFF00',endColorStr='#ff0000',gradientType='0',alpha='0.5');}
             .positionFixed{position:fixed;}
             .positionToplevel{position:toplevel;top:200px;left:10px;background-color:#ff0000;}
             .fontWeight{font-weight:bold;background-color:#CCCCCC;}

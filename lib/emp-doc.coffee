@@ -8,6 +8,8 @@ ewp_index = 'doc/ewp_lib_example/index.html'
 frontend_index = 'doc/frontend_dev_guide/index.html'
 software_index = 'doc/software_specification/index.html'
 xhtml_index = 'doc/xhtml_example/index.html'
+backend_index = 'doc/backend_dev_guide/index.html'
+compatible_index = 'doc/compatible_book/index.html'
 
 
 path = require 'path'
@@ -109,6 +111,16 @@ module.exports = EmpDoc =
       "emp-doc:show-xhtml": => open_doc_panel(xhtml_index)
       "emp-doc:show-xhtml-brw": =>
         re_path = path.join __dirname, '../', xhtml_index
+        open(re_path)
+
+      "emp-doc:show-backend": => open_doc_panel(backend_index)
+      "emp-doc:show-backend-brw": =>
+        re_path = path.join __dirname, '../', backend_index
+        open(re_path)
+
+      "emp-doc:show-compatible": => open_doc_panel(compatible_index)
+      "emp-doc:show-compatible-brw": =>
+        re_path = path.join __dirname, '../', compatible_index
         open(re_path)
 
 

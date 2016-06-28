@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>接口联调 | EWP开发手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="prev" href="../debug/login.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1461314305409">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 配置</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="config/menu.html">
+            
+                
+                    <a href="../config/menu.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         菜单配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="config/adapter.html">
+            
+                
+                    <a href="../config/adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         adapter
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="dev_guide/example.html">
+            
+                
+                    <a href="../dev_guide/example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="debug/intro.html">
+            
+                
+                    <a href="../debug/intro.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         联调
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="debug/login.html">
+            
+                
+                    <a href="../debug/login.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         模拟登陆调试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.2" data-path="debug/interface.html">
+            
+                
+                    <a href="../debug/interface.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         接口联调
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 编码规范</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="coding_spec/erlang.html">
+            
+                
+                    <a href="../coding_spec/erlang.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Erlang开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/frontend_dev_guide/backend_dev_guide.zip" class="button">html</a>
+                
+                
+                <a href="/emp/frontend_dev_guide/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >EWP开发手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_5">
+                    
+                        <h1 id="接口联调">接口联调</h1>
+<p>本章节主要讲解如何后端接口联调</p>
+<p>接口联调主要是做什么的？在开发期间，接口联调需要保证程序的输入、返回和接口文档一致。在联调测试阶段，联调需要在前面之上保证数据、业务逻辑的正确性。</p>
+<p>本章节分两种情况讲述如何进行接口联调</p>
+<h2 id="1模拟报文联调">1 1、模拟报文联调</h2>
+<ul>
+<li><h3 id="模拟后端输入输出本操作建议使用simulator">1.1 模拟后端输入输出（本操作建议使用simulator）</h3>
+<ul>
+<li><h5 id="第一步配置模拟session配置makesessionconf-与公共参数配置publicparamsconf启动服务">1.1.0.1 第一步：配置模拟session配置make_session.conf 与公共参数配置public_params.conf，启动服务</h5>
+</li>
+<li><h5 id="第二步打开浏览器访问http19216824134005admin登陆后记录后台日志中sessionid在后台运行的erlang-shell中执行读取session如下">1.1.0.2 第二步：打开浏览器访问<a href="http://192.168.241.3:4005/admin，登陆后记录后台日志中sessionId，在后台运行的erlang" target="_blank">http://192.168.241.3:4005/admin，登陆后记录后台日志中sessionId，在后台运行的erlang</a> shell中执行读取session如下：</h5>
+<pre><code class="lang-erlang">session_service:read_by_id(<span class="hljs-string">"7c553e220d14e1afaa03548a6f0d4652ed7eaa7dbf6c0c1f73a434f5b36fa21d"</span>).
+</code></pre>
+</li>
+<li><h5 id="第二步继续在shell中执行以下语句">1.1.0.3 第二步：继续在shell中执行以下语句：</h5>
+</li>
+</ul>
+<pre><code class="lang-erlang"><span class="hljs-comment">%%输入提前定义并且编写好的adapter、procedure、并且严格按照接口文档填写参数列表（公共参数参照前面章节配置）</span>
+ebank_adapter_utils:ebank_invoke_procedure(<span class="hljs-tuple">{<span class="hljs-string">"pochost"</span>,<span class="hljs-string">"ad"</span>,[]}</span>).
+</code></pre>
+<p>校验simulator日志中上送参数是否正确</p>
+<pre><code>WARNING in app [app.py:60]:
+params:{&#39;{&quot;RSP_HEAD&quot;:{&quot;setp&quot;:&quot;1&quot;},&quot;RSP_BODY&quot;:{&quot;tranCode&quot;:&quot;JH0001&quot;,&quot;EMP_SID&quot;:&quot;ETAVHVFTDSJPCJBFJEEZJTBEJADOILEVFTFMBVDB&quot;,&quot;platform&quot;:[],&quot;mobileNo&quot;:&quot;18032178965&quot;,&quot;certNo&quot;:&quot;13062719910927122X&quot;,&quot;certType&quot;:&quot;0&quot;,&quot;httpHostInfo&quot;:&quot;192.168.241.1&quot;,&quot;channel&quot;:&quot;cs&quot;}}&#39;: u&#39;&#39;}
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+WARNING in app [app.py:64]:
+注意，post参数中无法取得tranCode参数，请检查配置，simulator中按URL的tranCode-JH0001为准
+--------------------------------------------------------------------------------
+192.168.241.3 - - [06/Sep/2015 23:58:52] &quot;POST /mobs/ewp.do HTTP/1.0&quot; 200 -
+</code></pre></li>
+<li><h3 id="模拟前端输入输出">1.2 模拟前端输入输出</h3>
+<ul>
+<li><h5 id="打开浏览访问http19216824134005admin登陆如下图">1.2.0.1 打开浏览，访问<a href="http://192.168.241.3:4005/admin，登陆，如下图" target="_blank">http://192.168.241.3:4005/admin，登陆，如下图</a></h5>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="../image/debug.png" alt=""></p>
+<ul>
+<li><h5 id="在调试窗口按照前后端接口定义的上送参数填写上送报文">1.2.0.2 在调试窗口按照前后端接口定义的上送参数填写上送报文</h5>
+</li>
+</ul>
+<pre><code>id=entrance&amp;tranCode=first_page&amp;collection_id=ebankv2_root&amp;type=all
+</code></pre><p>点击提交</p>
+<p>如果返回内容如下</p>
+<pre><code>{&quot;message&quot;:&quot;internal error&quot;}
+</code></pre><p>表示后台程序有问题，请根据后端日志，查找问题，并修改
+如果返回内容为正常json，请格式化后查看内容是否与前后端接口文档内容一致，不一致请根据情况修改
+cs或者erlang代码</p>
+<h2 id="2真实数据调试">2 2、真实数据调试</h2>
+<p>真实数据调试的调试方法基本与上面一致，主要分为模拟登陆和不模拟登陆两种</p>
+<ul>
+<li><h5 id="模拟登陆需要根据数据需要修改makesessionconf-配置文件来保证每次调试的数据的正确性">2.0.0.1 模拟登陆：需要根据数据需要修改make_session.conf 配置文件来保证每次调试的数据的正确性。</h5>
+</li>
+<li><h5 id="不模拟登陆需要每次交易前都要通过管理控制台做一遍交易登陆来保证session中存有交易需要的数据">2.0.0.2 不模拟登陆：需要每次交易前都要通过管理控制台做一遍交易登陆，来保证session中存有交易需要的数据。</h5>
+</li>
+</ul>
+<p>注意：两种模式需要使用不同的配置
+ebank.conf</p>
+<pre><code>%%是否启用模拟session
+{login,true}. % true|false|con  代码模拟登陆|报文模拟登陆|完整流程
+</code></pre><p>主要使用true和con两种方式</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../debug/login.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 模拟登陆调试"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

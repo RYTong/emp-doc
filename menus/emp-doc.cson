@@ -131,6 +131,32 @@
                   ]
                   }
 
+                  {'label': 'Backend Dev',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-backend'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-backend-brw'
+                      }
+                  ]
+                  }
+
+                  {'label': 'Compatinle Book',
+                  'submenu': [
+                      {
+                        'label': 'Show in Atom'
+                        'command': 'emp-doc:show-compatible'
+                      }
+                      {
+                        'label': 'Show in Browser'
+                        'command': 'emp-doc:show-compatible-brw'
+                      }
+                  ]
+                  }
+
               ]
 
               }

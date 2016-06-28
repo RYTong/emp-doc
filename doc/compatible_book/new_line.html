@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>客户端自动换行 | 兼容性cookbook</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="./div_center.html" />
+    
+    
+    <link rel="prev" href="./index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book" data-level="1" data-basepath="." data-revision="1461314306336">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="1" data-path="new_line.html">
+            
+                
+                    <a href="./new_line.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         客户端自动换行
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="div_center.html">
+            
+                
+                    <a href="./div_center.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         div中控件水平居中
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/compatible_book/compatible_book.zip" class="button">html</a>
+                
+                
+                <a href="/emp/compatible_book/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >兼容性cookbook</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_3">
+                    
+                        <h1 id="客户端自动换行">客户端自动换行</h1>
+<p>根据客户端布局算法，一些inline控件从左往右排列宽度和超过屏幕宽度时则自动换行。</p>
+<p>现在5.2版本上ios平台和android平台在处理一排控件长度和刚好跟屏幕宽度一样时存在布局差异，我们先看一下下面例子。</p>
+<h2 id="报文">1 报文</h2>
+<p>需要实现效果如下图所示：</p>
+<p><img src="images/new_line.png" alt=""></p>
+<p><strong>实现思路：</strong></p>
+<p>父控件div包含四个inline div控件，此四个div分别设置不同的left值{0,80,160,240},同时每个div的宽度为80px，
+在每个内联div中包含button和label用来展现图片和文字信息。</p>
+<p><strong>实现报文：</strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;content&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            /*footer 样式*/
+            .div_footer_default{left:0px;width:320px;}
+            .div_footer_custom{position: fixed;bottom:0px;}
+            .div_div_footer_default{width:80px;height:60px;inline-block:inline;}
+            .div_div_footer_custom1{left:0px;}
+            .div_div_footer_custom2{left:80px;}
+            .div_div_footer_custom3{left:160px;}
+            .div_div_footer_custom4{left:240px;}
+            .btn_footer_default{width:30px;height:30px;left:25px;top:10px;}
+            .btn_footer_custom1{background-image:url(home.png);}
+            .btn_footer_custom2{background-image:url(trajectory.png);}
+            .btn_footer_custom3{background-image:url(found.png);}
+            .btn_footer_custom4{background-image:url(wealth.png);}
+            .lbl_footer_custom{width:80px;text-align:center;}
+            .lbl_footer_default{font-size: 12px; color:#8B8B8B;}
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!--footer--&gt;
+        &lt;div class=&quot;div_footer_default,div_footer_custom&quot; border=&quot;0&quot;&gt;
+            #{local footer_tab = {{&quot;home&quot;,&quot;首页&quot;},{&quot;trajectory&quot;,&quot;轨迹&quot;},{&quot;found&quot;,&quot;发现&quot;},{&quot;wealth&quot;,&quot;财富&quot;}}}#
+            #{for i = 1,4 do }#
+            #{local div_class=&quot;div_div_footer_default,div_div_footer_custom&quot;..i}#
+            #{local button_class = &quot;btn_footer_default,btn_footer_custom&quot;..i}#
+            &lt;div class=&quot;#{= div_class}#&quot; border=&quot;0&quot;&gt;
+                &lt;input type=&quot;button&quot; class=&quot;#{= button_class}#&quot; onclick=&quot;menu_click(&#39;#{= footer_tab[i][1]}#&#39;)&quot;/&gt;&lt;br/&gt;
+                &lt;label class=&quot;lbl_footer_default,lbl_footer_custom&quot;&gt;#{= footer_tab[i][2]}#&lt;/label&gt;
+            &lt;/div&gt;
+            #{end}#
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/content&gt;
+</code></pre><h2 id="ios平台展现">2 ios平台展现</h2>
+<p><img src="images/new_line_ios.png" alt=""></p>
+<h2 id="android平台展现">3 android平台展现</h2>
+<p><img src="images/new_line_ad.png" alt=""></p>
+<h2 id="差异性">4 差异性</h2>
+<p>根据样式中写到<code>.div_div_footer_default{width:80px;height:60px;inline-block:inline;}</code>,那么底部每个div标签为内联元素。同时在样式中有写</p>
+<pre><code>.div_div_footer_custom1{left:0px;}
+.div_div_footer_custom2{left:80px;}
+.div_div_footer_custom3{left:160px;}
+.div_div_footer_custom4{left:240px;}
+</code></pre><p>规定了每个div的left，根据计算这四个div的宽度和刚好为320px，等于屏幕宽度，不应该换行。</p>
+<p>为什么IOS平台会换行，是因为IOS平台先计算的div的宽度加上两个div中间间隔得到的宽度和大于屏幕宽度所以先进行换行然后设置left值。</p>
+<h2 id="如何避免">5 如何避免</h2>
+<p>在碰到这样的兼容性问题时需要客户端修改布局算法，带来的问题就是涉及到这个换行布局的界面都得重新测试，这个工作量非常大，所以考虑一种折中办法，由模版修改为两个平台表现一致从而规避此兼容性问题。</p>
+<p>对于此问题的修改为对最后一个div设置一个top值，让它在换行后根据top值重新布局，此时设置top值为0即可，所以修改为：</p>
+<pre><code>.div_div_footer_custom4{left:240px;top:0px;}
+</code></pre><p>在ios平台展现为：</p>
+<p><img src="images/new_line_ios1.png" alt=""></p>
+<p>在ad平台展现为：</p>
+<p><img src="images/new_line_ad.png" alt=""></p>
+<p>两个平台展现一致。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./div_center.html" class="navigation navigation-next " aria-label="Next page: div中控件水平居中"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
