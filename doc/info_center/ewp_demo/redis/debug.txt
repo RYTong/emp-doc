@@ -1,0 +1,31 @@
+ewp_redis_sup:start_link().
+{ok, C} = ewp_redis_cluster_service:get_client("foo").
+ewp_redis_cluster_service:request(C, ["get", "foo"]).
+ewp_redis_cache_api:eval("get_user_obj", "eval_api_foo", []).
+
+ eredis:q(C, ["eval", Bin3, "1", "user-trace-foo", "2", "card1", "alias", "c1", "balance", "1000", "card2", "alias", "c2", "balance", "200"]).
+eredis:q(C, ["smembers", "HXRS_CREDIT:{user-trace-foo}:LIST"]). 
+eredis:q(C, ["hgetall", "HXRS_CREDIT:{user-trace-foo}:INFO:card1"]).
+
+{ok, C} = ewp_redis_cluster_service:get_client("HXRS_CREDIT:{user-trace-foo}:LIST").
+ewp_redis_cluster_service:request(C, ["smembers", "HXRS_CREDIT:{user-trace-foo}:LIST"]).
+
+
+ewp_redis_data_store_api:eval("set_user_credit_info", "user-trace-foo", [<<"2">>, "card1", "alias", "c1", "balance", "1000", "card2", "alias", "c2", "balance", "200"]).
+
+ewp_redis_data_store_api:eval("get_user_track_info", "user-trace-foo", []).
+
+ewp_util:log_helper(element(2, ewp_redis_data_store_api:eval("get_user_track_info", "user-trace-foo", []))).
+
+{UserCode, AcctList} = user_obj_cache_demo:gen_random().
+UserObj = user_obj_cache_demo:gen_user_obj(UserCode, AcctList).
+{Key, Args} = user_obj_cache_demo:encode_user_obj(element(2, UserObj), element(3, UserObj)).
+ewp_redis_sup:start_link(). 
+ewp_redis_cache_api:eval("set_user_obj", Key, Args).
+
+db_api_v1:execute_sql("insert admins (user, password) values ('visitor', '123')").
+{error,"Duplicate entry 'visitor' for key 1"}
+
+performance_test:main(50, 100000, fun(_) -> db_api_v1:execute_sql("insert admins (user, password) values ('visitor', '123')") end, [], 5).
+
+performance_test:main(50, 100000, fun(_) -> db_api:execute_sql("select * from admins") end, [], 5).

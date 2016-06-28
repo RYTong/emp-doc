@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>adapter | EWP开发手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../dev_guide/example.html" />
+    
+    
+    <link rel="prev" href="../config/menu.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="1461314305409">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 配置</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="config/menu.html">
+            
+                
+                    <a href="../config/menu.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         菜单配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="1.2" data-path="config/adapter.html">
+            
+                
+                    <a href="../config/adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         adapter
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="dev_guide/example.html">
+            
+                
+                    <a href="../dev_guide/example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="debug/intro.html">
+            
+                
+                    <a href="../debug/intro.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         联调
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="debug/login.html">
+            
+                
+                    <a href="../debug/login.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         模拟登陆调试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="debug/interface.html">
+            
+                
+                    <a href="../debug/interface.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         接口联调
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 编码规范</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="coding_spec/erlang.html">
+            
+                
+                    <a href="../coding_spec/erlang.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Erlang开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/frontend_dev_guide/backend_dev_guide.zip" class="button">html</a>
+                
+                
+                <a href="/emp/frontend_dev_guide/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >EWP开发手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_3">
+                    
+                        <h1 id="adapter-编写">adapter 编写</h1>
+<p>1、adapter是配置网路请求适配器，主要分为两层配置：adapter,procedure</p>
+<h3 id="adapter">0.1 adapter</h3>
+<p>示例如下</p>
+<pre><code>{adapter,[{name,&quot;ebankhost&quot;},
+          {host,&quot;192.168.241.3&quot;},
+          {port,4003},
+          {protocol,http},
+          {return_type,xml},
+          {res_convertor,xml2term},
+          ]}.
+</code></pre><p>主要配置项目网络请求的地址、端口、协议、报文返回类型，一般项目有几个关联服务就配置几个，每一个adapter根据需要配置多个procedure，来配置接口请求配置。</p>
+<ul>
+<li>name：adapter的名字，调用的id</li>
+<li>host：配置网络请求的ip地址</li>
+<li>port：配置网路请求的端口</li>
+<li>protocol：网络请求的协议：目前支持http、socket、rpc、扩展协议（extend），其中扩展协议用法如下：</li>
+</ul>
+<pre><code> {protocol,{extend,{modulename,protocol_function}}}
+</code></pre><pre><code class="lang-erlang"><span class="hljs-function"><span class="hljs-title">extend_http</span><span class="hljs-params">(<span class="hljs-record_name">#adapter</span>{host = <span class="hljs-variable">Host</span>,
+                        port = <span class="hljs-variable">Port</span>,
+                        protocol = <span class="hljs-variable">Protocol</span>
+                       },
+               <span class="hljs-record_name">#procedure</span>{id = <span class="hljs-tuple">{<span class="hljs-variable">Adapter</span>, <span class="hljs-variable">Procedure</span>}</span>,
+                          path = <span class="hljs-variable">Path</span>,
+                          gen_log = <span class="hljs-variable">Bool</span>
+                         },
+               <span class="hljs-variable">Params</span>, <span class="hljs-variable">Options</span>,<span class="hljs-variable">Extra</span>)</span> -&gt;</span>
+    <span class="hljs-variable">HttpOptions</span> = <span class="hljs-function_name">proplists:get_value</span>(http_options, <span class="hljs-variable">Options</span>, []),
+    <span class="hljs-variable">Options</span> = <span class="hljs-function_name">proplists:get_value</span>(options, <span class="hljs-variable">Options</span>, []),
+    <span class="hljs-variable">Url</span> =
+        <span class="hljs-keyword">case</span> <span class="hljs-variable">Path</span> <span class="hljs-keyword">of</span>
+            <span class="hljs-string">"/"</span> ++ <span class="hljs-variable">_</span> -&gt;
+                <span class="hljs-function_name">lists:concat</span>([<span class="hljs-string">"http://"</span>, <span class="hljs-variable">Host</span>, <span class="hljs-string">":"</span>, <span class="hljs-variable">Port</span>, <span class="hljs-variable">Path</span>]);
+            <span class="hljs-variable">_</span> -&gt;
+                <span class="hljs-function_name">lists:concat</span>([<span class="hljs-string">"http://"</span>, <span class="hljs-variable">Host</span>, <span class="hljs-string">":"</span>, <span class="hljs-variable">Port</span>, <span class="hljs-string">"/"</span>, <span class="hljs-variable">Path</span>])
+        <span class="hljs-keyword">end</span>,
+    <span class="hljs-variable">PostBody</span> = <span class="hljs-function_name">gen_req_body_from_list</span>(<span class="hljs-variable">Params</span>),
+    <span class="hljs-variable">ContentType</span> = <span class="hljs-string">"application/x-www-form-urlencoded;charset=utf-8"</span>,
+    <span class="hljs-variable">Post</span> = <span class="hljs-tuple">{<span class="hljs-variable">Url</span>, [], <span class="hljs-variable">ContentType</span>, <span class="hljs-function_name">list_to_binary</span>(<span class="hljs-variable">PostBody</span>)}</span>,
+    <span class="hljs-variable">Request</span> =  <span class="hljs-tuple">{post, <span class="hljs-variable">Post</span>, <span class="hljs-variable">HttpOptions</span>, <span class="hljs-variable">Options</span>}</span>,
+    <span class="hljs-keyword">case</span> <span class="hljs-function_name">ewp_http_client:request</span>(<span class="hljs-variable">Request</span>) <span class="hljs-keyword">of</span>
+        <span class="hljs-tuple">{ok, <span class="hljs-number">200</span>, <span class="hljs-variable">_Headers</span>, <span class="hljs-variable">Res</span>}</span> -&gt;
+            <span class="hljs-variable">Res</span>;
+        <span class="hljs-variable">Other</span> -&gt;
+            ?<span class="hljs-function_name">ewp_msg</span>(<span class="hljs-string">"http invoker response : ~p~n"</span>, [<span class="hljs-variable">Other</span>]),
+            <span class="hljs-function_name">throw</span>(<span class="hljs-tuple">{error, invalid_http_response}</span>)
+    <span class="hljs-keyword">end</span>.
+<span class="hljs-comment">%%上送参数拼装成json</span>
+<span class="hljs-function"><span class="hljs-title">gen_req_body_from_list</span><span class="hljs-params">(<span class="hljs-variable">Params</span>)</span> -&gt;</span>
+    <span class="hljs-variable">TupleList</span> = [<span class="hljs-tuple">{<span class="hljs-string">"RSP_HEAD"</span>,[<span class="hljs-tuple">{<span class="hljs-string">"setp"</span>,<span class="hljs-string">"1"</span>}</span>]}</span>,<span class="hljs-tuple">{<span class="hljs-string">"RSP_BODY"</span>,<span class="hljs-variable">Params</span>}</span>],
+    <span class="hljs-variable">JsonObj</span> = ?<span class="hljs-function_name">decode_tuplelist</span>(<span class="hljs-variable">TupleList</span>),
+    <span class="hljs-variable">Json</span> = <span class="hljs-function_name">ewp_json:encode</span>(<span class="hljs-variable">JsonObj</span>),
+    <span class="hljs-variable">Json</span>.
+</code></pre>
+<ul>
+<li><p>return_type：返回报文类型,目前支持xml、json</p>
+</li>
+<li><p>res_convertor：对于返回报文的处理，此配置与return_type联合使用。目前支持配置：none | xml2term | xml2json | {Module, Function}</p>
+</li>
+</ul>
+<p>注意：此参数配置在ewp.conf中配置默认值，具体使用请参照下面章节中的实例</p>
+<p>下面是关于定制处理返回报文的方式</p>
+<pre><code> {res_convertor,{modulename,functionname}}
+</code></pre><pre><code class="lang-erlang"><span class="hljs-function"><span class="hljs-title">convert_json</span><span class="hljs-params">(<span class="hljs-variable">ReturnType</span>,<span class="hljs-variable">Res</span>)</span> -&gt;</span>
+  <span class="hljs-comment">%% do some check format with ReturnType</span>
+
+  <span class="hljs-comment">%% convert json to term</span>
+  <span class="hljs-tuple">{ok,<span class="hljs-variable">Obj</span>,<span class="hljs-variable">_</span>}</span> = <span class="hljs-function_name">ewp_json:decode</span>(<span class="hljs-variable">Res</span>),
+  <span class="hljs-variable">Tuple</span> = ?<span class="hljs-function_name">encode_tuplelist</span>(<span class="hljs-variable">Obj</span>),
+  <span class="hljs-variable">Tuple</span>.
+</code></pre>
+<h3 id="2procedure">0.2 2、procedure</h3>
+<p>实例如下：</p>
+<pre><code>{procedure, [{id, &quot;login&quot;},
+       {adapter, &quot;ebankhost&quot;},
+       {return_type, xml},
+       {path, &quot;mobileBank/ewp.do&quot;},
+       {gen_log, false},
+       {use_sample_data,false},
+       {data_sample, &quot;public/xmlData/MB0201.xml&quot;},
+       {parameters, [{&quot;tranCode&quot;,&quot;MB0201&quot;}]}]
+     }.
+</code></pre><p>主要配置单个接口请求的配置，每一个procedure必须隶属一个adapter，其中与adapter中相同的配置，优先级要高。</p>
+<ul>
+<li>id：procedure的调用id</li>
+<li>adapter：procedure隶属的adapter</li>
+<li>return_type:同adapter</li>
+<li>path：请求接口的路径</li>
+<li>gen_log：是否记录请求日志的开关</li>
+<li>use_sample_data：模拟请求结果报文的开关，总开关在ewp.conf中
+如下：<pre><code>{adapter_use_sample_data,true}.
+</code></pre></li>
+</ul>
+<p>只有当ewp.conf开关和当前开关同时打开时才会起效</p>
+<ul>
+<li>data_sample：模拟请求结果报文的路径</li>
+<li>parameters：请求接口的默认参数，当参数为{&quot;key1&quot;,true}时表示请求时对key1进行非空校验</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../config/menu.html" class="navigation navigation-prev " aria-label="Previous page: 菜单配置"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../dev_guide/example.html" class="navigation navigation-next " aria-label="Next page: 编码指南"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

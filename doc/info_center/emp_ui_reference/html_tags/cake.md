@@ -74,4 +74,4 @@ __name__
 | background-image | `url(http://…/imag.png)`或`url(imag.png)` | |
 | display | none/block; | (none表示隐藏） |
 | position | fixed/static | static为默认值。 <br /> 当样式表中position值为fixed时表示应用当前样式的控件位置固定，不会跟随页面滑动而动；<br /> 如果position值为static时，则不做特殊处理。 |
-| filter | 例： <br />filter:progid(alpha=’0.5’ ) | 支持透明度。<br /> `alpha`:整体透明度（如不指定该属性默认为不透明:1） |
+| filter | 例： <br />filter:progid(alpha='0.5' ) | 支持透明度。<br /> `alpha`:整体透明度（如不指定该属性默认为不透明:1） |

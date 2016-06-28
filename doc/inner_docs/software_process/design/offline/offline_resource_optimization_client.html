@@ -1,0 +1,3255 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>离线资源优化-客户端设计 | 产品文档</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../../software_process/design/offline/offline_resource_optimization_server.html" />
+    
+    
+    <link rel="prev" href="../../../software_process/design/offline/offline_4_0_design_server.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../../../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="8.2.4.4" data-basepath="../../.." data-revision="1463048464910">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="hg_guide/Introduction.html">
+            
+                
+                    <a href="../../../hg_guide/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         代码提交
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="hg_guide/commit_specification.html">
+            
+                
+                    <a href="../../../hg_guide/commit_specification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         代码提交规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="hg_guide/how_mercurial_works.html">
+            
+                
+                    <a href="../../../hg_guide/how_mercurial_works.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         mercurial基本原理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="hg_guide/mercurial_commands.html">
+            
+                
+                    <a href="../../../hg_guide/mercurial_commands.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         mercurial使用教程
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="coding_convention/c++.html">
+            
+                
+                    <a href="../../../coding_convention/c++.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码规范
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="coding_convention/c++.html">
+            
+                
+                    <a href="../../../coding_convention/c++.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         c++编码规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="coding_convention/client_development_specification.html">
+            
+                
+                    <a href="../../../coding_convention/client_development_specification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         客户端开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="coding_convention/android_convention.html">
+            
+                
+                    <a href="../../../coding_convention/android_convention.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         android开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="code_review/code_review_points.html">
+            
+                
+                    <a href="../../../code_review/code_review_points.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         代码评审
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="code_review/ios/FAQ.html">
+            
+                
+                    <a href="../../../code_review/ios/FAQ.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         FAQ(iOS)
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="ci_guide/Introduction.html">
+            
+                
+                    <a href="../../../ci_guide/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         持续集成
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="ci_guide/jenkins.html">
+            
+                
+                    <a href="../../../ci_guide/jenkins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Jenkins持续集成
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="ci_guide/deploy.html">
+            
+                
+                    <a href="../../../ci_guide/deploy.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         Jenkins持续发布
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="ci_guide/ClientBuild.html">
+            
+                
+                    <a href="../../../ci_guide/ClientBuild.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         客户端构建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.4" data-path="ci_guide/sonarqube.html">
+            
+                
+                    <a href="../../../ci_guide/sonarqube.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                         Sonar代码质量检测
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.5" data-path="ci_guide/Phabricator.html">
+            
+                
+                    <a href="../../../ci_guide/Phabricator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                         Code Review
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.6" data-path="ci_guide/Appium.html">
+            
+                
+                    <a href="../../../ci_guide/Appium.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                         UI自动化测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.7" data-path="ci_guide/ldap.html">
+            
+                
+                    <a href="../../../ci_guide/ldap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                         LDAP服务部署和集成
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.8" data-path="ci_guide/p_code.html">
+            
+                
+                    <a href="../../../ci_guide/p_code.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                         个人构建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9" data-path="ci_guide/tools/Introduction.html">
+            
+                
+                    <a href="../../../ci_guide/tools/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                         持续集成依赖工具
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.9.1" data-path="ci_guide/tools/brew.html">
+            
+                
+                    <a href="../../../ci_guide/tools/brew.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.1.</b>
+                        
+                         Homebrew安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9.2" data-path="ci_guide/tools/install_jdk.html">
+            
+                
+                    <a href="../../../ci_guide/tools/install_jdk.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.2.</b>
+                        
+                         JDK安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9.3" data-path="ci_guide/tools/install_sdk.html">
+            
+                
+                    <a href="../../../ci_guide/tools/install_sdk.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.3.</b>
+                        
+                         Android SDK安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9.4" data-path="ci_guide/tools/install_tomcat.html">
+            
+                
+                    <a href="../../../ci_guide/tools/install_tomcat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.4.</b>
+                        
+                         Tomcat安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9.5" data-path="ci_guide/tools/maven.html">
+            
+                
+                    <a href="../../../ci_guide/tools/maven.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.5.</b>
+                        
+                         Maven构建工具
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9.6" data-path="ci_guide/tools/nexus.html">
+            
+                
+                    <a href="../../../ci_guide/tools/nexus.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.6.</b>
+                        
+                         Nexus依赖仓库
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.9.7" data-path="ci_guide/tools/Ansible.html">
+            
+                
+                    <a href="../../../ci_guide/tools/Ansible.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.7.</b>
+                        
+                         Asible服务集群部署
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="code_server/Introduction.html">
+            
+                
+                    <a href="../../../code_server/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         代码服务器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="code_server/deploy.html">
+            
+                
+                    <a href="../../../code_server/deploy.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         代码服务器部署
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="code_server/hghook.html">
+            
+                
+                    <a href="../../../code_server/hghook.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         hghook脚本安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="code_server/pmmm_functions.html">
+            
+                
+                    <a href="../../../code_server/pmmm_functions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         PMMM插件功能列表
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4" data-path="code_server/trac_sqlite_to_mysql.html">
+            
+                
+                    <a href="../../../code_server/trac_sqlite_to_mysql.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                         Trac迁移Sqlite到MySQL
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="tech/tech_wordpress.html">
+            
+                
+                    <a href="../../../tech/tech_wordpress.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         技术期刊
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="tech/tech_wordpress.html">
+            
+                
+                    <a href="../../../tech/tech_wordpress.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         技术期刊Wordpress搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="tech/mail_wordpress.html">
+            
+                
+                    <a href="../../../tech/mail_wordpress.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         Wordpress安装邮件服务
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="software_process/requirement/Introduction.html">
+            
+                
+                    <a href="../../../software_process/requirement/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         需求文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" >
+            
+            <span><b>7.1.</b> 离线资源</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.1" data-path="software_process/requirement/offline/security_optimization_of_offline.html">
+            
+                
+                    <a href="../../../software_process/requirement/offline/security_optimization_of_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.</b>
+                        
+                         离线资源安全优化需求
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2" data-path="software_process/requirement/offline/multi_app_support_of_offline.html">
+            
+                
+                    <a href="../../../software_process/requirement/offline/multi_app_support_of_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.</b>
+                        
+                         离线多App需求
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.3" data-path="software_process/requirement/offline/websocket_offline.html">
+            
+                
+                    <a href="../../../software_process/requirement/offline/websocket_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.</b>
+                        
+                         离线Websocket下载需求
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.4" data-path="software_process/requirement/offline/single_optional_resource_dl_offline.html">
+            
+                
+                    <a href="../../../software_process/requirement/offline/single_optional_resource_dl_offline.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.</b>
+                        
+                         离线可选资源单个文件下载需求
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.5" data-path="software_process/requirement/offline/offline4.0_supplement.html">
+            
+                
+                    <a href="../../../software_process/requirement/offline/offline4.0_supplement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.5.</b>
+                        
+                         离线4.0补充需求
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.6" data-path="software_process/requirement/5.3/multi_encrypted_tunnels.html">
+            
+                
+                    <a href="../../../software_process/requirement/5.3/multi_encrypted_tunnels.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.6.</b>
+                        
+                         多信道需求
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="software_process/requirement/EMP/touchevent/touchEventRequirement.html">
+            
+                
+                    <a href="../../../software_process/requirement/EMP/touchevent/touchEventRequirement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         TouchEvent事件监听需求
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="software_process/requirement/client_anti_replaying.html">
+            
+                
+                    <a href="../../../software_process/requirement/client_anti_replaying.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         客户端防重放需求
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="software_process/design/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         设计文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" >
+            
+            <span><b>8.1.</b> 文件上传</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1.1" data-path="software_process/design/EWP/server_design_of_uploading_file.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/server_design_of_uploading_file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.1.</b>
+                        
+                         服务端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="software_process/design/offline/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/offline/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         离线资源
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.2.1" data-path="software_process/design/offline/offline_resource.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.1.</b>
+                        
+                         离线资源协议1.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.2.1.1" data-path="software_process/design/offline/offline_resource_design_server.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_design_server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.1.1.</b>
+                        
+                         服务端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.1.2" data-path="software_process/design/offline/offline_resource_design_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_design_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.1.2.</b>
+                        
+                         客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.2" data-path="software_process/design/offline/offline_resource_2.0.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_2.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.2.</b>
+                        
+                         离线资源协议2.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.2.2.1" data-path="software_process/design/offline/design_of_security_optimization.html">
+            
+                
+                    <a href="../../../software_process/design/offline/design_of_security_optimization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.2.1.</b>
+                        
+                         离线资源2.0安全性优化设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.2.2" data-path="software_process/design/offline/h5_resources_support.html">
+            
+                
+                    <a href="../../../software_process/design/offline/h5_resources_support.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.2.2.</b>
+                        
+                         离线资源2.1 H5资源支持设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.2.3" data-path="software_process/design/offline/h5_resources_support_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/h5_resources_support_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.2.3.</b>
+                        
+                         离线资源2.1 H5资源支持客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.3" data-path="software_process/design/offline/offline_resource_3.0.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_3.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.3.</b>
+                        
+                         离线资源协议3.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.2.3.1" data-path="software_process/design/offline/design_of_multi_app_support_of_offline_server.html">
+            
+                
+                    <a href="../../../software_process/design/offline/design_of_multi_app_support_of_offline_server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.3.1.</b>
+                        
+                         离线资源3.0 离线资源多App支持服务器设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.3.2" data-path="software_process/design/offline/design_of_multi_app_support_of_offline_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/design_of_multi_app_support_of_offline_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.3.2.</b>
+                        
+                         离线资源3.0 离线资源多App支持客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4" data-path="software_process/design/offline/offline_resource_4.0.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_4.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.</b>
+                        
+                         离线资源协议4.0版
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.2.4.1" data-path="software_process/design/offline/h5_plug_support_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/h5_plug_support_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.1.</b>
+                        
+                         离线H5资源插件下载
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4.2" data-path="software_process/design/offline/websocket_resources_support_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/websocket_resources_support_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.2.</b>
+                        
+                         客户端离线资源WebSocket下载支持设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4.3" data-path="software_process/design/offline/offline_4_0_design_server.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_4_0_design_server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.3.</b>
+                        
+                         离线资源4.0 服务器设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="8.2.4.4" data-path="software_process/design/offline/offline_resource_optimization_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_optimization_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.4.</b>
+                        
+                         离线资源优化-客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4.5" data-path="software_process/design/offline/offline_resource_optimization_server.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_optimization_server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.5.</b>
+                        
+                         离线资源优化-服务端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4.6" data-path="software_process/design/offline/offline_resource_optimization_pre&amp;download_android.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_optimization_pre&amp;download_android.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.6.</b>
+                        
+                         离线资源优化-预置&amp;下载-Android
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4.7" data-path="software_process/design/offline/offline_resource_optimization_pre&amp;download_android.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_optimization_pre&amp;download_android.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.7.</b>
+                        
+                         离线资源优化-预置&amp;下载-Android
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2.4.8" data-path="software_process/design/offline/offline_resource_optinal_part_client.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_optinal_part_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.8.</b>
+                        
+                         离线资源-可选资源增量更新
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.3" data-path="software_process/design/xmpp/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/xmpp/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                         可靠消息
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.3.1" data-path="software_process/design/xmpp/xmpp_design_client.html">
+            
+                
+                    <a href="../../../software_process/design/xmpp/xmpp_design_client.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.1.</b>
+                        
+                         可靠消息机制客户端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.4" data-path="software_process/design/editor/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/editor/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                         Editor调试工具
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.4.1" data-path="software_process/design/editor/client/editor_client_design.html">
+            
+                
+                    <a href="../../../software_process/design/editor/client/editor_client_design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.1.</b>
+                        
+                         客户端Editor工具实现思路
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.4.2" data-path="software_process/design/editor/client/data_transfer_old.html">
+            
+                
+                    <a href="../../../software_process/design/editor/client/data_transfer_old.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.2.</b>
+                        
+                         数据传输协议(老版本)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.4.3" data-path="software_process/design/editor/client/data_transfer_new.html">
+            
+                
+                    <a href="../../../software_process/design/editor/client/data_transfer_new.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.3.</b>
+                        
+                         数据传输协议(新版本)
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5" data-path="software_process/design/EMP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                         EMP设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.5.1" data-path="software_process/design/EMP/slt2/design_of_slt2_parsing.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/slt2/design_of_slt2_parsing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.1.</b>
+                        
+                         SLT2脚本解析功能总体设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.2" data-path="software_process/design/EMP/files_security/local_files_security.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/files_security/local_files_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.2.</b>
+                        
+                         客户端文件安全
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.3" data-path="software_process/design/EMP/internationalization.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/internationalization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.3.</b>
+                        
+                         国际化设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.4" data-path="software_process/design/EMP/screen_adaptation/screen_adaptation.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/screen_adaptation/screen_adaptation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.4.</b>
+                        
+                         屏幕适配设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.5" data-path="software_process/design/EMP/iOS_5.3_NativeTesting_Design.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/iOS_5.3_NativeTesting_Design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.5.</b>
+                        
+                         iOS native测试设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.6" data-path="software_process/design/EMP/Android_5.3_NativeTesting_Design.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/Android_5.3_NativeTesting_Design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.6.</b>
+                        
+                         Android native测试设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.7" data-path="software_process/design/EMP/dom_search_optimization_scheme.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/dom_search_optimization_scheme.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.7.</b>
+                        
+                         DOM查找性能测试及优化方案
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.8" data-path="software_process/design/EMP/globalcss/css_global_cache.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/globalcss/css_global_cache.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.8.</b>
+                        
+                         CSS公共样式设计方案
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.9" data-path="software_process/design/EMP/touch_event/touch_event.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/touch_event/touch_event.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.9.</b>
+                        
+                         touch event事件监听设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.10" data-path="software_process/design/EMP/multitask/multitask.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/multitask/multitask.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.10.</b>
+                        
+                         多任务设计文档
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.11" data-path="software_process/design/EMP/control_lua/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/control_lua/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.11.</b>
+                        
+                         html设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.5.11.1" data-path="software_process/design/EMP/control_lua/metatable_property_degsign.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/control_lua/metatable_property_degsign.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.11.1.</b>
+                        
+                         lua_property
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.11.2" data-path="software_process/design/EMP/control_lua/radio_checkbox_icon_design.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/control_lua/radio_checkbox_icon_design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.11.2.</b>
+                        
+                         radio/checkbox icon
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.11.3" data-path="software_process/design/EMP/control_lua/select_lua_design.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/control_lua/select_lua_design.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.11.3.</b>
+                        
+                         select增加lua支持
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.12" data-path="software_process/design/EMP/design_of_tls_rehandshake.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/design_of_tls_rehandshake.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.12.</b>
+                        
+                         信道重连设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.13" data-path="software_process/design/EMP/iOS/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/iOS/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.13.</b>
+                        
+                         iOS离线下载网路模块设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.5.13.1" data-path="software_process/design/EMP/iOS/offline/offline_download_websocket_process.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/iOS/offline/offline_download_websocket_process.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.13.1.</b>
+                        
+                         离线资源websocket下载过程说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.13.2" data-path="software_process/design/EMP/iOS/offline/updatehttpmanager_Instructions.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/iOS/offline/updatehttpmanager_Instructions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.13.2.</b>
+                        
+                         下载管理器UpdateHTTPManager使用说明
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.14" data-path="software_process/design/EMP/iOS/mdap_class_relation.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/iOS/mdap_class_relation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.14.</b>
+                        
+                         MDAP--iOS类关系图
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.5.15" data-path="software_process/design/EMP/EMP_support_https_list.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/EMP_support_https_list.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.15.</b>
+                        
+                         客户端支持多https信道
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6" data-path="software_process/design/EWP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                         EWP设计
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.6.1" data-path="software_process/design/EWP/design_of_anti_resubmit_service.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/design_of_anti_resubmit_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.1.</b>
+                        
+                         防重复提交设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.2" data-path="software_process/design/EWP/offline/DD_of_security_optimization.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/offline/DD_of_security_optimization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.2.</b>
+                        
+                         离线配置设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.3" data-path="software_process/design/EWP/offline/design_of_refactor.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/offline/design_of_refactor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.3.</b>
+                        
+                         离线分层设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.4" data-path="software_process/design/EWP/session/design_of_optimization_of_shared_session.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/session/design_of_optimization_of_shared_session.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.4.</b>
+                        
+                         Session共享概要设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.5" data-path="software_process/design/EWP/session/detailed_design_of_shared_session.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/session/detailed_design_of_shared_session.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.5.</b>
+                        
+                         Session共享详细设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.6" data-path="software_process/design/EWP/EAC/design_of_eac.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/EAC/design_of_eac.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.6.</b>
+                        
+                         EMP管理平台优化设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.7" data-path="software_process/design/EWP/design_of_client_anti_replaying.html">
+            
+                
+                    <a href="../../../software_process/design/EWP/design_of_client_anti_replaying.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.7.</b>
+                        
+                         客户端防重放设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.8" data-path="software_process/design/offline/offline_resource_enhance_to_4.0.html">
+            
+                
+                    <a href="../../../software_process/design/offline/offline_resource_enhance_to_4.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.8.</b>
+                        
+                         增强版升级离线4.0服务端设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.6.9" data-path="software_process/design/EMP/EWP_support_https_list.html">
+            
+                
+                    <a href="../../../software_process/design/EMP/EWP_support_https_list.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.9.</b>
+                        
+                         服务端支持多https信道
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="software_process/test/Introduction.html">
+            
+                
+                    <a href="../../../software_process/test/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         测试文档
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="software_process/test/EWP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         EWP测试结果
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1.1" data-path="software_process/test/EWP/httpc_test.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/httpc_test.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.1.</b>
+                        
+                         HTTPC接口性能测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.1.2" data-path="software_process/test/EWP/session_share_pftest_results.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/session_share_pftest_results.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.2.</b>
+                        
+                         Session优化性能测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.1.3" data-path="software_process/test/EWP/test_of_anti_resubmit_service.html">
+            
+                
+                    <a href="../../../software_process/test/EWP/test_of_anti_resubmit_service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.3.</b>
+                        
+                         防重复提交功能性能测试
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2" data-path="software_process/test/EMP/Introduction.html">
+            
+                
+                    <a href="../../../software_process/test/EMP/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                         EMP测试结果
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.2.1" >
+            
+            <span><b>9.2.1.</b> Android</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.2.1.1" data-path="software_process/test/EMP/Android/offline/PresetResourceProcessingV3.0-PerformanceTestReport_1.1.html">
+            
+                
+                    <a href="../../../software_process/test/EMP/Android/offline/PresetResourceProcessingV3.0-PerformanceTestReport_1.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.1.1.</b>
+                        
+                         预置离线资源处理V3.0-性能测试报告
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" data-path="client_function/Introduction.html">
+            
+                
+                    <a href="../../../client_function/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                         客户端其他功能
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1" data-path="client_function/error_check.html">
+            
+                
+                    <a href="../../../client_function/error_check.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                         错误检测
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="technology_accumulation/Introduction.html">
+            
+                
+                    <a href="../../../technology_accumulation/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         技术积累
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1" data-path="technology_accumulation/Introduction.html">
+            
+                
+                    <a href="../../../technology_accumulation/Introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         iOS
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1.1" data-path="technology_accumulation/iOS/schedule.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/schedule.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.1.</b>
+                        
+                         日程安排
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.1.2" data-path="technology_accumulation/iOS/technical_points/loop_reference.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/technical_points/loop_reference.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.2.</b>
+                        
+                         循环引用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.1.3" data-path="technology_accumulation/iOS/technical_points/table_cell_reuse.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/technical_points/table_cell_reuse.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.3.</b>
+                        
+                         tableCell重用
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.1.4" data-path="technology_accumulation/iOS/advanced_technology/3DTouch.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/advanced_technology/3DTouch.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.4.</b>
+                        
+                         3DTouch
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.1.5" data-path="technology_accumulation/iOS/advanced_technology/cordova.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/advanced_technology/cordova.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.5.</b>
+                        
+                         cordova
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.1.6" data-path="technology_accumulation/iOS/advanced_technology/touchID.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/advanced_technology/touchID.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.6.</b>
+                        
+                         touchID
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.1.7" data-path="technology_accumulation/iOS/advanced_technology/watchOS.html">
+            
+                
+                    <a href="../../../technology_accumulation/iOS/advanced_technology/watchOS.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.7.</b>
+                        
+                         watchOS
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/inner_docs/inner_docs.zip" class="button">html</a>
+                
+                
+                <a href="/emp/inner_docs/book.pdf" class="button">pdf</a>
+                
+                
+                <a href="" class="button">epub</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../" >产品文档</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_92">
+                    
+                        <h1 id="离线资源优化-客户端设计">离线资源优化 - 客户端设计</h1>
+<!-- toc -->
+<ul>
+<li><a href="#需求">需求</a></li>
+<li><a href="#流程变更概览">流程变更概览</a></li>
+<li><a href="#信息同步优化">信息同步优化</a><ul>
+<li><a href="#lua-接口变更">lua 接口变更</a><ul>
+<li><a href="#tlsconnectcallback-optionsoptionofflinesyncmode">tls:connect(callback, options，optionOfflineSyncMode)</a></li>
+<li><a href="#offlineupdatehash-接口">offline:update_hash() 接口</a></li>
+<li><a href="#systemgetinfoname">system:getInfo(name)</a></li>
+</ul>
+</li>
+<li><a href="#信道变更">信道变更</a></li>
+<li><a href="#接口变更">接口变更</a></li>
+<li><a href="#封装离线更新脚本">封装离线更新脚本</a></li>
+</ul>
+</li>
+<li><a href="#资源更新策略">资源更新策略</a></li>
+<li><a href="#实时更新">实时更新</a><ul>
+<li><a href="#资源读取顺序">资源读取顺序</a></li>
+<li><a href="#脚本更新可选资源">脚本更新可选资源</a><ul>
+<li><a href="#lua-接口变更">lua 接口变更</a></li>
+<li><a href="#可选资源更新列表">可选资源更新列表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#其他变更">其他变更</a></li>
+<li><a href="#流量消耗优化">流量消耗优化</a><ul>
+<li><a href="#lua-接口变更">lua 接口变更</a><ul>
+<li><a href="#offlineupdatedesccallback-options">offline:update_desc(callback, options)</a></li>
+<li><a href="#offlinegetoptincrupdatesizefilename-optappname">offline:getOptIncrUpdateSize(filename, optAppname)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#文件读取异常处理">文件读取异常处理</a><ul>
+<li><a href="#lua-接口变更">lua 接口变更</a><ul>
+<li><a href="#filesetresourcereadfailedlistener">file:setResourceReadFailedListener();</a></li>
+<li><a href="#locationreplace">location:replace()</a></li>
+<li><a href="#windowshowcontent">window:showContent()</a></li>
+<li><a href="#setinnerhtml">setInnerHTML</a></li>
+</ul>
+</li>
+<li><a href="#默认处理">默认处理</a></li>
+<li><a href="#资源描述格式变更">资源描述格式变更</a></li>
+</ul>
+</li>
+<li><a href="#测试">测试</a><ul>
+<li><a href="#lua-接口变更">lua 接口变更</a><ul>
+<li><a href="#offlinegetresourceversiontypeappname">offline:getResourceVersion(type，appname)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#补充文档">补充文档</a></li>
+</ul>
+<!-- toc stop -->
+<h2 id="需求">1 需求</h2>
+<p><a href="../../requirement/offline/offline4.0_supplement.html">离线资源优化需求</a></p>
+<h2 id="流程变更概览">2 流程变更概览</h2>
+<p>经信道资源同步方式：</p>
+<p><img src="images/optim_ProcessChangeOverview_Tls.png" alt=""></p>
+<p>脚本同步方式：</p>
+<p><img src="images/optim_ProcessChangeOverview_Script.png" alt=""></p>
+<h2 id="信息同步优化">3 信息同步优化</h2>
+<h3 id="lua-接口变更">3.1 lua 接口变更</h3>
+<h4 id="tlsconnectcallback-optionsoptionofflinesyncmode">3.1.1 tls:connect(callback, options，optionOfflineSyncMode)</h4>
+<ul>
+<li><p><strong>Description:</strong><br>  建立加密信道</p>
+</li>
+<li><p><strong>Syntax:</strong></p>
+<pre><code>  tls:connect(callback, options)    
+  tls:connect(callback, optionOfflineSyncMode)
+  tls:connect(callback, options, optionOfflineSyncMode)
+</code></pre></li>
+<li><p><strong>Parameters:</strong>  </p>
+<ol>
+<li>callback<em>(required)</em><ul>
+<li>说明：加密信道建立结束的回调方法。</li>
+<li>参数：Table 类型  <ul>
+<li>{content:&quot;握手后返回的页面数据&quot;，containDesc = &quot;0：服务器没有返回更新列表；1：服务器已返回更新列表；只有异步更新时才有此字段&quot;，mustUpdate = &quot;服务器返回的m字段，其他情况则为 -2&quot; }</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>options<em>(optional)</em><ul>
+<li>说明：建立信道时添加到url中上传的参数</li>
+</ul>
+</li>
+<li>optionOfflineSyncMode<em>(optional)</em><ul>
+<li>类型：number</li>
+<li>说明：建立信道时离线资源同步模式。0：脚本控制（默认为脚本控制）；1：信道同步；2：信道异步</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local mOfflineSyncMode = 2; -- 离线异步方式
+
+  -- 信道回调
+  function tlsCallback(returnContent)
+      mPageContent = returnContent[&quot;content&quot;]; -- 页面报文
+
+      if  mOfflineSyncMode == 1 then -- 同步
+
+          local mustUpdate = returnContent[&quot;mustUpdate&quot;]; 
+          offlineSyncUpdate(mustUpdate);
+      elseif mOfflineSyncMode == 2 then
+          replace(); -- 先做页面替换
+
+          local containDesc = returnContent[&quot;containDesc&quot;];
+          if containDesc == 0 then -- 服务器没有返回资源描述
+              offline:update_desc(offlineAsyncUpdate);
+          elseif containDesc == 1 then -- 服务器已返回资源描述
+              local mustUpdate = returnContent[&quot;mustUpdate&quot;];
+              offlineAsyncUpdate(mustUpdate);
+          end
+      elseif mOfflineSyncMode == 0 then -- 脚本控制
+          replace();
+
+          offline:update_desc(offlineAsyncUpdate);
+      end
+
+  end
+
+  tls:connect(tlsCallback, mOfflineSyncMode);
+</code></pre></li>
+</ul>
+<h4 id="offlineupdatehash-接口">3.1.2 offline:update_hash() 接口</h4>
+<p>废弃 @Since 离线4.0<br/>
+客户端不需要做兼容，默认返回值: 3(必选,可选资源描述都需要更新)</p>
+<h4 id="systemgetinfoname">3.1.3 system:getInfo(name)</h4>
+<ul>
+<li><strong>Description:</strong><br>获取手机特定信息</li>
+<li><p><strong>Parameters:</strong>  </p>
+<ol>
+<li><p>name<em>(required)</em> 类型：String</p>
+<ul>
+<li>说明：增加 <code>&quot;network&quot;</code> ，为获取当前设备的网络状态</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  类型：String 2G、3G、4G、WIFI、UNKNOWN、 nil（没有网络时）</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local networkStr = system:getInfo(&quot;network&quot;);
+  if networkStr != nil then
+      window:alert(&quot;当前网络状态为：&quot;..networkStr);
+  else
+      window:alert(&quot;设备当前没有网络&quot;);
+  end
+</code></pre></li>
+</ul>
+<h3 id="信道变更">3.2 信道变更</h3>
+<ol>
+<li>请求url 增加 <code>network</code> 标示设备当前网络环境（只有异步更新时才上传该参数）</li>
+<li>请求body 增加 <code>H5必选S值</code> 类型： <code>0x0F</code>、<code>H5可选S值</code> 类型： <code>0x10</code>。S值为空时不上传</li>
+<li>变更后url长度约为102字符</li>
+<li>信道建立成功，客户端根据服务器返回离线描述中的 <code>cd</code> 字段判断是否包含更新描述，1：包含；0：不包含；为0时没有该字段</li>
+<li>若为异步更新tls:connect() 的回调方法参数中增加 key : <code>containDesc</code> 表示服务器是否返回了更新列表 0 ： 没有返回； 1：已返回; <code>mustUpdate</code>表示服务器返回的m字段。</li>
+<li>若离线为脚本控制方式，则建立信道时客户端不上传离线资源的相关信息(url 不上传  <code>platform</code>、<code>resolution</code>、<code>res_ver</code>、<code>network</code>参数; body 不上传 离线对应S 值)</li>
+</ol>
+<h3 id="接口变更">3.3 接口变更</h3>
+<p><code>offline:update_desc()</code> 及对应的 <code>/ota/resource_update?</code> 接口</p>
+<ul>
+<li>请求body： 去掉：desc、hash_res； 增加：<code>hash</code>(EWP必选S值) 、<code>option_hash</code>(EWP可选S值)、 <code>h5_hash</code>(H5必选S值)、 <code>h5_option_hash</code>(H5可选S值)。</li>
+<li>S值为空时则上传 <code>&quot;&quot;</code></li>
+</ul>
+<h3 id="封装离线更新脚本">3.4 封装离线更新脚本</h3>
+<p>产品提供默认的离线资源同步及异步更新的脚本。</p>
+<ul>
+<li><p>脚本文件（EMPTemplate.lua）</p>
+<pre><code>  -- 建立库类结构
+  APP = {};
+
+  -- 构造函数，返回一个APP对象
+  function APP:new(o)
+      o = o or {};  -- create table if users does not provide one
+  setmetatable(o, self);
+  self.__index = self;
+  return o;
+  end
+
+  local mPageContent;             -- 建立信道返回的页面内容
+  local mOfflineSyncMode ;     -- 离线同步模式 0:脚本控制  1: 同步 ; 2: 异步  
+  local mAppOfflineCallBack;    
+  local mAppOfflineFinishedCallback; -- app 自定义结束回调方法
+  local mOfflineCallBack;    
+
+  -- 进入信道返回的页面
+  function replace()
+      location:replace(mPageContent);
+  end
+
+  -- 离线资源更新完成的回调方法
+  function offlineFinishedCallback(failtable)
+
+      mAppOfflineFinishedCallback(failtable);    -- 调用app自定义的方法
+      replace();
+  end
+
+  -- 异步更新弹出[确定][取消]
+  function alertCallback_Async(btnIndex)
+      if btnIndex == 0 then -- 用户点击[确定]按钮
+          offline:update_resource(mAppOfflineCallBack);
+      end
+  end
+
+  -- 同步更新弹出[确定][取消]
+  function alertCallback_Sync(btnIndex)
+      if btnIndex == 0 then -- 用户点击[确定]按钮
+          offline:update_resource(mOfflineCallBack);
+      else
+          replace();
+      end
+  end
+
+  -- 离线资源异步更新 
+  function offlineAsyncUpdate(mustUpdate)
+      if mustUpdate == 0 then
+          window:alert(&quot;您有新的离线资源需要下载，是否更新？&quot;, &quot;确定&quot;,&quot;取消&quot;, alertCallback_Async);
+      elseif mustUpdate == 1 then
+          offline:update_resource(mAppOfflineCallBack);
+          window:alert(&quot;正在更新离线资源!&quot;, &quot;确定&quot;);
+      elseif mustUpdate == -1 then
+          window:alert(&quot;最新离线资源&quot;, &quot;确定&quot;);
+      end
+  end
+
+  -- 离线资源同步更新
+  function offlineSyncUpdate(mustUpdate)
+      if mustUpdate == 0 then
+          window:alert(&quot;您有新的离线资源需要下载，是否更新？&quot;, &quot;确定&quot;,&quot;取消&quot;, alertCallback_Sync);
+      elseif mustUpdate == 1 then
+          offline:update_resource(mOfflineCallBack);
+          window:alert(&quot;正在更新离线资源!&quot;, &quot;确定&quot;);
+      elseif mustUpdate == -1 then
+          replace();
+          window:alert(&quot;最新离线资源&quot;, &quot;确定&quot;);
+      else
+          window:alert(&quot;服务器返回错误信息!&quot;, &quot;确定&quot;);
+          replace();
+      end
+  end
+
+  -- 信道回调
+  function tlsCallback(returnContent)
+      mPageContent = returnContent[&quot;content&quot;]; -- 页面报文
+
+      if  mOfflineSyncMode == 1 then -- 同步
+
+          local mustUpdate = returnContent[&quot;mustUpdate&quot;]; 
+          offlineSyncUpdate(mustUpdate);
+      elseif mOfflineSyncMode == 2 then
+          replace(); -- 先做页面替换
+
+          local containDesc = returnContent[&quot;containDesc&quot;];
+          if containDesc == 0 then -- 服务器没有返回资源描述
+              offline:update_desc(offlineAsyncUpdate);
+          elseif containDesc == 1 then -- 服务器已返回资源描述
+              local mustUpdate = returnContent[&quot;mustUpdate&quot;];
+              offlineAsyncUpdate(mustUpdate);
+          end
+      elseif mOfflineSyncMode == 0 then -- 脚本控制
+          replace();
+
+          offline:update_desc(offlineAsyncUpdate);
+      end
+
+  end 
+
+  function APP:init(processCallback, finishedCallback, offlineSyncMode)
+
+      mOfflineSyncMode = offlineSyncMode;
+
+      mAppOfflineCallBack = {processCallback = processCallback, finishedCallback = finishedCallback};
+      mOfflineCallBack = {processCallback = processCallback, finishedCallback = offlineFinishedCallback};
+      mAppOfflineFinishedCallback = finishedCallback;
+
+      local offlineVersion = offline:version();    -- 获取离线资源版本
+
+      tls:connect(tlsCallback, mOfflineSyncMode);
+  end
+</code></pre></li>
+</ul>
+<ul>
+<li>main.xml 调用</li>
+</ul>
+<p>需要先加载lua脚本文件 <code>&lt;script type=&quot;text/x-lua&quot; src=&quot;EMPTemplate.lua&quot;&gt;&lt;/script&gt;</code></p>
+<p>异步方式更新代码示例如下：</p>
+<pre><code>local offlineSyncMode = 2; -- 0：脚本控制 1：信道同步  2：信道异步
+
+-- 下载进度回掉：
+function processCallback(downNum, totalNum)
+
+    if  bgCtrl[1]:getPropertyByName(&quot;hide&quot;) == &quot;true&quot;  then
+        bgCtrl[1]:setPropertyByName(&quot;hide&quot;, &quot;false&quot;);
+    end
+
+    local persent = math.floor(downNum * 100 / totalNum);
+    local pers = persent * 2
+    if bgCtrl and #bgCtrl &gt; 0 then
+        foreignCtrl[1]:setStyleByName(&quot;width&quot;, pers);
+        fontCtrl[1]:setPropertyByName(&quot;text&quot;, persent..&quot;%&quot;);
+    end;
+end
+
+-- 下载结束回掉：
+function finishedCallback(failtable)
+    local failPaths = &quot;&quot;;
+    if failtable and #failtable &gt; 0 then
+       for k1,v1 in pairs(failtable) do
+        failPaths = failPaths..v1..&quot;,&quot;;
+        end;
+        window:alert(&quot;下载失败文件：&quot;..failPaths);
+    else
+        window:alert(&quot;下载完成&quot;);
+    end;
+end
+
+app = APP:new{};
+    --[[
+    processCallback：下载进度回调；
+    finishedCallback：下载结束回调；
+    offlineSyncMode：离线资源同步模式(0：脚本控制；1：同步；2：异步)
+    ]]
+app:init(processCallback, finishedCallback, offlineSyncMode);
+</code></pre><h2 id="资源更新策略">4 资源更新策略</h2>
+<p>以下处理策略适用于EWP资源及H5资源</p>
+<p>所有可选资源描述更新 -- 客户端拿到服务器返回的资源描述信息时开始执行<br/></p>
+<p><img src="images/optim_UpdatesStrategy_opt.png" alt=""></p>
+<p>必选资源更新 -- 用户[确定]更新必选资源时开始执行<br/>
+<img src="images/optim_UpdatesStrategy_req.png" alt=""></p>
+<p>说明：</p>
+<ol>
+<li>根据服务器返回资源描述信息，判断是否全量更新。<code>tu</code>字段为1表示全量更新；为0表示非全量（为0时没有该字段）</li>
+<li><p>如果是全量更新</p>
+<ul>
+<li>必选 <ul>
+<li>删除对应本地已存储的所有必选资源信息</li>
+<li>解析服务器更新描述，获取下载列表</li>
+<li>更新资源<ul>
+<li>可选</li>
+</ul>
+</li>
+<li>删除对应本地已存储的所有可选资源信息</li>
+<li>保存服务器更新描述</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>如果不是全量更新</p>
+<ul>
+<li>必选<ul>
+<li>逐个解析d、h5_d字段，判定失败列表中是否有该资源，如果有则从失败列表中删除</li>
+<li>逐个解析l、h5字段，判定失败列表中是否有该资源，如果有则从失败列表中删除</li>
+<li>把失败列表中的数据添加到下载列表中</li>
+<li>更新资源</li>
+</ul>
+</li>
+<li>可选资源描述信息<ul>
+<li>遍历需要删除的资源描述信息，从本地服务器描述中删除该资源</li>
+<li>遍历更新描述，如果本地服务器描述中存在该资源则覆盖；否则添加到本地</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>更新必选资源    </p>
+<ul>
+<li>更新过程结束时(无论所有资源更新成功与否)保存对应必选资源的S 值。</li>
+<li>更新失败的文件保存到失败列表(文件下载路径及文件名)，更新过程结束时保存失败列表到本地。</li>
+<li>用户选择更新时，失败列表与更新列表合并；否则不做合并</li>
+<li>先判断本地是否已有该文件且哈希值一致，若本地已存在则不下载，否则继续下载。</li>
+</ul>
+</li>
+<li><p>客户端本地保存资源</p>
+<ul>
+<li><p>必选</p>
+<ul>
+<li>客户端已下载必选资源描述 EWP 资源：client.desc          H5 资源：h5.desc</li>
+<li>更新失败列表  EWP 资源：ewp_failed.desc      H5 资源 ：h5_failed.desc</li>
+</ul>
+</li>
+<li><p>可选</p>
+<ul>
+<li>客户端已下载可选资源描述  EWP 资源： option.desc  H5资源： h5_option.desc</li>
+<li>服务器所有可选资源描述  EWP 资源 ：option_server.desc        H5资源：h5_option_server.desc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="实时更新">5 实时更新</h2>
+<ol>
+<li><p>新增实时更新接口 <code>ota/rt_resource</code></p>
+<ul>
+<li><p>url：服务器地址 + 接口 </p>
+</li>
+<li><p>body参数如下：</p>
+<ul>
+<li>当前离线版本 ： version </li>
+<li>平台：platform</li>
+<li>分辨率：resolution</li>
+<li>多appname：from</li>
+<li>文件名：filename</li>
+<li>资源类型：filetype   <code>ewp</code> 或 <code>h5</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="资源读取顺序">5.1 资源读取顺序</h3>
+<p>适用于所有资源读取</p>
+<p><img src="images/optim_ResourceReadingOrder.png" alt=""></p>
+<p>说明：</p>
+<ol>
+<li>实时请求成功缓存离线内容时，对于更新列表的变动需要加同步锁。 </li>
+<li>资源读取场景<ul>
+<li>页面引入的脚本  <code>&lt;script type=&quot;text/x-lua&quot; src=&quot;RYTL.lua&quot;/&gt;</code></li>
+<li>页面引入的CSS文件 <code>&lt;style type = &quot;text/css&quot; src=&quot;base.css&quot;/&gt;</code></li>
+<li>页面连接的文件<code>&lt;link ref=&quot;base.css&quot; type=&quot;text/css&quot;/&gt;</code></li>
+<li>控件样式、属性中用到的图片</li>
+<li>img 控件的 src</li>
+<li>file:read()接口</li>
+<li>file:readH5()接口</li>
+<li>webview 访问离线H5资源</li>
+</ul>
+</li>
+<li><p>客户端资源读取接口统一命名：</p>
+<p> 读取EWP资源接口：
+ public byte[] readResourceFile(String fileName);</p>
+<p> public byte[] readResourceFile(String fileName, String appname);</p>
+<p> 读取H5资源接口：
+ public final byte[] readResFileH5(String fileName) ;</p>
+<p> public final byte[] readResFileH5(String filePath, String appName) ;</p>
+</li>
+<li><p>如果更新列表或失败列表中包含实时请求到的文件，则做离线缓存，否则不做缓存</p>
+</li>
+</ol>
+<h3 id="脚本更新可选资源">5.2 脚本更新可选资源</h3>
+<p>推荐更新、访问流程：</p>
+<p><img src="images/optim_OptionalUpdatePolicy.png" alt=""></p>
+<h4 id="lua-接口变更">5.2.1 lua 接口变更</h4>
+<h5 id="offlineisensupdateoptionalfilename-optappname">5.2.1.1 offline:isEnsUpdateOptional(fileName, optAppName)</h5>
+<ul>
+<li><strong>Description:</strong><br>判断指定文件是否为确保更新的可选资源资源</li>
+<li><p><strong>Parameters:</strong>  </p>
+<ol>
+<li>fileName<em>(required)</em> 类型：String 可选资源文件名</li>
+<li>optAppName<em>(optional)</em> 类型：String 指定appname，默认当前设定的app</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  类型：Boolean  true：是确保更新 ； false：不是确保更新（没有该资源时为false）</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local isensureupdate = offline:isEnsUpdateOptional(&quot;1.zip&quot;,&quot;emas&quot;)；
+  if isensureupdate then
+      window:alert(&quot;确保更新资源&quot;);
+  end
+</code></pre></li>
+</ul>
+<h5 id="offlinecancelupdateoptionalfilename-optappname">5.2.1.2 offline:cancelUpdateOptional(fileName, optAppName)</h5>
+<ul>
+<li><strong>Description:</strong><br>取消更新该资源</li>
+<li><p><strong>Parameters:</strong>  </p>
+<ol>
+<li>fileName<em>(required)</em> 类型：String 可选资源插件包名（依.zip结尾）</li>
+<li>optAppName<em>(optional)</em> 类型：String 指定appname，默认当前设定的app</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local fileName = &quot;1.zip&quot;;
+
+  function alertCallback (btnIndex)
+
+      if btnIndex == 0 then -- 点击[是]
+          -- 更新可选插件包
+
+      elseif btnIndex == 1 then -- 点击[否]
+          offline:cancelUpdateOptional(fileName); -- 设置取消更新该插件包
+      end
+  end
+
+  local localEffective = offline:checkOfflineFileWithLocal(&quot;1.zip&quot;);
+  local serverEffective = offline:checkOfflineFileWithServer(&quot;1.zip&quot;);
+  if localEffective then
+      if serverEffective then
+          -- 可选插件包有更新
+          window:alert(&quot;是否更新资源？&quot;,&quot;是&quot;,&quot;否&quot;，alertCallback);
+      end
+  end
+</code></pre></li>
+</ul>
+<h4 id="可选资源更新列表">5.2.2 可选资源更新列表</h4>
+<ol>
+<li>offline:checkOfflineFileWithServer() 被调用 且 返回值为false时，把文件加入更新列表。</li>
+<li>offline:cancelUpdateOptional() 被调用时，从更新列表中删除</li>
+</ol>
+<h2 id="其他变更">6 其他变更</h2>
+<ol>
+<li>系统启动页main.xml 通过上述的资源读取顺序获取</li>
+</ol>
+<h2 id="流量消耗优化">7 流量消耗优化</h2>
+<p>客户端需要解析服务器描述中的<code>f</code>字段 ，其标示文件大小，单位 m/k/b，且只保留一位小数。</p>
+<h3 id="lua-接口变更">7.1 lua 接口变更</h3>
+<h4 id="offlineupdatedesccallback-options">7.1.1 offline:update_desc(callback, options)</h4>
+<ul>
+<li><p><strong>Description:</strong><br>请求<code>resource_update</code>接口，获取离线资源的下载描述并缓存。</p>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ol>
+<li><p>callback<em>(required)</em></p>
+<ul>
+<li><p>当资源更新接口请求结束后，调用此函数，返回资源更新的接口信息。</p>
+<p>function callback(mustUpdate, resourceSize)</p>
+<p>end</p>
+<ul>
+<li>mustUpdate 参数定义保持不变</li>
+<li>resourceSize  <em>(required)</em> 类型:number （单位K，最多保留一位小数） 值为所有必选资源的大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>options 参数定义保持不变</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong></p>
+<p>  无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  -- 只有 [确定] 按钮的回调
+  function confirm_callback (btnIndex)
+
+  end
+
+  -- [确定][取消] 的回调
+  function update_callback (btnIndex)    
+      if btnIndex == 0 then
+          -- 用户点击[继续]
+          offline:update_resource();
+      else
+          -- 用户点击[取消]
+      end
+  end
+
+  function updateDesc_callback(mustUpdate, resourceSize)
+
+      local networkStr = system:getInfo(&quot;network&quot;); -- 获取当前网络状态
+      if networkStr != nil then -- 联网状态
+
+          if mustUpdate == 0 then
+              local threshold = 1 * 1024 * 1024; -- 1024K 设定阈值
+
+                  if networkStr != &quot;wifi&quot; &amp;&amp; resourceSize &gt;= threshold then          -- 非wifi &amp; 文件大小超过限定阈值
+
+                      window:alert(&quot;非WIFI网络下需要更新&quot;..resourceSize..&quot; K文件，是否继续？&quot;，&quot;继续&quot;,&quot;取消&quot;, update_callback);
+                  else  -- wifi || 文件大小没有超过阈值
+
+                      window:alert(&quot;当前为WIFI网络环境下，需要更新&quot;..resourceSize..&quot; K文件，是否继续？&quot;，&quot;继续&quot;,&quot;取消&quot;, update_callback);
+                  end
+
+          elseif mustUpdate == 1 then 
+              offline:update_resource();
+              window:alert(&quot;离线资源正在更新&quot;, &quot;确定&quot;, confirm_callback);
+          elseif mustUpdate == -1 then
+              -- 客户端当前已是最新资源
+          end
+      end
+  end        
+
+  offline:update_desc(updateDesc_callback);
+</code></pre></li>
+</ul>
+<h4 id="offlinegetoptincrupdatesizefilename-optappname">7.1.2 offline:getOptIncrUpdateSize(filename, optAppname)</h4>
+<ul>
+<li><p><strong>Description:</strong><br>获取指定可选资源增量更新大小。单位K(保留一位小数)</p>
+</li>
+<li><p><strong>Parameters:</strong>  </p>
+<ol>
+<li>filename<em>(required)</em> 类型 ： String  可选资源文件名（依.zip结尾）</li>
+<li>optAppname<em>(option)</em>  对应APP名称，类型：String,默认为当前设定的APP</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong>  </p>
+<p>  指定可选资源增量更新大小<br/>
+  类型：number    </p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local fileSize = offline:getOptIncrUpdateSize(&quot;1.zip&quot;,&quot;ebank&quot;); -- 获取更新的可选资源1.zip增量更新大小
+</code></pre></li>
+</ul>
+<h2 id="文件读取异常处理">8 文件读取异常处理</h2>
+<p>文件读取失败时给出错误提示且不阻止当前页面的加载。</p>
+<h3 id="lua-接口变更">8.1 lua 接口变更</h3>
+<h4 id="filesetresourcereadfailedlistener">8.1.1 file:setResourceReadFailedListener();</h4>
+<ul>
+<li><p><strong>Description:</strong><br/></p>
+<p>  设置资源读取失败全局监听</p>
+</li>
+<li><p><strong>Syntax1:</strong></p>
+<p>  file:setResourceReadFailedListener(optFileSuffixTable, optCallBack);</p>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ol>
+<li><p>optFileSuffixTable<em>(option)</em></p>
+<ul>
+<li>类型: <em>Table</em></li>
+<li>说明: 文件扩展名。   key ： 默认值  value:文件扩展名</li>
+</ul>
+</li>
+<li><p>optCallBack<em>(option)</em></p>
+<p> Syntax1：optCallBack (pageId, filename) </p>
+<ul>
+<li>说明：指定类型文件读取失败时的回调方法</li>
+<li>参数：pageId 当前页面 id； filename 读取失败的文件名</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local mPageId; -- 页面id
+
+  function windowCallback_back(btnIndex)
+      if btnIndex == 0 then
+          -- 点击[重试]
+          location:reload();
+      else
+          -- 点击[返回]
+          local lastPageContent = history:get(-1);
+          location:replace(lastPageContent);
+      end
+  end
+
+  function windowCallback_exit(btnIndex)
+      if btnIndex == 0 then
+          -- 点击[重试]
+          location:reload();
+      else
+          -- 点击[退出]
+          window:close();
+      end
+  end
+
+  function resourceReadFailedCallback (pageId, filename) -- 文件读取失败的回调
+      -- location:reload() 刷新当前页面
+      -- 或 提示用户    
+
+      if mPageId == nil || mPageId != pageId then -- 只在当前页面第一次弹出错误提示时做处理
+
+          mPageId = pageId;
+
+          local pageLength = history:length(); -- 获取页面缓存数量
+          if pageLength &gt; 1 then
+
+              window:alert(&quot;页面加载异常!&quot;,&quot;重试&quot;,&quot;返回&quot;,windowCallback_back);
+          else
+              window:alert(&quot;页面加载异常!&quot;,&quot;重试&quot;,&quot;退出&quot;,windowCallback_exit);
+          end
+      end
+  end
+
+  local extTable = {&quot;.lua&quot;};    -- 默认只监听.lua文件
+
+  file:setResourceReadFailedListener(extTable, resourceReadFailedCallback);
+</code></pre></li>
+</ul>
+<h4 id="locationreplace">8.1.2 location:replace()</h4>
+<ul>
+<li><p><strong>Description:</strong><br/></p>
+<p>  展示新页面</p>
+</li>
+<li><p><strong>Syntax1:</strong></p>
+<p>  location:replace(content, optCallback, optParamTable)</p>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ol>
+<li><p>optCallback<em>(optional)</em></p>
+<ul>
+<li>类型: <em>Function</em></li>
+<li><p>说明: 回调函数。<br>此回调函数定义时必须有且仅有一个参数，此参数类型为Table。其中加入resultCode[String.]，resultBuf[String.].两个字段  </p>
+<ul>
+<li><p>resultCode的value的类型为int类型，其值的意义如下:  </p>
+<pre><code> 0    页面加载成功，没有错误。  
+</code></pre><p>  -4 资源读取失败
+  目前客户端需要支持0（成功）及 -4（资源读取失败）。  </p>
+</li>
+<li><p>resultBuf的返回对应的错误代码的可读性错误提示。方便提示模板开发和使用用户.</p>
+<ul>
+<li>如果没有错误，resultBuf为空字符串。</li>
+<li>如果resultCode = -4 ，则为json格式例如：[&quot;filename1&quot;,&quot;filename2&quot;] filename 为读取失败的文件名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local content = &quot;&lt;?xml version= ……&quot;;
+
+  function replaceCallback(resultTable)
+      if resultTable.resultCode == 0 then
+            –- 页面加载成功
+      else 
+            --错误处理
+          if resultTable.resultCode == -4 then -- 资源加载失败处理
+              local filenameJson = result.resultBuf;
+              -- 此处可刷新当前页面或给出提示信息
+</code></pre></li>
+</ul>
+<pre><code>            end
+        end;
+    end;
+
+    location:replace(content, replaceCallback, {})；
+</code></pre><h4 id="windowshowcontent">8.1.3 window:showContent()</h4>
+<ul>
+<li><p><strong>Description:</strong><br>  在当前页面上层再悬浮显示另一个页面，此页面为模态页面.接受完整页面报文.<br/></p>
+</li>
+<li><p><strong>Syntax1:</strong>  </p>
+<p>  window:showContent(content/path, tag, optionTable)</p>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ol>
+<li>content/path</li>
+<li>tag</li>
+<li><p>optionTable<em>(optional)</em></p>
+<ul>
+<li>类型: <em>Table</em></li>
+<li>参数：增加key <code>callback</code> (showContent执行结束的回调方法 )</li>
+<li><p>说明: 
+此回调函数定义时必须有且仅有一个参数，此参数类型为Table。其中加入resultCode[String.]，resultBuf[String.].两个字段  </p>
+<ul>
+<li><p>resultCode的value的类型为int类型，其值的意义如下:  </p>
+<pre><code> 0    页面加载成功，没有错误。  
+</code></pre><p>  -4 资源读取失败
+  目前客户端需要支持0（成功）及 -4（资源读取失败）。  </p>
+</li>
+<li><p>resultBuf的返回对应的错误代码的可读性错误提示。方便提示模板开发和使用用户.</p>
+<ul>
+<li>如果没有错误，resultBuf为空字符串。</li>
+<li>如果resultCode = -4 ，则为json格式例如：[&quot;filename1&quot;,&quot;filename2&quot;] filename 为读取失败的文件名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong><br>  无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local content = &quot;&lt;?xml version=...&gt;&lt;content&gt;...&lt;content&gt;&quot;;
+  local tag = 1;
+
+  function callback (resultTable)
+      if resultTable.resultCode == 0 then
+            –- 页面加载成功
+      else 
+            --错误处理
+          if resultTable.resultCode == -4 then -- 资源加载失败处理
+              local filenameJson = result.resultBuf;
+              -- 此处可刷新当前页面或给出提示信息
+</code></pre></li>
+</ul>
+<pre><code>            end
+        end;
+    end
+
+    local optionTable = {callback = callback};
+    window:showContent(content, tag, optionTable);
+</code></pre><h4 id="setinnerhtml">8.1.4 setInnerHTML</h4>
+<ul>
+<li><p><strong>Description:</strong></p>
+<p>  更新当前控件内容.</p>
+</li>
+<li><p><strong>Syntax:</strong></p>
+<p>  control:setInnerHTML(content, optionTable)</p>
+</li>
+<li><p><strong>Parameters:</strong></p>
+<ol>
+<li>content<em>(required)</em><ul>
+<li>类型: <em>String.</em></li>
+<li>说明: 报文内容</li>
+</ul>
+</li>
+<li><p>optionTable<em>(optional)</em></p>
+<ul>
+<li>类型: <em>Table</em></li>
+<li><p>参数：key <code>callback</code>(setInnerHTML执行结束时的回调方法)</p>
+<pre><code>* 此回调函数定义时必须有且仅有一个参数，此参数类型为Table。其中加入resultCode[String.]，resultBuf[String.].两个字段  
+</code></pre><ul>
+<li><p>resultCode的value的类型为int类型，其值的意义如下:  </p>
+<pre><code> 0    页面加载成功，没有错误。  
+</code></pre><p>  -4 资源读取失败
+  目前客户端需要支持0（成功）及 -4（资源读取失败）。  </p>
+</li>
+<li><p>resultBuf的返回对应的错误代码的可读性错误提示。方便提示模板开发和使用用户.</p>
+<ul>
+<li>如果没有错误，resultBuf为空字符串。</li>
+<li>如果resultCode = -4 ，则为json格式例如：[&quot;filename1&quot;,&quot;filename2&quot;] filename 为读取失败的文件名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong>
+无</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  function callback (resultTable)
+      if resultTable.resultCode == 0 then
+            –- 页面加载成功
+      else 
+            --错误处理
+          if resultTable.resultCode == -4 then -- 资源加载失败处理
+              local filenameJson = result.resultBuf;
+              -- 此处可刷新当前页面或给出提示信息
+</code></pre></li>
+</ul>
+<pre><code>            end
+        end;
+    end
+
+    local content = &quot;&lt;content&gt;&lt;style&gt;...&lt;/style&gt;&lt;script&gt;...&lt;/script&gt;&lt;div&gt;...&lt;/div&gt;&lt;/content&gt;&quot;;
+    local optionTable = {callback = callback}
+    control:setInnerHTML(content, optionTable);
+</code></pre><h3 id="默认处理">8.2 默认处理</h3>
+<ol>
+<li>客户端脚本方式提供默认处理</li>
+<li>系统启动时执行file:setResourceReadFailedListener(extTable, resourceReadFailedCallback);方法</li>
+<li>客户端需要生成 file:setResourceReadFailedListener(); 回调方法的pageId </li>
+</ol>
+<h3 id="资源描述格式变更">8.3 资源描述格式变更</h3>
+<p><a href="offline_resource_optimization_server.html">服务器返回资源描述及预置资源描述</a></p>
+<p>服务器返回资源描述变更说明：</p>
+<ol>
+<li>新增字段 <code>tu</code>(是否全量更新) 、<code>f</code>(文件大小)、<code>cd</code>(信道是否返回了资源更新描述)</li>
+<li>可选<ul>
+<li>单个资源新增 <code>u</code>（是否确保更新）字段</li>
+<li>增加 <code>od</code> 和  <code>h5_od</code> 字段标示 客户端需要从描述中删除的资源</li>
+</ul>
+</li>
+<li>服务器返回资源描述中增加了<code>st</code>字段(原来是在offline:update_hash() 接口返回)</li>
+</ol>
+<p>预置资源描述变更说明：</p>
+<ol>
+<li>可选单个文件增加<code>f</code>字段，标示文件大小</li>
+</ol>
+<h2 id="测试">9 测试</h2>
+<h3 id="lua-接口变更">9.1 lua 接口变更</h3>
+<h4 id="offlinegetresourceversiontypeappname">9.1.1 offline:getResourceVersion(type，appname)</h4>
+<ul>
+<li><p><strong>Description:</strong><br>获取指定资源版本，包括EWP必选、EWP可选、H5必选、H5可选</p>
+</li>
+<li><p><strong>Parameters:</strong>  </p>
+<ol>
+<li><p>type<em>(required)</em>  类型 ： number </p>
+<ul>
+<li>1 ：EWP必选</li>
+<li>2：EWP可选</li>
+<li>3：H5必选</li>
+<li>4：H5可选        </li>
+</ul>
+</li>
+<li><p>appname<em>(option)</em>  类型 ： String </p>
+<ul>
+<li>说明：对应APP，为空则获取当前设定APP 对应资源版本     </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Return:</strong>  </p>
+<p>  类型：String    <br/>
+  指定type、appname的资源版本号（即S值）,为空返回nil</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<pre><code>  local lversion = offline:getResourceVersion(0); -- 获取必选资源的版本号
+</code></pre></li>
+</ul>
+<h2 id="补充文档">10 补充文档</h2>
+<p><a href="offline_resource_optimization_client_supplement.html">离线优化-补充</a></p>
+<p><br/><br/><br/><br/><br/></p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Note</th>
+<th>Modifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015-12-25</td>
+<td>离线资源优化 - 客户端设计 方案初稿</td>
+<td>liu.dongmei</td>
+</tr>
+<tr>
+<td>2015-12-30</td>
+<td>离线资源优化 - 客户端设计 增加优化流程变更说明、修改资源读取顺序及客户端更新策略等</td>
+<td>liu.dongmei</td>
+</tr>
+<tr>
+<td>2016-01-13</td>
+<td>离线资源优化 - 客户端设计 客户端更新策略 - 添加必选、可选更新时机说明</td>
+<td>liu.dongmei</td>
+</tr>
+<tr>
+<td>2016-02-18</td>
+<td>离线资源优化 - 客户端设计 添加失败列表更新方式说明 &amp; 避免必选资源的重复下载</td>
+<td>liu.dongmei</td>
+</tr>
+<tr>
+<td>2016-03-24</td>
+<td>离线资源优化 - 客户端设计 根据已实现结果，完善设计内容</td>
+<td>liu.dongmei</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../../software_process/design/offline/offline_4_0_design_server.html" class="navigation navigation-prev " aria-label="Previous page: 离线资源4.0 服务器设计"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../../software_process/design/offline/offline_resource_optimization_server.html" class="navigation navigation-next " aria-label="Next page: 离线资源优化-服务端设计"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

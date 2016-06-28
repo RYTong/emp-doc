@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>编码指南 | EWP开发手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.3.4">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../debug/intro.html" />
+    
+    
+    <link rel="prev" href="../config/adapter.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="2" data-basepath=".." data-revision="1461314305409">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 配置</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="config/menu.html">
+            
+                
+                    <a href="../config/menu.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         菜单配置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="config/adapter.html">
+            
+                
+                    <a href="../config/adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         adapter
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="2" data-path="dev_guide/example.html">
+            
+                
+                    <a href="../dev_guide/example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         编码指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="debug/intro.html">
+            
+                
+                    <a href="../debug/intro.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         联调
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="debug/login.html">
+            
+                
+                    <a href="../debug/login.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         模拟登陆调试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="debug/interface.html">
+            
+                
+                    <a href="../debug/interface.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         接口联调
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 编码规范</span>
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="coding_spec/erlang.html">
+            
+                
+                    <a href="../coding_spec/erlang.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Erlang开发规范
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown">下载</a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                
+                <a href="/emp/frontend_dev_guide/backend_dev_guide.zip" class="button">html</a>
+                
+                
+                <a href="/emp/frontend_dev_guide/book.pdf" class="button">pdf</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >EWP开发手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_8">
+                    
+                        <h1 id="业务编写">业务编写</h1>
+<p>本章节主要讲解完整的代码开发流程</p>
+<h2 id="添加channel">1 添加channel</h2>
+<p>添加channel entranc</p>
+<pre><code>[{id,&quot;entrance&quot;},
+ {app,&quot;ebank&quot;},
+ {name,[228,185,157,229,174,171,230,160,188]},
+ {entry,channel_adapter},
+ {views,undefined},
+ {props,[{method,post},{encrypt_flag,1},{trancode,&quot;first_page&quot;}]},
+ {state,1}]
+</code></pre><h2 id="添加adapter和procedure">2 添加adapter和procedure</h2>
+<p>创建 {&quot;pochost&quot;,&quot;ad&quot;}</p>
+<pre><code>{adapter,[{name,&quot;pochost&quot;},
+          {host,&quot;192.168.241.3&quot;},
+          {port,4003},
+          {protocol,{extend,{ebank_adapter_utils,extend_http}}},
+          {res_convertor, {ebank_adapter_utils,convert_json}},
+          {return_type,json}]}.
+
+{procedure, [{id, &quot;ad&quot;},
+       {adapter, &quot;pochost&quot;},
+       {path, &quot;mobs/ewp.do&quot;},
+       {gen_log, true},
+       {use_sample_data,true},
+       {data_sample,&quot;public/json/JH0001.json&quot;},
+       {parameters, [{&quot;tranCode&quot;,&quot;JH0001&quot;}]}]
+     }.
+</code></pre><h2 id="后端代码示例">3 后端代码示例</h2>
+<pre><code class="lang-erlang"><span class="hljs-function"><span class="hljs-title">'first_page'</span><span class="hljs-params">(<span class="hljs-variable">TranCode</span>, <span class="hljs-variable">Channel</span>)</span> -&gt;</span>
+    <span class="hljs-comment">%%获取参数</span>
+    <span class="hljs-variable">Id</span> = ?<span class="hljs-function_name">param</span>(<span class="hljs-string">"collection_id"</span>),
+    <span class="hljs-variable">Type</span> = ?<span class="hljs-function_name">param</span>(<span class="hljs-string">"type"</span>,<span class="hljs-string">"collections"</span>),
+    <span class="hljs-comment">%%获取菜单</span>
+    <span class="hljs-variable">Menu</span> = <span class="hljs-function_name">ebank_controller:get_menu</span>(<span class="hljs-variable">Id</span>,<span class="hljs-function_name">list_to_atom</span>(<span class="hljs-variable">Type</span>)),
+    <span class="hljs-comment">%%请求接口</span>
+    <span class="hljs-variable">Response</span>=
+        ?<span class="hljs-function_name">invoke_procedure</span>(<span class="hljs-tuple">{<span class="hljs-string">"pochost"</span>,<span class="hljs-string">"ad"</span>,[<span class="hljs-tuple">{'tran<span class="hljs-variable">Code</span>', <span class="hljs-variable">TranCode</span>}</span>]}</span>),
+    <span class="hljs-comment">%%封装json</span>
+    <span class="hljs-variable">Res</span> = <span class="hljs-function_name">cs_api:render</span>(<span class="hljs-string">"ebank_list_i"</span>,<span class="hljs-variable">Menu</span>++<span class="hljs-variable">Response</span>),
+    <span class="hljs-variable">Res</span>.
+</code></pre>
+<h2 id="cs-拼装json报文">4 cs 拼装json报文</h2>
+<p>此处只讲菜单之外的逻辑</p>
+<pre><code>...
+#{cs linclude:&quot;ad&quot; }#
+...
+</code></pre><pre><code>&quot;ad&quot;:
+    [
+#{cs set:#num=subcount(REP_BODY.imglist)}#
+#{cs var:#num}#
+#{cs set:#n=#1}#
+#{cs each:row= REP_BODY.imglist }#
+       {
+           &quot;src&quot;:&quot;#{cs var:row.src}#&quot;,
+           &quot;msg&quot;:&quot;#{cs var:row.msg}#&quot;
+#{cs     if:#n!=#num}#
+        },
+#{cs     else}#
+        }
+#{cs     /if}#
+#{cs     set:#n=#n+#1}#
+#{cs /each}#
+#{cs var:#n}#
+    ]
+</code></pre><h2 id="模拟数据编写">5 模拟数据编写</h2>
+<h4 id="本地模拟数据编写">5.0.1 本地模拟数据编写</h4>
+<p>首先跟procedure中data_sample字段&quot;public/json/JH0001.json&quot;
+编写json文件</p>
+<pre><code class="lang-json">{
+  "<span class="hljs-attribute">RSP_HEAD</span>":<span class="hljs-value">{
+    "<span class="hljs-attribute">TRAN_SUCCESS</span>":<span class="hljs-value"><span class="hljs-string">"1"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">RSP_BODY</span>":<span class="hljs-value">{
+    "<span class="hljs-attribute">tranCode</span>":<span class="hljs-value"><span class="hljs-string">"JH0001"</span></span>,
+    "<span class="hljs-attribute">imglist</span>":<span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">src</span>":<span class="hljs-value"><span class="hljs-string">"ad3.jpg"</span></span>,
+        "<span class="hljs-attribute">msg</span>":<span class="hljs-value"><span class="hljs-string">"优惠信息3"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">src</span>":<span class="hljs-value"><span class="hljs-string">"ad3.jpg"</span></span>,
+        "<span class="hljs-attribute">msg</span>":<span class="hljs-value"><span class="hljs-string">"优惠信息3"</span>
+      </span>}
+    ]
+  </span>}
+</span>}
+</code></pre>
+<h4 id="远程模拟报文编写">5.0.2 远程模拟报文编写</h4>
+<p>使用远程模拟报文需要将procedure中，use_sample_data字段置为false</p>
+<p>配置simulator服务settings.py</p>
+<pre><code class="lang-python">config = {}
+config[<span class="hljs-string">"PORT"</span>] = <span class="hljs-number">4003</span>     <span class="hljs-comment">#端口</span>
+config[<span class="hljs-string">"RANDOM"</span>] = <span class="hljs-keyword">False</span>  <span class="hljs-comment">#随机报文</span>
+config[<span class="hljs-string">"FORMAT"</span>] = <span class="hljs-string">"json"</span> <span class="hljs-comment"># xml or json</span>
+</code></pre>
+<p>将上面编写的JH0001.json文件放入simulator中 &quot;simulator/json/JH0001/JH0001.json&quot;
+因为要求上送报文为json，所以此时模拟器不能使用浏览器访问。
+所以我们需要使用代码验证模拟器是否正常。</p>
+<ul>
+<li><h5 id="第一步打开浏览器访问http19216824134005admin登陆后记录后台日志中sessionid在后台运行的erlang-shell中执行读取session如下">5.0.2.1 第一步：打开浏览器访问<a href="http://192.168.241.3:4005/admin，登陆后记录后台日志中sessionId，在后台运行的erlang" target="_blank">http://192.168.241.3:4005/admin，登陆后记录后台日志中sessionId，在后台运行的erlang</a> shell中执行读取session如下：</h5>
+<pre><code class="lang-erlang">session_service:read_by_id(<span class="hljs-string">"7c553e220d14e1afaa03548a6f0d4652ed7eaa7dbf6c0c1f73a434f5b36fa21d"</span>).
+</code></pre>
+</li>
+<li><h5 id="第二步继续在shell中执行以下语句">5.0.2.2 第二步：继续在shell中执行以下语句：</h5>
+</li>
+</ul>
+<pre><code class="lang-erlang">ebank_adapter_utils:ebank_invoke_procedure(<span class="hljs-tuple">{<span class="hljs-string">"pochost"</span>,<span class="hljs-string">"ad"</span>,[]}</span>).
+</code></pre>
+<p>得到erlang输出日志如下：</p>
+<pre><code>[{&quot;RSP_HEAD&quot;,[{&quot;TRAN_SUCCESS&quot;,&quot;1&quot;}]},
+ {&quot;RSP_BODY&quot;,
+  [{&quot;tranCode&quot;,&quot;JH0001&quot;},
+   {&quot;imglist&quot;,
+    [[{&quot;src&quot;,&quot;ad3.jpg&quot;},
+      {&quot;msg&quot;,
+       [228,188,152,230,131,160,228,191,161,230,129,175,51]}],
+     [{&quot;src&quot;,&quot;ad3.jpg&quot;},
+      {&quot;msg&quot;,
+       [228,188,152,230,131,160,228,191,161,230,129,175,51]}]]}]}]
+</code></pre><p>得到python中日志如下：</p>
+<pre><code>--------------------------------------------------------------------------------
+WARNING in app [app.py:60]:
+params:{&#39;{&quot;RSP_HEAD&quot;:{&quot;setp&quot;:&quot;1&quot;},&quot;RSP_BODY&quot;:{&quot;tranCode&quot;:&quot;JH0001&quot;,&quot;EMP_SID&quot;:&quot;ETAVHVFTDSJPCJBFJEEZJTBEJADOILEVFTFMBVDB&quot;,&quot;platform&quot;:[],&quot;mobileNo&quot;:&quot;18032178965&quot;,&quot;certNo&quot;:&quot;13062719910927122X&quot;,&quot;certType&quot;:&quot;0&quot;,&quot;httpHostInfo&quot;:&quot;192.168.241.1&quot;,&quot;channel&quot;:&quot;cs&quot;}}&#39;: u&#39;&#39;}
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+WARNING in app [app.py:64]:
+注意，post参数中无法取得tranCode参数，请检查配置，simulator中按URL的tranCode-JH0001为准
+--------------------------------------------------------------------------------
+192.168.241.3 - - [06/Sep/2015 23:58:52] &quot;POST /mobs/ewp.do HTTP/1.0&quot; 200 -
+</code></pre><p>表示simulater服务搭建成功。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../config/adapter.html" class="navigation navigation-prev " aria-label="Previous page: adapter"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../debug/intro.html" class="navigation navigation-next " aria-label="Next page: 联调"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

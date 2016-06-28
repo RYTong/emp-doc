@@ -63,77 +63,54 @@
 }
 ```
 #### 其他
-在**UserBehaviourAnalyse.xcodeproj**工程中，有名为**UserBehaviourAnalyseConfig.h**的文件，此文件为统计分析的配置文件，其宏定义描述如下：
+在**UserBehaviourAnalyse.xcodeproj**工程下，有名为**UserBehaviourAnalyseConfig.h**的文件，此文件为统计分析的配置文件，其定义描述如下：
 
 ```
-#pragma mark -
-#pragma mark 统计功能
-/**
- * 统计功能开关
- * 通过START_USER_BEHAVIOUR_ANALYSE控制统计功能的开启与关闭
- * 如果需要开启统计功能,则打开此宏定义.反之,关闭.
- * 统计功能的使用参阅bankdemo.
- */
-#define START_USER_BEHAVIOUR_ANALYSE
-//统计功能设置
-#ifdef START_USER_BEHAVIOUR_ANALYSE
-/**
- * 统计功能设置相关内容
- * 如果START_USER_BEHAVIOUR_ANALYSE打开,下面的设置才会生效.
- */
 /**
  * 设置该应用程序的apiKey
  * 关于apiKey的内容参阅统计分析相关文档
  */
-#define API_KEY @"90187UQK"
+@property(nonatomic,retain) NSString *apiKey;
 /**
  * 设置该应用程序的下载渠道
- * MDAP 要求该值是可配置的
  * 关于channel的内容参阅统计分析相关文档
  */
-#define CHANNEL @"App Store"
+@property(nonatomic,retain) NSString *channel;
 /**
- * 统计SDK版本号
+ * 统计api版本号
  */
-#define API_VERSION @"2.0"
+@property(nonatomic,retain) NSString *apiVersion;
 /**
  * 统计服务器
  * 收集到的用户信息,将会发送到此服务器.
  */
-#define USER_BEHAVIOUR_ANALYSE_SERVER_URL @"http://192.168.64.127:4007"
+@property(nonatomic,retain) NSString *serverUrl;
 /**
  * 向服务器发送统计数据时,需要在url中加入appName参数,
- * TRACK_APP_NAME用来定义appName的值.
+ * tackAppName用来定义appName的值.
  * 关于appName的项目信息参阅统计分析相关文档
  */
-#define TRACK_APP_NAME @"stats"
+@property(nonatomic,retain) NSString *tackAppName;
 /**
  * 设置统计数据使用的加密方式
- * 目前仅支持两种加密方式:emp信道 or 移位加密（二者择一）
- * ENCRYPT_METHOD_EMP 表示emp信道加密
- * ENCRYPT_METHOD_OFF_SET 表示通过移位加密
+ * 目前仅支持两种加密方式:emp信道加密 or offset移位加密（二者择一）
  * 关于两种加密的详细内容参阅统计分析相关文档.
  */
-//#define ENCRYPT_METHOD_EMP
-#define ENCRYPT_METHOD_OFF_SET
-
+@property(nonatomic,retain) NSString *encrptMethod;
 /**
- * 统计数据的发送接口,它将与USER_BEHAVIOUR_ANALYSE_SERVER_URL
+ * 统计数据的发送接口,它将与serverUrl
  * 组合生成发送路径.
+ * 目前仅支持两种加密方式:emp信道加密 or offset移位加密（二者择一）
+ * 关于两种加密的详细内容参阅统计分析相关文档.
  * 如果使用信道加密,数据的发送接口为stats/collect_s.
  * 如果使用移位加密,数据的发送接口为stats/collect.
  */
-#ifdef ENCRYPT_METHOD_EMP
-#define ANALYSE_DATA_REQUEST_URL @"stats/collect_s"
-#else
-#define ANALYSE_DATA_REQUEST_URL @"stats/collect"
-#endif
-/**
- * 是否在收集报错信息时仍弹出报错提示,建议在生产环境中打开此宏定义.
- * 如果定义此宏，在开启开发错误提示的情况下，
- * 将只是收集错误信息不会再弹出错误提示框.
- */
-#define ONLY_COLLECT_AND_DONOT_SHOW
-#endif
+@property(nonatomic,retain) NSString *requestUrl;
 ```
-上述文件可以根据需求灵活配置
+上述文件可以根据需求灵活配置。如需配置，请在使用统计分析之前进行相关配置。如：
+
+```
+NSString *apiKey = @"AKSDU89"  // apiKey设置
+[[UserBehaviouAnalyseConfig sharedUserBehaviouAnalyseConfig] setApiKey:apiKey];
+```
+如果设置`encrptMethod`，请配对设置`requestUrl`。详情参见上述配置说明。
