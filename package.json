@@ -1,7 +1,7 @@
 {
   "name": "emp-doc",
   "main": "./lib/emp-doc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "EMP API 文档集合",
   "keywords": [
     "EMP",
